@@ -81,6 +81,8 @@ public class CitationDocumentServiceImpl implements CitationDocumentService, Ini
      * A set of MIME types that refer to a SVG
      */
     protected final Set<String> SVG_MIMES = new HashSet<String>();
+    
+    public final String BITSTREAM_PREFIX = "bitstream.";
 
     /**
      * List of all enabled collections, inherited/determined for those under communities.
@@ -365,12 +367,15 @@ public class CitationDocumentServiceImpl implements CitationDocumentService, Ini
                 if(field.equals("_blankline_")) {
                     ypos -=(ygap);
 
+                } else if (field.startsWith(BITSTREAM_PREFIX)) {
+                	String bistreamField = field.substring(BITSTREAM_PREFIX.length());
+                	if (StringUtils.isNotEmpty(converter.convert(bistreamField, bitstream))) {
+                    	String metadataContent = converter.convert(bistreamField, bitstream);
+                        ypos = drawStringWordWrap(coverPage, contentStream, metadataContent, xpos, ypos, font, fontSize);
+                    }
+                	
                 } else if (StringUtils.isNotEmpty(converter.convert(field, item))) {
                 	String metadataContent = converter.convert(field, item);
-                    ypos = drawStringWordWrap(coverPage, contentStream, metadataContent, xpos, ypos, font, fontSize);
-                    
-                } else if (StringUtils.isNotEmpty(converter.convert(field, bitstream))) {
-                	String metadataContent = converter.convert(field, bitstream);
                     ypos = drawStringWordWrap(coverPage, contentStream, metadataContent, xpos, ypos, font, fontSize);
                     
                 } else if (field.startsWith("item.")) {

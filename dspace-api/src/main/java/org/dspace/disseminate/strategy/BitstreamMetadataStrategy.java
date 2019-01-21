@@ -52,9 +52,6 @@ public class BitstreamMetadataStrategy implements DissaminateStrategy {
 			String metadataValue = bitstream.getMetadata(metadataName);
 			
 			if (StringUtils.isNotBlank(metadataValue)) {
-				for (String keyS : metadataEntry.getValue().keySet()) {
-					System.out.println(keyS);
-				}
 				
 				for (Entry<String, String> entry : metadataEntry.getValue().entrySet()) {
 				
