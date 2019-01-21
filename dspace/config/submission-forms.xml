@@ -31,7 +31,7 @@
 					<repeatable>false</repeatable>
 					<label>Authors</label>
 					<input-type>name</input-type>
-					<style>col-sm-6</style>
+					<style>col-sm-8</style>
 					<hint>Enter the name of the author.</hint>
 					<required>Required field!</required>
 				</field>
@@ -44,17 +44,19 @@
 					<input-type>onebox</input-type>
 					<style>col-sm-2</style>
 					<hint>Enter the ORCID of the author.</hint>
-					<required></required>
+					<visibility>workflow</visibility>
+					<required></required> 
 				</field>
 				<field>
 					<dc-schema>local</dc-schema>
 					<dc-element>contributor</dc-element>
 					<dc-qualifier>affiliation</dc-qualifier>
 					<repeatable>false</repeatable>
-					<label>Affiliation</label>
-					<input-type>onebox</input-type>
-					<style>col-sm-4</style>
-					<hint>Enter the affiliation of the author.</hint>
+					<label>Affiliation control</label>
+					<input-type value-pairs-name="affiliation">dropdown</input-type>
+					<style>col-sm-2</style>
+					<hint>Control of the affiliation.</hint>
+					<visibility>workflow</visibility>					
 					<required></required>
 				</field>
 			</row>
@@ -72,20 +74,33 @@
 					<style>col-sm-8</style>
 					<input-type>onebox</input-type>
 					<repeatable>false</repeatable>
+					<visibility></visibility>	
 					<required></required>
 				</field>
 				<field>
 					<dc-schema>dc</dc-schema>
 					<dc-element>identifier</dc-element>
 					<dc-qualifier>issn</dc-qualifier>
-					<!-- An input-type of qualdrop_value MUST be marked as repeatable -->
-					<repeatable>true</repeatable>
+				    <repeatable>true</repeatable>
 					<label>ISSN</label>
-					<style>col-sm-4</style>
+					<style>col-sm-2</style>
 					<input-type>onebox</input-type>
 					<hint>Enter ISSN</hint>
 					<required></required>
+ 					<visibility>workflow</visibility>	
 				</field>
+				<!-- <field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>identifier</dc-element>
+					<dc-qualifier>eissn</dc-qualifier>
+					 <repeatable>true</repeatable>
+					<label>e-ISSN</label>
+					<style>col-sm-2</style>
+					<input-type>onebox</input-type>
+					<hint>Enter ISSN</hint>
+					<visibility>workflow</visibility>	
+					<required></required> 
+				</field> -->
 			</row>
 		</form>		
 		<form name="bitstream-metadata">
@@ -208,8 +223,55 @@
 					<repeatable>true</repeatable>
 					<label>Programme</label>
 					<input-type value-pairs-name="type_programme">list</input-type>
-					<style></style>
+					<style>col-sm-8</style>
 					<hint></hint>
+					<required></required>
+				</field>
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>relation</dc-element>
+					<dc-qualifier>h2020</dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Horizon 2020 Project ID</label>
+					<style>col-sm-4</style>
+					<input-type>onebox</input-type>
+					<hint></hint>
+					<required></required>
+				</field>
+			</row>
+			<row>				
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>bibliographicCitation</dc-element>
+					<dc-qualifier>status</dc-qualifier>
+					<label>Status</label>
+					<hint></hint>
+					<input-type value-pairs-name="status">dropdown</input-type>
+					<style>col-sm-4</style>
+					<repeatable>false</repeatable>
+					<required></required>
+				</field>
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>type</dc-element>
+					<dc-qualifier>refereed</dc-qualifier>
+					<label>Refereed *</label>
+					<hint>Please indicate here if your deposit has been refereed.</hint>
+					<input-type value-pairs-name="refereed">dropdown</input-type>
+					<style>col-sm-4</style>
+					<repeatable>false</repeatable>
+					<required></required>
+				</field>
+				<field>
+					<dc-schema>uh</dc-schema>
+					<dc-element>class</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<label>Classifications</label>
+					<hint>(validaties onderdrukken, uitsluiten van aanleveringen, ...)</hint>
+					<input-type value-pairs-name="class">dropdown</input-type>
+					<style>col-sm-4</style>
+					<visibility>workflow</visibility>
+					<repeatable>true</repeatable>
 					<required></required>
 				</field>
 			</row>
@@ -260,7 +322,7 @@
 					<dc-schema>dc</dc-schema>
 					<dc-element>description</dc-element>
 					<dc-qualifier>other</dc-qualifier>
-					<!-- An input-type of twobox MUST be marked as repeatable -->
+					<!-- Label twice -->
 					<repeatable>true</repeatable>
 					<label>Free Keywords</label>
 					<input-type>tag</input-type>
@@ -466,29 +528,6 @@
 					<required></required>
 				</field>
 			</row>
-			<row>
-				<field>
-					<dc-schema>dc</dc-schema>
-					<dc-element>publisher</dc-element>
-					<dc-qualifier></dc-qualifier>
-					<label>Publisher</label>
-					<style>col-sm-6</style>
-					<input-type>onebox</input-type>
-					<repeatable>false</repeatable>
-					<required></required>
-				</field>
-
-				<field>
-					<dc-schema>dc</dc-schema>
-					<dc-element>publisher</dc-element>
-					<dc-qualifier>place</dc-qualifier>
-					<label>Place of Publication</label>
-					<style>col-sm-6</style>
-					<input-type>onebox</input-type>
-					<repeatable>false</repeatable>
-					<required></required>
-				</field>
-			</row>
 		</form>
 
 		<form name="conference">
@@ -533,6 +572,32 @@
 			</row>
 		</form>
 
+		<form name="publisher">
+			<row>
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>publisher</dc-element>
+					<dc-qualifier></dc-qualifier>
+					<label>Publisher</label>
+					<style>col-sm-6</style>
+					<input-type>onebox</input-type>
+					<repeatable>false</repeatable>
+					<required></required>
+				</field>
+
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>publisher</dc-element>
+					<dc-qualifier>place</dc-qualifier>
+					<label>Place of Publication</label>
+					<style>col-sm-6</style>
+					<input-type>onebox</input-type>
+					<repeatable>false</repeatable>
+					<required></required>
+				</field>
+			</row>
+		</form>
+
 		<form name="additionalfields">
 			<row>
 				<field>
@@ -554,16 +619,6 @@
 					<hint>Enter the name of the theses promotors.</hint>
 					<input-type>onebox</input-type>
 					<repeatable>true</repeatable>
-					<required></required>
-				</field>
-				<field>
-					<dc-schema>dc</dc-schema>
-					<dc-element>type</dc-element>
-					<dc-qualifier>refereed</dc-qualifier>
-					<label>Refereed *</label>
-					<hint>Please indicate here if your deposit has been refereed.</hint>
-					<input-type value-pairs-name="refereed">dropdown</input-type>
-					<repeatable>false</repeatable>
 					<required></required>
 				</field>
 			</row>
@@ -861,7 +916,73 @@
 			</pair>
 		</value-pairs>
 
+		<value-pairs value-pairs-name="affiliation"
+			dc-term="contributor_affiliation">
+			<pair>
+				<displayed-value>No UHasselt</displayed-value>
+				<stored-value></stored-value>
+			</pair>	
+			<pair>
+				<displayed-value>Correct Affiliation in WoS and on the paper</displayed-value>
+				<stored-value>0</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Affiliation missing in WoS but on the paper</displayed-value>
+				<stored-value>1</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Affiliation missing in WoS and missing on the paper</displayed-value>
+				<stored-value>2</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Affiliation in WoS but not on the paper</displayed-value>
+				<stored-value>3</stored-value>
+			</pair>	
+		</value-pairs>
 
+		<value-pairs value-pairs-name="class"
+			dc-term="class">
+			<pair>
+				<displayed-value>Onderdruk foutmelding 'verplichte pagina info'</displayed-value>
+				<stored-value>1</stored-value>
+			</pair>	
+			<pair>
+				<displayed-value>Onderdruk foutmelding 'verplicht volume of issue nummer'</displayed-value>
+				<stored-value>2</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Onderdruk foutmelding 'Web of Science N° verwacht'</displayed-value>
+				<stored-value>3</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Onderdruk foutmelding '(Peer-reviewed) author version verwacht'</displayed-value>
+				<stored-value>4</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Onderdruk foutmelding 'geen interne auteur'</displayed-value>
+				<stored-value>5</stored-value>
+			</pair>	
+			<pair>
+				<displayed-value>Sluit uit van aanlevering voor het FRIS portaal</displayed-value>
+				<stored-value>6</stored-value>
+			</pair>	
+		</value-pairs>
+
+		<value-pairs value-pairs-name="status"
+			dc-term="bibliographicCitation_status">
+			<pair>
+				<displayed-value>Published</displayed-value>
+				<stored-value>Published</stored-value>
+			</pair>	
+			<pair>
+				<displayed-value>Early view</displayed-value>
+				<stored-value>Early view</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>In press</displayed-value>
+				<stored-value>In press</stored-value>
+			</pair>
+		</value-pairs>
 	</form-value-pairs>
 
 </input-forms>

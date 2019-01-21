@@ -186,7 +186,7 @@
 			<step id="detect-duplicate"/>
 
 			<!--Step will be to Sign off on the License -->
-			<step id="license" />
+			<!-- <step id="license" /> -->
 			<!-- <step id="creative-commons"/> -->
 			<!-- <step id="verify"/> -->
 		</submission-process>
