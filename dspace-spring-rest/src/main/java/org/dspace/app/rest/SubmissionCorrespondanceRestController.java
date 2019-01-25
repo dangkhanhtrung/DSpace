@@ -134,8 +134,12 @@ public class SubmissionCorrespondanceRestController implements InitializingBean 
             toSet.add(item.getSubmitter());
         } else {
             bitstreamService.addMetadata(context, bitMessage, "dc", "type", null, null, "outbound");
-            toSet.addAll(controllers.getMembers());
-            toSet.addAll(administrators.getMembers());
+            if (controllers != null) {
+            	toSet.addAll(controllers.getMembers());
+            }
+            if (administrators != null) {
+            	toSet.addAll(administrators.getMembers());
+            }
         }
         bitstreamService.update(context, bitMessage);
         authorizeService.addPolicy(context, bitMessage, Constants.READ, context.getCurrentUser());
