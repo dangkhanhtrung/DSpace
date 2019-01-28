@@ -30,6 +30,22 @@
 	    </property>
 	</bean>
 
+	<bean name="dissaminateStrategy_bitstreamMetadata_open" class="org.dspace.disseminate.strategy.BitstreamMetadataOpenStrategy" >
+		<property name="metadataKeys">
+			<map>
+		          <entry key="dc.description" value-ref="bitstreamDescriptionMap" />
+		    </map>
+		</property>
+	</bean>
+	
+	<bean name="dissaminateStrategy_bitstreamMetadata_restricted" class="org.dspace.disseminate.strategy.BitstreamMetadataRestrictedStrategy" >
+		<property name="metadataKeys">
+			<map>
+		          <entry key="dc.description" value-ref="bitstreamDescriptionMap" />
+		    </map>
+		</property>
+	</bean>
+
 	<bean name="dissaminateStrategy_bitstreamMetadata" class="org.dspace.disseminate.strategy.BitstreamMetadataStrategy" >
 		<property name="metadataKeys">
 			<map>

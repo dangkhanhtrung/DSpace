@@ -10,11 +10,16 @@ package org.dspace.disseminate.strategy;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map.Entry;
 
 import org.apache.commons.lang.StringUtils;
+import org.dspace.authorize.ResourcePolicy;
+import org.dspace.authorize.factory.AuthorizeServiceFactory;
 import org.dspace.content.Bitstream;
+import org.dspace.core.Constants;
 import org.dspace.core.Context;
+import org.dspace.eperson.Group;
 
 /**
  *
@@ -82,4 +87,32 @@ public class BitstreamMetadataStrategy implements DissaminateStrategy {
 		return configFile;
 	}
 	
+	protected Boolean isBitstreamOpenAccess(Context context, Bitstream bitstream) {
+        List<ResourcePolicy> rps;
+        boolean bOpened = false;
+
+		try {
+			rps = AuthorizeServiceFactory.getInstance().getAuthorizeService()
+			        .getPoliciesActionFilter(context, bitstream, Constants.READ);
+
+	        if (rps != null)
+	        {
+	            for (ResourcePolicy rp : rps)
+	            {
+	                if (Group.ANONYMOUS.equals(rp.getGroup().getName()))
+	                {
+	                    if (rp.isDateValid())
+	                    {
+	                    	bOpened = true;
+	                        break;
+	                    }
+	                }
+	            }
+	        }
+        
+		} catch (SQLException e) {
+			bOpened = false;
+		}
+        return bOpened;
+	}
 }
