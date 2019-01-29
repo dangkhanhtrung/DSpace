@@ -88,7 +88,7 @@ public class SolrServiceResourceRestrictionPlugin implements SolrServiceIndexPlu
     @Override
     public void additionalSearchParameters(Context context, DiscoverQuery discoveryQuery, SolrQuery solrQuery) {
         try {
-            if (context != null && !authorizeService.isAdmin(context)) {
+            if (context != null) {
 
                 boolean isInProgessSubmission = false;
                 EPerson currentUser = context.getCurrentUser();
@@ -118,7 +118,7 @@ public class SolrServiceResourceRestrictionPlugin implements SolrServiceIndexPlu
                     }
                 }
 
-                if (!isInProgessSubmission) {
+                if (!isInProgessSubmission && !authorizeService.isAdmin(context)) {
                     StringBuilder resourceQuery = new StringBuilder();
                     // Always add the anonymous group id to the query
                     Group anonymousGroup = groupService.findByName(context, Group.ANONYMOUS);
