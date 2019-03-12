@@ -25,7 +25,7 @@ public class SearchResultEntryRest implements RestAddressableModel {
 
     private Map<String, List<String>> hitHighlights;
 
-    private RestAddressableModel rObject;
+    private RestAddressableModel resultObject;
 
     @JsonIgnore
     public String getCategory() {
@@ -57,11 +57,11 @@ public class SearchResultEntryRest implements RestAddressableModel {
     }
 
     @JsonIgnore
-    public RestAddressableModel getRObject() {
-        return rObject;
+    public RestAddressableModel getResultObject() {
+        return resultObject;
     }
 
-    public void setRObject(final RestAddressableModel dspaceObject) {
-        this.rObject = dspaceObject;
+    public void setResultObject(final RestAddressableModel dspaceObject) {
+        this.resultObject = dspaceObject;
     }
 }
