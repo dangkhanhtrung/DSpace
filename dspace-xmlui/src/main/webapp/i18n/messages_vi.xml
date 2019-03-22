@@ -98,14 +98,14 @@
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.no_results">34 Không tìm thấy kết quả.</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.all_of_dspace">35 Toàn bộ DSpace</message>
 
-   <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.title">36 Tiêu đề</message>
-   <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dateissued">37 Ngày xuất bản</message>
-   <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dateaccessioned">38 Ngày gửi lên</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.relevance">39 Tài liệu liên quan</message>
+   <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.title">36 tiêu đề</message>
+   <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dateissued">37 ngày xuất bản</message>
+   <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dateaccessioned">38 ngày gửi lên</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.relevance">39 tài liệu liên quan</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by">40 Sắp xếp mục theo</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.order">41 Theo thứ tự</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.order.asc">42 Tăng dần</message>
-	<message key="xmlui.ArtifactBrowser.AbstractSearch.order.desc">43 Giảm dần</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.order">41 theo thứ tự</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.order.asc">42 tăng dần</message>
+	<message key="xmlui.ArtifactBrowser.AbstractSearch.order.desc">43 giảm dần</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.rpp">44 Trang kết quả</message>
 
     <!-- org.dspace.app.xmlui.artifactbrowser.AdvancedSearch.java -->
@@ -119,7 +119,7 @@
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.search_for">52 Tìm theo</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_author">53 Tác giả</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_title">54 Tiêu đề</message>
-	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subject">55 Lĩnh vực</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subject">55 Chủ đề</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_abstract">56 Sơ lược</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_series">57 Series xuất bản</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_sponsor">58 Nhà tài trợ</message>
@@ -159,20 +159,20 @@
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.etal.all">86 Toàn bộ</message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.title">87 Tiêu đề</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.dateissued">88 Ngày xuất bản</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.dateaccessioned">89 Ngày gửi lên</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.title">87 tiêu đề</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.dateissued">88 ngày xuất bản</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.dateaccessioned">89 ngày gửi lên</message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.order.asc">90 Tăng dần</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.order.desc">91 Giảm dần</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.order.asc">90 tăng dần</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.order.desc">91 giảm dần</message>
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.author.column_heading">92 Tên tác giả</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.subject.column_heading">93 Lĩnh vực</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.subject.column_heading">93 Chủ đề</message>
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.author">94 Duyệt {0} theo Tác giả {1}</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.author">95 Duyệt {0} theo Tác giả</message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.subject">96 Duyệt {0} theo Lĩnh vực {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.subject">96 Duyệt {0} theo Chủ đề {1}</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.subject">97 Duyệt {0} theo Lĩnh vưc</message>
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.title">98 Duyệt {0} theo tiêu đề {1}</message>
@@ -208,233 +208,233 @@
 	<!-- org.dspace.app.xmlui.artifactbrowser.CollectionViewer.java -->
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.search_scope">116 Phạm vi tìm kiếm</message>
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.all_of_dspace">117 Toàn bộ DSpace</message>
-	<message key="xmlui.ArtifactBrowser.CollectionViewer.full_text_search">118 Search within this collection:</message>
-	<message key="xmlui.ArtifactBrowser.CollectionViewer.head_browse">119 Browse by</message>
-	<message key="xmlui.ArtifactBrowser.CollectionViewer.browse_titles">120 Titles</message>
-	<message key="xmlui.ArtifactBrowser.CollectionViewer.browse_authors">121 Authors</message>
-	<message key="xmlui.ArtifactBrowser.CollectionViewer.browse_dates">122 Dates</message>
-	<message key="xmlui.ArtifactBrowser.CollectionViewer.advanced_search_link">123 Advanced Search</message>
-	<message key="xmlui.ArtifactBrowser.CollectionViewer.head_recent_submissions">124 Recent Submissions</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.full_text_search">118 Tìm kiếm trong bộ sưu tập:</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.head_browse">119 Duyệt theo</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.browse_titles">120 Tiêu đề</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.browse_authors">121 Tác giả</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.browse_dates">122 Ngày</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.advanced_search_link">123 Tìm kiếm nâng cao</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.head_recent_submissions">124 Tải lên gần đây</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.CommunityBrowser.java -->
-	<message key="xmlui.ArtifactBrowser.CommunityBrowser.title">125 Community List</message>
-	<message key="xmlui.ArtifactBrowser.CommunityBrowser.trail">126 Community List</message>
-	<message key="xmlui.ArtifactBrowser.CommunityBrowser.head">127 Communities in DSpace</message>
-	<message key="xmlui.ArtifactBrowser.CommunityBrowser.select">128 Select a community to browse its collections.</message>
+	<message key="xmlui.ArtifactBrowser.CommunityBrowser.title">125 Danh sách cộng đồng</message>
+	<message key="xmlui.ArtifactBrowser.CommunityBrowser.trail">126 Danh sách cộng đồng</message>
+	<message key="xmlui.ArtifactBrowser.CommunityBrowser.head">127 Cộng đồng trong DSpace</message>
+	<message key="xmlui.ArtifactBrowser.CommunityBrowser.select">128 Chọn cộng đồng để duyệt các bộ sưu tập.</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.CommunityViewer.java -->
-	<message key="xmlui.ArtifactBrowser.CommunityViewer.search_scope">129 Search Scope</message>
-	<message key="xmlui.ArtifactBrowser.CommunityViewer.all_of_dspace">130 All of DSpace</message>
-	<message key="xmlui.ArtifactBrowser.CommunityViewer.full_text_search">131 Search within this community and its collections:</message>
-	<message key="xmlui.ArtifactBrowser.CommunityViewer.head_browse">132 Browse by</message>
-	<message key="xmlui.ArtifactBrowser.CommunityViewer.browse_titles">133 Titles</message>
-	<message key="xmlui.ArtifactBrowser.CommunityViewer.browse_authors">134 Authors</message>
-	<message key="xmlui.ArtifactBrowser.CommunityViewer.browse_dates">135 Dates</message>
-	<message key="xmlui.ArtifactBrowser.CommunityViewer.advanced_search_link">136 Advanced Search</message>
-	<message key="xmlui.ArtifactBrowser.CommunityViewer.head_sub_communities">137 Sub-communities within this community</message>
-	<message key="xmlui.ArtifactBrowser.CommunityViewer.head_sub_collections">138 Collections in this community</message>
-	<message key="xmlui.ArtifactBrowser.CommunityViewer.head_recent_submissions">139 Recent Submissions</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.search_scope">129 Phạm vi tìm kiếm</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.all_of_dspace">130 Toàn bộ DSpace</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.full_text_search">131 Tìm kiếm bên trong cộng đồng này và các bộ sưu tập trong đó:</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.head_browse">132 Duyệt bởi</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.browse_titles">133 Tiêu đề</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.browse_authors">134 Tác giả</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.browse_dates">135 Ngày</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.advanced_search_link">136 Tìm kiếm nâng cao</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.head_sub_communities">137 Cộng đồng con bên trong cộng đồng này</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.head_sub_collections">138 Các bộ sưu tập trong cộng đồng này</message>
+	<message key="xmlui.ArtifactBrowser.CommunityViewer.head_recent_submissions">139 Tải lên gần đây</message>
 
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.Contact.java -->
-	<message key="xmlui.ArtifactBrowser.Contact.title">140 Contact us</message>
-	<message key="xmlui.ArtifactBrowser.Contact.trail">141 Contact us</message>
-	<message key="xmlui.ArtifactBrowser.Contact.head">142 Contact us</message>
-	<message key="xmlui.ArtifactBrowser.Contact.para1">143 {0} administrators may be contacted at:</message>
-	<message key="xmlui.ArtifactBrowser.Contact.feedback_label">144 On-line form</message>
-	<message key="xmlui.ArtifactBrowser.Contact.feedback_link">145 Feedback</message>
+	<message key="xmlui.ArtifactBrowser.Contact.title">140 Liên hệ</message>
+	<message key="xmlui.ArtifactBrowser.Contact.trail">141 Liên hệ</message>
+	<message key="xmlui.ArtifactBrowser.Contact.head">142 Liên hệ</message>
+	<message key="xmlui.ArtifactBrowser.Contact.para1">143 {0} quản trị viên có thể liên lạc qua:</message>
+	<message key="xmlui.ArtifactBrowser.Contact.feedback_label">144 Form trực tuyến</message>
+	<message key="xmlui.ArtifactBrowser.Contact.feedback_link">145 Phản hồi</message>
 	<message key="xmlui.ArtifactBrowser.Contact.email">146 Email</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.FeedbackForm.java -->
-	<message key="xmlui.ArtifactBrowser.FeedbackForm.title">147 Give feedback</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackForm.trail">148 Give feedback</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackForm.head">149 Give feedback</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackForm.para1">150 Thanks for sharing your feedback about the DSpace system. Your comments are appreciated!</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackForm.email">151 Your Email</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackForm.email_help">152 This address will be used to follow up on your feedback.</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackForm.comments">153 Comments</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackForm.submit">154 Send Feedback</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackForm.title">147 Đưa ra phản hồi</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackForm.trail">148 Đưa ra phản hồi</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackForm.head">149 Đưa ra phản hồi</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackForm.para1">150 Cảm ơn bạn đã chia sẽ phản hồi với hệ thống DSpaace. Bình luận của bạn rất có ích!</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackForm.email">151 Email của bạn</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackForm.email_help">152 Địa chỉ này sẽ được sử dụng để theo dõi phản hồi của bạn.</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackForm.comments">153 Bình luận</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackForm.submit">154 Gửi phản hồi</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.FeedbackSent.java -->
-	<message key="xmlui.ArtifactBrowser.FeedbackSent.title">155 Give feedback</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackSent.trail">156 Give feedback</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackSent.head">157 Feedback sent</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackSent.para1">158 Your comments have been received.</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackSent.title">155 Đưa ra phản hồi</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackSent.trail">156 Đưa ra phản hồi</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackSent.head">157 Phản hồi đã được gửi</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackSent.para1">158 Bình luận của bạn đã được nhận.</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.ItemViewer.java -->
-	<message key="xmlui.ArtifactBrowser.ItemViewer.trail">159 View Item</message>
-	<message key="xmlui.ArtifactBrowser.ItemViewer.head_parent_collections">160 This item appears in the following Collection(s)</message>
-	<message key="xmlui.ArtifactBrowser.ItemViewer.show_simple">161 Show simple item record</message>
-	<message key="xmlui.ArtifactBrowser.ItemViewer.show_full">162 Show full item record</message>
+	<message key="xmlui.ArtifactBrowser.ItemViewer.trail">159 Xem mục</message>
+	<message key="xmlui.ArtifactBrowser.ItemViewer.head_parent_collections">160 Mục này xuất hiện ở (những) bộ sưu tập sau:</message>
+	<message key="xmlui.ArtifactBrowser.ItemViewer.show_simple">161 Hiển thị mục đơn giản</message>
+	<message key="xmlui.ArtifactBrowser.ItemViewer.show_full">162 Hiển thị toàn bộ mục</message>
 
-        <message key="xmlui.ArtifactBrowser.ItemViewer.withdrawn">163 This item has been withdrawn and is no longer available.</message>
+        <message key="xmlui.ArtifactBrowser.ItemViewer.withdrawn">163 Mục này đã bị rút và không còn tồn tại.</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.Navigation.java -->
-	<message key="xmlui.ArtifactBrowser.Navigation.head_browse">164 Browse</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.head_all_of_dspace">165 All of DSpace</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.communities_and_collections">166 Communities &amp; Collections</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.browse_title">167 Titles</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.browse_author">168 Authors</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.browse_subject">169 Subjects</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.browse_dateissued">170 By Issue Date</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.browse_dateaccessioned">171 By Submit Date</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.head_this_collection">172 This Collection</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.head_this_community">173 This Community</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.head_browse">164 Duyệt</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.head_all_of_dspace">165 Toàn bộ DSpace</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.communities_and_collections">166 Cộng đồng và Bộ sưu tập</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_title">167 Tiêu đề</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_author">168 Tác giả</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_subject">169 Chủ đề</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_dateissued">170 Theo ngày xuất bản</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_dateaccessioned">171 Theo ngày tải lên</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.head_this_collection">172 Bộ sưu tập này</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.head_this_community">173 Cộng đồng này</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.SimpleSearch.java -->
-	<message key="xmlui.ArtifactBrowser.SimpleSearch.title">174 Search</message>
-	<message key="xmlui.ArtifactBrowser.SimpleSearch.trail">175 Search</message>
-	<message key="xmlui.ArtifactBrowser.SimpleSearch.head">176 Search</message>
-	<message key="xmlui.ArtifactBrowser.SimpleSearch.search_scope">177 Search Scope</message>
-	<message key="xmlui.ArtifactBrowser.SimpleSearch.full_text_search">178 Full Text Search</message>
+	<message key="xmlui.ArtifactBrowser.SimpleSearch.title">174 Tìm kiếm</message>
+	<message key="xmlui.ArtifactBrowser.SimpleSearch.trail">175 Tìm kiếm</message>
+	<message key="xmlui.ArtifactBrowser.SimpleSearch.head">176 Tìm kiếm</message>
+	<message key="xmlui.ArtifactBrowser.SimpleSearch.search_scope">177 Phạm vi tìm kiếm</message>
+	<message key="xmlui.ArtifactBrowser.SimpleSearch.full_text_search">178 Tìm kiếm toàn văn</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.RestrictedItem.java -->
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.title">179 This resource is restricted</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.trail">180 Restricted</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_resource">181 This resource is restricted</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_community">182 This community is restricted</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_collection">183 This collection is restricted</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_item">184 This item is restricted</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_bitstream">185 This bitstream is restricted</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_resource">186 You do not have the credentials to access the restricted resource.</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_community">187 You do not have the credentials to access the restricted community <b>{0}</b>.</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_collection">188 You do not have the credentials to access the restricted collection <b>{0}</b>.</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_item">189 You do not have the credentials to access the restricted item <b>{0}</b>.</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_bitstream">190 You do not have the credentials to access the restricted bitstream <b>{0}</b>.</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_collection">191 collection</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_community">192 community</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.title">179 Tài nguyên này đã bị hạn chế</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.trail">180 Bị giới hạn</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_resource">181 Tài nguyên này đã bị hạn chế</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_community">182 Cộng đồng này đã bị hạn chế</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_collection">183 Bộ sưu tập này đã bị hạn chế</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_item">184 Mục này đã bị hạn chế</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.head_bitstream">185 Nguồn dữ liệu bitstream này đã bị hạn chế</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_resource">186 Bạn không có quyền truy cập tài nguyên đã bị hạn chế.</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_community">187 Bạn không có quyền truy cập cộng đồng đã bị hạn chế.<b>{0}</b>.</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_collection">188 Bạn không có quyền truy cập bộ sưu tập đã bị hạn chế. <b>{0}</b>.</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_item">189 Bạn không có quyền truy cập mục đã bị hạn chế. <b>{0}</b>.</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.para_bitstream">190 Bạn không có quyền truy cập dữ liệu bitstream đã bị hạn chế.<b>{0}</b>.</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_collection">191 bộ sưu tập</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_community">192 cộng đồng</message>
 	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_bitstream">193 bitstream</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_item">194 item</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_resource">195 resource</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.unknown">196 unknown</message>
-        <message key="xmlui.ArtifactBrowser.RestrictedItem.login">197 Proceed to login screen</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_item">194 mục</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.type_resource">195 tài nguyên</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.unknown">196 không xác định</message>
+        <message key="xmlui.ArtifactBrowser.RestrictedItem.login">197 Tới màn hình đăng nhập</message>
 
-        <message key="xmlui.ArtifactBrowser.RestrictedItem.head_item_withdrawn">198 This item is withdrawn</message>
-        <message key="xmlui.ArtifactBrowser.RestrictedItem.para_item_withdrawn">199 The selected item is withdrawn and is no longer available.</message>
-        <message key="xmlui.ArtifactBrowser.RestrictedItem.para_item_restricted_auth">200 The selected item is access restricted and requires credentials to view. Please login to access the item.</message>
-        <message key="xmlui.ArtifactBrowser.RestrictedItem.para_item_restricted">201 Your user account does not have the credentials to view this item. Please contact the system administrator if you have any questions.</message>
+        <message key="xmlui.ArtifactBrowser.RestrictedItem.head_item_withdrawn">198 Mục này đã bị rút lại</message>
+        <message key="xmlui.ArtifactBrowser.RestrictedItem.para_item_withdrawn">199 Mục được chọn đã bị rút và không còn tồn tại</message>
+        <message key="xmlui.ArtifactBrowser.RestrictedItem.para_item_restricted_auth">200 Mục được chọn bị hạn chế truy cập và cần đăng nhập mới có thể để xem. Xin mời đăng nhập để truy cập mục</message>
+        <message key="xmlui.ArtifactBrowser.RestrictedItem.para_item_restricted">201 Tài khoản người dùng không có thông tin ủy quyền để xem mục này. Hãy liên lạc với quản trị hệ thống nếu bạn có bất kỳ câu hỏi nào</message>
         
 	<!-- Authentication messages used at the top of the login page:  -->
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.auth_header">202 The item is restricted</message>
-	<message key="xmlui.ArtifactBrowser.RestrictedItem.auth_message">203 The item you are attempting to access is a restricted item and requires credentials to view. Please login below to access the item.</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.auth_header">202 Mục bị hạn chế</message>
+	<message key="xmlui.ArtifactBrowser.RestrictedItem.auth_message">203 Mục bạn đang cố truy cập bị hạn chế truy cập và cần đăng nhập mới có thể để xem. Xin mời đăng nhập để truy cập mục.</message>
 
-    <message key="xmlui.ArtifactBrowser.StatisticsViewer.choose_month">204 Monthly Reports</message>
-    <message key="xmlui.ArtifactBrowser.StatisticsViewer.report.title">205 Statistical Summary</message>
+    <message key="xmlui.ArtifactBrowser.StatisticsViewer.choose_month">204 Báo cáo theo tháng</message>
+    <message key="xmlui.ArtifactBrowser.StatisticsViewer.report.title">205 Thông kê tóm tắt</message>
 
-    <message key="xmlui.ArtifactBrowser.StatisticsViewer.no_report.title">206 No reports currently available</message>
-    <message key="xmlui.ArtifactBrowser.StatisticsViewer.no_report.text">207 There are currently no reports available for this service.  Please check back later.</message>
+    <message key="xmlui.ArtifactBrowser.StatisticsViewer.no_report.title">206 Không có báo cáo nào tồn tại</message>
+    <message key="xmlui.ArtifactBrowser.StatisticsViewer.no_report.text">207 Hiện không tồn tại bất kỳ báo cáo nào về dịch vụ này. Mời bạn kiếm tra lại sau</message>
 
     <!-- Authentication messages used for bitstream authentication -->
-	<message key="xmlui.BitstreamReader.auth_header">208 The file is restricted</message>
-	<message key="xmlui.BitstreamReader.auth_message">209 The file you are attempting to access is a restricted file and requires credentials to view. Please login below to access the file.</message>
+	<message key="xmlui.BitstreamReader.auth_header">208 Dữ liệu bị hạn chế</message>
+	<message key="xmlui.BitstreamReader.auth_message">209 Mục bạn đang cố truy cập bị hạn chế truy cập và cần đăng nhập mới có thể để xem. Xin mời đăng nhập để truy cập mục.</message>
 
 	<!-- Export Archive download messages -->
-	<message key="xmlui.ItemExportDownloadReader.auth_header">210 This export archive is restricted.</message>
-	<message key="xmlui.ItemExportDownloadReader.auth_message">211 The export archive you are attempting to access is a restricted resource and requires credentials to view. Please login below to access the export archive.</message>
+	<message key="xmlui.ItemExportDownloadReader.auth_header">210 Kho lưu trữ này bị giới hạn truy cập.</message>
+	<message key="xmlui.ItemExportDownloadReader.auth_message">211 Kho lưu trữ bạn cố truy câp đã bị giới hạn vả yêu cầu thông tin ủy quyền để xem. Mời bạn đăng nhập phía dưới để lưu trữ</message>
 
 
 	<!-- REQUEST COPY -->
 	<!-- org.dspace.app.xmlui.artifactbrowser.ItemRequestForm.java -->
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.title">212 Request a copy of the document</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.trail">213 Request a copy of the document</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.head">214 Request a copy of the document</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestForm.login_para">215 Users of this system, can login to view this document.</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestForm.login">216 Login</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestForm.para1">217 Enter the following information to request a copy of the document from the responsible person.</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterEmail">218 Your e-mail address</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterEmail_help">219 This email address is used for sending the document.</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterEmail.error">220 E-mail is mandatory</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.message">221 Message</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.message.error">222 Message is mandatory</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.files">223 Files</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.allFiles">224 All files (of this document) in restricted access.</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.notAllFiles">225 Only The requested file.</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterName">226 Name</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterName.error">227 Name is required</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestForm.submit">228 Request copy</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.title">212 Yêu cầu một bản sao của tài liệu</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.trail">213 Yêu cầu một bản sao của tài liệu</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.head">214 Yêu cầu một bản sao của tài liệu</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestForm.login_para">215 Những người dùng hệ thống có thể lưu và xem trước tài liệu này</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestForm.login">216 Đăng nhập</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestForm.para1">217 Nhập vào những dữ liệu sau để yêu cầu một tài liệu từ người phụ trách.</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterEmail">218 Địa chỉ Email của bạn</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterEmail_help">219 Địa chỉ mail này được sử dụng để gửi tài liệu</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterEmail.error">220 Email là bắt buộc</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.message">221 Tin nhắn</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.message.error">222 Tin nhắn là bắt buộc</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.files">223 Tài liệu</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.allFiles">224 Toàn bộ dữ liệu (của tài liệu này) bị hạn chế truy cập.</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.notAllFiles">225 Chỉ có dữ liệu được yêu cầu.</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterName">226 Tên</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.requesterName.error">227 Tên là bắt buộc</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestForm.submit">228 Yêu cầu sao lưu</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.ItemRequestSent.java -->
-	<message key="xmlui.ArtifactBrowser.ItemRequestSent.title">229 Your request has been sent.</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestSent.trail">230 Your request has been sent.</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestSent.head">231 Your request has been sent.</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestSent.para1">232 Your request has been sent to the author or responsible person.</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestSent.title">229 Yêu cầu của bạn đã được gửi.</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestSent.trail">230 Yêu cầu của bạn đã được gửi.</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestSent.head">231 Yêu cầu của bạn đã được gửi.</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestSent.para1">232 Yêu cầu của bạn đã được gửi tới tác giả hoặc người phụ trách.</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.ItemRequestResponseDecisionForm.java -->
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.title">233 Document copy request</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.trail">234 Document copy request</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.head">235 Document copy request</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.para1">236 IF YOU ARE THE AUTHOR (OR AN AUTHOR) OF DOCUMENT "{0}" use the buttons to answer the user's request.</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.para2">237 This repository will propose an appropriate model reply, which you may edit.</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.contactRequester">238 Initial reply to requester</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.contactAuthor">239  Author permission request</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.send">240 Send copy</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.dontSend">241 Don't send copy</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.title">233 Yêu cầu sao lưu tài liệu</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.trail">234 Yêu cầu sao lưu tài liệu</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.head">235 Yêu cầu sao lưu tài liệu</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.para1">236 Nếu bạn là tác giả của tài liệu "{0}" sử dụng các nút để trả lời yêu cầu của người dùng.</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.para2">237 Kho lưu trữ này sẽ đề xuất một mẫu trả lời phù hợp, bạn có thể chỉnh sửa.</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.contactRequester">238 Khởi tạo câu trả lời với người yêu cầu</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.contactAuthor">239  Yêu cầu tác giả cho phép</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.send">240 Gửi bản sao</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseDecisionForm.dontSend">241 Không gửi bản sao</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.ItemRequestResponseTrueForm.java -->
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.title">242 Document copy request</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.trail">243 Document copy request</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.head">244 Document copy request</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.para1">245 This is the text to be sent to the applicant.</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.message">246 Message</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.subject">247 Subject</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.mail">248 Send</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.back">249 Back</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.title">242 Yêu cầu bản sao tài liệu</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.trail">243 Yêu cầu bản sao tài liệu</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.head">244 Yêu cầu bản sao tài liệu</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.para1">245 Đây là đoạn văn bản sẽ được gửi tới người nộp đơn.</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.message">246 Tin nhắn</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.subject">247 Chủ đề</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.mail">248 Gửi</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseFalseForm.back">249 Trở lại</message>
 
     <!-- org.dspace.app.xmlui.artifactbrowser.ItemRequestResponseFalseForm.java -->
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.title">250 Document copy request</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.trail">251 Document copy request</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.head">252 Document copy request</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.para1">253 This is the text to be sent to the applicant (together with the document).</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.message">254 Message</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.subject">255 Subject</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.mail">256 Send</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.back">257 Back</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.title">250 Yêu cầu bản sao tài liệu</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.trail">251 Yêu cầu bản sao tài liệu</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.head">252 Yêu cầu bản sao tài liệu</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.para1">253 Đây là đoạn văn bản sẽ được gửi tới người nộp đơn (đi kèm với tài liệu).</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.message">254 Tin nhắn</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.subject">255 Chủ đề</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.mail">256 Gửi</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestResponseTrueForm.back">257 Trở lại</message>
 	
 	 <!-- org.dspace.app.xmlui.artifactbrowser.ItemRequestChangeStatusForm.java -->
-	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.title">258 Change permissions request</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.trail">259 Change permissions request</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.head">260 Change permissions request</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.para1">261 You may use this occasion to reconsider the access restrictions on the document (to avoid having to respond to these requests), if there is no reason to keep it restricted. To do so, after inserting your name and e-mail (for authentication), click the button "Change to Open Access".</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.name">262 Name</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.title">258 Yêu cầu thay đổi quyền</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.trail">259 Yêu cầu thay đổi quyền</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.head">260 Yêu cầu thay đổi quyền</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.para1">261 Bạn có thể dùng dịp này để cân nhắc hạn chế quyền truy cập (để tránh phải trả lời các yêu cầu), nếu không muốn để giữ tài nguyên hạn chế. Để làm điều này, sau khi nhập tên và email (để xác thực), nhấn phím "Đổi thành tự do truy cập".</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.name">262 Tên</message>
 	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.email">263 E-mail</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.name.error">264 The name is required</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.email.error">265 The e-mail address is required</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.changeToOpen">266 Change to open access</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.name.error">264 Tên là bắt buộc</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.email.error">265 E-mail là bắt buộc</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestChangeStatusForm.changeToOpen">266 Đổi thành tự do truy cập</message>
 	        
 	<!-- org.dspace.app.xmlui.artifactbrowser.ItemRequestResponseFalseForm.java -->
-	<message key="xmlui.ArtifactBrowser.ItemRequestStatusChanged.title">267 Request sent</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestStatusChanged.trail">268 Request sent</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestStatusChanged.head">269 Your request to change permissions has been sent</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestStatusChanged.para1">270 Your request has been sent to the administrator</message>
-	<message key="xmlui.ArtifactBrowser.ItemRequestStatusChanged.para2">271 Thanks</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestStatusChanged.title">267 Yêu cầu đã được gửi</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestStatusChanged.trail">268 Yêu cầu đã được gửi</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestStatusChanged.head">269 Yêu cầu thay đổi quyền của bạn đã được gửi</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestStatusChanged.para1">270 Yêu cầu của bạn đã được gửi cho quản trị</message>
+	<message key="xmlui.ArtifactBrowser.ItemRequestStatusChanged.para2">271 Cảm ơn</message>
 
     <!-- org.dspace.app.xmlui.artifactbrowser.ItemRequestContactRequester.java -->
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.title">272 Document copy request</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.trail">273 Document copy request</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.head">274 Document copy request</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.para1">275 Initial communication with the requester, to let them know their request is being processed.</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.toEmail">276 To</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.subject">277 Subject</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.message">278 Message</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.mail">279 Send</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.back">280 Back</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.title">272 Yêu cầu bản sao tài liệu</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.trail">273 Yêu cầu bản sao tài liệu</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.head">274 Yêu cầu bản sao tài liệu</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.para1">275 Khởi tạo liên lạc với người yêu cầu, để cho họ biết yêu cầu đang được xử lý.</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.toEmail">276 Đến</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.subject">277 Chủ đề</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.message">278 Tin nhắn</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.mail">279 Gửi</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactRequester.back">280 Trở lại</message>
 
     <!-- org.dspace.app.xmlui.artifactbrowser.ItemRequestContactAuthor.java -->
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.title">281 Document copy request</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.trail">282 Document copy request</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.head">283 Document copy request</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.para1">284 This is the text to be sent to the applicant (together with the document).</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.toEmail">285 To</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.subject">286 Subject</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.message">287 Message</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.mail">288 Send</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.back">289 Back</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.title">281 Yêu cầu bản sao tài liệu</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.trail">282 Yêu cầu bản sao tài liệu</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.head">283 Yêu cầu bản sao tài liệu</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.para1">284 Đây là đoạn văn bản sẽ được gửi tới người nộp đơn (đi kèm với tài liệu).</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.toEmail">285 Đến</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.subject">286 Chủ đề</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.message">287 Tin nhắn</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.mail">288 Gửi</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestContactAuthor.back">289 Trở lại</message>
 
     <!-- org.dspace.app.xmlui.artifactbrowser.ItemRequestResponseSent.java -->
-    <message key="xmlui.ArtifactBrowser.ItemRequestResponseSent.title">290 Your response has been sent.</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestResponseSent.trail">291 Your response has been sent.</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestResponseSent.head">292 Your response has been sent.</message>
-    <message key="xmlui.ArtifactBrowser.ItemRequestResponseSent.para1">293 Your response has been sent.</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestResponseSent.title">290 Câu trả lời của bạn đã được gửi.</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestResponseSent.trail">291 Câu trả lời của bạn đã được gửi.</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestResponseSent.head">292 Câu trả lời của bạn đã được gửi.</message>
+    <message key="xmlui.ArtifactBrowser.ItemRequestResponseSent.para1">293 Câu trả lời của bạn đã được gửi.</message>
 
 
 	
@@ -451,150 +451,150 @@
 
 
 	<!-- General keys used by the EPerson aspect -->
-	<message key="xmlui.EPerson.trail_new_registration">294 New user registration</message>
-	<message key="xmlui.EPerson.trail_forgot_password">295 Forgot Password</message>
+	<message key="xmlui.EPerson.trail_new_registration">294 Đăng ký người dùng mới</message>
+	<message key="xmlui.EPerson.trail_forgot_password">295 Quên mật khẩu</message>
 
 	<!-- org.dspace.app.xmlui.eperson.CannotRegister.java -->
-	<message key="xmlui.EPerson.CannotRegister.title">296 Registration unavailable</message>
-	<message key="xmlui.EPerson.CannotRegister.head">297 Registration unavailable</message>
-	<message key="xmlui.EPerson.CannotRegister.para1">298 The configuration of this DSpace repository does not allow registration in this context. Please contact the <a href="../contact">site administrator</a> with questions or comments.</message>
+	<message key="xmlui.EPerson.CannotRegister.title">296 Đăng ký không khả dụng</message>
+	<message key="xmlui.EPerson.CannotRegister.head">297 Đăng ký không khả dụng</message>
+	<message key="xmlui.EPerson.CannotRegister.para1">298 Cấu hình của kho dữ liệu DSpace này không cho phép đăng ký trong ngữ cảnh này. Xin hãy liên hệ quản trị viên<a href="../contact">site administrator</a> with questions or comments.</message>
 
 	<!-- org.dspace.app.xmlui.eperson.EditProfile.java -->
-	<message key="xmlui.EPerson.EditProfile.title_update">299 Update Profile</message>
-	<message key="xmlui.EPerson.EditProfile.title_create">300 Create Profile</message>
-	<message key="xmlui.EPerson.EditProfile.trail_update">301 Update Profile</message>
-	<message key="xmlui.EPerson.EditProfile.head_update">302 Update Profile</message>
-	<message key="xmlui.EPerson.EditProfile.head_create">303 Create Profile</message>
-	<message key="xmlui.EPerson.EditProfile.email_address">304 Email Address</message>
-	<message key="xmlui.EPerson.EditProfile.first_name">305 First Name</message>
-	<message key="xmlui.EPerson.EditProfile.last_name">306 Last Name</message>
-	<message key="xmlui.EPerson.EditProfile.telephone">307 Contact Telephone</message>
-        <message key="xmlui.EPerson.EditProfile.Language">308 Language</message>
-	<message key="xmlui.EPerson.EditProfile.subscriptions">309 Subscriptions</message>
-	<message key="xmlui.EPerson.EditProfile.subscriptions_help">310 You may subscribe to collections to receive daily e-mail alerts of new items added. You can subscribe to as many or as few collections as you wish. Another alternative to daily e-mail alerts is to use the RSS feeds available for all collections.</message>
-	<message key="xmlui.EPerson.EditProfile.email_subscriptions">311 Email Subscriptions</message>
-	<message key="xmlui.EPerson.EditProfile.select_collection">312 ( Select Collection )</message>
-	<message key="xmlui.EPerson.EditProfile.update_password_instructions">313 Optionally, you can enter a new password in the box below, and confirm it by typing it again into the second box. It should be at least six characters long.</message>
-	<message key="xmlui.EPerson.EditProfile.create_password_instructions">314 Please enter a password in the box below, and confirm it by typing it again into the second box. It should be at least six characters long.</message>
-	<message key="xmlui.EPerson.EditProfile.password">315 Password</message>
-	<message key="xmlui.EPerson.EditProfile.confirm_password">316 Retype to confirm</message>
-	<message key="xmlui.EPerson.EditProfile.submit_update">317 Complete Registration</message>
-	<message key="xmlui.EPerson.EditProfile.submit_create">318 Update Profile</message>
-	<message key="xmlui.EPerson.EditProfile.error_required">319 This field is required</message>
-	<message key="xmlui.EPerson.EditProfile.error_invalid_password">320 Choose a password at least 6 characters long</message>
-	<message key="xmlui.EPerson.EditProfile.error_unconfirmed_password">321 Please retype your password to confirm</message>
-	<message key="xmlui.EPerson.EditProfile.head_auth">322 Authorization groups you belong to</message>
-	<message key="xmlui.EPerson.EditProfile.head_identify">323 Identify</message>
+	<message key="xmlui.EPerson.EditProfile.title_update">299 Cập nhật hồ sơ</message>
+	<message key="xmlui.EPerson.EditProfile.title_create">300 Tạo hồ sơ</message>
+	<message key="xmlui.EPerson.EditProfile.trail_update">301 Cập nhật hồ sơ</message>
+	<message key="xmlui.EPerson.EditProfile.head_update">302 Cập nhật hồ sơ</message>
+	<message key="xmlui.EPerson.EditProfile.head_create">303 Tạo hồ sơ</message>
+	<message key="xmlui.EPerson.EditProfile.email_address">304 Địa chỉ Email</message>
+	<message key="xmlui.EPerson.EditProfile.first_name">305 Tên</message>
+	<message key="xmlui.EPerson.EditProfile.last_name">306 Họ</message>
+	<message key="xmlui.EPerson.EditProfile.telephone">307 Số điện thoại liên hệ</message>
+        <message key="xmlui.EPerson.EditProfile.Language">308 Ngôn ngữ</message>
+	<message key="xmlui.EPerson.EditProfile.subscriptions">309 Đăng ký nhận tin</message>
+	<message key="xmlui.EPerson.EditProfile.subscriptions_help">310 Bạn có thể đăng ký với bộ sưu tập để nhận email mỗi ngày thông báo về các mục mới được thêm vào. Bạn có thể đăng ký với nhiều bộ sưu tập nếu bạn muốn. Một cách khác để nhận thông báo là thông qua dịch vụ RSS feeds có sẵn trong tất cả các bộ sưu tập</message>
+	<message key="xmlui.EPerson.EditProfile.email_subscriptions">311 Email đăng ký nhận tin</message>
+	<message key="xmlui.EPerson.EditProfile.select_collection">312 ( Chọn bộ sưu tập )</message>
+	<message key="xmlui.EPerson.EditProfile.update_password_instructions">313 Bạn có thể nhập mật khẩu mới trong ô bên dưới nếu muốn, và nhập lại để xác nhận vào ô thứ hai. Mật khẩu nên dài ít nhất 6 ký tự</message>
+	<message key="xmlui.EPerson.EditProfile.create_password_instructions">314 Xin hãy nhập mật khẩu vào ô bên dưới và xác nhận bằng cách nhập lại vào ô thứ hai.Mật khẩu nên có ít nhất 6 ký tự.</message>
+	<message key="xmlui.EPerson.EditProfile.password">315 Mật khẩu</message>
+	<message key="xmlui.EPerson.EditProfile.confirm_password">316 Nhập lại để xác nhận</message>
+	<message key="xmlui.EPerson.EditProfile.submit_update">317 Hoàn tất đăng ký</message>
+	<message key="xmlui.EPerson.EditProfile.submit_create">318 Cập nhật hồ sơ</message>
+	<message key="xmlui.EPerson.EditProfile.error_required">319 Trường dữ liệu này là bắt buộc</message>
+	<message key="xmlui.EPerson.EditProfile.error_invalid_password">320 Chọn mật khẩu dài ít nhất 6 ký tự</message>
+	<message key="xmlui.EPerson.EditProfile.error_unconfirmed_password">321 Xin hãy nhập lại mật khẩu để xác nhận</message>
+	<message key="xmlui.EPerson.EditProfile.head_auth">322 Nhóm ủy quyền bạn thuộc về</message>
+	<message key="xmlui.EPerson.EditProfile.head_identify">323 Định danh</message>
 	<message key="xmlui.EPerson.EditProfile.head_security">324 Security</message>
 
 	<!-- org.dspace.app.xmlui.eperson.EPersonUtils.java -->
-	<message key="xmlui.EPerson.EPersonUtils.register_verify_email">325 Verify Email</message>
-	<message key="xmlui.EPerson.EPersonUtils.register_create_profile">326 Create Profile</message>
-	<message key="xmlui.EPerson.EPersonUtils.register_finished">327 Finished</message>
-	<message key="xmlui.EPerson.EPersonUtils.forgot_verify_email">328 Verify Email</message>
-	<message key="xmlui.EPerson.EPersonUtils.forgot_reset_password">329 Reset Password</message>
-	<message key="xmlui.EPerson.EPersonUtils.forgot_finished">330 Finished</message>
+	<message key="xmlui.EPerson.EPersonUtils.register_verify_email">325 Xác nhận Email</message>
+	<message key="xmlui.EPerson.EPersonUtils.register_create_profile">326 Tạo hồ sơ</message>
+	<message key="xmlui.EPerson.EPersonUtils.register_finished">327 Hoàn tất</message>
+	<message key="xmlui.EPerson.EPersonUtils.forgot_verify_email">328 Xác nhận Email</message>
+	<message key="xmlui.EPerson.EPersonUtils.forgot_reset_password">329 Tạo lại mật khẩu</message>
+	<message key="xmlui.EPerson.EPersonUtils.forgot_finished">330 Hoàn tất</message>
 
 	<!-- org.dspace.app.xmlui.eperson.ForgotPasswordFinished.java -->
-	<message key="xmlui.EPerson.ForgotPasswordFinished.title">331 Password reset</message>
-	<message key="xmlui.EPerson.ForgotPasswordFinished.head">332 Password reset</message>
-	<message key="xmlui.EPerson.ForgotPasswordFinished.para1">333 Your password has been reset.</message>
+	<message key="xmlui.EPerson.ForgotPasswordFinished.title">331 Tạo lại mật khẩu</message>
+	<message key="xmlui.EPerson.ForgotPasswordFinished.head">332 Tạo lại mật khẩu</message>
+	<message key="xmlui.EPerson.ForgotPasswordFinished.para1">333 Mật khẩu đã được tạo lại</message>
 
 	<!-- org.dspace.app.xmlui.eperson.InvalidToken.java -->
-	<message key="xmlui.EPerson.InvalidToken.title">334 Invalid token</message>
-	<message key="xmlui.EPerson.InvalidToken.trail">335 Invalid token</message>
-	<message key="xmlui.EPerson.InvalidToken.head">336 Invalid token</message>
-	<message key="xmlui.EPerson.InvalidToken.para1">337 The URL you provided is invalid. The URL may have been broken across multiple lines in your email client, like this:</message>
-	<message key="xmlui.EPerson.InvalidToken.para2">338 If so, copy and paste the entire URL directly into your browser's address bar, rather than simply clicking on the link. The address bar should then contain something like:</message>
+	<message key="xmlui.EPerson.InvalidToken.title">334 Token không hợp lệ</message>
+	<message key="xmlui.EPerson.InvalidToken.trail">335 Token không hợp lệ</message>
+	<message key="xmlui.EPerson.InvalidToken.head">336 Token không hợp lệ</message>
+	<message key="xmlui.EPerson.InvalidToken.para1">337 Đường dẫn bạn cung cấp không hợp lệ. Đường dẫn có thể đã bị đứt đoạn nhiều dòng ở tại ứng dụng mail của bạn, ví dụ:</message>
+	<message key="xmlui.EPerson.InvalidToken.para2">338 Nếu vậy, sao chép và dán toàn bộ đường dẫn trực tiếp vào thanh địa chỉ của trình duyệt của bạn thay vì nhấn chuột vào đường dẫn. Thanh địa chỉ nên nhìn như thế này:</message>
 
 	<!-- org.dspace.app.xmlui.eperson.Navigation.java -->
-	<message key="xmlui.EPerson.Navigation.my_account">339 My Account</message>
-	<message key="xmlui.EPerson.Navigation.profile">340 Profile</message>
-	<message key="xmlui.EPerson.Navigation.logout">341 Logout</message>
-	<message key="xmlui.EPerson.Navigation.login">342 Login</message>
-	<message key="xmlui.EPerson.Navigation.register">343 Register</message>
+	<message key="xmlui.EPerson.Navigation.my_account">339 Tài khoản của tôi</message>
+	<message key="xmlui.EPerson.Navigation.profile">340 Hồ sơ</message>
+	<message key="xmlui.EPerson.Navigation.logout">341 Đăng xuất</message>
+	<message key="xmlui.EPerson.Navigation.login">342 Đăng nhập</message>
+	<message key="xmlui.EPerson.Navigation.register">343 Đăng ký</message>
 
 	<!-- org.dspace.app.xmlui.eperson.PasswordLogin.java -->
-	<message key="xmlui.EPerson.PasswordLogin.title">344 Sign in</message>
-	<message key="xmlui.EPerson.PasswordLogin.trail">345 Sign in</message>
-	<message key="xmlui.EPerson.PasswordLogin.head1">346 Sign in to DSpace</message>
-	<message key="xmlui.EPerson.PasswordLogin.email_address">347 E-Mail Address</message>
-	<message key="xmlui.EPerson.PasswordLogin.error_bad_login">348 The email address and/or password supplied were not valid.</message>
-	<message key="xmlui.EPerson.PasswordLogin.password">349 Password</message>
-	<message key="xmlui.EPerson.PasswordLogin.forgot_link">350  Forgot your password?</message>
-	<message key="xmlui.EPerson.PasswordLogin.submit">351 Sign in</message>
-	<message key="xmlui.EPerson.PasswordLogin.head2">352 Register new user</message>
-	<message key="xmlui.EPerson.PasswordLogin.para1">353 Register an account to subscribe to collections for email updates, and submit new items to DSpace.</message>
-	<message key="xmlui.EPerson.PasswordLogin.register_link">354 Click here to register.</message>
+	<message key="xmlui.EPerson.PasswordLogin.title">344 Đăng nhập</message>
+	<message key="xmlui.EPerson.PasswordLogin.trail">345 Đăng nhập</message>
+	<message key="xmlui.EPerson.PasswordLogin.head1">346 Đăng nhập vào DSpace</message>
+	<message key="xmlui.EPerson.PasswordLogin.email_address">347 Địa chỉ E-Mail</message>
+	<message key="xmlui.EPerson.PasswordLogin.error_bad_login">348 Địa chỉ email và/hoặc mật khẩu được cung cấp không hợp lệ</message>
+	<message key="xmlui.EPerson.PasswordLogin.password">349 Mật khẩu</message>
+	<message key="xmlui.EPerson.PasswordLogin.forgot_link">350  Quên mật khẩu?</message>
+	<message key="xmlui.EPerson.PasswordLogin.submit">351 Đăng nhập</message>
+	<message key="xmlui.EPerson.PasswordLogin.head2">352 Đăng ký người dùng mới</message>
+	<message key="xmlui.EPerson.PasswordLogin.para1">353 Đăng ký tài khoản cho phép đăng ký với các bộ sưu tập để nhận các thông tin cập nhật và tải các mục mới lên DSpace.</message>
+	<message key="xmlui.EPerson.PasswordLogin.register_link">354 Nhấn vào đây để đăng ký.</message>
 
 	<!-- org.dspace.app.xmlui.eperson.LDAPLogin.java -->
-	<message key="xmlui.EPerson.LDAPLogin.title">355 Sign in</message>
-	<message key="xmlui.EPerson.LDAPLogin.trail">356 Sign in</message>
-	<message key="xmlui.EPerson.LDAPLogin.head1">357 Sign in to DSpace</message>
-	<message key="xmlui.EPerson.LDAPLogin.username">358 User Name</message>
-	<message key="xmlui.EPerson.LDAPLogin.error_bad_login">359 The user name and/or password supplied were not valid.</message>
-	<message key="xmlui.EPerson.LDAPLogin.password">360 Password</message>
-	<message key="xmlui.EPerson.LDAPLogin.submit">361 Sign in</message>
+	<message key="xmlui.EPerson.LDAPLogin.title">355 Đăng nhập</message>
+	<message key="xmlui.EPerson.LDAPLogin.trail">356 Đăng nhập</message>
+	<message key="xmlui.EPerson.LDAPLogin.head1">357 Đăng nhập vào DSpace</message>
+	<message key="xmlui.EPerson.LDAPLogin.username">358 Tên người dùng</message>
+	<message key="xmlui.EPerson.LDAPLogin.error_bad_login">359 Tên người dùng và/hoặc mật khẩu không hợp lệ.</message>
+	<message key="xmlui.EPerson.LDAPLogin.password">360 Mật khẩu</message>
+	<message key="xmlui.EPerson.LDAPLogin.submit">361 Đăng nhập</message>
 
 	<!-- org.dspace.app.xmlui.eperson.LoginChooser.java -->
-	<message key="xmlui.EPerson.LoginChooser.title">362 Choose a Login Method</message>
-	<message key="xmlui.EPerson.LoginChooser.trail">363 Choose Login</message>
-	<message key="xmlui.EPerson.LoginChooser.head1">364 Choose a Login Method</message>
-	<message key="xmlui.EPerson.LoginChooser.para1">365 Log in via:</message>
-	<message key="org.dspace.authenticate.ShibAuthentication.title">366 Shibboleth Authentication</message>
-	<message key="org.dspace.eperson.LDAPAuthentication.title">367 LDAP Authentication</message>
-	<message key="org.dspace.eperson.PasswordAuthentication.title">368 Password Authentication</message>
-	<message key="org.dspace.eperson.X509Authentication.title">369 Web Certificate Authentication</message>
+	<message key="xmlui.EPerson.LoginChooser.title">362 Chọn cách thức đăng nhập</message>
+	<message key="xmlui.EPerson.LoginChooser.trail">363 Chọn cách đăng nhập</message>
+	<message key="xmlui.EPerson.LoginChooser.head1">364 Chọn cách thức đăng nhập</message>
+	<message key="xmlui.EPerson.LoginChooser.para1">365 Đăng nhập qua:</message>
+	<message key="org.dspace.authenticate.ShibAuthentication.title">366 Xác thực Shibboleth</message>
+	<message key="org.dspace.eperson.LDAPAuthentication.title">367 Xác thực LDAP</message>
+	<message key="org.dspace.eperson.PasswordAuthentication.title">368 Xác thực mật khẩu</message>
+	<message key="org.dspace.eperson.X509Authentication.title">369 Chứng chỉ xác thực Web</message>
 
 	<!-- org.dspace.app.xmlui.eperson.FailedAuthentication -->
-	<message key="xmlui.EPerson.FailedAuthentication.BadCreds">370 The credentials provided are invalid.</message>
-	<message key="xmlui.EPerson.FailedAuthentication.BadArgs">371 Unable to authenticate due to invalid arguments received.</message>
-	<message key="xmlui.EPerson.FailedAuthentication.NoSuchUser">372 A user was not found with the credentials provided.</message>
-	<message key="xmlui.EPerson.FailedAuthentication.title">373 Authentication Failed</message>
-    <message key="xmlui.EPerson.FailedAuthentication.trail">374 Failed Authentication</message>
-    <message key="xmlui.EPerson.FailedAuthentication.h1">375 Authentication Failed</message>
+	<message key="xmlui.EPerson.FailedAuthentication.BadCreds">370 Thông tin đăng nhập cung cấp không hợp lệ.</message>
+	<message key="xmlui.EPerson.FailedAuthentication.BadArgs">371 Không thể xác thực do nhận được các đối số không hợp lệ.</message>
+	<message key="xmlui.EPerson.FailedAuthentication.NoSuchUser">372 Không tìm thấy người dùng với thông tin đăng nhập đã được cung cấp.</message>
+	<message key="xmlui.EPerson.FailedAuthentication.title">373 Xác thực thất bại</message>
+    <message key="xmlui.EPerson.FailedAuthentication.trail">374 Xác thực thất bại</message>
+    <message key="xmlui.EPerson.FailedAuthentication.h1">375 Xác thực thất bại</message>
 
 	<!-- Login xml files -->
-	<message key="xmlui.eperson.noAuthMethod.head">376 No Authentication Method Found</message>
-	<message key="xmlui.eperson.noAuthMethod.p1">377 No authentication method was found.  Please contact the site administrator.</message>
-	<message key="xmlui.eperson.shibbLoginFailure.head">378 Shibboleth Login Failed</message>
-	<message key="xmlui.eperson.shibbLoginFailure.p1">379 Shibboleth authentication not available at this time. Please contact the site administrator.</message>
+	<message key="xmlui.eperson.noAuthMethod.head">376 Không tìm thấy phương pháp xác thực</message>
+	<message key="xmlui.eperson.noAuthMethod.p1">377 Không tìm thấy phương pháp xác thực. Hãy liên hệ quản trị viên.</message>
+	<message key="xmlui.eperson.shibbLoginFailure.head">378 Đăng nhập bằng Shibboleth thất bại</message>
+	<message key="xmlui.eperson.shibbLoginFailure.p1">379 Xác thực qua Shibboleth không khả dụng. Hãy liên hệ quản trị viên.</message>
 
 	<!-- org.dspace.app.xmlui.eperson.ProfileUpdated.java -->
-	<message key="xmlui.EPerson.ProfileUpdated.title">380 Profile updated</message>
-	<message key="xmlui.EPerson.ProfileUpdated.trail">381 Update profile</message>
-	<message key="xmlui.EPerson.ProfileUpdated.head">382 Profile updated</message>
-	<message key="xmlui.EPerson.ProfileUpdated.para1">383 Your profile information has been updated.</message>
+	<message key="xmlui.EPerson.ProfileUpdated.title">380 Hồ sơ đã được cập nhật</message>
+	<message key="xmlui.EPerson.ProfileUpdated.trail">381 Cập nhật hồ sơ</message>
+	<message key="xmlui.EPerson.ProfileUpdated.head">382 Hồ sơ đã được cập nhật</message>
+	<message key="xmlui.EPerson.ProfileUpdated.para1">383 Thông tin hồ sơ của bạn đã được cập nhật.</message>
 
 	<!-- org.dspace.app.xmlui.eperson.RegistrationFinished.java -->
-	<message key="xmlui.EPerson.RegistrationFinished.title">384 Registration finished</message>
-	<message key="xmlui.EPerson.RegistrationFinished.head">385 Registration Finished</message>
-	<message key="xmlui.EPerson.RegistrationFinished.para1">386 You're now registered to use the DSpace system.  You can subscribe to collections to receive email updates about new items.</message>
+	<message key="xmlui.EPerson.RegistrationFinished.title">384 Đăng ký hoàn tất</message>
+	<message key="xmlui.EPerson.RegistrationFinished.head">385 Đăng ký hoàn tất</message>
+	<message key="xmlui.EPerson.RegistrationFinished.para1">386 Bạn đã đăng ký sử dụng hệ thống DSpace. Bạn có thể đăng ký với các bộ sưu tập để nhận email cập nhật về các mục mới thêm.</message>
 
 	<!-- org.dspace.app.xmlui.eperson.ResetPassword.java -->
-	<message key="xmlui.EPerson.ResetPassword.title">387 Reset password</message>
-	<message key="xmlui.EPerson.ResetPassword.head">388 Reset password</message>
-	<message key="xmlui.EPerson.ResetPassword.para1">389 Please enter a new password into the box below, and confirm it by typing it again into the second box. It should be at least six characters long.</message>
-	<message key="xmlui.EPerson.ResetPassword.email_address">390 Email Address</message>
-	<message key="xmlui.EPerson.ResetPassword.new_password">391 New password</message>
-	<message key="xmlui.EPerson.ResetPassword.confirm_password">392 Retype to Confirm</message>
-	<message key="xmlui.EPerson.ResetPassword.submit">393 Reset password</message>
-	<message key="xmlui.EPerson.ResetPassword.error_invalid_password">394 Choose a password at least 6 characters long</message>
-	<message key="xmlui.EPerson.ResetPassword.error_unconfirmed_password">395 Please retype your password to confirm</message>
+	<message key="xmlui.EPerson.ResetPassword.title">387 Tạo lại mật khẩu</message>
+	<message key="xmlui.EPerson.ResetPassword.head">388 Tạo lại mật khẩu</message>
+	<message key="xmlui.EPerson.ResetPassword.para1">389 Mời bạn nhập mật khẩu mới vào ô bên dưới.</message>
+	<message key="xmlui.EPerson.ResetPassword.email_address">390 Địa chỉ email</message>
+	<message key="xmlui.EPerson.ResetPassword.new_password">391 Mật khẩu mới</message>
+	<message key="xmlui.EPerson.ResetPassword.confirm_password">392 Nhập lại để xác nhận</message>
+	<message key="xmlui.EPerson.ResetPassword.submit">393 Tạo lại mật khẩu</message>
+	<message key="xmlui.EPerson.ResetPassword.error_invalid_password">394 Chọn mật khẩu dài ít nhất 6 ký tự</message>
+	<message key="xmlui.EPerson.ResetPassword.error_unconfirmed_password">395 Nhập lại mật khẩu để xác nhận</message>
 
 	<!-- org.dspace.app.xmlui.eperson.StartForgotPassword.java -->
-	<message key="xmlui.EPerson.StartForgotPassword.title">396 Forgot Password</message>
-	<message key="xmlui.EPerson.StartForgotPassword.head">397 Forgot Password</message>
-	<message key="xmlui.EPerson.StartForgotPassword.para1">398 Enter the email address you provided when you registered with DSpace. An email will be sent to that address with further instructions.</message>
-	<message key="xmlui.EPerson.StartForgotPassword.email_address">399 Email Address</message>
-	<message key="xmlui.EPerson.StartForgotPassword.email_address_help">400 Enter the same address used when registering.</message>
-	<message key="xmlui.EPerson.StartForgotPassword.error_not_found">401 Email address not found.</message>
-	<message key="xmlui.EPerson.StartForgotPassword.submit">402 Send info</message>
+	<message key="xmlui.EPerson.StartForgotPassword.title">396 Quên mật khẩu</message>
+	<message key="xmlui.EPerson.StartForgotPassword.head">397 Quên mật khẩu</message>
+	<message key="xmlui.EPerson.StartForgotPassword.para1">398 Nhập địa chỉ email bạn sử dụng khi đăng ký DSpace. Một email sẽ được gửi tới địa chỉ đó kèm theo hướng dẫn.</message>
+	<message key="xmlui.EPerson.StartForgotPassword.email_address">399 Địa chỉ email</message>
+	<message key="xmlui.EPerson.StartForgotPassword.email_address_help">400 Nhập địa chỉ email bạn sử dụng khi đăng ký.</message>
+	<message key="xmlui.EPerson.StartForgotPassword.error_not_found">401 Không tìm thấy địa chỉ email.</message>
+	<message key="xmlui.EPerson.StartForgotPassword.submit">402 Gửi thông tin</message>
 
 	<!-- org.dspace.app.xmlui.eperson.StartRegistration.java -->
-	<message key="xmlui.EPerson.StartRegistration.title">403 New user registration</message>
-	<message key="xmlui.EPerson.StartRegistration.head1">404 Email already in use</message>
-	<message key="xmlui.EPerson.StartRegistration.para1">405 That email address is already in use by another account. If you want to reset the password for this account, click the reset password button below.</message>
+	<message key="xmlui.EPerson.StartRegistration.title">403 Đăng ký người dùng mới</message>
+	<message key="xmlui.EPerson.StartRegistration.head1">404 Email đã được sử dụng</message>
+	<message key="xmlui.EPerson.StartRegistration.para1">405 Địa chỉ email đã được sử dụng bởi tài khoản khác. Nếu muốn tạo lại mật khẩu cho tài khoản này, nhấn nút Tạo lại mật khẩu bên dưới.</message>
 	<message key="xmlui.EPerson.StartRegistration.reset_password_for">406 Reset password for</message>
 	<message key="xmlui.EPerson.StartRegistration.submit_reset">407 Reset password</message>
 	<message key="xmlui.EPerson.StartRegistration.head2">408 New user registration</message>
