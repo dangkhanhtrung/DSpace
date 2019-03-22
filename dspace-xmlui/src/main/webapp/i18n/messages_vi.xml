@@ -33,7 +33,7 @@
 	<message key="xmlui.general.update">8 Cập nhật</message>
 	<message key="xmlui.general.delete">9 Xóa</message>
 	<message key="xmlui.general.next">10 Tiếp tục</message>
-	<message key="xmlui.general.untitled">11 Không nhan đề</message>
+	<message key="xmlui.general.untitled">11 Không tiêu đề</message>
         <message key="xmlui.general.perform">12 Thực thi</message>
         <message key="xmlui.general.queue">13 Hàng đợi</message>
 
@@ -98,9 +98,9 @@
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.no_results">34 Không tìm thấy kết quả.</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.all_of_dspace">35 Toàn bộ DSpace</message>
 
-   <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.title">36 Nhan đề</message>
+   <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.title">36 Tiêu đề</message>
    <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dateissued">37 Ngày xuất bản</message>
-   <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dateaccessioned">38 Ngày gửi lên / đệ trình </message>
+   <message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.dateaccessioned">38 Ngày gửi lên</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by.relevance">39 Tài liệu liên quan</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.sort_by">40 Sắp xếp mục theo</message>
 	<message key="xmlui.ArtifactBrowser.AbstractSearch.order">41 Theo thứ tự</message>
@@ -145,69 +145,69 @@
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.ConfigureableBrowse.java -->
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.starts_with">74 Hoặc nhập vào vài ký tự đầu tiên:</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.starts_with_help">75 Duyệt những mục bắt đầu bằng ký tự</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.starts_with_help">75 Duyệt mục bắt đầu bằng ký tự</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.jump_select">76 Nhảy tới một điểm chỉ mục:</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.choose_month">77 (Chọn tháng)</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.choose_year">78 (Chọn năm)</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.jump_year">79 Or type in a year: </message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.jump_year_help">80 Browse for items that are from the given year.</message>
-        <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.no_results">81 Sorry, there are no results for this browse.</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.sort_by">82  Sort by: </message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.order">83  Order: </message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.rpp">84  Results: </message><!-- /Page -->
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.etal">85  Authors/Item: </message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.jump_year">79 Hoặc nhập một năm: </message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.jump_year_help">80 Duyệt mục theo năm</message>
+        <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.no_results">81 Xin lỗi, không có kết cho lần duyệt này</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.sort_by">82  Sắp xếp theo </message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.order">83  Thứ tự: </message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.rpp">84  Kết quả: </message><!-- /Page -->
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.etal">85  Tác giả/ Mục </message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.etal.all">86 All</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.etal.all">86 Toàn bộ</message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.title">87 title</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.dateissued">88 issue date</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.dateaccessioned">89 submit date</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.title">87 Tiêu đề</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.dateissued">88 Ngày xuất bản</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sort_by.dateaccessioned">89 Ngày gửi lên</message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.order.asc">90 ascending</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.order.desc">91 descending</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.order.asc">90 Tăng dần</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.order.desc">91 Giảm dần</message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.author.column_heading">92 Authors Name</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.subject.column_heading">93 Subject</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.author.column_heading">92 Tên tác giả</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.subject.column_heading">93 Lĩnh vực</message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.author">94 Browsing {0} by Author {1}</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.author">95 Browsing {0} by Author</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.author">94 Duyệt {0} theo Tác giả {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.author">95 Duyệt {0} theo Tác giả</message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.subject">96 Browsing {0} by Subject {1}</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.subject">97 Browsing {0} by Subject</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.subject">96 Duyệt {0} theo Lĩnh vực {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.subject">97 Duyệt {0} theo Lĩnh vưc</message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.title">98 Browsing {0} by Title {1}</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.title">99 Browsing {0} by Title</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.title">98 Duyệt {0} theo tiêu đề {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.title">99 Duyệt {0} theo tiêu đề</message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.dateissued">100 Browsing {0} by Issue Date {1}</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.dateissued">101 Browsing {0} by Issue Date</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.dateissued">100 Duyệt {0} theo Ngày xuất bản {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.dateissued">101 Duyệt {0} theo Ngày xuất bản</message>
 
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.dateaccessioned">102 Browsing {0} by Submit Date {1}</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.dateaccessioned">103 Browsing {0} by Submit Date</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.dateaccessioned">102 Duyệt {0} theo Ngày tải lên {1}</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.dateaccessioned">103 Duyệt {0} theo Ngày tải lên</message>
 
 
 	<!-- org.dspace.app.xmlui.administrative.WithdrawnItems.java -->
-	<message key="xmlui.Administrative.WithdrawnItems.title.item.title">104 Withdrawn Items by Title</message>
-	<message key="xmlui.Administrative.WithdrawnItems.trail.item.title">105 Withdrawn Items by Title</message>
+	<message key="xmlui.Administrative.WithdrawnItems.title.item.title">104 Rút lại mục theo tiêu đề</message>
+	<message key="xmlui.Administrative.WithdrawnItems.trail.item.title">105 Rút lại mục theo tiêu đề</message>
 
-	<message key="xmlui.Administrative.WithdrawnItems.title.item.dateissued">106 Withdrawn Items by Issue Date</message>
-	<message key="xmlui.Administrative.WithdrawnItems.trail.item.dateissued">107 Withdrawn Items by Issue Date</message>
+	<message key="xmlui.Administrative.WithdrawnItems.title.item.dateissued">106 Rút lại mục theo Ngày xuất bản</message>
+	<message key="xmlui.Administrative.WithdrawnItems.trail.item.dateissued">107 Rút lại mục theo Ngày xuất bản</message>
 
-	<message key="xmlui.Administrative.WithdrawnItems.title.item.dateaccessioned">108 Withdrawn Items by Submit Date</message>
-	<message key="xmlui.Administrative.WithdrawnItems.trail.item.dateaccessioned">109 Withdrawn Items by Submit Date</message>
+	<message key="xmlui.Administrative.WithdrawnItems.title.item.dateaccessioned">108 Rút lại mục theo Ngày tải lên</message>
+	<message key="xmlui.Administrative.WithdrawnItems.trail.item.dateaccessioned">109 Rút lại mục theo Ngày tải lên</message>
 
 	<!-- org.dspace.app.xmlui.administrative.PrivateItems.java -->
-	<message key="xmlui.Administrative.PrivateItems.title.item.title">110 Private Items by Title</message>
-	<message key="xmlui.Administrative.PrivateItems.trail.item.title">111 Private Items by Title</message>
+	<message key="xmlui.Administrative.PrivateItems.title.item.title">110 Mục riêng theo tiêu đề</message>
+	<message key="xmlui.Administrative.PrivateItems.trail.item.title">111 Mục riêng theo tiêu đề</message>
 
-	<message key="xmlui.Administrative.PrivateItems.title.item.dateissued">112 Private Items by Issue Date</message>
-	<message key="xmlui.Administrative.PrivateItems.trail.item.dateissued">113 Private Items by Issue Date</message>
+	<message key="xmlui.Administrative.PrivateItems.title.item.dateissued">112 Mục riêng theo ngày xuất bản</message>
+	<message key="xmlui.Administrative.PrivateItems.trail.item.dateissued">113 Mục riêng theo ngày xuất bản</message>
 
-	<message key="xmlui.Administrative.PrivateItems.title.item.dateaccessioned">114 Private Items by Submit Date</message>
-	<message key="xmlui.Administrative.PrivateItems.trail.item.dateaccessioned">115 Private Items by Submit Date</message>
+	<message key="xmlui.Administrative.PrivateItems.title.item.dateaccessioned">114 Mục riêng theo ngày tải lên</message>
+	<message key="xmlui.Administrative.PrivateItems.trail.item.dateaccessioned">115 Mục riêng theo ngày tải lên</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.CollectionViewer.java -->
-	<message key="xmlui.ArtifactBrowser.CollectionViewer.search_scope">116 Search Scope</message>
-	<message key="xmlui.ArtifactBrowser.CollectionViewer.all_of_dspace">117 All of DSpace</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.search_scope">116 Phạm vi tìm kiếm</message>
+	<message key="xmlui.ArtifactBrowser.CollectionViewer.all_of_dspace">117 Toàn bộ DSpace</message>
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.full_text_search">118 Search within this collection:</message>
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.head_browse">119 Browse by</message>
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.browse_titles">120 Titles</message>
