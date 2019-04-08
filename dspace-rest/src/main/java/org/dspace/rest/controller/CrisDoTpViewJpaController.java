@@ -30,36 +30,27 @@ import org.dspace.rest.CrisDoTpView;
 public class CrisDoTpViewJpaController {
     
     private static Logger log = Logger.getLogger(CrisDoTpViewJpaController.class);
-    
-    @PersistenceContext(unitName = "org.dspace_dspace-rest_war_CRIS-5.10.0-SNAPSHOTPU")
-    protected EntityManager em;
-    
-    @PersistenceUnit(unitName = "org.dspace_dspace-rest_war_CRIS-5.10.0-SNAPSHOTPU")
-    private EntityManagerFactory entityManagerFactory;
-    
-    @PersistenceContext(unitName = "my_dste")
+
+    @PersistenceContext(unitName = "VDCNet-ejbPU")
     protected EntityManager emte;
     
-    @PersistenceUnit(unitName = "my_dste")
+    @PersistenceUnit(unitName = "VDCNet-ejbPU")
     private EntityManagerFactory entityManagerFactoryte;
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public List<CrisDoTpView> getCollection(@Context HttpHeaders headers, @Context HttpServletRequest request) throws WebApplicationException
     {
-        System.out.println("emte: " + emte);
+        System.out.println("emteemteemte: " + emte);
         System.out.println("entityManagerFactoryte: " + entityManagerFactoryte);
-        System.out.println("entityManagerFactory: " + entityManagerFactory);
-        System.out.println("emememem: " + em);
         try {
-            System.out.println("em: start " + em);
             TypedQuery<CrisDoTpView> query =
-            em.createNamedQuery("CrisDoTpView.findAll", CrisDoTpView.class);
+            emte.createNamedQuery("CrisDoTpView.findAll", CrisDoTpView.class);
             List<CrisDoTpView> results = query.getResultList();
             System.out.println("List<CrisDoTpView>: " + results);
             return results;
         } finally {
-            em.close();
+            emte.close();
         }
         
     }
