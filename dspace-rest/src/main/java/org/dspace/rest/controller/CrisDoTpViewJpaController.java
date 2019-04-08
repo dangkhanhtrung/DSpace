@@ -44,7 +44,7 @@ public class CrisDoTpViewJpaController {
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public List<CrisDoTpView> getCollection(@Context Context context, @Context HttpHeaders headers, @Context HttpServletRequest request) throws WebApplicationException
     {
-        EntityManager entityManager = Persistence.createEntityManagerFactory("PERSISTENCE_UNIT_NAME").createEntityManager();
+        EntityManager entityManager = Persistence.createEntityManagerFactory("org.dspace_dspace-rest_war_CRIS-5.10.0-SNAPSHOTPU").createEntityManager();
 //        SessionFactory sessionFactory = HibernateUti.getSessionFactory();
 //        Session session = sessionFactory.getCurrentSession();
         System.out.println("entityManager: " + entityManager);
