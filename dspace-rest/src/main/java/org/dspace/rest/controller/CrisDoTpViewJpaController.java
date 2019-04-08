@@ -8,7 +8,9 @@ package org.dspace.rest.controller;
 import java.sql.SQLException;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.DefaultValue;
@@ -41,19 +43,25 @@ public class CrisDoTpViewJpaController {
     
     private static Logger log = Logger.getLogger(CrisDoTpViewJpaController.class);
     
-    @PersistenceContext
-    EntityManager em;
+    @PersistenceUnit
+    private EntityManagerFactory entityManagerFactory;
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public List<CrisDoTpView> getCollection(@Context HttpHeaders headers, @Context HttpServletRequest request) throws WebApplicationException
     {
-        System.out.println("List<CrisDoTpView>: start ");
-        TypedQuery<CrisDoTpView> query =
-        em.createNamedQuery("CrisDoTpView.findAll", CrisDoTpView.class);
-        List<CrisDoTpView> results = query.getResultList();
-        System.out.println("List<CrisDoTpView>: " + results);
-        return results;
+        EntityManager em = entityManagerFactory.createEntityManager();
+        try {
+            System.out.println("em: start " + em);
+            TypedQuery<CrisDoTpView> query =
+            em.createNamedQuery("CrisDoTpView.findAll", CrisDoTpView.class);
+            List<CrisDoTpView> results = query.getResultList();
+            System.out.println("List<CrisDoTpView>: " + results);
+            return results;
+        } finally {
+            em.close();
+        }
+        
     }
     
     @GET
