@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--
 
     The contents of this file are subject to the license and copyright
@@ -7,12 +7,7 @@
 
     http://www.dspace.org/license/
 
--->
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://java.sun.com/xml/ns/javaee"
-         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-         id="WebApp_ID" version="2.5">
+--><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="WebApp_ID" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
     <filter>
         <filter-name>dspace.request</filter-name>
@@ -41,7 +36,7 @@
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
     
-    <!-- Security settings and mapping -->
+    <!-- Security settings and mapping
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>DSpace REST API</web-resource-name>
@@ -51,7 +46,7 @@
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>
         </user-data-constraint>
     </security-constraint>
-    
+     -->
     <!-- DSpace Configuration Information -->
     <context-param>
         <param-name>dspace-config</param-name>
@@ -97,4 +92,8 @@
         </listener-class>
     </listener>
 
+<persistence-unit-ref>
+<persistence-unit-ref-name>persistence-factory</persistence-unit-ref-name>
+<persistence-unit-name>org.dspace_dspace-rest_war_CRIS-5.10.0-SNAPSHOTPU</persistence-unit-name>
+</persistence-unit-ref>
 </web-app>
