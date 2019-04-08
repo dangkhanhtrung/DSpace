@@ -7,7 +7,9 @@ package org.dspace.rest.controller;
 
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
@@ -31,12 +33,16 @@ public class CrisDoTpViewJpaController {
     
     @PersistenceContext(unitName = "org.dspace_dspace-rest_war_CRIS-5.10.0-SNAPSHOTPU")
     protected EntityManager em;
+    
+    @PersistenceUnit(unitName = "org.dspace_dspace-rest_war_CRIS-5.10.0-SNAPSHOTPU")
+    private EntityManagerFactory entityManagerFactory;
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public List<CrisDoTpView> getCollection(@Context HttpHeaders headers, @Context HttpServletRequest request) throws WebApplicationException
     {
         
+        System.out.println("entityManagerFactory: " + entityManagerFactory);
         System.out.println("emememem: " + em);
         try {
             System.out.println("em: start " + em);
