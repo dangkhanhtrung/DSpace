@@ -8,6 +8,7 @@ package org.dspace.rest.controller;
 import java.sql.SQLException;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.DefaultValue;
@@ -28,6 +29,8 @@ import org.dspace.rest.common.Collection;
 import org.dspace.rest.exceptions.ContextException;
 import org.dspace.usage.UsageEvent;
 import org.eclipse.persistence.internal.jpa.EntityManagerImpl;
+import org.eclipse.persistence.sessions.factories.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -38,14 +41,8 @@ public class CrisDoTpViewJpaController {
     
     private static Logger log = Logger.getLogger(CrisDoTpViewJpaController.class);
     
-    protected EntityManager em;
-
-    public CrisDoTpViewJpaController(EntityManager em) {
-      this.em = em;
-    }
-
-    public CrisDoTpViewJpaController() {
-    }
+    @PersistenceContext
+    EntityManager em;
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
