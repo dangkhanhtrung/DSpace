@@ -5,34 +5,20 @@
  */
 package org.dspace.rest.controller;
 
-import java.sql.SQLException;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
 import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
-import org.dspace.rest.CollectionsResource;
 import org.dspace.rest.CrisDoTpView;
-import org.dspace.rest.common.Collection;
-import org.dspace.rest.exceptions.ContextException;
-import org.dspace.usage.UsageEvent;
-import org.eclipse.persistence.internal.jpa.EntityManagerImpl;
-import org.eclipse.persistence.sessions.factories.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -43,14 +29,15 @@ public class CrisDoTpViewJpaController {
     
     private static Logger log = Logger.getLogger(CrisDoTpViewJpaController.class);
     
-    @PersistenceUnit
-    private EntityManagerFactory entityManagerFactory;
+    @PersistenceContext(unitName = "org.dspace_dspace-rest_war_CRIS-5.10.0-SNAPSHOTPU")
+    protected EntityManager em;
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public List<CrisDoTpView> getCollection(@Context HttpHeaders headers, @Context HttpServletRequest request) throws WebApplicationException
     {
-        EntityManager em = entityManagerFactory.createEntityManager();
+        
+        System.out.println("emememem: " + em);
         try {
             System.out.println("em: start " + em);
             TypedQuery<CrisDoTpView> query =
