@@ -37,6 +37,7 @@ import org.dspace.content.WorkspaceItem;
 import org.dspace.content.service.ItemService;
 import org.dspace.core.ConfigurationManager;
 import org.dspace.core.LogManager;
+import static org.dspace.rest.Resource.createContext;
 import org.dspace.rest.common.Collection;
 import org.dspace.rest.common.Item;
 import org.dspace.rest.common.MetadataEntry;
@@ -60,8 +61,12 @@ public class CrisDoTpResource extends Resource
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public String getAllCrisDoTp(@Context HttpHeaders headers, @Context HttpServletRequest request)
-            throws WebApplicationException, SQLException
+    public String getAllCrisDoTp(@PathParam("collection_id") Integer collectionId,
+            @QueryParam("expand") String expand, @QueryParam("limit") @DefaultValue("100") Integer limit,
+            @QueryParam("offset") @DefaultValue("0") Integer offset, @QueryParam("userIP") String user_ip,
+            @QueryParam("userAgent") String user_agent, @QueryParam("xforwardedfor") String xforwardedfor,
+            @Context HttpHeaders headers, @Context HttpServletRequest request)
+            throws WebApplicationException, SQLException, ContextException
     {
 
         TableRow row = DatabaseManager.row("cris_do_tp");
@@ -79,6 +84,15 @@ public class CrisDoTpResource extends Resource
         row = DatabaseManager.row("collection");
         
         System.out.println("collection: " + row);
+        
+        org.dspace.core.Context context = null;
+        
+        context = createContext(getUser(headers));
+        
+        row = DatabaseManager.querySingleTable(context,"cris_do_tp",
+                "SELECT * FROM cris_do_tp WHERE 1= 1", null);
+        
+        System.out.println("querySingleTable: " + row);
         
         return "ok";
     }
