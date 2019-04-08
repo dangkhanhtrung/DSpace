@@ -73,42 +73,49 @@ public class CrisDoTpResource extends Resource
             throws WebApplicationException, SQLException, ContextException
     {
 
+         log.info("Reading all collections.(offset=" + offset + ",limit=" + limit + ")");
         org.dspace.core.Context context = null;
-        TableRowIterator tri = null;
-        try {
-            context = createContext(getUser(headers));
-            
-            String query = "SELECT c.* FROM cris_do_tp c ";
-         
-            tri = DatabaseManager.query(context,
-                    query,
-                    null
-            );
-        } catch (SQLException e) {
-            log.error("Find all cris_do_tp - ",e);
-            throw e;
-        }
-
-        List<Community> communities = new ArrayList<Community>();
+        List<Collection> collections = new ArrayList<Collection>();
 
         try
         {
-            while (tri.hasNext())
-            {
-                TableRow rowd = tri.next(context);
+            context = createContext(getUser(headers));
 
-                System.out.println("row label: " + rowd.getStringColumn("label"));
-                System.out.println("row shortname: " + rowd.getStringColumn("shortname"));
+            if (!((limit != null) && (limit >= 0) && (offset != null) && (offset >= 0)))
+            {
+                log.warn("Paging was badly set.");
+                limit = 100;
+                offset = 0;
             }
+
+            org.dspace.content.Collection[] dspaceCollections = org.dspace.content.Collection.findAll(context, limit, offset);
+            for(org.dspace.content.Collection dspaceCollection : dspaceCollections)
+            {
+                if (AuthorizeManager.authorizeActionBoolean(context, dspaceCollection, org.dspace.core.Constants.READ))
+                {
+                    Collection collection = new org.dspace.rest.common.Collection(dspaceCollection, null, context, limit,
+                            offset, servletContext);
+                    collections.add(collection);
+                    writeStats(dspaceCollection, UsageEvent.Action.VIEW, user_ip, user_agent,
+                            xforwardedfor, headers, request, context);
+                }
+            }
+            context.complete();
+        }
+        catch (SQLException e)
+        {
+            processException("Something went wrong while reading collections from database. Message: " + e, context);
+        }
+        catch (ContextException e)
+        {
+            processException("Something went wrong while reading collections, ContextError. Message: " + e.getMessage(), context);
         }
         finally
         {
-            // close the TableRowIterator to free up resources
-            if (tri != null)
-            {
-                tri.close();
-            }
+            processFinally(context);
         }
+
+        log.trace("All collections were successfully read.");
         
         return "ok";
     }
