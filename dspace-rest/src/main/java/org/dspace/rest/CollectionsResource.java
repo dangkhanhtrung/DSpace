@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
@@ -777,5 +779,36 @@ public class CollectionsResource extends Resource
             processException("Something get wrong while finding collection(id=" + id + "). SQLException, Message: " + e, context);
         }
         return collection;
+    }
+    
+    protected EntityManager em;
+
+    public CollectionsResource(EntityManager em) {
+      this.em = em;
+    }
+    
+    @GET
+    @Path("/test")
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    public String gettest(
+            @Context HttpHeaders headers, @Context HttpServletRequest request) throws WebApplicationException
+    {
+        System.out.print("dsdfsfdsffd");
+        return "test";
+    }
+    
+    @GET
+    @Path("/testdata")
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    public String gettestdata(
+            @Context HttpHeaders headers, @Context HttpServletRequest request) throws WebApplicationException
+    {
+        System.out.print("dsdfsfdsffd");
+        System.out.println("List<CrisDoTpView>: start ");
+        TypedQuery<CrisDoTpView> query =
+        em.createNamedQuery("CrisDoTpView.findAll", CrisDoTpView.class);
+        List<CrisDoTpView> results = query.getResultList();
+        System.out.println("List<CrisDoTpView>: " + results);
+        return "testddata";
     }
 }

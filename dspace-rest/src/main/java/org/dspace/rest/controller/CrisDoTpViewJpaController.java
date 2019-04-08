@@ -17,6 +17,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
@@ -26,6 +27,7 @@ import org.dspace.rest.CrisDoTpView;
 import org.dspace.rest.common.Collection;
 import org.dspace.rest.exceptions.ContextException;
 import org.dspace.usage.UsageEvent;
+import org.eclipse.persistence.internal.jpa.EntityManagerImpl;
 
 /**
  *
@@ -42,11 +44,14 @@ public class CrisDoTpViewJpaController {
       this.em = em;
     }
 
+    public CrisDoTpViewJpaController() {
+    }
+
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public List<CrisDoTpView> getCollection(@Context HttpHeaders headers, @Context HttpServletRequest request) throws WebApplicationException
     {
-
+        System.out.println("List<CrisDoTpView>: start ");
         TypedQuery<CrisDoTpView> query =
         em.createNamedQuery("CrisDoTpView.findAll", CrisDoTpView.class);
         List<CrisDoTpView> results = query.getResultList();
@@ -57,15 +62,11 @@ public class CrisDoTpViewJpaController {
     @GET
     @Path("/test")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public List<CrisDoTpView> gettest(
+    public String gettest(
             @Context HttpHeaders headers, @Context HttpServletRequest request) throws WebApplicationException
     {
-
-        TypedQuery<CrisDoTpView> query =
-        em.createNamedQuery("CrisDoTpView.findAll", CrisDoTpView.class);
-        List<CrisDoTpView> results = query.getResultList();
-        System.out.println("List<CrisDoTpView>: " + results);
-        return results;
+        System.out.print("dsdfsfdsffd");
+        return "test";
     }
     
 }
