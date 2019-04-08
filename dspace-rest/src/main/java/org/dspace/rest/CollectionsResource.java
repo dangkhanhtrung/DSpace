@@ -46,6 +46,7 @@ import org.dspace.rest.exceptions.ContextException;
 import org.dspace.usage.UsageEvent;
 import org.dspace.workflow.WorkflowManager;
 import org.dspace.xmlworkflow.XmlWorkflowManager;
+import org.eclipse.persistence.internal.jpa.EntityManagerImpl;
 
 /**
  * This class provides all CRUD operation over collections.
@@ -781,12 +782,6 @@ public class CollectionsResource extends Resource
         return collection;
     }
     
-    protected EntityManager em;
-
-    public CollectionsResource(EntityManager em) {
-      this.em = em;
-    }
-    
     @GET
     @Path("/test")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
@@ -805,6 +800,7 @@ public class CollectionsResource extends Resource
     {
         System.out.print("dsdfsfdsffd");
         System.out.println("List<CrisDoTpView>: start ");
+        EntityManager em = new EntityManagerImpl("collections");
         TypedQuery<CrisDoTpView> query =
         em.createNamedQuery("CrisDoTpView.findAll", CrisDoTpView.class);
         List<CrisDoTpView> results = query.getResultList();
