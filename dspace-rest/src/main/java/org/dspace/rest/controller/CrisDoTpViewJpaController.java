@@ -8,6 +8,7 @@ package org.dspace.rest.controller;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
 import javax.persistence.TypedQuery;
@@ -19,8 +20,10 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
+import net.sf.ehcache.hibernate.HibernateUtil;
 import org.apache.log4j.Logger;
 import org.dspace.rest.CrisDoTpView;
+import org.eclipse.persistence.sessions.factories.SessionFactory;
 
 /**
  *
@@ -39,16 +42,18 @@ public class CrisDoTpViewJpaController {
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public List<CrisDoTpView> getCollection(@Context HttpHeaders headers, @Context HttpServletRequest request) throws WebApplicationException
+    public List<CrisDoTpView> getCollection(@Context Context context, @Context HttpHeaders headers, @Context HttpServletRequest request) throws WebApplicationException
     {
-        System.out.println("emteemteemte: " + emte);
-        System.out.println("entityManagerFactoryte: " + entityManagerFactoryte);
+        EntityManager entityManager = Persistence.createEntityManagerFactory("PERSISTENCE_UNIT_NAME").createEntityManager();
+//        SessionFactory sessionFactory = HibernateUti.getSessionFactory();
+//        Session session = sessionFactory.getCurrentSession();
+        System.out.println("entityManager: " + entityManager);
         try {
-            TypedQuery<CrisDoTpView> query =
-            emte.createNamedQuery("CrisDoTpView.findAll", CrisDoTpView.class);
-            List<CrisDoTpView> results = query.getResultList();
-            System.out.println("List<CrisDoTpView>: " + results);
-            return results;
+//            TypedQuery<CrisDoTpView> query =
+////            emte.createNamedQuery("CrisDoTpView.findAll", CrisDoTpView.class);
+//            List<CrisDoTpView> results = query.getResultList();
+//            System.out.println("List<CrisDoTpView>: " + results);
+            return null;
         } finally {
             emte.close();
         }

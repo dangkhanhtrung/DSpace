@@ -798,13 +798,13 @@ public class CollectionsResource extends Resource
     public String gettestdata(
             @Context HttpHeaders headers, @Context HttpServletRequest request) throws WebApplicationException
     {
-        System.out.print("dsdfsfdsffd");
-        System.out.println("List<CrisDoTpView>: start ");
-        EntityManager em = new EntityManagerImpl("collections");
-        TypedQuery<CrisDoTpView> query =
-        em.createNamedQuery("CrisDoTpView.findAll", CrisDoTpView.class);
-        List<CrisDoTpView> results = query.getResultList();
-        System.out.println("List<CrisDoTpView>: " + results);
+//        System.out.print("dsdfsfdsffd");
+//        System.out.println("List<CrisDoTpView>: start ");
+//        EntityManager em = new EntityManagerImpl("collections");
+//        TypedQuery<CrisDoTpView> query =
+//        em.createNamedQuery("CrisDoTpView.findAll", CrisDoTpView.class);
+//        List<CrisDoTpView> results = query.getResultList();
+//        System.out.println("List<CrisDoTpView>: " + results);
         return "testddata";
     }
 }
