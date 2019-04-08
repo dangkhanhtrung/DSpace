@@ -118,7 +118,7 @@ public class CrisDoTpResource extends Resource
         List<Serializable> params = new ArrayList<Serializable>();
         StringBuffer query = new StringBuffer(
             "SELECT c.*" +
-            "FROM collection c "
+            "FROM cris_do_tp c "
         );
 
         DatabaseManager.applyOffsetAndLimit(query, params, offset, limit);
