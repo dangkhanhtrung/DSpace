@@ -58,6 +58,7 @@ public class DataUtils {
                 
                 for (String key : col) {
                     
+                    System.out.println("value: " + key + ": " + row.getStringColumn(key));
                     current.put(key, row.getStringColumn(key));
                             
                 }
