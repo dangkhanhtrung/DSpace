@@ -24,7 +24,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -33,9 +32,14 @@ import org.apache.log4j.Logger;
 import org.dspace.authorize.AuthorizeException;
 import org.dspace.authorize.AuthorizeManager;
 import org.dspace.browse.BrowseException;
+import org.dspace.content.Community;
+import org.dspace.content.MetadataField;
+import org.dspace.content.MetadataSchema;
 import org.dspace.content.WorkspaceItem;
 import org.dspace.content.service.ItemService;
 import org.dspace.core.ConfigurationManager;
+import org.dspace.core.Constants;
+import org.dspace.core.Context;
 import org.dspace.core.LogManager;
 import static org.dspace.rest.Resource.createContext;
 import org.dspace.rest.common.Collection;
@@ -44,6 +48,7 @@ import org.dspace.rest.common.MetadataEntry;
 import org.dspace.rest.exceptions.ContextException;
 import org.dspace.storage.rdbms.DatabaseManager;
 import org.dspace.storage.rdbms.TableRow;
+import org.dspace.storage.rdbms.TableRowIterator;
 import org.dspace.usage.UsageEvent;
 import org.dspace.workflow.WorkflowManager;
 import org.dspace.xmlworkflow.XmlWorkflowManager;
@@ -61,38 +66,43 @@ public class CrisDoTpResource extends Resource
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public String getAllCrisDoTp(@PathParam("collection_id") Integer collectionId,
-            @QueryParam("expand") String expand, @QueryParam("limit") @DefaultValue("100") Integer limit,
-            @QueryParam("offset") @DefaultValue("0") Integer offset, @QueryParam("userIP") String user_ip,
-            @QueryParam("userAgent") String user_agent, @QueryParam("xforwardedfor") String xforwardedfor,
-            @Context HttpHeaders headers, @Context HttpServletRequest request)
+    public String getAllCrisDoTp(Context context)
             throws WebApplicationException, SQLException, ContextException
     {
 
-        TableRow row = DatabaseManager.row("cris_do_tp");
-        
-        System.out.println("getAllCrisDoTp: " + row);
-        
-        row = DatabaseManager.row("crisdotp");
-        
-        System.out.println("getAllCrisDoTp: " + row);
-        
-        row = DatabaseManager.row("CrisDoTp");
-        
-        System.out.println("getAllCrisDoTp: " + row);
-        
-        row = DatabaseManager.row("collection");
-        
-        System.out.println("collection: " + row);
-        
-        org.dspace.core.Context context = null;
-        
-        context = createContext(getUser(headers));
-        
-        row = DatabaseManager.querySingleTable(context,"cris_do_tp",
-                "SELECT * FROM cris_do_tp WHERE 1= 1", null);
-        
-        System.out.println("querySingleTable: " + row);
+        TableRowIterator tri = null;
+        try {
+            String query = "SELECT c.* FROM cris_do_tp c ";
+         
+            tri = DatabaseManager.query(context,
+                    query,
+                    null
+            );
+        } catch (SQLException e) {
+            log.error("Find all cris_do_tp - ",e);
+            throw e;
+        }
+
+        List<Community> communities = new ArrayList<Community>();
+
+        try
+        {
+            while (tri.hasNext())
+            {
+                TableRow rowd = tri.next(context);
+
+                System.out.println("row label: " + rowd.getStringColumn("label"));
+                System.out.println("row shortname: " + rowd.getStringColumn("shortname"));
+            }
+        }
+        finally
+        {
+            // close the TableRowIterator to free up resources
+            if (tri != null)
+            {
+                tri.close();
+            }
+        }
         
         return "ok";
     }
