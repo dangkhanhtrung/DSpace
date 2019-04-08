@@ -36,12 +36,19 @@ public class CrisDoTpViewJpaController {
     
     @PersistenceUnit(unitName = "org.dspace_dspace-rest_war_CRIS-5.10.0-SNAPSHOTPU")
     private EntityManagerFactory entityManagerFactory;
+    
+    @PersistenceContext(unitName = "my_dste")
+    protected EntityManager emte;
+    
+    @PersistenceUnit(unitName = "my_dste")
+    private EntityManagerFactory entityManagerFactoryte;
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public List<CrisDoTpView> getCollection(@Context HttpHeaders headers, @Context HttpServletRequest request) throws WebApplicationException
     {
-        
+        System.out.println("emte: " + emte);
+        System.out.println("entityManagerFactoryte: " + entityManagerFactoryte);
         System.out.println("entityManagerFactory: " + entityManagerFactory);
         System.out.println("emememem: " + em);
         try {
