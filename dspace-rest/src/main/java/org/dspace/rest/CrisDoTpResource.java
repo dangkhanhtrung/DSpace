@@ -66,12 +66,18 @@ public class CrisDoTpResource extends Resource
 
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public String getAllCrisDoTp(Context context)
+    public String getAllCrisDoTp(@QueryParam("expand") String expand,
+            @QueryParam("limit") @DefaultValue("100") Integer limit, @QueryParam("offset") @DefaultValue("0") Integer offset,
+            @QueryParam("userIP") String user_ip, @QueryParam("userAgent") String user_agent,
+            @QueryParam("xforwardedfor") String xforwardedfor, @javax.ws.rs.core.Context HttpHeaders headers, @javax.ws.rs.core.Context HttpServletRequest request)
             throws WebApplicationException, SQLException, ContextException
     {
 
+        org.dspace.core.Context context = null;
         TableRowIterator tri = null;
         try {
+            context = createContext(getUser(headers));
+            
             String query = "SELECT c.* FROM cris_do_tp c ";
          
             tri = DatabaseManager.query(context,
