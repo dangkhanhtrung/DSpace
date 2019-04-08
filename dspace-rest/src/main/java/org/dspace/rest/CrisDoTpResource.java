@@ -8,6 +8,7 @@
 package org.dspace.rest;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -88,18 +89,8 @@ public class CrisDoTpResource extends Resource
                 offset = 0;
             }
 
-            org.dspace.content.Collection[] dspaceCollections = org.dspace.content.Collection.findAll(context, limit, offset);
-            for(org.dspace.content.Collection dspaceCollection : dspaceCollections)
-            {
-                if (AuthorizeManager.authorizeActionBoolean(context, dspaceCollection, org.dspace.core.Constants.READ))
-                {
-                    Collection collection = new org.dspace.rest.common.Collection(dspaceCollection, null, context, limit,
-                            offset, servletContext);
-                    collections.add(collection);
-                    writeStats(dspaceCollection, UsageEvent.Action.VIEW, user_ip, user_agent,
-                            xforwardedfor, headers, request, context);
-                }
-            }
+            org.dspace.content.Collection[] dspaceCollections = findAll(context, limit, offset);
+           
             context.complete();
         }
         catch (SQLException e)
@@ -118,6 +109,53 @@ public class CrisDoTpResource extends Resource
         log.trace("All collections were successfully read.");
         
         return "ok";
+    }
+    
+     public static org.dspace.content.Collection[] findAll(Context context, Integer limit, Integer offset) throws SQLException
+    {
+        TableRowIterator tri = null;
+        List<org.dspace.content.Collection> collections = null;
+        List<Serializable> params = new ArrayList<Serializable>();
+        StringBuffer query = new StringBuffer(
+            "SELECT c.*" +
+            "FROM collection c "
+        );
+
+        DatabaseManager.applyOffsetAndLimit(query, params, offset, limit);
+
+        try
+        {
+            tri = DatabaseManager.query(
+              context, query.toString(), params.toArray()
+            );
+
+            collections = new ArrayList<org.dspace.content.Collection>();
+
+            while (tri.hasNext())
+            {
+                TableRow row = tri.next();
+
+                System.out.println("row:" + row.toString());
+            }
+        }
+        catch (SQLException e)
+        {
+            log.error("Find all Collections offset/limit - ", e);
+            throw e;
+        }
+        finally
+        {
+            // close the TableRowIterator to free up resources
+            if (tri != null)
+            {
+                tri.close();
+            }
+        }
+
+        org.dspace.content.Collection[] collectionArray = new org.dspace.content.Collection[collections.size()];
+        collectionArray = (org.dspace.content.Collection[]) collections.toArray(collectionArray);
+
+        return collectionArray;
     }
 
 }
