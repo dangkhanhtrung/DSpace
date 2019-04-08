@@ -53,7 +53,7 @@ import org.dspace.xmlworkflow.XmlWorkflowManager;
  * @author Rostislav Novak (Computing and Information Centre, CTU in Prague)
  * @author Adán Román Ruiz (arvo.es)
  */
-@Path("/dris_do_tp")
+@Path("/cris_do_tp")
 public class CrisDoTpResource extends Resource
 {
     private static Logger log = Logger.getLogger(CrisDoTpResource.class);
@@ -67,6 +67,18 @@ public class CrisDoTpResource extends Resource
         TableRow row = DatabaseManager.row("cris_do_tp");
         
         System.out.println("getAllCrisDoTp: " + row);
+        
+        row = DatabaseManager.row("crisdotp");
+        
+        System.out.println("getAllCrisDoTp: " + row);
+        
+        row = DatabaseManager.row("CrisDoTp");
+        
+        System.out.println("getAllCrisDoTp: " + row);
+        
+        row = DatabaseManager.row("collection");
+        
+        System.out.println("collection: " + row);
         
         return "ok";
     }
