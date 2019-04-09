@@ -5,10 +5,14 @@
  */
 package org.dspace.utils;
 
+import java.io.IOException;
 import java.io.Serializable;
+import java.io.StringReader;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.dspace.core.Context;
 import org.dspace.storage.rdbms.DatabaseManager;
@@ -48,17 +52,28 @@ public class DataUtils {
             {
                 TableRow row = tri.next();
                 
-                String[] col = cols.split(",");
-                
                 JSONObject current = new JSONObject();
                 
-                for (String key : col) {
-                    System.out.println("key: " + key);
-                    System.out.println("row: " + row.getIntColumn(key));
-//                    System.out.println("value: " + key + ": " + row.getStringColumn(key));
-//                    current.put(key, row.getStringColumn(key));
-                            
+                String dataRaw = row.toString();
+                
+                List<String> lines;
+                try {
+                    lines = IOUtils.readLines(new StringReader(dataRaw));
+                    for (String line : lines) {
+                        System.out.println("line: " + line);
+                    }
+                } catch (IOException ex) {
+                    System.out.println("line: " + ex);
                 }
+                
+
+//                for (String key : col) {
+//                    System.out.println("key: " + key);
+//                    System.out.println("row: " + row.getIntColumn(key));
+////                    System.out.println("value: " + key + ": " + row.getStringColumn(key));
+////                    current.put(key, row.getStringColumn(key));
+//                            
+//                }
                 
                 results.put(current);
             }
