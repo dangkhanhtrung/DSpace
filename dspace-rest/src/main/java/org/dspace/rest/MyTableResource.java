@@ -51,8 +51,6 @@ public class MyTableResource extends Resource
             throws Exception
     {
         
-        System.out.println("getAllCrisDoTp.");
-        log.info("getAllCrisDoTp.");
         JSONArray results = new JSONArray();
         org.dspace.core.Context context = null;
 

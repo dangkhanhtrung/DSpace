@@ -35,8 +35,8 @@ public class DataUtils {
         TableRowIterator tri = null;
         List<Serializable> params = new ArrayList<Serializable>();
         StringBuffer query = new StringBuffer(
-            "SELECT c.* " +
-            "FROM cris_do_tp c "
+            "SELECT " + cols + " " +
+            "FROM " + table + " "
         );
         
         DatabaseManager.applyOffsetAndLimit(query, params, offset, limit);
