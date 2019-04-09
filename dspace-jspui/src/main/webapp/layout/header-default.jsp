@@ -16,6 +16,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 
+<%@ page import="org.dspace.core.NewsManager" %>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.Locale"%>
 <%@ page import="java.util.Enumeration"%>
