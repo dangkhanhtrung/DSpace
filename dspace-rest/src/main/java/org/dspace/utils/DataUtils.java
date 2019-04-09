@@ -57,9 +57,11 @@ public class DataUtils {
                 JSONObject current = new JSONObject();
                 
                 for (String key : col) {
+                    System.out.println("key: " + key);
                     
-                    System.out.println("value: " + key + ": " + row.getStringColumn(key));
-                    current.put(key, row.getStringColumn(key));
+//                    System.out.println("row: " + row.getIntColumn("id"));
+//                    System.out.println("value: " + key + ": " + row.getStringColumn(key));
+//                    current.put(key, row.getStringColumn(key));
                             
                 }
                 
