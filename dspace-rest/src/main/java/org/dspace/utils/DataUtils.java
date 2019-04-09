@@ -36,12 +36,12 @@ public class DataUtils {
         System.out.println("limit" + limit.equals("0"));
         System.out.println("limit" + limit.equals(0));
         StringBuffer query = new StringBuffer(
-            "SELECT " + cols +
+            "SELECT " + cols + " " +
             "FROM " + table + " "
         );
-        System.out.println("SQL: " + query.toString());
         
         DatabaseManager.applyOffsetAndLimit(query, params, offset, limit);
+        System.out.println("SQL: " + query.toString());
 
         try
         {
