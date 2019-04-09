@@ -132,8 +132,9 @@
 
 <c:set var="dspace.layout.head.last" scope="request">
 <script type="text/javascript">
-	var jQ = jQuery.noConflict();
-	jQ(document).ready(function() {
+	
+	jQuery(document).ready(function() {
+            var jQ = jQuery.noConflict();
 		jQ( "#spellCheckQuery").click(function(){
 			jQ("#query").val(jQ(this).attr('data-spell'));
 			jQ("#main-query-submit").click();
