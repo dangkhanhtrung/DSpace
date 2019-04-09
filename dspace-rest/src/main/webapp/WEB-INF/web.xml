@@ -42,6 +42,7 @@
     </servlet-mapping>
     
     <!-- Security settings and mapping -->
+    <!--
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>DSpace REST API</web-resource-name>
@@ -51,7 +52,7 @@
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>
         </user-data-constraint>
     </security-constraint>
-    
+    -->
     <!-- DSpace Configuration Information -->
     <context-param>
         <param-name>dspace-config</param-name>
