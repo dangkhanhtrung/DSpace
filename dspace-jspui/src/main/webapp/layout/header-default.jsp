@@ -77,6 +77,69 @@
             body .navbar-brand {
                 text-transform: unset;
             }
+            body .panel__discovery {
+                margin: .5rem 0 !important;
+                border-top: 4px solid #1565C0;
+            }
+            body .panel__discovery > div {
+                border: 1px solid #dde2e6;
+                border-top: 0;
+            }
+            body .panel__discovery .list-group-item {
+                border: none;
+            }
+            body .panel__discovery .badge {
+                text-transform: uppercase;
+                position: absolute;
+                right: 6px;
+                background: #1565c0;
+                color: #fff;
+                border-radius: 10px;
+                min-width: 28px;
+                top: 3px;
+                font-weight: 100;
+                font-size: 10px;
+                height: 20px;
+                padding: 5px;
+            }
+            body .panel__discovery .list-group-item {
+                padding: 0.3rem .4rem;
+            }
+            body .panel__discovery .list-group-item i {
+                font-size: 6px;
+                color: #C62828;
+                position: absolute;
+                left: 12px;
+                margin-top: 7px;
+            }
+            body .panel__discovery .list-group-item a {
+                display: block;
+                margin-left: 5px;
+                max-width: 150px;
+                font-size: 14px;
+                color: #162b4d;
+            }
+            body .panel__discovery .panel-heading {
+                padding: .8rem 0 0;
+            }
+            body .panel__discovery .panel-heading > h6 > i {
+                margin-right: 10px;
+                font-weight: bold;
+            }
+            body .panel__discovery .panel-heading > h6 {
+                margin-bottom: 2px;
+                font-weight: bold;
+                color: #1565c0;
+                    padding: 0 10px;
+            }
+            body .panel__discovery .list-group-item.active {
+                background-color: unset;
+            }
+            body .panel__discovery .panel__discovery__next {
+                    position: absolute;
+                    top: 5px;
+                    right: 8px;
+            }
         </style>
 
         <script type='text/javascript' src="<%= request.getContextPath()%>/static/js/jquery/jquery-1.11.3.min.js"></script>
@@ -187,19 +250,18 @@
                 <%-- Page contents --%>
                 <div class="container fullheight">
 
-                    <%-- Right-hand side bar if appropriate --%>
-                    <%
-                        if (sidebar != null) {
-                    %>
-                </div>
-                <div class="col-md-3">
-                    <%= sidebar%>
-                </div>
-        </div>       
-        <%
-            }
-        %>
-        <% if (request.getAttribute("dspace.layout.sidebar") != null) {%>
-        <div class="row">
-            <div class="col-md-9 <%= isRtl ? "pull-right" : ""%>">
-                <% }%>		
+
+                    <% if (request.getAttribute("dspace.layout.sidebar") != null) {%>
+                    <div class="row">
+                        <%-- Right-hand side bar if appropriate --%>
+                        <%
+                            if (sidebar != null) {
+                        %>
+                        <div class="col-md-3">
+                            <%= sidebar%>
+                        </div>
+                        <%
+                            }
+                        %>
+                        <div class="col-md-9 <%= isRtl ? "pull-right" : ""%>">
+                            <% }%>		
