@@ -29,7 +29,7 @@ public class DataUtils {
     
     private static Logger log = Logger.getLogger(DataUtils.class);
     
-    public static JSONArray findAll(Context context, Integer limit, Integer offset, String table, String cols) throws SQLException
+    public static JSONArray findAll(Context context, Integer limit, Integer offset, String table, String cols) throws Exception
     {
         JSONArray results = new JSONArray();
         TableRowIterator tri = null;
@@ -57,30 +57,22 @@ public class DataUtils {
                 String dataRaw = row.toString();
                 
                 List<String> lines;
-                try {
-                    lines = IOUtils.readLines(new StringReader(dataRaw));
-                    for (String line : lines) {
-                        System.out.println("line: " + line);
-                    }
-                } catch (IOException ex) {
-                    System.out.println("line: " + ex);
-                }
-                
 
-//                for (String key : col) {
-//                    System.out.println("key: " + key);
-//                    System.out.println("row: " + row.getIntColumn(key));
-////                    System.out.println("value: " + key + ": " + row.getStringColumn(key));
-////                    current.put(key, row.getStringColumn(key));
-//                            
-//                }
+                lines = IOUtils.readLines(new StringReader(dataRaw));
+                int index = 0;
+                for (String line : lines) {
+                    if (index > 0) {
+                        String[] lineData = line.trim().split(" = ");
+                        current.put(lineData[0], lineData[1]);
+                    }
+                    index = index + 1;
+                }
                 
                 results.put(current);
             }
                 
-            System.out.println("results:" + results);
         }
-        catch (SQLException e)
+        catch (Exception e)
         {
             log.error("Find all findAll offset/limit - ", e);
             throw e;
