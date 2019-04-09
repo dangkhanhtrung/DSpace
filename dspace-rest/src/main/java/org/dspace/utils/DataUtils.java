@@ -30,10 +30,15 @@ public class DataUtils {
         JSONArray results = new JSONArray();
         TableRowIterator tri = null;
         List<Serializable> params = new ArrayList<Serializable>();
+        System.out.println("limit" + limit);
+        System.out.println("limit" + limit != null);
+        System.out.println("limit" + limit.equals(null));
+        System.out.println("limit" + limit.equals("0"));
+        System.out.println("limit" + limit.equals(0));
         StringBuffer query = new StringBuffer(
             "SELECT " + cols +
             "FROM " + table +
-            limit != null ? " LIMIT " + offset + ", " + limit + " " : ""
+            limit != null ? " OFFSET " + offset + " LIMIT " + limit + "; " : " ; "
         );
 
         DatabaseManager.applyOffsetAndLimit(query, params, offset, limit);
