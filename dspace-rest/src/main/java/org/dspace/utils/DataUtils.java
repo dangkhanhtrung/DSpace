@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.Logger;
 import org.dspace.core.Context;
-import org.dspace.rest.MyTableResource;
 import org.dspace.storage.rdbms.DatabaseManager;
 import org.dspace.storage.rdbms.TableRow;
 import org.dspace.storage.rdbms.TableRowIterator;
@@ -30,7 +29,6 @@ public class DataUtils {
     {
         JSONArray results = new JSONArray();
         TableRowIterator tri = null;
-        List<org.dspace.content.Collection> collections = null;
         List<Serializable> params = new ArrayList<Serializable>();
         StringBuffer query = new StringBuffer(
             "SELECT " + cols +
@@ -45,8 +43,6 @@ public class DataUtils {
             tri = DatabaseManager.query(
               context, query.toString(), params.toArray()
             );
-
-            collections = new ArrayList<org.dspace.content.Collection>();
 
             while (tri.hasNext())
             {
@@ -70,7 +66,7 @@ public class DataUtils {
         }
         catch (SQLException e)
         {
-            log.error("Find all Collections offset/limit - ", e);
+            log.error("Find all findAll offset/limit - ", e);
             throw e;
         }
         finally
