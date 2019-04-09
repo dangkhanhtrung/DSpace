@@ -123,6 +123,7 @@
         <script type="text/javascript" src="<%= request.getContextPath() %>/js/bootstrap-datetimepicker.min.js"></script>
         <script type="text/javascript" src="<%= request.getContextPath() %>/static/js/dataTables.select.min.js"></script>
         <script type="text/javascript" src="<%= request.getContextPath() %>/js/jszip.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath() %>/static/js/vue.min.js"></script>
         <script type='text/javascript'>
 var j = jQuery.noConflict();
 var $ = jQuery.noConflict();
@@ -188,12 +189,19 @@ jQuery(document).ready(function ($) {
             }
         %>
 
-
+        <script type="text/javascript">
+            new Vue({
+                el: '#app',
+                data: {
+                  dspaceVue: 'OK OK OK OK OK OK OK OK OK OK OK OK'
+                }
+              })
+        </script>
     </head>
 
     <%-- HACK: leftmargin, topmargin: for non-CSS compliant Microsoft IE browser --%>
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
-    <body class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
+    <body id="app" class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
         <a class="sr-only" href="#content">Skip navigation</a>
         <header class="navbar navbar-inverse navbar-square">    
             <%

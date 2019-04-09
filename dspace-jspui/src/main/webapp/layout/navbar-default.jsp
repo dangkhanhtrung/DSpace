@@ -230,3 +230,5 @@
           </ul>
 	</div>
     </nav>
+
+            --- {{ dspaceVue }} ---
