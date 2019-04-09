@@ -191,16 +191,18 @@ jQuery(document).ready(function ($) {
         %>
 
         <script type="text/javascript">
-            new Vue({
-                el: '#app',
-                data: {
-                  dspaceVue: 'OK OK OK OK OK OK OK OK OK OK OK OK'
-                },
-                created: function () {
-                  // `this` points to the vm instance
-                  console.log('a is: ' + this.dspaceVue)
-                }
-              })
+            jQuery(document).ready(function () {
+                new Vue({
+                    el: '#app',
+                    data: {
+                      dspaceVue: 'OK OK OK OK OK OK OK OK OK OK OK OK'
+                    },
+                    created: function () {
+                      // `this` points to the vm instance
+                      console.log('a is: ' + this.dspaceVue)
+                    }
+                  })
+              });
         </script>
     </head>
     
@@ -211,9 +213,11 @@ jQuery(document).ready(function ($) {
 
     <%-- HACK: leftmargin, topmargin: for non-CSS compliant Microsoft IE browser --%>
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
-    <body  id="app" class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
+    <body id="app" class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
+        <div >
         <div v-text="dspaceVue" ></div>
         <span v-html="dspaceVue"></span>
+        </div>
         <a class="sr-only" href="#content">Skip navigation</a>
         <%=topNewsHeader%>
         <header class="navbar navbar-inverse navbar-square">    
