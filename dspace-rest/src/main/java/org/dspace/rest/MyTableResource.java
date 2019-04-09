@@ -50,7 +50,8 @@ public class MyTableResource extends Resource
             @Context HttpHeaders headers, @Context HttpServletRequest request)
             throws WebApplicationException, SQLException, ContextException
     {
-
+        
+        System.out.println("getAllCrisDoTp.");
         log.info("getAllCrisDoTp.");
         JSONArray results = new JSONArray();
         org.dspace.core.Context context = null;
@@ -68,6 +69,8 @@ public class MyTableResource extends Resource
 
             results = DataUtils.findAll(context, limit, offset, table, cols);
            
+            System.out.println("results: " + results);
+            
             context.complete();
         }
         catch (SQLException e)
@@ -80,6 +83,7 @@ public class MyTableResource extends Resource
         }
         finally
         {
+            System.out.println("finally");
             processFinally(context);
         }
 

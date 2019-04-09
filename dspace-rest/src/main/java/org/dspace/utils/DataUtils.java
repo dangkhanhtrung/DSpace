@@ -32,7 +32,7 @@ public class DataUtils {
         List<Serializable> params = new ArrayList<Serializable>();
         StringBuffer query = new StringBuffer(
             "SELECT c.* " +
-            "FROM " + table + " c "
+            "FROM cris_do_tp c "
         );
         
         DatabaseManager.applyOffsetAndLimit(query, params, offset, limit);
@@ -48,7 +48,11 @@ public class DataUtils {
             {
                 TableRow row = tri.next();
                 
+                System.out.println("row: " + row.toString());
+                System.out.println("cols: " + cols);
+                
                 String[] col = cols.split(",");
+                System.out.println("col: " + col);
                 
                 JSONObject current = new JSONObject();
                 
