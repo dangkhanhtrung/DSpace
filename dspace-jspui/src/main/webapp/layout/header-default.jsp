@@ -202,14 +202,18 @@ jQuery(document).ready(function ($) {
               })
         </script>
     </head>
+    
+    <%
+        String topNewsHeader = NewsManager.readNewsFile(LocaleSupport.getLocalizedMessage(pageContext, "news-top.html"));
+        
+    %>
 
     <%-- HACK: leftmargin, topmargin: for non-CSS compliant Microsoft IE browser --%>
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
-    <body class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
-        <div id="app" >
-            <div>{{ dspaceVue }}</div>
-        </div>
+    <body  id="app" class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
+            <div v-html="dspaceVue" />
         <a class="sr-only" href="#content">Skip navigation</a>
+        <%=topNewsHeader%>
         <header class="navbar navbar-inverse navbar-square">    
             <%
             if (!navbar.equals("off"))
