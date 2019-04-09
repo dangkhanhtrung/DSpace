@@ -48,18 +48,13 @@ public class DataUtils {
             {
                 TableRow row = tri.next();
                 
-                System.out.println("row: " + row.toString());
-                System.out.println("cols: " + cols);
-                
                 String[] col = cols.split(",");
-                System.out.println("col: " + col);
                 
                 JSONObject current = new JSONObject();
                 
                 for (String key : col) {
                     System.out.println("key: " + key);
-                    
-//                    System.out.println("row: " + row.getIntColumn("id"));
+                    System.out.println("row: " + row.getIntColumn(key));
 //                    System.out.println("value: " + key + ": " + row.getStringColumn(key));
 //                    current.put(key, row.getStringColumn(key));
                             
