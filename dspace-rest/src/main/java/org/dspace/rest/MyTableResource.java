@@ -48,7 +48,7 @@ public class MyTableResource extends Resource
     public String getAllCrisDoTp(@PathParam("table_name") String table, @QueryParam("cols") String cols,
             @QueryParam("limit") @DefaultValue("100") Integer limit, @QueryParam("offset") @DefaultValue("0") Integer offset,
             @Context HttpHeaders headers, @Context HttpServletRequest request)
-            throws WebApplicationException, SQLException, ContextException
+            throws Exception
     {
         
         System.out.println("getAllCrisDoTp.");
