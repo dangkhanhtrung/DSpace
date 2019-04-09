@@ -51,10 +51,9 @@ public class MyTableResource extends Resource
             throws WebApplicationException, SQLException, ContextException
     {
 
-        log.info("getAllCrisDoTp.");
-        
         JSONArray results = new JSONArray();
         org.dspace.core.Context context = null;
+        List<Collection> collections = new ArrayList<Collection>();
 
         try
         {
