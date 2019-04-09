@@ -194,6 +194,10 @@ jQuery(document).ready(function ($) {
                 el: '#app',
                 data: {
                   dspaceVue: 'OK OK OK OK OK OK OK OK OK OK OK OK'
+                },
+                created: function () {
+                  // `this` points to the vm instance
+                  console.log('a is: ' + this.dspaceVue)
                 }
               })
         </script>
@@ -201,7 +205,10 @@ jQuery(document).ready(function ($) {
 
     <%-- HACK: leftmargin, topmargin: for non-CSS compliant Microsoft IE browser --%>
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
-    <body id="app" class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
+    <body class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
+        <div id="app" >
+            <div>{{ dspaceVue }}</div>
+        </div>
         <a class="sr-only" href="#content">Skip navigation</a>
         <header class="navbar navbar-inverse navbar-square">    
             <%
