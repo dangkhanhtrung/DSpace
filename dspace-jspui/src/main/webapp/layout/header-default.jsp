@@ -218,7 +218,8 @@ jQuery(document).ready(function ($) {
 
     <%-- HACK: leftmargin, topmargin: for non-CSS compliant Microsoft IE browser --%>
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
-    <body id="app" class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
+    <body class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
+        <div id="app">
             <a @click="doSomething"> dddkdkdkdkddk </a>
         <a class="sr-only" href="#content">Skip navigation</a>
         <%=topNewsHeader%>
