@@ -67,8 +67,6 @@ public class MyTableResource extends Resource
 
             results = DataUtils.findAll(context, limit, offset, table, cols);
            
-            System.out.println("results: " + results);
-            
             context.complete();
         }
         catch (SQLException e)
@@ -88,19 +86,6 @@ public class MyTableResource extends Resource
         log.trace("All collections were successfully read.");
         
         return results.toString();
-    }
-    
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public String test(@PathParam("table_name") String table, @QueryParam("cols") String cols,
-            @QueryParam("limit") @DefaultValue("100") Integer limit, @QueryParam("offset") @DefaultValue("0") Integer offset,
-            @Context HttpHeaders headers, @Context HttpServletRequest request)
-            throws WebApplicationException, SQLException, ContextException
-    {
-
-        log.info("getAllCrisDoTp.");
-        
-        return "test";
     }
 
 }
