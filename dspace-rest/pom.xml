@@ -143,6 +143,11 @@
             </exclusions>
         </dependency>
 
+       <dependency>
+            <groupId>org.dspace</groupId>
+            <artifactId>dspace-rest</artifactId>
+        </dependency>
+
         <!-- Connecting to DSpace datasource sets a dependency on Postgres DB-->
         <dependency>
             <groupId>commons-dbcp</groupId>
