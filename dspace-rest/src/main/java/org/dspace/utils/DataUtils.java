@@ -37,10 +37,10 @@ public class DataUtils {
         System.out.println("limit" + limit.equals(0));
         StringBuffer query = new StringBuffer(
             "SELECT " + cols +
-            "FROM " + table +
-            limit != null ? " OFFSET " + offset + " LIMIT " + limit + "; " : " ; "
+            "FROM " + table + " "
         );
-
+        System.out.println("SQL: " + query.toString());
+        
         DatabaseManager.applyOffsetAndLimit(query, params, offset, limit);
 
         try
