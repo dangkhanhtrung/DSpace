@@ -220,8 +220,6 @@ jQuery(document).ready(function ($) {
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
     <body class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
         <div id="app">
-            <a @click="doSomething"> dddkdkdkdkddk </a>
-        <a class="sr-only" href="#content">Skip navigation</a>
         <%=topNewsHeader%>
         <header class="navbar navbar-inverse navbar-square">    
             <%

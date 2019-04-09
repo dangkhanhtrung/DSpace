@@ -230,4 +230,3 @@
           </ul>
 	</div>
     </nav>
-             <div v-text="dspaceVue" ></div>
