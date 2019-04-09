@@ -63,14 +63,17 @@ public class DataUtils {
                 for (String line : lines) {
                     if (index > 0) {
                         String[] lineData = line.trim().split(" = ");
+                        System.out.println("key: " + lineData[0]);
+                        System.out.println("val: " + lineData[1]);
                         current.put(lineData[0], lineData[1]);
+                        System.out.println("current: " + current);
                     }
                     index = index + 1;
                 }
                 
-                results.put(current);
-            }
+                System.out.println("current: " + current);
                 
+            }
         }
         catch (Exception e)
         {
