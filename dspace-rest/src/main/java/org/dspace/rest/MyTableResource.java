@@ -43,9 +43,9 @@ public class MyTableResource extends Resource
     private static Logger log = Logger.getLogger(MyTableResource.class);
 
     @GET
-    @Path("/{table}")
+    @Path("/{table_name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public JSONArray getAllCrisDoTp(@PathParam("table") String table, @QueryParam("cols") String cols,
+    public JSONArray getAllCrisDoTp(@PathParam("table_name") String table, @QueryParam("cols") String cols,
             @QueryParam("limit") @DefaultValue("100") Integer limit, @QueryParam("offset") @DefaultValue("0") Integer offset,
             @Context HttpHeaders headers, @Context HttpServletRequest request)
             throws WebApplicationException, SQLException, ContextException
@@ -88,6 +88,17 @@ public class MyTableResource extends Resource
         return results;
     }
     
-    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public String test(@PathParam("table_name") String table, @QueryParam("cols") String cols,
+            @QueryParam("limit") @DefaultValue("100") Integer limit, @QueryParam("offset") @DefaultValue("0") Integer offset,
+            @Context HttpHeaders headers, @Context HttpServletRequest request)
+            throws WebApplicationException, SQLException, ContextException
+    {
+
+        log.info("getAllCrisDoTp.");
+        
+        return "test";
+    }
 
 }
