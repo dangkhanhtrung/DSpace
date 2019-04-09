@@ -79,7 +79,7 @@
             }
             body .panel__discovery {
                 margin: .5rem 0 !important;
-                border-top: 4px solid #1565C0;
+                border-top: 2px solid #1565C0;
             }
             body .panel__discovery > div {
                 border: 1px solid #dde2e6;
