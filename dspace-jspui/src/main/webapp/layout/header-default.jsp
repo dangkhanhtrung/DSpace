@@ -68,8 +68,6 @@
 	    <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/jquery-ui-1.10.3.custom/redmond/jquery-ui-1.10.3.custom.css" type="text/css" />
 	    <link href="<%= request.getContextPath() %>/css/researcher.css" type="text/css" rel="stylesheet" />
        <link href="<%= request.getContextPath() %>/css/jdyna.css" type="text/css" rel="stylesheet" />
-	    <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap.min.css" type="text/css" />
-	    <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap-theme.min.css" type="text/css" />
 	    <link href="<%= request.getContextPath() %>/static/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 		<link href="<%= request.getContextPath() %>/static/css/jstree/themes/default/style.min.css" rel="stylesheet"/>
 	    <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/dspace-theme.css" type="text/css" />
@@ -80,6 +78,7 @@
 		<link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/dspace-theme.css" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/bootstrap-datetimepicker.min.css" />
 			<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/static/css/select.dataTables.min.css" />
+			<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/static/css/argon.min.css" />
 <%
     if (!"NONE".equals(feedRef))
     {
@@ -123,6 +122,8 @@
 	<script type="text/javascript" src="<%= request.getContextPath() %>/js/bootstrap-datetimepicker.min.js"></script>
 	<script type="text/javascript" src="<%= request.getContextPath() %>/static/js/dataTables.select.min.js"></script>
 	<script type="text/javascript" src="<%= request.getContextPath() %>/js/jszip.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath() %>/static/js/vue.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath() %>/static/js/argon.min.js"></script>
 	<script type='text/javascript'>
 		var j = jQuery.noConflict();
 		var $ = jQuery.noConflict();
@@ -198,6 +199,7 @@
     <%-- HACK: leftmargin, topmargin: for non-CSS compliant Microsoft IE browser --%>
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
     <body class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
+        <div id="app">
 <a class="sr-only" href="#content">Skip navigation</a>
 <header class="navbar navbar-inverse navbar-square">    
     <%
