@@ -200,6 +200,11 @@ jQuery(document).ready(function ($) {
                     created: function () {
                       // `this` points to the vm instance
                       console.log('a is: ' + this.dspaceVue)
+                    },
+                    methods: {
+                        doSomething() {
+                            alert(123);
+                        }
                     }
                   })
               });
@@ -213,8 +218,9 @@ jQuery(document).ready(function ($) {
 
     <%-- HACK: leftmargin, topmargin: for non-CSS compliant Microsoft IE browser --%>
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
-    <body id="app" class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
-        <div >
+    <body class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
+        <div id="app">
+            <a @click="doSomething"> dddkdkdkdkddk </a>
         <div v-text="dspaceVue" ></div>
         <span v-html="dspaceVue"></span>
         </div>
