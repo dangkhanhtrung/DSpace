@@ -34,8 +34,7 @@ import org.json.JSONArray;
 /**
  * This class provides all CRUD operation over collections.
  * 
- * @author Rostislav Novak (Computing and Information Centre, CTU in Prague)
- * @author Adán Román Ruiz (arvo.es)
+ * @author Ta Huu Binh (FDS)
  */
 @Path("/table")
 public class MyTableResource extends Resource
