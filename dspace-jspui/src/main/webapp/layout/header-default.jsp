@@ -105,10 +105,6 @@
         }
 %>
         
-   	<script type='text/javascript' src="<%= request.getContextPath() %>/static/js/jquery/jquery-1.11.3.min.js"></script>
-	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/jquery/jquery-ui-1.11.4.min.js'></script>
-	<script type="text/javascript" src="<%= request.getContextPath() %>/js/moment.js"></script>
-	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/bootstrap/bootstrap.min.js'></script>
 	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/holder.js'></script>
 	<script type="text/javascript" src="<%= request.getContextPath() %>/utils.js"></script>
 	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/custom-functions.js'></script>
@@ -120,9 +116,15 @@
 	<script type="text/javascript" src="<%= request.getContextPath() %>/js/buttons.bootstrap.min.js"></script>
 	<script type="text/javascript" src="<%= request.getContextPath() %>/js/buttons.html5.min.js"></script>
 	<script type="text/javascript" src="<%= request.getContextPath() %>/js/dataTables.responsive.min.js"></script>	
-	<script type="text/javascript" src="<%= request.getContextPath() %>/js/bootstrap-datetimepicker.min.js"></script>
 	<script type="text/javascript" src="<%= request.getContextPath() %>/static/js/dataTables.select.min.js"></script>
 	<script type="text/javascript" src="<%= request.getContextPath() %>/js/jszip.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath() %>/static/vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath() %>/static/vendor/popper/popper.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath() %>/static/vendor/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath() %>/static/vendor/headroom/headroom.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath() %>/static/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript" src="<%= request.getContextPath() %>/static/js/vue.min.js"></script>
+	<script type="text/javascript" src="<%= request.getContextPath() %>/static/js/argon.min.js"></script>
 	<script type='text/javascript'>
 		var j = jQuery.noConflict();
 		var $ = jQuery.noConflict();
@@ -198,7 +200,8 @@
     <%-- HACK: leftmargin, topmargin: for non-CSS compliant Microsoft IE browser --%>
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
     <body class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr","rtl") %>">
-<a class="sr-only" href="#content">Skip navigation</a>
+        <div id="app">
+    <a class="sr-only" href="#content">Skip navigation</a>
 <header class="navbar navbar-inverse navbar-square">    
     <%
     if (!navbar.equals("off"))
