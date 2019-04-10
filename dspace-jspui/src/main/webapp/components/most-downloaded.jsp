@@ -10,9 +10,9 @@
 <% if(mostViewedBitstream != null && mostViewedBitstream.getItems().size()!=0){ %>
         <div class="panel panel-primary vertical-carousel" data-itemstoshow="3">        
         <div class="panel-heading">
-          <h3 class="panel-title">
+          <h5 class="panel-title">
           		<fmt:message key="jsp.components.most-downloaded"/>
-          </h3>
+          </h5>
        </div>   
 	   <div class="panel-body">
 	   		<div class="list-groups">

@@ -174,21 +174,30 @@
 
 <dspace:layout titlekey="jsp.search.title">
 
-    <%-- <h1>Search Results</h1> --%>
 
-    <h2><fmt:message key="jsp.search.title"/></h2>
-
-    <div class="discovery-search-formt">
+    <div class="discovery-search-formt bg-secondary pt-3 pb-2 px-3 mb-3">
         <%-- Controls for a repeat search --%>
         <div class="discovery-query">
             <form id="update-form" action="global-search" method="get">
+                
+                <div class="row">
+                    <div class="col-sm-9 col-12">
 
-                <label for="query"><fmt:message key="jsp.search.results.searchfor"/></label>
-                <input type="text" size="50" id="query" name="query" value="<%= (query == null ? "" : Utils.addEntities(query))%>"/>
-                <input type="submit" id="main-query-submit" class="btn btn-primary" value="<fmt:message key="jsp.general.go"/>" />
-                <% if (StringUtils.isNotBlank(spellCheckQuery)) {%>
-                <p class="lead"><fmt:message key="jsp.search.didyoumean"><fmt:param><a id="spellCheckQuery" data-spell="<%= Utils.addEntities(spellCheckQuery)%>" href="#"><%= spellCheckQuery%></a></fmt:param></fmt:message></p>
-                    <% } %>                  
+                        <div class="form-group">
+                            <div class="input-group input-group-alternative">
+                                <input class="form-control" placeholder="search ..." type="text" size="50" id="query" name="query" value="<%= (query == null ? "" : Utils.addEntities(query))%>">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3 col-12">
+                        <a class="btn btn-default" href="<%= request.getContextPath() + "/global-search"%>"><fmt:message key="jsp.search.general.new-search" /></a>	
+                    </div>
+                </div>
+                
                     <% if (appliedFilters.size() > 0) { %>                                
                 <div class="discovery-search-appliedFilters">
                     <span><fmt:message key="jsp.search.filter.applied" /></span>
@@ -231,7 +240,7 @@
                     %>
                 </div>
                 <% }%>
-                <a class="btn btn-default" href="<%= request.getContextPath() + "/global-search"%>"><fmt:message key="jsp.search.general.new-search" /></a>	
+                
             </form>
         </div>
         <% if (availableFilters.size() > 0) {%>
@@ -296,7 +305,7 @@
 
     %>
 
-    <div class="discovery-result-results">
+    <div class="discovery-result-results discovery-result-results-global">
         <%                    Set<String> otherTypes = collapsedResults.keySet();
             if (otherTypes != null && otherTypes.size() > 0) {
                 for (String otypeSensitive : otherTypes) {
@@ -306,8 +315,27 @@
 
         <div class="panel panel-info">
             <div class="panel-heading">
-                <fmt:message key="<%=okey%>" />
-            </div>
+                <i class="fa fa-file-text-o mr-1"></i>
+                <span><fmt:message key="<%=okey%>" /></span>
+                <% if (collapsedResults.get(otypeSensitive).size() < numResultsByType.get(otypeSensitive)) {
+                    String messageAllGlobalType = "jsp.search.global.all." + otypeSensitive;
+                %>
+                    <div class="panel-footer text-right" style="
+    position: absolute;
+    top: 6px;
+    right: 0;
+    color: #0063ce;
+">	
+                        <a class="btn btn-link text-primary" role="button" href="<%= request.getContextPath()
+                                + "/simple-search?query="
+                                + URLEncoder.encode(query, "UTF-8")
+                                                + httpFilters
+                                                + "&amp;location=" + URLEncoder.encode(otypeSensitive, "UTF-8")%>">
+                            <fmt:message key="<%= messageAllGlobalType%>">
+                                <fmt:param><%= numResultsByType.get(otypeSensitive)%></fmt:param>
+                            </fmt:message></a>                
+                    </div>
+                <% } %>
             <div class="list-item">
                 <%
                     for (IGlobalSearchResult obj : collapsedResults.get(otypeSensitive)) {
@@ -317,21 +345,11 @@
 
                 <%
                     }
-                    String messageAllGlobalType = "jsp.search.global.all." + otypeSensitive;
                 %>					
             </div>
-            <% if (collapsedResults.get(otypeSensitive).size() < numResultsByType.get(otypeSensitive)) {%>
-            <div class="panel-footer text-right">	
-                <a class="btn btn-link text-primary" role="button" href="<%= request.getContextPath()
-                        + "/simple-search?query="
-                        + URLEncoder.encode(query, "UTF-8")
-                                        + httpFilters
-                                        + "&amp;location=" + URLEncoder.encode(otypeSensitive, "UTF-8")%>">
-                    <fmt:message key="<%= messageAllGlobalType%>">
-                        <fmt:param><%= numResultsByType.get(otypeSensitive)%></fmt:param>
-                    </fmt:message></a>                
+            
             </div>
-            <% } %>
+            
         </div>
         <%
                 }
