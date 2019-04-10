@@ -26,11 +26,10 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 
 import org.apache.log4j.Logger;
-import static org.dspace.rest.Resource.createContext;
-import org.dspace.rest.common.Collection;
-import org.dspace.rest.exceptions.ContextException;
 import org.dspace.utils.DataUtils;
 import org.json.JSONArray;
+import org.dspace.utils.DSpace;
+import org.dspace.app.cris.service.ApplicationService;
 
 /**
  * This class provides all CRUD operation over collections.
@@ -40,7 +39,7 @@ import org.json.JSONArray;
 @Path("/excel")
 public class OAIPMHHarvesterResource extends Resource
 {
-    private static Logger log = Logger.getLogger(MyTableResource.class);
+    private static Logger log = Logger.getLogger(OAIPMHHarvesterResource.class);
 
     @POST
     @Path("/import")
@@ -48,15 +47,21 @@ public class OAIPMHHarvesterResource extends Resource
     public String importDSpaceExcel(@Context HttpHeaders headers, @Context HttpServletRequest request)
             throws Exception
     {
+        org.dspace.core.Context dspaceContext = new org.dspace.core.Context();
+        dspaceContext.setIgnoreAuthorization(true);
+		DSpace dspace = new DSpace();
+		ApplicationService applicationService = dspace.getServiceManager().getServiceByName("applicationService",
+				ApplicationService.class);
+
         return "{ 'ok': 'true' }";
     }
 
     @GET
-    @Path("/")
+    @Path("/test")
     @Produces(MediaType.APPLICATION_JSON)
     public String test(@Context HttpHeaders headers, @Context HttpServletRequest request)
             throws Exception
     {
-        return "{ 'ok': 'true' }";
+        return "{ 'test': 'true' }";
     }
 }
