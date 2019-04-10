@@ -268,56 +268,7 @@ j(document).ready(function() {
                 <code><%= HandleManager.getCanonicalForm(handle) %></code></strong>--%>
                 <div class="well"><fmt:message key="jsp.display-item.identifier"/>
                 <code><%= HandleManager.getCanonicalForm(handle) %></code></div>
-       </div>         
-<%
-        if (admin_button)  // admin edit button
-        { %>
-        <div class="col-sm-5 col-md-4 col-lg-3">
-            <div class="panel panel-warning">
-            	<div class="panel-heading"><fmt:message key="jsp.admintools"/></div>
-            	<div class="panel-body">
-				<form method="get" action="<%= request.getContextPath() %>/submit">
-                    <input type="hidden" name="edit_item" value="<%= item.getID() %>" />
-                    <input type="hidden" name="pageCallerID" value="0" />
-                    <%--<input type="submit" name="submit" value="Edit...">--%>
-                    <input class="btn btn-default col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.general.editsubmission.button"/>" />
-                </form>
-                <form method="get" action="<%= request.getContextPath() %>/tools/edit-item">
-                    <input type="hidden" name="item_id" value="<%= item.getID() %>" />
-                    <%--<input type="submit" name="submit" value="Edit...">--%>
-                    <input class="btn btn-default col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.general.editnormal.button"/>" />
-                </form>
-                <form method="post" action="<%= request.getContextPath() %>/mydspace">
-                    <input type="hidden" name="item_id" value="<%= item.getID() %>" />
-                    <input type="hidden" name="step" value="<%= MyDSpaceServlet.REQUEST_EXPORT_ARCHIVE %>" />
-                    <input class="btn btn-default col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.mydspace.request.export.item"/>" />
-                </form>
-                <form method="post" action="<%= request.getContextPath() %>/mydspace">
-                    <input type="hidden" name="item_id" value="<%= item.getID() %>" />
-                    <input type="hidden" name="step" value="<%= MyDSpaceServlet.REQUEST_MIGRATE_ARCHIVE %>" />
-                    <input class="btn btn-default col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.mydspace.request.export.migrateitem"/>" />
-                </form>
-                <form method="post" action="<%= request.getContextPath() %>/dspace-admin/metadataexport">
-                    <input type="hidden" name="handle" value="<%= item.getHandle() %>" />
-                    <input class="btn btn-default col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.general.metadataexport.button"/>" />
-                </form>
-					<% if(hasVersionButton) { %>       
-                	<form method="get" action="<%= request.getContextPath() %>/tools/version">
-                    	<input type="hidden" name="itemID" value="<%= item.getID() %>" />                    
-                    	<input class="btn btn-default col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.general.version.button"/>" />
-                	</form>
-                	<% } %> 
-                	<% if(hasVersionHistory) { %>			                
-                	<form method="get" action="<%= request.getContextPath() %>/tools/history">
-                    	<input type="hidden" name="itemID" value="<%= item.getID() %>" />
-                    	<input type="hidden" name="versionID" value="<%= history.getVersion(item)!=null?history.getVersion(item).getVersionId():null %>" />                    
-                    	<input class="btn btn-info col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.general.version.history.button"/>" />
-                	</form>         	         	
-					<% } %>
-             </div>
-          </div>
-        </div>
-<%      } %>
+       </div>    
 
 </div>
 <%
@@ -405,28 +356,35 @@ j(document).ready(function() {
 
     		<form target="blank" class="form-inline"  id="exportform" action="<%= request.getContextPath() %>/references">
 
-    		<div id="export-biblio-panel">
-    	<%		
-    		if (cfg == null)
-    		{
-    			cfg = "refman, endnote, bibtex, refworks";
-    		}
-    		String[] cfgSplit = cfg.split("\\s*,\\s*");
-    		for (String format : cfgSplit) {
-    	%>
-    		<c:set var="format"><%= format %></c:set>	    
-    		<label class="radio-inline">
-        		  <input id="${format}" type="radio" name="format" value="${format}" <c:if test="${format=='bibtex'}"> checked="checked"</c:if>/><fmt:message key="exportcitation.option.${format}" />
-    	    </label>
-
-    		
-    	<% } %>
-    		<label class="checkbox-inline">
-    			<input type="checkbox" id="email" name="email" value="true"/><fmt:message key="exportcitation.option.email" />
-    		</label>
-    			<input type="hidden" name="item_id" value="<%= item.getID() %>" />
-    			<input id="export-submit-button" class="btn btn-default" type="submit" name="submit_export" value="<fmt:message key="exportcitation.option.submitexport" />" />
-    		</div>	
+                    <div id="export-biblio-panel" class="alert alert-info mt-3" style="width: 100%;    margin-left: 0px;">
+                    <div class="row px-3">
+                    <%
+                        if (cfg == null)
+                        {
+                                cfg = "refman, endnote, bibtex, refworks";
+                        }
+                        String[] cfgSplit = cfg.split("\\s*,\\s*");
+                        for (String format : cfgSplit) {
+                    %>
+                    <div class="custom-control custom-radio mb-2 col-2">
+                        <c:set var="format"><%= format%></c:set>
+                        <input class="custom-control-input" id="${format}" type="radio" name="format" value="${format}" <c:if test="${format=='bibtex'}"> checked="checked"</c:if>/>
+                        <label for="${format}" class="custom-control-label">
+                            <fmt:message key="exportcitation.option.${format}" />
+                        </label>
+                    </div>
+                    <% }%>
+                    <div class="custom-control custom-checkbox mb-2">
+                        <input type="checkbox" id="email" name="email" value="true" class="custom-control-input">
+                        <label for="email" class="custom-control-label">
+                            <fmt:message key="exportcitation.option.email" />
+                        </label>
+                    </div>
+                    </div>
+                        <input type="hidden" name="item_id" value="<%= item.getID() %>" />
+                    <input id="export-submit-button" class="btn btn-default" type="submit" name="submit_export" value="<fmt:message key="exportcitation.option.submitexport" />"/>
+                </div>
+                
     		</form>
     <% }
 		if (suggestLink)
@@ -452,6 +410,55 @@ j(document).ready(function() {
 </div>
 <div class="col-lg-3">
 <div class="row">
+         
+        <%
+        if (admin_button)  // admin edit button
+        { %>
+        <div class="col-12">
+            <div class="panel panel-warning">
+            	<div class="panel-body">
+				<form method="get" action="<%= request.getContextPath() %>/submit">
+                    <input class="mb-2" type="hidden" name="edit_item" value="<%= item.getID() %>" />
+                    <input class="mb-2" type="hidden" name="pageCallerID" value="0" />
+                    <%--<input type="submit" name="submit" value="Edit...">--%>
+                    <input class="mb-2 btn btn-default col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.general.editsubmission.button"/>" />
+                </form>
+                <form method="get" action="<%= request.getContextPath() %>/tools/edit-item">
+                    <input class="mb-2" type="hidden" name="item_id" value="<%= item.getID() %>" />
+                    <%--<input type="submit" name="submit" value="Edit...">--%>
+                    <input class="mb-2 btn btn-default col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.general.editnormal.button"/>" />
+                </form>
+                <form method="post" action="<%= request.getContextPath() %>/mydspace">
+                    <input class="mb-2" type="hidden" name="item_id" value="<%= item.getID() %>" />
+                    <input class="mb-2" type="hidden" name="step" value="<%= MyDSpaceServlet.REQUEST_EXPORT_ARCHIVE %>" />
+                    <input class="mb-2 btn btn-default col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.mydspace.request.export.item"/>" />
+                </form>
+                <form method="post" action="<%= request.getContextPath() %>/mydspace">
+                    <input class="mb-2" type="hidden" name="item_id" value="<%= item.getID() %>" />
+                    <input class="mb-2" type="hidden" name="step" value="<%= MyDSpaceServlet.REQUEST_MIGRATE_ARCHIVE %>" />
+                    <input class="mb-2 btn btn-default col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.mydspace.request.export.migrateitem"/>" />
+                </form>
+                <form method="post" action="<%= request.getContextPath() %>/dspace-admin/metadataexport">
+                    <input class="mb-2" type="hidden" name="handle" value="<%= item.getHandle() %>" />
+                    <input class="mb-2 btn btn-default col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.general.metadataexport.button"/>" />
+                </form>
+					<% if(hasVersionButton) { %>       
+                	<form method="get" action="<%= request.getContextPath() %>/tools/version">
+                    	<input class="mb-2" type="hidden" name="itemID" value="<%= item.getID() %>" />                    
+                    	<input class="mb-2 btn btn-default col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.general.version.button"/>" />
+                	</form>
+                	<% } %> 
+                	<% if(hasVersionHistory) { %>			                
+                	<form method="get" action="<%= request.getContextPath() %>/tools/history">
+                    	<input class="mb-2" type="hidden" name="itemID" value="<%= item.getID() %>" />
+                    	<input class="mb-2" type="hidden" name="versionID" value="<%= history.getVersion(item)!=null?history.getVersion(item).getVersionId():null %>" />                    
+                    	<input class="mb-2 btn btn-info col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.general.version.history.button"/>" />
+                	</form>         	         	
+					<% } %>
+             </div>
+          </div>
+        </div>
+<%      } %>
 <%
 if (dedupEnabled && admin_button) { %>	
 <div class="col-lg-12 col-md-4 col-sm-6">

@@ -111,8 +111,6 @@ else
 
 <% if (items.length > 0) { %>
     <br/>
-    <%-- <h3>Item hits:</h3> --%>
-    <h3><fmt:message key="jsp.search.results.itemhits"/></h3>
     <dspace:itemlist items="<%= items %>" />
 <% } %>
 
