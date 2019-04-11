@@ -37,13 +37,13 @@
 <div align="center" />
 <%-- form to navigate to any of the three options available --%>
 <form method="post" action="">
-    <div class="row">
+    <div class="row mb-3">
     	<input class="btn btn-primary col-md-6 col-md-offset-3" type="submit" name="submit_add" value="<fmt:message key="jsp.dspace-admin.supervise-main.add.button"/>"/>
     </div>
-    <div class="row">
+    <div class="row mb-3">
     	<input class="btn btn-info col-md-6 col-md-offset-3" type="submit" name="submit_view" value="<fmt:message key="jsp.dspace-admin.supervise-main.view.button"/>"/>
     </div>
-    <div class="row">    
+    <div class="row mb-3">    
     	<input class="btn btn-warning col-md-6 col-md-offset-3" type="submit" name="submit_clean" value="<fmt:message key="jsp.dspace-admin.supervise-main.clean.button"/>"/>
     </div>
 </form>

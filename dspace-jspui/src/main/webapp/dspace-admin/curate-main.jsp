@@ -56,37 +56,48 @@
 
   <h1><fmt:message key="jsp.dspace-admin.curate.main.heading"/></h1>
 
-	<div class="input-group">
-       	<label class="input-group-addon"><fmt:message key="jsp.dspace-admin.curate.main.info1"/>:</label>
-       	<input class="form-control" type="text" name="handle" value="<%= handle %>" size="20"/>
-       	<span class="col-md-10"><fmt:message key="jsp.dspace-admin.curate.main.info2"/></span>
-	</div>
-	
-	
+<div class="row mb-3">
+	<div class="col-12 col-sm-3">
+    	<label class="input-group-addon"><fmt:message key="jsp.dspace-admin.curate.main.info1"/>:</label>
+    </div>
+    <div class="col-12 col-sm-9">
+    	<input class="form-control" type="text" name="handle" value="<%= handle %>" size="20"/>
+    </div>
+</div>
+
+<span class="px-0 btn--block"><fmt:message key="jsp.dspace-admin.curate.main.info2"/></span>	
+	<br/>
     
 <%
     if (groupOptions != null && !"".equals(groupOptions))
     {
 %>
- 	<div class="input-group">
-      <label class="input-group-addon"><fmt:message key="jsp.tools.curate.select-group.tag"/>:</label>
-  
-        <select class="form-control" name="select_curate_group" id="select_curate_group" onchange="this.form.submit();">
+<div class="row mb-3">
+	<div class="col-12 col-sm-3">
+    	<label class="input-group-addon"><fmt:message key="jsp.tools.curate.select-group.tag"/>:</label>
+    </div>
+    <div class="col-12 col-sm-9">
+    	<select class="form-control" name="select_curate_group" id="select_curate_group" onchange="this.form.submit();">
           <%= groupOptions %>
         </select>
-  	</div>
+    </div>
+</div>
 <%
     }
 %>
-  <div class="input-group">
-      <label class="input-group-addon"><fmt:message key="jsp.tools.curate.select-task.tag"/>:</label>
-  
-        <select class="form-control" name="curate_task" id="curate_task">
+
+<div class="row mb-3">
+	<div class="col-12 col-sm-3">
+    	<label class="input-group-addon"><fmt:message key="jsp.tools.curate.select-task.tag"/>:</label>
+    </div>
+    <div class="col-12 col-sm-9">
+    	<select class="form-control" name="curate_task" id="curate_task">
           <%= taskOptions %>
         </select>
-  </div>
+    </div>
+</div>
   
-  <div class="input-group">
+  <div class="input-group btn-group">
 	<input type="hidden" name="handle" value="<%= handle %>"/>
     <input class="btn btn-default" type="submit" name="submit_main_curate" value="<fmt:message key="jsp.tools.curate.perform.button"/>" />
     <input class="btn btn-default" type="submit" name="submit_main_queue" value="<fmt:message key="jsp.tools.curate.queue.button"/>" />

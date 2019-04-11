@@ -80,6 +80,7 @@
     <p class="alert alert-info"><fmt:message key="jsp.dspace-admin.license-edit.description"/></p>
     
     <textarea class="form-control" name="license" rows="15" cols="70"><%= license %></textarea>
+    <br/>
     <input class="btn btn-primary" type="submit" name="submit_save" value="<fmt:message key="jsp.dspace-admin.general.save"/>" />
     <input class="btn btn-default" type="submit" name="submit_cancel" value="<fmt:message key="jsp.dspace-admin.general.cancel"/>" />
     

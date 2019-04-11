@@ -67,8 +67,8 @@
          
             <%-- <td>Collection:</td> --%>
 		<div class="input-group">
-            <span class="col-md-2"><label for="tcollection"><fmt:message key="jsp.dspace-admin.authorize-advanced.col"/></label></span>
-            <span class="col-md-10">
+            <span class="col-md-2 pl-0"><label for="tcollection"><fmt:message key="jsp.dspace-admin.authorize-advanced.col"/></label></span>
+            <span class="col-md-10 mb-3 px-0">
                 <select class="form-control" size="10" name="collection_id" id="tcollection">
                     <%  for(int i = 0; i < collections.length; i++ ) { %>
                             <option value="<%= collections[i].getID() %>"> <%= collections[i].getMetadata("name")%>
@@ -78,8 +78,8 @@
             </span>    
             
             <%-- <td>Content Type:</td> --%>
-            <span class="col-md-2"><label for="tresource_type"><fmt:message key="jsp.dspace-admin.authorize-advanced.type"/></label></span>
-			<span class="col-md-10">
+            <span class="col-md-2 pl-0"><label for="tresource_type"><fmt:message key="jsp.dspace-admin.authorize-advanced.type"/></label></span>
+			<span class="col-md-10 mb-3 px-0">
                 <select class="form-control" name="resource_type" id="tresource_type">
                     <%-- <option value="<%=Constants.ITEM%>">item</option>
                     <option value="<%=Constants.BITSTREAM%>">bitstream</option> --%>
@@ -89,10 +89,10 @@
      		</span>
             
             <%-- <td>Group:</td> --%>
-			<span class="col-md-2">
+			<span class="col-md-2 pl-0">
 				<label for="tgroup_id"><fmt:message key="jsp.dspace-admin.general.group-colon"/></label>
 			</span>
-            <span class="col-md-10">
+            <span class="col-md-10 mb-3 px-0">
             	<select class="form-control" size="10" name="group_id" id="tgroup_id">
                     <%  for(int i = 0; i < groups.length; i++ ) { %>
                             <option value="<%= groups[i].getID() %>"> <%= groups[i].getName()%>
@@ -101,11 +101,11 @@
                 </select>
             </span>
             
-            <span class="col-md-2">            
+            <span class="col-md-2 pl-0">            
             	<%-- <tr><td>Action:</td> --%>
 				<label for="taction_id"><fmt:message key="jsp.dspace-admin.general.action-colon"/></label>
 			</span>
-			<span class="col-md-10">
+			<span class="col-md-10 mb-3 px-0">
                 <select class="form-control" name="action_id" id="taction_id">
                     <%  for( int i = 0; i < Constants.actionText.length; i++ ) { %>
                         <option value="<%= i %>">
@@ -116,12 +116,12 @@
             </span>
         </div>
 	    
-	    <br/>        
-        <div class="btn-group">
+	    <span class="alert alert-warning btn--block"><fmt:message key="jsp.dspace-admin.authorize-advanced.warning"/></span>    
+        <div class="text-right">
            	<%-- <input type="submit" name="submit_advanced_add" value="Add Policy"> --%>
             <input class="btn btn-primary" type="submit" name="submit_advanced_add" value="<fmt:message key="jsp.dspace-admin.authorize-advanced.add"/>" />
             <%-- <input type="submit" name="submit_advanced_clear" value="Clear Policies"> (warning: clears all policies for a given set of objects) --%>
-        	<input class="btn btn-danger" type="submit" name="submit_advanced_clear" value="<fmt:message key="jsp.dspace-admin.authorize-advanced.clear"/>" /><span class="alert alert-warning"><fmt:message key="jsp.dspace-admin.authorize-advanced.warning"/></span>
+        	<input class="btn btn-danger" type="submit" name="submit_advanced_clear" value="<fmt:message key="jsp.dspace-admin.authorize-advanced.clear"/>" />
         </div>    
 
     </form>

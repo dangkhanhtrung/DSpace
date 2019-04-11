@@ -162,10 +162,10 @@
                         <span class="col-md-6">
                             <img class="img-responsive" src="<%= request.getContextPath() %>/retrieve/<%= logo.getID() %>" alt="logo" />
                         </span>
-                        <input class="col-md-3 btn btn-default" type="submit" name="submit_set_logo" value="<fmt:message key="jsp.tools.edit-community.form.button.add-logo"/>" />
-                        <input class="col-md-3 btn btn-danger" type="submit" name="submit_delete_logo" value="<fmt:message key="jsp.tools.edit-community.form.button.delete-logo"/>" />
+                        <input class="col-md-3 btn btn-default mb-3" type="submit" name="submit_set_logo" value="<fmt:message key="jsp.tools.edit-community.form.button.add-logo"/>" />
+                        <input class="col-md-3 btn btn-danger mb-3" type="submit" name="submit_delete_logo" value="<fmt:message key="jsp.tools.edit-community.form.button.delete-logo"/>" />
 <%  } else { %>
-                    <input class="col-md-12 btn btn-success" type="submit" name="submit_set_logo" value="<fmt:message key="jsp.tools.edit-community.form.button.set-logo"/>" />
+                    <input class="col-md-12 btn btn-success mb-3" type="submit" name="submit_set_logo" value="<fmt:message key="jsp.tools.edit-community.form.button.set-logo"/>" />
 <%  } %>
                     </div>
 			</div>

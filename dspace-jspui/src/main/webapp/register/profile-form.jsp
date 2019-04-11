@@ -57,21 +57,21 @@
     }
 %>
 	<div class="form-group">
-		<label class="col-md-offset-3 col-md-2 control-label" for="first_name"><fmt:message key="jsp.register.profile-form.fname.field"/></label>
-        <div class="col-md-3"><input class="form-control" type="text" name="first_name" id="tfirst_name" size="40" value="<%= Utils.addEntities(firstName) %>"/></div>
+		<label for="first_name"><fmt:message key="jsp.register.profile-form.fname.field"/></label>
+        <div><input class="form-control" type="text" name="first_name" id="tfirst_name" size="40" value="<%= Utils.addEntities(firstName) %>"/></div>
 	</div>
 	<div class="form-group">
         <%-- <td align="right" class="standard"><label for="tlast_name"><strong>Last name*:</strong></label></td> --%>
-		<label class="col-md-offset-3 col-md-2 control-label" for="tlast_name"><fmt:message key="jsp.register.profile-form.lname.field"/></label>
-        <div class="col-md-3"><input class="form-control" type="text" name="last_name" id="tlast_name" size="40" value="<%= Utils.addEntities(lastName) %>" /></div>
+		<label for="tlast_name"><fmt:message key="jsp.register.profile-form.lname.field"/></label>
+        <div><input class="form-control" type="text" name="last_name" id="tlast_name" size="40" value="<%= Utils.addEntities(lastName) %>" /></div>
     </div>
 	<div class="form-group">
-		<label class="col-md-offset-3 col-md-2 control-label" for="tphone"><fmt:message key="jsp.register.profile-form.phone.field"/></label>
-        <div class="col-md-3"><input class="form-control" type="text" name="phone" id="tphone" size="40" maxlength="32" value="<%= Utils.addEntities(phone) %>"/></div>
+		<label for="tphone"><fmt:message key="jsp.register.profile-form.phone.field"/></label>
+        <div><input class="form-control" type="text" name="phone" id="tphone" size="40" maxlength="32" value="<%= Utils.addEntities(phone) %>"/></div>
     </div>
     <div class="form-group">
-		<label class="col-md-offset-3 col-md-2 control-label" for="tlanguage"><strong><fmt:message key="jsp.register.profile-form.language.field"/></strong></label>
- 		<div class="col-md-3">
+		<label for="tlanguage"><strong><fmt:message key="jsp.register.profile-form.language.field"/></strong></label>
+ 		<div>
         <select class="form-control" name="language" id="tlanguage">
 <%
         for (int i = supportedLocales.length-1; i >= 0; i--)

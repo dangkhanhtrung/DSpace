@@ -125,10 +125,5 @@
 		<input type="hidden" name="pageCallerID" value="<%= request.getAttribute("pageCallerID")%>"/>
     </form>
     <c:if test="${fn:length(validationMessages)>0}">
-	    <script type="text/javascript">
-		    jQuery( document ).ready(function() {
-		    	jQuery('#nextButtonDiv').tooltip();
-		    });
-	    </script>
     </c:if>
 </dspace:layout>

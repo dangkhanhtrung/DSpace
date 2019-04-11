@@ -93,7 +93,7 @@
 
     <form method="post" action="">
 
-		<div class="row">
+		<div class="row mb-2">
             <%-- <td>Email:</td> --%>         
             <label class="col-md-2" for="temail"><fmt:message key="jsp.dspace-admin.eperson-edit.email"/></label>
             <div class="col-md-6">
@@ -102,7 +102,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mb-2">
             <%-- <td>Last Name:</td> --%>
             <label class="col-md-2" for="tlastname"><fmt:message key="jsp.dspace-admin.eperson.general.lastname"/></label>
             <div class="col-md-6">
@@ -110,7 +110,7 @@
 			</div>
        </div>     
 
-        <div class="row">           
+        <div class="row mb-2">           
             <%-- <td>First Name:</td> --%>
             <label class="col-md-2" for="tfirstname"><fmt:message key="jsp.dspace-admin.eperson.general.firstname"/></label>
             <div class="col-md-6">
@@ -119,7 +119,7 @@
          </div>
 
         <% if (ldap_enabled) { %>
-		<div class="row">
+		<div class="row mb-2">
             <label class="col-md-2">LDAP NetID:</label>
             <div class="col-md-6">
                 <input class="form-control" name="netid" size="24" value="<%=netid == null ? "" : Utils.addEntities(netid) %>" />
@@ -127,7 +127,7 @@
         </div>
         <% } %>
 
-        <div class="row">
+        <div class="row mb-2">
             <%-- <td>Phone:</td> --%>
             <label class="col-md-2" for="tphone"><fmt:message key="jsp.dspace-admin.eperson-edit.phone"/></label>
             <div class="col-md-6">
@@ -135,7 +135,7 @@
 			</div>  
   		</div>
   		
-  		<div class="row">          
+  		<div class="row mb-2">          
             <label class="col-md-2" for="tlanguage"><fmt:message key="jsp.register.profile-form.language.field"/></label>
             <div class="col-md-6">            
        		<select class="form-control" name="language" id="tlanguage">
@@ -164,29 +164,40 @@
         	</select>
         	</div>
    		</div>
-   		<div class="row">
-   		<%-- <td>Can Log In:</td> --%>
-            <label class="col-md-2" for="tcan_log_in"><fmt:message key="jsp.dspace-admin.eperson-edit.can"/></label>
-            <div class="col-md-6">
-			<input class="form-control"  type="checkbox" name="can_log_in" id="tcan_log_in" value="true"<%= eperson.canLogIn() ? " checked=\"checked\"" : "" %> />
+        <div class="row mb-2">
+        <%-- <td></td> --%>
+            <label class="col-md-2"></label>
+            <div class="col-md-3">
+            <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input"  type="checkbox" name="can_log_in" id="can_log_in" value="true"<%= eperson.canLogIn() ? " checked=\"checked\"" : "" %> />
+                            <label class="custom-control-label" for="can_log_in">
+                            Require Certificate
+												              </label>
+                        </div>
+			
 			</div>
-        </div>
-        <div class="row">
-        <%-- <td>Require Certificate:</td> --%>
-            <label class="col-md-2" for="trequire_certificate"><fmt:message key="jsp.dspace-admin.eperson-edit.require"/></label>
-            <div class="col-md-6">
-			<input class="form-control"  type="checkbox" name="require_certificate" id="trequire_certificate" value="true"<%= eperson.getRequireCertificate() ? " checked=\"checked\"" : "" %> />
+			<div class="col-md-3">
+                  <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input"  type="checkbox" name="require_certificate" id="require_certificate" value="true"<%= eperson.getRequireCertificate() ? " checked=\"checked\"" : "" %> />
+                            <label class="custom-control-label" for="require_certificate">
+                            Require Certificate
+												              </label>
+                        </div>
+			
 			</div>
 		</div>
-		<br/>
-    	<div class="col-md-4 btn-group">
-                    <%-- <input type="submit" name="submit_save" value="Save Edits"> --%>
-                    <input class="btn btn-default" type="submit" name="submit_save" value="<fmt:message key="jsp.dspace-admin.general.save"/>" />
+		<div class="row mt-4">
+        <%-- <td></td> --%>
+            <label class="col-md-2"></label>
+            <div class="col-md-6 btn-group px-0">
+            
+					<input class="btn btn-default" type="submit" name="submit_save" value="<fmt:message key="jsp.dspace-admin.general.save"/>" />
                     <input class="btn btn-default" type="submit" name="submit_resetpassword" value="<fmt:message key="jsp.dspace-admin.eperson-main.ResetPassword.submit"/>"/>
                     <%-- <input type="submit" name="submit_delete" value="Delete EPerson..."> --%>
                     <input class="btn btn-danger" type="submit" name="submit_delete" value="<fmt:message key="jsp.dspace-admin.general.delete"/>" />
-         </div>
-	
+			</div>		
+		</div>
+    		
     </form>
 
 <%

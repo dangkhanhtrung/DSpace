@@ -34,67 +34,85 @@
     EPerson user = (EPerson) request.getAttribute("dspace.current.user");
 
     // Is the logged in user an admin
-    Boolean admin = (Boolean)request.getAttribute("is.admin");
+    Boolean admin = (Boolean) request.getAttribute("is.admin");
     boolean isAdmin = (admin == null ? false : admin.booleanValue());
 
     // Get the current page, minus query string
     String currentPage = UIUtil.getOriginalURL(request);
-    int c = currentPage.indexOf( '?' );
-    if( c > -1 )
-    {
-        currentPage = currentPage.substring( 0, c );
+    int c = currentPage.indexOf('?');
+    if (c > -1) {
+        currentPage = currentPage.substring(0, c);
     }
 
-    // E-mail may have to be truncated
-    String navbarEmail = null;
-
-    if (user != null)
-    {
-        navbarEmail = user.getEmail();
-    }
 %>
 
+<%
+	if (isAdmin) {
+%>
+<dspace:include page="/layout/navbar-admin.jsp" />
+<% } else { %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="<%= request.getContextPath()%>">Trang chủ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-primary">
+            <div class="navbar-collapse-header">
+                <div class="row">
+                    <div class="col-6 collapse-brand">
+                        <a href="<%= request.getContextPath()%>">
+                            Trang chủ
+                        </a>
+                    </div>
+                    <div class="col-6 collapse-close">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item" v-for="(item, index) in crisDoTps" v-bind:key="index">
+                    <a class="nav-link" :href="'/jspui/simple-search?query=&location=' + item.shortname">
+                       <span v-text="item.label"></span>
+                    </a>
+                </li>
+                <%
+                    if (user != null) {
+                %>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navbar-primary_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1">
 
-       <div class="navbar-header">
-         <a class="navbar-brand" href="<%= request.getContextPath() %>/"><img height="25" src="<%= request.getContextPath() %>/image/dspace-logo-only.png" alt="DSpace logo" /></a>
-       </div>
-       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-       <div class="nav navbar-nav navbar-right">
-		<ul class="nav navbar-nav navbar-right">
-         <%
-    if (user != null)
-    {
-		%>
-		<li id="userloggedin-top-menu" class="dropdown">
-		<a href="#" class="dropdown-toggle text-right" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <fmt:message key="jsp.layout.navbar-default.loggedin">
-		      <fmt:param><%= StringUtils.abbreviate(navbarEmail, 20) %></fmt:param>
-		  </fmt:message> <b class="caret"></b></a>
-		<%
-    } else {
-		%>
-		<li id="user-top-menu" class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <fmt:message key="jsp.layout.navbar-default.sign"/> <b class="caret"></b></a>
-	<% } %>             
-             <ul class="dropdown-menu">
-               <li><a href="<%= request.getContextPath() %>/mydspace"><fmt:message key="jsp.layout.navbar-default.users"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/subscribe"><fmt:message key="jsp.layout.navbar-default.receive"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/profile"><fmt:message key="jsp.layout.navbar-default.edit"/></a></li>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/mydspace"><fmt:message key="jsp.layout.navbar-default.users"/></a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/subscribe"><fmt:message key="jsp.layout.navbar-default.receive"/></a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/profile"><fmt:message key="jsp.layout.navbar-default.edit"/></a>
+                        <%
+                            if (isAdmin) {
+                        %>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin"><fmt:message key="jsp.administer"/></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/logout">Đăng xuất</a>
+                        <% } %>
+                    </div>
+                </li>
 
-		<%
-		  if (isAdmin)
-		  {
-		%>
-			   <li class="divider"></li>  
-               <li><a href="<%= request.getContextPath() %>/dspace-admin"><fmt:message key="jsp.administer"/></a></li>
-		<%
-		  }
-		  if (user != null) {
-		%>
-		<li><a href="<%= request.getContextPath() %>/logout"><span class="glyphicon glyphicon-log-out"></span> <fmt:message key="jsp.layout.navbar-default.logout"/></a></li>
-		<% } %>
-             </ul>
-           </li>
-          </ul>
-          
-	</div>
-    </nav>
+                <%
+                } else {
+                %>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= request.getContextPath()%>/mydspace">Đăng nhập</a>
+                </li>
+                <%
+                    }
+                %>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<% } %>

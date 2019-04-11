@@ -70,6 +70,22 @@
         <link href="<%= request.getContextPath()%>/static/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
         <style>
+	        .media.title_signature,
+.media.title_signature a {
+    background: #C62828;
+    color: #fff;
+}
+.media.title_signature .media-body {
+    margin-left: -25px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+.tabsignature {
+	margin-top: 15px;
+}
+	        body .text--white a {
+	color: #ffffff !important;
+}
             body .navbar {
                 width: 100%;
                 height: 42px;
@@ -189,6 +205,7 @@
                 position: relative;
                 padding: 8px 1rem;
                 border: .0625rem solid #dee2e6;
+                vertical-align: baseline;
 
             }
             body .table th > a {
@@ -445,6 +462,9 @@
             body .itemDisplayTable a {
                 border-bottom: 1px dashed;
             }
+            body table {
+	    width: 100%;
+}
         </style>
 
         <script type="text/javascript" src="<%= request.getContextPath()%>/static/vendor/jquery/jquery.min.js"></script>
@@ -460,10 +480,6 @@
             var $ = jQuery.noConflict();
             var JQ = j;
             dspaceContextPath = "<%=request.getContextPath()%>";
-            jQuery(document).ready(function ($) {
-                $('span[data-toggle="tooltip"]').tooltip();
-                $('i[data-toggle="tooltip"]').tooltip();
-            });
         </script>
         <% if (StringUtils.isNotBlank(LocaleUIHelper.ifLtr(request, "", "rtl"))) { %>
         <script type="text/javascript">

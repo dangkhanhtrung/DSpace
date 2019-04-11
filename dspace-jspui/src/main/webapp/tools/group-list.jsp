@@ -56,7 +56,6 @@
 
 <center>
 	<form class="form-inline" method="get">
-	    <label for="search"><fmt:message key="jsp.tools.eperson-list.search.query"/></label>
 	    <input class="form-control" style="width:200px;"type="text" name="search" value="<%= search %>"/>
 	    <input class="btn btn-success" type="submit" value="<fmt:message key="jsp.tools.eperson-list.search.submit" />" />
 	<%
@@ -71,7 +70,7 @@
 
    	
     <form method="post" action="">
-        <div class="row col-md-offset-5">
+        <div>
 	    	<input class="btn btn-success" type="submit" name="submit_add" value="<fmt:message key="jsp.tools.group-list.create.button"/>" />
         </div>
     </form>
@@ -95,15 +94,18 @@
                 <td class="<%= row %>RowEvenCol">
                     <%= Utils.addEntities(groups[i].getName()) %>
                 </td>
-                <td class="<%= row %>RowOddCol">
+                <td class="<%= row %>RowOddCol" width="200">
+	                <div class="row">
 <%
 	// no edit button for group anonymous
 	if (groups[i].getID() > 0 )
 	{
 %>                  
-                    <form method="post" action="">
+                    <form  class="col-6 pr-0" method="post" action="">
                         <input type="hidden" name="group_id" value="<%= groups[i].getID() %>"/>
-  		        <input class="btn btn-default col-md-6" type="submit" name="submit_edit" value="<fmt:message key="jsp.tools.general.edit"/>" />
+						<input class="btn btn-default" type="submit" name="submit_edit" value="<fmt:message key="jsp.tools.general.edit"/>" style="
+    width: 100%;
+" />
                    </form>
 <%
 	}
@@ -112,13 +114,16 @@
 	if (groups[i].getID() > 1 )
 	{
 %>   
-                    <form method="post" action="">
+                    <form  class="col-6" method="post" action="">
                         <input type="hidden" name="group_id" value="<%= groups[i].getID() %>"/>
-	                <input class="btn btn-danger col-md-6" type="submit" name="submit_group_delete" value="<fmt:message key="jsp.tools.general.delete"/>" />
+	                <input class="btn btn-danger" type="submit" name="submit_group_delete" value="<fmt:message key="jsp.tools.general.delete"/>" style="
+    width: 100%;
+" />
 <%
 	}
 %>	                
                     </form>
+	                </div>
                 </td>
             </tr>
 <%

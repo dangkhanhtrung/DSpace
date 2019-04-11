@@ -562,7 +562,7 @@ $(document).ready(function() {
 			labelClass = "label-default";
 		}
 	%>
-		<tr class="alert">
+		<tr class="alert alert-info">
 			<td>
 				<div>	
 					<div><%=citations.get(myItem.getID())%></div>

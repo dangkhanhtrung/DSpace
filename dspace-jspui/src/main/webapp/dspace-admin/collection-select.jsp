@@ -48,7 +48,7 @@
     <h1><fmt:message key="jsp.dspace-admin.collection-select.col"/></h1>
 
     <form method="post" action="">
-				<div class="row col-md-4 col-md-offset-4">
+				<div>
                     <select class="form-control" size="12" name="collection_id">
                         <%  for (int i = 0; i < collections.length; i++) { %>
                             <option value="<%= collections[i].getID()%>">
@@ -58,7 +58,7 @@
                     </select>
                 </div>
                 <br/>
-				<div class="btn-group pull-right col-md-7">
+				<div class="btn-group pull-right text-right">
                     <%-- <input type="submit" name="submit_collection_select" value="Edit Policies"> --%>
                     <input class="btn btn-primary" type="submit" name="submit_collection_select" value="<fmt:message key="jsp.dspace-admin.general.editpolicy"/>" />
 				
