@@ -490,8 +490,7 @@ if (dedupEnabled && admin_button) { %>
 			j( "#metric-counter-${metricType}" ).wrap(function() {
 				  return "<a target='_blank' href='" + j( "div" ).data( "moreLink" ).link + "'></a>";
 			}).append(" <i class='fa fa-info-circle' data-toggle='tooltip' title='Get updated citations from database'></i>");
-			
-			jQuery('[data-toggle="tooltip"]').tooltip();
+		
 		});
 		</script>
 	</c:if>

@@ -53,7 +53,7 @@
 	<dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.collection-admin\") +\"#groupeditor\"%>"><fmt:message key="jsp.help"/></dspace:popup>
 	</h1>
     <form name="epersongroup" method="post" action="">
-	<div class="row"><label for="tgroup_name" class="col-md-2">
+	<div class="row"><label for="tgroup_name" class="col-md-2 my-0" style="line-height: 32px;">
 		<fmt:message key="jsp.tools.group-edit.name"/></label>
 	<span class="col-md-10">
 		<input class="form-control" name="group_name" id="tgroup_name" value="<%= Utils.addEntities(group.getName()) %>"/>
@@ -65,17 +65,17 @@
     <input type="hidden" name="group_id" value="<%=group.getID()%>"/>
     
     <div class="row">
-    <div class="col-md-6"> 
+    <div class="col-md-6 group_ids"> 
 	    <label for="eperson_id"><fmt:message key="jsp.tools.group-edit.eperson"/></label>
 	    <dspace:selecteperson multiple="true" selected="<%= epeople %>"/> 
     </div>
     
-    <div class="col-md-6">
+    <div class="col-md-6 group_ids">
 	    <label for="group_ids"><fmt:message key="jsp.tools.group-edit.group"/></label>
 	    <dspace:selectgroup   multiple="true" selected="<%= groups  %>"/>
 	</div>
 	</div>
 	<br/>
-    <div class="row text-center"><input class="btn btn-success" type="submit" name="submit_group_update" value="<fmt:message key="jsp.tools.group-edit.update.button"/>" onclick="javascript:finishEPerson();finishGroups();"/></div>
+    <div><input class="btn btn-success" type="submit" name="submit_group_update" value="<fmt:message key="jsp.tools.group-edit.update.button"/>" onclick="javascript:finishEPerson();finishGroups();"/></div>
    </form>
 </dspace:layout>

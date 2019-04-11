@@ -53,13 +53,13 @@
 	<div><fmt:message key="jsp.tools.get-item-id.info2"/></div>
     
     <form method="get" action="">
-    	<div class="row">
+    	<div class="row mb-3">
             <label class="col-md-2" for="thandle"><fmt:message key="jsp.tools.get-item-id.handle"/></label>            
            	<span class="col-md-3"><input class="form-control" type="text" name="handle" id="thandle" value="<%= ConfigurationManager.getProperty("handle.prefix") %>/" size="12"/></span>
 			<%-- <input type="submit" name="submit" value="Find" /> --%>
 			<input class="btn btn-default" type="submit" name="submit" value="<fmt:message key="jsp.tools.get-item-id.find.button"/>" />
 		</div>
-		<div class="row">
+		<div class="row mb-3">
 			<label class="col-md-2" for="thandle"><fmt:message key="jsp.tools.get-item-id.internal"/></label>
             <span class="col-md-3"><input class="form-control" type="text" name="item_id" id="titem_id" size="12"/></span>
 			<%-- <input type="submit" name="submit" value="Find"> --%>

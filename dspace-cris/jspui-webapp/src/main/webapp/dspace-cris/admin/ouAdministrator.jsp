@@ -59,7 +59,7 @@
 		</li>
 		<li>
 		<a id="addentity"
-			href="#"><fmt:message
+			href="<%=request.getContextPath()%>/cris/administrator/do/add.htm"><fmt:message
 			key="jsp.dspace-admin.hku.add-organizationunit" /></a>	
 		
 		<div style="display: none; float: right;"><c:set

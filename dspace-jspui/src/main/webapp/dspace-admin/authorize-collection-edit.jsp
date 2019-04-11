@@ -67,7 +67,7 @@
 
 
  <form action="<%= request.getContextPath() %>/tools/authorize" method="post"> 
-	<div class="row"> 
+	<div> 
             <input type="hidden" name="collection_id" value="<%=collection.getID()%>" />
             <input class="btn btn-success col-md-2 col-md-offset-5"  type="submit" name="submit_collection_add_policy" value="<fmt:message key="jsp.dspace-admin.general.addpolicy"/>" />
     </div>

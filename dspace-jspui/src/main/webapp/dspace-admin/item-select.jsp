@@ -54,7 +54,7 @@
     <div><fmt:message key="jsp.dspace-admin.item-select.enter"/></div>
       
     <form method="post" action="">
-    	<div class="row">
+    	<div class="row mb-3">
             <label class="col-md-2" for="thandle"><fmt:message key="jsp.dspace-admin.item-select.handle"/></label>            
            	<span class="col-md-3"><input class="form-control" type="text" name="handle" id="thandle" value="<%= ConfigurationManager.getProperty("handle.prefix") %>/" size="12"/></span>
 			<%-- <input type="submit" name="submit" value="Find" /> --%>
@@ -69,7 +69,7 @@
     </form>
     <br/>
     <form method="post" action="">
-    	<div class="row col-md-offset-11">
+    	<div >
     		<input class="btn btn-default" type="submit" name="submit_collection_select_cancel" value="<fmt:message key="jsp.dspace-admin.general.cancel"/>" />
     	</div>
    	</form>

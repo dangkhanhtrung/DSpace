@@ -55,97 +55,121 @@
 
 	boolean statsCleanerEnabled = ConfigurationManager.getBooleanProperty("usage-statistics","webui.statistics.showCleaner");
     
+
 %>
 
-       <div class="navbar-header">
-         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-         </button>
-         <a class="navbar-brand" href="<%= request.getContextPath() %>/"><img height="25" src="<%= request.getContextPath() %>/image/dspace-logo-only.png" alt="DSpace logo" /></a>
-       </div>
-       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-         <ul class="nav navbar-nav">
-           <li class="hidden-xs hidden-sm"><a href="<%= request.getContextPath() %>/"><span class="glyphicon glyphicon-home"></span> <fmt:message key="jsp.layout.navbar-default.home"/></a></li>
-           
-          <li class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><fmt:message key="jsp.layout.navbar-admin.contents"/> <b class="caret"></b></a>
-             <ul class="dropdown-menu">
-               <li><a href="<%= request.getContextPath() %>/tools/edit-communities"><fmt:message key="jsp.layout.navbar-admin.communities-collections"/></a></li>
-               <li class="divider"></li>
-               <li><a href="<%= request.getContextPath() %>/tools/edit-item"><fmt:message key="jsp.layout.navbar-admin.items"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/tools/duplicate"><fmt:message key="jsp.layout.navbar-admin.duplicate"/></a></li>               
-               <li><a href="<%= request.getContextPath() %>/dspace-admin/workflow"><fmt:message key="jsp.layout.navbar-admin.workflow"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/dspace-admin/supervise"><fmt:message key="jsp.layout.navbar-admin.supervisors"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/dspace-admin/curate"><fmt:message key="jsp.layout.navbar-admin.curate"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/dspace-admin/withdrawn"><fmt:message key="jsp.layout.navbar-admin.withdrawn"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/dspace-admin/privateitems"><fmt:message key="jsp.layout.navbar-admin.privateitems"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/dspace-admin/metadataimport"><fmt:message key="jsp.layout.navbar-admin.metadataimport"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/dspace-admin/batchimport"><fmt:message key="jsp.layout.navbar-admin.batchimport"/></a></li>               
-               <li><a href="<%= request.getContextPath() %>/dspace-admin/authority"><fmt:message key="jsp.layout.navbar-admin.authority"/></a></li>
-               <% if(mintDoiToolEnabled) { %>
-               		<li><a href="<%= request.getContextPath() %>/dspace-admin/doi"><fmt:message key="jsp.layout.navbar-admin.doi"/></a></li>			
-               <% }
-				if(statsCleanerEnabled){ %>
-					<li><a href="<%= request.getContextPath() %>/dspace-admin/stats-cleaner"><fmt:message key="jsp.layout.navbar-admin.stats-cleaner"/></a></li>					
-				<%} %>
-            </ul>
-          </li>
-       <%
-      if (crisModuleEnabled == true)
-      {
- 		%>
-          <li><a href="<%= request.getContextPath() %>/cris/administrator/index.htm"><fmt:message key="jsp.layout.navbar-admin.cris"/></a></li>
-   <% } %>      
-           <li class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><fmt:message key="jsp.layout.navbar-admin.accesscontrol"/> <b class="caret"></b></a>
-             <ul class="dropdown-menu">
-               <li><a href="<%= request.getContextPath() %>/dspace-admin/edit-epeople"><fmt:message key="jsp.layout.navbar-admin.epeople"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/tools/group-edit"><fmt:message key="jsp.layout.navbar-admin.groups"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/tools/authorize"><fmt:message key="jsp.layout.navbar-admin.authorization"/></a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-          			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><fmt:message key="jsp.layout.navbar-admin.statistics"/> <b class="caret"></b></a>
-          			<ul class="dropdown-menu">
-          				<li><a href="<%= request.getContextPath() %>/cris/stats/site.html?handle=<%=handlePrefix%>/0"><fmt:message key="jsp.layout.navbar-admin.sitestatistics"/></a></li>
-          				<li><a href="<%= request.getContextPath() %>/loginstats"><fmt:message key="jsp.layout.navbar-admin.loginstatistics"/></a></li>
-          				<li><a href="<%= request.getContextPath() %>/workflowstats"><fmt:message key="jsp.layout.navbar-admin.workflowstatistics"/></a></li>
-          			</ul>
-			</li>		          			
-		  <li class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><fmt:message key="jsp.layout.navbar-admin.settings"/> <b class="caret"></b></a>
-             <ul class="dropdown-menu">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+    	<a class="navbar-brand" href="<%= request.getContextPath()%>">Trang chủ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-primary">
+            <div class="navbar-collapse-header">
+                <div class="row">
+                	<div class="col-6 collapse-brand">
+                        <a href="<%= request.getContextPath()%>">
+                            Trang chủ
+                        </a>
+                    </div>
+                    <div class="col-6 collapse-close">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <ul class="navbar-nav">
 
-               <li><a href="<%= request.getContextPath() %>/dspace-admin/metadata-schema-registry"><fmt:message key="jsp.layout.navbar-admin.metadataregistry"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/dspace-admin/format-registry"><fmt:message key="jsp.layout.navbar-admin.formatregistry"/></a></li>
-               <li class="divider"></li>
-               <li><a href="<%= request.getContextPath() %>/dspace-admin/news-edit"><fmt:message key="jsp.layout.navbar-admin.editnews"/></a></li>
-               <li class="divider"></li>
-               <li><a href="<%= request.getContextPath() %>/dspace-admin/license-edit"><fmt:message key="jsp.layout.navbar-admin.editlicense"/></a></li>
+            	<li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navbar-primary_dropdown_1_admin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Content  <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1_admin">
+
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/edit-communities">Communities & Collections</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/edit-item">Items</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/duplicate">Deduplication</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/workflow">Workflow</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/supervise">Supervisors</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/curate">Curation Tasks</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/withdrawn">Withdrawn Items</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/privateitems">Private Items</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/metadataimport">Import metadata</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/batchimport">Batch import</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/authority">Authority Management</a>
+
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= request.getContextPath()%>/cris/administrator/index.htm">CRIS Module </a>
+                </li>
+				
+				<li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navbar-primary_dropdown_1_access" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Access Control  <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1_access">
+
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/edit-epeople">E-people</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/group-edit">Groups</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/authorize">Authorization</a>
+
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navbar-primary_dropdown_1_statistics " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Statistics  <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1_statistics">
+
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/cris/stats/site.html?handle=123456789/0">Site Statistics</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/loginstats">Login Statistics</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/workflowstats">Workflow Statistics</a>
+
+                    </div>
+                </li>
+                
+                 <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navbar-primary_dropdown_1_general " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        General Settings <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1_general">
+
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/metadata-schema-registry">Metadata Registry</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/format-registry">Bitstream Format Registry</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/news-edit">Edit News</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/license-edit">Edit Default License</a>
+
+                    </div>
+                </li>
+                
+                <%
+                    if (user != null) {
+                %>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navbar-primary_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1">
+
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/mydspace"><fmt:message key="jsp.layout.navbar-default.users"/></a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/subscribe"><fmt:message key="jsp.layout.navbar-default.receive"/></a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/profile"><fmt:message key="jsp.layout.navbar-default.edit"/></a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin"><fmt:message key="jsp.administer"/></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/logout">Đăng xuất</a>
+                    </div>
+                </li>
+
+                <%
+                }
+                %>
             </ul>
-          </li>          
-          <li class="<%= ( currentPage.endsWith( "/help" ) ? "active" : "" ) %>"><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.site-admin\") %>"><fmt:message key="jsp.layout.navbar-admin.help"/></dspace:popup></li>
-       </ul>
-       <div class="nav navbar-nav navbar-right">
-		<ul class="nav navbar-nav navbar-right">
-         <li id="userloggedin-top-menu" class="dropdown">
-
-		<a href="#" class="dropdown-toggle text-right" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <fmt:message key="jsp.layout.navbar-default.loggedin">
-		      <fmt:param><%= StringUtils.abbreviate(navbarEmail, 20) %></fmt:param>
-		  </fmt:message> <b class="caret"></b></a>
-		<ul class="dropdown-menu">
-               <li><a href="<%= request.getContextPath() %>/subscribe"><fmt:message key="jsp.layout.navbar-default.receive"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/mydspace"><fmt:message key="jsp.layout.navbar-default.users"/></a></li>
-               <li><a href="<%= request.getContextPath() %>/profile"><fmt:message key="jsp.layout.navbar-default.edit"/></a></li>
-
-		
-		<li><a href="<%= request.getContextPath() %>/logout"><span class="glyphicon glyphicon-log-out"></span> <fmt:message key="jsp.layout.navbar-default.logout"/></a></li>
-		
-        </ul>
-       </li>
-    </ul>
-          
-	</div>
+        </div>
+    </div>
 </nav>

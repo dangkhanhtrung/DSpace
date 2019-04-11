@@ -58,6 +58,7 @@
 				<option value="<fmt:message key="news-side.html"/>"><fmt:message key="jsp.dspace-admin.news-main.news.sidebar"/></option>
 				<option value="<fmt:message key="news-footer.html"/>"><fmt:message key="jsp.dspace-admin.news-main.news.footer"/></option>
 			</select>
+			<br/>
 			<input class="btn btn-primary" type="submit" name="submit_edit" value="<fmt:message key="jsp.dspace-admin.general.edit"/>" />
  		</form>		
 </dspace:layout>

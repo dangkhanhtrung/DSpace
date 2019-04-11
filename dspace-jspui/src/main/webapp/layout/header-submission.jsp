@@ -50,7 +50,6 @@
         <meta name="Generator" content="<%= generator%>" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="<%= request.getContextPath()%>/favicon.ico" type="image/x-icon"/>
-        <link rel="stylesheet" href="<%= request.getContextPath()%>/static/css/jquery-ui-1.10.3.custom/redmond/jquery-ui-1.10.3.custom.css" type="text/css" />
         <link rel="stylesheet" href="<%= request.getContextPath()%>/static/css/argon.min.css" type="text/css" />
         <link href="<%= request.getContextPath()%>/static/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
@@ -152,7 +151,8 @@
                 height: 32px;
 
             }
-            body .discovery-search-form select {
+            body .discovery-search-form select,
+            body .my_tabs select {
                 width: 100%;
             }
             body .alert-info {
@@ -174,6 +174,7 @@
                 position: relative;
                 padding: 8px 1rem;
                 border: .0625rem solid #dee2e6;
+                vertical-align: baseline;
 
             }
             body .table th > a {
@@ -435,22 +436,160 @@
     height: 32px;
 }
 .my_tabs .panel-group > .panel {
-    padding: 5px 15px;
-    border-bottom: .0625rem solid rgba(0,0,0,.1);
+    border-bottom: .0625rem solid rgb(244, 244, 244);
 }
 .my_tabs .panel-group > .panel:last-child {
     border-bottom: none;
 }
-
 .my_tabs .panel-group > .panel .panel-heading h6 {
+	background-color: #ffffff;
+}
+.my_tabs .panel-group > .panel .panel-heading h6,
+.my_tabs .panel-group > .panel .panel-body {
     margin: 0;
-    padding: 5px 0;
+    padding: 5px 15px;
     position: relative;
 }
 .my_tabs .panel-group > .panel .panel-heading .panel-title i {
         position: absolute;
     right: 15px;
     top: 10px;  
+}
+.my_tabs .panel-group,
+.my_tabs #tabs-result {
+	    background-color: #f4f5f7;
+}
+body .form-group-lv2 {
+	    margin-right: -15px;
+    margin-left: -15px;
+}
+body .help-block {
+	font-size: 14px;
+}
+#tabs-result {
+	padding: 15px;
+}
+body .alert-warning {
+	border-color: #fc7c5f;
+    background-color: transparent;
+    color: inherit !important;
+    border: 1px solid #fc7c5f !important;
+}
+h3.mydspace-subscriptions {
+    font-size: 16px;
+}
+#contentsubscription {
+    padding: 15px 10px;
+}
+#contentsubscription p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+#tabs a[href="<%= request.getContextPath()%>/subscribe"] {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    display: inline-block;
+    padding: .625rem 1.25rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #fff;
+    border-color: #1565c0;
+    background-color: #1565c0;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    font-size: .875rem;
+    position: relative;
+    transition: all .15s ease;
+    letter-spacing: .025em;
+    text-transform: uppercase;
+    will-change: transform;
+    line-height: 14px;
+    text-transform: unset;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    margin: 0 8px;
+}
+#tabs a[href="<%= request.getContextPath()%>/cris/tools/stats/subscription/list.htm"] {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  display: inline-block;
+  padding: .625rem 1.25rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  color: #fff;
+  border-color: #11cdef;
+  background-color: #11cdef;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  font-size: .875rem;
+  position: relative;
+  transition: all .15s ease;
+  letter-spacing: .025em;
+  text-transform: uppercase;
+  will-change: transform;
+  line-height: 14px;
+  text-transform: unset;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  margin: 0 10px;
+}
+#tabs {
+  border-bottom: 0;
+}
+#statisticssubscription {
+	padding: 15px 12px;
+}
+body textarea.form-control {
+	height: inherit;
+}
+.group_ids > div > input.col-xs-12 {
+	margin-bottom: 5px;
+}
+body .h1, body h1 {
+    font-size: 1.5rem;
+}
+ul.blank-page {
+    list-style-type: none;
+    padding: 0;
+}
+ul.blank-page li {
+   padding: 5px 0;
+   border-bottom: .0625rem dashed gray;
+}
+body table {
+	    width: 100%;
+}
+body .text--white a {
+	color: #ffffff !important;
+}
+.media.title_signature,
+.media.title_signature a {
+    background: #C62828;
+    color: #fff;
+}
+.media.title_signature .media-body {
+    margin-left: -25px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+.tabsignature {
+	margin-top: 15px;
 }
         </style>
 
@@ -462,6 +601,7 @@
         <script type="text/javascript" src="<%= request.getContextPath()%>/static/js/argon.min.js"></script>
         <script type="text/javascript" src="<%= request.getContextPath()%>/static/js/axios.min.js"></script>
         <script type="text/javascript" src="<%= request.getContextPath()%>/static/vendor/header-submission/index.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath()%>/utils.js"></script>
         <script type='text/javascript'>
             var j = jQuery.noConflict();
             var $ = jQuery.noConflict();

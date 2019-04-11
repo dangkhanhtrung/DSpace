@@ -66,7 +66,7 @@
         <%--  <td class="submitFormLabel">News:</td> --%>
 		<span class="col-md-2"><fmt:message key="jsp.dspace-admin.news-edit.news"/></span>
         <textarea class="form-control" name="news" rows="10" cols="50"><%= news %></textarea>
-
+		<br/>
         <input type="hidden" name="position" value='<%= position %>'/>
         <%-- <input type="submit" name="submit_save" value="Save"> --%>
         <input class="btn btn-primary" type="submit" name="submit_save" value="<fmt:message key="jsp.dspace-admin.general.save"/>" />

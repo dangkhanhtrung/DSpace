@@ -154,7 +154,7 @@
                 </li>
             </ul>
         </div>
-        <div class="card shadow">
+        <div class="card">
             <div>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">
@@ -170,15 +170,16 @@
                                         </h6>
                                     </div>
                                     <div id="collapseOne" class="panel-collapse collapse in">
-                                        <div class="panel-body">
+                                        <div class="panel-body py-3">
                                             <div id="manual-submission">
                                                 <form class="form-horizontal" id="form-submission" action="" method="post">
-                                                    <div class="form-group">
-                                                        <label for="select-collection-manual" class="col-sm-2 control-label"><fmt:message key="jsp.submit.start-lookup-submission.select.collection.label"/></label>
-                                                        <div class="col-sm-7">
-                                                            <dspace:selectcollection klass="form-control" id="select-collection-manual" collection="<%= collection_id%>"/>
+                                                    <div class="row">
+                                                        <div class="col-sm-9 col-6">
+                                                            <dspace:selectcollection id="select-collection-manual" collection="<%= collection_id%>"/>
                                                         </div>
-                                                        <button class="btn btn-success" id="manual-submission-button" type="button"><fmt:message key="jsp.submit.start-lookup-submission.button.manual-submission"/> </button>
+	                                                    <div class="col-sm-3 col-6">
+                                                            <button class="btn btn-success" id="manual-submission-button" type="button"><fmt:message key="jsp.submit.start-lookup-submission.button.manual-submission"/> </button>
+                                                        </div>
                                                     </div>
                                                     <input type="hidden" id="iuuid" name="iuuid" value=""/>
                                                     <input type="hidden" id="fuuid" name="fuuid" value=""/>
@@ -207,7 +208,7 @@
                                     </h6>
                                 </div>
                                 <div id="collapseTwo" class="panel-collapse collapse">
-                                    <div class="panel-body">
+                                    <div class="panel-body py-3">
                                         <form id="form-submission-search" action="" method="post">
                                             <input type="hidden" id="suuid-search" name="suuid" value="<%= uuid%>"/>
                                             <input type="hidden" id="iuuid-search" name="iuuid" value=""/>
@@ -259,7 +260,7 @@
                                     </h6>
                                 </div>
                                 <div id="collapseThree" class="panel-collapse collapse">
-                                    <div class="panel-body">
+                                    <div class="panel-body py-3">
                                         <form class="form-horizontal" id="form-submission-identifier" action="" method="post">
                                             <input type="hidden" id="suuid-identifier" name="suuid" value="<%= uuid%>"/>
                                             <input type="hidden" id="iuuid-identifier" name="iuuid" value=""/>
@@ -270,11 +271,11 @@
                                                 for (String identifier : identifiers) {
                                             %>
                                             <c:set var="identifier"><%= identifier%></c:set>
-                                                <div class="form-group">
+                                                <div class="form-group form-group-lv2  mb-2">
                                                     <span class="col-md-3">
                                                         <label for="identifier_<%= identifier%>"><span class="submission-lookup-label"><fmt:message key="jsp.submit.start-lookup-submission.identifier-${identifier}"/>:</span>
                                                     </label>
-                                                </span>
+                                                    </span>
                                                 <span class="col-md-9">		
                                                     <%
                                                         for (String provider : identifiers2providers.get(identifier)) {
@@ -285,13 +286,19 @@
                                                     %>
                                                 </span>	 
                                                 <span class="clearfix"></span>
-                                                <span class="col-md-3 help-block submission-lookup-hint"><fmt:message key="jsp.submit.start-lookup-submission.identifier-${identifier}.hint"/></span></label>
-                                                <div class="col-md-9">
-                                                    <input type="text" class="form-control  submission-lookup-identifier" name="identifier_<%= identifier%>" id="identifier_<%= identifier%>" />
+                                                <span class="col-12 help-block submission-lookup-hint"><fmt:message key="jsp.submit.start-lookup-submission.identifier-${identifier}.hint"/></span></label>
+                                                <div class="col-12 mt-2">
+	                                                <div class="input-group input-group-alternative">
+			                                                <input type="text" placeholder="<fmt:message key="jsp.submit.start-lookup-submission.identifier-${identifier}.hint"/>" name="identifier_<%= identifier%>" id="identifier_<%= identifier%>" class="form-control submission-lookup-identifier"> 
+			                                            </div>
                                                 </div>
                                             </div><%
                                                 } %>				
-                                            <button class="btn btn-primary col-md-2 pull-right" type="button" id="lookup_idenfifiers"><fmt:message key="jsp.submit.start-lookup-submission.identifier.lookup"/></button>
+                                            <div class="row">
+	                                            <div class="col-12">
+		                                            <button class="btn btn-primary col-md-2 pull-right" type="button" id="lookup_idenfifiers"><fmt:message key="jsp.submit.start-lookup-submission.identifier.lookup"/></button>
+	                                            </div>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -317,7 +324,7 @@
                                     </h6>
                                 </div>
                                 <div id="collapseFour" class="panel-collapse collapse">
-                                    <div class="panel-body">
+                                    <div class="panel-body py-3">
                                         <form class="form-horizontal" id="form-submission-loader" action="" method="post">
                                             <input type="hidden" id="suuid-loader" name="suuid" value="<%= uuid%>"/>
                                             <input type="hidden" id="iuuid-loader" name="iuuid" value=""/>
@@ -325,46 +332,66 @@
                                             <input type="hidden" id="collectionid-loader" name="collectionid" value=""/>
 
                                             <p class="help-block"><fmt:message key="jsp.submit.start-lookup-submission.byfile.hints"/></p>
+											<div class="row">
+												<div class="col-sm-6 col-12">
+													<div class="form-group form-group-lv2">
+		                                                <label class="col-md-12" for="provider_loader"><fmt:message key="jsp.submit.start-lookup-submission.byfile.chooseprovider"/>:</label>
+		                                                <div class="col-md-12">
+		                                                    <select class="submission-file-loader" name="provider_loader" id="provider_loader">
+		                                                        <option value="-1"><fmt:message key="jsp.submit.start-lookup-submission.select.fileformat.defaultoption"/></option>
+		                                                        <%
+		                                                            for (String dataLoader : fileLoaders) {
+		                                                                String fileLoaderKey = "jsp.submit.start-lookup-submission.select.fileformat." + dataLoader;
+		                                                        %>
+		                                                        <option value="<%= dataLoader%>"><fmt:message key="<%= fileLoaderKey%>"/></option>
+		                                                        <%
+		                                                            }
+		                                                        %>
+		                                                    </select> 
+		                                                </div>
+		                                            </div>
+												</div>
+												<div class="col-sm-6 col-12">
+													<div class="form-group form-group-lv2">
+		                                                <label class="col-md-12" for="file_upload"><fmt:message key="jsp.submit.start-lookup-submission.byfile.file"/>:</label>
+		                                                <div class="col-md-12"> 
+		                                                    <input class="submission-file-loader" type="file" name="file_upload" id="file_upload" />
+		                                                </div>
+		                                            </div>
+												</div>
+												
+												<div class="col-sm-6 col-12">
+													<div class="form-group form-group-lv2">
+		                                                <div class="col-md-offset-3 col-md-12">
+			                                                <div class="custom-control custom-checkbox">
+												              <input class="custom-control-input submission-file-loader submission-preview-loader" name="preview_loader" id="preview_loader" value="<%= Boolean.TRUE%>" type="checkbox" checked="checked">
+												              <label class="custom-control-label" for="preview_loader">
+												                <span><fmt:message key="jsp.submit.start-lookup-submission.byfile.filepreview"/></span>
+												              </label>
+												            </div>
+		                                                </div>
+		                                            </div>
 
-                                            <div class="form-group">
-                                                <label class="col-md-3" for="provider_loader"><fmt:message key="jsp.submit.start-lookup-submission.byfile.chooseprovider"/>:</label>
-                                                <div class="col-md-6">
-                                                    <select class="form-control submission-file-loader" name="provider_loader" id="provider_loader">
-                                                        <option value="-1"><fmt:message key="jsp.submit.start-lookup-submission.select.fileformat.defaultoption"/></option>
-                                                        <%
-                                                            for (String dataLoader : fileLoaders) {
-                                                                String fileLoaderKey = "jsp.submit.start-lookup-submission.select.fileformat." + dataLoader;
-                                                        %>
-                                                        <option value="<%= dataLoader%>"><fmt:message key="<%= fileLoaderKey%>"/></option>
-                                                        <%
-                                                            }
-                                                        %>
-                                                    </select> 
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-md-3" for="file_upload"><fmt:message key="jsp.submit.start-lookup-submission.byfile.file"/>:</label>
-                                                <div class="col-md-6"> 
-                                                    <input class="submission-file-loader" type="file" name="file_upload" id="file_upload" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-offset-3 col-md-6">
-                                                    <div class="checkbox">
-                                                        <label>
-                                                            <input class="submission-file-loader submission-preview-loader" type="checkbox" name="preview_loader" id="preview_loader" value="<%= Boolean.TRUE%>"/><fmt:message key="jsp.submit.start-lookup-submission.byfile.filepreview"/>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group" id="select-collection-file-div">
-                                                <label class="col-md-3" for="select-collection-file"><fmt:message key="jsp.submit.start-lookup-submission.byfile.filecollection"/>:</label>
-                                                <div class="col-md-6">
-                                                    <dspace:selectcollection klass="form-control submission-file-loader" name="select-collection-file" id="select-collection-file" collection="<%= collection_id%>"/>
-                                                </div>
-                                            </div>
-                                            <button class="btn btn-primary col-md-2 pull-right" type="button" id="loadfile_go"><fmt:message key="jsp.submit.start-lookup-submission.byfile.process"/></button>
+												</div>
+												<div class="col-sm-6 col-12">
+													<div class="form-group form-group-lv2" id="select-collection-file-div">
+		                                                <label class="col-md-12" for="select-collection-file"><fmt:message key="jsp.submit.start-lookup-submission.byfile.filecollection"/>:</label>
+		                                                <div class="col-md-12">
+		                                                    <dspace:selectcollection klass="form-control submission-file-loader" name="select-collection-file" id="select-collection-file" collection="<%= collection_id%>"/>
+		                                                </div>
+		                                            </div>
+												</div>
+												
+												<div class="col-12">
+													<button class="btn btn-primary col-md-2 pull-right" type="button" id="loadfile_go"><fmt:message key="jsp.submit.start-lookup-submission.byfile.process"/></button>
+												</div>
+											</div>
+											
+                                            
+                                            
+                                            
+                                            
+                                            
                                         </form>
                                     </div>
                                 </div>
@@ -395,13 +422,34 @@
                             </div>
                             <div id="result-form">
                                 <form class="form-horizontal" id="form-submission-identifiers" action="" method="post">
-                                    <div class="form-group">
-                                        <label for="select-collection-manual" class="col-sm-2 control-label"><fmt:message key="jsp.submit.start-lookup-submission.select.collection.label"/></label>
-                                        <div class="col-sm-7">
-                                            <dspace:selectcollection klass="form-control" id="select-collection-identifier" collection="<%= collection_id%>"/>
-                                        </div>
-                                        <button class="btn btn-success" id="identifier-submission-button" type="button"><fmt:message key="jsp.submit.general.submit"/> </button>
-                                    </div>
+	                                <div class="row">
+		                                
+		                                <div class="col-12"> 
+			                                <div class="form-group form-group-lv2">
+		                                        <label for="select-collection-manual" class="col-sm-12 control-label"><fmt:message key="jsp.submit.start-lookup-submission.select.collection.label"/></label>
+		                                        <div class="col-sm-12">
+		                                            <dspace:selectcollection id="select-collection-identifier" collection="<%= collection_id%>"/>
+		                                        </div>
+		                                        
+		                                    </div>
+		                                </div>
+		                                
+		                                <div class="col-6">
+			                                <div class="col-md-offset-3 col-md-12 form-group-lv2">
+			                                                <div class="custom-control custom-checkbox">
+												              <input class="custom-control-input submission-file-loader submission-preview-loader" id="checkallresults" name="checkallresults" type="checkbox">
+												              <label class="custom-control-label" for="checkallresults">
+												                <span><fmt:message key="jsp.submit.start-lookup-submission.js.checkallresults"/></span>
+												              </label>
+												            </div>
+		                                                </div>
+		                                </div>
+		                                <div class="col-6 text-right">
+			                                <button class="btn btn-success" id="identifier-submission-button" type="button"><fmt:message key="jsp.submit.general.submit"/> </button>
+		                                </div>
+	                                </div>
+	                                
+                                    
                                     <input type="hidden" id="iuuid" name="iuuid" value=""/>
                                     <input type="hidden" id="fuuid" name="fuuid" value=""/>
                                     <input type="hidden" id="suuid" name="suuid" value="<%= uuid%>"/>
@@ -409,7 +457,6 @@
                                     <input type="hidden" id="iuuid_batch" name="iuuid_batch" value=""/>
                                     <input type="hidden" id="filePath" name="filePath" value=""/>
                                 </form>
-                                <input type="checkbox" id="checkallresults" name="checkallresults"><fmt:message key="jsp.submit.start-lookup-submission.js.checkallresults"/>
                                 <h4 id="no-record" style="display:none"><span class="label label-warning"></span><fmt:message key="jsp.submit.start-lookup-submission.norecordselected" /></span></h4>
                                 <h4 id="no-collection" style="display:none"><span class="label label-warning"><fmt:message key="jsp.submit.start-lookup-submission.nocollectionselected" /></span></h4>
                             </div>

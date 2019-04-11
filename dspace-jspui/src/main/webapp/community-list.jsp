@@ -142,6 +142,7 @@
 					<input class="btn btn-default" type="submit" name="submit" value="<fmt:message key="jsp.community-list.create.button"/>" />
                 </form>
             </div>
+            </div>
 </dspace:sidebar>
 <%
     }

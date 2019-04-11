@@ -53,10 +53,14 @@
 
 <form method="post" action="">
 
+<div class="row">
+
+<div class="col-12 col-sm-6">
+<label class="input-group-addon"><fmt:message key="jsp.dspace-admin.supervise-link.group"/></label> 
 <div class="input-group">
 <%-- Select the group to supervise --%>
     
-            <label class="input-group-addon"><fmt:message key="jsp.dspace-admin.supervise-link.group"/></label> 
+            
             <select class="form-control" name="TargetGroup">
 <%
     for (int i = 0; i < groups.length; i++)
@@ -68,20 +72,24 @@
 %>
             </select>
 
-
+</div>
+</div>
+<div class="col-12 col-sm-6">
+    <label class="input-group-addon"><fmt:message key="jsp.dspace-admin.supervise-link.policy"/></label>
+<div class="input-group">
 <%-- Select the defaul policy type --%>
 
-            <label class="input-group-addon"><fmt:message key="jsp.dspace-admin.supervise-link.policy"/></label>
             <select class="form-control" name="PolicyType">
                 <option value="<%= Supervisor.POLICY_NONE %>" selected="selected"><fmt:message key="jsp.dspace-admin.supervise-link.policynone"/></option>
                 <option value="<%= Supervisor.POLICY_EDITOR %>"><fmt:message key="jsp.dspace-admin.supervise-link.policyeditor"/></option>
                 <option value="<%= Supervisor.POLICY_OBSERVER %>"><fmt:message key="jsp.dspace-admin.supervise-link.policyobserver"/></option>
             </select>
 </div>
+</div>
 <%-- Select the workspace item to be supervised --%>
-<br/>
-<div>
-            <p><b><fmt:message key="jsp.dspace-admin.supervise-link.workspace"/></b></p>
+
+<div class="col-12 mt-3">
+            <b><fmt:message key="jsp.dspace-admin.supervise-link.workspace"/></b>
             
             <table class="table">
                 <tr>
@@ -127,8 +135,8 @@
                     <td class="<%= row %>RowEvenCol">
                         <%= workspaceItems[i].getCollection().getMetadata("name") %>
                     </td>
-                    <td class="<%= row %>RowOddCol" align="center">
-                        <input type="radio" name="TargetWSItem" value="<%= workspaceItems[i].getID() %>"/>
+                    <td class="<%= row %>RowOddCol" align="center" width="30">
+                    	<input id="TargetWSItem" name="TargetWSItem" type="radio" name="format" value="<%= workspaceItems[i].getID() %>" > 
                     </td>
                 </tr>
 <%
@@ -137,7 +145,7 @@
 %>
             </table>
 </div>
-<div class="pull-right">
+<div class="text-right col-12">
   	<input class="btn btn-default" type="submit" name="submit_base" value="<fmt:message key="jsp.dspace-admin.general.cancel"/>"/>
 	<input class="btn btn-success" type="submit" name="submit_link" value="<fmt:message key="jsp.dspace-admin.supervise-link.submit.button"/>"/>
 </div>

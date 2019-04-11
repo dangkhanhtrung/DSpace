@@ -87,7 +87,7 @@
                     <%-- <td>Group:</td> --%>
                     <label for="tgroup_id"><fmt:message key="jsp.dspace-admin.general.group-colon"/></label>
             	</span>
-            	<span class="col-md-10">
+            	<span class="col-md-10 mb-3">
                 <select class="form-control" size="15" name="group_id" id="tgroup_id">
                     <%  for(int i = 0; i < groups.length; i++ ) { %>
                             <option value="<%= groups[i].getID() %>" <%= (groups[i].getID() == policy.getGroupID() ? "selected=\"selected\"" : "" ) %> >
@@ -98,12 +98,13 @@
                 </span>
            
         <%-- <tr><td>Action:</td> --%>
+        
+                    <input type="hidden" name="<%=id_name%>" value="<%=id%>" />
+                    <input type="hidden" name="policy_id" value="<%=policy.getID()%>" />
         	<span class="col-md-2">
         		<label for="taction_id"><fmt:message key="jsp.dspace-admin.general.action-colon"/></label>
         	</span>
-        	<span class="col-md-10">
-                    <input type="hidden" name="<%=id_name%>" value="<%=id%>" />
-                    <input type="hidden" name="policy_id" value="<%=policy.getID()%>" />
+        	<span class="col-md-10 mb-3">
                     <select class="form-control" name="action_id" id="taction_id">
                         <%  for( int i = 0; i < Constants.actionText.length; i++ )
                                 {
@@ -118,6 +119,7 @@
                         <%          }
                                 } %>
                     </select>
+                    
                 </span>
                     <%
                     // start and end dates are used for Items and Bitstreams only.
@@ -128,7 +130,7 @@
                         <span class="col-md-2">
                             <label for="t_start_date_id"><fmt:message key="jsp.dspace-admin.general.policy-start-date-colon"/></label>
                         </span>
-                        <span class="col-md-10">
+                        <span class="col-md-10 mb-3">
                             <input class="form-control" name="policy_start_date" maxlength="10" size="10" type="text" 
                                    value="<%= policy.getStartDate() != null ? DateFormatUtils.format(policy.getStartDate(), "yyyy-MM-dd") : "" %>" />
                         </span>
@@ -136,7 +138,7 @@
                         <span class="col-md-2">
                             <label for="t_end_date_id"><fmt:message key="jsp.dspace-admin.general.policy-end-date-colon"/></label>
                         </span>
-                        <span class="col-md-10">
+                        <span class="col-md-10 mb-3">
                             <input class="form-control" name="policy_end_date" maxlength="10" size="10" type="text" 
                                    value="<%= policy.getEndDate() != null ? DateFormatUtils.format(policy.getEndDate(), "yyyy-MM-dd") : "" %>" />
                         </span>
@@ -144,7 +146,7 @@
             </div>
     <% if( newpolicy != null ) { %> <input name="newpolicy" type="hidden" value="<%=newpolicy%>"/> <% } %>
     
-				<div class="btn-group pull-right col-md-2">
+				<div class="btn-group pull-right px-3">
                     <%-- <input type="submit" name="submit_save_policy" value="Save Policy"> --%>
                     <input class="btn btn-primary" type="submit" name="submit_save_policy" value="<fmt:message key="jsp.dspace-admin.general.save"/>" />
 

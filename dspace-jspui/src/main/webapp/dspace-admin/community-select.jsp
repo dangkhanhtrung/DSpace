@@ -49,7 +49,7 @@
 
     <form method="post" action="">
 
-				<div class="row col-md-4 col-md-offset-4">
+				<div>
                     <select class="form-control" size="12" name="community_id">
                         <%  for (int i = 0; i < communities.length; i++) { %>
                             <option value="<%= communities[i].getID()%>">
@@ -59,7 +59,7 @@
                     </select>
 				</div>
 				<br/>
-				<div class="btn-group pull-right col-md-7">
+				<div class="btn-group pull-right text-right">
                     <%-- <input type="submit" name="submit_community_select" value="Edit Policies"> --%>
 
                     	<input class="btn btn-primary" type="submit" name="submit_community_select" value="<fmt:message key="jsp.dspace-admin.general.editpolicy"/>" />

@@ -41,7 +41,24 @@
 	
 -->
 </script>
-
+<style>
+	        body .text--white a {
+	color: #ffffff !important;
+}
+.media.title_signature,
+.media.title_signature a {
+    background: #C62828;
+    color: #fff;
+}
+.media.title_signature .media-body {
+    margin-left: -25px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+.tabsignature {
+	margin-top: 15px;
+}
+</style>
 	<div class="modal fade" id="dialog-confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
@@ -70,18 +87,18 @@
 	  	<ul class="nav nav-tabs" role="tablist">
 	  		
 	  		<c:if test="${!empty duplicatessignatureall}">
-    			<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><fmt:message key='jsp.tools.deduplicate.tab.title.all'/></a></li>
+    			<li role="presentation" class="active btn btn-primary text--white"><a class="dedu__compare__all" href="#home" aria-controls="home" role="tab" data-toggle="tab"><fmt:message key='jsp.tools.deduplicate.tab.title.all'/></a></li>
     		</c:if>
-    		<li role="presentation" <c:if test="${empty duplicatessignatureall}">class="active"</c:if>><a href="#compare" aria-controls="compare" role="tab" data-toggle="tab"><fmt:message key="jsp.tools.deduplicate.tab.title.compare"/></a></li>
+    		<li role="presentation" class="btn btn-warning text--white" <c:if test="${empty duplicatessignatureall}">class="active"</c:if>><a href="#compare" aria-controls="compare" role="tab" data-toggle="tab"><fmt:message key="jsp.tools.deduplicate.tab.title.compare"/></a></li>
     		<%-- <li role="presentation"><a href="#search" aria-controls="search" role="tab" data-toggle="tab"><fmt:message key="jsp.tools.deduplicate.tab.title.search"/></a></li> --%>
     		<c:if test="${!empty duplicatessignatureonlyreported}">
-    			<li role="presentation"><a target="_blank" href="<%= request.getContextPath() %>/tools/duplicate?submitcheck=0&scope=2&start=0&rows=10" aria-controls="onlyreported" role="tab" data-toggle="tab"><fmt:message key='jsp.tools.deduplicate.tab.title.onlyreported'/></a></li>
+    			<li role="presentation"><a class="btn btn-warning text--white" target="_blank" href="<%= request.getContextPath() %>/tools/duplicate?submitcheck=0&scope=2&start=0&rows=10" aria-controls="onlyreported" role="tab" data-toggle="tab"><fmt:message key='jsp.tools.deduplicate.tab.title.onlyreported'/></a></li>
     		</c:if>
   		</ul>
   		
 		<div class="tab-content">
 			<c:if test="${!empty duplicatessignatureall}">
-			<div role="tabpanel" class="tabsignature tab-pane fade in active" id="home">
+			<div role="tabpanel" class="tabsignature tab-pane fade in active show" id="home">
 
 			<div class="row">
 						
@@ -144,9 +161,9 @@
 					<input type="hidden" value="0" name="scope" />
 					<input type="hidden" value="submitcheck" name="submitcheck" />
 					<div class="panel-body">
-						<div class="form-group">
-							<label class="col-sm-2 control-label"><fmt:message key="jsp.tools.deduplicate.descriptionById"/></label>
-							<div class="col-sm-10">
+						<div class="form-group mt-3">
+							<label><fmt:message key="jsp.tools.deduplicate.descriptionById"/></label>
+							<div>
 								<textarea id="itemid_list" name="itemid_list" rows="5" cols="5" class="form-control submission-lookup-itemid_list"></textarea>
 							</div>
 						</div>

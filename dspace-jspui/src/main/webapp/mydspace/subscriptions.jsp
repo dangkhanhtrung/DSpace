@@ -68,10 +68,10 @@
 
 
 
-<div id="content">
-<ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-<li class="active"><a href="<%= request.getContextPath() %>/subscribe"><fmt:message key="jsp.layout.navbar-hku.item-subscription"/></a></li>
-<li><a href="<%= request.getContextPath() %>/cris/tools/stats/subscription/list.htm"><fmt:message key="jsp.layout.navbar-hku.stat-subscription"/></a></li>
+<div>
+<ul id="tabs" class="nav nav-tabs" data-tabs="tabs" style="border-bottom: 0">
+<li class="active"><a class="btn btn-1 btn-primary mx-2" href="<%= request.getContextPath() %>/subscribe"><fmt:message key="jsp.layout.navbar-hku.item-subscription"/></a></li>
+<li><a class="btn btn-1 btn-info mx-2" href="<%= request.getContextPath() %>/cris/tools/stats/subscription/list.htm"><fmt:message key="jsp.layout.navbar-hku.stat-subscription"/></a></li>
 </ul>
 <div id="my-tab-content" class="tab-content">
 <div class="tab-pane active" id="contentsubscription">

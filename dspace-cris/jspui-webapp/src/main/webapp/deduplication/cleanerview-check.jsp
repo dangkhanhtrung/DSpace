@@ -251,7 +251,7 @@
 						String formID="itemform_" + i;
 					%>
 					<div class="panel-heading">
-						<h6 class="panel-title"><i class="fa-stack"></i> <%= group %> [<%= grid.get(key).size() %> item(s)]</h6>
+						<h6 class="panel-title"><%= group %> [<%= grid.get(key).size() %> item(s)]</h6>
 						<% if(twiced!=null && !twiced.isEmpty()) { %>
 							<fmt:message key="jsp.layout.submit.checkduplicate.match.othercriteria"/> 
 							<% for(String twice : twiced) { %>
@@ -264,10 +264,10 @@
 							<input class="btn btn-default pull-right btn btn-xs" type="submit" name="submitunrelatedall" value='<fmt:message key="jsp.layout.submit.checkduplicate.reject"/>'/>				
 						<%} %>
 						<% if(grid.get(key).size()>2){%>
-						   <input type="checkbox" id="dedupcheckall_<%=i %>" class="pull-left check" />&nbsp;<fmt:message key="jsp.layout.submit.checkall"/>
+						   <input type="checkbox" id="dedupcheckall_<%=i %>" class="pull-left check mt-1" />&nbsp;<fmt:message key="jsp.layout.submit.checkall"/>
 						<%} %>
 					</div>
-					<table class="table table-striped table-bordered">
+					<table class="table table-striped table-bordered mt-4">
 						<% for(int itemID : grid.get(key).keySet()) {
 							Item item = extraInfo.get(itemID);
 						 	pageContext.setAttribute("item", item);

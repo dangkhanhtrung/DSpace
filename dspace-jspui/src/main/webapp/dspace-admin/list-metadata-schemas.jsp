@@ -98,22 +98,27 @@ if (error!=null) {
          <p class="alert alert-info">
              <fmt:message key="jsp.dspace-admin.list-metadata-schemas.instruction"/>
          </p>
-         <div class="input-group col-md-6">
-	     	<div class="input-group-addon">
-		 		<span class="col-md-2"><fmt:message key="jsp.dspace-admin.list-metadata-schemas.namespace"/>:</span>
-		 	</div>
-          	<input class="form-control" type="text" name="namespace" value=""/>
+        <div class="row">
+	         <div class="col-sm-6 col-12">
+		        <div class="form-group">
+			        <label for="namespace"><fmt:message key="jsp.dspace-admin.list-metadata-schemas.namespace"/>:</label>
+			        <div class="input-group">
+				        <input type="text" class="form-control" id="namespace" name="namespace" value="" />
+				    </div>
+				</div>
 		</div>
-       <div class="input-group col-md-6">
-       		<div class="input-group-addon">
-       			<span class="col-md-2"><fmt:message key="jsp.dspace-admin.list-metadata-schemas.name"/>:</span>
-    	   </div>			
-       		<input class="form-control" type="text" name="short_name" value=""/>
+       <div class="col-sm-6 col-12">
+	       <div class="form-group">
+			        <label for="namespace"><fmt:message key="jsp.dspace-admin.list-metadata-schemas.name"/>:</label>
+			        <div class="input-group">
+				        <input type="text" class="form-control" id="short_name" name="short_name" value="" />
+				    </div>
+				</div>
 	    </div>
-        <br/><br/><br/>
-       <div class="row col-md-offset-5">
-       		<input class="btn btn-success col-md-3" type="submit" name="submit_add" value="<fmt:message key="jsp.dspace-admin.general.save"/>"/>
-       </div>
+	    <div class="col-12 text-right">
+	       <input class="btn btn-success col-md-3" type="submit" name="submit_add" value="<fmt:message key="jsp.dspace-admin.general.save"/>"/>
+	    </div>
+        </div>
 	
   </form>
 </dspace:layout>

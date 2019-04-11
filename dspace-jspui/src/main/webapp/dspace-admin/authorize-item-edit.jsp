@@ -91,7 +91,7 @@
   <div class="panel-heading"><fmt:message key="jsp.dspace-admin.authorize-item-edit.item"/></div>
   <div class="panel-body">
     <form method="post" action="">
-      <div class="row col-md-offset-4">
+      <div>
           <input type="hidden" name="item_id" value="<%=item.getID()%>" />
           <input class="btn btn-success col-md-4" type="submit" name="submit_item_add_policy" value="<fmt:message key="jsp.dspace-admin.general.addpolicy"/>" />
       </div>

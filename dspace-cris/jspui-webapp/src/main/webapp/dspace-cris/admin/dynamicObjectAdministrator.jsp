@@ -57,7 +57,7 @@
 			key="jsp.dspace-admin.hku.jdyna-configuration.listboxs" /></a>	
 		</li>
 		<li>
-			<a id="addentity" href="#"><fmt:message
+			<a id="addentity" href="<%=request.getContextPath()%>/cris/administrator/do/add.htm"><fmt:message
 			key="jsp.dspace-admin.crisconfiguration.add"><fmt:param>${fn:toUpperCase(path)}</fmt:param></fmt:message></a>	
 		
 		<div style="display: none; float: right;"><c:set
