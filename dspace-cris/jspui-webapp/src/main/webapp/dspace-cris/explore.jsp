@@ -71,11 +71,12 @@
         </div>
         <div class="col-sm-8 col-md-9 discovery-result-results-global discovery-result-results-global__expose">
 
-
+            
             <div class="discovery-search-form bg-secondary p-3 mt-2">
                 <%-- Controls for a repeat search --%>
                 <div class="discovery-query">
                     <form id="update-form" action="<%= request.getContextPath() %>/simple-search" method="get">
+                        <input type="hidden" value="${location}" name="location" />
                         <div class="row">
                             <div class="col-sm-9 col-7">
 
