@@ -55,6 +55,114 @@
         <link href="<%= request.getContextPath()%>/static/custom/css/main.css" rel="stylesheet">
 
         <style>
+            .facetsBox .btn {
+    height: 18px;
+    padding: 0 5px;
+    font-size: 10px;
+}
+            div#dspaceitems .panel-collapse .collapse .panel-group {display: flex;margin-right: -15px;margin-left: -15px;flex-wrap: wrap;}
+
+div#dspaceitems .panel-collapse .collapse .panel-group .list-group .list-group-item {border-radius: 0;padding: 8px;}
+
+div#dspaceitems .panel-collapse .collapse .panel-group .panel-title {
+    font-size: 16px;
+}
+div#dspaceitems .panel-collapse .collapse .panel-group .panel.panel-default {
+    margin-bottom: 8px;
+}
+div#dspaceitems .panel-collapse .collapse > div.row.text-center {
+        margin: 0;
+}
+div#dspaceitems .btn-transparent:hover { box-shadow: none}
+            body .table.table-hover td[align="right"]:first-child {
+    text-align: center;
+}
+body .ul__user__info .researcher-menu-item:before {
+    content: "\f101";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+            a.a__icon__down:after {
+    content: "\f103";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    right: 25px;
+    top: 5px;
+}
+            div#tab-11 > .row > div {
+                    margin-bottom: 15px;
+            }
+            div#tab-11 > .row > div .panel-heading .panel-title {
+    border-bottom: 1px solid;
+    font-size: 20px;
+    margin: 0;
+}
+
+div#tab-11 > .row > div .panel-collapse {
+    padding: 15px 0;
+}
+.extend__profile__menu > a{
+    background: transparent;
+    color: inherit !important;
+    border: none;
+    box-shadow: none;
+    margin: 0 !important;
+    padding: 12px 0 !important;
+    border-bottom: 1px dashed gray;
+    border-radius: 0;
+    font-weight: normal
+}
+.extend__profile__menu > a:hover     {
+    background-color: transparent;
+    color: inherit !important;
+    box-shadow: none;
+    font-weight: bold;
+}
+.extend__profile__menu > a:last-child {
+    border-bottom: none;
+}
+
+.extend__profile__menu ul.dropdown-menu {
+    padding: 4px 0;
+}
+.extend__profile__menu ul.dropdown-menu li {
+    padding: 8px 15px;
+    border-bottom: 1px dashed gray;
+    cursor: pointer;
+}
+.extend__profile__menu ul.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+            body .ul__user__info .researcher-menu-item {
+    padding: 8px 0;
+    border-top: 1px dashed gray;
+    cursor: pointer;
+}
+body .ul__user__info .researcher-menu-item:first-child {
+    border-top: none;
+}
+body .ul__user__info .researcher-menu-item:hover {
+        font-weight: bold;
+}
+body .ul__user__info .researcher-menu-item-hidden {
+    display: none;
+}
+            body .form-group > h1 {
+                    font-size: 24px;
+            }
+            body .form-inline .form-group {
+                    flex: auto !important;
+            }
             body .navbar {
                 width: 100%;
                 height: 42px;
@@ -206,6 +314,7 @@
             body .pagination,
             body .discovery-result-results {
                 float: right;
+                    margin-bottom: 15px;
             }
             body .discovery-result-results {
                 width: 100%;

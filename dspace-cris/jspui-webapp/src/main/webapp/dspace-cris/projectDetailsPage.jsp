@@ -56,103 +56,6 @@
 <c:set var="admin" scope="request"><%= isAdmin %></c:set>
 <c:set var="dspace.layout.head.last" scope="request">
 
-    <script type="text/javascript"><!--
-
-    	var j = jQuery; 	
-    	
-    	var activeTab = function(){
-    		
-    		var ajaxurlrelations = "<%=request.getContextPath()%>/cris/${specificPartPath}/viewNested.htm";
-			j('.nestedinfo').each(function(){
-				var id = j(this).html();
-				j.ajax( {
-					url : ajaxurlrelations,
-					data : {																			
-						"parentID" : ${entity.id},
-						"typeNestedID" : id,
-						"pageCurrent": j('#nested_'+id+"_pageCurrent").html(),
-						"limit": j('#nested_'+id+"_limit").html(),
-						"editmode": j('#nested_'+id+"_editmode").html(),
-						"totalHit": j('#nested_'+id+"_totalHit").html(),
-						"admin": ${admin},
-						"externalJSP": j('#nested_'+id+"_externalJSP").html()
-					},
-					success : function(data) {																										
-						j('#viewnested_'+id).html(data);
-						var ajaxFunction = function(page){
-							j.ajax( {
-								url : ajaxurlrelations,
-								data : {																			
-									"parentID" : ${entity.id},
-									"typeNestedID" : id,													
-									"pageCurrent": page,
-									"limit": j('#nested_'+id+"_limit").html(),
-									"editmode": j('#nested_'+id+"_editmode").html(),
-									"totalHit": j('#nested_'+id+"_totalHit").html(),
-									"admin": ${admin},
-									"externalJSP": j('#nested_'+id+"_externalJSP").html()
-								},
-								success : function(data) {									
-									j('#viewnested_'+id).html(data);
-									postfunction();
-								},
-								error : function(data) {
-								}
-							});		
-						};
-						var postfunction = function(){
-							j('#nested_'+id+'_next').click(
-									function() {
-								    	ajaxFunction(parseInt(j('#nested_'+id+"_pageCurrent").html())+1);	
-							});
-							j('#nested_'+id+'_prev').click(
-									function() {
-										ajaxFunction(parseInt(j('#nested_'+id+"_pageCurrent").html())-1);
-							});
-							j('.nested_'+id+'_nextprev').click(
-									function(){
-										ajaxFunction(j(this).attr('id').substr(('nested_'+id+'_nextprev_').length));
-							});
-						};
-						postfunction();
-					},
-					error : function(data) {
-					}
-				});
-			});
-    	};
-    	
-		j(document).ready(function()
-		{
-			
-			j("#tabs").tabs({
-				cache: true,
-				active: ${currTabIdx-1},
-				load: function(event, ui){
-					activeTab();
-				},
-				"activate": function( event, ui ) {
-					j("li.ui-tabs-active").toggleClass("ui-tabs-active ui-state-active active");
-					if(history!=undefined) {
-						history.replaceState(null, null, "${root}/cris/project/${entity.crisID}/" + j(ui.newTab[0]).data("tabname")+".html");	
-					}
-				},
-				"beforeActivate": function( event, ui ) {
-	   			 j("li.active").toggleClass("active");
-				},
-		   		"create": function( event, ui ) {
-		               j("div.ui-tabs").toggleClass("ui-tabs ui-widget ui-widget-content ui-corner-all tabbable");
-		               j("ul.ui-tabs-nav").toggleClass("ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all nav nav-tabs");
-		               j("li.ui-tabs-active").toggleClass("ui-state-default ui-corner-top ui-tabs-active ui-state-active active");
-		               j("li.ui-state-default").toggleClass("ui-state-default ui-corner-top");
-		               j("div.ui-tabs-panel").toggleClass("ui-tabs-panel ui-widget-content ui-corner-bottom tab-content with-padding");
-		        }
-			});
-			
-			activeTab();
-		});
-		-->
-	</script>
     
 </c:set>
 
@@ -232,7 +135,7 @@
 	<c:remove var="messages" scope="session" />
 	</c:if>
 				
-	<div id="researcher">
+	<div id="researcher" class="row">
 		 <jsp:include page="commonDetailsPage.jsp"></jsp:include>
 	</div>
 
