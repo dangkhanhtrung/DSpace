@@ -90,7 +90,7 @@
     border-radius: 0;
 "><i class="fa fa-search"></i></button>
                     </span>    
-                    <div class="input-group-btn search-panel">
+                    <div class="input-group-btn search-panel extend__profile__menu">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
