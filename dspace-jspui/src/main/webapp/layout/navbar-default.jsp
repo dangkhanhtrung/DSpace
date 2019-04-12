@@ -126,7 +126,7 @@
                     jsp.layout.navbar-default.cris.<%= mlink.trim() %>
                     </c:set>
                     <li class="nav-item <c:if test="${exploremlink == location}">active</c:if>">
-                        <a class="nav-link" href="<%= request.getContextPath() %>/simple-search?query=&location=<%= mlink.trim() %>">
+                        <a class="nav-link" href="<%= request.getContextPath() %>/cris/explore/<%= mlink.trim() %>">
                             <fmt:message key="${fmtkey}"/>
                         </a>
                     </li>

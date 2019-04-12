@@ -66,7 +66,7 @@ jQuery(document).ready(function ($) {
                 var uri = window.location.search.substring(1);
                 var params = new URLSearchParams(uri);
                 var location = params.get("location");
-                var search = window.location.origin + window.location.pathname + '?location=' + location;
+                var search = window.location.origin + window.location.pathname + '?location=' + location + '&query=' + document.getElementById('query').value;
                 var indexKey = 1;
                 for (var key in this.filterQuery) {
 
@@ -76,7 +76,23 @@ jQuery(document).ready(function ($) {
 
                     indexKey = indexKey + 1;
                 }
-                window.location.href = search + '&totalQuery=' + this.filterQuery.length + '&t=' + new Date().getTime();
+                window.location.href = search + '&rpp=10&sort_by=score&order=desc&totalQuery=' + this.filterQuery.length + '&t=' + new Date().getTime();
+            },
+            searchDataExpose: function () {
+                var pathName = window.location.pathname;
+                var location = pathName.substring(window.location.pathname.lastIndexOf('/') + 1);
+                var search = window.location.origin + '/jspui/simple-search' + '?location=' + location + '&query=' + document.getElementById('query').value;
+                var indexKey = 1;
+                for (var key in this.filterQuery) {
+
+                    search = search + '&filter_field_' + indexKey + '=' + this.filterQuery[key]['filtername']
+                            + '&filter_type_' + indexKey + '=' + this.filterQuery[key]['filtertype']
+                            + '&filter_value_' + indexKey + '=' + this.filterQuery[key]['filterquery'];
+
+                    indexKey = indexKey + 1;
+                }
+                
+                window.location.href = search + '&rpp=10&sort_by=score&order=desc&totalQuery=' + this.filterQuery.length + '&t=' + new Date().getTime();
             },
             clearSearchData: function () {
                 var uri = window.location.search.substring(1);

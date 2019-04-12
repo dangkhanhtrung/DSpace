@@ -71,6 +71,15 @@
 
         <link href="<%= request.getContextPath()%>/static/custom/css/main.css" rel="stylesheet">
         <style>
+            body .panel-border .list-group-item {
+                    border: 0;
+                    border-bottom: 1px solid #e6ecef;
+                        margin: 0;
+            }
+            body .panel-border {
+                    border: 1px solid #e7ecef;
+    border-top: 0;
+            }
             .facetsBox .btn {
     height: 18px;
     padding: 0 5px;
