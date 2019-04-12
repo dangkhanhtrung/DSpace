@@ -43,24 +43,6 @@ jQuery(document).ready(function ($) {
                         filterquery: params.get("filter_value_" + key)
                     });
                 }
-                axios.get('http://119.17.200.66:7880/rest/table/cris_do_tp', {
-                    params: {
-                        cols: 'label,shortname'
-                    }
-                })
-                        .then(function (response) {
-                            vm.crisDoTps = response.data;
-                            for (var key in vm.crisDoTps) {
-                                if (location === vm.crisDoTps[key]['shortname']) {
-                                    vm.crisDoTps[key]['active'] = true;
-                                } else {
-                                    vm.crisDoTps[key]['active'] = false;
-                                }
-                            }
-                        })
-                        .catch(function (error) {
-                            vm.crisDoTps = [];
-                        });
             })
         },
         methods: {

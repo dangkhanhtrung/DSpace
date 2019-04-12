@@ -57,11 +57,11 @@ body .btn-primary, body .btn-default {
 .page-theme .navbar { background-color: #00499c; padding-top: 0; padding-bottom: 0; }
 .page-theme .navbar li a.nav-link { color: white; padding: 10px 15px; }
 .page-theme .navbar li a.nav-link:hover, .page-theme .navbar li a.nav-link.active { background: url("../images/bg_nav-active.png") center center repeat-x; background-size: auto 100%; color: white; }
-.page-theme .navbar li.active > a.nav-link { background: url("../images/bg_nav-active.png") center center repeat-x; background-size: auto 100%; font-weight: bold; color: white; }
+.page-theme .navbar li.active > a.nav-link { background: url("../images/bg_nav-active.png") center center repeat-x; background-size: auto 100%; font-weight: normal; color: white; }
 .page-theme .page-footer { background: url("../images/bg_footer.png") center center no-repeat; background-size: cover; padding: 15px 0; color: white; }
-.page-theme .page-footer label { text-transform: uppercase; font-weight: bold; font-family: "Times New Roman", Times, serif; font-size: 16px; line-height: normal; }
-.page-theme .page-footer label.organization { font-size: 24px; }
-.page-theme .page-footer span { display: block; }
+.page-theme .page-footer label { text-transform: uppercase; font-weight: bold; font-family: "Times New Roman", Times, serif; font-size: 13px; line-height: normal; }
+.page-theme .page-footer label.organization { font-size: 13px; }
+.page-theme .page-footer span { display: block; font-size: 11px;}
 .page-theme .page-footer span:first-child { margin-top: 10px; }
 .page-theme .page-footer .line { display: none; }
 

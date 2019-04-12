@@ -124,7 +124,7 @@
 	<div class="panel panel-default">
     	<div class="panel-heading">
     		<h4 class="panel-title">
-        		<a data-toggle="collapse" data-parent="#${holder.shortName}" href="#collapseOne${holder.shortName}">
+        		<a class="btn--block a__icon__down" data-toggle="collapse" data-parent="#${holder.shortName}" href="#collapseOne${holder.shortName}">
           			${holder.title} 
         		</a>
         		<% if(subLinks!=null && subLinks.size()>0 && globalShowFacets) {%>
@@ -134,7 +134,7 @@
 				<% } %>
 			</h4>        		
     	</div>
-		<div id="collapseOne${holder.shortName}" class="panel-collapse collapse in">
+		<div id="collapseOne${holder.shortName}" class="panel-collapse in collapse show">
 		<div class="panel-body">	
 	
 	<% if(subLinks!=null && subLinks.size()>0) { %>
@@ -220,7 +220,9 @@ if (info.getPagetotal() > 1)
    		} %>
 	   <input type="hidden" name="open" value="<%= info.getType() %>" />
 </form>
-<div class="row">
+<div class="row" style="
+    margin: 0;
+">
 <div class="table-responsive">
 
 <%  
@@ -231,8 +233,9 @@ if (info.getPagetotal() > 1)
 		
 		<input type="hidden" name="prefix" value="<%= info.getType() %>"/>
 		
-		<div id="<%= info.getType() %>export-biblio-panel">
-	<%		
+		<div id="<%= info.getType() %>export-biblio-panel" class="alert alert-info mt-3" style="width: 100%;margin-left: 0px;">
+	<div class="row px-3">
+                    <%		
 		if (cfg == null)
 		{
 			cfg = "refman, endnote, bibtex, refworks";
@@ -240,17 +243,24 @@ if (info.getPagetotal() > 1)
 		String[] cfgSplit = cfg.split("\\s*,\\s*");
 		for (String format : cfgSplit) {
 	%>
-		<c:set var="format"><%= format %></c:set>	    
-		<label class="radio-inline">
-    		  <input class="<%= info.getType() %>format" id="<%= info.getType() + format %>" type="radio" name="format" value="${format}" <c:if test="${format=='bibtex'}"> checked="checked"</c:if>/><fmt:message key="exportcitation.option.${format}" />
-	    </label>
-
+            <div class="custom-control custom-radio mb-2 col-2">
+                <c:set var="format"><%= format%></c:set>
+                <input class="custom-control-input <%= info.getType() %>format" id="<%= info.getType() + format %>" type="radio" name="format" value="${format}" <c:if test="${format=='bibtex'}"> checked="checked"</c:if>/>
+                <label for="<%= info.getType() + format %>" class="custom-control-label">
+                    <fmt:message key="exportcitation.option.${format}" />
+                </label>
+            </div>
 		
 	<% } %>
-		<label class="checkbox-inline">
-			<input type="checkbox" id="<%= info.getType() %>email" name="email" value="true"/><fmt:message key="exportcitation.option.email" />
-		</label>
-			<input id="<%= info.getType() %>submit_export" class="btn btn-default" type="submit" name="submit_export" value="<fmt:message key="exportcitation.option.submitexport" />" disabled/>
+            <div class="custom-control custom-checkbox mb-2">
+                <input type="checkbox" id="<%= info.getType() %>email" name="<%= info.getType() %>email" value="true" class="custom-control-input">
+                <label for="<%= info.getType() %>email" class="custom-control-label">
+                    <fmt:message key="exportcitation.option.email" />
+                </label>
+            </div>
+
+        </div>
+        <input id="<%= info.getType() %>submit_export" class="btn btn-default" type="submit" name="submit_export" value="<fmt:message key="exportcitation.option.submitexport" />" disabled/>
 		</div>	
 		<dspace:itemlist itemStart="<%=info.getStart()+1%>" items="<%= (Item[])info.getItems() %>" sortOption="<%= info.getSo() %>" authorLimit="<%= info.getEtAl() %>" order="<%= info.getOrder() %>" config="${info[holder.shortName].type}" radioButton="false" inputName="<%= info.getType() + \"item_id\"%>"/>
 		</form>
