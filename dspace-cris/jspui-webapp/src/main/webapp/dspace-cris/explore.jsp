@@ -169,32 +169,46 @@
                 <hr/>
             <div class="clearfix"></div>
             <div class="row">
-                <div class="col-sm-6">
+                <%
+                    if (submissions != null && submissions.count() > 0) {
+                %>
+                <div class="col">
                     <%
                             RecentSubmissions submissions = (RecentSubmissions) request.getAttribute("top_recentsubmission");
                     %>
                     <%@ include file="/dspace-cris/explore/topObjectsRecent.jsp" %>
                 </div>
-                <div class="col-sm-6">
+                <% } %>
+                <%
+                    if (viewed != null && viewed.count() > 0) {
+                %>
+                <div class="col">
                     <%
                             RecentSubmissions viewed = (RecentSubmissions) request.getAttribute("top_view");
                     %>
                     <%@ include file="/dspace-cris/explore/topObjectsViewed.jsp" %>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
+                <% } %>
+                <%
+                    if (cited != null && cited.count() > 0) {
+                %>
+                <div class="col">
                     <%
                             RecentSubmissions cited = (RecentSubmissions) request.getAttribute("top_cited");
                     %>
                     <%@ include file="/dspace-cris/explore/topObjectsCited.jsp" %>
-                </div>	
-                <div class="col-sm-6">
+                </div>
+                <% } %>
+                <%
+                    if (download != null && download.count() > 0) {
+                %>
+                <div class="col">
                     <%
                             RecentSubmissions download = (RecentSubmissions) request.getAttribute("top_download");
                     %>
                     <%@ include file="/dspace-cris/explore/topObjectsDownload.jsp" %>
                 </div>
+                <% } %>
             </div>
         </div>
     </div>
