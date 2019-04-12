@@ -33,6 +33,7 @@ jQuery(document).ready(function ($) {
                 var uri = window.location.search.substring(1);
                 var params = new URLSearchParams(uri);
                 var totalQuery = params.get("totalQuery");
+                var location = params.get("location");
                 
                 for (var key = 1; key <= totalQuery; key++) {
                     vm.filters.push({id: key});
@@ -49,6 +50,13 @@ jQuery(document).ready(function ($) {
                 })
                         .then(function (response) {
                             vm.crisDoTps = response.data;
+                            for (var key in vm.crisDoTps) {
+                                if (location === vm.crisDoTps[key]['shortname']) {
+                                    vm.crisDoTps[key]['active'] = true;
+                                } else {
+                                    vm.crisDoTps[key]['active'] = false;
+                                }
+                            }
                         })
                         .catch(function (error) {
                             vm.crisDoTps = [];

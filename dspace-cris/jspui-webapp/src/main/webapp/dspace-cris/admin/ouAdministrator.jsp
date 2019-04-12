@@ -1,11 +1,8 @@
 <%--
-
     The contents of this file are subject to the license and copyright
     detailed in the LICENSE and NOTICE files at the root of the source
     tree and available online at
-
     https://github.com/CILEA/dspace-cris/wiki/License
-
 --%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -19,18 +16,13 @@
 <c:set var="dspace.layout.head.last" scope="request">
     <script type='text/javascript' src='<%= request.getContextPath() %>/static/js/jquery/jquery-1.8.2.min.js'></script>
 	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/jquery/jquery-ui-1.8.24.custom.min.js'></script>
-    <script type="text/javascript"><!--
-
-    var j = jQuery;
-    j(document).ready(function()
-			{
-    		j('#addentity').click(function() {
-    		  j('#dto').submit();
+    <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $( "body" ).delegate( "a#addentity", "click", function() {
+    		  $('#dto').submit();
     		});
-			}
-    );
-		-->
-	</script>
+	});
+    </script>
     
 </c:set>
 <dspace:layout locbar="link" style="submission" navbar="admin" titlekey="jsp.dspace-admin.project">
@@ -59,7 +51,7 @@
 		</li>
 		<li>
 		<a id="addentity"
-			href="<%=request.getContextPath()%>/cris/administrator/do/add.htm"><fmt:message
+			href="#"><fmt:message
 			key="jsp.dspace-admin.hku.add-organizationunit" /></a>	
 		
 		<div style="display: none; float: right;"><c:set

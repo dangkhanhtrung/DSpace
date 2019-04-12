@@ -85,6 +85,16 @@
     boolean showCommList = ConfigurationManager.getBooleanProperty("community-list.show.all", true);
 %>
              
+<header class="page-header">
+		<div class="container">
+			<a href="<%= request.getContextPath()%>" class="mLogo">
+				<img src="/jspui/static/custom/images/logo.png" alt="logo">
+				<span>Cổng thông tin khai thác dữ liệu<br>khoa học và công nghệ</span>
+				<img src="/jspui/static/custom/images/logo_nasati-color.png" alt="logo-nasati">
+			</a>
+		</div>
+	</header>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="<%= request.getContextPath()%>">Trang chủ</a>
@@ -108,11 +118,19 @@
                 </div>
             </div>
             <ul class="navbar-nav">
-                <li class="nav-item" v-for="(item, index) in crisDoTps" v-bind:key="index">
-                    <a class="nav-link" :href="'/jspui/simple-search?query=&location=' + item.shortname">
-                        <span v-text="item.label"></span>
-                    </a>
-                </li>
+                <% for (String mlink : mlinks) { %>
+                    <c:set var="exploremlink">
+                    <%= mlink.trim() %>
+                    </c:set>
+                    <c:set var="fmtkey">
+                    jsp.layout.navbar-default.cris.<%= mlink.trim() %>
+                    </c:set>
+                    <li class="nav-item <c:if test="${exploremlink == location}">active</c:if>">
+                        <a class="nav-link" href="<%= request.getContextPath() %>/simple-search?query=&location=<%= mlink.trim() %>">
+                            <fmt:message key="${fmtkey}"/>
+                        </a>
+                    </li>
+                <% } %>
                 <%
                     if (user != null) {
                 %>

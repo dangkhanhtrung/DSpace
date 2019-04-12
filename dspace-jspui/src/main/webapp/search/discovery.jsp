@@ -538,7 +538,7 @@
 
             <form target="blank" class="form-inline"  id="exportform" action="<%= request.getContextPath()%>/references">
 
-                <div id="export-biblio-panel" class="alert alert-info" style="width: 100%;    margin-left: 0px;">
+                <div id="export-biblio-panel" class="alert alert-info mt-3" style="width: 100%;    margin-left: 0px;">
                     <div class="row px-3">
                         <%
                             if (cfg == null) {

@@ -69,6 +69,7 @@
         <link rel="stylesheet" href="<%= request.getContextPath()%>/static/css/argon.min.css" type="text/css" />
         <link href="<%= request.getContextPath()%>/static/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
+        <link href="<%= request.getContextPath()%>/static/custom/css/main.css" rel="stylesheet">
         <style>
 	        .media.title_signature,
 .media.title_signature a {
@@ -546,7 +547,7 @@
 
     <%-- HACK: leftmargin, topmargin: for non-CSS compliant Microsoft IE browser --%>
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
-    <body class="undernavigation" dir="<%= LocaleUIHelper.ifLtr(request, "ltr", "rtl")%>">
+    <body class="undernavigation mBody page-theme" dir="<%= LocaleUIHelper.ifLtr(request, "ltr", "rtl")%>">
         <div id="app">
             <dspace:include page="<%= navbar%>" />
             <br/>

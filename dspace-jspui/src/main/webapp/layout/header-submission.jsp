@@ -52,6 +52,7 @@
         <link rel="shortcut icon" href="<%= request.getContextPath()%>/favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="<%= request.getContextPath()%>/static/css/argon.min.css" type="text/css" />
         <link href="<%= request.getContextPath()%>/static/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<%= request.getContextPath()%>/static/custom/css/main.css" rel="stylesheet">
 
         <style>
             body .navbar {
@@ -591,6 +592,31 @@ body .text--white a {
 .tabsignature {
 	margin-top: 15px;
 }
+a#delete {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .625rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 50%;
+    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    background-color: #f5365c;
+    border-color: #f5365c;
+    color: #fff;
+    position: fixed;
+    right: 6%;
+}
         </style>
 
          <script type="text/javascript" src="<%= request.getContextPath()%>/static/vendor/jquery/jquery.min.js"></script>
@@ -601,13 +627,36 @@ body .text--white a {
         <script type="text/javascript" src="<%= request.getContextPath()%>/static/js/argon.min.js"></script>
         <script type="text/javascript" src="<%= request.getContextPath()%>/static/js/axios.min.js"></script>
         <script type="text/javascript" src="<%= request.getContextPath()%>/static/vendor/header-submission/index.js"></script>
-        <script type="text/javascript" src="<%= request.getContextPath()%>/utils.js"></script>
-        <script type='text/javascript'>
-            var j = jQuery.noConflict();
-            var $ = jQuery.noConflict();
-            var JQ = j;
-            dspaceContextPath = "<%=request.getContextPath()%>";
-        </script>
+        
+        
+        <script type='text/javascript' src="<%= request.getContextPath() %>/static/js/jquery/jquery-1.11.3.min.js"></script>
+	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/jquery/jquery-ui-1.11.4.min.js'></script>
+	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/bootstrap/bootstrap.min.js'></script>
+	<script type="text/javascript" src="<%= request.getContextPath() %>/js/tmpl.min.js"></script>
+	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/custom-functions.js'></script>
+	<script type="text/javascript" src="<%= request.getContextPath() %>/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="<%= request.getContextPath() %>/js/dataTables.bootstrap.min.js"></script>
+	<script type="text/javascript" src="<%= request.getContextPath() %>/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="<%= request.getContextPath() %>/js/buttons.bootstrap.min.js"></script>
+	<script type="text/javascript" src="<%= request.getContextPath() %>/js/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="<%= request.getContextPath() %>/js/dataTables.responsive.min.js"></script>
+	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/holder.js'></script>
+	<script type="text/javascript" src="<%= request.getContextPath() %>/js/jdyna/jdyna.js"></script>
+	<script type="text/javascript" src="<%= request.getContextPath() %>/utils.js"></script>
+    <script type="text/javascript" src="<%= request.getContextPath() %>/static/js/choice-support.js"></script>    
+	<script type='text/javascript'>
+		var j = jQuery.noConflict();
+		var $ = jQuery.noConflict();
+		var JQ = j;
+		dspaceContextPath = "<%=request.getContextPath()%>";
+	</script>
+	
+	<script type='text/javascript'
+		src='<%= request.getContextPath() %>/js/dedup.js'></script>
+	<script type='text/javascript'
+		src='<%= request.getContextPath() %>/js/dedup-function.js'></script>
+	<script type='text/javascript'
+		src='<%= request.getContextPath() %>/js/dedup-behaviour.js'></script>
 
         <%--Gooogle Analytics recording.--%>
         <%
@@ -644,7 +693,7 @@ body .text--white a {
     </head>
     <%-- HACK: leftmargin, topmargin: for non-CSS compliant Microsoft IE browser --%>
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
-    <body class="undernavigation">
+    <body class="undernavigation mBody page-theme">
         <div id="app">
         <dspace:include page="/layout/navbar-minimal.jsp" />
         <br/>
