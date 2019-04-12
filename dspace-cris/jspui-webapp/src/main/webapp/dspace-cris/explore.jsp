@@ -48,12 +48,45 @@
 <%@page import="org.dspace.content.Bitstream"%>
 <%@page import="org.dspace.discovery.configuration.DiscoverySearchFilter" %>
 
+<%@page import="org.dspace.discovery.configuration.DiscoveryConfiguration" %>
+<%@page import="org.dspace.discovery.configuration.DiscoverySearchFilterFacet" %>
+
+<%@page import="org.dspace.discovery.DiscoverQuery" %>
+<%@page import="org.dspace.app.webui.discovery.DiscoverUtility" %>
+<%@page import="org.dspace.discovery.DiscoverResult" %>
+<%@page import="org.dspace.core.Context" %>
+<%@page import="org.apache.commons.lang.StringUtils"%>
+
 <%
         int discovery_panel_cols = 12;
         int discovery_facet_cols = 4;
         List<DiscoverySearchFilter> filters = (List<DiscoverySearchFilter>) request.getAttribute("filters");
         String[] options = new String[]{"equals", "contains", "authority", "notequals", "notcontains", "notauthority"};
 
+        DiscoveryConfiguration discoveryConfiguration = SearchUtils
+				.getDiscoveryConfigurationByName(DiscoveryConfiguration.GLOBAL_CONFIGURATIONNAME);
+
+        DiscoverQuery queryArgs = DiscoverUtility.getDiscoverQuery(new Context(), request, null,
+				DiscoveryConfiguration.GLOBAL_CONFIGURATIONNAME, true);
+
+        queryArgs.setSpellCheck(discoveryConfiguration.isSpellCheckEnabled());
+        
+        DiscoverResult qResults = null;
+
+        qResults = SearchUtils.getSearchService().search(new Context(), null, queryArgs);
+
+        DiscoveryConfiguration globalConfiguration = SearchUtils.getGlobalConfiguration();
+        DiscoverySearchFilterFacet globalFacet = new DiscoverySearchFilterFacet();
+        if(globalConfiguration!=null) {
+            globalFacet.setIndexFieldName(globalConfiguration.getCollapsingConfiguration().getGroupIndexFieldName());
+        }	
+        String fGlobal = globalFacet.getIndexFieldName();
+        List<FacetResult> facetGlobal = null;
+        String fkeyGlobal = null;
+        if (qResults != null) {
+            facetGlobal = qResults.getFacetResult(fGlobal);
+            fkeyGlobal = "jsp.search.facet.refine." + fGlobal;
+        }
 %>
 <c:set var="dspace.layout.head.last" scope="request">
 
@@ -64,7 +97,29 @@
 <dspace:layout locbar="link" parenttitlekey="${fmtkey}" parentlink="/cris/explore/${location}" titlekey="${fmtkey}">
     <div class="row">
         <div class="col-sm-4 col-md-3">
+            
+            <% if (facetGlobal != null && facetGlobal.size() > 0) {%>
 
+            <div id="globalFacet" class="facetsBox">
+                <div id="facet_<%= fkeyGlobal%>" class="panel panel-success panel__discovery">
+                    <div class="panel-heading"><h6><i class="fa fa-filter" aria-hidden="true"></i><fmt:message key="<%= fkeyGlobal%>" /></h6>
+                        <ul class="list-group"><%
+                            for (FacetResult fvalue : facetGlobal) {
+                            %><li class="list-group-item">
+                                <i class="fa fa-circle" aria-hidden="true"></i>
+                                <a class="pl-3" href="<%= request.getContextPath()
+                                    + "/simple-search?query="
+                            + "&amp;location=" + URLEncoder.encode(fvalue.getAuthorityKey(), "UTF-8")%>"
+                                   title="<fmt:message key="jsp.search.facet.narrow"><fmt:param><%=fvalue.getDisplayedValue()%></fmt:param></fmt:message>">
+
+                                   <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 36)%></a><span class="badge"><%= fvalue.getCount()%></span> </li><%
+                                       }
+                                   %></ul>
+                    </div>
+                </div>
+            </div>			
+        <% } %>
+            
             <c:set var="discovery.searchScope" value="${location}" scope="request"/>
             <%@ include file="/discovery/static-sidebar-facet.jsp" %>
 
@@ -170,12 +225,15 @@
             <div class="clearfix"></div>
             <div class="row">
                 <%
+                    RecentSubmissions download = (RecentSubmissions) request.getAttribute("top_download");
+                    RecentSubmissions submissions = (RecentSubmissions) request.getAttribute("top_recentsubmission");
+                    RecentSubmissions viewed = (RecentSubmissions) request.getAttribute("top_view");
+                    RecentSubmissions cited = (RecentSubmissions) request.getAttribute("top_cited");
+                %>
+                <%
                     if (submissions != null && submissions.count() > 0) {
                 %>
                 <div class="col">
-                    <%
-                            RecentSubmissions submissions = (RecentSubmissions) request.getAttribute("top_recentsubmission");
-                    %>
                     <%@ include file="/dspace-cris/explore/topObjectsRecent.jsp" %>
                 </div>
                 <% } %>
@@ -183,9 +241,6 @@
                     if (viewed != null && viewed.count() > 0) {
                 %>
                 <div class="col">
-                    <%
-                            RecentSubmissions viewed = (RecentSubmissions) request.getAttribute("top_view");
-                    %>
                     <%@ include file="/dspace-cris/explore/topObjectsViewed.jsp" %>
                 </div>
                 <% } %>
@@ -193,9 +248,6 @@
                     if (cited != null && cited.count() > 0) {
                 %>
                 <div class="col">
-                    <%
-                            RecentSubmissions cited = (RecentSubmissions) request.getAttribute("top_cited");
-                    %>
                     <%@ include file="/dspace-cris/explore/topObjectsCited.jsp" %>
                 </div>
                 <% } %>
@@ -203,9 +255,6 @@
                     if (download != null && download.count() > 0) {
                 %>
                 <div class="col">
-                    <%
-                            RecentSubmissions download = (RecentSubmissions) request.getAttribute("top_download");
-                    %>
                     <%@ include file="/dspace-cris/explore/topObjectsDownload.jsp" %>
                 </div>
                 <% } %>

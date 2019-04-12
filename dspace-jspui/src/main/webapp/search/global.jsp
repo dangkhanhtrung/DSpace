@@ -127,49 +127,7 @@
 %>
 
 <c:set var="dspace.layout.head.last" scope="request">
-    <script type="text/javascript">
-
-        jQuery(document).ready(function () {
-            var jQ = jQuery.noConflict();
-            jQ("#spellCheckQuery").click(function () {
-                jQ("#query").val(jQ(this).attr('data-spell'));
-                jQ("#main-query-submit").click();
-            });
-            jQ("#filterquery")
-                    .autocomplete({
-                        source: function (request, response) {
-                            jQ.ajax({
-                                url: "<%= request.getContextPath()%>/json/discovery/autocomplete?query=<%= URLEncoder.encode(query, "UTF-8")%><%= httpFilters.replaceAll("&amp;", "&")%>",
-                                                            dataType: "json",
-                                                            cache: false,
-                                                            data: {
-                                                                auto_idx: jQ("#filtername").val(),
-                                                                auto_query: request.term,
-                                                                auto_sort: 'count',
-                                                                auto_type: jQ("#filtertype").val(),
-                                                                location: '<%= searchScope%>'
-                                                            },
-                                                            success: function (data) {
-                                                                response(jQ.map(data.autocomplete, function (item) {
-                                                                    var tmp_val = item.authorityKey;
-                                                                    if (tmp_val == null || tmp_val == '')
-                                                                    {
-                                                                        tmp_val = item.displayedValue;
-                                                                    }
-                                                                    return {
-                                                                        label: item.displayedValue + " (" + item.count + ")",
-                                                                        value: tmp_val
-                                                                    };
-                                                                }))
-                                                            }
-                                                        })
-                                                    }
-                                                });
-                                    });
-                                    function validateFilters() {
-                                        return document.getElementById("filterquery").value.length > 0;
-                                    }
-    </script>		
+   	
 </c:set>
 
 <dspace:layout titlekey="jsp.search.title">
