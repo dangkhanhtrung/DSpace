@@ -62,18 +62,18 @@
         int discovery_facet_cols = 4;
         List<DiscoverySearchFilter> filters = (List<DiscoverySearchFilter>) request.getAttribute("filters");
         String[] options = new String[]{"equals", "contains", "authority", "notequals", "notcontains", "notauthority"};
-
+        Context context = UIUtil.obtainContext(request);
         DiscoveryConfiguration discoveryConfiguration = SearchUtils
 				.getDiscoveryConfigurationByName(DiscoveryConfiguration.GLOBAL_CONFIGURATIONNAME);
 
-        DiscoverQuery queryArgs = DiscoverUtility.getDiscoverQuery(new Context(), request, null,
+        DiscoverQuery queryArgs = DiscoverUtility.getDiscoverQuery(context, request, null,
 				DiscoveryConfiguration.GLOBAL_CONFIGURATIONNAME, true);
 
         queryArgs.setSpellCheck(discoveryConfiguration.isSpellCheckEnabled());
         
         DiscoverResult qResults = null;
-
-        qResults = SearchUtils.getSearchService().search(new Context(), null, queryArgs);
+        
+        qResults = SearchUtils.getSearchService().search(context, null, queryArgs);
 
         DiscoveryConfiguration globalConfiguration = SearchUtils.getGlobalConfiguration();
         DiscoverySearchFilterFacet globalFacet = new DiscoverySearchFilterFacet();

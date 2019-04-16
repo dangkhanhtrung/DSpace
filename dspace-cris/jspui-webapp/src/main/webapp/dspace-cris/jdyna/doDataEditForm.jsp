@@ -248,10 +248,9 @@
                                         </div>
                                     </div>
 
-                                </div>
-
-
                                 <p style="color: red; text-decoration: underline; font-weight: bold; text-align: center;"><fmt:message key='jsp.rp.edit-tips'/></p>
+
+                                </div>
 
                             </div>
 
@@ -526,4 +525,7 @@
                 -webkit-transition: all .2s cubic-bezier(.68,-.55,.265,1.55);
                 transition: all .2s cubic-bezier(.68,-.55,.265,1.55);
             }
+            .custom-radio .custom-control-input~.custom-control-label {
+    min-width: 100px;
+}
         </style>
