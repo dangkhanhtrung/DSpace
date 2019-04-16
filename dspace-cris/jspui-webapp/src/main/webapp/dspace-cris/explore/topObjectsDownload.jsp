@@ -16,7 +16,7 @@ if (download != null && download.count() > 0)
         <div class="panel-heading">
           <h5 class="panel-title mb-0" style="padding: .5rem 1rem 0;">
               <i class="fa fa-file-text-o mr-2"></i>
-          		<fmt:message key="jsp.collection-home.recentsub"/>
+          		<fmt:message key="jsp.explore-home.topdownload"/>
           </h5>
        </div>  
 	<div class="list-groups">
