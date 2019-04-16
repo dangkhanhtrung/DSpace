@@ -103,6 +103,82 @@
                 * html .ui-autocomplete {
                     height: 100px;
                 }
+                div#hidden_firststandardsdetail {
+                    display: none;
+                }
+
+                div#standardsdetail {
+                    overflow: hidden;
+                }
+
+                div#myTabContent {
+                    padding: 15px;
+                }
+
+                div#standardsdetail > div {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                .dynaField {
+                    width: 50%;
+                    flex: 0 0 50%;
+                }
+                body .dynaLabel, body .dynaLabelRequired {
+                    min-height: auto;
+                    clear: right;
+                }
+                body .dynaFieldValue {
+                    padding: 0;
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 10px;
+                }
+                body .dynaFieldValue > input[type="text"],
+                body .searchboxpointer {
+                    width: 265px;
+                    display: block;
+                    height: 32px;
+                    padding: .625rem .75rem;
+                    font-size: 1rem;
+                    line-height: 1.2;
+                    color: #8898aa;
+                    background-color: #fff;
+                    background-clip: padding-box;
+                    border: 1px solid #cad1d7;
+                    border-radius: .25rem;
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                    -webkit-transition: all .2s cubic-bezier(.68,-.55,.265,1.55);
+                    transition: all .2s cubic-bezier(.68,-.55,.265,1.55);
+                    margin-top: 5px;
+                }
+                body .dynaFieldValue img.addButton,
+                body .dynaFieldValue img.deleteButton,
+                body .dynaFieldValue img.warn,
+                body .dynaFieldValue img.nested_add_button,
+                body .dynaFieldValue img.nested_delete_button, body img.nested_edit_button, body img.nested_preferred_button, 
+                body .dynaFieldValue img.nested_notpreferred_button {
+                    width: 24px;
+                    padding: 0px;
+                    margin: 8px 10px 2px 8px;
+                    border: none;
+                    vertical-align: middle;
+                    cursor: pointer;
+                    height: 24px;
+                    padding: 5px;
+                }
+                body .dynaFieldValue input[type=checkbox], body .dynaFieldValue input[type=radio] {padding: 4px;margin: 15px 5px 10px 20px;}
+
+                body div.jdyna-form-button {
+                    border-top: 0;
+                    padding-top: 0;
+                    margin-top: 15px;
+                }
+                body .dynaFieldValue img.deleteButton {
+                    padding: 6px !important;
+    margin: 9px 10px 2px 8px !important;
+                }
             </style>
 
         </c:set>
@@ -133,7 +209,6 @@
                             <c:forEach items="${status.errorMessages}" var="error">
                                 <span class="errorMessage alert alert-danger"><fmt:message
                                         key="jsp.layout.hku.prefix-error-code" /> ${error}</span>
-                                <br />
                             </c:forEach>
                             <c:if test="${!empty status.errorMessages}">
                             </div>
@@ -280,7 +355,6 @@
 
 
 
-
                                                             <span class="green"><fmt:message
                                                                 key='jsp.layout.hku.researcher.message'>
                                                                 <fmt:param>
@@ -323,7 +397,6 @@
 
                                                         <div id="hidden_first${holder.shortName}">&nbsp;</div>
                                                         <div id="${holder.shortName}" class="box ${holder.collapsed?"":"expanded"}">
-                                                            <h3><a href="#">${holder.title}</a></h3>
                                                             <div>
                                                                 <c:forEach
                                                                     items="${propertiesDefinitionsInHolder[holder.shortName]}"
@@ -428,25 +501,6 @@
 
                     </div>
 
-                    <div id="tabs">
-                        <ul>
-                            <c:forEach items="${tabList}" var="area" varStatus="rowCounter">
-                                <li id="bar-tab-${area.id}">
-                                    <a href="#tab-${area.id}">
-                                        <c:if test="${!empty area.ext}">
-                                            <img style="width: 16px;vertical-align: middle;" border="0" 
-                                                 src="<%=request.getContextPath()%>/cris/researchertabimage/${area.id}" alt="icon" />
-                                        </c:if>	
-                                        ${area.title}</a>
-                                </li>
-                            </c:forEach>
-                        </ul>
-
-
-
-                    </div>
-
-
                 </form:form>
 
                 <div id="alert_eperson_dialog"></div>
@@ -499,7 +553,7 @@
             }
 
             .dynaLabel, .dynaLabelRequired {
-                width: 100%;
+                width: 100% !important;
                 padding: 0 !important;
             }
             .argon_input input {
@@ -521,5 +575,52 @@
             }
             .custom-radio .custom-control-input~.custom-control-label {
                 min-width: 100px;
+            }
+            body .box.expanded .dynaClear {
+                   display: none;
+            }
+            body .box.expanded .dynaFieldValue table tr {
+                    display: grid;
+            }
+            body .box.expanded .dynaFieldValue table tr input[type="checkbox"] {
+                    margin-left: 0;
+            }
+            body .box.expanded .dynaFieldValue table tr input[type="file"]{
+                       padding-bottom: 26px;
+    font-size: 12px;
+            }
+            body .box.expanded .dynaFieldValue table tr input {
+                width: 265px;
+                display: block;
+                height: 32px;
+                padding: .625rem .75rem;
+                font-size: 1rem;
+                line-height: 1.2;
+                color: #8898aa;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #cad1d7;
+                border-radius: .25rem;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                -webkit-transition: all .2s cubic-bezier(.68,-.55,.265,1.55);
+                transition: all .2s cubic-bezier(.68,-.55,.265,1.55);
+                margin-top: 5px;
+            }
+                    body img.calendar {
+    display: inline;
+    margin: 12px 0px 5px 12px;
+    padding: 1px;
+    clear: none;
+    float: none;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+span.fieldError, .errorMessage {
+                    width: 100%;
+            }
+            span.fieldError img, .errorMessage img {
+                    width: 12px;
             }
         </style>

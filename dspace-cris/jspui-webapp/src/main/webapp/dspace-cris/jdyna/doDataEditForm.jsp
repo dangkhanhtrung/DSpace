@@ -115,7 +115,7 @@
                 }
 
                 .dynaField {
-                    max-width: 50%;
+                    width: 50%;
                     flex: 0 0 50%;
                 }
                 body .dynaLabel, body .dynaLabelRequired {
@@ -167,6 +167,7 @@
                 body div.jdyna-form-button {
                     border-top: 0;
                     padding-top: 0;
+                    margin-top: 15px;
                 }
                 body .dynaFieldValue img.deleteButton {
                     padding: 6px !important;
@@ -202,7 +203,6 @@
                             <c:forEach items="${status.errorMessages}" var="error">
                                 <span class="errorMessage alert alert-danger"><fmt:message
                                         key="jsp.layout.hku.prefix-error-code" /> ${error}</span>
-                                <br />
                             </c:forEach>
                             <c:if test="${!empty status.errorMessages}">
                             </div>
@@ -505,7 +505,7 @@
             }
 
             .dynaLabel, .dynaLabelRequired {
-                width: 100%;
+                width: 100% !important;
                 padding: 0 !important;
             }
             .argon_input input {
@@ -528,4 +528,23 @@
             .custom-radio .custom-control-input~.custom-control-label {
     min-width: 100px;
 }
+body .box.expanded .dynaClear {
+                   display: none;
+            }
+                    body img.calendar {
+    display: inline;
+    margin: 12px 0px 5px 12px;
+    padding: 1px;
+    clear: none;
+    float: none;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+span.fieldError, .errorMessage {
+                    width: 100%;
+            }
+            span.fieldError img, .errorMessage img {
+                    width: 12px;
+            }
         </style>
