@@ -55,122 +55,125 @@
         <link href="<%= request.getContextPath()%>/static/custom/css/main.css" rel="stylesheet">
 
         <style>
-            body .panel-border .list-group-item {
-                    border: 0;
-                    border-bottom: 1px solid #e6ecef;
-                        margin: 0;
+            div#wrapperDisplayItem .itemDisplayTable tr td:first-child {
+                min-width: 150px;
             }
-             body .panel-border {
-                    border: 1px solid #e7ecef;
-    border-top: 0;
+            body .panel-border .list-group-item {
+                border: 0;
+                border-bottom: 1px solid #e6ecef;
+                margin: 0;
+            }
+            body .panel-border {
+                border: 1px solid #e7ecef;
+                border-top: 0;
             }
             .facetsBox .btn {
-    height: 18px;
-    padding: 0 5px;
-    font-size: 10px;
-}
+                height: 18px;
+                padding: 0 5px;
+                font-size: 10px;
+            }
             div#dspaceitems .panel-collapse .collapse .panel-group {display: flex;margin-right: -15px;margin-left: -15px;flex-wrap: wrap;}
 
-div#dspaceitems .panel-collapse .collapse .panel-group .list-group .list-group-item {border-radius: 0;padding: 8px;}
+            div#dspaceitems .panel-collapse .collapse .panel-group .list-group .list-group-item {border-radius: 0;padding: 8px;}
 
-div#dspaceitems .panel-collapse .collapse .panel-group .panel-title {
-    font-size: 16px;
-}
-div#dspaceitems .panel-collapse .collapse .panel-group .panel.panel-default {
-    margin-bottom: 8px;
-}
-div#dspaceitems .panel-collapse .collapse > div.row.text-center {
-        margin: 0;
-}
-div#dspaceitems .btn-transparent:hover { box-shadow: none}
+            div#dspaceitems .panel-collapse .collapse .panel-group .panel-title {
+                font-size: 16px;
+            }
+            div#dspaceitems .panel-collapse .collapse .panel-group .panel.panel-default {
+                margin-bottom: 8px;
+            }
+            div#dspaceitems .panel-collapse .collapse > div.row.text-center {
+                margin: 0;
+            }
+            div#dspaceitems .btn-transparent:hover { box-shadow: none}
             body .table.table-hover td[align="right"]:first-child {
-    text-align: center;
-}
-body .ul__user__info .researcher-menu-item:before {
-    content: "\f101";
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+                text-align: center;
+            }
+            body .ul__user__info .researcher-menu-item:before {
+                content: "\f101";
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
             a.a__icon__down:after {
-    content: "\f103";
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    position: absolute;
-    right: 25px;
-    top: 5px;
-}
+                content: "\f103";
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                position: absolute;
+                right: 25px;
+                top: 5px;
+            }
             div#tab-11 > .row > div {
-                    margin-bottom: 15px;
+                margin-bottom: 15px;
             }
             div#tab-11 > .row > div .panel-heading .panel-title {
-    border-bottom: 1px solid;
-    font-size: 20px;
-    margin: 0;
-}
+                border-bottom: 1px solid;
+                font-size: 20px;
+                margin: 0;
+            }
 
-div#tab-11 > .row > div .panel-collapse {
-    padding: 15px 0;
-}
-.extend__profile__menu > a{
-    background: transparent;
-    color: inherit !important;
-    border: none;
-    box-shadow: none;
-    margin: 0 !important;
-    padding: 12px 0 !important;
-    border-bottom: 1px dashed gray;
-    border-radius: 0;
-    font-weight: normal
-}
-.extend__profile__menu > a:hover     {
-    background-color: transparent;
-    color: inherit !important;
-    box-shadow: none;
-    font-weight: bold;
-}
-.extend__profile__menu > a:last-child {
-    border-bottom: none;
-}
+            div#tab-11 > .row > div .panel-collapse {
+                padding: 15px 0;
+            }
+            .extend__profile__menu > a{
+                background: transparent;
+                color: inherit !important;
+                border: none;
+                box-shadow: none;
+                margin: 0 !important;
+                padding: 12px 0 !important;
+                border-bottom: 1px dashed gray;
+                border-radius: 0;
+                font-weight: normal
+            }
+            .extend__profile__menu > a:hover     {
+                background-color: transparent;
+                color: inherit !important;
+                box-shadow: none;
+                font-weight: bold;
+            }
+            .extend__profile__menu > a:last-child {
+                border-bottom: none;
+            }
 
-.extend__profile__menu ul.dropdown-menu {
-    padding: 4px 0;
-}
-.extend__profile__menu ul.dropdown-menu li {
-    padding: 8px 15px;
-    border-bottom: 1px dashed gray;
-    cursor: pointer;
-}
-.extend__profile__menu ul.dropdown-menu li:last-child {
-    border-bottom: none;
-}
+            .extend__profile__menu ul.dropdown-menu {
+                padding: 4px 0;
+            }
+            .extend__profile__menu ul.dropdown-menu li {
+                padding: 8px 15px;
+                border-bottom: 1px dashed gray;
+                cursor: pointer;
+            }
+            .extend__profile__menu ul.dropdown-menu li:last-child {
+                border-bottom: none;
+            }
 
             body .ul__user__info .researcher-menu-item {
-    padding: 8px 0;
-    border-top: 1px dashed gray;
-    cursor: pointer;
-}
-body .ul__user__info .researcher-menu-item:first-child {
-    border-top: none;
-}
-body .ul__user__info .researcher-menu-item:hover {
-        font-weight: bold;
-}
-body .ul__user__info .researcher-menu-item-hidden {
-    display: none;
-}
+                padding: 8px 0;
+                border-top: 1px dashed gray;
+                cursor: pointer;
+            }
+            body .ul__user__info .researcher-menu-item:first-child {
+                border-top: none;
+            }
+            body .ul__user__info .researcher-menu-item:hover {
+                font-weight: bold;
+            }
+            body .ul__user__info .researcher-menu-item-hidden {
+                display: none;
+            }
             body .form-group > h1 {
-                    font-size: 24px;
+                font-size: 24px;
             }
             body .form-inline .form-group {
-                    flex: auto !important;
+                flex: auto !important;
             }
             body .navbar {
                 width: 100%;
@@ -323,7 +326,7 @@ body .ul__user__info .researcher-menu-item-hidden {
             body .pagination,
             body .discovery-result-results {
                 float: right;
-                    margin-bottom: 15px;
+                margin-bottom: 15px;
             }
             body .discovery-result-results {
                 width: 100%;
@@ -551,193 +554,193 @@ body .ul__user__info .researcher-menu-item-hidden {
                 border-bottom: 1px dashed;
             }
             body .nav-pills .nav-link {
-    padding: .35rem 1rem;
-    height: 32px;
-}
-.my_tabs .panel-group > .panel {
-    border-bottom: .0625rem solid rgb(244, 244, 244);
-}
-.my_tabs .panel-group > .panel:last-child {
-    border-bottom: none;
-}
-.my_tabs .panel-group > .panel .panel-heading h6 {
-	background-color: #ffffff;
-}
-.my_tabs .panel-group > .panel .panel-heading h6,
-.my_tabs .panel-group > .panel .panel-body {
-    margin: 0;
-    padding: 5px 15px;
-    position: relative;
-}
-.my_tabs .panel-group > .panel .panel-heading .panel-title i {
-        position: absolute;
-    right: 15px;
-    top: 10px;  
-}
-.my_tabs .panel-group,
-.my_tabs #tabs-result {
-	    background-color: #f4f5f7;
-}
-body .form-group-lv2 {
-	    margin-right: -15px;
-    margin-left: -15px;
-}
-body .help-block {
-	font-size: 14px;
-}
-#tabs-result {
-	padding: 15px;
-}
-body .alert-warning {
-	border-color: #fc7c5f;
-    background-color: transparent;
-    color: inherit !important;
-    border: 1px solid #fc7c5f !important;
-}
-h3.mydspace-subscriptions {
-    font-size: 16px;
-}
-#contentsubscription {
-    padding: 15px 10px;
-}
-#contentsubscription p {
-    margin-bottom: 0;
-    font-size: 14px;
-}
-#tabs a[href="<%= request.getContextPath()%>/subscribe"] {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.5;
-    display: inline-block;
-    padding: .625rem 1.25rem;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    color: #fff;
-    border-color: #1565c0;
-    background-color: #1565c0;
-    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-    font-size: .875rem;
-    position: relative;
-    transition: all .15s ease;
-    letter-spacing: .025em;
-    text-transform: uppercase;
-    will-change: transform;
-    line-height: 14px;
-    text-transform: unset;
-    padding: .5rem 1rem;
-    cursor: pointer;
-    margin: 0 8px;
-}
-#tabs a[href="<%= request.getContextPath()%>/cris/tools/stats/subscription/list.htm"] {
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.5;
-  display: inline-block;
-  padding: .625rem 1.25rem;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  text-align: center;
-  vertical-align: middle;
-  white-space: nowrap;
-  border: 1px solid transparent;
-  border-radius: .25rem;
-  color: #fff;
-  border-color: #11cdef;
-  background-color: #11cdef;
-  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-  font-size: .875rem;
-  position: relative;
-  transition: all .15s ease;
-  letter-spacing: .025em;
-  text-transform: uppercase;
-  will-change: transform;
-  line-height: 14px;
-  text-transform: unset;
-  padding: .5rem 1rem;
-  cursor: pointer;
-  margin: 0 10px;
-}
-#tabs {
-  border-bottom: 0;
-}
-#statisticssubscription {
-	padding: 15px 12px;
-}
-body textarea.form-control {
-	height: inherit;
-}
-.group_ids > div > input.col-xs-12 {
-	margin-bottom: 5px;
-}
-body .h1, body h1 {
-    font-size: 1.5rem;
-}
-ul.blank-page {
-    list-style-type: none;
-    padding: 0;
-}
-ul.blank-page li {
-   padding: 5px 0;
-   border-bottom: .0625rem dashed gray;
-}
-body table {
-	    width: 100%;
-}
-body .text--white a {
-	color: #ffffff !important;
-}
-.media.title_signature,
-.media.title_signature a {
-    background: #C62828;
-    color: #fff;
-}
-.media.title_signature .media-body {
-    margin-left: -25px;
-    overflow: hidden;
-    margin-right: 15px;
-}
-.tabsignature {
-	margin-top: 15px;
-}
-a#delete {
-    display: inline-block;
-    font-weight: 600;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: .625rem 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 50%;
-    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-    background-color: #f5365c;
-    border-color: #f5365c;
-    color: #fff;
-    position: fixed;
-    right: 6%;
-}
+                padding: .35rem 1rem;
+                height: 32px;
+            }
+            .my_tabs .panel-group > .panel {
+                border-bottom: .0625rem solid rgb(244, 244, 244);
+            }
+            .my_tabs .panel-group > .panel:last-child {
+                border-bottom: none;
+            }
+            .my_tabs .panel-group > .panel .panel-heading h6 {
+                background-color: #ffffff;
+            }
+            .my_tabs .panel-group > .panel .panel-heading h6,
+            .my_tabs .panel-group > .panel .panel-body {
+                margin: 0;
+                padding: 5px 15px;
+                position: relative;
+            }
+            .my_tabs .panel-group > .panel .panel-heading .panel-title i {
+                position: absolute;
+                right: 15px;
+                top: 10px;  
+            }
+            .my_tabs .panel-group,
+            .my_tabs #tabs-result {
+                background-color: #f4f5f7;
+            }
+            body .form-group-lv2 {
+                margin-right: -15px;
+                margin-left: -15px;
+            }
+            body .help-block {
+                font-size: 14px;
+            }
+            #tabs-result {
+                padding: 15px;
+            }
+            body .alert-warning {
+                border-color: #fc7c5f;
+                background-color: transparent;
+                color: inherit !important;
+                border: 1px solid #fc7c5f !important;
+            }
+            h3.mydspace-subscriptions {
+                font-size: 16px;
+            }
+            #contentsubscription {
+                padding: 15px 10px;
+            }
+            #contentsubscription p {
+                margin-bottom: 0;
+                font-size: 14px;
+            }
+            #tabs a[href="<%= request.getContextPath()%>/subscribe"] {
+                font-size: 1rem;
+                font-weight: 600;
+                line-height: 1.5;
+                display: inline-block;
+                padding: .625rem 1.25rem;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                text-align: center;
+                vertical-align: middle;
+                white-space: nowrap;
+                border: 1px solid transparent;
+                border-radius: .25rem;
+                color: #fff;
+                border-color: #1565c0;
+                background-color: #1565c0;
+                box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+                font-size: .875rem;
+                position: relative;
+                transition: all .15s ease;
+                letter-spacing: .025em;
+                text-transform: uppercase;
+                will-change: transform;
+                line-height: 14px;
+                text-transform: unset;
+                padding: .5rem 1rem;
+                cursor: pointer;
+                margin: 0 8px;
+            }
+            #tabs a[href="<%= request.getContextPath()%>/cris/tools/stats/subscription/list.htm"] {
+                font-size: 1rem;
+                font-weight: 600;
+                line-height: 1.5;
+                display: inline-block;
+                padding: .625rem 1.25rem;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                text-align: center;
+                vertical-align: middle;
+                white-space: nowrap;
+                border: 1px solid transparent;
+                border-radius: .25rem;
+                color: #fff;
+                border-color: #11cdef;
+                background-color: #11cdef;
+                box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+                font-size: .875rem;
+                position: relative;
+                transition: all .15s ease;
+                letter-spacing: .025em;
+                text-transform: uppercase;
+                will-change: transform;
+                line-height: 14px;
+                text-transform: unset;
+                padding: .5rem 1rem;
+                cursor: pointer;
+                margin: 0 10px;
+            }
+            #tabs {
+                border-bottom: 0;
+            }
+            #statisticssubscription {
+                padding: 15px 12px;
+            }
+            body textarea.form-control {
+                height: inherit;
+            }
+            .group_ids > div > input.col-xs-12 {
+                margin-bottom: 5px;
+            }
+            body .h1, body h1 {
+                font-size: 1.5rem;
+            }
+            ul.blank-page {
+                list-style-type: none;
+                padding: 0;
+            }
+            ul.blank-page li {
+                padding: 5px 0;
+                border-bottom: .0625rem dashed gray;
+            }
+            body table {
+                width: 100%;
+            }
+            body .text--white a {
+                color: #ffffff !important;
+            }
+            .media.title_signature,
+            .media.title_signature a {
+                background: #C62828;
+                color: #fff;
+            }
+            .media.title_signature .media-body {
+                margin-left: -25px;
+                overflow: hidden;
+                margin-right: 15px;
+            }
+            .tabsignature {
+                margin-top: 15px;
+            }
+            a#delete {
+                display: inline-block;
+                font-weight: 600;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                border: 1px solid transparent;
+                padding: .625rem 1rem;
+                font-size: 1rem;
+                line-height: 1.5;
+                border-radius: 50%;
+                -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+                transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+                transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+                background-color: #f5365c;
+                border-color: #f5365c;
+                color: #fff;
+                position: fixed;
+                right: 6%;
+            }
         </style>
 
-         <script type="text/javascript" src="<%= request.getContextPath()%>/static/vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath()%>/static/vendor/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="<%= request.getContextPath()%>/static/vendor/popper/popper.min.js"></script>
         <script type="text/javascript" src="<%= request.getContextPath()%>/static/vendor/bootstrap/bootstrap.min.js"></script>
         <script type="text/javascript" src="<%= request.getContextPath()%>/static/vendor/headroom/headroom.min.js"></script>
@@ -745,36 +748,36 @@ a#delete {
         <script type="text/javascript" src="<%= request.getContextPath()%>/static/js/argon.min.js"></script>
         <script type="text/javascript" src="<%= request.getContextPath()%>/static/js/axios.min.js"></script>
         <script type="text/javascript" src="<%= request.getContextPath()%>/static/vendor/header-submission/index.js"></script>
-        
-        
-        <script type='text/javascript' src="<%= request.getContextPath() %>/static/js/jquery/jquery-1.11.3.min.js"></script>
-	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/jquery/jquery-ui-1.11.4.min.js'></script>
-	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/bootstrap/bootstrap.min.js'></script>
-	<script type="text/javascript" src="<%= request.getContextPath() %>/js/tmpl.min.js"></script>
-	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/custom-functions.js'></script>
-	<script type="text/javascript" src="<%= request.getContextPath() %>/js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" src="<%= request.getContextPath() %>/js/dataTables.bootstrap.min.js"></script>
-	<script type="text/javascript" src="<%= request.getContextPath() %>/js/dataTables.buttons.min.js"></script>
-	<script type="text/javascript" src="<%= request.getContextPath() %>/js/buttons.bootstrap.min.js"></script>
-	<script type="text/javascript" src="<%= request.getContextPath() %>/js/buttons.html5.min.js"></script>
-	<script type="text/javascript" src="<%= request.getContextPath() %>/js/dataTables.responsive.min.js"></script>
-	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/holder.js'></script>
-	<script type="text/javascript" src="<%= request.getContextPath() %>/js/jdyna/jdyna.js"></script>
-	<script type="text/javascript" src="<%= request.getContextPath() %>/utils.js"></script>
-    <script type="text/javascript" src="<%= request.getContextPath() %>/static/js/choice-support.js"></script>    
-	<script type='text/javascript'>
-		var j = jQuery.noConflict();
-		var $ = jQuery.noConflict();
-		var JQ = j;
-		dspaceContextPath = "<%=request.getContextPath()%>";
-	</script>
-	
-	<script type='text/javascript'
-		src='<%= request.getContextPath() %>/js/dedup.js'></script>
-	<script type='text/javascript'
-		src='<%= request.getContextPath() %>/js/dedup-function.js'></script>
-	<script type='text/javascript'
-		src='<%= request.getContextPath() %>/js/dedup-behaviour.js'></script>
+
+
+        <script type='text/javascript' src="<%= request.getContextPath()%>/static/js/jquery/jquery-1.11.3.min.js"></script>
+        <script type='text/javascript' src='<%= request.getContextPath()%>/static/js/jquery/jquery-ui-1.11.4.min.js'></script>
+        <script type='text/javascript' src='<%= request.getContextPath()%>/static/js/bootstrap/bootstrap.min.js'></script>
+        <script type="text/javascript" src="<%= request.getContextPath()%>/js/tmpl.min.js"></script>
+        <script type='text/javascript' src='<%= request.getContextPath()%>/static/js/custom-functions.js'></script>
+        <script type="text/javascript" src="<%= request.getContextPath()%>/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath()%>/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath()%>/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath()%>/js/buttons.bootstrap.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath()%>/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath()%>/js/dataTables.responsive.min.js"></script>
+        <script type='text/javascript' src='<%= request.getContextPath()%>/static/js/holder.js'></script>
+        <script type="text/javascript" src="<%= request.getContextPath()%>/js/jdyna/jdyna.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath()%>/utils.js"></script>
+        <script type="text/javascript" src="<%= request.getContextPath()%>/static/js/choice-support.js"></script>    
+        <script type='text/javascript'>
+            var j = jQuery.noConflict();
+            var $ = jQuery.noConflict();
+            var JQ = j;
+            dspaceContextPath = "<%=request.getContextPath()%>";
+        </script>
+
+        <script type='text/javascript'
+        src='<%= request.getContextPath()%>/js/dedup.js'></script>
+        <script type='text/javascript'
+        src='<%= request.getContextPath()%>/js/dedup-function.js'></script>
+        <script type='text/javascript'
+        src='<%= request.getContextPath()%>/js/dedup-behaviour.js'></script>
 
         <%--Gooogle Analytics recording.--%>
         <%
@@ -813,14 +816,14 @@ a#delete {
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
     <body class="undernavigation mBody page-theme">
         <div id="app">
-        <dspace:include page="/layout/navbar-minimal.jsp" />
-        <br/>
+            <dspace:include page="/layout/navbar-minimal.jsp" />
+            <br/>
 
-        <main id="content" role="main">
+            <main id="content" role="main">
 
-            <%-- Page contents --%>
-            <div class="container fullheight">
-                <% if (request.getAttribute("dspace.layout.sidebar") != null) { %>
-                <div class="row">
-                    <div class="col-md-9">
-                        <% }%>		
+                <%-- Page contents --%>
+                <div class="container fullheight">
+                    <% if (request.getAttribute("dspace.layout.sidebar") != null) { %>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <% }%>		

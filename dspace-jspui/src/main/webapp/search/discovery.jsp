@@ -193,7 +193,7 @@
 
                         <div class="form-group">
                             <div class="input-group input-group-alternative mb-4">
-                                <input class="form-control" placeholder="search ..." type="text" size="50" id="query" name="query" value="<%= (query == null ? "" : Utils.addEntities(query))%>">
+                                <input class="form-control" placeholder="<fmt:message key="fds.search.placeholder"/>" type="text" size="50" id="query" name="query" value="<%= (query == null ? "" : Utils.addEntities(query))%>">
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa fa-search"></i></span>
                                 </div>
@@ -203,7 +203,7 @@
 
                     <div class="col-sm-3 col-5">
                         <button @click="processFilters('+', 0)" class="btn btn-icon btn-2 btn-primary btn--block" type="button">
-                            <span class="btn-inner--icon"><i class="fa fa-filter"></i> Add filters</span>
+                            <span class="btn-inner--icon"><i class="fa fa-filter"></i> <fmt:message key="fds.search.addfilter"/></span>
                         </button>
 
                     </div>
@@ -237,7 +237,7 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <div class="input-group input-group-alternative mb-4">
-                                        <input v-model="filterQuery[index]['filterquery']" class="form-control" placeholder="search ..." type="text" id="filterquery" name="filterquery" size="45" required="required">
+                                        <input v-model="filterQuery[index]['filterquery']" class="form-control" placeholder="<fmt:message key="fds.search.placeholder"/>" type="text" id="filterquery" name="filterquery" size="45" required="required">
                                         <div class="input-group-append">
                                             <span class="input-group-text"><i class="fa fa-search"></i></span>
                                         </div>
@@ -293,12 +293,12 @@
                 <div class="row">
                     <div class="col-sm-9 col-6 text-right">
                         <button @click="clearSearchData" class="btn btn-icon btn-2 btn-primary" type="button">
-                            <span class="btn-inner--icon"><i class="fa fa-refresh"></i> Clear all</span>
+                            <span class="btn-inner--icon"><i class="fa fa-refresh"></i> <fmt:message key="fds.search.clearall"/></span>
                         </button>
                     </div>
 
                     <div class="col-sm-3 col-6">
-                        <input type="button" @click="searchData" id="main-query-submit" class="btn btn-icon btn-2 btn-default btn--block" value="Search" />
+                        <input type="button" @click="searchData" id="main-query-submit" class="btn btn-icon btn-2 btn-default btn--block" value="<fmt:message key="fds.search"/>" />
                     </div>
                 </div>
                 <input name="location" type="hidden" value="<%=searchScope%>" />
@@ -562,7 +562,7 @@
                             </label>
                         </div>
                     </div>
-                    <input id="export-submit-button" class="btn btn-default" type="submit" name="submit_export" value="<fmt:message key="exportcitation.option.submitexport" />" disabled/>
+                    <input id="export-submit-button" class="btn btn-default" type="submit" name="submit_export" value="<fmt:message key="exportcitation.option.submitexport" />"/>
                 </div>	
                 <dspace:itemlist items="<%= items%>" authorLimit="<%= etAl%>" radioButton="false" inputName="item_id" order="<%= order%>" sortOption="<%= sortOption%>"/>
             </form>
