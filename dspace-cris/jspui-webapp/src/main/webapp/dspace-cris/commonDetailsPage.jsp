@@ -138,43 +138,45 @@
         </c:forEach>
     </ul>
 
-    <div class="extend__profile__menu">
-        <% if(networkModuleEnabled) { %>
-        <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left"
-           href="<%= request.getContextPath() %>/cris/network/${researcher.crisID}">
-            <i class="fa fa-globe"></i>
-            <fmt:message key="jsp.cris.detail.link.network" />
-        </a>
-        <% } %>
-        <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left"
-           href="<%= request.getContextPath() %>/cris/stats/rp.html?id=${researcher.uuid}">
-            <i class="fa fa-bar-chart-o"></i>
-            <fmt:message key="jsp.cris.detail.link.statistics" />
-        </a>
-        <c:choose>
-            <c:when test="${!subscribed}">
-                <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" 
-                   href="<%= request.getContextPath() %>/cris/tools/subscription/subscribe?uuid=${researcher.uuid}">
-                    <i class="fa fa-bell"></i>
-                    <fmt:message key="jsp.cris.detail.link.email.alert" />
-                </a>
-            </c:when>
-            <c:otherwise>
-                <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" 
-                   href="<%= request.getContextPath() %>/cris/tools/subscription/unsubscribe?uuid=${researcher.uuid}">
-                    <i class="fa fa-stop"></i>
-                    <fmt:message key="jsp.cris.detail.link.email.alert.remove" />
-                </a>
-            </c:otherwise>
-        </c:choose>
-        <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" 
-           href="<%= request.getContextPath() %>/open-search?query=author_authority:${authority}&amp;format=rss">
-            <i class="fa fa-rss"></i>
-            <fmt:message key="jsp.cris.detail.link.rssfeed" />
-        </a>
-    </div>
-    <div class="form-group pull-right extend__profile__menu" style="margin-top:1.5em;">
+
+    <div class="form-group pull-right extend__profile__menu" style="width: 100%;">
         <c:if test="${(researcher_page_menu || canEdit) && !empty researcher}">
+            <div class="extend__profile__menu mb-3">
+                <% if(networkModuleEnabled) { %>
+                <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left"
+                   href="<%= request.getContextPath() %>/cris/network/${researcher.crisID}">
+                    <i class="fa fa-globe"></i>
+                    <fmt:message key="jsp.cris.detail.link.network" />
+                </a>
+                <% } %>
+                <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left"
+                   href="<%= request.getContextPath() %>/cris/stats/rp.html?id=${researcher.uuid}">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <fmt:message key="jsp.cris.detail.link.statistics" />
+                </a>
+                <c:choose>
+                    <c:when test="${!subscribed}">
+                        <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" 
+                           href="<%= request.getContextPath() %>/cris/tools/subscription/subscribe?uuid=${researcher.uuid}">
+                            <i class="fa fa-bell"></i>
+                            <fmt:message key="jsp.cris.detail.link.email.alert" />
+                        </a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" 
+                           href="<%= request.getContextPath() %>/cris/tools/subscription/unsubscribe?uuid=${researcher.uuid}">
+                            <i class="fa fa-stop"></i>
+                            <fmt:message key="jsp.cris.detail.link.email.alert.remove" />
+                        </a>
+                    </c:otherwise>
+                </c:choose>
+                <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" 
+                   href="<%= request.getContextPath() %>/open-search?query=author_authority:${authority}&amp;format=rss">
+                    <i class="fa fa-rss"></i>
+                    <fmt:message key="jsp.cris.detail.link.rssfeed" />
+                </a>
+            </div>
+
             <div class="btn-group">
                 <c:if test="${!empty addModeType && addModeType=='display'}">
                     <a class="btn btn-default" href="<%= request.getContextPath() %>/cris/tools/rp/editDynamicData.htm?id=${researcher.id}&anagraficaId=${researcher.dynamicField.id}<c:if test='${!empty tabIdForRedirect}'>&tabId=${tabIdForRedirect}</c:if>"><i class="fa fa-edit"></i> Edit Page</a>
@@ -212,7 +214,100 @@
                                                     </div> --%>
         </c:if>
 
+        <c:if test="${(ou_page_menu || canEdit) && !empty ou}">
 
+            <div class="extend__profile__menu mb-3">
+                <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left"
+                   href="<%= request.getContextPath() %>/cris/stats/ou.html?id=${entity.uuid}"><i class="fa fa-bar-chart-o"></i> <fmt:message key="jsp.cris.detail.link.statistics" /></a>
+                <c:choose>
+                    <c:when test="${!subscribed}">
+                        <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" href="<%= request.getContextPath() %>/cris/tools/subscription/subscribe?uuid=${entity.uuid}"><i class="fa fa-bell"></i> <fmt:message key="jsp.cris.detail.link.email.alert" /></a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" href="<%= request.getContextPath() %>/cris/tools/subscription/unsubscribe?uuid=${entity.uuid}"><i class="fa fa-bell-o"></i> <fmt:message key="jsp.cris.detail.link.email.alert.remove" /></a>
+                    </c:otherwise>      
+                </c:choose>
+                <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" href="<%= request.getContextPath() %>/open-search?query=dc.relation_authority:${authority}&amp;format=rss"><i class="fa fa-rss"></i> <fmt:message key="jsp.cris.detail.link.rssfeed" /></a>            
+            </div>
+
+            <c:if test="${!empty addModeType && addModeType=='display'}"> 	
+                <div class="btn-group">
+                    <a class="btn btn-default" href="<%= request.getContextPath() %>/cris/tools/ou/editDynamicData.htm?id=${entity.id}&anagraficaId=${entity.dynamicField.id}<c:if test='${!empty tabIdForRedirect}'>&tabId=${tabIdForRedirect}</c:if>"><i class="fa fa-pencil-square-o"></i> Edit Page</a>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-cog"></i> select
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="<%= request.getContextPath() %>/cris/tools/ou/editDynamicData.htm?id=${entity.id}&anagraficaId=${entity.dynamicField.id}<c:if test='${!empty tabIdForRedirect}'>&tabId=${tabIdForRedirect}</c:if>"><i class="fa fa-pencil-square-o"></i> <fmt:message key="jsp.layout.navbar-hku.staff-mode.edit.primary-data"/></a>
+                            </li>
+                        </ul>
+                    </div>
+            </c:if>
+
+        </c:if>
+
+        <c:if test="${(grant_page_menu || canEdit) && !empty project}"> 
+
+            <div class="extend__profile__menu mb-3">
+                <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left"
+                   href="<%= request.getContextPath() %>/cris/stats/pj.html?id=${entity.uuid}"><i class="fa fa-bar-chart-o"></i> <fmt:message key="jsp.cris.detail.link.statistics" /> </a>
+                <c:choose>
+                    <c:when test="${!subscribed}">
+                        <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" href="<%= request.getContextPath() %>/cris/tools/subscription/subscribe?uuid=${entity.uuid}"><i class="fa fa-bell"></i> <fmt:message key="jsp.cris.detail.link.email.alert" /></a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" href="<%= request.getContextPath() %>/cris/tools/subscription/unsubscribe?uuid=${entity.uuid}"><i class="fa fa-bell-o"></i> <fmt:message key="jsp.cris.detail.link.email.alert.remove" /></a>
+                    </c:otherwise>      
+                </c:choose>
+                <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" href="<%= request.getContextPath() %>/open-search?query=dc.relation_authority:${authority}&amp;format=rss"><i class="fa fa-rss"></i> <fmt:message key="jsp.cris.detail.link.rssfeed" /></a>
+            </div>
+
+            <c:if test="${!empty addModeType && addModeType=='display'}">
+                <div class="btn-group">
+                    <a class="btn btn-default" href="<%= request.getContextPath() %>/cris/tools/project/editDynamicData.htm?id=${entity.id}&anagraficaId=${entity.dynamicField.id}<c:if test='${!empty tabIdForRedirect}'>&tabId=${tabIdForRedirect}</c:if>"><i class="fa fa-pencil-square-o"></i> <fmt:message key="jsp.layout.navbar-hku.staff-mode.edit.project"/></a>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-cog"></i> select
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="<%= request.getContextPath() %>/cris/tools/project/editDynamicData.htm?id=${entity.id}&anagraficaId=${entity.dynamicField.id}<c:if test='${!empty tabIdForRedirect}'>&tabId=${tabIdForRedirect}</c:if>"><i class="fa fa-pencil-square-o"></i> <fmt:message key="jsp.layout.navbar-hku.staff-mode.edit.project"/></a>
+                            </li>
+                        </ul>
+                    </div>
+            </c:if>
+        </c:if>
+
+        <c:if test="${(do_page_menu || canEdit) && empty researcher && empty ou && empty project}"> 
+
+            <div class="extend__profile__menu mb-3">
+                <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left"
+                   href="<%= request.getContextPath() %>/cris/stats/do.html?id=${entity.uuid}"><i class="fa fa-bar-chart-o"></i> <fmt:message key="jsp.cris.detail.link.statistics" /></a>
+                <c:choose>
+                    <c:when test="${!subscribed}">
+                        <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" href="<%= request.getContextPath() %>/cris/tools/subscription/subscribe?uuid=${entity.uuid}"><i class="fa fa-bell"></i> <fmt:message key="jsp.cris.detail.link.email.alert" /></a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" href="<%= request.getContextPath() %>/cris/tools/subscription/unsubscribe?uuid=${entity.uuid}"><i class="fa fa-bell-o"></i> <fmt:message key="jsp.cris.detail.link.email.alert.remove" /></a>
+                    </c:otherwise>      
+                </c:choose>
+                <a class="btn btn-tooltip btn-default btn-sm btn--block mt-2 text-left" href="<%= request.getContextPath() %>/open-search?query=dc.relation.ispartof_authority:${authority}&amp;format=rss"><i class="fa fa-rss"></i> <fmt:message key="jsp.cris.detail.link.rssfeed" /></a>
+            </div>
+
+            <c:if test="${!empty addModeType && addModeType=='display'}">
+                <div class="btn-group">
+                    <a class="btn btn-default" href="<%= request.getContextPath() %>/cris/tools/${specificPartPath}/editDynamicData.htm?id=${entity.id}&anagraficaId=${entity.dynamicField.id}<c:if test='${!empty tabIdForRedirect}'>&tabId=${tabIdForRedirect}</c:if>"><i class="fa fa-pencil-square-o"></i> Edit page</a>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-cog"></i> select
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="<%= request.getContextPath() %>/cris/tools/${specificPartPath}/editDynamicData.htm?id=${entity.id}&anagraficaId=${entity.dynamicField.id}<c:if test='${!empty tabIdForRedirect}'>&tabId=${tabIdForRedirect}</c:if>"><i class="fa fa-pencil-square-o"></i> <fmt:message key="jsp.layout.navbar-hku.staff-mode.edit.do"><fmt:param>${entity.typo.label}</fmt:param></fmt:message></a>
+                            </li>
+                        </ul>
+                    </div>
+            </c:if>
+        </c:if>
+        
         <c:if test="${claim && !researcher_page_menu && empty researcher.epersonID && !userHasRP}" >
             <div class="btn-group">				
                 <c:choose>				
