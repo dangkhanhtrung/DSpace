@@ -81,6 +81,7 @@ public class DefaultDisplayStrategy extends ASimpleDisplayStrategy
                     argument = "value";
                     value = metadataArray[j].value;
                 }
+				System.out.println("Argument: " + argument + ", " + value);
                 if (viewFull)
                 {
                     argument = "vfocus";
@@ -119,6 +120,7 @@ public class DefaultDisplayStrategy extends ASimpleDisplayStrategy
                 }
                 endLink = "</a>";
             }
+
             sb.append(startLink);
             sb.append(Utils.addEntities(metadataArray[j].value));
             sb.append(endLink);
@@ -150,6 +152,8 @@ public class DefaultDisplayStrategy extends ASimpleDisplayStrategy
                     sb.append("<br />");
                 }
             }
+
+            System.out.println("SB: " + sb.toString());
         }
         if (truncated)
         {
@@ -169,7 +173,7 @@ public class DefaultDisplayStrategy extends ASimpleDisplayStrategy
             metadata = (emph ? "<strong>" : "") + sb.toString()
             + (emph ? "</strong>" : "");
         }
-        
+        System.out.println("Metadata: " + metadata);
         return metadata;
     }
 

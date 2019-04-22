@@ -92,6 +92,7 @@ public class ItemCrisRefDisplayStrategy extends ASimpleDisplayStrategy implement
         {
             if (metadataArray != null && metadataArray.length > 0)
             {
+                System.out.println("Metadata value: " + metadataArray[j].value + ", " + metadataArray[j].authority);
                 buildBrowseLink(hrq, viewFull, browseType, metadataArray[j].value, metadataArray[j].authority, metadataArray[j].language, metadataArray[j].confidence,
                         minConfidence, disableCrossLinks, sb);
                 if (StringUtils.isNotBlank(metadataArray[j].authority)
@@ -200,9 +201,22 @@ public class ItemCrisRefDisplayStrategy extends ASimpleDisplayStrategy implement
             }
             endLink = "</a>";
         }
+        System.out.println("Metadata value: " + metadataValue);
+        ACrisObject rp = applicationService.getEntityByCrisId(metadataAuthority);
+        System.out.println("Cris object authorid: " + rp.getMetadata("authorid"));
+        System.out.println("Cris object full name: " + rp.getMetadata("fullName"));
+        System.out.println("Cris object email: " + rp.getMetadata("email"));
+        System.out.println("Cris type: " + rp.getType() + ", " + rp.getTypeText());
+        if ("crisrp".contentEquals(rp.getTypeText())
+            && rp.getMetadata("email") == null) {
+            startLink = "&nbsp;<a>";
+            System.out.println("Start link browse: " + startLink);
+        }
+
         sb.append(startLink);
         sb.append(Utils.addEntities(metadataValue));
         sb.append(endLink);
+        System.out.println("Link: " + sb.toString());
     }
 
     protected void buildAuthority(HttpServletRequest hrq,
@@ -235,7 +249,16 @@ public class ItemCrisRefDisplayStrategy extends ASimpleDisplayStrategy implement
 		        String icon = "";
 				try {
 					ACrisObject rp = applicationService.getEntityByCrisId(authority);
-					String type = (rp == null) ? "deleted" : rp.getMetadata(ConfigurationManager.getProperty("cris", "researcher.cris."+publicPath+".ref.display.strategy.metadata.icon"));					
+                    System.out.println("Cris object authorid: " + rp.getMetadata("authorid"));
+                    System.out.println("Cris object full name: " + rp.getMetadata("fullName"));
+                    System.out.println("Cris object email: " + rp.getMetadata("email"));
+                    System.out.println("Cris type: " + rp.getType() + ", " + rp.getTypeText());
+                    if ("crisrp".contentEquals(rp.getTypeText())
+                        && rp.getMetadata("email") == null) {
+                        startLink = "&nbsp;<a>";
+                        System.out.println("Start link: " + startLink);
+                    }
+                    String type = (rp == null) ? "deleted" : rp.getMetadata(ConfigurationManager.getProperty("cris", "researcher.cris."+publicPath+".ref.display.strategy.metadata.icon"));					
 					String status = "";
 					if(rp == null || !rp.getStatus()) {
 			             startLink = "&nbsp;";
