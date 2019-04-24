@@ -34,7 +34,6 @@
            prefix="fmt" %>
 
 <%@ taglib uri="http://www.dspace.org/dspace-tags.tld" prefix="dspace" %>
-
 <%
     String contextPath = "/dspace-jspui";
     request.setAttribute("LanguageSwitch", "hide");
@@ -155,6 +154,83 @@
             </ul>
         </div>
         <div class="card">
+        
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		setTimeout(function(){
+
+			$('#link-ricerca-identificatore').click(function(){
+	    		$('#tabs-search-accordion').accordion({'active': 2});
+	    	});
+	    	$('button').button();
+	    	$('#manual-submission-button').click(function(event){
+	    		var colman = $('#select-collection-manual').val();
+	    		if (colman != -1)
+	    		{
+	    			$('#collectionid').val(colman);
+	    			$('#form-submission').submit();
+	    		}
+	    		else
+	   			{
+	    			$('#no-collection-warn').modal('show');
+	   			}
+	    	});
+	    	$('#manual-submission-button').click(function(event){
+	    		var colman = $('#select-collection-manual').val();
+	    		if (colman != -1)
+	    		{
+	    			$('#collectionid').val(colman);
+	    			$('#form-submission').submit();
+	    		}
+	    		else
+	   			{
+	    			$('#no-collection-warn').modal('show');
+	   			}
+	    	});
+	   	
+	    	$('#lookup_idenfifiers').click(function(){
+	    		submissionLookupIdentifiers($('input.submission-lookup-identifier'));
+	    	});
+	    	$('#search_go').click(function(){
+	    		submissionLookupSearch($('.submission-lookup-search'));
+	    	});
+	    	$('#loadfile_go').click(function(){
+	    		$('#select-collection').val($('#select-collection-file').val());
+	    		submissionLookupFile($('#form-submission-loader'));
+	    	});
+	    	$('button.exit').click(function(event){
+	    		event.preventDefault();
+	    		window.location = "<%= request.getContextPath() %>/mydspace";
+	    	});
+	    	$('#loading-search-result').on('hide.bs.modal', function () {
+	    		$(this).data('ajaxCall').abort();
+	    	});
+	    	$('#loading-details').on('hidden.bs.modal', function () {
+	  			 
+	  			 $('#loading-details .modal-body').empty();
+	  			 $('#loading-details .modal-footer').empty();
+	   		});
+	    	$(".submission-preview-loader").click(function() {
+	    		if($(this).is (':checked')) {
+	    			$("#select-collection-file-div").hide();
+	    		}
+	    		else {
+	    			$("#select-collection-file-div").show();
+	    		}
+	    	});
+	    	
+	    	$('#accordion').on('show.bs.collapse', function(a) {
+	    		$('i.fa-chevron-down').toggleClass('fa-chevron-down').toggleClass('fa-chevron-right');
+	    		$(a.target).prev().find('a>i').toggleClass('fa-chevron-down').toggleClass('fa-chevron-right');
+	    		//$('#accordion div.panel div.panel-heading h4.panel-title a i').toggleClass('fa-chevron-down');
+	    	});
+			
+		}, 3000);
+		
+		
+	});	
+</script>
             <div>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">

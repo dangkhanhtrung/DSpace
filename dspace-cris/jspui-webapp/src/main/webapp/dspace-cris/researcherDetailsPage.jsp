@@ -106,40 +106,40 @@
             <div id="content">
                 <div class="row">
                     <div class="col-lg-12">
+                        <h1>
+                            <fmt:message key="jsp.layout.detail.title-first" />
+                            <c:choose>
+                                <c:when test="${!empty entity.preferredName.value}">
+                                    ${entity.preferredName.value}
+                                </c:when>
+                                <c:otherwise>
+                                    ${entity.fullName}
+                                </c:otherwise>
+                            </c:choose>
+                        </h1>
                         <div class="form-inline">
                             <div class="form-group">
-                                <h1>
-                                    <fmt:message key="jsp.layout.detail.title-first" />
-                                    <c:choose>
-                                        <c:when test="${!empty entity.preferredName.value}">
-                                            ${entity.preferredName.value}
-                                        </c:when>
-                                        <c:otherwise>
-                                            ${entity.fullName}
-                                        </c:otherwise>
-                                    </c:choose>
-                                </h1>
                                 <%
                         if (isAdmin) {
                                 %>
                                 <fmt:message key="jsp.cris.detail.info.sourceid.none" var="i18nnone" />
-                                <div class="row cris-record-info">
+                                <div class="row cris-record-info" style="width: 100%;">
                                     <div class="col-sm-6">
                                         <span class="cris-record-info-sourceid"><b><fmt:message key="jsp.cris.detail.info.sourceid" /></b> ${!empty researcher.sourceID?researcher.sourceID:i18nnone}</span><br/>
                                         <span class="cris-record-info-sourceref"><b><fmt:message key="jsp.cris.detail.info.sourceref" /></b> ${!empty researcher.sourceRef?researcher.sourceRef:i18nnone}</span>
                                     </div>
                                     <div class="col-sm-6">
-                                        <span class="cris-record-info-created"><b><fmt:message key="jsp.cris.detail.info.created" /></b> <fmt:message key="jsp.display-cris.entity.created"><fmt:param value="${researcher.timeStampInfo.timestampCreated.timestamp}" /></fmt:message></span><br/>
-                                        <span class="cris-record-info-updated"><b><fmt:message key="jsp.cris.detail.info.updated" /></b> <fmt:message key="jsp.display-cris.entity.updated"><fmt:param value="${researcher.timeStampInfo.timestampLastModified.timestamp}" /></fmt:message></span>
-                                        </div>
+                                        <span class="cris-record-info-created"><b><fmt:message key="jsp.cris.detail.info.created" /></b> <b><fmt:message key="jsp.cris.detail.info.created" /></b><fmt:formatDate value="${researcher.timeStampInfo.timestampCreated.timestamp}" pattern="dd/MM/yyyy HH:mm:ss" /></span><br/>
+                                        <span class="cris-record-info-updated"><b><fmt:message key="jsp.cris.detail.info.updated" /></b> <b><fmt:message key="jsp.cris.detail.info.updated" /></b><fmt:formatDate value="${researcher.timeStampInfo.timestampLastModified.timestamp}" pattern="dd/MM/yyyy HH:mm:ss" /></span>
                                     </div>
+                                </div>
                                 <%
                         }
                                 %>
 
                             </div>
-
                         </div>
+                        <hr/>
                     </div>
                 </div>
                 <c:if test="${(!entity.status && !statusAdmin) or (!entity.status && admin)}">
@@ -269,3 +269,132 @@
         </dspace:layout>
     </c:otherwise>
 </c:choose>
+
+            
+            
+ <script type="text/javascript"><!--
+	    var activeTab = function(){
+    		var ajaxurlrelations = "<%=request.getContextPath()%>/cris/${specificPartPath}/viewNested.htm";
+		   	j('.nestedinfo').each(function(){
+				var id = j(this).html();
+				j.ajax( {
+					url : ajaxurlrelations,
+					data : {																			
+						"parentID" : ${entity.id},
+						"typeNestedID" : id,
+						"pageCurrent": j('#nested_'+id+"_pageCurrent").html(),
+						"limit": j('#nested_'+id+"_limit").html(),
+						"editmode": j('#nested_'+id+"_editmode").html(),
+						"totalHit": j('#nested_'+id+"_totalHit").html(),
+						"admin": ${admin},
+						"externalJSP": j('#nested_'+id+"_externalJSP").html()
+					},
+					success : function(data) {																										
+						j('#viewnested_'+id).html(data);
+						var ajaxFunction = function(page){
+							j.ajax( {
+								url : ajaxurlrelations,
+								data : {																			
+									"parentID" : ${entity.id},
+									"typeNestedID" : id,													
+									"pageCurrent": page,
+									"limit": j('#nested_'+id+"_limit").html(),
+									"editmode": j('#nested_'+id+"_editmode").html(),
+									"totalHit": j('#nested_'+id+"_totalHit").html(),
+									"admin": ${admin},
+									"externalJSP": j('#nested_'+id+"_externalJSP").html()
+								},
+								success : function(data) {									
+									j('#viewnested_'+id).html(data);
+									postfunction();
+								},
+								error : function(data) {
+								}
+							});		
+						};
+						var postfunction = function(){
+							j('#nested_'+id+'_next').click(
+									function() {
+								    	ajaxFunction(parseInt(j('#nested_'+id+"_pageCurrent").html())+1);
+										
+							});
+							j('#nested_'+id+'_prev').click(
+									function() {
+										ajaxFunction(parseInt(j('#nested_'+id+"_pageCurrent").html())-1);
+							});
+							j('.nested_'+id+'_nextprev').click(
+									function(){
+										ajaxFunction(j(this).attr('id').substr(('nested_'+id+'_nextprev_').length));
+							});
+						};
+						postfunction();
+					},
+					error : function(data) {
+					}
+				});
+			});
+    	};
+    	
+		j(document).ready(function()
+		{
+			j('#claimrp-modal-close').on('click',function(){
+				j('#claimrp-modal').hide();
+			});
+			
+			j('#claim-rp').on('click',function(){
+				j('#claimrp-validation').val('');
+				j('#label-success').remove();
+				j('#label-error').remove();
+         		j('#claimrp-modal').show();				
+			});
+			
+			j('#claimrp-button').on('click', function(){
+				j('#label-success').remove();
+				j('#label-error').remove();				
+				j.ajax({
+					url: "<%= request.getContextPath() %>/json/claimrp",
+					data: {
+						"rpKey": j('#claimrp-rpkey').val(),
+						"mailUser" : j('#claimrp-validation').val()
+					},
+					success : function(data) {
+						send = data.result;
+						if(send==-1){
+							j('#claimrp-result').append('<span id="label-error" class="label label-warning"><fmt:message key="jsp.cris.detail.claimrp.error-1" /></span>');	
+						}else if(send==-2){
+							j('#claimrp-result').append('<span id="label-error" class="label label-warning"><fmt:message key="jsp.cris.detail.claimrp.error-2" /></span>');
+						}
+						else{
+							j('#claimrp-result').append('<span id="label-success" class="label label-success"><fmt:message key="jsp.cris.detail.claimrp.success" /></span>');
+							
+						}
+					}
+				});
+				
+			});
+			
+			j('#self-claim-rp').on('click', function(){
+				j('#label-success').remove();
+				j('#label-error').remove();				
+				j.ajax({
+					url: "<%= request.getContextPath() %>/json/claimrp",
+					data: {
+						"rpKey": j('#self-claimrp-rpkey').val()
+					},
+					success : function(data) {
+						send = data.result;
+						if(send==-1){
+							j('#selfclaimrp-result').append('<span id="label-error" class="label label-warning"><fmt:message key="jsp.cris.detail.selfclaimrp.error-1"><fmt:param value="${baseURL}/cris/rp/${entity.crisID}"/></fmt:message></span>');	
+						}
+						else{
+							j('#selfclaimrp-result').append('<span id="label-success" class="label label-success"><fmt:message key="jsp.cris.detail.selfclaimrp.success"><fmt:param value="${baseURL}/cris/rp/${entity.crisID}"/></fmt:message></span>');
+							
+						}
+					}
+				});
+				
+			});
+			activeTab();
+		});
+		-->
+	</script>

@@ -53,8 +53,15 @@
         <link rel="stylesheet" href="<%= request.getContextPath()%>/static/css/argon.min.css" type="text/css" />
         <link href="<%= request.getContextPath()%>/static/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <link href="<%= request.getContextPath()%>/static/custom/css/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap.css" type="text/css" />
 
         <style>
+            .dynaField {
+                margin-bottom: 8px;
+            }
+            span.dynaLabel {
+                font-weight: bold;
+            }
             div#wrapperDisplayItem .itemDisplayTable tr td:first-child {
                 min-width: 150px;
             }
@@ -110,16 +117,16 @@
                 right: 25px;
                 top: 5px;
             }
-            div#tab-11 > .row > div {
+            div#researcher .panel.panel-default {
                 margin-bottom: 15px;
             }
-            div#tab-11 > .row > div .panel-heading .panel-title {
+            div#researcher .panel-heading .panel-title {
                 border-bottom: 1px solid;
                 font-size: 20px;
                 margin: 0;
             }
 
-            div#tab-11 > .row > div .panel-collapse {
+            div#researcher .panel-collapse {
                 padding: 15px 0;
             }
             .extend__profile__menu > a{
