@@ -719,7 +719,7 @@ public class BrowseListTag extends TagSupport
 
                     // first get hold of the relevant metadata for this column
                     Metadatum[] metadataArray = null;
-                    
+                    System.out.println("Schema: " + schema + "," + element + "," + qualifier);
                     if (schema.equalsIgnoreCase("extra")) {
                     	
                     	String val = null;
@@ -740,6 +740,7 @@ public class BrowseListTag extends TagSupport
                     	}
                     }
                     else {
+                        System.out.println("Not extra");
 	                    if (qualifier.equals("*"))
 	                    {
 	                        metadataArray = items[i].getMetadataWithoutPlaceholder(schema, element,
@@ -754,7 +755,8 @@ public class BrowseListTag extends TagSupport
 	                    {
 	                        metadataArray = items[i].getMetadataWithoutPlaceholder(schema, element,
 	                                qualifier, Item.ANY);
-	                    }
+                        }
+                        System.out.println("Meta data array length: " + metadataArray.length);
                     }
                     
                     // save on a null check which would make the code untidy
@@ -775,7 +777,7 @@ public class BrowseListTag extends TagSupport
                             .getNamedPlugin(
                                     IDisplayMetadataValueStrategy.class,
                                     useRender[colIdx]);
-
+                    System.out.println("Use render: " + useRender[colIdx]);
                     // fallback compatibility
                     if (strategy == null)
                     {
@@ -806,7 +808,7 @@ public class BrowseListTag extends TagSupport
                             viewFull[colIdx], browseType[colIdx], colIdx,
                             field, metadataArray, items[i], disableCrossLinks,
                             emph[colIdx]);
-
+                    System.out.println("Meta data: " + metadata);
                     // prepare extra special layout requirements for dates
                     String extras = strategy.getExtraCssDisplay(hrq, limit,
                             viewFull[colIdx], browseType[colIdx], colIdx,

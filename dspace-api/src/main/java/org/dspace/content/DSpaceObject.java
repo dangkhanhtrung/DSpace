@@ -664,6 +664,7 @@ public abstract class DSpaceObject implements IGlobalSearchResult
 		List<Metadatum> values = new ArrayList<Metadatum>();
 		for (Metadatum dcv : getMetadata())
 		{
+            System.out.println("DCV value: " + dcv.value);
 			if (!StringUtils.equals(dcv.value, MetadataValue.PARENT_PLACEHOLDER_VALUE) && ItemUtils.match(schema, element, qualifier, lang, dcv))
 			{
 				// We will return a copy of the object in case it is altered
