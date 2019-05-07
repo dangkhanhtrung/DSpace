@@ -644,7 +644,7 @@ if (dedupEnabled && admin_button) { %>
 <div class="altmetric">
 	<div class="media-left">
 	
-      	<div class="__dimensions_badge_embed__" data-legend="hover-right" data-style="small_circle" <% if (doi != null) { %> data-doi="<%= doi %>"<% } else if (pmid != null) { %> data-pmid="<%= pmid %>"<% } %>" ></div>
+      	<div class="__dimensions_badge_embed__" data-legend="hover-right" data-style="small_circle" <% if (doi != null) { %> data-doi="<%= doi %>"<% } else if (pmid != null) { %> data-pmid="<%= pmid %>"<% } %> ></div>
       	<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 	</div>
 	<div class="media-body media-middle text-center">
