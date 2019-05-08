@@ -66,7 +66,7 @@
             <div id="content">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1><fmt:message key="jsp.layout.do.detail.name" /> ${entity.name}</h1>
+                        <!--<h1><fmt:message key="jsp.layout.do.detail.name" /> ${entity.name}</h1>-->
                         <div class="form-inline">
                             
                             <div class="form-group">
