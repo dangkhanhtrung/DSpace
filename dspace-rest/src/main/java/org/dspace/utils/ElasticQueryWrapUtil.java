@@ -1,11 +1,13 @@
 package org.dspace.utils;
 
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 import javax.ws.rs.HttpMethod;
 
@@ -20,18 +22,26 @@ public class ElasticQueryWrapUtil {
 
 		JSONObject result = null;
 		try {
+			
+			byte[] postData       = q.getBytes( StandardCharsets.UTF_8 );
+			int    postDataLength = postData.length;
+			
 			URL url = new URL(ELASTIC_SERVER_API_URL + "?q=" + q);
 
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-			conn.setRequestMethod(HttpMethod.GET);
-			conn.setRequestProperty("Accept", "Content-Type: application/json");
-			conn.setRequestProperty("Content-Type", "application/json");
-			conn.setDoInput(true);
-			conn.setDoOutput(true);
-	        OutputStreamWriter osw = new OutputStreamWriter(conn.getOutputStream());
-	        osw.flush();
-	        osw.close();
+			
+			System.out.println("ElasticQueryWrapUtil.query()" + conn);
+			
+			conn.setDoOutput( true );
+			conn.setInstanceFollowRedirects( false );
+			conn.setRequestMethod( "POST" );
+			conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded"); 
+			conn.setRequestProperty( "charset", "utf-8");
+			conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
+			conn.setUseCaches( false );
+			try( DataOutputStream wr = new DataOutputStream( conn.getOutputStream())) {
+			   wr.write( postData );
+			}
 	        
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 
