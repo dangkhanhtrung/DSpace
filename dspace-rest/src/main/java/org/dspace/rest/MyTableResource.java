@@ -95,9 +95,6 @@ public class MyTableResource extends Resource
             throws Exception
     {
         JSONObject results = new JSONObject();
-        org.dspace.core.Context context = null;
-
-        context = createContext(getUser(headers));
 
         results = ElasticQueryWrapUtil.query(q);
 

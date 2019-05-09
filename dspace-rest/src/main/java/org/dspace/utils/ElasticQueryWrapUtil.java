@@ -20,7 +20,7 @@ public class ElasticQueryWrapUtil {
 
 		JSONObject result = null;
 		try {
-			URL url = new URL(ELASTIC_SERVER_API_URL + "?" + q);
+			URL url = new URL(ELASTIC_SERVER_API_URL + "?q=" + q);
 
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
