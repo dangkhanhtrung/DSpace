@@ -98,8 +98,6 @@ public class MyTableResource extends Resource
 
         results = ElasticQueryWrapUtil.query(q);
 
-        System.out.println("MyTableResource.getAllCrisDoTp()" + results.toString());
-        
         return results.toString();
     }
 
