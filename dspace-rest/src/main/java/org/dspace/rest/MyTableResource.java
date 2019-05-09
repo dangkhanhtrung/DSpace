@@ -38,7 +38,7 @@ import org.json.JSONObject;
  * 
  * @author Ta Huu Binh (FDS)
  */
-@Path("/table")
+@Path("/search")
 public class MyTableResource extends Resource
 {
     private static Logger log = Logger.getLogger(MyTableResource.class);
@@ -94,8 +94,6 @@ public class MyTableResource extends Resource
     public String getAllCrisDoTp(@QueryParam("q") String q, @Context HttpHeaders headers, @Context HttpServletRequest request)
             throws Exception
     {
-        System.out.println("MyTableResource.getAllCrisDoTp()");
-        
         JSONObject results = new JSONObject();
         org.dspace.core.Context context = null;
 
