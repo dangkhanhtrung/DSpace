@@ -5,10 +5,6 @@ body main#content {
 body .navbar>.container, body .navbar>.container-fluid {
     position: relative;
 }
-body nav > .container #navbar-primary .navbar-nav li:last-child {
-        position: absolute;
-    right: 15px;
-}
 body .panel__discovery .list-group-item.active {
     background-color: #f4f5f7 !important;
     border-radius: 0;
@@ -39,7 +35,7 @@ body .btn-primary, body .btn-default {
 .home-theme #banner .main-logo { font-family: "Times New Roman", Times, serif; text-transform: uppercase; font-weight: bold; color: white; font-size: 30px; line-height: normal; float: left; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 .home-theme #banner .main-logo span { display: block; margin-left: 20px; }
 .home-theme #banner > img { display: inline-block; float: right; }
-.home-theme #content { padding: 45px 60px 0; }
+.home-theme #content { padding: 0 60px 0; }
 .home-theme #content aside { width: 250px; }
 .home-theme #content .main-content { margin-left: 15px; }
 .home-theme .custom-nav { background: url("../images/bg_nav.jpg") center center no-repeat; background-size: cover; padding: 30px 0 225px; }
