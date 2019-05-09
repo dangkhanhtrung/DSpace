@@ -51,6 +51,8 @@ import org.dspace.storage.rdbms.DatabaseManager;
 import org.dspace.storage.rdbms.TableRow;
 import org.dspace.storage.rdbms.TableRowIterator;
 import org.dspace.usage.UsageEvent;
+import org.dspace.utils.ElasticQueryWrapUtil;
+import org.json.JSONObject;
 
 /**
  * Class which provide all CRUD methods over items.
@@ -65,6 +67,28 @@ public class ItemsResource extends Resource
 {
     private static final Logger log = Logger.getLogger(ItemsResource.class);
 
+
+    
+    @GET
+    @Path("/xxxtest")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getAllCrisDoTp(@QueryParam("q") String q, @Context HttpHeaders headers, @Context HttpServletRequest request)
+            throws Exception
+    {
+        System.out.println("MyTableResource.getAllCrisDoTp()");
+        
+        JSONObject results = new JSONObject();
+        org.dspace.core.Context context = null;
+
+        context = createContext(getUser(headers));
+
+        results = ElasticQueryWrapUtil.query(q);
+
+        System.out.println("MyTableResource.getAllCrisDoTp()" + results.toString());
+        
+        return results.toString();
+    }
+    
     /**
      * Return item properties without metadata and bitstreams. You can add
      * additional properties by parameter expand.
