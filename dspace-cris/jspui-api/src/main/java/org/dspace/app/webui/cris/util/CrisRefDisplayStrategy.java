@@ -50,11 +50,9 @@ public class CrisRefDisplayStrategy implements IDisplayMetadataValueStrategy, IA
             Metadatum[] metadataArray, BrowseItem item,
             boolean disableCrossLinks, boolean emph)
     {
-        System.out.println("Cris ref get meta data");
         ACrisObject crisObject = (ACrisObject) ((BrowseDSpaceObject) item)
                 .getBrowsableDSpaceObject();
         if(metadataArray != null && metadataArray.length > 0) {
-            System.out.println("Cris ref value: " + metadataArray[0].value);
             String metadata = internalDisplay(hrq, metadataArray[0].value, crisObject);            
             return metadata;
         }

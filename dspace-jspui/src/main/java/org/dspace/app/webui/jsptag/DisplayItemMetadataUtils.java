@@ -203,7 +203,6 @@ public class DisplayItemMetadataUtils {
 
 			// FIXME: Still need to fix for metadata language?
 			Metadatum[] values = item.getMetadataWithoutPlaceholder(schema, element, qualifier, Item.ANY);
-			System.out.println("Element: " + element + ", qualifier: " + qualifier);
 			if (values.length > 0) {
 
 				String label = null;
@@ -218,7 +217,6 @@ public class DisplayItemMetadataUtils {
 
 				IDisplayMetadataValueStrategy strategy = (IDisplayMetadataValueStrategy) PluginManager
 						.getNamedPlugin(IDisplayMetadataValueStrategy.class, displayStrategyName);
-				System.out.println("Strategy: " + strategy);
 				if (strategy == null) {
 					if (displayStrategyName.equalsIgnoreCase("link")) {
 						strategy = new LinkDisplayStrategy();
@@ -233,7 +231,6 @@ public class DisplayItemMetadataUtils {
 
 				String displayvalue = strategy.getMetadataDisplay(req, -1, viewFull, browseIndex, -1, field, values,
 						item, false, false);
-				System.out.println("Display value: " + displayvalue);
 				metadata.add(new DisplayMetadata(label, displayvalue));
 			}
 		}
