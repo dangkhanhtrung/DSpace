@@ -15,6 +15,7 @@
   -    recent.submissions - RecetSubmissions
 --%>
 
+<%@page import="org.dspace.discovery.configuration.DiscoveryRecentSubmissionsConfiguration"%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -45,6 +46,28 @@
 <%@page import="org.dspace.content.Bitstream"%>
 <%@ page import="org.dspace.app.webui.util.LocaleUIHelper" %>
 
+<%@page import="org.dspace.discovery.configuration.DiscoverySearchFilter" %>
+
+<%@page import="org.dspace.discovery.configuration.DiscoveryConfiguration" %>
+<%@page import="org.dspace.discovery.configuration.DiscoverySearchFilterFacet" %>
+
+<%@page import="org.dspace.discovery.DiscoverQuery" %>
+<%@page import="org.dspace.app.webui.discovery.DiscoverUtility" %>
+<%@page import="org.dspace.discovery.DiscoverResult" %>
+<%@page import="org.dspace.core.Context" %>
+<%@page import="org.apache.commons.lang.StringUtils"%>
+
+
+<%@page import="org.dspace.handle.HandleManager"%>
+<%@page import="org.dspace.search.DSQuery"%>
+<%@page import="org.dspace.search.QueryArgs"%>
+<%@page import="org.dspace.search.QueryResults"%>
+<%@page import="org.dspace.content.DSpaceObject"%>
+<%@page import="org.dspace.core.Constants"%>
+<%@page import="org.dspace.authorize.AuthorizeManager"%>
+<%@page import="org.dspace.app.webui.search.SearchProcessorException"%>
+<%@page import="java.sql.SQLException"%>
+
 <%
     Community[] communities = (Community[]) request.getAttribute("communities");
 
@@ -74,15 +97,39 @@
     List<DiscoverySearchFilterFacet> facetsGlobalConfHome = (List<DiscoverySearchFilterFacet>) request.getAttribute("facetsGlobalConfig");
     Map<String, List<FacetResult>> mapGlobalFacetesHome = (Map<String, List<FacetResult>>) request.getAttribute("discovery.global.fresults");
 
+    Context context = UIUtil.obtainContext(request);
+    DiscoveryConfiguration discoveryConfiguration = SearchUtils
+			.getDiscoveryConfigurationByName(DiscoveryConfiguration.GLOBAL_CONFIGURATIONNAME);
+
+    DiscoverQuery queryArgs = DiscoverUtility.getDiscoverQuery(context, request, null,
+			DiscoveryConfiguration.GLOBAL_CONFIGURATIONNAME, true);
+
+    queryArgs.setSpellCheck(discoveryConfiguration.isSpellCheckEnabled());
+    
+    DiscoverResult qResults = null;
+    
+    qResults = SearchUtils.getSearchService().search(context, null, queryArgs);
+
+    DiscoveryConfiguration globalConfiguration = SearchUtils.getGlobalConfiguration();
+    DiscoverySearchFilterFacet globalFacet = new DiscoverySearchFilterFacet();
+    if(globalConfiguration!=null) {
+        globalFacet.setIndexFieldName(globalConfiguration.getCollapsingConfiguration().getGroupIndexFieldName());
+    }	
+    String fGlobal = globalFacet.getIndexFieldName();
+    List<FacetResult> facetGlobal = null;
+    String fkeyGlobal = null;
+    if (qResults != null) {
+        facetGlobal = qResults.getFacetResult(fGlobal);
+        fkeyGlobal = "jsp.search.facet.refine." + fGlobal;
+    }
+    
 %>
 
 <dspace:layout locbar="nolink" titlekey="jsp.home.title" feedData="<%= feedData%>">
  
     <div class="row">
-        <div class="col-md-8 sm-12 pull-<%= isRtl ? "right" : "left"%>">
-<h4>Explore the diversity of the University's research outputs and	the authors behind the research</h4>
-    <hr/>
-            <form id="searchglobalprocessor" name="searchglobalprocessor" class="col-md-10 col-md-offset-1" action="<%= request.getContextPath()%>/simple-search" method="get">
+        <div class="col-md-12 sm-12 my-4">
+            <form id="searchglobalprocessor" name="searchglobalprocessor" class="col-md-6" action="<%= request.getContextPath()%>/simple-search" method="get" style="margin: 0 auto;">
                 <div class="input-group">
                     <input type="text" class="form-control" name="query" placeholder="Search term...">
                     <span class="input-group-btn">
@@ -127,20 +174,103 @@
                     <input type="hidden" name="location" value="global" id="search_param">         
                 </div>
             </form>
-<hr/>
-
-            <div class="row">
-                <div class="col-md-6 mb-3 <%= isRtl ? "pull-right" : ""%>">
-                    <%@ include file="components/most-viewed.jsp" %>	
-                </div>
-                <div class="col-md-6 mb-3 <%= isRtl ? "pull-right" : ""%>">
-                    <%@ include file="components/most-downloaded.jsp" %>
-                </div>
-            </div>
-
 
                 
         </div>
+		<div class="col-md-12 sm-12 mt-3">
+			<div class="sub-menu row no-gutters">
+				<% if (facetGlobal != null && facetGlobal.size() > 0) {%>
+					<%
+                     	for (FacetResult fvalue : facetGlobal) {
+                     	if ( fvalue.getAuthorityKey().equalsIgnoreCase("publications") ||
+                     			fvalue.getAuthorityKey().equalsIgnoreCase("persons") ||
+                     			fvalue.getAuthorityKey().equalsIgnoreCase("techs") ||
+                     			fvalue.getAuthorityKey().equalsIgnoreCase("crisevents") ||
+                     			fvalue.getAuthorityKey().equalsIgnoreCase("crisstandards") ||
+                     			fvalue.getAuthorityKey().equalsIgnoreCase("patents") ||
+                     			fvalue.getAuthorityKey().equalsIgnoreCase("orgunits")) {
+                    %>
+				<div class="link-wrapper col-6 col-md-3 col-xl-auto flex-xl-grow-1 <%=fvalue.getAuthorityKey() %>">
+					<a href="<%= request.getContextPath()
+			                                    + "/cris/explore/"
+			                            + URLEncoder.encode(fvalue.getAuthorityKey(), "UTF-8")%>"
+			                                   title="<fmt:message key="jsp.search.facet.narrow"><fmt:param><%=fvalue.getDisplayedValue()%></fmt:param></fmt:message>">
+						<span><%= fvalue.getCount()%></span>
+						<%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 36)%>
+					</a>
+				</div>
+					<% } } %>
+					<% } %>
+			</div>
+			
+		<div class="events-slider-wrapper">
+				<div class="events-slider">
+					<div>
+						<img src="http://placehold.it/1200x768">
+						<a href="" class="event-content-wrapper">
+							<span class="row">
+								<span class="col col-auto align-items-center d-flex">
+									<span class="time-big">
+										<span>20</span>
+										<span>25</span>
+									</span>
+								</span>
+								<span class="col">
+									<span class="event-cotent">
+										<span class="event-title">Hướng dẫn đơn vị tham gia nộp hồ sơ thực hiện nhiệm vụ đề án 844 năm 2019”</span>
+										<span class="event-desc">Tổ chức bởi Văn phòng Đề án 844, Văn phòng các Chương trình khoa học và công nghệ quốc gia phối hợp với Cục Phát triển thị trường và doanh nghiệp KH&CN</span>
+										<span class="event-address"><i class="fas fa-map-marker-alt"></i> Hà Nội, Đà Nẵng và TP.Hồ Chí Minh</span>
+										<span class="event-time"><i class="fas fa-calendar-alt"></i> 22 Tháng 8 - 24 Tháng 8</span>
+									</span>
+								</span>
+							</span>
+						</a>
+					</div>
+					<div>
+						<img src="http://placehold.it/1200x768">
+						<a href="" class="event-content-wrapper">
+							<span class="row">
+								<span class="col col-auto align-items-center d-flex">
+									<span class="time-big">
+										<span>20</span>
+										<span>25</span>
+									</span>
+								</span>
+								<span class="col">
+									<span class="event-cotent">
+										<span class="event-title">Hướng dẫn đơn vị tham gia nộp hồ sơ thực hiện nhiệm vụ đề án 844 năm 2019”</span>
+										<span class="event-desc">Tổ chức bởi Văn phòng Đề án 844, Văn phòng các Chương trình khoa học và công nghệ quốc gia phối hợp với Cục Phát triển thị trường và doanh nghiệp KH&CN</span>
+										<span class="event-address"><i class="fas fa-map-marker-alt"></i> Hà Nội, Đà Nẵng và TP.Hồ Chí Minh</span>
+										<span class="event-time"><i class="fas fa-calendar-alt"></i> 22 Tháng 8 - 24 Tháng 8</span>
+									</span>
+								</span>
+							</span>
+						</a>
+					</div>
+					<div>
+						<img src="http://placehold.it/1200x768">
+						<a href="" class="event-content-wrapper">
+							<span class="row">
+								<span class="col col-auto align-items-center d-flex">
+									<span class="time-big">
+										<span>20</span>
+										<span>25</span>
+									</span>
+								</span>
+								<span class="col">
+									<span class="event-cotent">
+										<span class="event-title">Hướng dẫn đơn vị tham gia nộp hồ sơ thực hiện nhiệm vụ đề án 844 năm 2019”</span>
+										<span class="event-desc">Tổ chức bởi Văn phòng Đề án 844, Văn phòng các Chương trình khoa học và công nghệ quốc gia phối hợp với Cục Phát triển thị trường và doanh nghiệp KH&CN</span>
+										<span class="event-address"><i class="fas fa-map-marker-alt"></i> Hà Nội, Đà Nẵng và TP.Hồ Chí Minh</span>
+										<span class="event-time"><i class="fas fa-calendar-alt"></i> 22 Tháng 8 - 24 Tháng 8</span>
+									</span>
+								</span>
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
         <div class="col-md-4 sm-12 pull-<%= isRtl ? "left" : "right"%>">
 
             <%
@@ -151,11 +281,23 @@
 
                 if (processorGlobal != null && processorGlobal.equals("global")) {
             %>
-            <%@ include file="discovery/static-globalsearch-component-facet.jsp" %>
             <% } %> 
 
 
         </div>
+    </div>
+    <div class="row mt-4">
+    	<div class="col-md-7 px-0">
+                    <img src="/jspui/static/custom/images/report_todo.png" />
+                </div>
+                <%
+                    if (submissions != null && submissions.count() > 0) {
+                %>
+                <div class="col-md-5 px-0 discovery-result-results-global ">
+                    <%@ include file="/dspace-cris/explore/topObjectsRecent.jsp" %>
+                </div>
+                <% } %>
+                
     </div>
     <%
         if (communities != null && communities.length != 0) {
@@ -207,4 +349,18 @@
                 <div class="row">
                     <%@ include file="discovery/static-tagcloud-facet.jsp" %>
                 </div>
+                
+                <script type="text/javascript">
+            $(document).ready(function () {
+            	//Slide
+            	$('.events-slider').slick({
+            		autoplay: false,
+            		slidesToShow: 1,
+            		slidesToScroll: 1,
+            		arrows: true,
+            		dots: true,
+            		fade: false
+            	});
+            })
+            	</script>
             </dspace:layout>

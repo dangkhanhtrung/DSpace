@@ -51,6 +51,8 @@ import org.dspace.storage.rdbms.DatabaseManager;
 import org.dspace.storage.rdbms.TableRow;
 import org.dspace.storage.rdbms.TableRowIterator;
 import org.dspace.usage.UsageEvent;
+import org.dspace.utils.ElasticQueryWrapUtil;
+import org.json.JSONObject;
 
 /**
  * Class which provide all CRUD methods over items.

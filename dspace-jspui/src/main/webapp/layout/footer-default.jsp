@@ -23,13 +23,22 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-auto">
-                <label class="organization">CỤC THÔNG TIN<br>KHOA HỌC VÀ CÔNG NGHỆ QUỐC GIA</label>
-                <span class="general-info">Địa chỉ: 24. Lý Thường Kiệt, Q. Hoàn Kiếm, Tp. Hà Nội <span class="line">|</span><br> Tel: (84-24)39349119 - (84-24)39349923 <span class="line">|</span><br> E-mail: vp@vista.gov.vn</span>
+                <label class="organization" style="
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: bold;
+">CỤC THÔNG TIN<br>KHOA HỌC VÀ CÔNG NGHỆ QUỐC GIA</label>
+                <span class="general-info"><strong>Địa chỉ:</strong> 24. Lý Thường Kiệt, Q. Hoàn Kiếm, Tp. Hà Nội <span class="line">|</span><br> <strong>Tel</strong>: (84-24)39349119 - (84-24)39349923 <span class="line">|</span><br> <strong>E-mail</strong>: vp@vista.gov.vn</span>
             </div>
             <div class="col text-right d-none d-lg-block">
-                <label class="system-name">HỆ THỐNG TRAO ĐỔI VÀ TÍCH HỢP CƠ SỞ DỮ LIỆU<br>BỘ KHOA HỌC VÀ CÔNG NGHỆ</label>
-                <span class="count">Tổng số truy cập: <b>8769869</b></span>
-                <span class="online">Hiện đang online: <b>789</b></span>
+            <img src="/jspui/static/custom/images/logo-fds-footer.png" class="my-2 mr-3" width="50">
+            <img src="/jspui/static/custom/images/logo-dspace-footer.png" class="my-2" width="50">
+                <label class="system-name" style="
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: bold;
+">Phát triển bởi FDS dựa trên DSpace</label>
+                <span class="count">Tổng số truy cập: <b>789</b> / <b>8769869</b> </span>
             </div>
         </div>
     </div>

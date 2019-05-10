@@ -29,14 +29,16 @@ import static org.dspace.rest.Resource.createContext;
 import org.dspace.rest.common.Collection;
 import org.dspace.rest.exceptions.ContextException;
 import org.dspace.utils.DataUtils;
+import org.dspace.utils.ElasticQueryWrapUtil;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 /**
  * This class provides all CRUD operation over collections.
  * 
  * @author Ta Huu Binh (FDS)
  */
-@Path("/table")
+@Path("/search")
 public class MyTableResource extends Resource
 {
     private static Logger log = Logger.getLogger(MyTableResource.class);
@@ -84,6 +86,18 @@ public class MyTableResource extends Resource
 
         log.trace("All collections were successfully read.");
         
+        return results.toString();
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getAllCrisDoTp(@QueryParam("q") String q, @Context HttpHeaders headers, @Context HttpServletRequest request)
+            throws Exception
+    {
+        JSONObject results = new JSONObject();
+
+        results = ElasticQueryWrapUtil.query(q);
+
         return results.toString();
     }
 
