@@ -183,11 +183,11 @@
 					<%
                      	for (FacetResult fvalue : facetGlobal) {
                      	if ( fvalue.getAuthorityKey().equalsIgnoreCase("publications") ||
-                     			fvalue.getAuthorityKey().equalsIgnoreCase("persons") ||
-                     			fvalue.getAuthorityKey().equalsIgnoreCase("techs") ||
+                     			fvalue.getAuthorityKey().equalsIgnoreCase("researcherprofiles") ||
+                     			fvalue.getAuthorityKey().equalsIgnoreCase("cristechs") ||
                      			fvalue.getAuthorityKey().equalsIgnoreCase("crisevents") ||
                      			fvalue.getAuthorityKey().equalsIgnoreCase("crisstandards") ||
-                     			fvalue.getAuthorityKey().equalsIgnoreCase("patents") ||
+                     			fvalue.getAuthorityKey().equalsIgnoreCase("crispatents") ||
                      			fvalue.getAuthorityKey().equalsIgnoreCase("orgunits")) {
                     %>
 				<div class="link-wrapper col-6 col-md-3 col-xl-auto flex-xl-grow-1 <%=fvalue.getAuthorityKey() %>">
