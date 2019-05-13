@@ -109,7 +109,7 @@
     DiscoverResult qResults = null;
     
     qResults = SearchUtils.getSearchService().search(context, null, queryArgs);
-
+    
     DiscoveryConfiguration globalConfiguration = SearchUtils.getGlobalConfiguration();
     DiscoverySearchFilterFacet globalFacet = new DiscoverySearchFilterFacet();
     if(globalConfiguration!=null) {
@@ -185,10 +185,10 @@
                      	if ( fvalue.getAuthorityKey().equalsIgnoreCase("publications") ||
                      			fvalue.getAuthorityKey().equalsIgnoreCase("researcherprofiles") ||
                      			fvalue.getAuthorityKey().equalsIgnoreCase("cristechs") ||
-                     			fvalue.getAuthorityKey().equalsIgnoreCase("crisevents") ||
                      			fvalue.getAuthorityKey().equalsIgnoreCase("crisstandards") ||
                      			fvalue.getAuthorityKey().equalsIgnoreCase("crispatents") ||
-                     			fvalue.getAuthorityKey().equalsIgnoreCase("orgunits")) {
+                     			fvalue.getAuthorityKey().equalsIgnoreCase("orgunits") ||
+                     			fvalue.getAuthorityKey().equalsIgnoreCase("fundings")) {
                     %>
 				<div class="link-wrapper col-6 col-md-3 col-xl-auto flex-xl-grow-1 <%=fvalue.getAuthorityKey() %>">
 					<a href="<%= request.getContextPath()
@@ -205,64 +205,22 @@
 			
 		<div class="events-slider-wrapper">
 				<div class="events-slider">
-					<div>
-						<img src="http://placehold.it/1200x768">
+					<div v-for="(item, index) in eventsData" v-bind:key="index">
+						<img :src="processImage(item['crisevents.eventsimage'])">
 						<a href="" class="event-content-wrapper">
 							<span class="row">
 								<span class="col col-auto align-items-center d-flex">
 									<span class="time-big">
-										<span>20</span>
-										<span>25</span>
+										<span>{{item["crisevents.eventsstartdate"] !== undefined ? new Date(item["crisevents.eventsstartdate"][0]).getDate() : ""}}</span>
+										<span>{{item["crisevents.eventsenddate"] !== undefined ? new Date(item["crisevents.eventsenddate"][0]).getDate() : ""}}</span>
 									</span>
 								</span>
 								<span class="col">
 									<span class="event-cotent">
-										<span class="event-title">Hướng dẫn đơn vị tham gia nộp hồ sơ thực hiện nhiệm vụ đề án 844 năm 2019”</span>
-										<span class="event-desc">Tổ chức bởi Văn phòng Đề án 844, Văn phòng các Chương trình khoa học và công nghệ quốc gia phối hợp với Cục Phát triển thị trường và doanh nghiệp KH&CN</span>
-										<span class="event-address"><i class="fas fa-map-marker-alt"></i> Hà Nội, Đà Nẵng và TP.Hồ Chí Minh</span>
-										<span class="event-time"><i class="fas fa-calendar-alt"></i> 22 Tháng 8 - 24 Tháng 8</span>
-									</span>
-								</span>
-							</span>
-						</a>
-					</div>
-					<div>
-						<img src="http://placehold.it/1200x768">
-						<a href="" class="event-content-wrapper">
-							<span class="row">
-								<span class="col col-auto align-items-center d-flex">
-									<span class="time-big">
-										<span>20</span>
-										<span>25</span>
-									</span>
-								</span>
-								<span class="col">
-									<span class="event-cotent">
-										<span class="event-title">Hướng dẫn đơn vị tham gia nộp hồ sơ thực hiện nhiệm vụ đề án 844 năm 2019”</span>
-										<span class="event-desc">Tổ chức bởi Văn phòng Đề án 844, Văn phòng các Chương trình khoa học và công nghệ quốc gia phối hợp với Cục Phát triển thị trường và doanh nghiệp KH&CN</span>
-										<span class="event-address"><i class="fas fa-map-marker-alt"></i> Hà Nội, Đà Nẵng và TP.Hồ Chí Minh</span>
-										<span class="event-time"><i class="fas fa-calendar-alt"></i> 22 Tháng 8 - 24 Tháng 8</span>
-									</span>
-								</span>
-							</span>
-						</a>
-					</div>
-					<div>
-						<img src="http://placehold.it/1200x768">
-						<a href="" class="event-content-wrapper">
-							<span class="row">
-								<span class="col col-auto align-items-center d-flex">
-									<span class="time-big">
-										<span>20</span>
-										<span>25</span>
-									</span>
-								</span>
-								<span class="col">
-									<span class="event-cotent">
-										<span class="event-title">Hướng dẫn đơn vị tham gia nộp hồ sơ thực hiện nhiệm vụ đề án 844 năm 2019”</span>
-										<span class="event-desc">Tổ chức bởi Văn phòng Đề án 844, Văn phòng các Chương trình khoa học và công nghệ quốc gia phối hợp với Cục Phát triển thị trường và doanh nghiệp KH&CN</span>
-										<span class="event-address"><i class="fas fa-map-marker-alt"></i> Hà Nội, Đà Nẵng và TP.Hồ Chí Minh</span>
-										<span class="event-time"><i class="fas fa-calendar-alt"></i> 22 Tháng 8 - 24 Tháng 8</span>
+										<span class="event-title">{{item["crisauthoritylookup_sort"]}}</span>
+										<span class="event-desc" style="max-height: 44px; overflow: hidden;">{{item["crisevents.eventsdescription"] !== undefined ? item["crisevents.eventsdescription"][0] : ""}}</span>
+										<span class="event-address"><i class="fas fa-map-marker-alt"></i> {{item["crisevents.eventsplace"] !== undefined ? item["crisevents.eventsplace"][0] : ""}}</span>
+										<span class="event-time"><i class="fas fa-calendar-alt"></i> {{item["crisevents.eventsstartdate"] !== undefined ? item["crisevents.eventsstartdate"][0] : ""}} - {{item["crisevents.eventsenddate"] !== undefined ? item["crisevents.eventsenddate"][0] : ""}}</span>
 									</span>
 								</span>
 							</span>
@@ -350,17 +308,4 @@
                     <%@ include file="discovery/static-tagcloud-facet.jsp" %>
                 </div>
                 
-                <script type="text/javascript">
-            $(document).ready(function () {
-            	//Slide
-            	$('.events-slider').slick({
-            		autoplay: false,
-            		slidesToShow: 1,
-            		slidesToScroll: 1,
-            		arrows: true,
-            		dots: true,
-            		fade: false
-            	});
-            })
-            	</script>
             </dspace:layout>

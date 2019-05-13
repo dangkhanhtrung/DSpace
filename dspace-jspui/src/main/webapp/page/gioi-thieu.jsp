@@ -29,26 +29,10 @@
 <%@ page import="org.dspace.browse.BrowseIndex" %>
 <%@ page import="org.dspace.browse.BrowseInfo" %>
 <%@ page import="java.util.Map" %>
-<%
-    // Is anyone logged in?
-    EPerson user = (EPerson) request.getAttribute("dspace.current.user");
 
-    // Is the logged in user an admin
-    Boolean admin = (Boolean) request.getAttribute("is.admin");
-    boolean isAdmin = (admin == null ? false : admin.booleanValue());
 
-    // Get the current page, minus query string
-    String currentPage = UIUtil.getOriginalURL(request);
-    int c = currentPage.indexOf('?');
-    if (c > -1) {
-        currentPage = currentPage.substring(0, c);
-    }
-    
-    String[] mlinks = new String[0];
-    String mlinksConf = ConfigurationManager.getProperty("cris", "navbar.cris-entities");
-    if (StringUtils.isNotBlank(mlinksConf)) {
-        mlinks = StringUtils.split(mlinksConf, ",");
-    }
-%>
-
-<dspace:include page="/layout/navbar-admin.jsp" />
+sdfsdf
+dsf
+sd
+f
+s

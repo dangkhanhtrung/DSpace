@@ -579,3 +579,560 @@ span.fieldError, .errorMessage {
                     width: 12px;
             }
                             </style>
+                            
+                            
+                            
+
+	  <script type="text/javascript"><!--
+
+		var j = jQuery.noConflict();
+	    
+	    // Setup the ajax indicator
+	    
+	    j('#ajaxBusy').css({
+		    display:"none",
+		    margin:"0px",
+		    paddingLeft:"0px",
+		    paddingRight:"0px",
+		    paddingTop:"0px",
+		    paddingBottom:"0px",
+		    position:"absolute",
+		    right:"3px",
+		    top:"3px",
+		    width:"auto"
+	    });
+
+	    j.ajaxSetup({
+	        beforeSend:function(){
+	            // show gif here, eg:
+	        	j('#ajaxBusy').show();
+	        },
+	        complete:function(){
+	            // hide gif here, eg:
+	            j("#ajaxBusy").hide();
+	        }
+	    });
+	    
+    	var activeTab = function(){
+    		j(".box:not(.expanded)").accordion({
+    			autoHeight: false,
+    			navigation: true,
+    			collapsible: true,
+    			active: 0,
+    			heightStyle: "content"
+    		});
+    		j(".box.expanded").accordion({
+    			autoHeight: false,
+    			navigation: true,
+    			collapsible: true,
+    			active: 0,
+    			heightStyle: "content"
+    		});
+    		
+    		var ajaxurlrelations = "<%=request.getContextPath()%>/cris/${specificPartPath}/viewNested.htm";
+			j('.nestedinfo').each(function(){
+				var id = j(this).html();
+				j.ajax( {
+					url : ajaxurlrelations,
+					data : {																			
+						"parentID" : ${anagraficadto.objectId},
+						"typeNestedID" : id,
+						"pageCurrent": j('#nested_'+id+"_pageCurrent").html(),
+						"limit": j('#nested_'+id+"_limit").html(),
+						"editmode": true,
+						"totalHit": j('#nested_'+id+"_totalHit").html(),
+						"admin": ${admin}
+					},
+					success : function(data) {																										
+						j('#viewnested_'+id).html(data);
+						var ajaxFunction = function(page){
+							j.ajax( {
+								url : ajaxurlrelations,
+								data : {																			
+									"parentID" : ${anagraficadto.objectId},
+									"typeNestedID" : id,													
+									"pageCurrent": page,
+									"limit": j('#nested_'+id+"_limit").html(),
+									"editmode": true,
+									"totalHit": j('#nested_'+id+"_totalHit").html(),
+									"admin": ${admin}
+								},
+								success : function(data) {									
+									j('#viewnested_'+id).html(data);
+									jQuery( "#ui-accordion" ).accordion( "resize" );
+									postfunction();
+								},
+								error : function(data) {
+								}
+							});		
+						};
+						var postfunction = function(){
+							j('#viewnested_'+id+' .nested_edit_button').parent().parent().mouseover(function(){
+								j(this).toggleClass('ui-state-hover');
+							});
+							j('#viewnested_'+id+' .nested_edit_button').parent().parent().mouseout(function(){
+								j(this).toggleClass('ui-state-hover');
+							});
+							j('#viewnested_'+id+' .nested_edit_button').click(function(){
+								var ajaxurleditnested = 
+									"<%= request.getContextPath() %>/cris/tools/${specificPartPath}/editNested.htm";
+									j.ajax( {
+										url : ajaxurleditnested,
+										data : {
+											"elementID": j(this).attr('id').substr(('nested_'+id+'_edit_').length),
+											"parentID" : ${anagraficadto.objectId},
+											"typeNestedID" : id,
+											"editmode" : true,
+											"admin": ${admin}
+										},
+										success : function(data) {
+											j('#nested_edit_dialog').html(data);
+											j('#nested_edit_dialog input:submit').button();
+											var options = { 
+											        target: '#viewnested_'+id,   // target element(s) to be updated with server response 
+											        success: function(){ // post-submit callback
+											        	j('#nested_edit_dialog').dialog("close");        
+											        	postfunction();
+										        	}
+											};
+											j('#nested_edit_form').ajaxForm(options); 
+											j('#nested_edit_dialog').dialog("option",{title: 'Edit: '+j('#viewnested_'+id+' span.dynaLabel').html()});
+											j('#nested_edit_dialog').dialog("open");
+										},
+										error : function(data) {
+										}
+									});	
+							});
+							j('#viewnested_'+id+' .nested_delete_button').click(function(){
+								var ajaxurldeletenested = 
+									"<%= request.getContextPath() %>/cris/tools/${specificPartPath}/deleteNested.htm";
+									j.ajax( {
+										url : ajaxurldeletenested,
+										data : {
+											"elementID": j(this).attr('id').substr(('nested_'+id+'_delete_').length),
+											"parentID" : ${anagraficadto.objectId},
+											"typeNestedID" : id,
+											"editmode" : true,
+											"admin": ${admin}
+										},
+										success : function(data) {
+											j('#viewnested_'+id).html(data);
+											postfunction();
+										},
+										error : function(data) {
+										}
+									});	
+							});
+							j('#viewnested_'+id+' .nested_preferred_button').click(function(){
+								var ajaxurlpreferrednested = 
+									"<%= request.getContextPath() %>/cris/tools/${specificPartPath}/preferredNested.htm";
+									j.ajax( {
+										url : ajaxurlpreferrednested,
+										data : {
+											"elementID": j(this).attr('id').substr(('nested_'+id+'_preferred_').length),
+											"parentID" : ${anagraficadto.objectId},
+											"typeNestedID" : id,
+											"editmode" : true,
+											"preferred" : true,
+											"admin": ${admin}
+										},
+										success : function(data) {
+											j('#viewnested_'+id).html(data);
+											postfunction();
+										},
+										error : function(data) {
+										}
+									});	
+							});
+							j('#viewnested_'+id+' .nested_notpreferred_button').click(function(){
+								var ajaxurlnotpreferrednested = 
+									"<%= request.getContextPath() %>/cris/tools/${specificPartPath}/notPreferredNested.htm";
+									j.ajax( {
+										url : ajaxurlnotpreferrednested,
+										data : {
+											"elementID": j(this).attr('id').substr(('nested_'+id+'_notpreferred_').length),
+											"parentID" : ${anagraficadto.objectId},
+											"typeNestedID" : id,
+											"editmode" : true,
+											"preferred" : false,
+											"admin": ${admin}
+										},
+										success : function(data) {
+											j('#viewnested_'+id).html(data);
+											postfunction();
+										},
+										error : function(data) {
+										}
+									});	
+							});
+							j('#nested_'+id+'_addbutton').click(function(){
+								var ajaxurladdnested = 
+									"<%= request.getContextPath() %>/cris/tools/${specificPartPath}/addNested.htm";
+									j.ajax( {
+										url : ajaxurladdnested,
+										data : {			
+											"parentID" : ${anagraficadto.objectId},
+											"typeNestedID" : id,
+											"admin": ${admin}
+										},
+										success : function(data) {
+											j('#nested_edit_dialog').html(data);
+											j('#nested_edit_dialog input:submit').button();
+											var options = { 
+											        target: '#viewnested_'+id,   // target element(s) to be updated with server response 
+											        success: function(){ // post-submit callback
+											        	j('#nested_edit_dialog').dialog("close");        
+											        	postfunction();
+										        	}
+											};
+											j('#nested_edit_form').ajaxForm(options); 
+											j('#nested_edit_dialog').dialog("option",{title: 'Add new: '+j('#viewnested_'+id+' span.dynaLabel').html()});
+											j('#nested_edit_dialog').dialog("open");
+										},
+										error : function(data) {
+										}
+									});	
+							});
+							j('#nested_'+id+'_next').click(
+									function() {
+								    	ajaxFunction(parseInt(j('#nested_'+id+"_pageCurrent").html())+1);
+										
+							});
+							j('#nested_'+id+'_prev').click(
+									function() {
+										ajaxFunction(parseInt(j('#nested_'+id+"_pageCurrent").html())-1);
+							});
+							j('.nested_'+id+'_nextprev').click(
+									function(){
+										ajaxFunction(j(this).attr('id').substr(('nested_'+id+'_nextprev_').length));
+							});
+						};
+						postfunction();
+					},
+					error : function(data) {
+					}
+				});
+			});
+    	};
+    	
+		j(document).ready(function()
+		{
+			j('.jdynadropdown').select2();
+			
+			j('#nested_edit_dialog').dialog({
+				autoOpen: false,
+				modal: true,
+				width: 720
+			});			
+			j('input:submit').button();
+			j('#delete').button();
+			j("#tabs").tabs({
+				active: ${currTabIdx-1},
+				"activate": function( event, ui ) {
+					j("li.ui-tabs-active").toggleClass("ui-tabs-active ui-state-active active");
+					j('#newTabId').val(j(ui.newTab).attr('id').substr(8));
+					j('#submit_save').click();
+				},
+				"beforeActivate": function( event, ui ) {
+	   			 j("li.active").toggleClass("active");
+				},
+		   		"create": function( event, ui ) {
+		               j("div.ui-tabs").toggleClass("ui-tabs ui-widget ui-widget-content ui-corner-all tabbable");
+		               j("ul.ui-tabs-nav").toggleClass("ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all nav nav-tabs");
+		               j("li.ui-tabs-active").toggleClass("ui-state-default ui-corner-top ui-tabs-active ui-state-active active");
+		               j("li.ui-state-default").toggleClass("ui-state-default ui-corner-top");
+		               j("div.ui-tabs-panel").toggleClass("ui-tabs-panel ui-widget-content ui-corner-bottom tab-content with-padding");
+		        }
+			});
+			
+			j('.navigation-tabs:not(.expanded)').accordion({
+				collapsible: true,
+				active: 0,
+				event: "click mouseover"
+			});
+			j('.navigation-tabs.expanded').accordion({
+				collapsible: true,
+				active: 0,
+				event: "click mouseover"
+			});
+			
+			activeTab();
+			activePointer();
+			activeCustomPointer();
+			activeTree();
+		});
+
+		
+		function updateSelectedPointer( id, count, repeatable, displayvalue, identifiervalue ) {
+			if(identifiervalue!=null) {
+            	if (!repeatable){
+            		j("#pointer_"+id+"_selected").html(' ');
+            		count = 0;
+            	}
+				var div = j('<div id="pointer_'+id+'_selected_'+count+'" class="jdyna-pointer-value">');
+            	var img = j('<img class="jdyna-icon jdyna-action-icon jdyna-delete-button" src="<%= request.getContextPath() %>/image/jdyna/delete_icon.gif">');
+				var path = j('#pointer_'+id+'_path').html();
+				var input = j( "<input type='hidden' id='"+path+"["+count+"]"+"' name='"+path+"["+count+"]"+"'>" ).val(identifiervalue);
+            	var display = j("<span>").text(displayvalue);
+            	var selectedDiv = j("#pointer_"+id+"_selected");
+            	selectedDiv.append(div);
+            	div.append(input);
+            	div.append(display);
+            	div.append("&nbsp;")
+            	div.append(img);
+            	div.effect('highlight');
+            	j('#pointer_'+id+'_tot').html(count+1);
+            	img.click(function(){
+                	if (!repeatable){
+                		selectedDiv.html(' ');
+                		var _input = j( "<input type='hidden' id='_"+path+"[0]"+"' name='_"+path+"[0]"+"'>" ).val('true');
+                		selectedDiv.append(_input);
+                	}
+                	else
+                	{
+                		j('#pointer_'+id+'_selected_'+count).remove();
+                	}
+            	});
+            	if (!repeatable){
+            		var _input = j( "<input type='hidden' id='_"+path+"[0]"+"' name='_"+path+"[0]"+"'>" ).val('true');
+            		selectedDiv.append(_input);
+            	}            	
+			}
+        }
+		
+		var activePointer = function() {
+					 			
+			 j(".pointerinfo").each(function(){
+				 var id = j(this).html();
+				 j('#pointer_'+id+'_selected div img').click(
+						 function(){
+					j(this).parent().remove();		 
+				 });
+				 var repeatable = j('#pointer_'+id+'_repeatable').html() == 'true';
+				 j("#searchboxpointer_"+id).autocomplete({
+					delay: 500,
+		            source: function( request, response ) {	
+		                j.ajax({
+		                    url: "searchPointer.htm",
+		                    dataType: "json", 
+		                    data : {																			
+								"elementID" : id,								
+								"query":  request.term						
+							},                  
+		                    success: function( data ) {
+		                        response( j.map( data.pointers, function( item ) {
+		                            return {
+		                                label: item.display,
+		                                value: item.id
+		                            }
+		                        }));
+		                    }
+		                });
+		            },		            
+		            minLength: 2,
+		            select: function( event, ui ) {
+		            	if (ui == null || ui.item == null) return false;
+		            	updateSelectedPointer( id, j('#pointer_'+id+'_tot').html(), repeatable, 
+		                		ui.item.label, ui.item.value);
+		            	j('#searchboxpointer_'+id).val('');
+		            	return false;
+		            },
+		            open: function() {
+		                j( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+		            },
+		            close: function() {
+		                j( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+		            }
+		        });
+		});
+	}
+
+		var activeTree = function() {
+			 j(".classificationtreeinfo").each(function(){
+				 var id = j(this).html();
+				 var treeObjectType = j('#classificationtree_'+id+'_treeObjectType').html();
+				 var rootResearchObject = j('#classificationtree_'+id+'_rootResearchObject').html();
+				 var metadataBuilderTree = j('#classificationtree_'+id+'_metadataBuilderTree').html();
+				 var chooseOnlyLeaves = j('#classificationtree_'+id+'_chooseOnlyLeaves').html();
+				 var repeatable = j('#classificationtree_'+id+'_repeatable').html();
+				 var propertyPath = j('#classificationtree_'+id+'_propertyPath').html();
+				
+				 j('#classificationtree_'+id+'_selected div img').click(
+						 function(){
+							 j(this).parent().remove();
+				 });
+				 j('#classificationtree_'+id+'_btn').click(
+				 function(event){
+			     j('#classificationtree_modal').modal();	 
+				 event.preventDefault()
+				 j('#classificationtree_modal .modal-body').html('');
+				 j('#classificationtree_modal .modal-footer').html('');
+				 
+				 j('#classificationtree_modal .modal-body').append("<div id=\"jstree_div\"></div>")
+				 j('#classificationtree_modal .modal-footer').append("<button type=\"button\" id=\"btn-close-modal-classificationtree\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>")
+				 j('#classificationtree_modal .modal-footer').append("<button type=\"button\" id=\"button-save-classificationtree_"+propertyPath+"\" class=\"btn btn-primary btn-classificationtree-save\">Done</button>")
+				 				
+				j('.btn-classificationtree-save').click(
+						 function(event){
+							  var propertyPath = j(this).attr("id");
+							  var realPP = propertyPath.replace('button-save-classificationtree_anagraficadto.','');
+							  var n = j('#classificationtree_modal .modal-body').find(".jstree-clicked");
+							  if(n.length>0) {
+								  if(n.length>1) {									  
+									 j("#classificationtree_"+id+"_selected").html('');
+									 j.each(n, function( index, value ) {
+										 var idValue = j(this).parent().attr("id");
+										 var labelValue = j(this).text();				
+										 var div = j("<div id=\"classificationtree_"+ id +"_selected_"+index+"\">");
+										 var input = j("<input type=\"hidden\" id=\""+realPP+"["+index+"]\" name=\""+realPP+"["+index+"]\">").val(idValue);										 
+										 var label = j("<span>").text(labelValue);
+										 div.append(input);										 
+										 div.append(label);
+										 j("#classificationtree_"+id+"_selected").append(div);
+										 
+							           	 var img = j("<img class=\"jdyna-icon jdyna-action-icon jdyna-delete-button\" src=\"<%=request.getContextPath()%>/image/jdyna/delete_icon.gif\">");
+							             j("#classificationtree_"+id+"_selected_"+index).append(img);
+						                 img.click(function(){                     	
+						                 	j("#classificationtree_"+id+"_selected_"+index).html('');
+						                 	var _input = j( "<input type='hidden' id='_"+realPP+"["+index+"]"+"' name='_"+realPP+"["+index+"]"+"'>" ).val('true');
+						                 	j("#classificationtree_"+id+"_selected_"+index).append(_input);             
+						                 });
+									 });
+								  }
+								  else {
+									var idValue = j(n).parent().attr("id");
+									var labelValue = j(n).text();
+									j("#classificationtree_"+id+"_selected").html('');
+									var div = j("<div id=\"classificationtree_"+ id +"_selected_0\">");
+									var input = j("<input type=\"hidden\" id=\""+realPP+"[0]\" name=\""+realPP+"[0]\">").val(idValue);
+									
+									var label = j("<span>").text(labelValue);
+									div.append(input);									
+									div.append(label);
+									j("#classificationtree_"+id+"_selected").append(div);
+					            	var img = j("<img class=\"jdyna-icon jdyna-action-icon jdyna-delete-button\" src=\"<%=request.getContextPath()%>/image/jdyna/delete_icon.gif\">");
+					            	j("#classificationtree_"+id+"_selected").append(img);
+				                     img.click(function(){                     	
+				                        j("#classificationtree_"+id+"_selected").html('');
+				                        var _input = j( "<input type='hidden' id='_"+realPP+"[0]"+"' name='_"+realPP+"[0]"+"'>" ).val('true');
+				                      	j("#classificationtree_"+id+"_selected").append(_input);                     	
+				                  	 });
+								  }
+							  }
+							  
+							  j("#classificationtree_modal").modal("hide");
+						 }
+						 
+				);
+
+				 j('#jstree_div').jstree({
+					 'core' : {
+					   'data' : {
+					     'url': 'buildClassificationTree.htm?method=buildtree&id='+rootResearchObject+'&type='+treeObjectType+'&builder='+metadataBuilderTree,						 
+					   	}
+					  },
+				 	  "checkbox" : {
+				      	"keep_selected_style" : false
+				 	  },
+			    	  "types" : {
+			    	 	"default" : {
+			    	 		"icon" : "fa fa-flash"
+			    	 	}
+			    	  },			    	  
+		    	 	  "plugins" : [ "checkbox", "types"]		    	 	 
+				});
+
+			 });
+		 });
+			 
+		}
+		
+		function updateSelectedCustomPointer( id, count, repeatable, displayvalue, identifiervalue ) {
+			if(identifiervalue!=null) {
+            	if (!repeatable){
+            		j("#custompointer_"+id+"_selected").html(' ');
+            		count = 0;
+            	}
+				var div = j('<div id="custompointer_'+id+'_selected_'+count+'" class="jdyna-pointer-value">');
+            	var img = j('<img class="jdyna-icon jdyna-action-icon jdyna-delete-button" src="<%= request.getContextPath() %>/image/jdyna/delete_icon.gif">');
+				var path = j('#custompointer_'+id+'_path').html();
+				var input = j( "<input type='hidden' id='"+path+"["+count+"]"+"' name='"+path+"["+count+"]"+"'>" ).val(identifiervalue);
+            	var display = j("<span>").text(displayvalue);
+            	var selectedDiv = j("#custompointer_"+id+"_selected");
+            	selectedDiv.append(div);
+            	div.append(input);
+            	div.append(display);
+            	div.append("&nbsp;")
+            	div.append(img);
+            	div.effect('highlight');
+            	j('#custompointer_'+id+'_tot').html(count+1);
+            	img.click(function(){
+                	if (!repeatable){
+                		selectedDiv.html(' ');
+                		var _input = j( "<input type='hidden' id='_"+path+"[0]"+"' name='_"+path+"[0]"+"'>" ).val('true');
+                		selectedDiv.append(_input);
+                	}
+                	else
+                	{
+                		j('#custompointer_'+id+'_selected_'+count).remove();
+                	}
+            	});
+            	if (!repeatable){
+            		var _input = j( "<input type='hidden' id='_"+path+"[0]"+"' name='_"+path+"[0]"+"'>" ).val('true');
+            		selectedDiv.append(_input);
+            	}            	
+			}
+        }
+		
+		var activeCustomPointer = function() {
+ 			
+			 j(".custompointerinfo").each(function(){
+				 var id = j(this).html();
+				 j('#custompointer_'+id+'_selected div img').click(
+						 function(){
+					j(this).parent().remove();		 
+				 });
+				 var repeatable = j('#custompointer_'+id+'_repeatable').html() == 'true';
+				 var type = j('#custompointer_'+id+'_type').html();
+				 j("#searchboxcustompointer_"+id).autocomplete({
+					delay: 500,
+		            source: function( request, response ) {	
+		                j.ajax({
+		                    url: "searchCustomPointer.htm",
+		                    dataType: "json", 
+		                    data : {																			
+								"elementID" : id,								
+								"query":  request.term,
+								"type": type
+							},                  
+		                    success: function( data ) {
+		                        response( j.map( data.pointers, function( item ) {
+		                            return {
+		                                label: item.display,
+		                                identifier: item.identifyingValue
+		                            }
+		                        }));
+		                    }
+		                });
+		            },		            
+		            minLength: 2,
+		            select: function( event, ui ) {
+		            	if (ui == null || ui.item == null) return false;
+		            	updateSelectedCustomPointer( id, j('#custompointer_'+id+'_tot').html(), repeatable, 
+		                		ui.item.label, ui.item.identifier);
+		            	j('#searchboxcustompointer_'+id).val('');
+		            	return false;
+		            },
+		            open: function() {
+		                j( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+		            },
+		            close: function() {
+		                j( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+		            }
+		        });
+		});
+
+		}
+		
+		-->
+	</script>

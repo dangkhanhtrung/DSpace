@@ -71,6 +71,7 @@
     jsp.layout.navbar-default.cris.${location}
 </c:set>
 <dspace:layout locbar="link" parenttitlekey="${fmtkey}" parentlink="/cris/explore/${location}" titlekey="${fmtkey}">
+
     <div class="row">
         <div class="col-sm-4 col-md-3">
             
@@ -88,23 +89,28 @@
                     <form id="update-form" action="<%= request.getContextPath() %>/simple-search" method="get">
                         <input type="hidden" value="${location}" name="location" />
                         <div class="row">
-                            <div class="col-sm-9 col-7">
+                            <div class="col-sm-9 col-7 mb-2">
 
                                 <div class="form-group">
-                                    <div class="input-group input-group-alternative mb-4">
+                                    <div class="input-group input-group-alternative">
                                         <input class="form-control" placeholder="Từ khoá ..." type="text" size="50" id="query" name="query" value="">
                                         <div class="input-group-append">
                                             <span class="input-group-text"><i class="fa fa-search"></i></span>
                                         </div>
                                     </div>
                                 </div>
+                                
+                                
+                                <a @click="processFilters('+', 0)" href="javascript:;" style="
+    font-size: 12px;
+    text-decoration: underline;
+">
+                                    <span class="btn-inner--icon"><i class="fa fa-filter"></i> Lọc thêm</span>
+                                </a>
                             </div>
 
                             <div class="col-sm-3 col-5">
-                                <button @click="processFilters('+', 0)" class="btn btn-icon btn-2 btn-primary btn--block" type="button">
-                                    <span class="btn-inner--icon"><i class="fa fa-filter"></i> Lọc thêm</span>
-                                </button>
-
+								<input type="button" @click="searchDataExpose" id="main-query-submit" class="btn btn-icon btn-2 btn-default btn--block" value="Tìm kiếm" />
                             </div>
                         </div>
 
@@ -159,19 +165,6 @@
 
                     </div>
                 </div>
-                                
-                        <div class="row">
-                            <div class="col-sm-9 col-6 text-right">
-                                <button @click="clearSearchData" class="btn btn-icon btn-2 btn-primary" type="button">
-                                    <span class="btn-inner--icon"><i class="fa fa-refresh"></i> Xoá trắng</span>
-                                </button>
-                            </div>
-
-                            <div class="col-sm-3 col-6">
-                                <input type="button" @click="searchDataExpose" id="main-query-submit" class="btn btn-icon btn-2 btn-default btn--block" value="Tìm kiếm" />
-                            </div>
-                        </div>
-
                     </form>
                 </div>
 
