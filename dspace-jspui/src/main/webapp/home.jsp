@@ -207,7 +207,7 @@
 				<div class="events-slider">
 					<div v-for="(item, index) in eventsData" v-bind:key="index">
 						<img :src="processImage(item['crisevents.eventsimage'])">
-						<a href="" class="event-content-wrapper">
+						<a :href="'/jspui/cris/events/' + item['cris-id']" class="event-content-wrapper">
 							<span class="row">
 								<span class="col col-auto align-items-center d-flex">
 									<span class="time-big">

@@ -74,18 +74,32 @@
     text-align: right;
     width: 100%;
 ">
-        <li class="nav-item "><a href="/jspui" class="nav-link">
+        <li class="nav-item "><a href="<%= request.getContextPath()%>" class="nav-link">
                             Trang chủ
                         </a></li>
-        <li class="nav-item "><a href="#" class="nav-link">
+        <li class="nav-item "><a href="<%= request.getContextPath()%>/page/gioi-thieu.jsp" class="nav-link">
                             Giới thiệu
                         </a></li>
-        <li class="nav-item "><a href="#" class="nav-link">
-                            Hỏi đáp
-                        </a></li>
-        <li class="nav-item "><a href="#" class="nav-link">
-                           Liên hệ
-                        </a></li>
+        <li class="nav-item dropdown">
+             <a class="nav-link" href="#" id="navbar-primary_dropdown_1_report" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Báo cáo
+             </a>
+             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1_report">
+
+                 <a class="dropdown-item" href="<%= request.getContextPath()%>/page/report-01.jsp">
+						CÔNG BỐ KHOA HỌC VÀ CÔNG NGHỆ
+				</a>
+				<a class="dropdown-item" href="<%= request.getContextPath()%>/page/report-02.jsp">
+						NHIỆM VỤ KHOA HỌC CÔNG NGHỆ
+				</a>
+				<a class="dropdown-item" href="<%= request.getContextPath()%>/page/report-03.jsp">
+						SỐ TỔ CHỨC KHOA HỌC VÀ CÔNG NGHỆ
+				</a>
+				<a class="dropdown-item" href="<%= request.getContextPath()%>/page/report-04.jsp">
+						SỐ NGƯỜI TRONG CÁC TỔ CHỨC KHOA HỌC VÀ CÔNG NGHỆ 
+				</a>
+             </div>
+         </li>
          <%
              if (user != null) {
          %>

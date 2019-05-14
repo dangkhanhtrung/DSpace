@@ -75,6 +75,12 @@ jQuery(document).ready(function ($) {
             })
         },
         methods: {
+        	doDetailEvent: function (item) {
+        		console.log(item)
+        		console.log('/jspui/cris/events/' + item['cris-id'])
+        		alert(123)
+        		// window.location.href = '/jspui/cris/events/' + item['cris-id']
+        	},
         	processImage: function (eventsimage) {
         		let image = 'http://placehold.it/1200x768';
         		if (eventsimage !== undefined) {

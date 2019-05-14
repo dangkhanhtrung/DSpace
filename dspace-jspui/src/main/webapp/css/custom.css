@@ -712,10 +712,10 @@ body .navbar-brand img {
         		    background-image: url("/jspui/static/custom/images/icon-3-white.png");
     				background-color: #00499c;
         	}
-        	.home-theme #content .sub-menu .link-wrapper.projects {
+        	.home-theme #content .sub-menu .link-wrapper.fundings {
         		    background-image: url("/jspui/static/custom/images/icon-2-blue.png");
         	}
-        	.home-theme #content .sub-menu .link-wrapper.projects:hover {
+        	.home-theme #content .sub-menu .link-wrapper.fundings:hover {
         		    background-image: url("/jspui/static/custom/images/icon-2-white.png");
     				background-color: #00499c;
         	}

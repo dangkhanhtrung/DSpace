@@ -8,31 +8,82 @@
 
 --%>
 <%--
-  - Default navigation bar
+  - Home page JSP
+  -
+  - Attributes:
+  -    communities - Community[] all communities in DSpace
+  -    recent.submissions - RecetSubmissions
 --%>
 
-<%@page import="org.apache.commons.lang.StringUtils"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-
+<%@page import="org.dspace.discovery.configuration.DiscoveryRecentSubmissionsConfiguration"%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
-<%@ taglib uri="/WEB-INF/dspace-tags.tld" prefix="dspace" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.List" %>
+<%@ taglib uri="http://www.dspace.org/dspace-tags.tld" prefix="dspace" %>
+
+<%@ page import="java.io.File" %>
+<%@ page import="java.util.Enumeration"%>
+<%@ page import="java.util.Locale"%>
+<%@ page import="javax.servlet.jsp.jstl.core.*" %>
 <%@ page import="javax.servlet.jsp.jstl.fmt.LocaleSupport" %>
+<%@ page import="org.dspace.core.I18nUtil" %>
 <%@ page import="org.dspace.app.webui.util.UIUtil" %>
-<%@ page import="org.dspace.content.Collection" %>
+<%@ page import="org.dspace.app.webui.components.RecentSubmissions" %>
 <%@ page import="org.dspace.content.Community" %>
-<%@ page import="org.dspace.eperson.EPerson" %>
 <%@ page import="org.dspace.core.ConfigurationManager" %>
-<%@ page import="org.dspace.browse.BrowseIndex" %>
-<%@ page import="org.dspace.browse.BrowseInfo" %>
-<%@ page import="java.util.Map" %>
+<%@ page import="org.dspace.core.NewsManager" %>
+<%@ page import="org.dspace.browse.ItemCounter" %>
+<%@ page import="org.dspace.content.Metadatum" %>
+<%@ page import="org.dspace.content.Item" %>
+<%@ page import="org.dspace.discovery.configuration.DiscoveryViewConfiguration" %>
+<%@page import="org.dspace.app.webui.components.MostViewedBean"%>
+<%@page import="org.dspace.app.webui.components.MostViewedItem"%>
+<%@page import="org.dspace.discovery.SearchUtils"%>
+<%@page import="org.dspace.discovery.IGlobalSearchResult"%>
+<%@page import="org.dspace.core.Utils"%>
+<%@page import="org.dspace.content.Bitstream"%>
+<%@ page import="org.dspace.app.webui.util.LocaleUIHelper" %>
+
+<%@page import="org.dspace.discovery.configuration.DiscoverySearchFilter" %>
+
+<%@page import="org.dspace.discovery.configuration.DiscoveryConfiguration" %>
+<%@page import="org.dspace.discovery.configuration.DiscoverySearchFilterFacet" %>
+
+<%@page import="org.dspace.discovery.DiscoverQuery" %>
+<%@page import="org.dspace.app.webui.discovery.DiscoverUtility" %>
+<%@page import="org.dspace.discovery.DiscoverResult" %>
+<%@page import="org.dspace.core.Context" %>
+<%@page import="org.apache.commons.lang.StringUtils"%>
 
 
-sdfsdf
-dsf
-sd
-f
-s
+<%@page import="org.dspace.handle.HandleManager"%>
+<%@page import="org.dspace.search.DSQuery"%>
+<%@page import="org.dspace.search.QueryArgs"%>
+<%@page import="org.dspace.search.QueryResults"%>
+<%@page import="org.dspace.content.DSpaceObject"%>
+<%@page import="org.dspace.core.Constants"%>
+<%@page import="org.dspace.authorize.AuthorizeManager"%>
+<%@page import="org.dspace.app.webui.search.SearchProcessorException"%>
+<%@page import="java.sql.SQLException"%>
+
+<%
+    Community[] communities = (Community[]) request.getAttribute("communities");
+
+    Locale sessionLocale = UIUtil.getSessionLocale(request);
+    Config.set(request.getSession(), Config.FMT_LOCALE, sessionLocale);
+
+    boolean feedEnabled = ConfigurationManager.getBooleanProperty("webui.feed.enable");
+    String feedData = "NONE";
+    if (feedEnabled) {
+        feedData = "ALL:" + ConfigurationManager.getProperty("webui.feed.formats");
+    }
+    
+%>
+<dspace:layout locbar="nolink" titlekey="jsp.home.title" feedData="<%= feedData%>">
+ 
+    <div class="row">
+      Đang xây dựng...
+	</div>
+</dspace:layout>
