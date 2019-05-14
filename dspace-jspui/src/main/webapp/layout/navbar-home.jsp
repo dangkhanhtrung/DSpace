@@ -54,7 +54,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
   <div class="container py-2 px-0" style="height: 61px;border-bottom: 1px solid lightgray;"><a href="/jspui" class="navbar-brand" style="
-    display: flex;
+    display: flex;text-transform: uppercase;
 "><img src="/jspui/static/custom/images/logo.png" alt="logo"><span class="d-none d-sm-block ml-3">Cơ sở dữ liệu thông tin<br> khoa học công nghệ quốc gia</span></a> <button type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary"
       aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
     <div id="navbar-primary" class="collapse navbar-collapse" style="
