@@ -153,7 +153,6 @@ public class DefaultDisplayStrategy extends ASimpleDisplayStrategy
                 }
             }
 
-            System.out.println("SB: " + sb.toString());
         }
         if (truncated)
         {
@@ -173,7 +172,6 @@ public class DefaultDisplayStrategy extends ASimpleDisplayStrategy
             metadata = (emph ? "<strong>" : "") + sb.toString()
             + (emph ? "</strong>" : "");
         }
-        System.out.println("Metadata: " + metadata);
         return metadata;
     }
 

@@ -143,7 +143,7 @@
 
                         <div class="form-group">
                             <div class="input-group input-group-alternative">
-                                <input class="form-control" placeholder="search ..." type="text" size="50" id="query" name="query" value="<%= (query == null ? "" : Utils.addEntities(query))%>">
+                                <input class="form-control" placeholder="<fmt:message key="fds.search.placeholder"/>" type="text" size="50" id="query" name="query" value="<%= (query == null ? "" : Utils.addEntities(query))%>">
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa fa-search"></i></span>
                                 </div>

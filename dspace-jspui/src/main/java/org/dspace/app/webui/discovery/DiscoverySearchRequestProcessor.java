@@ -309,8 +309,6 @@ public class DiscoverySearchRequestProcessor implements SearchRequestProcessor {
 					resultsListComm.add((Community) dso);
 				} else if (dso instanceof BrowsableDSpaceObject) {
 					List<DSpaceObject> currList = resultsListOther.get(dso.getType());
-					System.out.println("DSpace object type: " + dso.getType());
-					System.out.println("DSpace meta value: " + dso.getMetadata("crispatents", "patentsholders", "patentsholdersdisplayName", null));
 					if (currList != null) {
 						currList.add(new BrowseDSpaceObject(context, (BrowsableDSpaceObject) dso));
 					} else {
