@@ -181,7 +181,7 @@
                 <c:if test="${!empty addModeType && addModeType=='display'}">
                     <a class="btn btn-default" href="<%= request.getContextPath() %>/cris/tools/rp/editDynamicData.htm?id=${researcher.id}&anagraficaId=${researcher.dynamicField.id}<c:if test='${!empty tabIdForRedirect}'>&tabId=${tabIdForRedirect}</c:if>"><i class="fa fa-edit"></i> Edit Page</a>
                 </c:if>
-                <button style="width: 112px;text-align: left;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <button style="width: 110px;text-align: left;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-cog"></i> select
                 </button>
                 <ul class="dropdown-menu" role="menu">

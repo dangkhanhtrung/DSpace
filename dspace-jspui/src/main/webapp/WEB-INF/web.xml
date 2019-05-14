@@ -157,6 +157,11 @@
   
   <!-- Servlets -->
 
+ <servlet>
+          <servlet-name>page</servlet-name>
+          <servlet-class>org.dspace.app.webui.servlet.PageView</servlet-class>
+  </servlet>
+  
   <servlet>
     <servlet-name>authorize</servlet-name>
     <servlet-class>org.dspace.app.webui.servlet.admin.AuthorizeAdminServlet</servlet-class>
@@ -520,7 +525,10 @@
                 <servlet-name>browse</servlet-name>
                 <url-pattern>/browse</url-pattern>
         </servlet-mapping>
-
+<servlet-mapping>
+                <servlet-name>page</servlet-name>
+                <url-pattern>/page/*</url-pattern>
+        </servlet-mapping>
         <servlet-mapping>
                 <servlet-name>browsewithdrawn</servlet-name>
                 <url-pattern>/dspace-admin/withdrawn</url-pattern>

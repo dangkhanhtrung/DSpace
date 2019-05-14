@@ -25,7 +25,8 @@ jQuery(document).ready(function ($) {
             crisDoTps: [],
             filters: [],
             filterIndex: 0,
-            filterQuery: []
+            filterQuery: [],
+            eventsData: []
         },
         created: function () {
             var vm = this;
@@ -43,9 +44,55 @@ jQuery(document).ready(function ($) {
                         filterquery: params.get("filter_value_" + key)
                     });
                 }
+                console.log('uri', uri)
+                axios.get('/rest/search?q=resourcetype_group:crisevents')
+                .then(function (response) {
+                  // handle success
+                  vm.eventsData = response.data.response.docs
+                  console.log(vm.eventsData);
+                  if (vm.eventsData.length > 0) {
+                	  setTimeout(function() {
+                		  $('.events-slider').slick({
+        	              		autoplay: true,
+        	              		slidesToShow: 1,
+        	              		slidesToScroll: 1,
+        	              		arrows: true,
+        	              		dots: true,
+        	              		fade: true
+        	              	});
+                	  }, 0);
+                	  
+                  }
+	              	
+                })
+                .catch(function (error) {
+                  // handle error
+                  console.log(error);
+                })
+                .finally(function () {
+                  // always executed
+                });
             })
         },
         methods: {
+        	doDetailEvent: function (item) {
+        		console.log(item)
+        		console.log('/jspui/cris/events/' + item['cris-id'])
+        		alert(123)
+        		// window.location.href = '/jspui/cris/events/' + item['cris-id']
+        	},
+        	processImage: function (eventsimage) {
+        		let image = 'http://placehold.it/1200x768';
+        		if (eventsimage !== undefined) {
+        			
+        			const [a1, a2, a3, a4, a5, a6, a7] = eventsimage[0].split('|||')
+        			
+        			image = '/jspui/cris/do/fileservice/' + a7 + '/?filename=' + a4 + '.' + a5
+        			
+        		}
+        		console.log('image', image)
+        		return image;
+        	},
             processFilters: function (data, index) {
                 console.log('index' + index);
                 if (data === '+') {

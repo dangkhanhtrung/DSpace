@@ -53,8 +53,8 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
-  <div class="container py-2" style="height: 61px;border-bottom: 1px solid lightgray;"><a href="/jspui" class="navbar-brand" style="
-    display: flex;
+  <div class="container py-2 px-0" style="height: 61px;border-bottom: 1px solid lightgray;"><a href="/jspui" class="navbar-brand" style="
+    display: flex;text-transform: uppercase;
 "><img src="/jspui/static/custom/images/logo.png" alt="logo"><span class="d-none d-sm-block ml-3">Cơ sở dữ liệu thông tin<br> khoa học công nghệ quốc gia</span></a> <button type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary"
       aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
     <div id="navbar-primary" class="collapse navbar-collapse" style="
@@ -74,19 +74,55 @@
     text-align: right;
     width: 100%;
 ">
-        <li class="nav-item "><a href="/jspui" class="nav-link">
+        <li class="nav-item "><a href="<%= request.getContextPath()%>" class="nav-link">
                             Trang chủ
                         </a></li>
-        <li class="nav-item "><a href="#" class="nav-link">
+        <li class="nav-item "><a href="<%= request.getContextPath()%>/page/gioi-thieu.jsp" class="nav-link">
                             Giới thiệu
                         </a></li>
-        <li class="nav-item "><a href="#" class="nav-link">
-                            Hỏi đáp
-                        </a></li>
-        <li class="nav-item "><a href="#" class="nav-link">
-                           Liên hệ
-                        </a></li>
-        <li class="nav-item"><a href="/jspui/mydspace" class="nav-link">Đăng nhập</a></li>
+        <li class="nav-item dropdown">
+             <a class="nav-link" href="#" id="navbar-primary_dropdown_1_report" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Báo cáo
+             </a>
+             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1_report">
+
+                 <a class="dropdown-item" href="<%= request.getContextPath()%>/page/report-01.jsp">
+						CÔNG BỐ KHOA HỌC VÀ CÔNG NGHỆ
+				</a>
+				<a class="dropdown-item" href="<%= request.getContextPath()%>/page/report-02.jsp">
+						NHIỆM VỤ KHOA HỌC CÔNG NGHỆ
+				</a>
+				<a class="dropdown-item" href="<%= request.getContextPath()%>/page/report-03.jsp">
+						SỐ TỔ CHỨC KHOA HỌC VÀ CÔNG NGHỆ
+				</a>
+				<a class="dropdown-item" href="<%= request.getContextPath()%>/page/report-04.jsp">
+						SỐ NGƯỜI TRONG CÁC TỔ CHỨC KHOA HỌC VÀ CÔNG NGHỆ 
+				</a>
+             </div>
+         </li>
+         <%
+             if (user != null) {
+         %>
+         <li class="nav-item dropdown">
+             <a class="nav-link" href="#" id="navbar-primary_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <i class="fa fa-user" aria-hidden="true"></i>
+             </a>
+             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1">
+
+                 <a class="dropdown-item" href="<%= request.getContextPath()%>/mydspace"><fmt:message key="jsp.layout.navbar-default.users"/></a>
+                 <a class="dropdown-item" href="<%= request.getContextPath()%>/subscribe"><fmt:message key="jsp.layout.navbar-default.receive"/></a>
+                 <a class="dropdown-item" href="<%= request.getContextPath()%>/profile"><fmt:message key="jsp.layout.navbar-default.edit"/></a>
+                 <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin"><fmt:message key="jsp.administer"/></a>
+                 <div class="dropdown-divider"></div>
+                 <a class="dropdown-item" href="<%= request.getContextPath()%>/logout">Đăng xuất</a>
+             </div>
+         </li>
+
+         <%
+         } else {
+         %>
+        	<li class="nav-item"><a href="/jspui/mydspace" class="nav-link">Đăng nhập</a></li>
+        <%} %>
       </ul>
     </div>
   </div>

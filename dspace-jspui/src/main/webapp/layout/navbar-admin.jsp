@@ -58,29 +58,24 @@
 
 %>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-    	<a class="navbar-brand" href="<%= request.getContextPath()%>">Trang chủ</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-primary">
-            <div class="navbar-collapse-header">
-                <div class="row">
-                	<div class="col-6 collapse-brand">
-                        <a href="<%= request.getContextPath()%>">
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <div class="container py-2 px-0" style="height: 61px;border-bottom: 1px solid lightgray;"><a href="/jspui" class="navbar-brand" style="
+    display: flex;text-transform: uppercase;
+"><img src="/jspui/static/custom/images/logo.png" alt="logo"><span class="d-none d-sm-block ml-3">Cơ sở dữ liệu thông tin<br> khoa học công nghệ quốc gia</span></a> <button type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary"
+      aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+    <div id="navbar-primary" class="collapse navbar-collapse" style="
+    text-align: right;
+    float: right;
+">
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand"><a href="/jspui">
                             Trang chủ
-                        </a>
-                    </div>
-                    <div class="col-6 collapse-close">
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <ul class="navbar-nav">
+                        </a></div>
+          <div class="col-6 collapse-close"><button type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span></span> <span></span></button></div>
+        </div>
+      </div>
+  <ul class="navbar-nav">
 
             	<li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbar-primary_dropdown_1_admin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -170,6 +165,6 @@
                 }
                 %>
             </ul>
-        </div>
     </div>
+  </div>
 </nav>
