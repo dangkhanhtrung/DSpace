@@ -62,12 +62,15 @@
 
         <dspace:layout title="${entity.name}">
 
-            <div id="content">
+            <div id="content" class="detail_view">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-inline">
                             <h1><fmt:message key="jsp.layout.project.title-first" />${entity.name}</h1>
-                            <div class="form-group">
+                            
+                            <hr/>
+                        </div> 
+                        <div class="form-group">
 
                                 <%
                                 if (isAdmin) {
@@ -91,8 +94,6 @@
                                 }
                                 %>
                             </div>	
-                            <hr/>
-                        </div> 
                     </div>
                 </div>
 
