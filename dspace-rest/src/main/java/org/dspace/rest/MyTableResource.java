@@ -96,7 +96,7 @@ public class MyTableResource extends Resource
     {
         JSONObject results = new JSONObject();
 
-        results = ElasticQueryWrapUtil.query(q, sort, rows);
+        results = ElasticQueryWrapUtil.query(q);
 
         return results.toString();
     }
