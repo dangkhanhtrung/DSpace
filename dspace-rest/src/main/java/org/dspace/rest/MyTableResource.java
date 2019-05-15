@@ -91,7 +91,7 @@ public class MyTableResource extends Resource
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getAllCrisDoTp(@QueryParam("q") String q, @QueryParam("sort") String sort, @QueryParam("rows") String rows, @Context HttpHeaders headers, @Context HttpServletRequest request)
+    public String getAllCrisDoTp(@QueryParam("q") String q, @Context HttpHeaders headers, @Context HttpServletRequest request)
             throws Exception
     {
         JSONObject results = new JSONObject();
