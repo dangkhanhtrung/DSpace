@@ -758,3 +758,10 @@ body .h1, body h1 {
 body .container.fullheight #content {
     padding: 0;
 }
+
+body .detail_view .viewnested {
+	display: none !important;
+}
+body .container + .container .alert-info {
+    display: none !important;
+}

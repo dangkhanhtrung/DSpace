@@ -63,7 +63,7 @@
 
         <dspace:layout title="${entity.name}">
 
-            <div id="content">
+            <div id="content" class="detail_view">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-inline">
