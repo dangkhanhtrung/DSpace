@@ -188,7 +188,8 @@
                      			fvalue.getAuthorityKey().equalsIgnoreCase("crisstandards") ||
                      			fvalue.getAuthorityKey().equalsIgnoreCase("crispatents") ||
                      			fvalue.getAuthorityKey().equalsIgnoreCase("orgunits") ||
-                     			fvalue.getAuthorityKey().equalsIgnoreCase("fundings")) {
+                     			fvalue.getAuthorityKey().equalsIgnoreCase("fundings") ||
+                     			fvalue.getAuthorityKey().equalsIgnoreCase("crisawards")) {
                     %>
 				<div class="link-wrapper col-6 col-md-3 col-xl-auto flex-xl-grow-1 <%=fvalue.getAuthorityKey() %>">
 					<a href="<%= request.getContextPath()

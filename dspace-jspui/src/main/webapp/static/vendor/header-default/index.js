@@ -44,7 +44,6 @@ jQuery(document).ready(function ($) {
                         filterquery: params.get("filter_value_" + key)
                     });
                 }
-                console.log('uri', uri)
                 axios.get('/rest/search?q=resourcetype_group:crisevents')
                 .then(function (response) {
                   // handle success
@@ -76,10 +75,7 @@ jQuery(document).ready(function ($) {
         },
         methods: {
         	doDetailEvent: function (item) {
-        		console.log(item)
-        		console.log('/jspui/cris/events/' + item['cris-id'])
-        		alert(123)
-        		// window.location.href = '/jspui/cris/events/' + item['cris-id']
+        		
         	},
         	processImage: function (eventsimage) {
         		let image = 'http://placehold.it/1200x768';
@@ -147,6 +143,24 @@ jQuery(document).ready(function ($) {
                 var location = params.get("location");
                 var search = window.location.origin + window.location.pathname + '?location=' + location;
                 window.location.href = search;
+            },
+            loadPage: function (url) {
+            	var vm = this
+            	axios.get(url)
+                .then(function (response) {
+                	console.log(response.data)
+                	var orgCon = document.getElementById("orgcard")
+                	if (orgCon !== null && orgCon !== undefined) {
+                		orgCon.innerHTML = response.data
+                	}
+                })
+                .catch(function (error) {
+                  // handle error
+                  console.log(error);
+                })
+                .finally(function () {
+                  // always executed
+                });
             }
         }
     })
