@@ -698,6 +698,13 @@ body .navbar-brand img {
         		    background-image: url("/jspui/static/custom/images/icon-6-white.png");
     				background-color: #00499c;
         	}
+        	.home-theme #content .sub-menu .link-wrapper.crisawards {
+        		    background-image: url("/jspui/static/custom/images/icon-6-blue.png");
+        	}
+        	.home-theme #content .sub-menu .link-wrapper.crisawards:hover {
+        		    background-image: url("/jspui/static/custom/images/icon-6-white.png");
+    				background-color: #00499c;
+        	}
         	.home-theme #content .sub-menu .link-wrapper.crisstandards {
         		    background-image: url("/jspui/static/custom/images/icon-7-blue.png");
         	}
@@ -759,9 +766,13 @@ body .container.fullheight #content {
     padding: 0;
 }
 
-body .detail_view .viewnested {
+body .detail_view .viewnested .spandatabind {
 	display: none !important;
 }
 body .container + .container .alert-info {
     display: none !important;
+}
+body #orgcard > div {
+	    width: 100% !important;
+    max-width: 100% !important;
 }

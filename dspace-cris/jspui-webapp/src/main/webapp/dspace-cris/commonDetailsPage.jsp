@@ -95,7 +95,8 @@
 
                     </c:when>
                     <c:otherwise>
-                        <a href="${tablink}">
+                    <!-- ${tablink} -->
+                        <a href="javascript:;" @click="loadPage('${tablink}')">
                             <c:if test="${!empty area.ext}">
                                 <img style="width: 16px;vertical-align: middle;" border="0"
                                      src="<%=request.getContextPath()%>/cris/researchertabimage/${area.id}"
