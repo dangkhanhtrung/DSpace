@@ -131,7 +131,7 @@
         <div class="col-md-12 sm-12 my-4">
             <form id="searchglobalprocessor" name="searchglobalprocessor" class="col-md-6" action="<%= request.getContextPath()%>/simple-search" method="get" style="margin: 0 auto;">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="query" placeholder="Search term...">
+                    <input type="text" class="form-control" name="query" placeholder="Nhập nội dung tìm kiếm...">
                     <span class="input-group-btn">
                         <button class="btn btn-primary" type="submit" style="
     border-radius: 0;
@@ -142,7 +142,7 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 ">
-                            <span id="search_concept">All</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><span class="caret"></b>
+                            <span id="search_concept">Tất cả</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><span class="caret"></b>
                         </button>
                         <ul class="dropdown-menu menu-global-processor" role="menu">
 
