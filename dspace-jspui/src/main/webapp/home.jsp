@@ -205,17 +205,19 @@
 							}
 						}
                      	for (FacetResult fvalue : facetGlobalSort) {
+                            if (fvalue != null) {
                     %>
-				<div class="link-wrapper col-6 col-md-3 col-xl-auto flex-xl-grow-1 <%=fvalue.getAuthorityKey() %>">
+				<div class="link-wrapper col-6 col-md-3 col-xl-auto flex-xl-grow-1 <%= (fvalue != null ? fvalue.getAuthorityKey() : "") %>">
 					<a href="<%= request.getContextPath()
 			                                    + "/cris/explore/"
-			                            + URLEncoder.encode(fvalue.getAuthorityKey(), "UTF-8")%>"
-			                                   title="<fmt:message key="jsp.search.facet.narrow"><fmt:param><%=fvalue.getDisplayedValue()%></fmt:param></fmt:message>">
-						<span><%= fvalue.getCount()%></span>
-						<%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 36)%>
+			                            + URLEncoder.encode(fvalue != null ? fvalue.getAuthorityKey() : "", "UTF-8")%>"
+			                                   title="<fmt:message key="jsp.search.facet.narrow"><fmt:param><%=(fvalue != null ? fvalue.getDisplayedValue() : "")%></fmt:param></fmt:message>">
+						<span><%= (fvalue != null ? fvalue.getCount() : "")%></span>
+						<%= StringUtils.abbreviate((fvalue != null ? fvalue.getDisplayedValue() : ""), 36)%>
 					</a>
 				</div>
-					<% } %>
+                    <% } %>
+                    <% } %>
 					<% } %>
 			</div>
 			
