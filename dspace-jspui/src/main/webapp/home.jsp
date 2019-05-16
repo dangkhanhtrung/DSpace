@@ -15,6 +15,8 @@
   -    recent.submissions - RecetSubmissions
 --%>
 
+<%@page import="java.util.Arrays"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="org.dspace.discovery.configuration.DiscoveryRecentSubmissionsConfiguration"%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
@@ -124,7 +126,8 @@
     }
     
 %>
-
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
 <dspace:layout locbar="nolink" titlekey="jsp.home.title" feedData="<%= feedData%>">
  
     <div class="row">
@@ -181,15 +184,27 @@
 			<div class="sub-menu row no-gutters">
 				<% if (facetGlobal != null && facetGlobal.size() > 0) {%>
 					<%
-                     	for (FacetResult fvalue : facetGlobal) {
-                     	if ( fvalue.getAuthorityKey().equalsIgnoreCase("publications") ||
-                     			fvalue.getAuthorityKey().equalsIgnoreCase("researcherprofiles") ||
-                     			fvalue.getAuthorityKey().equalsIgnoreCase("cristechs") ||
-                     			fvalue.getAuthorityKey().equalsIgnoreCase("crisstandards") ||
-                     			fvalue.getAuthorityKey().equalsIgnoreCase("crispatents") ||
-                     			fvalue.getAuthorityKey().equalsIgnoreCase("orgunits") ||
-                     			fvalue.getAuthorityKey().equalsIgnoreCase("fundings") ||
-                     			fvalue.getAuthorityKey().equalsIgnoreCase("crisawards")) {
+						List<FacetResult> facetGlobalSort = new ArrayList<FacetResult>(Arrays.asList(new FacetResult[8]));
+						for (FacetResult fvalue : facetGlobal) {
+							if (fvalue.getAuthorityKey().equalsIgnoreCase("researcherprofiles")) {
+								facetGlobalSort.set(0, fvalue);
+							} else if (fvalue.getAuthorityKey().equalsIgnoreCase("orgunits")) {
+								facetGlobalSort.set(1, fvalue);
+							} else if (fvalue.getAuthorityKey().equalsIgnoreCase("fundings")) {
+								facetGlobalSort.set(2, fvalue);
+							} else if (fvalue.getAuthorityKey().equalsIgnoreCase("publications")) {
+								facetGlobalSort.set(3, fvalue);
+							} else if (fvalue.getAuthorityKey().equalsIgnoreCase("crispatents")) {
+								facetGlobalSort.set(4, fvalue);
+							} else if (fvalue.getAuthorityKey().equalsIgnoreCase("crisstandards")) {
+								facetGlobalSort.set(5, fvalue);
+							} else if (fvalue.getAuthorityKey().equalsIgnoreCase("cristechs")) {
+								facetGlobalSort.set(6, fvalue);
+							} else if (fvalue.getAuthorityKey().equalsIgnoreCase("crisawards")) {
+								facetGlobalSort.set(7, fvalue);
+							}
+						}
+                     	for (FacetResult fvalue : facetGlobalSort) {
                     %>
 				<div class="link-wrapper col-6 col-md-3 col-xl-auto flex-xl-grow-1 <%=fvalue.getAuthorityKey() %>">
 					<a href="<%= request.getContextPath()
@@ -200,7 +215,7 @@
 						<%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 36)%>
 					</a>
 				</div>
-					<% } } %>
+					<% } %>
 					<% } %>
 			</div>
 			
@@ -247,8 +262,41 @@
     </div>
     <div class="row mt-4">
     	<div class="col-md-7 px-0">
-                    <img src="/jspui/static/custom/images/report_todo.png" />
-                </div>
+    		<div id="chart_div" style="
+    margin-left: -85px;
+    margin-top: -50px;
+"></div>
+    		<script>
+    		google.charts.load('current', {packages: ['corechart', 'bar']});
+    		google.charts.setOnLoadCallback(drawStacked);
+
+    		function drawStacked() {
+    		      var data = google.visualization.arrayToDataTable([
+    		        ['', 'Có toàn văn', 'Không toàn văn'],
+    		        ['2010', 5000, 20000],
+    		        ['2011', 6000, 15000],
+    		        ['2012', 7000, 10000],
+    		        ['2013', 3000, 13000],
+    		        ['2014', 4000, 18000],
+    		        ['2015', 8000, 20000],
+    		        ['2016', 4500, 11000],
+    		        ['2017', 5600, 17800],
+    		        ['2018', 6600, 9900]
+    		      ]);
+
+    		      var options = {
+    		        width: 800,
+    		        height: 400,
+    		        legend: { position: 'bottom', maxLines: 2 },
+    		        bar: { groupWidth: '80%' },
+    		        isStacked: true,
+    		      };
+
+    		      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+    		      chart.draw(data, options);
+    		    }
+    		</script>
+        </div>
                 <%
                     if (submissions != null && submissions.count() > 0) {
                 %>
