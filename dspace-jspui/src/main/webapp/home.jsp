@@ -161,7 +161,7 @@
                             %>
 
                             <li class="menu-global-processor">
-                                <a href="#"
+                                <a href="/jspui/simple-search?query=&location=<%=fvalue.getAuthorityKey() %>"
                                    title="<%=fvalue.getAuthorityKey()%>"><span class="badge pull-right"><%=fvalue.getCount()%></span> <%=StringUtils.abbreviate(fvalue.getDisplayedValue(), 36)%> &nbsp;&nbsp;&nbsp; <span class="badge invisible"><%=fvalue.getCount()%></span> </a></li>
                                 <%
                                                     }
@@ -263,7 +263,7 @@
     <div class="row mt-4">
     	<div class="col-md-7 px-0">
     		<div id="chart_div" style="
-    margin-left: -85px;
+    margin-left: -110px;
     margin-top: -50px;
 "></div>
     		<script>
@@ -281,7 +281,7 @@
     		        ['2015', 8000, 20000],
     		        ['2016', 4500, 11000],
     		        ['2017', 5600, 17800],
-    		        ['2018', 6600, 9900]
+    		        ['2018', 6600, 13123]
     		      ]);
 
     		      var options = {

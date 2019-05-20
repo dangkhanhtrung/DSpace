@@ -152,7 +152,7 @@
                     </div>
 
                     <div class="col-sm-3 col-12">
-                        <a class="btn btn-default" href="<%= request.getContextPath() + "/global-search"%>"><fmt:message key="jsp.search.general.new-search" /></a>	
+                        <button class="btn btn-default" type="submit" id="main-query-submit"><fmt:message key="jsp.search.general.new-search" /></button>	
                     </div>
                 </div>
                 

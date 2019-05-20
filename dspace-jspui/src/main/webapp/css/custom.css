@@ -776,3 +776,6 @@ body #orgcard > div {
 	    width: 100% !important;
     max-width: 100% !important;
 }
+body svg > rect {
+	    fill: transparent;
+}
