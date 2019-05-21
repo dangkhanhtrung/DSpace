@@ -527,7 +527,7 @@ public class DCDate
         	
         	if (textSplit.length > 1) {
         		
-        		return textSplit[0] + " " + getDayUTC() + ", " + textSplit[1] + getYearUTC();
+        		return textSplit[0] + " " + getDayUTC() + ", " + textSplit[1] + " " + getYearUTC();
         		
         	} else {
         		
