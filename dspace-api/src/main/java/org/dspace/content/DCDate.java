@@ -521,26 +521,42 @@ public class DCDate
         if (monthName.length() > 2 && !locale.getDisplayLanguage().equalsIgnoreCase("Vietnamese"))
             monthName = monthName.substring(0, 3);
 
-        System.out.println("DCDate.displayLocalDate()" + monthName);
-        System.out.println("DCDate.getDayUTC()()" + getDayUTC());
-        System.out.println("DCDate.getYearUTC()()" + getYearUTC());
-        // display date and time
-        if (showTime && granularity == DateGran.TIME)
-        {
-            return String.format("%d-%s-%4d %02d:%02d:%02d", getDayUTC(), monthName, getYearUTC(), getHourUTC(), getMinuteUTC(), getSecondUTC());
+        if (locale.getDisplayLanguage().equalsIgnoreCase("Vietnamese")) {
+        	
+        	String[] textSplit = monthName.split(" ");
+        	
+        	if (textSplit.length > 1) {
+        		
+        		return textSplit[0] + " " + getDayUTC() + ", " + textSplit[1] + getYearUTC();
+        		
+        	} else {
+        		
+        		return getDayUTC() + " - " + getYearUTC();
+        		
+        	}
+        	
+        } else {
+        	
+        	// display date and time
+            if (showTime && granularity == DateGran.TIME)
+            {
+                return String.format("%d-%s-%4d %02d:%02d:%02d", getDayUTC(), monthName, getYearUTC(), getHourUTC(), getMinuteUTC(), getSecondUTC());
+            }
+            else if (granularity == DateGran.YEAR)
+            {
+                return String.format("%4d", getYearUTC());
+            }
+            else if (granularity == DateGran.MONTH)
+            {
+                return String.format("%s-%4d", monthName, getYearUTC());
+            }
+            else
+            {
+                return String.format("%d-%s-%4d", getDayUTC(), monthName, getYearUTC());
+            }
+        	
         }
-        else if (granularity == DateGran.YEAR)
-        {
-            return String.format("%4d", getYearUTC());
-        }
-        else if (granularity == DateGran.MONTH)
-        {
-            return String.format("%s-%4d", monthName, getYearUTC());
-        }
-        else
-        {
-            return String.format("%d-%s-%4d", getDayUTC(), monthName, getYearUTC());
-        }
+        
     }
 
     /**
