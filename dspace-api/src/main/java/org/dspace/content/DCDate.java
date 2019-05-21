@@ -519,6 +519,7 @@ public class DCDate
     {
           // forcibly truncate month name to 3 chars -- XXX FIXME?
         String monthName = getMonthName(getMonthUTC(), locale);
+        System.out.println("DCDate.displayUTCDate()" + locale.getDisplayLanguage());
         if (monthName.length() > 2)
             monthName = monthName.substring(0, 3);
 
