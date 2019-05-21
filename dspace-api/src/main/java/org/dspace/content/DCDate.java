@@ -494,7 +494,7 @@ public class DCDate
         String monthName = getMonthName(getMonth(), locale);
         if (monthName.length() > 2 && !locale.getDisplayLanguage().equalsIgnoreCase("Vietnamese"))
             monthName = monthName.substring(0, 3);
-
+        
         // display date and time
         if (showTime && granularity == DateGran.TIME)
         {
@@ -521,6 +521,9 @@ public class DCDate
         if (monthName.length() > 2 && !locale.getDisplayLanguage().equalsIgnoreCase("Vietnamese"))
             monthName = monthName.substring(0, 3);
 
+        System.out.println("DCDate.displayLocalDate()" + monthName);
+        System.out.println("DCDate.getDayUTC()()" + getDayUTC());
+        System.out.println("DCDate.getYearUTC()()" + getYearUTC());
         // display date and time
         if (showTime && granularity == DateGran.TIME)
         {
