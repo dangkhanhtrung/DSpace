@@ -356,8 +356,8 @@ j(document).ready(function() {
 
     		<form target="blank" class="form-inline"  id="exportform" action="<%= request.getContextPath() %>/references">
 
-                    <div id="export-biblio-panel" class="alert alert-info mt-3" style="width: 100%;    margin-left: 0px;">
-                    <div class="row px-3">
+                    <div id="export-biblio-panel" style="width: 100%;    margin-left: 0px;">
+                    <div class="row px-3 mt-3">
                     <%
                         if (cfg == null)
                         {
@@ -366,7 +366,7 @@ j(document).ready(function() {
                         String[] cfgSplit = cfg.split("\\s*,\\s*");
                         for (String format : cfgSplit) {
                     %>
-                    <div class="custom-control custom-radio mb-2 col-2">
+                    <div class="custom-control custom-radio mb-2 pr-2">
                         <c:set var="format"><%= format%></c:set>
                         <input class="custom-control-input" id="${format}" type="radio" name="format" value="${format}" <c:if test="${format=='bibtex'}"> checked="checked"</c:if>/>
                         <label for="${format}" class="custom-control-label">
@@ -374,15 +374,21 @@ j(document).ready(function() {
                         </label>
                     </div>
                     <% }%>
-                    <div class="custom-control custom-checkbox mb-2">
+                    <div class="custom-control custom-checkbox mb-2 pr-2">
                         <input type="checkbox" id="email" name="email" value="true" class="custom-control-input">
                         <label for="email" class="custom-control-label">
                             <fmt:message key="exportcitation.option.email" />
                         </label>
                     </div>
-                    </div>
+                    <div class="custom-control custom-checkbox mb-2 px-0">
                         <input type="hidden" name="item_id" value="<%= item.getID() %>" />
-                    <input id="export-submit-button" class="btn btn-default" type="submit" name="submit_export" value="<fmt:message key="exportcitation.option.submitexport" />"/>
+                    <input style="
+								    line-height: 5px;
+								    font-size: 12px;
+								" id="export-submit-button" class="btn btn-default" type="submit" name="submit_export" value="<fmt:message key="exportcitation.option.submitexport" />"/>
+                    </div>
+                    </div>
+                        
                 </div>
                 
     		</form>

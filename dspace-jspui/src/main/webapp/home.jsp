@@ -127,7 +127,6 @@
     
 %>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  
 <dspace:layout locbar="nolink" titlekey="jsp.home.title" feedData="<%= feedData%>">
  
     <div class="row">
@@ -269,9 +268,11 @@
     margin-top: -50px;
 "></div>
     		<script>
+
+			document.getElementById('nav__id__expose').style.display = "none";
     		google.charts.load('current', {packages: ['corechart', 'bar']});
     		google.charts.setOnLoadCallback(drawStacked);
-
+			
     		function drawStacked() {
     		      var data = google.visualization.arrayToDataTable([
     		        ['', 'Có toàn văn', 'Không toàn văn'],

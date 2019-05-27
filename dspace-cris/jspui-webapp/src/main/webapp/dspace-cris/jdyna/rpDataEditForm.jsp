@@ -288,7 +288,7 @@
                                             </div>
                                         </spring:bind>
                                         <c:choose>
-                                            <c:when test="${admin}">
+                                            <c:when test="${ 1 != 1 }">
                                                 <dyna:text labelKey="jsp.cris.detail.info.sourceid" propertyPath="anagraficadto.sourceID" visibility="false"/>
                                                 <div class="dynaClear">&nbsp;</div>			
                                                 <dyna:text labelKey="jsp.cris.detail.info.sourceref" propertyPath="anagraficadto.sourceRef" visibility="false"/>

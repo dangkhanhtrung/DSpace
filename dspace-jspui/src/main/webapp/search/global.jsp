@@ -291,7 +291,9 @@
                                                 + "&amp;location=" + URLEncoder.encode(otypeSensitive, "UTF-8")%>">
                             <fmt:message key="<%= messageAllGlobalType%>">
                                 <fmt:param><%= numResultsByType.get(otypeSensitive)%></fmt:param>
-                            </fmt:message></a>                
+                            </fmt:message>
+                            ( <%=numResultsByType.get(otypeSensitive) %> )
+                        </a>                
                     </div>
                 <% } %>
             <div class="list-item">

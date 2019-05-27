@@ -120,7 +120,7 @@
                         <div class="form-inline">
                             <div class="form-group">
                                 <%
-                        if (isAdmin) {
+                        if (1==1) {
                                 %>
                                 <fmt:message key="jsp.cris.detail.info.sourceid.none" var="i18nnone" />
                                 <div class="row cris-record-info" style="width: 100%;">

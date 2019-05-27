@@ -258,13 +258,18 @@
             }
             body .table th {
                 color: #162b4d;
-                border-color: #f4f5f7;
-                background-color: #f4f5f7;
-                position: relative;
-                padding: 8px 1rem;
-                border: .0625rem solid #dee2e6;
-                vertical-align: baseline;
+			    border-color: #fff;
+			    background-color: #fff;
+			    position: relative;
+			    padding: 8px 1rem;
+			    border: .0625rem solid #dee2e6;
+			    vertical-align: baseline;
+			    border-top: 2px solid #1465c0;
 
+            }
+            body hr {
+           	    margin-top: 1rem !important;
+   				margin-bottom: 1rem !important;
             }
             body .table th > a {
                 margin-left: -10px;
@@ -290,11 +295,6 @@
             }
             body .page-item .page-link {
                 margin: 0;
-            }
-            body .pagination,
-            body .discovery-result-results {
-                float: right;
-                margin-bottom: 15px;
             }
             body .discovery-result-results {
                 width: 100%;
@@ -491,7 +491,20 @@
             .media.altmetric {
                 background: white;
                 color: #c7254e;
-                border: 3px solid #c7254e;
+                border: 1px solid #c7254e;
+                    margin: 10px 0;
+            }
+            .media.altmetric .media-heading,
+            .altmetric .media-heading {
+                color: #000000;
+            }
+            .container.fullheight > div.row > div > div.well{
+            	display: none;
+            }
+            .altmetric {
+           	    border: 1px solid #4285f4;
+			    border-radius: 6px;
+			    padding: 10px 15px;
             }
             .media > .media-left > i.fa {
                 font-size: 3em;
@@ -509,6 +522,13 @@
             }
             body .custom-radio .custom-control-input~.custom-control-label {
                 justify-content: left;
+                font-size: 13px;
+    			padding-top: 2px;
+            }
+            body .custom-checkbox .custom-control-input~.custom-control-label {
+            	    font-size: 13px;
+				    cursor: pointer;
+				    padding-top: 2px;
             }
             body .media.dedup {
                 background: #C62828;
@@ -778,4 +798,46 @@ body #orgcard > div {
 }
 body svg > rect {
 	    fill: transparent;
+}
+
+ul.list-group__nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  padding: 0 10px;
+}
+
+ul.list-group__nav li {
+  float: left;
+      padding: 0.3rem .4rem;
+}
+
+body ul.list-group__nav li a {
+	    padding: 0;
+    margin: 0 !important;
+}
+
+body ul.list-group__nav li.list-group-item.active {
+	    line-height: unset !important;
+}
+body .form-control {
+	color: #000000;
+}
+body .navbar-nav .nav-item {
+    margin-right: unset !important;
+}
+body #navbar-primary-ccx ul.navbar-nav,
+body #navbar-primary-ccx ul.navbar-nav li {
+	height: 42px;
+    align-items: center;
+}
+body #navbar-primary-ccx ul.navbar-nav li a {
+	    line-height: 40px;
+}
+body #navbar-primary-ccx ul.navbar-nav li.nav-item.active {
+	    background: #29baff;
+}
+body #navbar-primary-ccx ul.navbar-nav li.nav-item.active a {
+	        color: #fff !important;
 }

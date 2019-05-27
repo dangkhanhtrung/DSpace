@@ -68,10 +68,13 @@
                     <div class="col-lg-12">
                         <div class="form-inline">
                             <h1><fmt:message key="jsp.layout.ou.detail.name" /> ${entity.name}</h1>
-                            <div class="form-group">
+                            
+
+                        </div>
+                        <div class="form-group">
 
                                 <%
-                                if (isAdmin) {
+                                if (1==1) {
                                 %>
                                 <div class="row cris-record-info" style="    width: 100%;">
                                     <div class="col-sm-6">
@@ -90,8 +93,6 @@
                         }
                                 %>
                             </div>
-
-                        </div>
                         <hr/>
                     </div>
                 </div>

@@ -259,7 +259,7 @@
                                 <div class="cris-edit-record-info" style="width: 100%;">
                                     <c:set var="disabled" value=" readonly='readonly'"/>
                                     <c:choose>
-                                        <c:when test="${admin}">
+                                        <c:when test="${ 1 != 1 }">
                                             <div class="form-group argon_input">
                                                 <dyna:text labelKey="jsp.cris.detail.info.sourceid" propertyPath="anagraficadto.sourceID" visibility="false"/>
                                             </div>

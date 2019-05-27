@@ -73,7 +73,7 @@
                         <div class="form-group">
 
                                 <%
-                                if (isAdmin) {
+                                if (1==1) {
                                 %>
                                 
                                 <div class="row cris-record-info" style="    width: 100%;">

@@ -35,15 +35,36 @@ jQuery(document).ready(function ($) {
                 var params = new URLSearchParams(uri);
                 var totalQuery = params.get("totalQuery");
                 var location = params.get("location");
+                vm.filters = [];
                 
-                for (var key = 1; key <= totalQuery; key++) {
-                    vm.filters.push({id: key});
+                var indexSearch = 0;
+                for (var key = 1; key <= 20; key++) {
+                	if (params.get("filter_field_" + key) === "" ||
+                			params.get("filter_field_" + key) === null ||
+                			params.get("filter_field_" + key) === undefined) {
+                		break;
+                	} else {
+                		indexSearch = indexSearch + 1;
+                        vm.filters.push({id: key});
+                        vm.filterQuery.push({
+                            filtername: params.get("filter_field_" + key),
+                            filtertype: params.get("filter_type_" + key),
+                            filterquery: params.get("filter_value_" + key)
+                        });
+                	}
+                	
+                }
+                
+                if (params.get("filtername") !== "" && params.get("filtername") !== null && params.get("filtername") !== undefined) {
+                	var indexSearchDo = indexSearch + 1;
+                	vm.filters.push({id: indexSearchDo });
                     vm.filterQuery.push({
-                        filtername: params.get("filter_field_" + key),
-                        filtertype: params.get("filter_type_" + key),
-                        filterquery: params.get("filter_value_" + key)
+                        filtername: params.get("filtername"),
+                        filtertype: params.get("filtertype"),
+                        filterquery: params.get("filterquery")
                     });
                 }
+                
                 axios.get('/rest/search?q=resourcetype_group:crisevents')
                 .then(function (response) {
                   // handle success

@@ -57,6 +57,9 @@
 <%@page import="org.dspace.core.Context" %>
 <%@page import="org.apache.commons.lang.StringUtils"%>
 
+<%@ page import="org.dspace.core.ConfigurationManager"%>
+
+<%@ page import="org.apache.commons.lang.StringUtils"%>
 <%
         int discovery_panel_cols = 12;
         int discovery_facet_cols = 4;
@@ -114,39 +117,39 @@
                             </div>
                         </div>
 
-                        <div class="row" v-for="(item, index) in filters" v-bind:key="index">
-                    <div class="col-sm-9 col-12">
+                       <div class="row" v-for="(item, index) in filters" v-bind:key="index">
+                    	<div class="col-sm-9 col-12">
 
-                        <div class="row">
-                            <div class="col-3">
-                                <select v-model="filterQuery[index]['filtername']" id="filtername" name="filtername">
-                                    <c:forEach var="filter" items="${filters}">
-                                        <c:set var="i18nkey" value="jsp.search.filter.${filter.indexFieldName}" />
-                                        <option value="${filter.indexFieldName}"><fmt:message key="${i18nkey}" /></option>
-                                    </c:forEach>
-                                </select>
-                            </div>
-                            <div class="col-3 px-0">
-                                <select v-model="filterQuery[index]['filtertype']" id="filtertype" name="filtertype">
-                                    <%
-                                        for (String opt : options) {
-                                            String fkey = "jsp.search.filter.op." + Escape.uriParam(opt);
-                                    %><option value="<%= Utils.addEntities(opt)%>"><fmt:message key="<%= fkey%>"/></option><%
-                                        }
-                                    %>
-                                </select>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <div class="input-group input-group-alternative mb-4">
-                                        <input v-model="filterQuery[index]['filterquery']" class="form-control" placeholder="search ..." type="text" id="filterquery" name="filterquery" size="45" required="required">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text"><i class="fa fa-search"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+	                        <div class="row">
+	                            <div class="col-3">
+	                                <select v-model="filterQuery[index]['filtername']" id="filtername" name="filtername">
+	                                    <c:forEach var="filter" items="${filters}">
+	                                        <c:set var="i18nkey" value="jsp.search.filter.${filter.indexFieldName}" />
+	                                        <option value="${filter.indexFieldName}"><fmt:message key="${i18nkey}" /></option>
+	                                    </c:forEach>
+	                                </select>
+	                            </div>
+	                            <div class="col-3 px-0">
+	                                <select v-model="filterQuery[index]['filtertype']" id="filtertype" name="filtertype">
+	                                    <%
+	                                        for (String opt : options) {
+	                                            String fkey = "jsp.search.filter.op." + Escape.uriParam(opt);
+	                                    %><option value="<%= Utils.addEntities(opt)%>"><fmt:message key="<%= fkey%>"/></option><%
+	                                        }
+	                                    %>
+	                                </select>
+	                            </div>
+	                            <div class="col-6">
+	                                <div class="form-group">
+	                                    <div class="input-group input-group-alternative">
+	                                        <input v-model="filterQuery[index]['filterquery']" class="form-control" placeholder="search ..." type="text" id="filterquery" name="filterquery" size="45" required="required">
+	                                        <div class="input-group-append">
+	                                            <span class="input-group-text"><i class="fa fa-search"></i></span>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
                     </div>
                     <div class="col-sm-3 col-12">
                         <div class="row">
@@ -181,28 +184,28 @@
                 <%
                     if (submissions != null && submissions.count() > 0) {
                 %>
-                <div class="col">
+                <div class="col-12">
                     <%@ include file="/dspace-cris/explore/topObjectsRecent.jsp" %>
                 </div>
                 <% } %>
                 <%
                     if (viewed != null && viewed.count() > 0) {
                 %>
-                <div class="col">
+                <div class="col-12">
                     <%@ include file="/dspace-cris/explore/topObjectsViewed.jsp" %>
                 </div>
                 <% } %>
                 <%
                     if (cited != null && cited.count() > 0) {
                 %>
-                <div class="col">
+                <div class="col-12">
                     <%@ include file="/dspace-cris/explore/topObjectsCited.jsp" %>
                 </div>
                 <% } %>
                 <%
                     if (download != null && download.count() > 0) {
                 %>
-                <div class="col">
+                <div class="col-12">
                     <%@ include file="/dspace-cris/explore/topObjectsDownload.jsp" %>
                 </div>
                 <% } %>
