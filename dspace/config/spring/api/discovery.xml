@@ -1209,7 +1209,14 @@
 				<ref bean="searchFilterObjectName" />
 				<ref bean="searchFilterRPDept" />
 				<ref bean="searchFilterRPWorkgroup" />
-				<ref bean="searchFilterRPInterests" />				
+				<ref bean="searchFilterRPInterests" />	
+				<ref bean="searchFilterRPEducations" />	
+				<ref bean="searchFilterRPPosition" />	
+				<ref bean="searchFilterRPDegree" />	
+				<ref bean="searchFilterRPFullName" />	
+				<ref bean="searchFilterRPSex" />	
+				<ref bean="searchFilterRPBirthDay" />	
+				<ref bean="searchFilterRPSubject" />				
 			</list>
 		</property>
 		<!--The sort filters for the discovery search -->
@@ -1880,7 +1887,85 @@
 		<property name="sortOrder" value="COUNT" />
 	</bean>
 
-
+	<!-- binhth -->
+	<bean id="searchFilterRPEducations"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="educations" />
+		<property name="metadataFields">
+			<list>
+				<value>crisrp.educations</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+	</bean>
+	<bean id="searchFilterRPPosition"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="position" />
+		<property name="metadataFields">
+			<list>
+				<value>crisrp.position</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+	</bean>
+	<bean id="searchFilterRPDegree"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="degree" />
+		<property name="metadataFields">
+			<list>
+				<value>crisrp.degree</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+	</bean>
+	<bean id="searchFilterRPFullName"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="fullName" />
+		<property name="metadataFields">
+			<list>
+				<value>crisrp.fullName</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+	</bean>
+	<bean id="searchFilterRPSex"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="sex" />
+		<property name="metadataFields">
+			<list>
+				<value>crisrp.sex</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+	</bean>
+	<bean id="searchFilterRPBirthDay"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="birthDay" />
+		<property name="metadataFields">
+			<list>
+				<value>crisrp.birthDay</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+	</bean>
+	<bean id="searchFilterRPSubject"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="subject" />
+		<property name="metadataFields">
+			<list>
+				<value>crisrp.subject</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+	</bean>
+	<!--  end -->
 	<bean id="searchFilterProjectFunders"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
 		<property name="indexFieldName" value="funders" />
