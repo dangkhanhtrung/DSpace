@@ -523,16 +523,22 @@ public class DCDate
 
         if (locale.getDisplayLanguage().equalsIgnoreCase("Vietnamese")) {
         	
-        	String[] textSplit = monthName.split(" ");
-        	
-        	if (textSplit.length > 1) {
+        	if (getDayUTC() > 0 && getYearUTC() > 0 && getMonthUTC() > 0) {
         		
-        		return textSplit[0] + " " + getDayUTC() + ", " + textSplit[1] + " " + getYearUTC();
+        		return getDayUTC() + " - " + getMonthUTC() + " - " + getYearUTC();
+        		
+        	} else if (getDayUTC() <= 0 && getYearUTC() > 0 && getMonthUTC() > 0) {
+        		
+        		
+        		return getMonthUTC() + " - " + getYearUTC();
+        		
+        	} else if (getDayUTC() > 0 && getYearUTC() > 0 && getMonthUTC() <= 0) {
+        		
+        		
+        		return getDayUTC() + " - __ - " + getYearUTC();
         		
         	} else {
-        		
-        		return getDayUTC() + " - " + getYearUTC();
-        		
+        		return getDayUTC() + " - " + getMonthUTC() + " - " + getYearUTC();
         	}
         	
         } else {
