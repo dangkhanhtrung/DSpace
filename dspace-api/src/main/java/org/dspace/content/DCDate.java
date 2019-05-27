@@ -529,11 +529,9 @@ public class DCDate
         		
         	} else if (getDayUTC() <= 0 && getYearUTC() > 0 && getMonthUTC() > 0) {
         		
-        		
-        		return getMonthUTC() + " - " + getYearUTC();
+        		return "__ - " + getMonthUTC() + " - " + getYearUTC();
         		
         	} else if (getDayUTC() > 0 && getYearUTC() > 0 && getMonthUTC() <= 0) {
-        		
         		
         		return getDayUTC() + " - __ - " + getYearUTC();
         		
