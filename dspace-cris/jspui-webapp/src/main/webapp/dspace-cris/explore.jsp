@@ -125,7 +125,7 @@
 	                                <select v-model="filterQuery[index]['filtername']" id="filtername" name="filtername">
 	                                    <c:forEach var="filter" items="${filters}">
 	                                        <c:set var="i18nkey" value="jsp.search.filter.${filter.indexFieldName}" />
-	                                        <option value="${filter.indexFieldName}"><fmt:message key="${i18nkey}" /></option>
+	                                        <option value="${filter.indexFieldName}"><fmt:message key="${i18nkey.replaceAll('%2E', '.')}" /></option>
 	                                    </c:forEach>
 	                                </select>
 	                            </div>
