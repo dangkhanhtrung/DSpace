@@ -86,7 +86,7 @@
 <!-- 							<property name="extraInfo">
 								<value>crismetrics_wos</value>
 							</property> -->
- 							<property name="num" value="4" />
+ 							<property name="num" value="10" />
 						</bean>
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="dspaceitemsLayoutView" />
@@ -96,9 +96,10 @@
 							<property name="extraInfo">
 								<value>crismetrics_view</value>
 							</property>
-							<property name="num" value="4" />
+							<property name="num" value="10" />
 						</bean>
-<!-- 							<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
+
+<!-- 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="dspaceitemsLayoutView" />
 							<property name="type" value="cited" />
 							<property name="sortField" value="crismetrics_scopus" />
@@ -107,6 +108,8 @@
 							</property>
  							<property name="num" value="10" />
 						</bean>
+-->
+
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="dspaceitemsLayoutView" />
 							<property name="type" value="cited" />
@@ -115,12 +118,22 @@
 							<property name="extraInfo">
 								<value>crismetrics_scopus</value>
 							</property>
-							<property name="num" value="4" />
-						</bean>-->
+							<property name="num" value="10" />
+						</bean>
 					</list>
 				</entry>
 				<entry key="researcherprofiles">
 					<list>
+						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
+							<property name="viewConfiguration" ref="crisrpLayoutView" />
+							<property name="type" value="recentsubmission" />
+							<property name="sortField" value="time_creation_dt" />
+							<property name="order" value="desc" />
+<!-- 							<property name="extraInfo">
+								<value>crismetrics_wos</value>
+							</property> -->
+ 							<property name="num" value="10" />
+						</bean>
 						<bean class="org.dspace.app.webui.cris.components.BrowseProcessor">
 							<property name="browseNames">
 								<list>
@@ -133,6 +146,16 @@
 				</entry>
 				<entry key="orgunits">
 					<list>
+						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
+							<property name="viewConfiguration" ref="crisouLayoutView" />
+							<property name="type" value="recentsubmission" />
+							<property name="sortField" value="time_creation_dt" />
+							<property name="order" value="desc" />
+<!-- 							<property name="extraInfo">
+								<value>crismetrics_wos</value>
+							</property> -->
+ 							<property name="num" value="10" />
+						</bean>
 						<bean class="org.dspace.app.webui.cris.components.BrowseProcessor">
 							<property name="browseNames">
 								<list>
@@ -144,10 +167,128 @@
 				</entry>
 				<entry key="fundings">
 					<list>
+						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
+							<property name="viewConfiguration" ref="crispjLayoutView" />
+							<property name="type" value="recentsubmission" />
+							<property name="sortField" value="time_creation_dt" />
+							<property name="order" value="desc" />
+<!-- 							<property name="extraInfo">
+								<value>crismetrics_wos</value>
+							</property> -->
+ 							<property name="num" value="10" />
+						</bean>
 						<bean class="org.dspace.app.webui.cris.components.BrowseProcessor">
 							<property name="browseNames">
 								<list>
 									<value>pjtitle</value>
+								</list>
+							</property>
+						</bean>
+					</list>
+				</entry>
+				<entry key="cristechs">
+					<list>
+						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
+							<property name="viewConfiguration" ref="cristechsLayoutView" />
+							<property name="type" value="recentsubmission" />
+							<property name="sortField" value="time_creation_dt" />
+							<property name="order" value="desc" />
+<!-- 							<property name="extraInfo">
+								<value>crismetrics_wos</value>
+							</property> -->
+ 							<property name="num" value="10" />
+						</bean>
+						<bean class="org.dspace.app.webui.cris.components.BrowseProcessor">
+							<property name="browseNames">
+								<list>
+									<value>cristechs.techstitle</value>
+									<value>cristechs.techscountry</value>
+								</list>
+							</property>
+						</bean>
+					</list>
+				</entry>
+				<entry key="crispatents">
+					<list>
+						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
+							<property name="viewConfiguration" ref="crispatentsLayoutView" />
+							<property name="type" value="recentsubmission" />
+							<property name="sortField" value="time_creation_dt" />
+							<property name="order" value="desc" />
+<!-- 							<property name="extraInfo">
+								<value>crismetrics_wos</value>
+							</property> -->
+ 							<property name="num" value="10" />
+						</bean>
+						<bean class="org.dspace.app.webui.cris.components.BrowseProcessor">
+							<property name="browseNames">
+								<list>
+									<value>crispatents.patentstitle</value>
+								</list>
+							</property>
+						</bean>
+					</list>
+				</entry>				
+				<entry key="crisstandards">
+					<list>
+						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
+							<property name="viewConfiguration" ref="crisstandardsLayoutView" />
+							<property name="type" value="recentsubmission" />
+							<property name="sortField" value="time_creation_dt" />
+							<property name="order" value="desc" />
+<!-- 							<property name="extraInfo">
+								<value>crismetrics_wos</value>
+							</property> -->
+ 							<property name="num" value="10" />
+						</bean>
+						<bean class="org.dspace.app.webui.cris.components.BrowseProcessor">
+							<property name="browseNames">
+								<list>
+									<value>crisstandards.standardstitle</value>
+								</list>
+							</property>
+						</bean>
+					</list>
+				</entry>				
+				<entry key="crisevents">
+					<list>
+						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
+							<property name="viewConfiguration" ref="criseventsLayoutView" />
+							<property name="type" value="recentsubmission" />
+							<property name="sortField" value="time_creation_dt" />
+							<property name="order" value="desc" />
+<!-- 							<property name="extraInfo">
+								<value>crismetrics_wos</value>
+							</property> -->
+ 							<property name="num" value="10" />
+						</bean>
+						<bean class="org.dspace.app.webui.cris.components.BrowseProcessor">
+							<property name="browseNames">
+								<list>
+									<value>crisevents.eventsname</value>
+								</list>
+							</property>
+						</bean>
+					</list>
+				</entry>	
+				<entry key="crisawards">
+					<list>
+						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
+							<property name="viewConfiguration" ref="crisawardsLayoutView" />
+							<property name="type" value="recentsubmission" />
+							<property name="sortField" value="time_creation_dt" />
+							<property name="order" value="desc" />
+<!-- 							<property name="extraInfo">
+								<value>crismetrics_wos</value>
+							</property> -->
+ 							<property name="num" value="10" />
+						</bean>
+						<bean class="org.dspace.app.webui.cris.components.BrowseProcessor">
+							<property name="browseNames">
+								<list>
+									<value>crisawards.awardsname</value>
+									<value>crisawards.awardsprojectTitle</value>
+									<value>crisawards.awardsyear</value>
 								</list>
 							</property>
 						</bean>

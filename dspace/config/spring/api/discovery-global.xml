@@ -141,7 +141,98 @@
 				</bean>
 				</entry>
 				<entry key="theses" value-ref="configurationItemViewLayout" />
-				<entry key="patents" value-ref="configurationItemViewLayout" />
+				<entry key="crispatents">
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
+					<property name="metadataHeadingFields">								
+						<list>
+							<bean
+								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+								<property name="mandatory" value="true"/>
+								<property name="field" value="patentstitle" />
+								<property name="decorator" value="cristitle" />
+							</bean>						
+						</list>
+					</property>
+				</bean>					
+				</entry>
+				<entry key="crisfundings">
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
+					<property name="metadataHeadingFields">								
+						<list>
+							<bean
+								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+								<property name="mandatory" value="true"/>
+								<property name="field" value="fundingstitle" />
+								<property name="decorator" value="cristitle" />
+							</bean>						
+						</list>
+					</property>
+				</bean>					
+				</entry>
+				<entry key="crisstandards">
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
+					<property name="metadataHeadingFields">								
+						<list>
+							<bean
+								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+								<property name="mandatory" value="true"/>
+								<property name="field" value="standardstitle" />
+								<property name="decorator" value="cristitle" />
+							</bean>						
+						</list>
+					</property>
+				</bean>					
+				</entry>
+				<entry key="cristechs">
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
+					<property name="metadataHeadingFields">								
+						<list>
+							<bean
+								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+								<property name="mandatory" value="true"/>
+								<property name="preHtml" value="&lt;h4 class='text-primary'&gt;" />
+								<property name="field" value="techstitle" />
+								<property name="decorator" value="cristitle" />
+							</bean>	
+							<bean
+								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+								<property name="mandatory" value="true"/>
+								<property name="preHtml" value="&amp;nbsp; [" />
+								<property name="postHtml" value="]&lt;/h4&gt;" />
+								<property name="field" value="techscountry" />
+								<property name="decorator" value="radiocheckdropdown" />
+							</bean>			
+						</list>
+					</property>
+				</bean>					
+				</entry>
+				<entry key="crisawards">
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
+					<property name="metadataHeadingFields">								
+						<list>
+							<bean
+								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+								<property name="mandatory" value="true"/>
+								<property name="preHtml" value="&lt;h4 class='text-primary'&gt;" />
+								<property name="field" value="awardsname" />
+								<property name="decorator" value="cristitle" />
+							</bean>	
+							<bean
+								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+								<property name="mandatory" value="true"/>
+								<property name="preHtml" value="&amp;nbsp; [" />
+								<property name="postHtml" value="]&lt;/h4&gt;" />
+								<property name="field" value="awardsprojectTitle" />
+							</bean>			
+						</list>
+					</property>
+				</bean>					
+				</entry>
 				<entry key="datasets" value-ref="configurationItemViewLayout" />
 			</map>
 		</property>
