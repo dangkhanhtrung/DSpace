@@ -112,6 +112,12 @@
 	src="<%= request.getContextPath()%>/static/vendor/header-default/index.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script type="text/javascript"
+	src="<%= request.getContextPath()%>/page/highcharts.js"></script>
+<script type="text/javascript"
+	src="<%= request.getContextPath()%>/page/exporting.js"></script>
+<script type="text/javascript"
+	src="<%= request.getContextPath()%>/page/dspace.min.js"></script>
 
 <script type='text/javascript'>
             var j = jQuery.noConflict();

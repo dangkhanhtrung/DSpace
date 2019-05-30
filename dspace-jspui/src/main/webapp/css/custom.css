@@ -66,7 +66,7 @@
             }
             div#researcher .panel-heading .panel-title {
                 border-bottom: 1px solid;
-                font-size: 20px;
+                font-size: 18px;
                 margin: 0;
             }
 
@@ -779,7 +779,7 @@ body #collapseOneresearcherprofile .viewnested {
 }
 
 body .h1, body h1 {
-    font-size: 2rem;
+    font-size: 24px;
 }
 
 body .container.fullheight #content {
@@ -840,4 +840,13 @@ body #navbar-primary-ccx ul.navbar-nav li.nav-item.active {
 }
 body #navbar-primary-ccx ul.navbar-nav li.nav-item.active a {
 	        color: #fff !important;
+}
+body .detail_view .panel-group.col-md-12{
+	    padding: 0;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	    color: #111;
 }

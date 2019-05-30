@@ -333,7 +333,6 @@
             </div>
         </c:if>
     </div>
-	<a href="javascript:;" onclick="window.history.go(-1); return false;"> <i class="fa fa-chevron-left mr-2"></i> Quay lại</a>
 </div>
 
 

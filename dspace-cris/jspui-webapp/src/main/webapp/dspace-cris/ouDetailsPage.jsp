@@ -65,38 +65,23 @@
 
             <div id="content" class="detail_view">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="form-inline">
+                    <div class="col-lg-12" style="display: flex;">
+                        <a href="javascript:;" onclick="window.history.go(-1); return false;" style="
+                        	width: 105px !important;
+                        	min-width: 105px !important;
+						    font-size: font;
+						    font-size: 14px;
+						    border: 1px solid;
+						    padding: 3px 15px 5px 10px;
+						    border-radius: 4px;
+						    margin-right: 5px !important;
+						    height: 28px;
+						    margin-top: 4px;
+						"><i class="fa fa-chevron-left mr-2"></i> Quay lại</a>
                             <h1><fmt:message key="jsp.layout.ou.detail.name" /> ${entity.name}</h1>
-                            
-
-                        </div>
-                        <div class="form-group">
-
-                                <%
-                                if (1==1) {
-                                %>
-                                <div class="row cris-record-info" style="    width: 100%;">
-                                    <div class="col-sm-6">
-                                        <span class="cris-record-info-sourceid"><b><fmt:message key="jsp.cris.detail.info.sourceid" /></b> ${!empty entity.sourceID?entity.sourceID:i18nnone}</span>
-                                        <br/>
-                                        <span class="cris-record-info-sourceref"><b><fmt:message key="jsp.cris.detail.info.sourceref" /></b> ${!empty entity.sourceRef?entity.sourceRef:i18nnone}</span>
-                                    </div> 
-                                    <div class="col-sm-6">
-                                        <span class="cris-record-info-created"><b><fmt:message key="jsp.cris.detail.info.created" /></b> <fmt:formatDate value="${ entity.timeStampInfo.timestampCreated.timestamp }" pattern="dd/MM/yyyy HH:mm:ss" /></span>
-                                        <br/>
-                                        <span class="cris-record-info-updated"><b><fmt:message key="jsp.cris.detail.info.updated" /></b> <fmt:formatDate value="${entity.timeStampInfo.timestampLastModified.timestamp}" pattern="dd/MM/yyyy HH:mm:ss" /></span>
-                                    </div>
-
-                                </div>
-                                <%
-                        }
-                                %>
-                            </div>
-                        <hr/>
                     </div>
                 </div>
-
+                <hr/>
                 <c:if test="${!entity.status}">
                     <div class="warning">
                         <fmt:message key="jsp.layout.hku.detail.ou-disabled" />

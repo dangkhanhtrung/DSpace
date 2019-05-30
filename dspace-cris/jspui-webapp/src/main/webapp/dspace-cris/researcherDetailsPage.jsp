@@ -104,11 +104,21 @@
         <dspace:layout title="${metaprofilename}">
 
             <div id="content" class="detail_view">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1>
-                            <fmt:message key="jsp.layout.detail.title-first" />
-                            <c:choose>
+            	<div class="row">
+                    <div class="col-lg-12" style="display: flex;">
+                        <a href="javascript:;" onclick="window.history.go(-1); return false;" style="
+                        	width: 105px !important;
+                        	min-width: 105px !important;
+						    font-size: 14px;
+						    border: 1px solid;
+						    padding: 3px 15px 5px 10px;
+						    border-radius: 4px;
+						    margin-right: 5px !important;
+						    height: 28px;
+						    margin-top: 4px;
+						"><i class="fa fa-chevron-left mr-2"></i> Quay lại</a>
+                            <h1>
+                            	<c:choose>
                                 <c:when test="${!empty entity.preferredName.value}">
                                     ${entity.preferredName.value}
                                 </c:when>
@@ -116,32 +126,10 @@
                                     ${entity.fullName}
                                 </c:otherwise>
                             </c:choose>
-                        </h1>
-                        <div class="form-inline">
-                            <div class="form-group">
-                                <%
-                        if (1==1) {
-                                %>
-                                <fmt:message key="jsp.cris.detail.info.sourceid.none" var="i18nnone" />
-                                <div class="row cris-record-info" style="width: 100%;">
-                                    <div class="col-sm-6">
-                                        <span class="cris-record-info-sourceid"><b><fmt:message key="jsp.cris.detail.info.sourceid" /></b> ${!empty researcher.sourceID?researcher.sourceID:i18nnone}</span><br/>
-                                        <span class="cris-record-info-sourceref"><b><fmt:message key="jsp.cris.detail.info.sourceref" /></b> ${!empty researcher.sourceRef?researcher.sourceRef:i18nnone}</span>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <span class="cris-record-info-created"><b><fmt:message key="jsp.cris.detail.info.created" /></b> <b><fmt:message key="jsp.cris.detail.info.created" /></b><fmt:formatDate value="${researcher.timeStampInfo.timestampCreated.timestamp}" pattern="dd/MM/yyyy HH:mm:ss" /></span><br/>
-                                        <span class="cris-record-info-updated"><b><fmt:message key="jsp.cris.detail.info.updated" /></b> <b><fmt:message key="jsp.cris.detail.info.updated" /></b><fmt:formatDate value="${researcher.timeStampInfo.timestampLastModified.timestamp}" pattern="dd/MM/yyyy HH:mm:ss" /></span>
-                                    </div>
-                                </div>
-                                <%
-                        }
-                                %>
-
-                            </div>
-                        </div>
-                        <hr/>
+                            </h1>
                     </div>
                 </div>
+                    <hr/>
                 <c:if test="${(!entity.status && !statusAdmin) or (!entity.status && admin)}">
                     <p class="warning">
                         <fmt:message

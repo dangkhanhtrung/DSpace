@@ -16,6 +16,10 @@
   -    discovery.searchScope - the search scope 
 --%>
 
+<%@page import="com.amazonaws.util.json.JSONObject"%>
+<%@page import="com.google.gson.JsonObject"%>
+<%@page import="com.google.gson.JsonArray"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="org.dspace.discovery.configuration.DiscoverySearchFilterFacet"%>
 <%@ page import="java.util.HashMap"%>
 <%@ page import="java.util.Set"%>
@@ -56,6 +60,45 @@
 %>
 <div class="col-md-<%= discovery_panel_cols%>">
     <div id="facets" class="facetsBox row panel panel__discovery__expose">
+    	
+    	<%
+    		JsonArray arrayObject = new JsonArray();
+    	
+            for (DiscoverySearchFilterFacet facetConf : facetsConf) {
+                String fx = facetConf.getIndexFieldName();
+                List<FacetResult> facetx = mapFacetes.get(fx);
+                if (facetx == null) {
+                	facetx = mapFacetes.get(fx + ".year");
+                }
+                if (facetx == null) {
+                    continue;
+                }
+                String fkeyx = "jsp.search.facet.refine." + fx;
+                
+                
+                JsonObject currentObject = new JsonObject();
+                
+                currentObject.add(fkeyx, new JsonArray());
+                
+                int limitx = facetConf.getFacetLimit() + 1;
+                
+                for (FacetResult fvalue : facetx) {
+                	
+                	JsonObject elementObject = new JsonObject();
+                	
+                	elementObject.addProperty("name", StringUtils.abbreviate(fvalue.getDisplayedValue(), 36));
+                	elementObject.addProperty("y", fvalue.getCount());
+                	
+                	currentObject.getAsJsonArray(fkeyx).add(elementObject);
+                	
+        %>
+        
+        <%
+            }
+            	arrayObject.add(currentObject);
+            }
+        %>
+        
         <%
             for (DiscoverySearchFilterFacet facetConf : facetsConf) {
                 String f = facetConf.getIndexFieldName();
@@ -108,7 +151,14 @@
                             }
                     %></ul></div></div><%
                     }
-                %></div></div><%
+                %></div></div>
+                
+                <div class="hidden" id="chart__data_custom">
+                
+                <%=arrayObject %>
+                
+                </div>
+                <%
     }
 
 %>

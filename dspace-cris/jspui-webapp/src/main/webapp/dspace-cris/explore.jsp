@@ -209,6 +209,11 @@
                     <%@ include file="/dspace-cris/explore/topObjectsDownload.jsp" %>
                 </div>
                 <% } %>
+                <div class="col-12">
+                
+                     <vuejx-chart></vuejx-chart>
+                </div>
+               
             </div>
         </div>
     </div>

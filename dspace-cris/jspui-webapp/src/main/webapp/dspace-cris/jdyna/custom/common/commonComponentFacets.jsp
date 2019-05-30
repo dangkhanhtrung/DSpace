@@ -146,7 +146,7 @@
 					                + "&amp;filterquery" + relationName + "="+URLEncoder.encode(fvalue.getAsFilterQuery(),"UTF-8")
 					                + "&amp;filtertype" + relationName + "="+URLEncoder.encode(fvalue.getFilterType(),"UTF-8") %>#${holder.shortName}"
 					                title="<fmt:message key="jsp.search.facet.narrow"><fmt:param><%=fvalue.getDisplayedValue() %></fmt:param></fmt:message>">
-					                <%= fvalue.getDisplayedValue() %></a></li><%
+					               <%= fvalue.getDisplayedValue() %></a></li><%
 					                idx++;
 						        }
 						        if (idx > limit)

@@ -174,9 +174,18 @@
             </c:if>
         </c:forEach>
     </div>
-   <div id="tab-nguondulieu">
-   		<div class="row cris-record-info" style="    width: 100%;">
-                                    <div class="col-sm-6">
+    <div id="tab-nguondulieu" class="row">
+	  <div class="panel panel-default" style="
+	    width: 100%;
+	">
+	    <div class="panel-heading">
+	      <h4 class="panel-title"><a data-toggle="collapse" data-parent="#collapseOnenguondulieu" href="#collapseOnenguondulieu" class="btn--block a__icon__down pb-1">Nguồn dữ liệu</a></h4>
+	    </div>
+	    <div id="collapseOnenguondulieu" class="panel-collapse in collapse show">
+	      <div class="panel-body">
+	        <div class="row cris-record-info" style="width: 100%;">
+	          
+	          <div class="col-sm-6">
                                         <span class="cris-record-info-sourceid"><b><fmt:message key="jsp.cris.detail.info.sourceid" /></b> ${!empty entity.sourceID?entity.sourceID:i18nnone}</span>
                                         <br/>
                                         <span class="cris-record-info-sourceref"><b><fmt:message key="jsp.cris.detail.info.sourceref" /></b> ${!empty entity.sourceRef?entity.sourceRef:i18nnone}</span>
@@ -186,7 +195,11 @@
                                         <br/>
                                         <span class="cris-record-info-updated"><b><fmt:message key="jsp.cris.detail.info.updated" /></b> <fmt:formatDate value="${entity.timeStampInfo.timestampLastModified.timestamp}" pattern="dd/MM/yyyy HH:mm:ss" /></span>
                                     </div>
+                                    
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
-                                </div>
-   </div>
 </div>
