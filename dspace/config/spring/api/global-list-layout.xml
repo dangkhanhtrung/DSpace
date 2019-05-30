@@ -143,6 +143,27 @@
 					<property name="field" value="eventsname" />
 					<property name="decorator" value="crisref" />
 				</bean>
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="mandatory" value="true" />
+					<property name="preHtml" value="" />
+					<property name="postHtml" value="" />
+					<property name="field" value="eventsplace" />					
+				</bean>
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="mandatory" value="true" />
+					<property name="preHtml" value="" />
+					<property name="postHtml" value="" />
+					<property name="field" value="eventsstartdate" />					
+				</bean>
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="mandatory" value="true" />
+					<property name="preHtml" value="" />
+					<property name="postHtml" value="" />
+					<property name="field" value="eventsenddate" />
+				</bean>
 			</list>
 		</property>
 	</bean>
@@ -214,14 +235,30 @@
 					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
 					<property name="mandatory" value="true" />
 					<property name="preHtml" value="" />
-					<property name="postHtml" value="" />
+					<property name="postHtml" value="&lt;br /&gt;" />
 					<property name="field" value="title" />
 					<property name="decorator" value="cristitle" />
 				</bean>
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="mandatory" value="true" />
+					<property name="preHtml" value="" />
+					<property name="postHtml" value="&lt;br /&gt;" />
+					<property name="field" value="principalInvestigator" />
+					<property name="decorator" value="crisref" />
+				</bean>
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="mandatory" value="true" />
+					<property name="preHtml" value="" />
+					<property name="postHtml" value="&lt;br /&gt;" />
+					<property name="field" value="level" />
+					<property name="decorator" value="radiocheckdropdown" />
+				</bean>
+
 			</list>
 		</property>
 	</bean>
-
 	<bean id="crisawardsLayoutView"
 		class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
 		<property name="metadataHeadingFields">
@@ -246,7 +283,7 @@
 					<property name="mandatory" value="false"/>
 					<property name="preHtml" value="&lt;br/&gt;&lt;small&gt;" />
 					<property name="postHtml" value="&lt;/small&gt;" />
-					<property name="field" value="awardsyear" />
+					<property name="field" value="awardswinners" />
 				</bean>			
 			</list>
 		</property>
@@ -254,8 +291,47 @@
 			<list>
 				<bean
 					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-					<property name="field" value="awardsdescription" />
+					<property name="field" value="awardsyear" />
 					<property name="postHtml" value="&lt;br /&gt;" />
+				</bean>
+			</list>
+		</property>	
+	</bean>
+
+	<bean id="crisfundingsLayoutView"
+		class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
+		<property name="metadataHeadingFields">
+			<list>
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="mandatory" value="true"/>
+					<property name="preHtml" value="&lt;b&gt;" />
+					<property name="postHtml" value="&lt;/b&gt;" />
+					<property name="field" value="awardsname" />
+					<property name="decorator" value="fundingstitle" />
+				</bean>	
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="mandatory" value="false"/>
+					<property name="preHtml" value="&lt;small&gt;[ " />
+					<property name="postHtml" value="&lt;/small&gt; ]" />
+					<property name="field" value="fundingstype" />
+				</bean>			
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="mandatory" value="false"/>
+					<property name="preHtml" value="&lt;br/&gt;&lt;small&gt;" />
+					<property name="postHtml" value="&lt;/small&gt;" />
+					<property name="field" value="fundingsfunded" />
+				</bean>			
+			</list>
+		</property>
+		<property name="metadataDescriptionFields">
+			<list>
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="field" value="fundingsamount" />
+					<property name="postHtml" value="đồng&lt;br /&gt;" />
 				</bean>
 			</list>
 		</property>	
