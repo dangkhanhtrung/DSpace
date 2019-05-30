@@ -453,6 +453,9 @@
 				<entry key="4" value="abstract" />
 				<entry key="5" value="jissn" />
 				<entry key="6" value="subtype" />
+				<entry key="7" value="language" />
+				<entry key="8" value="editors" />
+				<entry key="9" value="allkeywords" />
 			</map>
 		</property>
 		<property name="skipLines" value="1" />
