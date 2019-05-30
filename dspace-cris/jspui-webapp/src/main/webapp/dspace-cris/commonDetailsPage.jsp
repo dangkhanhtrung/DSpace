@@ -137,6 +137,11 @@
                 </c:choose></li>
 
         </c:forEach>
+        <li class="researcher-menu-item" id="bar-tab-nguondulieu">
+             <a href="#tab-nguondulieu">
+             	Nguồn dữ liệu
+             </a>
+        </li>
     </ul>
 
 

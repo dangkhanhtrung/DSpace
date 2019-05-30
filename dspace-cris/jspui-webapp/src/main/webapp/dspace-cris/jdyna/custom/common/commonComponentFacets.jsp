@@ -139,8 +139,7 @@
 						    }
 						    for (FacetResult fvalue : facet)
 						    { 
-						        if (idx != limit && !appliedFilterQueries.contains(f+"::"+fvalue.getFilterType()+"::"+fvalue.getAsFilterQuery()))
-						        {
+						        if (idx != limit && !appliedFilterQueries.contains(f+"::"+fvalue.getFilterType()+"::"+fvalue.getAsFilterQuery())) {
 						        %><li class="list-group-item"><span class="badge"><%= fvalue.getCount() %></span> <a href="?open=<%=info.getType()							
 					                + httpFilters
 					                + "&amp;filtername" + relationName + "="+URLEncoder.encode(f,"UTF-8")

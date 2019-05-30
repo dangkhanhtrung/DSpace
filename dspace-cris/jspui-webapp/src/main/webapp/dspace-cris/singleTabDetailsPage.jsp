@@ -174,4 +174,19 @@
             </c:if>
         </c:forEach>
     </div>
+   <div id="tab-nguondulieu">
+   		<div class="row cris-record-info" style="    width: 100%;">
+                                    <div class="col-sm-6">
+                                        <span class="cris-record-info-sourceid"><b><fmt:message key="jsp.cris.detail.info.sourceid" /></b> ${!empty entity.sourceID?entity.sourceID:i18nnone}</span>
+                                        <br/>
+                                        <span class="cris-record-info-sourceref"><b><fmt:message key="jsp.cris.detail.info.sourceref" /></b> ${!empty entity.sourceRef?entity.sourceRef:i18nnone}</span>
+                                    </div> 
+                                    <div class="col-sm-6">
+                                        <span class="cris-record-info-created"><b><fmt:message key="jsp.cris.detail.info.created" /></b> <fmt:formatDate value="${entity.timeStampInfo.timestampCreated.timestamp}" pattern="dd/MM/yyyy HH:mm:ss" /></span>
+                                        <br/>
+                                        <span class="cris-record-info-updated"><b><fmt:message key="jsp.cris.detail.info.updated" /></b> <fmt:formatDate value="${entity.timeStampInfo.timestampLastModified.timestamp}" pattern="dd/MM/yyyy HH:mm:ss" /></span>
+                                    </div>
+
+                                </div>
+   </div>
 </div>
