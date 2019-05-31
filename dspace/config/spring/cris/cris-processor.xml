@@ -294,6 +294,23 @@
 						</bean>
 					</list>
 				</entry>
+
+				<entry key="crisfundings">
+					<list>
+						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
+							<property name="viewConfiguration" ref="crisfundingsLayoutView" />
+							<property name="type" value="recentsubmission" />
+							<property name="sortField" value="time_creation_dt" />
+							<property name="order" value="desc" />
+<!-- 							<property name="extraInfo">
+								<value>crismetrics_wos</value>
+							</property> -->
+ 							<property name="num" value="10" />
+						</bean>						
+					</list>
+				</entry>
+
+
 			</map>
 		</property>
 	</bean>
