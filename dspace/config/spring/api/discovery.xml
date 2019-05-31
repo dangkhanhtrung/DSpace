@@ -1401,7 +1401,10 @@
 		<property name="searchFilters">
 			<list>
 				<ref bean="searchFilterObjectName" />
-				<ref bean="searchFilterStartDate" />
+				<ref bean="searchFilterOUActivity" />
+				<ref bean="searchFilterOUAddress" />
+				<ref bean="searchFilterOUDirector" />							
+				<ref bean="searchFilterSubject" />
 			</list>
 		</property>
 		<!--The sort filters for the discovery search -->
@@ -1708,8 +1711,7 @@
 				<ref bean="searchFilterTechsTitle" />
 				<ref bean="searchFilterSubject" />
 				<ref bean="searchFilterTechsDescription" />
-				<ref bean="searchFilterTechsScope" />
-				<ref bean="searchFilterKeyword" />
+				<ref bean="searchFilterTechsScope" />				
 				<ref bean="searchFilterTechsCountry" />
 				<ref bean="searchFilterTechsType" />
 				<ref bean="searchFilterTechsProviders" />
@@ -1787,6 +1789,8 @@
 		<property name="searchFilters">
 			<list>
 				<ref bean="searchFilterPatentSubject" />
+				<ref bean="searchFilterPatentsHolders" />
+				<ref bean="searchFilterPatentsApprovaldate" />	
 			</list>
 		</property>
 		<property name="sidebarFacets" ref="facetsCrisPatentConfiguration" />
@@ -1849,16 +1853,6 @@
 				<value>resourcetype_authority:crisawards</value>
 			</list>
 		</property>
-
-		<property name="recentSubmissionConfiguration">
-			<bean
-				class="org.dspace.discovery.configuration.DiscoveryRecentSubmissionsConfiguration">
-				<property name="metadataSortField" value="dc.date.accessioned" />
-				<property name="type" value="date" />
-				<property name="max" value="10" />				
-			</bean>
-		</property>
-
 	</bean>
 
 	<bean id="crisFundingsConfiguration"
@@ -1873,6 +1867,8 @@
 				<ref bean="searchFilterFundingDescription" />
 				<ref bean="searchFilterFundingKeyword" />
 				<ref bean="searchFilterFundingStartDate" />
+				<ref bean="searchFilterFundingType" />			
+				<ref bean="searchFilterFundingFunded" />			
 			</list>
 		</property>
 		<property name="sidebarFacets" ref="facetsCrisFundingConfiguration" />
@@ -2011,6 +2007,30 @@
 		<property name="sortOrder" value="COUNT" />
 	</bean>
 
+	<bean id="searchFilterPatentsHolders"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="patentsholders" />
+		<property name="metadataFields">
+			<list>
+				<value>crispatents.patentsholders</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+	</bean>
+
+	<bean id="searchFilterPatentsApprovaldate"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="patentsapprovaldate" />
+		<property name="metadataFields">
+			<list>
+				<value>crispatents.patentsapprovaldate</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+	</bean>
+
 	<bean id="searchFilterAwardSubject"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
 		<property name="indexFieldName" value="awardssubject" />
@@ -2069,6 +2089,7 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
+		<property name="type" value="radiocheckdropdown"/>
 	</bean>
 
 	<bean id="searchFilterAwardDescription"
@@ -2156,6 +2177,31 @@
 		<property name="sortOrder" value="COUNT" />
 	</bean>
 
+	<bean id="searchFilterFundingType"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="fundingstype" />
+		<property name="metadataFields">
+			<list>
+				<value>crisfundings.fundingstype</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+		<property name="type" value="radiocheckdropdown"/>
+	</bean>
+
+	<bean id="searchFilterFundingFunded"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="fundingsfunded" />
+		<property name="metadataFields">
+			<list>
+				<value>crisfundings.fundingsfunded</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+	</bean>
+
 	<bean id="searchFilterJournalTitle"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilter">
 		<property name="indexFieldName" value="journaltitle" />
@@ -2197,7 +2243,8 @@
 				<value>cristechs.techssubject</value>
 				<value>crisprojects.subject</value>
 				<value>crisawards.awardssubject</value>
-				<value>crisevents.eventssubject</value>								
+				<value>crisevents.eventssubject</value>						
+				<value>crisou.subject</value>						
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
@@ -2464,7 +2511,7 @@
 
 	<bean id="searchFilterProjectKeyword"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="keywords" />
+		<property name="indexFieldName" value="projectkeywords" />
 		<property name="metadataFields">
 			<list>
 				<value>crisproject.keywords</value>
@@ -2476,36 +2523,61 @@
 
 	<bean id="searchFilterProjectLevel"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="crisproject.level" />
+		<property name="indexFieldName" value="projectlevel" />
 		<property name="metadataFields">
 			<list>
 				<value>crisproject.level</value>
 			</list>
 		</property>
-		<property name="facetLimit" value="1000" />
+		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
 		<property name="type" value="radiocheckdropdown" />
 	</bean>
 
 	<bean id="searchFilterProjectType"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="type" />
+		<property name="indexFieldName" value="projecttype" />
 		<property name="metadataFields">
 			<list>
 				<value>crisproject.type</value>
 			</list>
 		</property>
-		<property name="facetLimit" value="1000" />
+		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
 		<property name="type" value="radiocheckdropdown" />
 	</bean>
 
-	<bean id="searchFilterKeyword"
+	<bean id="searchFilterOUActivity"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="techskeyword" />
+		<property name="indexFieldName" value="OUActivity" />
 		<property name="metadataFields">
 			<list>
-				<value>cristechs.techskeyword</value>
+				<value>crisou.activity</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+		<property name="type" value="radiocheckdropdown" />
+	</bean>
+
+	<bean id="searchFilterOUAddress"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="OUAddress" />
+		<property name="metadataFields">
+			<list>
+				<value>crisou.address</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+	</bean>
+
+	<bean id="searchFilterOUDirector"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="OUDirector" />
+		<property name="metadataFields">
+			<list>
+				<value>crisou.director</value>
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
@@ -2619,8 +2691,7 @@
 			<list>
 				<value>cristechs.techsproviders</value>
 			</list>
-		</property>
-		<property name="type" value="radiocheckdropdown" />
+		</property>		
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="VALUE" />
 	</bean>
@@ -2789,8 +2860,9 @@
 	</bean>
 	<bean id="facetsCrisPatentConfiguration" class="java.util.ArrayList">
 		<constructor-arg>
-		<list>
-			<ref bean="searchFilterPatentSubject" />
+		<list>			
+			<ref bean="searchFilterPatentsHolders" />
+			<ref bean="searchFilterPatentsApprovaldate" />
 		</list>
 		</constructor-arg>
 	</bean>
@@ -2798,7 +2870,7 @@
 		<constructor-arg>
 		<list>			
 			<ref bean="searchFilterSubject" />
-			<ref bean="searchFilterTechsType" />
+			<ref bean="searchFilterTechsType" />			
 			<ref bean="searchFilterTechsProviders" />
 
 		</list>
@@ -2825,6 +2897,8 @@
 		<constructor-arg>
 		<list>
 			<ref bean="searchFilterFundingSubject" />
+			<ref bean="searchFilterFundingType" />
+			<ref bean="searchFilterFundingFunded" />
 		</list>
 		</constructor-arg>
 	</bean>
@@ -2878,8 +2952,8 @@
 	<bean id="facetsOUConfiguration" class="java.util.ArrayList">
 		<constructor-arg>
 		<list>
-				<ref bean="searchFilterObjectName" />
-				<ref bean="searchFilterStartDate" />
+				<ref bean="searchFilterSubject" />
+				<ref bean="searchFilterOUActivity" />
 		</list>
 		</constructor-arg>
 	</bean>
