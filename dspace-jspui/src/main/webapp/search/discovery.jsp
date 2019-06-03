@@ -356,7 +356,7 @@
         <% if (items.length > 0) { %>
         <div class="panel panel-info">
             <%
-                if (exportBiblioEnabled && (exportBiblioAll || user != null)) {
+                if (exportBiblioEnabled && (exportBiblioAll || user != null) || 1==1) {
             %>
 
             <form target="blank" class="form-inline"  id="exportform" action="<%= request.getContextPath()%>/references">

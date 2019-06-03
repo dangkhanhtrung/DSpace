@@ -91,12 +91,12 @@ public class MyTableResource extends Resource
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getAllCrisDoTp(@QueryParam("q") String q, @Context HttpHeaders headers, @Context HttpServletRequest request)
+    public String getAllCrisDoTp(@QueryParam("q") String q, @QueryParam("sort") String sort, @Context HttpHeaders headers, @Context HttpServletRequest request)
             throws Exception
     {
         JSONObject results = new JSONObject();
 
-        results = ElasticQueryWrapUtil.query(q);
+        results = ElasticQueryWrapUtil.query(q, sort);
 
         return results.toString();
     }
