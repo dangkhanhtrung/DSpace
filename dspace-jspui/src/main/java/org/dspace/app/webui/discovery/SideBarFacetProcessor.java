@@ -66,9 +66,7 @@ public class SideBarFacetProcessor implements CollectionHomeProcessor,
     {
         DiscoverQuery queryArgs = DiscoverUtility.getDiscoverQuery(context,
                 request, scope, true);
-        System.out.println("SideBarFacetProcessor.process()" + queryArgs);
-        System.out.println("SideBarFacetProcessor.process()" + queryArgs.getQuery());
-        System.out.println("SideBarFacetProcessor.process()" + queryArgs.getFacetQueries());
+
         queryArgs.setMaxResults(0);
         DiscoverResult qResults;
         try

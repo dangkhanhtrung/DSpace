@@ -57,10 +57,6 @@ public class ExploreController extends BaseAbstractController {
         DiscoverQuery queryArgs = DiscoverUtility.getDiscoverQuery(context,
                 request, null, configurationName, true);
 
-        System.out.println("SideBarFacetProcessor.process()" + queryArgs);
-        System.out.println("SideBarFacetProcessor.process()" + queryArgs.getQuery());
-        System.out.println("SideBarFacetProcessor.process()" + queryArgs.getFacetQueries());
-        
         queryArgs.setMaxResults(0);
         DiscoverResult qResults;
 

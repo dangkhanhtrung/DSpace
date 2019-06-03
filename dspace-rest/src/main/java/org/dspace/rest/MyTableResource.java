@@ -15,6 +15,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -25,6 +26,8 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 
 import org.apache.log4j.Logger;
+import org.aspectj.lang.annotation.Pointcut;
+
 import static org.dspace.rest.Resource.createContext;
 import org.dspace.rest.common.Collection;
 import org.dspace.rest.exceptions.ContextException;
@@ -32,6 +35,7 @@ import org.dspace.utils.DataUtils;
 import org.dspace.utils.ElasticQueryWrapUtil;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * This class provides all CRUD operation over collections.
@@ -100,5 +104,18 @@ public class MyTableResource extends Resource
 
         return results.toString();
     }
+    
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getStatics(@RequestBody String body, @Context HttpHeaders headers, @Context HttpServletRequest request)
+            throws Exception
+    {
+        JSONObject results = new JSONObject();
 
+        System.out.println("MyTableResource.getStatics()" + body);
+        // results = ElasticQueryWrapUtil.query(q);
+
+        return results.toString();
+    }
+    
 }

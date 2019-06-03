@@ -217,11 +217,6 @@ public class DiscoverySearchRequestProcessor implements SearchRequestProcessor {
 
 		DiscoverQuery queryArgs = DiscoverUtility.getDiscoverQuery(context, request, scope, configurationName, true);
 
-
-        System.out.println("SideBarFacetProcessor.process()" + queryArgs);
-        System.out.println("SideBarFacetProcessor.process()" + queryArgs.getQuery());
-        System.out.println("SideBarFacetProcessor.process()" + queryArgs.getFacetQueries());
-        
 		queryArgs.setSpellCheck(discoveryConfiguration.isSpellCheckEnabled());
 
 		List<DiscoverySearchFilterFacet> availableFacet = discoveryConfiguration.getSidebarFacets();
@@ -544,11 +539,6 @@ public class DiscoverySearchRequestProcessor implements SearchRequestProcessor {
 		
 		DiscoverQuery queryArgs = DiscoverUtility.getDiscoverQuery(context, request, null,
 				DiscoveryConfiguration.GLOBAL_CONFIGURATIONNAME, true);
-
-
-        System.out.println("SideBarFacetProcessor.process()" + queryArgs);
-        System.out.println("SideBarFacetProcessor.process()" + queryArgs.getQuery());
-        System.out.println("SideBarFacetProcessor.process()" + queryArgs.getFacetQueries());
         
 		queryArgs.setSpellCheck(discoveryConfiguration.isSpellCheckEnabled());
 
