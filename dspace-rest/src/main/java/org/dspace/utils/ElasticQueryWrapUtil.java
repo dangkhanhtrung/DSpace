@@ -18,7 +18,7 @@ public class ElasticQueryWrapUtil {
 
 	private static final String ELASTIC_SERVER_API_URL = "http://localhost:8080/solr/search/query";
 	
-	public static JSONObject query(String q, String sort) {
+	public static JSONObject query(String q) {
 
 		JSONObject result = null;
 		try {
@@ -26,9 +26,9 @@ public class ElasticQueryWrapUtil {
 			byte[] postData       = q.getBytes( StandardCharsets.UTF_8 );
 			int    postDataLength = postData.length;
 			
-			if (!sort.equalsIgnoreCase("")) {
-				q = q + "&sort=" + sort;
-			}
+//			if (!sort.equalsIgnoreCase("")) {
+//				q = q + "&sort=" + sort;
+//			}
 			
 //			if (!rows.equalsIgnoreCase("")) {
 //				q = q + "&rows=" + rows;
