@@ -113,7 +113,7 @@ public class MyTableResource extends Resource
         JSONObject results = new JSONObject();
 
         System.out.println("MyTableResource.getStatics()" + body);
-        // results = ElasticQueryWrapUtil.query(q);
+        results = ElasticQueryWrapUtil.postQuery(body);
 
         return results.toString();
     }

@@ -26,15 +26,53 @@ public class ElasticQueryWrapUtil {
 			byte[] postData       = q.getBytes( StandardCharsets.UTF_8 );
 			int    postDataLength = postData.length;
 			
-//			if (!sort.equalsIgnoreCase("")) {
-//				q = q + "&sort=" + sort;
-//			}
+			URL url = new URL(ELASTIC_SERVER_API_URL);
+
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			
-//			if (!rows.equalsIgnoreCase("")) {
-//				q = q + "&rows=" + rows;
-//			}
+			conn.setDoOutput( true );
+			conn.setInstanceFollowRedirects( false );
+			conn.setRequestMethod( "POST" );
+			conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded"); 
+			conn.setRequestProperty( "charset", "utf-8");
+			conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
+			conn.setUseCaches( false );
+			try( DataOutputStream wr = new DataOutputStream( conn.getOutputStream())) {
+			   wr.write( postData );
+			}
+	        
+			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+
+			String output;
+
+			StringBuilder sb = new StringBuilder();
+
+			while ((output = br.readLine()) != null) {
+				sb.append(output);
+			}
 			
-			URL url = new URL(ELASTIC_SERVER_API_URL + "?q=" + q);
+			result = new JSONObject(sb.toString());
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+	
+	public static JSONObject postQuery(String body) {
+
+		JSONObject result = null;
+		try {
+			
+			byte[] postData       = body.getBytes( StandardCharsets.UTF_8 );
+			int    postDataLength = postData.length;
+			
+			URL url = new URL(ELASTIC_SERVER_API_URL);
 
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			
