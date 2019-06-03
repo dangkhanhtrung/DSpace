@@ -159,7 +159,7 @@ public class BrowseEngine
             orderBy = "sort_" + Integer.toString(scope.getSortBy());
         }
         dao.setOrderField(orderBy);
-
+        
         // now run the query
         List<BrowseItem> results = dao.doQuery();
 

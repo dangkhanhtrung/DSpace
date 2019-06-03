@@ -545,11 +545,11 @@ public class DCDate
             }
             else if (granularity == DateGran.MONTH)
             {
-                return String.format("%s-%4d", monthName, getYearUTC());
+                return String.format("%s-%4d", getMonthUTC(), getYearUTC());
             }
             else
             {
-                return String.format("%d-%s-%4d", getDayUTC(), monthName, getYearUTC());
+                return String.format("%d-%s-%4d", getDayUTC(), getMonthUTC(), getYearUTC());
             }
         	
         } else {
