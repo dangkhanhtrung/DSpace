@@ -523,21 +523,34 @@ public class DCDate
 
         if (locale.getDisplayLanguage().equalsIgnoreCase("Vietnamese")) {
         	
-        	if (getDayUTC() > 0 && getYearUTC() > 0 && getMonthUTC() > 0) {
-        		
-        		return getDayUTC() + " - " + getMonthUTC() + " - " + getYearUTC();
-        		
-        	} else if (getDayUTC() <= 0 && getYearUTC() > 0 && getMonthUTC() > 0) {
-        		
-        		return "__ - " + getMonthUTC() + " - " + getYearUTC();
-        		
-        	} else if (getDayUTC() > 0 && getYearUTC() > 0 && getMonthUTC() <= 0) {
-        		
-        		return getDayUTC() + " - __ - " + getYearUTC();
-        		
-        	} else {
-        		return getDayUTC() + " - " + getMonthUTC() + " - " + getYearUTC();
-        	}
+//        	if (getDayUTC() > 0 && getYearUTC() > 0 && getMonthUTC() > 0) {
+//        		
+//        		return getDayUTC() + " - " + getMonthUTC() + " - " + getYearUTC();
+//        		
+//        	} else if (getDayUTC() <= 0 && getYearUTC() > 0 && getMonthUTC() > 0) {
+//        		
+//        		return "__ - " + getMonthUTC() + " - " + getYearUTC();
+//        		
+//        	} else if (getDayUTC() > 0 && getYearUTC() > 0 && getMonthUTC() <= 0) {
+//        		
+//        		return getDayUTC() + " - __ - " + getYearUTC();
+//        		
+//        	} else {
+//        		return getDayUTC() + " - " + getMonthUTC() + " - " + getYearUTC();
+//        	}
+        	
+        	if (granularity == DateGran.YEAR)
+            {
+                return String.format("%4d", getYearUTC());
+            }
+            else if (granularity == DateGran.MONTH)
+            {
+                return String.format("%s-%4d", monthName, getYearUTC());
+            }
+            else
+            {
+                return String.format("%d-%s-%4d", getDayUTC(), monthName, getYearUTC());
+            }
         	
         } else {
         	
