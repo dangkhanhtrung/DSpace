@@ -463,6 +463,7 @@ public class ReferencesServlet extends DSpaceServlet
 							"item_id=" + item.getID() + ",not authorized"));
                     continue;
                 }
+				System.out.println("ReferencesServlet.buildReferenceStream()" + item.toString());
                 disseminate.add(item);
             }
             try
