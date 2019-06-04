@@ -92,7 +92,7 @@ public class ReferencesServlet extends DSpaceServlet
             HttpServletResponse response) throws ServletException, IOException,
             SQLException, AuthorizeException
     {
-
+    	System.out.println("ReferencesServlet.doDSPost()");
         int[] item_ids = null;
         
         String prefix = request.getParameter("prefix");
@@ -160,11 +160,15 @@ public class ReferencesServlet extends DSpaceServlet
             }
             try
             {
+
+            	System.out.println("ReferencesServlet.doDSPost( process )");
                 process(context, request, response, items, format, fulltext,
                         email);
+            	System.out.println("ReferencesServlet.doDSPost( process done )");
             }
             catch (Exception e)
             {
+            	System.out.println(e);
                 log.error(LogManager.getHeader(context, "process_request",
                         "format=" + format + ", fulltext=" + fulltext
                                 + ", email=" + email), e);
