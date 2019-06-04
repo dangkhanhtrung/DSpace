@@ -203,7 +203,6 @@ public class ReferencesServlet extends DSpaceServlet
                 String ext = ConfigurationManager.getProperty("crosswalk.refer."+format+".file.ext");
                 System.out.println("ReferencesServlet.process()" + mimeType + "; charset=utf-8");
                 response.setContentType(mimeType + "; charset=utf-8");
-                response.setCharacterEncoding("UTF-8");
                 if(streamCrosswalkDefault instanceof FileNameDisseminator) {
                     response.setHeader("Content-Disposition",
                     "attachment;filename="+((FileNameDisseminator)streamCrosswalkDefault).getFileName()+"-"+format+(StringUtils.isNotBlank(ext)?"."+ext:""));
@@ -215,6 +214,8 @@ public class ReferencesServlet extends DSpaceServlet
 
             }
             OutputStream outputStream = response.getOutputStream();
+            System.out.println("ReferencesServlet.process()" + response.getCharacterEncoding());
+            System.out.println("ReferencesServlet.process()" + response.getContentType());
             buildReferenceStream(context, items, format, outputStream,
                     streamCrosswalkDefault);
         }
@@ -447,6 +448,9 @@ public class ReferencesServlet extends DSpaceServlet
             StreamDisseminationCrosswalk streamCrosswalkDefault)
             throws IOException, SQLException, AuthorizeException
     {
+
+        System.out.println("(streamCrosswalkDefault instanceof StreamGenericDisseminationCrosswalk)" + (streamCrosswalkDefault instanceof StreamGenericDisseminationCrosswalk));
+        
         if (streamCrosswalkDefault instanceof StreamGenericDisseminationCrosswalk)
         {
             List<DSpaceObject> disseminate = new LinkedList<DSpaceObject>();
@@ -504,8 +508,9 @@ public class ReferencesServlet extends DSpaceServlet
 
                     // Read the input form file for the specific collection
                     DCInputsReader inputsReader = new DCInputsReader(formFileName);
-
+                    
                     DCInputSet inputSet = inputsReader.getInputs(col_handle);
+                   
                     type = inputSet.getFormName();
                 } catch (Exception e1) {
 					log.error(LogManager.getHeader(context, "references",
@@ -539,7 +544,15 @@ public class ReferencesServlet extends DSpaceServlet
 
                 try
                 {
+
+                    System.out.println("streamCrosswalk" + streamCrosswalk);
                     streamCrosswalk.disseminate(context, item, outputStream);
+
+                    System.out.println("streamCrosswalk item" + item);
+                    System.out.println("outputStream" + outputStream);
+                    System.out.println("outputStreamxxx" + format + "-" + type);
+                    
+                    
                 }
                 catch (CrosswalkException e)
                 {
