@@ -56,6 +56,7 @@ public class ExploreController extends BaseAbstractController {
 
         DiscoverQuery queryArgs = DiscoverUtility.getDiscoverQuery(context,
                 request, null, configurationName, true);
+
         queryArgs.setMaxResults(0);
         DiscoverResult qResults;
 

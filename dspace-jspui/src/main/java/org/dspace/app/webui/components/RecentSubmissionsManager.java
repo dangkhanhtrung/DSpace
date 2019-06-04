@@ -98,6 +98,7 @@ public class RecentSubmissionsManager
 			bs.setBrowseIndex(bi);
 			bs.setOrder(SortOption.DESCENDING);
 			bs.setResultsPerPage(Integer.parseInt(count));
+			
             if (dso != null)
             {
                 bs.setBrowseContainer(dso);
