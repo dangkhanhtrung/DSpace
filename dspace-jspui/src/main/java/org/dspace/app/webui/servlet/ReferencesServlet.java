@@ -463,13 +463,14 @@ public class ReferencesServlet extends DSpaceServlet
 							"item_id=" + item.getID() + ",not authorized"));
                     continue;
                 }
-				System.out.println("ReferencesServlet.buildReferenceStream()" + item.toString());
                 disseminate.add(item);
             }
             try
             {
                 ((StreamGenericDisseminationCrosswalk) streamCrosswalkDefault)
                         .disseminate(context, disseminate, outputStream);
+                System.out.println("outputStream" + outputStream);
+                System.out.println("outputStreamxxx" + format + "-");
             }
             catch (CrosswalkException e)
             {
