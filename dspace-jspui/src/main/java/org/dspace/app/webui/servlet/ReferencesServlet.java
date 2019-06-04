@@ -179,6 +179,7 @@ public class ReferencesServlet extends DSpaceServlet
             throws Exception
     {
 
+        System.out.println("ReferencesServlet.process(1)");
         boolean async = email || fulltext;
         final StreamDisseminationCrosswalk streamCrosswalkDefault = (StreamDisseminationCrosswalk) PluginManager
                 .getNamedPlugin(StreamDisseminationCrosswalk.class, format);
@@ -187,7 +188,7 @@ public class ReferencesServlet extends DSpaceServlet
             response.sendError(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-        
+        System.out.println("ReferencesServlet.process(2)");
         final EPerson eperson = context.getCurrentUser();
         if (!async)
         {

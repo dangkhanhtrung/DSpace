@@ -267,30 +267,30 @@ public class ElasticSearchLogger {
 
             // Save the location information if valid, save the event without
             // location information if not valid
-            InetAddress ipAddress = InetAddress.getByName(ip);
-            CityResponse location = locationService.city(ipAddress);
-            String countryCode = location.getCountry().getIsoCode();
-            double latitude = location.getLocation().getLatitude();
-            double longitude = location.getLocation().getLongitude();
-            if (!("--".equals(countryCode)
-                    && latitude == -180 && longitude == -180)) {
-                try {
-                    docBuilder.field("continent", LocationUtils
-                            .getContinentCode(countryCode));
-                } catch (IOException e) {
-                    System.out
-                            .println("COUNTRY ERROR: " + countryCode);
-                }
-                docBuilder.field("countryCode", countryCode);
-                docBuilder.field("city", location.getCity().getName());
-                docBuilder.field("latitude", latitude);
-                docBuilder.field("longitude", longitude);
-                docBuilder.field("isBot", isSpiderBot);
-
-                if (request.getHeader("User-Agent") != null) {
-                    docBuilder.field("userAgent", request.getHeader("User-Agent"));
-                }
-            }
+//            InetAddress ipAddress = InetAddress.getByName(ip);
+//            CityResponse location = locationService.city(ipAddress);
+//            String countryCode = location.getCountry().getIsoCode();
+//            double latitude = location.getLocation().getLatitude();
+//            double longitude = location.getLocation().getLongitude();
+//            if (!("--".equals(countryCode)
+//                    && latitude == -180 && longitude == -180)) {
+//                try {
+//                    docBuilder.field("continent", LocationUtils
+//                            .getContinentCode(countryCode));
+//                } catch (IOException e) {
+//                    System.out
+//                            .println("COUNTRY ERROR: " + countryCode);
+//                }
+//                docBuilder.field("countryCode", countryCode);
+//                docBuilder.field("city", location.getCity().getName());
+//                docBuilder.field("latitude", latitude);
+//                docBuilder.field("longitude", longitude);
+//                docBuilder.field("isBot", isSpiderBot);
+//
+//                if (request.getHeader("User-Agent") != null) {
+//                    docBuilder.field("userAgent", request.getHeader("User-Agent"));
+//                }
+//            }
 
             if (dspaceObject instanceof Bitstream) {
                 Bitstream bit = (Bitstream) dspaceObject;
