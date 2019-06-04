@@ -201,8 +201,8 @@ public class ReferencesServlet extends DSpaceServlet
             if (mimeType != null)
             {
                 String ext = ConfigurationManager.getProperty("crosswalk.refer."+format+".file.ext");
-                System.out.println("ReferencesServlet.process()" + mimeType);
-                response.setContentType(mimeType);
+                System.out.println("ReferencesServlet.process()" + mimeType + "; charset=utf-8");
+                response.setContentType(mimeType + "; charset=utf-8");
                 response.setCharacterEncoding("UTF-8");
                 if(streamCrosswalkDefault instanceof FileNameDisseminator) {
                     response.setHeader("Content-Disposition",
