@@ -178,6 +178,7 @@ public class ReferencesServlet extends DSpaceServlet
             final String format, final boolean fulltext, boolean email)
             throws Exception
     {
+
         boolean async = email || fulltext;
         final StreamDisseminationCrosswalk streamCrosswalkDefault = (StreamDisseminationCrosswalk) PluginManager
                 .getNamedPlugin(StreamDisseminationCrosswalk.class, format);
@@ -195,7 +196,9 @@ public class ReferencesServlet extends DSpaceServlet
             if (mimeType != null)
             {
                 String ext = ConfigurationManager.getProperty("crosswalk.refer."+format+".file.ext");
+                System.out.println("ReferencesServlet.process()" + mimeType);
                 response.setContentType(mimeType);
+                response.setCharacterEncoding("UTF-8");
                 if(streamCrosswalkDefault instanceof FileNameDisseminator) {
                     response.setHeader("Content-Disposition",
                     "attachment;filename="+((FileNameDisseminator)streamCrosswalkDefault).getFileName()+"-"+format+(StringUtils.isNotBlank(ext)?"."+ext:""));
