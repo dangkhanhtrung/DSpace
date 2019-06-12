@@ -91,6 +91,8 @@
                         <div id="collapseOne${holder.shortName}" class="panel-collapse in collapse show">
                             <div class="panel-body">
                                 <c:set var="hideLabel">${fn:length(propertiesDefinitionsInHolder[holder.shortName]) le 1}</c:set>
+
+                                <vuejx-sub-list value="${holder.shortName}" id="" ></vuejx-sub-list>
                                 <table>
 	                                <c:forEach
 	                                    items="${propertiesDefinitionsInHolder[holder.shortName]}"

@@ -26,7 +26,9 @@ jQuery(document).ready(function ($) {
             filters: [],
             filterIndex: 0,
             filterQuery: [],
-            eventsData: []
+            eventsData: [],
+            homeChartRender: false,
+            homeChart: {}
         },
         created: function () {
             var vm = this;
@@ -65,7 +67,9 @@ jQuery(document).ready(function ($) {
                     });
                 }
                 
-                axios.get('/rest/search?q=resourcetype_group:crisevents')
+                axios.post('/rest/search', 'q=resourcetype_group:crisevents&sort=cris-id+desc', {
+				  headers: { 'Content-Type': 'text/plain' }
+				})
                 .then(function (response) {
                   // handle success
                   vm.eventsData = response.data.response.docs
@@ -92,6 +96,23 @@ jQuery(document).ready(function ($) {
                 .finally(function () {
                   // always executed
                 });
+                
+                axios.post('/rest/search', 'q=*:*&rows=0&facet=true&facet.field=resourcetype_group', {
+  				  headers: { 'Content-Type': 'text/plain' }
+  				})
+                  .then(function (response) {
+                    // handle success
+                    vm.homeChart = response.data
+                    vm.homeChartRender = true
+                  })
+                  .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                  })
+                  .finally(function () {
+                    // always executed
+                	  vm.homeChartRender = true
+                  });
             })
         },
         methods: {

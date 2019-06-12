@@ -69,7 +69,6 @@
 <%@page import="org.dspace.authorize.AuthorizeManager"%>
 <%@page import="org.dspace.app.webui.search.SearchProcessorException"%>
 <%@page import="java.sql.SQLException"%>
-
 <%
     Community[] communities = (Community[]) request.getAttribute("communities");
 
@@ -263,41 +262,12 @@
     </div>
     <div class="row mt-4">
     	<div class="col-md-7 px-0">
-    		<div id="chart_div" style="
-    margin-left: -110px;
-    margin-top: -50px;
-"></div>
+    
+    		<vuejx-chart-data id="chart_div" :value="homeChart" v-if="homeChartRender"></vuejx-chart-data>
     		<script>
 
 			document.getElementById('nav__id__expose').style.display = "none";
-    		google.charts.load('current', {packages: ['corechart', 'bar']});
-    		google.charts.setOnLoadCallback(drawStacked);
-			
-    		function drawStacked() {
-    		      var data = google.visualization.arrayToDataTable([
-    		        ['', 'Có toàn văn', 'Không toàn văn'],
-    		        ['2010', 5000, 20000],
-    		        ['2011', 6000, 15000],
-    		        ['2012', 7000, 10000],
-    		        ['2013', 3000, 13000],
-    		        ['2014', 4000, 18000],
-    		        ['2015', 8000, 20000],
-    		        ['2016', 4500, 11000],
-    		        ['2017', 5600, 17800],
-    		        ['2018', 6600, 13123]
-    		      ]);
 
-    		      var options = {
-    		        width: 800,
-    		        height: 400,
-    		        legend: { position: 'bottom', maxLines: 2 },
-    		        bar: { groupWidth: '80%' },
-    		        isStacked: true,
-    		      };
-
-    		      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-    		      chart.draw(data, options);
-    		    }
     		</script>
         </div>
                 <%

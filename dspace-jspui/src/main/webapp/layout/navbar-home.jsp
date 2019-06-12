@@ -63,7 +63,7 @@
 		<a href="/jspui" class="navbar-brand"
 			style="display: flex; text-transform: uppercase;"><img
 			src="/jspui/static/custom/images/logo.png" alt="logo"><span
-			class="d-none d-sm-block ml-3">Cơ sở dữ liệu tích hợp <br>
+			class="d-sm-block ml-3 mt-1">Cơ sở dữ liệu tích hợp <br>
 				Thông tin khoa học và Công nghệ
 		</span></a>
 		<button type="button" data-toggle="collapse"

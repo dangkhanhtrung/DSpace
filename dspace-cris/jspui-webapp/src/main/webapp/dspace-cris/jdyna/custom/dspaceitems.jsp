@@ -136,7 +136,6 @@
     	</div>
 		<div id="collapseOne${holder.shortName}" class="panel-collapse in collapse show">
 		<div class="panel-body">	
-	
 	<% if(subLinks!=null && subLinks.size()>0) { %>
 		<jsp:include page="common/commonComponentFacets.jsp"></jsp:include>
 	<% } %>	
