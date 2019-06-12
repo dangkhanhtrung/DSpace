@@ -149,6 +149,14 @@
       </analyzer>
     </fieldType>
     <fieldtype name="ignored" stored="false" indexed="false" multiValued="true" class="solr.StrField" /> 
+    
+    	
+	<fieldType name="thongkestring" class="solr.TextField" positionIncrementGap="100" >
+      <analyzer>
+		  <tokenizer class="solr.KeywordTokenizerFactory"/>
+		</analyzer>
+    </fieldType>
+    
  </types>
 
 

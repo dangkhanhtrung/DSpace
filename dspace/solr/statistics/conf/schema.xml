@@ -262,6 +262,14 @@
     <fieldtype name="ignored" stored="false" indexed="false" class="solr.StrField" /> 
 
     <fieldType name="uuid" class="solr.UUIDField" indexed="true" />
+    
+    	
+	<fieldType name="thongkestring" class="solr.TextField" positionIncrementGap="100" >
+      <analyzer>
+		  <tokenizer class="solr.KeywordTokenizerFactory"/>
+		</analyzer>
+    </fieldType>
+    
  </types>
 
 
