@@ -173,7 +173,7 @@ it, please enter the types and the actual numbers or codes.</hint>
          <input-type>onebox</input-type>
          <hint>Enter appropriate subject keywords or phrases. </hint>
          <required></required>
-         <vocabulary>srsc</vocabulary>
+         <vocabulary>nsi_07062019</vocabulary>
        </field>
 
        <field>
@@ -1493,94 +1493,46 @@ it, please enter the types and the actual numbers or codes.</hint>
      </pair>
    </value-pairs>
 
-   <value-pairs value-pairs-name="common_types" dc-term="type">
-     <pair>
-       <displayed-value>Animation</displayed-value>
-       <stored-value>Animation</stored-value>
-     </pair>
+   <value-pairs value-pairs-name="common_types" dc-term="type">     
      <pair>
        <displayed-value>Bài báo</displayed-value>
        <stored-value>Bài báo</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Kỷ yếu hội thảo</displayed-value>
+       <stored-value>Kỷ yếu hội thảo</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Báo cáo khoa học</displayed-value>
+       <stored-value>Báo cáo khoa học</stored-value>
      </pair>
      <pair>
        <displayed-value>Sách</displayed-value>
        <stored-value>Sách</stored-value>
      </pair>
      <pair>
-       <displayed-value>Book chapter</displayed-value>
-       <stored-value>Book chapter</stored-value>
+       <displayed-value>Luận án tiến sĩ</displayed-value>
+       <stored-value>Luận án tiến sĩ</stored-value>
      </pair>
      <pair>
-       <displayed-value>Dataset</displayed-value>
-       <stored-value>Dataset</stored-value>
+       <displayed-value>Luận án thạc sĩ</displayed-value>
+       <stored-value>Luận án thạc sĩ</stored-value>
      </pair>
      <pair>
-       <displayed-value>Learning Object</displayed-value>
-       <stored-value>Learning Object</stored-value>
+       <displayed-value>Bài trích tạp chí</displayed-value>
+       <stored-value>Bài trích tạp chí</stored-value>
      </pair>
      <pair>
-       <displayed-value>Image</displayed-value>
-       <stored-value>Image</stored-value>
+       <displayed-value>Bài trích kỷ yếu</displayed-value>
+       <stored-value>Bài trích kỷ yếu</stored-value>
      </pair>
      <pair>
-       <displayed-value>Image, 3-D</displayed-value>
-       <stored-value>Image, 3-D</stored-value>
+       <displayed-value>Bài trích sách</displayed-value>
+       <stored-value>Bài trích sách</stored-value>
      </pair>
      <pair>
-       <displayed-value>Map</displayed-value>
-       <stored-value>Map</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Musical Score</displayed-value>
-       <stored-value>Musical Score</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Plan or blueprint</displayed-value>
-       <stored-value>Plan or blueprint</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Preprint</displayed-value>
-       <stored-value>Preprint</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Presentation</displayed-value>
-       <stored-value>Presentation</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Recording, acoustical</displayed-value>
-       <stored-value>Recording, acoustical</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Recording, musical</displayed-value>
-       <stored-value>Recording, musical</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Recording, oral</displayed-value>
-       <stored-value>Recording, oral</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Software</displayed-value>
-       <stored-value>Software</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Báo cáo kỹ thuật</displayed-value>
-       <stored-value>Báo cáo kỹ thuật</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Luận án</displayed-value>
-       <stored-value>Luận án</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Video</displayed-value>
-       <stored-value>Video</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Working Paper</displayed-value>
-       <stored-value>Working Paper</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Other</displayed-value>
-       <stored-value>Other</stored-value>
+       <displayed-value>Bài nghiên cứu</displayed-value>
+       <stored-value>Bài nghiên cứu</stored-value>
      </pair>
    </value-pairs>
 
