@@ -46,7 +46,6 @@ public class ItemExportArchiveServlet extends DSpaceServlet {
 
 		filename = request.getPathInfo().substring(
 				request.getPathInfo().lastIndexOf('/')+1);
-		System.out.println(filename);
 
 		if (ItemExport.canDownload(context, filename)) {
 			try {

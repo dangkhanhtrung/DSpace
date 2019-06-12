@@ -19,7 +19,7 @@
 </div>
 <br/>
 </main>
-<footer class="page-footer">
+<footer class="page-footer py-0">
     <div class="container">
         <div class="row">
             <div class="col-lg-auto">
@@ -30,7 +30,7 @@
 ">CỤC THÔNG TIN<br>KHOA HỌC VÀ CÔNG NGHỆ QUỐC GIA</label>
                 <span class="general-info"><strong>Địa chỉ:</strong> 24. Lý Thường Kiệt, Q. Hoàn Kiếm, Tp. Hà Nội <span class="line">|</span><br> <strong>Tel</strong>: (84-24)39349119 - (84-24)39349923 <span class="line">|</span><br> <strong>E-mail</strong>: vp@vista.gov.vn</span>
             </div>
-            <div class="col text-right d-none d-lg-block">
+            <div class="col text-right d-lg-block">
             <img src="/jspui/static/custom/images/logo-fds-footer.png" class="my-2 mr-3" width="50">
             <img src="/jspui/static/custom/images/logo-dspace-footer.png" class="my-2" width="50">
                 <label class="system-name" style="

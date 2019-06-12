@@ -77,10 +77,6 @@ public class PageView extends DSpaceServlet
                  // Leave handle as null
              }
          }
-         
-         System.out.println("PageView.doDSGet(path)" + path);
-         System.out.println("PageView.doDSGet(handle)" + handle);
-         System.out.println("PageView.doDSGet(extraPathInfo)" + extraPathInfo);
         JSPManager.showJSP(request, response, "/page/gioi-thieu.jsp");
     }
 

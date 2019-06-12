@@ -351,7 +351,7 @@ j(document).ready(function() {
     </form>
 <%
     } else {
-    	if (exportBiblioEnabled && ( exportBiblioAll || user!=null ) ) {
+    	if (exportBiblioEnabled && ( exportBiblioAll || user!=null ) || 1==1 ) {
     %>
 
     		<form target="blank" class="form-inline"  id="exportform" action="<%= request.getContextPath() %>/references">

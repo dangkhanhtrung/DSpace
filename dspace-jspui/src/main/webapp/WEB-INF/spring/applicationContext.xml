@@ -61,10 +61,4 @@
     	</property>
     </bean>
      -->
-     <!-- Elasticsearch -->
-	<bean class="org.dspace.statistics.ElasticSearchLoggerEventListener">
-        <property name="eventService">
-            <ref bean="dspace.eventService" />
-        </property>
-    </bean>
 </beans>

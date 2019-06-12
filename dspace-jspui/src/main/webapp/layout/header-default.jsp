@@ -104,6 +104,10 @@
 	src="<%= request.getContextPath()%>/static/vendor/headroom/headroom.min.js"></script>
 <script type="text/javascript"
 	src="<%= request.getContextPath()%>/static/js/vue.min.js"></script>
+	
+<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  
 <script type="text/javascript"
 	src="<%= request.getContextPath()%>/static/js/argon.min.js"></script>
 <script type="text/javascript"

@@ -850,3 +850,6 @@ body .detail_view .panel-group.col-md-12{
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
 	    color: #111;
 }
+body #navbar-primary-ccx {
+	    margin-top: -6px;
+}

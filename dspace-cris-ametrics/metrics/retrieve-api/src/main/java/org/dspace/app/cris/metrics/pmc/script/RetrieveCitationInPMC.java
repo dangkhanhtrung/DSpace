@@ -129,7 +129,6 @@ public class RetrieveCitationInPMC
             queryDefault = line.getOptionValue('q').trim(); 
         }
         ServiceManager serviceManager = dspace.getServiceManager();
-        // System.out.println(serviceManager.getServicesNames());
         searcher = serviceManager.getServiceByName(
                 SearchService.class.getName(), SearchService.class);
 

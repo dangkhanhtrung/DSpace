@@ -81,7 +81,6 @@ public class DefaultDisplayStrategy extends ASimpleDisplayStrategy
                     argument = "value";
                     value = metadataArray[j].value;
                 }
-				System.out.println("Argument: " + argument + ", " + value);
                 if (viewFull)
                 {
                     argument = "vfocus";
