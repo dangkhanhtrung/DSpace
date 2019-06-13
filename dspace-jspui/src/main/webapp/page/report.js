@@ -4533,7 +4533,7 @@ export default {
 
    researcherprofiles: {
         queryfunc: true,
-       query: `q=resourcetype_group:researcherprofiles&rows=0&facet=true&facet.query=(crisrp.degree:Tiến sĩ)&facet.query=(crisrp.degree:Thạc sĩ)&facet.query=(crisrp.degree:Kỹ sư)&facet.query=(crisrp.degree:Cử nhân)&facet.query=-(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân)&facet.query=(crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.position:Phó giáo sư)&facet.query=(crisrp.position:/*Nghiên cứu*/)&facet.query=-(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/1.*/ AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.subject:/1.*/ AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.subject:/1.*/ AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.subject:/1.*/ AND crisrp.degree:Cử nhân)&facet.query=(crisrp.subject:/1.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))&facet.query=(crisrp.subject:/1.*/ AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.subject:/1.*/ AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.subject:/1.*/ AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/1.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))&facet.query=(crisrp.subject:/2.*/ AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.subject:/2.*/ AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.subject:/2.*/ AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.subject:/2.*/ AND crisrp.degree:Cử nhân)&facet.query=(crisrp.subject:/2.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))&facet.query=(crisrp.subject:/2.*/ AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.subject:/2.*/ AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.subject:/2.*/ AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/2.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))&facet.query=(crisrp.subject:/3.*/ AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.subject:/3.*/ AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.subject:/3.*/ AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.subject:/3.*/ AND crisrp.degree:Cử nhân)&facet.query=(crisrp.subject:/3.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))&facet.query=(crisrp.subject:/3.*/ AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.subject:/3.*/ AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.subject:/3.*/ AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/3.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))&facet.query=(crisrp.subject:/4.*/ AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.subject:/4.*/ AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.subject:/4.*/ AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.subject:/4.*/ AND crisrp.degree:Cử nhân)&facet.query=(crisrp.subject:/4.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))&facet.query=(crisrp.subject:/4.*/ AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.subject:/4.*/ AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.subject:/4.*/ AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/4.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))&facet.query=(crisrp.subject:/5.*/ AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.subject:/5.*/ AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.subject:/5.*/ AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.subject:/5.*/ AND crisrp.degree:Cử nhân)&facet.query=(crisrp.subject:/5.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))&facet.query=(crisrp.subject:/5.*/ AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.subject:/5.*/ AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.subject:/5.*/ AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/5.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))&facet.query=(crisrp.subject:/6.*/ AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.subject:/6.*/ AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.subject:/6.*/ AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.subject:/6.*/ AND crisrp.degree:Cử nhân)&facet.query=(crisrp.subject:/6.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))&facet.query=(crisrp.subject:/6.*/ AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.subject:/6.*/ AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.subject:/6.*/ AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/6.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))&facet.query=(crisrp.iso-country:VN AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.iso-country:VN AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.iso-country:VN AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.iso-country:VN AND crisrp.degree:Cử nhân)&facet.query=(crisrp.iso-country:VN AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))&facet.query=(crisrp.iso-country:VN AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.iso-country:VN AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.iso-country:VN AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.iso-country:VN AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))&facet.query=(-(crisrp.iso-country:VN) AND crisrp.degree:Tiến sĩ)&facet.query=(-(crisrp.iso-country:VN) AND crisrp.degree:Thạc sĩ)&facet.query=(-(crisrp.iso-country:VN) AND crisrp.degree:Kỹ sư)&facet.query=(-(crisrp.iso-country:VN) AND crisrp.degree:Cử nhân)&facet.query=(-(crisrp.iso-country:VN) AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))&facet.query=(-(crisrp.iso-country:VN) AND crisrp.position:Giáo sư NOT Phó)&facet.query=(-(crisrp.iso-country:VN) AND crisrp.position:Phó giáo sư)&facet.query=(-(crisrp.iso-country:VN) AND crisrp.position:/*Nghiên cứu*/)&facet.query=(-(crisrp.iso-country:VN) AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))&facet.query=*&facet.query=crisrp.iso-country:VN&facet.query=-crisrp.iso-country:VN&facet.query=crisrp.subject:/1.*/&facet.query=crisrp.subject:/2.*/&facet.query=crisrp.subject:/3.*/&facet.query=crisrp.subject:/4.*/&facet.query=crisrp.subject:/5.*/&facet.query=crisrp.subject:/6.*/&facet.query=crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `]&facet.query=crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `]&facet.query=crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `]&facet.query=crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `]&facet.query=crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `]&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.degree:Cử nhân)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.degree:Cử nhân)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.degree:Cử nhân)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.degree:Cử nhân)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.degree:Cử nhân)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))`,
+       query: `q=resourcetype_group:researcherprofiles&rows=0&facet=true&facet.query=(crisrp.degree:Tiến sĩ)&facet.query=(crisrp.degree:Thạc sĩ)&facet.query=(crisrp.degree:Kỹ sư)&facet.query=(crisrp.degree:Cử nhân)&facet.query=-(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân)&facet.query=(crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.position:Phó giáo sư)&facet.query=(crisrp.position:/*Nghiên cứu*/)&facet.query=-(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/1.*/ AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.subject:/1.*/ AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.subject:/1.*/ AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.subject:/1.*/ AND crisrp.degree:Cử nhân)&facet.query=(crisrp.subject:/1.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))&facet.query=(crisrp.subject:/1.*/ AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.subject:/1.*/ AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.subject:/1.*/ AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/1.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))&facet.query=(crisrp.subject:/2.*/ AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.subject:/2.*/ AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.subject:/2.*/ AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.subject:/2.*/ AND crisrp.degree:Cử nhân)&facet.query=(crisrp.subject:/2.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))&facet.query=(crisrp.subject:/2.*/ AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.subject:/2.*/ AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.subject:/2.*/ AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/2.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))&facet.query=(crisrp.subject:/3.*/ AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.subject:/3.*/ AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.subject:/3.*/ AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.subject:/3.*/ AND crisrp.degree:Cử nhân)&facet.query=(crisrp.subject:/3.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))&facet.query=(crisrp.subject:/3.*/ AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.subject:/3.*/ AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.subject:/3.*/ AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/3.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))&facet.query=(crisrp.subject:/4.*/ AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.subject:/4.*/ AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.subject:/4.*/ AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.subject:/4.*/ AND crisrp.degree:Cử nhân)&facet.query=(crisrp.subject:/4.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))&facet.query=(crisrp.subject:/4.*/ AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.subject:/4.*/ AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.subject:/4.*/ AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/4.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))&facet.query=(crisrp.subject:/5.*/ AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.subject:/5.*/ AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.subject:/5.*/ AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.subject:/5.*/ AND crisrp.degree:Cử nhân)&facet.query=(crisrp.subject:/5.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))&facet.query=(crisrp.subject:/5.*/ AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.subject:/5.*/ AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.subject:/5.*/ AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/5.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))&facet.query=(crisrp.subject:/6.*/ AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.subject:/6.*/ AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.subject:/6.*/ AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.subject:/6.*/ AND crisrp.degree:Cử nhân)&facet.query=(crisrp.subject:/6.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))&facet.query=(crisrp.subject:/6.*/ AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.subject:/6.*/ AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.subject:/6.*/ AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/6.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))&facet.query=(crisrp.iso-country:VN AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.iso-country:VN AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.iso-country:VN AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.iso-country:VN AND crisrp.degree:Cử nhân)&facet.query=(crisrp.iso-country:VN AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))&facet.query=(crisrp.iso-country:VN AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.iso-country:VN AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.iso-country:VN AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.iso-country:VN AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))&facet.query=(-(crisrp.iso-country:VN) AND crisrp.degree:Tiến sĩ)&facet.query=(-(crisrp.iso-country:VN) AND crisrp.degree:Thạc sĩ)&facet.query=(-(crisrp.iso-country:VN) AND crisrp.degree:Kỹ sư)&facet.query=(-(crisrp.iso-country:VN) AND crisrp.degree:Cử nhân)&facet.query=(-(crisrp.iso-country:VN) AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))&facet.query=(-(crisrp.iso-country:VN) AND crisrp.position:Giáo sư NOT Phó)&facet.query=(-(crisrp.iso-country:VN) AND crisrp.position:Phó giáo sư)&facet.query=(-(crisrp.iso-country:VN) AND crisrp.position:/*Nghiên cứu*/)&facet.query=(-(crisrp.iso-country:VN) AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))&facet.query=*&facet.query=crisrp.iso-country:VN&facet.query=-crisrp.iso-country:VN&facet.query=crisrp.subject:/1.*/&facet.query=crisrp.subject:/2.*/&facet.query=crisrp.subject:/3.*/&facet.query=crisrp.subject:/4.*/&facet.query=crisrp.subject:/5.*/&facet.query=crisrp.subject:/6.*/&facet.query=crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `]&facet.query=crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `]&facet.query=crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `]&facet.query=crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `]&facet.query=crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `]&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.degree:Cử nhân)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 35) + ` TO ` + (new Date().getFullYear()) + `] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.degree:Cử nhân)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 55) + ` TO ` + (new Date().getFullYear() - 36) + `] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.degree:Cử nhân)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 60) + ` TO ` + (new Date().getFullYear() - 56) + `] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.degree:Cử nhân)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.birthDay.year_sort:[` + (new Date().getFullYear() - 65) + ` TO ` + (new Date().getFullYear() - 61) + `] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.degree:Tiến sĩ)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.degree:Thạc sĩ)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.degree:Kỹ sư)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.degree:Cử nhân)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.position:Phó giáo sư)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.birthDay.year_sort:[* TO ` + (new Date().getFullYear() - 65) + `] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))`,
        pdf: {  
         pageOrientation:"landscape",
         content:[  
@@ -4646,7 +4646,7 @@ export default {
                           style:"tdStyle"
                        },
                        {  
-                          text:"Phó Giáo sư",
+                          text:"Phó giáo sư",
                           alignment:"center",
                           style:"tdStyle"
                        },
@@ -4750,7 +4750,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"-(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân)\"]",
+                          text:"dataX[\"-(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân)\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -4770,7 +4770,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"-(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/)\"]",
+                          text:"dataX[\"-(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/)\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -4829,7 +4829,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.iso-country:VN AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))\"]",
+                          text:"dataX[\"(crisrp.iso-country:VN AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -4849,7 +4849,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.iso-country:VN AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))\"]",
+                          text:"dataX[\"(crisrp.iso-country:VN AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -4891,7 +4891,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(-(crisrp.iso-country:VN) AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))\"]",
+                          text:"dataX[\"(-(crisrp.iso-country:VN) AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -4911,7 +4911,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(-(crisrp.iso-country:VN) AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))\"]",
+                          text:"dataX[\"(-(crisrp.iso-country:VN) AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -4970,7 +4970,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.subject:/1.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))\"]",
+                          text:"dataX[\"(crisrp.subject:/1.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -4990,7 +4990,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.subject:/1.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))\"]",
+                          text:"dataX[\"(crisrp.subject:/1.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -5032,7 +5032,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.subject:/2.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))\"]",
+                          text:"dataX[\"(crisrp.subject:/2.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -5052,7 +5052,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.subject:/2.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))\"]",
+                          text:"dataX[\"(crisrp.subject:/2.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -5094,7 +5094,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.subject:/3.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))\"]",
+                          text:"dataX[\"(crisrp.subject:/3.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -5114,7 +5114,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.subject:/3.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))\"]",
+                          text:"dataX[\"(crisrp.subject:/3.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -5156,7 +5156,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.subject:/4.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))\"]",
+                          text:"dataX[\"(crisrp.subject:/4.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -5176,7 +5176,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.subject:/4.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))\"]",
+                          text:"dataX[\"(crisrp.subject:/4.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -5218,7 +5218,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.subject:/5.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))\"]",
+                          text:"dataX[\"(crisrp.subject:/5.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -5238,7 +5238,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.subject:/5.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))\"]",
+                          text:"dataX[\"(crisrp.subject:/5.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -5280,7 +5280,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.subject:/6.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))\"]",
+                          text:"dataX[\"(crisrp.subject:/6.*/ AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -5300,7 +5300,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.subject:/6.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))\"]",
+                          text:"dataX[\"(crisrp.subject:/6.*/ AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -5359,7 +5359,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 35) + " TO " + (new Date().getFullYear()) + "] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))\"]",
+                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 35) + " TO " + (new Date().getFullYear()) + "] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -5379,7 +5379,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 35) + " TO " + (new Date().getFullYear()) + "] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))\"]",
+                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 35) + " TO " + (new Date().getFullYear()) + "] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -5421,7 +5421,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 55) + " TO " + (new Date().getFullYear() - 36) + "] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))\"]",
+                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 55) + " TO " + (new Date().getFullYear() - 36) + "] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -5441,7 +5441,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 55) + " TO " + (new Date().getFullYear() - 36) + "] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))\"]",
+                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 55) + " TO " + (new Date().getFullYear() - 36) + "] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -5483,7 +5483,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 60) + " TO " + (new Date().getFullYear() - 56) + "] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))\"]",
+                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 60) + " TO " + (new Date().getFullYear() - 56) + "] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -5503,7 +5503,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 60) + " TO " + (new Date().getFullYear() - 56) + "] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))\"]",
+                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 60) + " TO " + (new Date().getFullYear() - 56) + "] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -5545,7 +5545,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 65) + " TO " + (new Date().getFullYear() - 61) + "] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))\"]",
+                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 65) + " TO " + (new Date().getFullYear() - 61) + "] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -5565,7 +5565,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 65) + " TO " + (new Date().getFullYear() - 61) + "] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))\"]",
+                          text:"dataX[\"(crisrp.birthDay.year_sort:[" + (new Date().getFullYear() - 65) + " TO " + (new Date().getFullYear() - 61) + "] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -5607,7 +5607,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.birthDay.year_sort:[* TO " + (new Date().getFullYear() - 65) + "] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degrEe:thạc Sĩ) and -(crisrp.dEgree:Kỹ sư) and -(crisrP.degree:Cử nhân))\"]",
+                          text:"dataX[\"(crisrp.birthDay.year_sort:[* TO " + (new Date().getFullYear() - 65) + "] AND -(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:thạc Sĩ) and -(crisrp.degree:Kỹ sư) and -(crisrp.degree:Cử nhân))\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -5627,7 +5627,7 @@ export default {
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisrp.birthDay.year_sort:[* TO " + (new Date().getFullYear() - 65) + "] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.positiOn:Phó giáo Sư) and -(crisrp.positIon:/*Nghiên cứu*/))\"]",
+                          text:"dataX[\"(crisrp.birthDay.year_sort:[* TO " + (new Date().getFullYear() - 65) + "] AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:Phó giáo sư) and -(crisrp.position:/*Nghiên cứu*/))\"]",
                           type:"function",
                           alignment:"center"
                        }
