@@ -310,6 +310,29 @@
 					</list>
 				</entry>
 
+				<entry key="crisjournals">
+					<list>
+						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
+							<property name="viewConfiguration" ref="crisjournalsLayoutView" />
+							<property name="type" value="recentsubmission" />
+							<property name="sortField" value="time_creation_dt" />
+							<property name="order" value="desc" />
+ 							<property name="num" value="10" />
+ 						</bean>
+					</list>
+				</entry>
+
+				<entry key="crisdataset">
+					<list>
+						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
+							<property name="viewConfiguration" ref="crisjournalsLayoutView" />
+							<property name="type" value="recentsubmission" />
+							<property name="sortField" value="time_creation_dt" />
+							<property name="order" value="desc" />
+ 							<property name="num" value="10" />
+ 						</bean>
+					</list>
+				</entry>
 
 			</map>
 		</property>

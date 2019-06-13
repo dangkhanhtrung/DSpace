@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Bảng phân loại lĩnh vực nghiên cứu khoa học công nghệ Ban hành kèm theo Quyết định số 12/2008/QĐ-BKHCN ngày 4 tháng 9 năm 2008 của Bộ trưởng Bộ Khoa học và Công nghệ
+-->
+
+<node id="LVKHCN" label="BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ">
+	<isComposedBy>
+		<node id="1" label="1.Khoa học tự nhiên">
+			<isComposedBy>
+				<node id="101" label="Toán học và thống kê">
+					<isComposedBy>
+						<node id="10101" label="Toán học cơ bản"/>
+						<node id="10102" label="Toán học ứng dụng"/>
+						<node id="10103" label="Thống kê (Những vấn đề nghiên cứu thống kê ứng dụng trong từng lĩnh vực, từng ngành cụ thể được xếp vào lĩnh vực, ngành tương ứng)"/>
+						<node id="10199" label="Toán học và thống kê khác"/>
+					</isComposedBy>
+				</node>
+				<node id="102" label="Khoa học máy tính và thông tin">
+					<isComposedBy>
+						<node id="10201" label="Khoa học máy tính"/>
+						<node id="10202" label="Khoa học thông tin"/>
+						<node id="10203" label="Sinh tin học"/>
+						<node id="10299" label="Khoa học máy tính và khoa học thông tin khác. (Các vấn đề phát triển phần cứng xếp vào mục 20206 (Phần cứng và kiến trúc máy tính); Các khía cạnh xã hội của khoa học tính toán và thông tin xếp vào mục 5 - Khoa học xã hội.)"/>
+					</isComposedBy>
+				</node>
+				<node id="103" label="Vật lý">
+					<isComposedBy>
+						<node id="10301" label="Vật lý nguyên tử; vật lý phân tử và vật lý hóa học (vật lý các nguyên tử và các phân tử bao gồm va chạm, tương tác bức xạ, cộng hưởng từ; hiệu ứng Moessabauer)"/>
+						<node id="10302" label="Vật lý các chất cô đặc (bao gồm cả vật lý chất rắn; siêu dẫn)"/>
+						<node id="10303" label="Vật lý hạt và trường"/>
+						<node id="10304" label="Vật lý hạt nhân"/>
+						<node id="10305" label="Vật lý plasma và chất lỏng (bao gồm cả vật lý bề mặt)"/>
+						<node id="10306" label="Quang học (bao gồm cả lade quang học và lade lượng tử) "/>
+						<node id="10307" label="Âm học"/>
+						<node id="10308" label="Thiên văn học"/>
+						<node id="10309" label="Khoa học vũ trụ  (bao gồm cả vật lý vũ trụ)"/>
+						<node id="10399" label="Khoa học vật lý khác"/>
+					</isComposedBy>
+				</node>
+				<node id="104" label="Hoá học">
+					<isComposedBy>
+						<node id="10401" label="Hoá hữu cơ"/>
+						<node id="10402" label="Hoá vô cơ và hạt nhân"/>
+						<node id="10403" label="Hoá lý"/>
+						<node id="10404" label="Hoá học cao phân tử (polyme)" />
+						<node id="10405" label="Điện hóa (pin khô, pin, pin nhiên liệu, ăn mòn kim loại, điện phân)"/>
+						<node id="10406" label="Hoá keo"/>
+						<node id="10407" label="Hóa phân tích"/>
+						<node id="10499" label="Khoa học hoá học khác"/>
+					</isComposedBy>
+				</node>
+				<node id="105" label="Các khoa học trái đất và môi trường liên quan">
+					<isComposedBy>
+						<node id="10501" label="Địa chất học"/>
+						<node id="10502" label="Khoáng vật học"/>
+						<node id="10503" label="Cổ sinh học"/>
+						<node id="10504" label="Địa vật lý"/>
+						<node id="10505" label="Địa hóa học"/>
+						<node id="10506" label="Địa lý tự nhiên"/>
+						<node id="10507" label="Núi lửa học"/>
+						<node id="10508" label="Trắc địa học và bản đồ học"/>
+						<node id="10509" label="Các khoa học môi trường (các  khía cạnh xã hội của khoa học môi trường xếp vào mục 507)"/>
+						<node id="10510" label="Khí tượng học và các khoa học khí quyển"/>
+						<node id="10511" label="Khí hậu học"/>
+						<node id="10512" label="Hải dương học"/>
+						<node id="10513" label="Thuỷ văn; Tài nguyên nước"/>
+						<node id="10599" label="Khoa học trái đất và khoa học môi trường liên quan khác"/>
+					</isComposedBy>
+				</node>
+				<node id="106" label="Sinh học">
+					<isComposedBy>
+						<node id="10601" label="Sinh học lý thuyết"/>
+						<node id="10602" label="Tế bào học, Mô - phôi học"/>
+						<node id="10603" label="Vi sinh vật học"/>
+						<node id="10604" label="Vi rút học"/>
+						<node id="10605" label="Hoá sinh; phương pháp nghiên cứu hoá sinh"/>
+						<node id="10606" label="Sinh học phân tử"/>
+						<node id="10607" label="Nấm học"/>
+						<node id="10608" label="Lý sinh"/>
+						<node id="10609" label="Di truyền học"/>
+						<node id="10610" label="Sinh học sinh sản"/>
+						<node id="10611" label="Thực vật học"/>
+						<node id="10612" label="Động vật học"/>
+						<node id="10613" label="Sinh học biển và nước ngọt"/>
+						<node id="10614" label="Sinh thái học"/>
+						<node id="10615" label="Đa dạng sinh học"/>
+						<node id="10616" label="Công nghệ sinh học"/>
+						<node id="10699" label="Khoa học sinh học khác"/>
+					</isComposedBy>
+				</node>
+				<node id="199" label="Khoa học tự nhiên khác"/>
+			</isComposedBy>
+		</node>		
+		<node id="2" label="2.Khoa học kỹ thuật và công nghệ">
+			<isComposedBy>
+				<node id="201" label="Kỹ thuật dân dụng">
+					<isComposedBy>
+						<node id="20101" label="Kỹ thuật kiến trúc"/>
+						<node id="20102" label="Kỹ thuật xây dựng"/>
+						<node id="20103" label="Kỹ thuật kết cấu và đô thị"/>
+						<node id="20104" label="Kỹ thuật giao thông vận tải"/>
+						<node id="20105" label="Kỹ thuật thuỷ lợi"/>
+						<node id="20106" label="Kỹ thuật địa chất công trình"/>
+						<node id="20199" label="Kỹ thuật dân dụng khác"/>
+						
+					</isComposedBy>
+				</node>
+				<node id="202" label="Kỹ thuật điện, kỹ thuật điện tử, kỹ thuật thông tin">
+					<isComposedBy>
+						<node id="20201" label="Kỹ thuật điện và điện tử"/>
+						<node id="20202" label="Người máy và điều khiển tự động"/>
+						<node id="20203" label="Tự động hoá (CAD/CAM, v.v..) và các hệ thống điểu khiển, giám sát; công nghệ điều khiển số bằng máy tính (CNC),.. "/>
+						<node id="20204" label="Các hệ thống và kỹ thuật truyền thông"/>
+						<node id="20205" label="Viễn thông"/>
+						<node id="20206" label="Phần cứng và kiến trúc máy tính"/>
+						<node id="20207" label="Cơ điện tử; hệ vi cơ điện tử (MEMS),.."/>
+						<node id="20299" label="Kỹ thuật điện, kỹ thuật điện tử, kỹ thuật thông tin không xếp vào mục nào khác"/>
+					</isComposedBy>
+				</node>
+				<node id="203" label="Kỹ thuật cơ khí">
+					<isComposedBy>
+						<node id="20301" label="Kỹ thuật cơ khí nói chung"/>
+						<node id="20302" label="Chế tạo máy nói chung (Chế tạo máy từng ngành xếp vào các ngành cụ thể)"/>
+						<node id="20303" label="Chế tạo máy công cụ"/>
+						<node id="20304" label="Chế tạo máy động lực"/>
+						<node id="20305" label="Kỹ thuật cơ khí và chế tạo máy nông nghiệp (bao gồm cả cơ khí bảo quản chế biến, cơ khí lâm nghiệp, thuỷ sản)"/>
+						<node id="20306" label="Kỹ thuật cơ khí và chế tạo máy thuỷ lợi"/>
+						<node id="20307" label="Kỹ thuật cơ khí và chế tạo ôtô và giao thông"/>
+						<node id="20308" label="Kỹ thuật và công nghệ hàng không, vũ trụ"/>
+						<node id="20309" label="Kỹ thuật và công nghệ âm thanh"/>
+						<node id="20310" label="Kỹ thuật cơ khí  và chế tạo máy xây dựng"/>
+						<node id="20311" label="Kỹ thuật cơ khí tàu thuỷ"/>
+						<node id="20312" label="Kỹ thuật cơ khí và chế tạo thiết bị khai khoáng"/>
+						<node id="20313" label="Kỹ thuật cơ khí và chế tạo thiết bị năng lượng"/>
+						<node id="20399" label="Kỹ thuật cơ khí, chế tạo máy khác"/>
+					</isComposedBy>
+				</node>
+				<node id="204" label="Kỹ thuật hóa học">
+					<isComposedBy>
+						<node id="20401" label="Sản xuất hóa học công nghiệp nói chung (nhà máy, sản phẩm)"/>
+						<node id="20402" label="Kỹ thuật quá trình hóa học nói chung"/>
+						<node id="20403" label="Kỹ thuật hoá dược"/>
+						<node id="20404" label="Kỹ thuật hoá vô cơ"/>
+						<node id="20405" label="Kỹ thuật hoá hữu cơ"/>
+						<node id="20499" label="Kỹ thuật hóa học khác"/>
+					</isComposedBy>
+				</node>
+				<node id="205" label="Kỹ thuật vật liệu và luyện kim">
+					<isComposedBy>
+						<node id="20501" label="Kỹ thuật nhiệt trong luyện kim"/>
+						<node id="20502" label="Kỹ thuật và công nghệ sản xuất kim loại và hợp kim đen"/>
+						<node id="20503" label="Kỹ thuật và công nghệ sản xuất kim loại và hợp kim màu"/>
+						<node id="20504" label="Luyện kim bột"/>
+						<node id="20505" label="Cán kim loại; kéo kim loại; sản xuất sản phẩm kim loại; sản xuất ống kim loại, v.v.. "/>
+						<node id="20506" label="Luyện các chất bán dẫn"/>
+						<node id="20507" label="Vật liệu xây dựng"/>
+						<node id="20508" label="Vật liệu điện tử"/>
+						<node id="20509" label="Vật liệu kim loại"/>
+						<node id="20510" label="Gốm"/>
+						<node id="20511" label="Màng mỏng, vật liệu sơn, vật liệu phủ"/>
+						<node id="20512" label="Vật liệu composite (bao gồm cả plastic gia cường, gốm kim loại (cermet), các vật liệu sợi tổng hợp và tự nhiên phối hợp;...)"/>
+						<node id="20513" label="Gỗ, giấy, bột giấy"/>
+						<node id="20514" label="Vải, gồm cả sợi, màu và thuốc nhuộm tổng hợp "/>
+						<node id="20515" label="Vật liệu tiên tiến"/>
+						<node id="20599" label="Kỹ thuật vật liệu và luyện kim khác; (Vật liệu kích thước nano xếp vào mục 21001 - Vật liệu nano; Vật liệu sinh học xếp vào 20902 - Các sản phẩm sinh học)"/>
+					</isComposedBy>
+				</node>
+				<node id="206" label="Kỹ thuật y học">
+					<isComposedBy>
+						<node id="20601" label="Kỹ thuật và thiết bị y học"/>
+						<node id="20602" label="Kỹ thuật phân tích mẫu bệnh phẩm"/>
+						<node id="20603" label="Kỹ thuật phân tích mẫu thuốc" />
+						<node id="20604" label="Kỹ thuật chẩn đoán bệnh (Vật liệu sinh học được xếp vào mục 209- công nghệ sinh học công nghiệp)"/>
+					</isComposedBy>
+				</node>
+				<node id="207" label="Kỹ thuật môi trường">
+					<isComposedBy>
+						<node id="20701" label="Kỹ thuật môi trường và địa chất, địa kỹ thuật"/>
+						<node id="20702" label="Kỹ thuật dầu khí (dầu mỏ, khí đốt) (chế biễn dầu khí xếp vào mục 20405)"/>
+						<node id="20703" label="Kỹ thuật năng lượng và nhiên liệu không phải dầu khí"/>
+						<node id="20704" label="Viễn thám"/>
+						<node id="20705" label="Khai thác mỏ và xử lý khoáng chất"/>
+						<node id="20706" label="Kỹ thuật hàng hải, đóng tàu biển (Kỹ thuật cơ khí tàu thuỷ xếp vào 20311)"/>
+						<node id="20707" label="Kỹ thuật đại dương"/>
+						<node id="20708" label="Kỹ thuật bờ biển"/>
+						<node id="20799" label="Kỹ thuật môi trường khác"/>
+					</isComposedBy>
+				</node>
+				<node id="208" label="Công nghệ sinh học môi trường">
+					<isComposedBy>
+						<node id="20801" label="Công nghệ sinh học môi trường nói chung"/>
+						<node id="20802" label="Xử lý môi trường bằng phương pháp sinh học; các công nghệ sinh học chẩn đoán (chip ADN và thiết bị cảm biến sinh học)"/>
+						<node id="20803" label="Đạo đức học trong công nghệ sinh học môi trường"/>
+						<node id="20899" label="Công nghệ sinh học môi trường khác"/>
+					</isComposedBy>
+				</node>
+				<node id="209" label="Công nghệ sinh học công nghiệp">
+					<isComposedBy>
+						<node id="20901" label="Các công nghệ xử lý sinh học (các quá trình công nghiệp dựa vào các tác nhân sinh học để vận hành quy trình), xúc tác sinh học; lên men"/>
+						<node id="20902" label="Các công nghệ sản phẩm sinh học (các sản phẩm được chế tạo sử dụng vật liệu sinh học làm nguyên liệu), vật liệu sinh học, chất dẻo sinh học, nhiên liệu sinh học, các hóa chất được chiết tách từ sinh học, các vật liệu mới có nguồn gốc sinh học."/>
+						<node id="20999" label="Công nghệ sinh học công nghiệp khác"/>
+					</isComposedBy>
+				</node>
+				<node id="210" label="Công nghệ nano">
+					<isComposedBy>
+						<node id="21001" label="Các vật liệu nano (sản xuất và các tính chất)"/>
+						<node id="21002" label="Các quy trình nano (các ứng dụng ở cấp nano). (Vật liệu sinh học kích thước không phải nano  được xếp vào 209)"/>
+						<node id="21099" label="Công nghệ nano khác"/>
+					</isComposedBy>
+				</node>
+				<node id="211" label="Kỹ thuật thực phẩm và đồ uống">
+					<isComposedBy>
+						<node id="21101" label="Kỹ thuật thực phẩm"/>
+						<node id="21102" label="Kỹ thuật đồ uống"/>
+						<node id="21199" label="Kỹ thuật thực phẩm và đồ uống khác"/>
+					</isComposedBy>
+				</node>
+				<node id="299" label="Khoa học kỹ thuật và công nghệ khác"/>
+			</isComposedBy>
+		</node>
+		
+		<node id="3" label="3.Khoa học y, dược">
+			<isComposedBy>
+				<node id="301" label="Y học cơ sở">
+					<isComposedBy>
+						<node id="30101" label="Giải phẫu học và hình thái học (Giải phẫu và hình thái thực vật xếp vào 106 - Sinh học)"/>
+						<node id="30102" label="Di truyền học người"/>
+						<node id="30103" label="Miễn dịch học"/>
+						<node id="30104" label="Thần kinh học (bao gồm cả Tâm sinh lý học)"/>
+						<node id="30105" label="Sinh lý học y học"/>
+						<node id="30106" label="Mô học"/>
+						<node id="30107" label="Hóa học lâm sàng và sinh hóa y học"/>
+						<node id="30108" label="Vi sinh vật học y học"/>
+						<node id="30109" label="Bệnh học"/>
+						<node id="30199" label="Y học cơ sở khác"/>
+					</isComposedBy>
+				</node>
+				<node id="302" label="Y học lâm sàng">
+					<isComposedBy>
+						<node id="30201" label="Nam học"/>
+						<node id="30202" label="Sản khoa và phụ khoa"/>
+						<node id="30203" label="Nhi khoa"/>
+						<node id="30204" label="Hệ tim mạch"/>
+						<node id="30205" label="Bệnh hệ mạch ngoại biên"/>
+						<node id="30206" label="Huyết học và truyền máu"/>
+						<node id="30207" label="Hệ hô hấp và các bệnh liên quan"/>
+						<node id="30208" label="Điều trị tích cực và hồi sức cấp cứu"/>
+						<node id="30209" label="Gây mê"/>
+						<node id="30210" label="Chấn thương, Chỉnh hình"/>
+						<node id="30211" label="Ngoại khoa (Phẫu thuật)"/>
+						<node id="30212" label="Y học hạt nhân và phóng xạ; chụp ảnh y học"/>
+						<node id="30213" label="Ghép mô, tạng"/>
+						<node id="30214" label="Nha khoa và phẫu thuật miệng"/>
+						<node id="30215" label="Da liễu, Hoa liễu"/>
+						<node id="30216" label="Dị ứng"/>
+						<node id="30217" label="Bệnh về khớp"/>
+						<node id="30218" label="Nội tiết và chuyển hoá (bao gồm cả đái tháo đường,  rối loạn hoocmon)"/>
+						<node id="30219" label="Tiêu hoá và gan mật học"/>
+						<node id="30220" label="Niệu học và thận học"/>
+						<node id="30221" label="Ung thư học và phát sinh ung thư)"/>
+						<node id="30222" label="Nhãn khoa. Bệnh mắt"/>
+						<node id="30223" label="Tai mũi họng"/>
+						<node id="30224" label="Tâm thần học"/>
+						<node id="30225" label="Thần kinh học lâm sàng"/>
+						<node id="30226" label="Lão khoa, Bệnh người già"/>
+						<node id="30227" label="Y học thẩm mỹ, Phẫu thuật thẩm mỹ"/>
+						<node id="30228" label="Y học tổng hợp và nội khoa "/>
+						<node id="30229" label="Y học bổ trợ và kết hợp"/>
+						<node id="30230" label="Y học thể thao, thể dục"/>
+						<node id="30231" label="Y học dân tộc; y học cổ truyền"/>
+						<node id="30299" label="Y học lâm sàng khác"/>
+					</isComposedBy>
+				</node>
+				<node id="303" label="Y tế" >
+					<isComposedBy>
+						<node id="30301" label="Khoa học về chăm sóc sức khoẻ và dịch vụ y tế (bao gồm cả quản trị bệnh viện, tài chính y tế,..)"/>
+						<node id="30302" label="Chính sách và dịch vụ y tế"/>
+						<node id="30303" label="Điều dưỡng"/>
+						<node id="30304" label="Dinh dưỡng; Khoa học về ăn kiêng"/>
+						<node id="30305" label="Y tế môi trường và công cộng"/>
+						<node id="30306" label="Y học nhiệt đới"/>
+						<node id="30307" label="Ký sinh trùng học"/>
+						<node id="30308" label="Bệnh truyền nhiễm"/>
+						<node id="30309" label="Dịch tễ học"/>
+						<node id="30310" label="Sức khoẻ nghề nghiệp; tâm lý ung thư học, Hiệu quả chính sách và xã hội của nghiên cứu y sinh học "/>
+						<node id="30312" label="Sức khoẻ sinh sản"/>
+						<node id="30313" label="Đạo đức học trong y học"/>
+						<node id="30314" label="Lạm dụng thuốc; Nghiện và cai nghiện."/>
+						<node id="30399" label="Các vấn đề y tế khác"/>
+					</isComposedBy>
+				</node>
+				<node id="304" label="Dược học">
+					<isComposedBy>
+						<node id="30401" label="Dược lý học"/>
+					</isComposedBy>
+				</node>
+				<node id="305" label="Công nghệ sinh học trong y học">
+					<isComposedBy>
+						<node id="30501" label="Công nghệ sinh học liên quan đến y học, y tế"/>
+						<node id="30502" label="Công nghệ sinh học liên quan đến thao tác với các tế bào, mô, cơ quan hay toàn bộ sinh vật (hỗ trợ sinh sản); công nghệ tế bào gốc"/>
+						<node id="30503" label="Công nghệ liên quan đến xác định chức năng của ADN, protein, enzym và tác động của chúng tới việc phát bệnh; đảm bảo sức khỏe (bao gồm cả chẩn đoán gen, các can thiệp điều trị trên cơ sở gen (dược phẩm trên cơ sở gen (pharmacogenomics) các liệu pháp điều trị trên cở sở gen),... "/>
+						<node id="30504" label="Vật liệu sinh học liên quan đến cấy ghép trong y học, thiết bị, cảm biến y học)"/>
+						<node id="30505" label="Đạo đức học trong công nghệ sinh học y học "/>
+						<node id="30599" label="Công nghệ sinh học y học khác"/>	
+					</isComposedBy>
+				</node>
+				<node id="399" label="Khoa học y, dược khác">				
+					<isComposedBy>
+						<node id="39901" label="Pháp y"/>
+						<node id="39902" label="Y học thảm hoạ"/>
+						<node id="39903" label="Y học hàng không, vũ trụ"/>
+						<node id="39904" label="Quân y; Y tế quốc phòng"/>
+						<node id="39999" label="Y học, y tế và dược chưa xếp vào mục nào khác"/>
+					</isComposedBy>
+				</node>
+			</isComposedBy>
+		</node>
+		<node id="4" label="4.Khoa học nông nghiệp">
+			<isComposedBy>
+				<node id="401" label="Trồng trọt">
+					<isComposedBy>
+						<node id="40101" label="Nông hoá"/>
+						<node id="40102" label="Thổ nhưỡng học"/>
+						<node id="40103" label="Cây lương thực và cây thực phẩm"/>
+						<node id="40104" label="Cây rau, cây hoa và cây ăn quả"/>
+						<node id="40105" label="Cây công nghiệp và cây thuốc"/>
+						<node id="40106" label="Bảo vệ thực vật"/>
+						<node id="40107" label="Bảo quản và chế biến nông sản"/>
+						<node id="40199" label="Khoa học công nghệ trồng trọt khác"/>
+					</isComposedBy>
+				</node>
+				<node id="402" label="Chăn nuôi">
+					<isComposedBy>
+						<node id="40201" label="Sinh lý và hoá sinh động vật nuôi"/>
+						<node id="40202" label="Di truyền và nhân giống động vật nuôi"/>
+						<node id="40203" label="Thức ăn và dinh dưỡng cho động vật nuôi"/>
+						<node id="40204" label="Nuôi dưỡng động vật nuôi"/>
+						<node id="40205" label="Bảo vệ động vật nuôi"/>
+						<node id="40206" label="Sinh trưởng và phát triển của động vật nuôi"/>
+						<node id="40299" label="Khoa học công nghệ chăn nuôi khác"/>
+					</isComposedBy>
+				</node>
+				<node id="403" label="Thú y">
+					<isComposedBy>
+						<node id="40301" label="Y học thú y"/>
+						<node id="40302" label="Gây mê và điều trị tích cực thú y"/>
+						<node id="40303" label="Dịch tễ học thú y"/>
+						<node id="40304" label="Miễn dịch học thú y"/>
+						<node id="40305" label="Giải phẫu học và sinh lý học thú y"/>
+						<node id="40306" label="Bệnh học thú y"/>
+						<node id="40307" label="Vi sinh vật học thú y (trừ vi rút học thú y)"/>
+						<node id="40308" label="Ký sinh trùng học thú y"/>
+						<node id="40309" label="Sinh học phóng xạ và chụp ảnh"/>
+						<node id="40310" label="Vi rút học thú y"/>
+						<node id="40311" label="Phẫu thuật thú y"/>
+						<node id="40312" label="Dược học thú ý"/>
+						<node id="40399" label="Khoa học công nghệ thú y khác"/>
+					</isComposedBy>
+				</node>
+				<node id="404" label="Lâm nghiệp">
+					<isComposedBy>
+						<node id="40401" label="Lâm sinh"/>
+						<node id="40402" label="Tài nguyên rừng"/>
+						<node id="40403" label="Quản lý và bảo vệ rừng"/>
+						<node id="40404" label="Sinh thái và môi trường rừng"/>
+						<node id="40405" label="Giống cây rừng"/>
+						<node id="40406" label="Nông lâm kết hợp"/>
+						<node id="40407" label="Bảo quản và chế biến lâm sản"/>
+						<node id="40499" label="Khoa học công nghệ lâm nghiệp khác (Cơ khí lâm nghiệp xếp vào 20305.)"/>						
+					</isComposedBy>
+				</node>
+				<node id="405" label="Thuỷ sản">
+					<isComposedBy>
+						<node id="40501" label="Sinh lý và dinh dưỡng thuỷ sản "/>
+						<node id="40502" label="Di truyền học và nhân giống thuỷ sản"/>
+						<node id="40503" label="Bệnh học thuỷ sản"/>
+						<node id="40504" label="Nuôi trồng thuỷ sản"/>
+						<node id="40505" label="Hệ sinh thái và đánh giá nguồn lợi thuỷ sản"/>
+						<node id="40506" label="Quản lý và khai thác thuỷ sản"/>
+						<node id="40599" label="Khoa học công nghệ thuỷ sản khác"/>
+					</isComposedBy>
+				</node>
+				<node id="406" label="Công nghệ sinh học trong nông nghiệp">
+					<isComposedBy>
+						<node id="40601" label="Công nghệ gen (cây trồng và động vật nuôi); nhân dòng vật nuôi;"/>
+						<node id="40602" label="Các công nghệ tế bào trong nông nghiệp"/>
+						<node id="40603" label="Các công nghệ enzym và protein trong nông nghiệp"/>
+						<node id="40604" label="Các công nghệ vi sinh vật trong nông nghiệp"/>
+						<node id="40605" label="Đạo đức học trong công nghệ sinh học nông nghiệp"/>
+						<node id="40699" label="Công nghệ sinh học trong nông nghiệp khác"/>
+					</isComposedBy>
+				</node>
+				<node id="499" label="Khoa học nông nghiệp khác;"/>
+			</isComposedBy>
+		</node>
+		<node id="5" label="5.Khoa học xã hội">
+			<isComposedBy>
+				<node id="501" label="Tâm lý học">
+					<isComposedBy>
+						<node id="50101" label="Tâm lý học nói chung (bao gồm cả nghiên cứu quan hệ nguời - máy)"/>
+						<node id="50102" label="Tâm lý học chuyên ngành (bao gồm cả liệu pháp điều trị rối loạn tâm sinh lý và tinh thần trong học tập, ngôn ngữ, nghe, nhìn, nói...)"/>
+						<node id="50199" label="Tâm lý học khác"/>
+					</isComposedBy>
+				</node>
+				<node id="502" label="Kinh tế và kinh doanh">
+					<isComposedBy>
+						<node id="50201" label="Kinh tế học; Trắc lượng kinh tế học; Quan hệ sản xuất kinh doanh"/>
+						<node id="50202" label="Kinh doanh và quản lý"/>
+						<node id="50299" label="Kinh tế học và kinh doanh khác"/>
+					</isComposedBy>
+				</node>
+				<node id="503" label="Khoa học giáo dục">
+					<isComposedBy>
+						<node id="50301" label="Khoa học giáo dục học nói chung, bao gồm cả đào tạo, sư phạm học, lý luận giáo dục,.."/>
+						<node id="50302" label="Giáo dục chuyên biệt (theo đối tượng, cho người khuyết tật,...)"/>
+						<node id="50399" label="Các vấn đề khoa học giáo dục khác"/>
+					</isComposedBy>
+				</node>
+				<node id="504" label="Xã hội học">
+					<isComposedBy>
+						<node id="50401" label="Xã hội học nói chung"/>
+						<node id="50402" label="Nhân khẩu học"/>
+						<node id="50403" label="Nhân chủng học"/>
+						<node id="50404" label="Dân tộc học"/>
+						<node id="50405" label="Xã hội học chuyên đề; Khoa học về giới và phụ nữ; Các vấn đề xã hội Nghiên cứu gia đình và xã hội; Công tác xã hội"/>
+						<node id="50499" label="Xã hội học khác"/>
+					</isComposedBy>
+				</node>
+				<node id="505" label="Pháp luật">
+					<isComposedBy>
+						<node id="50501" label="Luật học"/>
+						<node id="50502" label="Tội phạm học"/>
+						<node id="50503" label="Hình phạt học (khoa học về hình phạt)"/>
+						<node id="50599" label="Các vấn để pháp luật khác"/>
+					</isComposedBy>
+				</node>
+				<node id="506" label="Khoa học chính trị">
+					<isComposedBy>
+						<node id="50601" label="Khoa học chính trị"/>
+						<node id="50602" label="Hành chính công và quản lý hành chính"/>
+						<node id="50603" label="Lý thuyết tổ chức; Hệ thống chính trị; Đảng chính trị"/>
+						<node id="50699" label="Khoa học chính trị khác"/>
+					</isComposedBy>
+				</node>
+				<node id="507" label="Địa lý kinh tế và xã hội">
+					<isComposedBy>
+						<node id="50701" label="Khoa học môi trường - các khía cạnh xã hội; (Những khía cạnh địa lý tự nhiên xếp vào mục 105 (Các khoa học trái đất và môi trường liên quan), khía cạnh công nghệ của địa lý xếp vào mục 207 (Kỹ thuật môi trường ))"/>
+						<node id="50702" label="Địa lý kinh tế và văn hoá"/>
+						<node id="50703" label="Nghiên cứu quy hoạch, phát triển đô thị"/>
+						<node id="50704" label="Quy hoạch giao thông và các khía cạnh xã hội của giao thông vận tải (Vấn đề kỹ thuật và công nghệ giao thông vận tải xếp vào mục 20104 (Kỹ thuật giao thông vận tải )"/>
+						<node id="50799" label="Địa lý kinh tế và xã hội khác"/>
+					</isComposedBy>
+				</node>
+				<node id="508" label="Thông tin đại chúng và truyền thông">
+					<isComposedBy>
+						<node id="50801" label="Luật học"/>
+						<node id="50802" label="Thông tin học (Khoa học thông tin - các khía cạnh xã hội) (Khía cạnh về tin học và công nghệ thông tin xếp vào mục 10202 (Khoa học thông tin ))"/>
+						<node id="50803" label="Khoa học thư viện"/>
+						<node id="50804" label="Thông tin đại chúng và truyền thông văn hoá - xã hội"/>
+						<node id="50899" label="Thông tin đại chúng và truyền thông  khác"/>
+					</isComposedBy>
+				</node>
+				<node id="599" label="Khoa học xã hội khác"/>
+			</isComposedBy>
+		</node>
+		<node id="6" label="6.Khoa học nhân văn">
+			<isComposedBy>
+				<node id="601" label="Lịch sử và khảo cổ học">
+					<isComposedBy>
+						<node id="60101" label="Lịch sử Việt Nam"/>
+						<node id="60102" label="Lịch sử thế giới; Lịch sử từng nước, từng vùng; từng khu vực"/>
+						<node id="60103" label="Khảo cổ học và tiền sử"/>
+						<node id="60199" label="Các vấn đề lịch sử và khảo cổ học khác (Lịch sử khoa học và công nghệ xếp vào 603(Triết học, đạo đức học và tôn giáo); Lịch sử của các khoa học chuyên ngành được xếp vào chuyên ngành tương ứng)"/>
+					</isComposedBy>
+				</node>
+				<node id="602" label="Ngôn ngữ học và văn học">
+					<isComposedBy>
+						<node id="60201" label="Nghiên cứu chung về ngôn ngữ"/>
+						<node id="60202" label="Nghiên cứu ngôn ngữ Việt Nam"/>
+						<node id="60203" label="Nghiên cứu ngôn ngữ khác"/>
+						<node id="60204" label="Lý luận văn học; Nghiên cứu văn học nói chung"/>
+						<node id="60205" label="Nghiên cứu văn học Việt Nam, văn học các dân tộc ít người của Việt Nam"/>
+						<node id="60206" label="Nghiên cứu văn học từng dân tộc, từng nước, khu vực khác"/>
+						<node id="60207" label="Lý luận văn hoá; Nghiên cứu văn hoá nói chung"/>
+						<node id="60208" label="Nghiên cứu văn hóa Việt Nam, văn hoá các dân tộc ít người Việt Nam"/>
+						<node id="60209" label="Các nghiên cứu văn hóa từng dân tộc, từng nước, khu vực khác"/>
+						<node id="60210" label="Ngôn ngữ học ứng dụng"/>
+						<node id="60299" label="Nghiên cứu ngôn ngữ và văn hóa khác"/>
+					</isComposedBy>
+				</node>
+				<node id="603" label="Triết học, đạo đức học và tôn giáo">
+					<isComposedBy>
+						<node id="60301" label="Triết học"/>
+						<node id="60302" label="Lịch sử và triết học của khoa học và công nghệ"/>
+						<node id="60303" label="Đạo đức học (trừ các vấn đề đạo đức học liên quan đến từng ngành cụ thể)"/>
+						<node id="60304" label="Thần học"/>
+						<node id="60305" label="Nghiên cứu tôn giáo"/>
+						<node id="60399" label="Các vấn đề của triết học và tôn giáo khác"/>
+					</isComposedBy>
+				</node>
+				<node id="604" label="Nghệ thuật">
+					<isComposedBy>
+						<node id="60401" label="Nghệ thuật và lịch sử nghệ thuật"/>
+						<node id="60402" label="Mỹ thuật"/>
+						<node id="60403" label="Nghệ thuật kiến trúc"/>
+						<node id="60404" label="Nghệ thuật trình diễn (âm nhạc, kịch, múa, hát, xiếc, ...)"/>
+						<node id="60405" label="Nghệ thuật dân gian"/>
+						<node id="60406" label="Nghệ thuật điện ảnh"/>
+						<node id="60407" label="Nghệ thuật truyền thanh, truyền hình"/>
+						<node id="60499" label="Các vấn đề nghiên cứu nghệ thuật khác"/>
+					</isComposedBy>
+				</node>
+				<node id="699" label="Khoa học nhân văn khác"/>
+			</isComposedBy>
+		</node>
+	</isComposedBy>
+</node>
