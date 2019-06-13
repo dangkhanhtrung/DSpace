@@ -481,6 +481,14 @@
       </fieldType>
       
       <fieldType name="crismetrics_t" class="org.dspace.solr.schema.CrisMetricsFieldType" coreName="${solr.core.name}" />
+      
+      	
+	<fieldType name="thongkestring" class="solr.TextField" positionIncrementGap="100" >
+      <analyzer>
+		  <tokenizer class="solr.KeywordTokenizerFactory"/>
+		</analyzer>
+    </fieldType>
+    
  </types>
 
 

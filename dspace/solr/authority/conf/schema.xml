@@ -110,7 +110,12 @@
          Consult the DateField javadocs for more information.
       -->
     <fieldType name="date" class="solr.DateField" sortMissingLast="true" omitNorms="true"/>
-
+	
+	<fieldType name="thongkestring" class="solr.TextField" positionIncrementGap="100" >
+      <analyzer>
+		  <tokenizer class="solr.KeywordTokenizerFactory"/>
+		</analyzer>
+    </fieldType>
 
     <!-- The "RandomSortField" is not used to store or search any
          data.  You can declare fields of this type it in your schema
@@ -215,7 +220,7 @@
         <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
       </analyzer>
     </fieldType>
-
+	
     <!-- This is an example of using the KeywordTokenizer along
          With various TokenFilterFactories to produce a sortable field
          that does not include some properties of the source text
@@ -269,7 +274,13 @@
               <filter class="solr.LowerCaseFilterFactory"/>
             </analyzer>
       </fieldType>
-
+	
+	<fieldType name="thongkestring" class="solr.TextField" positionIncrementGap="100" >
+      <analyzer>
+		  <tokenizer class="solr.KeywordTokenizerFactory"/>
+		</analyzer>
+    </fieldType>
+    
  </types>
 
 
