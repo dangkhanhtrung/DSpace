@@ -201,7 +201,7 @@ public class ItemCrisRefDisplayStrategy extends ASimpleDisplayStrategy implement
             endLink = "</a>";
         }
         ACrisObject rp = applicationService.getEntityByCrisId(metadataAuthority);
-        if (rp != null && "crisrp".contentEquals(rp.getTypeText())
+        if ("crisrp".contentEquals(rp.getTypeText())
             && rp.getMetadata("email") == null) {
             startLink = "&nbsp;<a>";
         }
