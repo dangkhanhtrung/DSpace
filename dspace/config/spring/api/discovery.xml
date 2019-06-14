@@ -1110,8 +1110,7 @@
 				<ref bean="searchFilterTitle" />
 				<ref bean="searchFilterAuthor" />
 				<ref bean="searchFilterSubject" />
-				<ref bean="searchFilterIssued" />
-				<ref bean="searchFilterPublisher" />
+				<ref bean="searchFilterIssued" />				
 			</list>
 		</property>
 		<!--The sort filters for the discovery search -->
@@ -2528,7 +2527,7 @@
 				<value>crisrp.profession</value>
 			</list>
 		</property>
-		<property name="facetLimit" value="10000" />
+		<property name="facetLimit" value="100" />
 		<property name="sortOrder" value="COUNT" />
 		<property name="type" value="thongkestring"/>
 	</bean>

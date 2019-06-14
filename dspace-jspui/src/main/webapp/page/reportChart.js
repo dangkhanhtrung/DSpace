@@ -2267,7 +2267,7 @@ export default {
     },
 
     researcherprofiles: {
-        query: `q=resourcetype_group:researcherprofiles&rows=0&facet=true&facet.query=(crisrp.degree:Tiến sĩ)&facet.query=(crisrp.degree:Thạc sĩ)&facet.query=(crisrp.degree:Kỹ sư)&facet.query=(crisrp.degree:Cử nhân)&facet.query=-(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:Thạc sĩ) AND -(crisrp.degree:Kỹ sư) AND -(crisrp.degree:Cử nhân)&facet.query=(crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.position:Phó giáo sư)&facet.query=(crisrp.position:/*Nghiên cứu*/)&facet.query=-(crisrp.position:Phó Giáo sư) AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/1.*/)&facet.query=(crisrp.subject:/2.*/)&facet.query=(crisrp.subject:/3.*/)&facet.query=(crisrp.subject:/4.*/)&facet.query=(crisrp.subject:/5.*/)&facet.query=(crisrp.subject:/6.*/)`,
+        query: `q=resourcetype_group:researcherprofiles&rows=0&facet=true&facet.query=(crisrp.degree:Tiến sĩ)&facet.query=(crisrp.degree:Thạc sĩ)&facet.query=(crisrp.degree:Kỹ sư)&facet.query=(crisrp.degree:Cử nhân)&facet.query=-(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:Thạc sĩ) AND -(crisrp.degree:Kỹ sư) AND -(crisrp.degree:Cử nhân)&facet.query=(crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.position:Phó giáo sư)&facet.query=(crisrp.position:/*Nghiên cứu*/)&facet.query=-(crisrp.position:Phó Giáo sư) AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/1.*/)&facet.query=(crisrp.subject:/2.*/)&facet.query=(crisrp.subject:/3.*/)&facet.query=(crisrp.subject:/4.*/)&facet.query=(crisrp.subject:/5.*/)&facet.query=(crisrp.subject:/6.*/)&facet.query=(crisrp.gender:Nam)&facet.query=(crisrp.gender:Nữ)&facet.query=(crisrp.gender:Không xác định)`,
         charts: [
          {
             class: "col-sm-6",
@@ -2468,6 +2468,65 @@ export default {
                 }]
             }
          },
+         {
+              style: "margin-top: -100px;",
+             class: "col-sm-6",
+             config: {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: 0,
+                    plotShadow: false
+                },
+                title: {
+                    text: 'Giới tính',
+                    align: 'center',
+                    verticalAlign: 'middle',
+                    y: 60
+                },
+                tooltip: {
+                    pointFormat: '<b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
+                            distance: 15,
+                            filter: {
+                                property: 'percentage',
+                                operator: '>',
+                                value: 5
+                            }
+                        },
+                        startAngle: -90,
+                        endAngle: 90,
+                        center: ['50%', '75%'],
+                        size: '110%',
+                        allowPointSelect: true,
+                        cursor: 'pointer'
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: 'Giới tính',
+                    innerSize: '50%',
+                    data: [
+                        {
+                          name: "Nam",
+                          y: 'dataX["(crisrp.gender:Nam)"]'
+                       },
+                       {
+                          name: "Nữ",
+                          y: 'dataX["(crisrp.gender:Nữ)"]'
+                       },
+                       {
+                          name: "Không xác định",
+                          y: 'dataX["(crisrp.gender:Không xác định)"]'
+                       }
+                    ]
+                }]
+            }
+          },
       ]
     }
 }
