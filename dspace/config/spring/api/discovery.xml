@@ -1909,8 +1909,7 @@
 				<value>dc.title</value>
 				<value>crisrp.fullName</value>
 			</list>
-		</property>
-		<property name="type" value="thongkestring"/>
+		</property>		
 	</bean>
 
 
@@ -1928,7 +1927,6 @@
 				<value>crisou.director</value>
 			</list>
 		</property>
-		<property name="type" value="thongkestring"/>
 	</bean>
 
 	<bean id="searchFilterObjectOU"
@@ -1946,7 +1944,6 @@
 				<value>crisou.this</value>
 			</list>
 		</property>
-		<property name="type" value="thongkestring"/>
 	</bean>
 
 	<bean id="searchFilterObjectType"
@@ -1957,7 +1954,6 @@
 				<value>placeholder.placeholder.placeholder</value>
 			</list>
 		</property>
-		<property name="type" value="thongkestring"/>
 	</bean>
 
 	<bean id="searchFilterTitle"
@@ -1991,7 +1987,6 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
-		<property name="type" value="thongkestring"/>
 	</bean>
 
 	<bean id="searchFilterPatentsTitle"
