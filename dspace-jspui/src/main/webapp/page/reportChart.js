@@ -131,6 +131,7 @@ export default {
             }
           },
           {
+              style: "margin-top: -100px;",
             class: "col-sm-6",
             config: {
                 chart: {
@@ -201,6 +202,7 @@ export default {
             }
          },
          {
+             style: "margin-top: -100px;",
             class: "col-12",
             config: {
                chart: {
@@ -400,6 +402,7 @@ export default {
                }
              },
              {
+                 style: "margin-top: -100px;",
                class: "col-sm-6",
                config: {
                    chart: {
@@ -470,6 +473,7 @@ export default {
                }
             },
             {
+                style: "margin-top: -100px;",
                asc_sort: "name",
                class: "col-12",
                config: {
@@ -630,6 +634,7 @@ export default {
                }
             },
             {
+                style: "margin-top: -100px;",
                class: "col-sm-6",
                config: {
                   chart: {
@@ -675,6 +680,7 @@ export default {
                }
             },
             {
+                style: "margin-top: -100px;",
                asc_sort: "name",
                class: "col-12",
                config: {
@@ -851,6 +857,7 @@ export default {
             }
           },
          {
+              style: "margin-top: -100px;",
             asc_sort: "name",
             class: "col-12",
             config: {
@@ -1015,6 +1022,7 @@ export default {
             }
           },
           {
+              style: "margin-top: -100px;",
              class: "col-sm-6",
              config: {
                 chart: {
@@ -1069,6 +1077,7 @@ export default {
             }
           },
           {
+              style: "margin-top: -100px;",
             class: "col-sm-6",
             config: {
                 chart: {
@@ -1139,6 +1148,7 @@ export default {
             }
          },
          {
+             style: "margin-top: -100px;",
             asc_sort: "name",
             class: "col-12",
             config: {
@@ -1327,6 +1337,7 @@ export default {
             }
          },
          {
+             style: "margin-top: -100px;",
             asc_sort: "name",
             class: "col-12",
             config: {
@@ -1519,6 +1530,7 @@ export default {
             }
          },
          {
+             style: "margin-top: -100px;",
             asc_sort: "name",
             class: "col-12",
             config: {
@@ -1565,6 +1577,7 @@ export default {
             }
          },
          {
+             style: "margin-top: -100px;",
             class: "col-12",
             config: {
                chart: {
@@ -1744,6 +1757,7 @@ export default {
               }
             },
             {
+                style: "margin-top: -100px;",
                asc_sort: "name",
                class: "col-12",
                config: {
@@ -1919,6 +1933,7 @@ export default {
             }
          },
          {
+             style: "margin-top: -100px;",
             class: "col-sm-6",
             config: {
                 chart: {
@@ -1964,6 +1979,7 @@ export default {
             }
          },
          {
+             style: "margin-top: -100px;",
             class: "col-12",
             config: {
                chart: {
@@ -2131,6 +2147,7 @@ export default {
             }
           },
           {
+              style: "margin-top: -100px;",
             class: "col-sm-6",
             config: {
                 chart: {
@@ -2201,6 +2218,7 @@ export default {
             }
          },
          {
+             style: "margin-top: -100px;",
             class: "col-12",
             config: {
                chart: {
@@ -2380,6 +2398,7 @@ export default {
             }
           },
           {
+              style: "margin-top: -100px;",
             class: "col-sm-6",
             config: {
                 chart: {

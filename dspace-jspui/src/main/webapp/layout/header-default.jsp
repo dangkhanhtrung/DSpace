@@ -201,7 +201,7 @@
 		<dspace:include page="/layout/navbar-home.jsp" />
 		<br />
 		<main id="content" role="main"> <%-- Page contents --%>
-		<div class="container fullheight">
+		<div class="container fullheight pt-0">
 
 
 			<%
