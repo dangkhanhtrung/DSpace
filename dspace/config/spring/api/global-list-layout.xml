@@ -452,4 +452,19 @@
 			</list>
 		</property>		
 	</bean>
+	<bean id="datasetsLayoutView"
+		class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
+		<property name="metadataHeadingFields">
+			<list>
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="mandatory" value="true" />
+					<property name="preHtml" value="&lt;b&gt;" />
+					<property name="postHtml" value="&lt;/b&gt;&lt;br/&gt;" />
+					<property name="field" value="dc.title" />
+					<property name="decorator" value="title" />
+				</bean>				
+			</list>
+		</property>		
+	</bean>
 </beans>

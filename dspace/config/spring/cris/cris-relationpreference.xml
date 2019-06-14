@@ -92,6 +92,42 @@
 		</property>
 	</bean>
 
+	<!-- NTH -->
+	<!-- patent vs PJ -->
+	<bean id="relationPatentsVSPJConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="crispatents.patentsoriginatesFrom" />		
+		<property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />		
+		<property name="query">
+			<value>crispatents.patentsoriginatesFrom_authority:{0}</value>
+		</property>
+	</bean>	
+
+	<!-- techs vs PJ -->
+	<bean id="relationTechsVSPJConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="cristechs.techsoriginatesFrom" />		
+		<property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />		
+		<property name="query">
+			<value>cristechs.techsoriginatesFrom_authority:{0}</value>
+		</property>
+	</bean>
+
+	<!-- patents vs OU -->
+	<bean id="relationPatentsVSOUConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="crispatents.patentsissuer" />		
+		<property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />		
+		<property name="query">
+			<value>crispatents.patentsissuer_authority:{0}</value>
+		</property>
+	</bean>
+	<!-- projects vs Crisfundings TODO--> 
+	<!-- <bean id="relationProjectsVSCrisFundingsConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="crisprojects.projectsfunded.As" />		
+		<property name="relationClass" value="org.dspace.app.cris.model.Project" />		
+		<property name="query">
+			<value>crispatents.patentsissuer_authority:{0}</value>
+		</property>
+	</bean> -->
+	<!-- End NTH -->
 						
 	<bean
 		class="org.dspace.app.cris.configuration.RelationPreferenceServiceConfiguration">
@@ -199,5 +235,7 @@
 			</list>
 		</property>
 	</bean>
+
+	
 
 </beans>

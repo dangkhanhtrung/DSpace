@@ -1497,7 +1497,7 @@ it, please enter the types and the actual numbers or codes.</hint>
      <pair>
        <displayed-value>Bài báo</displayed-value>
        <stored-value>Bài báo</stored-value>
-     </pair>
+     </pair>     
      <pair>
        <displayed-value>Kỷ yếu hội thảo</displayed-value>
        <stored-value>Kỷ yếu hội thảo</stored-value>
@@ -1533,6 +1533,10 @@ it, please enter the types and the actual numbers or codes.</hint>
      <pair>
        <displayed-value>Bài nghiên cứu</displayed-value>
        <stored-value>Bài nghiên cứu</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Dataset</displayed-value>
+       <stored-value>Dataset</stored-value>
      </pair>
    </value-pairs>
 
