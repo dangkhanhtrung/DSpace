@@ -175,6 +175,10 @@
                 <hr/>
             <div class="clearfix"></div>
             <div class="row">
+            	
+                <div class="col-12">
+                     <vuejx-chart></vuejx-chart>
+                </div>
                 <%
                     RecentSubmissions download = (RecentSubmissions) request.getAttribute("top_download");
                     RecentSubmissions submissions = (RecentSubmissions) request.getAttribute("top_recentsubmission");
@@ -209,10 +213,6 @@
                     <%@ include file="/dspace-cris/explore/topObjectsDownload.jsp" %>
                 </div>
                 <% } %>
-                <div class="col-12">
-                
-                     <vuejx-chart></vuejx-chart>
-                </div>
                
             </div>
         </div>
