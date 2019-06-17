@@ -1661,6 +1661,18 @@ export default {
 
    crisstandards: {
        query: `q=resourcetype_group:crisstandards&rows=0&facet=true&facet.query=(standardstype:TCVN)&facet.query=(standardstype:TCCS)&facet.query=(standardstype:QCVN)&facet.query=(standardstype:QCĐP)&facet.query=(standardstype:ĐLVN)&facet.query=(standardstype:Quốc tế)&facet.query=(standardsstatus:Còn hiệu lực AND standardstype:TCVN)&facet.query=(standardsstatus:Còn hiệu lực AND standardstype:TCCS)&facet.query=(standardsstatus:Còn hiệu lực AND standardstype:QCVN)&facet.query=(standardsstatus:Còn hiệu lực AND standardstype:QCĐP)&facet.query=(standardsstatus:Còn hiệu lực AND standardstype:ĐLVN)&facet.query=(standardsstatus:Còn hiệu lực AND standardstype:Quốc tế)&facet.query=(standardsstatus:Hết hiệu lực AND standardstype:TCVN)&facet.query=(standardsstatus:Hết hiệu lực AND standardstype:TCCS)&facet.query=(standardsstatus:Hết hiệu lực AND standardstype:QCVN)&facet.query=(standardsstatus:Hết hiệu lực AND standardstype:QCĐP)&facet.query=(standardsstatus:Hết hiệu lực AND standardstype:ĐLVN)&facet.query=(standardsstatus:Hết hiệu lực AND standardstype:Quốc tế)`,
+       querys: [
+         'q=(resourcetype_group:crisstandards)&rows=0&facet=true&facet.pivot=standardssubject_authority',
+         'q=(resourcetype_group:crisstandards AND standardstype:TCVN)&rows=0&facet=true&facet.pivot=standardssubject_authority',
+         'q=(resourcetype_group:crisstandards AND standardstype:TCCS)&rows=0&facet=true&facet.pivot=standardssubject_authority',
+         'q=(resourcetype_group:crisstandards AND standardstype:QCVN)&rows=0&facet=true&facet.pivot=standardssubject_authority',
+         'q=(resourcetype_group:crisstandards AND standardstype:QCĐP)&rows=0&facet=true&facet.pivot=standardssubject_authority',
+         'q=(resourcetype_group:crisstandards AND standardstype:ĐLVN)&rows=0&facet=true&facet.pivot=standardssubject_authority',
+         'q=(resourcetype_group:crisstandards AND standardstype:Quốc tế)&rows=0&facet=true&facet.pivot=standardssubject_authority'
+       ],
+       dataPoint: {
+         "8": "standardssubject_authority"
+       },
        pdf: {  
         pageOrientation:"landscape",
         content:[  
@@ -1952,7 +1964,31 @@ export default {
                           type:"function",
                           alignment:"center"
                        }
-                    ]
+                    ],
+                    [  
+                        {  
+                           text:"3. Chia theo Khung phân loại",
+                           alignment:"left",
+                           bold:true
+                        },
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                     ],
+                     [  
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                     ],
                  ]
               },
               margin:[  

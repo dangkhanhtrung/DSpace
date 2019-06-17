@@ -730,7 +730,7 @@ export default {
     },
 
     crisstandards: {
-        query: `q=resourcetype_group:crisstandards&rows=0&facet=true&facet.query=(standardstype:TCVN)&facet.query=(standardstype:TCCS)&facet.query=(standardstype:QCVN)&facet.query=(standardstype:QCĐP)&facet.query=(standardstype:ĐLVN)&facet.query=(standardstype:Quốc tế)&facet.query=(standardsstatus:Còn hiệu lực)&facet.query=(standardsstatus:Hết hiệu lực)&facet.field=standardspublicationDate.year_sort`,
+        query: `q=resourcetype_group:crisstandards&rows=0&facet=true&facet.query=(standardstype:TCVN)&facet.query=(standardstype:TCCS)&facet.query=(standardstype:QCVN)&facet.query=(standardstype:QCĐP)&facet.query=(standardstype:ĐLVN)&facet.query=(standardstype:Quốc tế)&facet.query=(standardsstatus:Còn hiệu lực)&facet.query=(standardsstatus:Hết hiệu lực)&facet.field=standardspublicationDate.year_sort&facet.field=standardssubject_authority`,
         charts: [
          {
             class: "col-sm-6",
@@ -856,8 +856,54 @@ export default {
                 }]
             }
           },
+          {
+             style: "margin-top: -100px;",
+             class: "col-sm-6",
+             config: {
+                 chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: 0,
+                    plotShadow: false
+                 },
+                 title: {
+                    text: 'Khung<br>phân loại',
+                    align: 'center',
+                    verticalAlign: 'middle',
+                    y: 30
+                 },
+                 tooltip: {
+                    pointFormat: '<b>{point.percentage:.1f}%</b>'
+                 },
+                 plotOptions: {
+                    pie: {
+                       dataLabels: {
+                             enabled: true,
+                             format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
+                             distance: 15,
+                             filter: {
+                                 property: 'percentage',
+                                 operator: '>',
+                                 value: 5
+                             }
+                       },
+                       startAngle: -90,
+                       endAngle: 90,
+                       center: ['50%', '75%'],
+                       size: '110%',
+                       allowPointSelect: true,
+                       cursor: 'pointer'
+                    }
+                 },
+                 series: [{
+                    type: 'pie',
+                    name: 'Khung phân loại',
+                    innerSize: '50%',
+                    data: 'standardssubject_authority'
+                 }]
+             }
+          },
          {
-              style: "margin-top: -100px;",
+              style: "margin-top: -50px;",
             asc_sort: "name",
             class: "col-12",
             config: {
