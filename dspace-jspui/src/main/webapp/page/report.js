@@ -1968,6 +1968,15 @@ export default {
 
    cristechs: {
        query: `q=resourcetype_group:cristechs&rows=0&facet=true&facet.query=(techstype:Công nghệ, thiết bị)&facet.query=(techstype:Giải pháp phần mềm)&facet.query=(techstype:Dịch vụ)&facet.query=(cristechs.techscollection:Nguồn cung AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techscollection:Nguồn cung AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techscollection:Nguồn cung AND techstype:Dịch vụ)&facet.query=(cristechs.techscollection:Nguồn cầu AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techscollection:Nguồn cầu AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techscollection:Nguồn cầu AND techstype:Dịch vụ)&facet.query=(cristechs.techssubject:1 AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techssubject:1 AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techssubject:1 AND techstype:Dịch vụ)&facet.query=(cristechs.techssubject:2 AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techssubject:2 AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techssubject:2 AND techstype:Dịch vụ)&facet.query=(cristechs.techssubject:3 AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techssubject:3 AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techssubject:3 AND techstype:Dịch vụ)&facet.query=(cristechs.techssubject:4 AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techssubject:4 AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techssubject:4 AND techstype:Dịch vụ)&facet.query=(cristechs.techssubject:5 AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techssubject:5 AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techssubject:5 AND techstype:Dịch vụ)&facet.query=(cristechs.techssubject:6 AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techssubject:6 AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techssubject:6 AND techstype:Dịch vụ)`,
+       querys: [
+         'q=(resourcetype_group:cristechs)&rows=0&facet=true&facet.pivot=techscountry_authority',
+         'q=(resourcetype_group:cristechs AND techstype:Công nghệ, thiết bị)&rows=0&facet=true&facet.pivot=techscountry_authority',
+         'q=(resourcetype_group:cristechs AND techstype:Giải pháp phần mềm)&rows=0&facet=true&facet.pivot=techscountry_authority',
+         'q=(resourcetype_group:cristechs AND techstype:Dịch vụ)&rows=0&facet=true&facet.pivot=techscountry_authority'
+       ],
+       dataPoint: {
+         "15": "techscountry_authority"
+       },
        pdf: {  
         pageOrientation:"landscape",
         content:[  
@@ -2379,6 +2388,24 @@ export default {
                           alignment:"center"
                        }
                     ],
+                    [  
+                        {  
+                           text:"4. Chia theo quốc gia phát triển",
+                           alignment:"left",
+                           bold:true
+                        },
+                        "",
+                        "",
+                        "",
+                        ""
+                     ],
+                     [  
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                     ],
                  ]
               },
               margin:[  

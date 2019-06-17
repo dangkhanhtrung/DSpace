@@ -907,7 +907,7 @@ export default {
     },
 
     cristechs: {
-        query: `q=resourcetype_group:cristechs&rows=0&facet=true&facet.query=(techstype:Công nghệ, thiết bị)&facet.query=(techstype:Giải pháp phần mềm)&facet.query=(techstype:Dịch vụ)&facet.query=(cristechs.techscollection:Nguồn cung)&facet.query=(cristechs.techscollection:Nguồn cầu)&facet.query=(cristechs.techssubject:/1.*/)&facet.query=(cristechs.techssubject:/2.*/)&facet.query=(cristechs.techssubject:/3.*/)&facet.query=(cristechs.techssubject:/4.*/)&facet.query=(cristechs.techssubject:/5.*/)&facet.query=(cristechs.techssubject:/6.*/)&facet.query=(techscountry_authority:VN)&facet.query=-(techscountry_authority:VN)&facet.field=crisDateIssued.year`,
+        query: `q=resourcetype_group:cristechs&rows=0&facet=true&facet.query=(techstype:Công nghệ, thiết bị)&facet.query=(techstype:Giải pháp phần mềm)&facet.query=(techstype:Dịch vụ)&facet.query=(cristechs.techscollection:Nguồn cung)&facet.query=(cristechs.techscollection:Nguồn cầu)&facet.query=(cristechs.techssubject:/1.*/)&facet.query=(cristechs.techssubject:/2.*/)&facet.query=(cristechs.techssubject:/3.*/)&facet.query=(cristechs.techssubject:/4.*/)&facet.query=(cristechs.techssubject:/5.*/)&facet.query=(cristechs.techssubject:/6.*/)&facet.query=(techscountry_authority:VN)&facet.query=-(techscountry_authority:VN)&facet.field=techspublicationDate.year_sort`,
         charts: [
          {
             class: "col-sm-6",
@@ -1189,7 +1189,7 @@ export default {
                    {
                        name: "Năm",
                        colorByPoint: true,
-                       data: "crisDateIssued.year"
+                       data: "techspublicationDate.year_sort"
                    }
                ]
             }
