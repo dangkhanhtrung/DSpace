@@ -523,7 +523,7 @@ export default {
     },
 
     crispatents: {
-        query: `q=resourcetype_group:crispatents&rows=0&facet=true&facet.query=(crispatents.patentstype:Bằng độc quyền sáng chế)&facet.query=(crispatents.patentstype:Bằng độc quyền giải pháp hữu ích)&facet.query=(patentsstatus:Còn hiệu lực)&facet.query=(patentsstatus:Hết hiệu lực)&facet.field=crispatents.patentscountrycode&facet.field=patentsapprovaldate.year_sort`,
+        query: `q=resourcetype_group:crispatents&rows=0&facet=true&facet.query=(crispatents.patentstype:Sáng chế)&facet.query=(crispatents.patentstype:Giải pháp hữu ích)&facet.query=(patentsstatus:Còn hiệu lực)&facet.query=(patentsstatus:Hết hiệu lực)&facet.field=crispatents.patentscountrycode&facet.field=patentsapprovaldate.year_sort`,
         charts: [
             {
                class: "col-sm-6",
@@ -569,11 +569,11 @@ export default {
                      data: [
                         {
                            name: "Bằng độc quyền<br>sáng chế",
-                           y: 'dataX["(crispatents.patentstype:Bằng độc quyền sáng chế)"]'
+                           y: 'dataX["(crispatents.patentstype:Sáng chế)"]'
                         },
                         {
                            name: "Bằng độc quyền<br>giải pháp<br>hữu ích",
-                           y: 'dataX["(crispatents.patentstype:Bằng độc quyền giải pháp hữu ích)"]'
+                           y: 'dataX["(crispatents.patentstype:Giải pháp hữu ích)"]'
                         }
                      ]
                   }]

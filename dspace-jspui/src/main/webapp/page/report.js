@@ -1465,7 +1465,7 @@ export default {
    },
 
    crispatents: {
-       query: `q=resourcetype_group:crispatents&rows=0&facet=true&facet.query=(crispatents.patentstype:Bằng độc quyền sáng chế)&facet.query=(crispatents.patentstype:Bằng độc quyền giải pháp hữu ích)&facet.query=(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Bằng độc quyền sáng chế)&facet.query=(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Bằng độc quyền giải pháp hữu ích)&facet.query=(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Bằng độc quyền sáng chế)&facet.query=(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Bằng độc quyền giải pháp hữu ích)`,
+       query: `q=resourcetype_group:crispatents&rows=0&facet=true&facet.query=(crispatents.patentstype:Sáng chế)&facet.query=(crispatents.patentstype:Giải pháp hữu ích)&facet.query=(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Sáng chế)&facet.query=(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Giải pháp hữu ích)&facet.query=(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Sáng chế)&facet.query=(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Giải pháp hữu ích)`,
        pdf: {  
         pageOrientation:"landscape",
         content:[  
@@ -1567,17 +1567,17 @@ export default {
                           bold:true
                        },
                        {  
-                          text:"dataX[\"(crispatents.patentstype:Bằng độc quyền sáng chế)\"] + dataX[\"(crispatents.patentstype:Bằng độc quyền giải pháp hữu ích)\"]",
+                          text:"dataX[\"(crispatents.patentstype:Sáng chế)\"] + dataX[\"(crispatents.patentstype:Giải pháp hữu ích)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crispatents.patentstype:Bằng độc quyền sáng chế)\"]",
+                          text:"dataX[\"(crispatents.patentstype:Sáng chế)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crispatents.patentstype:Bằng độc quyền giải pháp hữu ích)\"]",
+                          text:"dataX[\"(crispatents.patentstype:Giải pháp hữu ích)\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -1604,17 +1604,17 @@ export default {
                           ]
                        },
                        {  
-                          text:"dataX[\"(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Bằng độc quyền sáng chế)\"] + dataX[\"(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Bằng độc quyền giải pháp hữu ích)\"]",
+                          text:"dataX[\"(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Sáng chế)\"] + dataX[\"(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Giải pháp hữu ích)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Bằng độc quyền sáng chế)\"]",
+                          text:"dataX[\"(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Sáng chế)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Bằng độc quyền giải pháp hữu ích)\"]",
+                          text:"dataX[\"(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Giải pháp hữu ích)\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -1631,17 +1631,17 @@ export default {
                           ]
                        },
                        {  
-                          text:"dataX[\"(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Bằng độc quyền sáng chế)\"] + dataX[\"(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Bằng độc quyền giải pháp hữu ích)\"]",
+                          text:"dataX[\"(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Sáng chế)\"] + dataX[\"(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Giải pháp hữu ích)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Bằng độc quyền sáng chế)\"]",
+                          text:"dataX[\"(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Sáng chế)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Bằng độc quyền giải pháp hữu ích)\"]",
+                          text:"dataX[\"(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Giải pháp hữu ích)\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -4065,6 +4065,15 @@ export default {
 
    orgunits: {
        query: `q=resourcetype_group:orgunits&rows=0&facet=true&facet.query=(crisou.type:Công lập NOT Ngoài)&facet.query=(crisou.type:Ngoài công lập)&facet.query=(crisou.type:Vốn nước ngoài)&facet.query=(OUSubject_keyword:/1.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(OUSubject_keyword:/1.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject_keyword:/1.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject_keyword:/2.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(OUSubject_keyword:/2.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject_keyword:/2.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject_keyword:/3.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(OUSubject_keyword:/3.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject_keyword:/3.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject_keyword:/4.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(OUSubject_keyword:/4.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject_keyword:/4.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject_keyword:/5.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(OUSubject_keyword:/5.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject_keyword:/5.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject_keyword:/6.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(OUSubject_keyword:/6.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject_keyword:/6.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/1.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(crisou.activity:/1.*/ AND crisou.type:Ngoài công lập)&facet.query=(crisou.activity:/1.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/2.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(crisou.activity:/2.*/ AND crisou.type:Ngoài công lập)&facet.query=(crisou.activity:/2.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/3.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(crisou.activity:/3.*/ AND crisou.type:Ngoài công lập)&facet.query=(crisou.activity:/3.*/ AND crisou.type:Vốn nước ngoài)`,
+       querys: [
+         'q=(resourcetype_group:orgunits)&rows=0&facet=true&facet.pivot=OUProvince_authority',
+         'q=(resourcetype_group:orgunits AND crisou.type:Công lập NOT Ngoài)&rows=0&facet=true&facet.pivot=OUProvince_authority',
+         'q=(resourcetype_group:orgunits AND crisou.type:Ngoài công lập)&rows=0&facet=true&facet.pivot=OUProvince_authority',
+         'q=(resourcetype_group:orgunits AND crisou.type:Vốn nước ngoài)&rows=0&facet=true&facet.pivot=OUProvince_authority'
+       ],
+       dataPoint: {
+         "16": "OUProvince_authority"
+       },
        pdf: {  
         pageOrientation:"landscape",
         content:[  
@@ -4507,7 +4516,25 @@ export default {
                           type:"function",
                           alignment:"center"
                        }
-                    ]
+                    ],
+                    [  
+                       {  
+                          text:"4. Tỉnh thành",
+                          alignment:"left",
+                          bold:true
+                       },
+                       "",
+                       "",
+                       "",
+                       ""
+                    ],
+                    [  
+                       "",
+                       "",
+                       "",
+                       "",
+                       ""
+                    ],
                  ]
               },
               margin:[  
