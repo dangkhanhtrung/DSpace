@@ -1806,7 +1806,7 @@ export default {
     },
 
     crisjournals: {
-        query: `q=resourcetype_group:crisjournals&rows=0&facet=true&facet.query=(crisjournals.journalstype:Trong nước)&facet.query=(crisjournals.journalstype:Quốc tế)&facet.query=(crisjournals.journalssubject:/1.*/)&facet.query=(crisjournals.journalssubject:/2.*/)&facet.query=(crisjournals.journalssubject:/3.*/)&facet.query=(crisjournals.journalssubject:/4.*/)&facet.query=(crisjournals.journalssubject:/5.*/)&facet.query=(crisjournals.journalssubject:/6.*/)&facet.field=journalspublisher_keyword&facet.field=crisjournals.journalsauthority`,
+        query: `q=resourcetype_group:crisjournals&rows=0&facet=true&facet.query=(crisjournals.journalstype:Trong nước)&facet.query=(crisjournals.journalstype:Quốc tế)&facet.query=(crisjournals.journalssubject:/1.*/)&facet.query=(crisjournals.journalssubject:/2.*/)&facet.query=(crisjournals.journalssubject:/3.*/)&facet.query=(crisjournals.journalssubject:/4.*/)&facet.query=(crisjournals.journalssubject:/5.*/)&facet.query=(crisjournals.journalssubject:/6.*/)&facet.field=journalspublisher_keyword&facet.field=journalsauthority_authority`,
         charts: [
          {
             class: "col-sm-6",
@@ -1974,12 +1974,12 @@ export default {
                    type: 'pie',
                    name: 'Đơn vị chủ quản',
                    innerSize: '50%',
-                   data: "crisjournals.journalsauthority"
+                   data: "journalsauthority_authority"
                 }]
             }
          },
          {
-             style: "margin-top: -100px;",
+             style: "margin-top: -50px;",
             class: "col-12",
             config: {
                chart: {
