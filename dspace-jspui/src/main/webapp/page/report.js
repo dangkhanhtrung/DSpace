@@ -3387,7 +3387,7 @@ export default {
                           style:"tdStyle"
                        },
                        {  
-                          text:"Loại sự kiện",
+                          text:"Loại tài trợ",
                           colSpan:3,
                           alignment:"center",
                           bold:true,

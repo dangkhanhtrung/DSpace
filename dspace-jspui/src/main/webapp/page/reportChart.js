@@ -1626,7 +1626,7 @@ export default {
     },
 
     crisfundings: {
-        query: `q=resourcetype_group:crisfundings&rows=0&facet=true&facet.query=(crisfundings.fundingstype:Nghiên cứu phát triển)&facet.query=(crisfundings.fundingstype:Phát triển tiềm lực)&facet.query=(crisfundings.fundingstype:Hợp tác quốc tế)&facet.query=(fundingssubject:/1.*/)&facet.query=(fundingssubject:/2.*/)&facet.query=(fundingssubject:/3.*/)&facet.query=(fundingssubject:/4.*/)&facet.query=(fundingssubject:/5.*/)&facet.query=(fundingssubject:/6.*/)&facet.field=crisDateIssued.year_lastmodified`,
+        query: `q=resourcetype_group:crisfundings&rows=0&facet=true&facet.query=(crisfundings.fundingstype:Nghiên cứu phát triển)&facet.query=(crisfundings.fundingstype:Phát triển tiềm lực)&facet.query=(crisfundings.fundingstype:Hợp tác quốc tế)&facet.query=(fundingssubject:/1.*/)&facet.query=(fundingssubject:/2.*/)&facet.query=(fundingssubject:/3.*/)&facet.query=(fundingssubject:/4.*/)&facet.query=(fundingssubject:/5.*/)&facet.query=(fundingssubject:/6.*/)&facet.field=crisDateIssued.year_lastmodified&facet.query=(fundingsstatus:Đang gọi)&facet.query=(fundingsstatus:Đã kết thúc)`,
         charts: [
            {
               class: "col-sm-6",
@@ -1757,7 +1757,62 @@ export default {
               }
             },
             {
-                style: "margin-top: -100px;",
+             style: "margin-top: -100px;",
+             class: "col-12",
+             config: {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: 0,
+                    plotShadow: false
+                },
+                title: {
+                    text: 'Tình trạng<br>thực hiện',
+                    align: 'center',
+                    verticalAlign: 'middle',
+                    y: 30
+                },
+                tooltip: {
+                    pointFormat: '<b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
+                            distance: 15,
+                            filter: {
+                                property: 'percentage',
+                                operator: '>',
+                                value: 0
+                            }
+                        },
+                        startAngle: -90,
+                        endAngle: 90,
+                        center: ['50%', '75%'],
+                        size: '110%',
+                        allowPointSelect: true,
+                        cursor: 'pointer'
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: 'Tình trạng thực hiện',
+                    innerSize: '50%',
+                    data: [
+                        {
+                          name: "Đang gọi",
+                          y: 'dataX["(fundingsstatus:Đang gọi)"]'
+                       },
+                       {
+                          name: "Đã kết thúc",
+                          y: 'dataX["(fundingsstatus:Đã kết thúc)"]'
+                       }
+                    ]
+                }]
+            }
+          },
+            {
+                style: "margin-top: -50px;",
                asc_sort: "name",
                class: "col-12",
                config: {
