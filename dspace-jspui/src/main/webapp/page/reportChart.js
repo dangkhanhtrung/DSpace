@@ -1,6 +1,6 @@
 export default {
     fundings: {
-        query: `q=resourcetype_group:fundings&rows=0&facet=true&facet.query=(crisproject.type:Đề tài)&facet.query=(crisproject.type:Đề án)&facet.query=(crisproject.type:Dự án)&facet.query=(crisproject.type:Hợp tác quốc tế)&facet.query=(crisproject.level:Quốc gia)&facet.query=(crisproject.level:Bộ ngành)&facet.query=(crisproject.level:Tỉnh Thành)&facet.query=(crisproject.level:Cơ sở)&facet.query=(crisproject.level:Ngoài ngân sách)&facet.query=(crisproject.subject:/1.*/)&facet.query=(crisproject.subject:/2.*/)&facet.query=(crisproject.subject:/3.*/)&facet.query=(crisproject.subject:/4.*/)&facet.query=(crisproject.subject:/5.*/)&facet.query=(crisproject.subject:/6.*/)&facet.field=PJAuthority_keyword`,
+        query: `q=resourcetype_group:fundings&rows=0&facet=true&facet.query=(crisproject.type:Đề tài)&facet.query=(crisproject.type:Đề án)&facet.query=(crisproject.type:Dự án)&facet.query=(crisproject.type:Hợp tác quốc tế)&facet.query=(crisproject.level:Quốc gia)&facet.query=(crisproject.level:Bộ ngành)&facet.query=(crisproject.level:Tỉnh Thành)&facet.query=(crisproject.level:Cơ sở)&facet.query=(crisproject.level:Ngoài ngân sách)&facet.query=(PJSubject_keyword:/1.*/)&facet.query=(PJSubject_keyword:/2.*/)&facet.query=(PJSubject_keyword:/3.*/)&facet.query=(PJSubject_keyword:/4.*/)&facet.query=(PJSubject_keyword:/5.*/)&facet.query=(PJSubject_keyword:/6.*/)&facet.field=PJAuthority_keyword`,
         charts: [
          {
             class: "col-sm-6",
@@ -111,11 +111,11 @@ export default {
                           y: 'dataX["(crisproject.level:Quốc gia)"]'
                        },
                        {
-                          name: "Phát triển<br>công nghệ",
+                          name: "Cấp<br>bộ ngành",
                           y: 'dataX["(crisproject.level:Bộ ngành)"]'
                        },
                        {
-                          name: "Dịch vụ<br>khoa học<br>và<br>công nghệ",
+                          name: "Cấp<br>tỉnh thành",
                           y: 'dataX["(crisproject.level:Tỉnh Thành)"]'
                        },
                        {
@@ -175,27 +175,27 @@ export default {
                    data: [
                       {
                          name: "Khoa học<br>tự nhiên",
-                         y: 'dataX["(crisproject.subject:/1.*/)"]'
+                         y: 'dataX["(PJSubject_keyword:/1.*/)"]'
                       },
                       {
                          name: "Khoa học<br>kỹ thuật<br>và<br>công nghệ",
-                         y: 'dataX["(crisproject.subject:/2.*/)"]'
+                         y: 'dataX["(PJSubject_keyword:/2.*/)"]'
                       },
                       {
                          name: "Khoa học y,<br>dược",
-                         y: 'dataX["(crisproject.subject:/3.*/)"]'
+                         y: 'dataX["(PJSubject_keyword:/3.*/)"]'
                       },
                       {
                          name: "Khoa học<br>nông nghiệp",
-                         y: 'dataX["(crisproject.subject:/4.*/)"]'
+                         y: 'dataX["(PJSubject_keyword:/4.*/)"]'
                       },
                       {
                          name: "Khoa học<br>xã hội",
-                         y: 'dataX["(crisproject.subject:/5.*/)"]'
+                         y: 'dataX["(PJSubject_keyword:/5.*/)"]'
                       },
                       {
                          name: "Khoa học<br>nhân văn",
-                         y: 'dataX["(crisproject.subject:/6.*/)"]'
+                         y: 'dataX["(PJSubject_keyword:/6.*/)"]'
                       }
                    ]
                 }]

@@ -1596,7 +1596,7 @@
 				<ref bean="searchFilterEventsName" />
 				<ref bean="searchFilterEventsType" />
 				<ref bean="searchFilterEventsStartDate" />
-				<ref bean="searchFilterEventsPlace" />
+				<ref bean="searchFilterEventsProvince" />
 				<ref bean="searchFilterEventsSubject" />
 				<ref bean="searchFilterEventsOrganizer" />
 				<ref bean="searchFilterEventsKeyword" />				
@@ -2844,12 +2844,12 @@
 		<property name="sortOrder" value="COUNT" />
 	</bean>
 	
-	<bean id="searchFilterEventsPlace"
+	<bean id="searchFilterEventsProvince"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="eventsplace" />
+		<property name="indexFieldName" value="eventsprovince" />
 		<property name="metadataFields">
 			<list>
-				<value>crisevents.eventsplace</value>
+				<value>crisevents.eventsprovince</value>
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
@@ -3369,7 +3369,7 @@
 			<list>
 				<ref bean="searchFilterEventsType" />
 				<ref bean="searchFilterEventsStartDate" />
-				<ref bean="searchFilterEventsPlace" />
+				<ref bean="searchFilterEventsProvince" />
 				<ref bean="searchFilterEventsSubject" />
 				<ref bean="searchFilterEventsOrganizer" />
 				<ref bean="searchFilterEventsKeyword" />

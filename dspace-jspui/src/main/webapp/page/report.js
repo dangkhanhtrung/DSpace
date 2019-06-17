@@ -1,6 +1,6 @@
 export default {
    fundings: {
-       query: `q=resourcetype_group:fundings&rows=0&facet=true&facet.query=(crisproject.type:1)&facet.query=(crisproject.type:2)&facet.query=(crisproject.type:3)&facet.query=(crisproject.type:4)&facet.query=(crisproject.status:1 AND crisproject.type:1)&facet.query=(crisproject.status:1 AND crisproject.type:2)&facet.query=(crisproject.status:1 AND crisproject.type:3)&facet.query=(crisproject.status:1 AND crisproject.type:4)&facet.query=(crisproject.status:2 AND crisproject.type:1)&facet.query=(crisproject.status:2 AND crisproject.type:2)&facet.query=(crisproject.status:2 AND crisproject.type:3)&facet.query=(crisproject.status:2 AND crisproject.type:4)&facet.query=(crisproject.level:1 AND crisproject.type:1)&facet.query=(crisproject.level:1 AND crisproject.type:2)&facet.query=(crisproject.level:1 AND crisproject.type:3)&facet.query=(crisproject.level:1 AND crisproject.type:4)&facet.query=(crisproject.level:2 AND crisproject.type:1)&facet.query=(crisproject.level:2 AND crisproject.type:2)&facet.query=(crisproject.level:2 AND crisproject.type:3)&facet.query=(crisproject.level:2 AND crisproject.type:4)&facet.query=(crisproject.level:3 AND crisproject.type:1)&facet.query=(crisproject.level:3 AND crisproject.type:2)&facet.query=(crisproject.level:3 AND crisproject.type:3)&facet.query=(crisproject.level:3 AND crisproject.type:4)&facet.query=(crisproject.level:4 AND crisproject.type:1)&facet.query=(crisproject.level:4 AND crisproject.type:2)&facet.query=(crisproject.level:4 AND crisproject.type:3)&facet.query=(crisproject.level:4 AND crisproject.type:4)&facet.query=(crisproject.level:5 AND crisproject.type:1)&facet.query=(crisproject.level:5 AND crisproject.type:2)&facet.query=(crisproject.level:5 AND crisproject.type:3)&facet.query=(crisproject.level:5 AND crisproject.type:4)&facet.query=(crisproject.subject:1 AND crisproject.type:1)&facet.query=(crisproject.subject:1 AND crisproject.type:2)&facet.query=(crisproject.subject:1 AND crisproject.type:3)&facet.query=(crisproject.subject:1 AND crisproject.type:4)&facet.query=(crisproject.subject:2 AND crisproject.type:1)&facet.query=(crisproject.subject:2 AND crisproject.type:2)&facet.query=(crisproject.subject:2 AND crisproject.type:3)&facet.query=(crisproject.subject:2 AND crisproject.type:4)&facet.query=(crisproject.subject:3 AND crisproject.type:1)&facet.query=(crisproject.subject:3 AND crisproject.type:2)&facet.query=(crisproject.subject:3 AND crisproject.type:3)&facet.query=(crisproject.subject:3 AND crisproject.type:4)&facet.query=(crisproject.subject:4 AND crisproject.type:1)&facet.query=(crisproject.subject:4 AND crisproject.type:2)&facet.query=(crisproject.subject:4 AND crisproject.type:3)&facet.query=(crisproject.subject:4 AND crisproject.type:4)&facet.query=(crisproject.subject:5 AND crisproject.type:1)&facet.query=(crisproject.subject:5 AND crisproject.type:2)&facet.query=(crisproject.subject:5 AND crisproject.type:3)&facet.query=(crisproject.subject:5 AND crisproject.type:4)&facet.query=(crisproject.subject:6 AND crisproject.type:1)&facet.query=(crisproject.subject:6 AND crisproject.type:2)&facet.query=(crisproject.subject:6 AND crisproject.type:3)&facet.query=(crisproject.subject:6 AND crisproject.type:4)`,
+       query: `q=resourcetype_group:fundings&rows=0&facet=true&facet.query=(crisproject.type:Đề tài)&facet.query=(crisproject.type:Đề án)&facet.query=(crisproject.type:Dự án)&facet.query=(crisproject.type:Hợp tác quốc tế)&facet.query=(crisproject.status:Đang tiến hành AND crisproject.type:Đề tài)&facet.query=(crisproject.status:Đang tiến hành AND crisproject.type:Đề án)&facet.query=(crisproject.status:Đang tiến hành AND crisproject.type:Dự án)&facet.query=(crisproject.status:Đang tiến hành AND crisproject.type:Hợp tác quốc tế)&facet.query=(crisproject.status:Đã kết thúc AND crisproject.type:Đề tài)&facet.query=(crisproject.status:Đã kết thúc AND crisproject.type:Đề án)&facet.query=(crisproject.status:Đã kết thúc AND crisproject.type:Dự án)&facet.query=(crisproject.status:Đã kết thúc AND crisproject.type:Hợp tác quốc tế)&facet.query=(crisproject.level:Quốc gia AND crisproject.type:Đề tài)&facet.query=(crisproject.level:Quốc gia AND crisproject.type:Đề án)&facet.query=(crisproject.level:Quốc gia AND crisproject.type:Dự án)&facet.query=(crisproject.level:Quốc gia AND crisproject.type:Hợp tác quốc tế)&facet.query=(crisproject.level:Bộ ngành AND crisproject.type:Đề tài)&facet.query=(crisproject.level:Bộ ngành AND crisproject.type:Đề án)&facet.query=(crisproject.level:Bộ ngành AND crisproject.type:Dự án)&facet.query=(crisproject.level:Bộ ngành AND crisproject.type:Hợp tác quốc tế)&facet.query=(crisproject.level:Tỉnh thành AND crisproject.type:Đề tài)&facet.query=(crisproject.level:Tỉnh thành AND crisproject.type:Đề án)&facet.query=(crisproject.level:Tỉnh thành AND crisproject.type:Dự án)&facet.query=(crisproject.level:Tỉnh thành AND crisproject.type:Hợp tác quốc tế)&facet.query=(crisproject.level:Cơ sở AND crisproject.type:Đề tài)&facet.query=(crisproject.level:Cơ sở AND crisproject.type:Đề án)&facet.query=(crisproject.level:Cơ sở AND crisproject.type:Dự án)&facet.query=(crisproject.level:Cơ sở AND crisproject.type:Hợp tác quốc tế)&facet.query=(crisproject.level:Ngoài ngân sách AND crisproject.type:Đề tài)&facet.query=(crisproject.level:Ngoài ngân sách AND crisproject.type:Đề án)&facet.query=(crisproject.level:Ngoài ngân sách AND crisproject.type:Dự án)&facet.query=(crisproject.level:Ngoài ngân sách AND crisproject.type:Hợp tác quốc tế)&facet.query=(PJSubject_keyword:/1.*/ AND crisproject.type:Đề tài)&facet.query=(PJSubject_keyword:/1.*/ AND crisproject.type:Đề án)&facet.query=(PJSubject_keyword:/1.*/ AND crisproject.type:Dự án)&facet.query=(PJSubject_keyword:/1.*/ AND crisproject.type:Hợp tác quốc tế)&facet.query=(PJSubject_keyword:/2.*/ AND crisproject.type:Đề tài)&facet.query=(PJSubject_keyword:/2.*/ AND crisproject.type:Đề án)&facet.query=(PJSubject_keyword:/2.*/ AND crisproject.type:Dự án)&facet.query=(PJSubject_keyword:/2.*/ AND crisproject.type:Hợp tác quốc tế)&facet.query=(PJSubject_keyword:/3.*/ AND crisproject.type:Đề tài)&facet.query=(PJSubject_keyword:/3.*/ AND crisproject.type:Đề án)&facet.query=(PJSubject_keyword:/3.*/ AND crisproject.type:Dự án)&facet.query=(PJSubject_keyword:/3.*/ AND crisproject.type:Hợp tác quốc tế)&facet.query=(PJSubject_keyword:/4.*/ AND crisproject.type:Đề tài)&facet.query=(PJSubject_keyword:/4.*/ AND crisproject.type:Đề án)&facet.query=(PJSubject_keyword:/4.*/ AND crisproject.type:Dự án)&facet.query=(PJSubject_keyword:/4.*/ AND crisproject.type:Hợp tác quốc tế)&facet.query=(PJSubject_keyword:/5.*/ AND crisproject.type:Đề tài)&facet.query=(PJSubject_keyword:/5.*/ AND crisproject.type:Đề án)&facet.query=(PJSubject_keyword:/5.*/ AND crisproject.type:Dự án)&facet.query=(PJSubject_keyword:/5.*/ AND crisproject.type:Hợp tác quốc tế)&facet.query=(PJSubject_keyword:/6.*/ AND crisproject.type:Đề tài)&facet.query=(PJSubject_keyword:/6.*/ AND crisproject.type:Đề án)&facet.query=(PJSubject_keyword:/6.*/ AND crisproject.type:Dự án)&facet.query=(PJSubject_keyword:/6.*/ AND crisproject.type:Hợp tác quốc tế)`,
        pdf: {  
            pageOrientation:"landscape",
            content:[  
@@ -126,27 +126,27 @@ export default {
                              bold:true
                           },
                           {  
-                             text:"dataX[\"(crisproject.type:1)\"] + dataX[\"(crisproject.type:2)\"] + dataX[\"(crisproject.type:3)\"] + dataX[\"(crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.type:Đề tài)\"] + dataX[\"(crisproject.type:Đề án)\"] + dataX[\"(crisproject.type:Dự án)\"] + dataX[\"(crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.type:1)\"]",
+                             text:"dataX[\"(crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.type:2)\"]",
+                             text:"dataX[\"(crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.type:3)\"]",
+                             text:"dataX[\"(crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -175,27 +175,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.status:1 AND crisproject.type:1)\"] + dataX[\"(crisproject.status:1 AND crisproject.type:2)\"] + dataX[\"(crisproject.status:1 AND crisproject.type:3)\"] + dataX[\"(crisproject.status:1 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.status:Đang tiến hành AND crisproject.type:Đề tài)\"] + dataX[\"(crisproject.status:Đang tiến hành AND crisproject.type:Đề án)\"] + dataX[\"(crisproject.status:Đang tiến hành AND crisproject.type:Dự án)\"] + dataX[\"(crisproject.status:Đang tiến hành AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.status:1 AND crisproject.type:1)\"]",
+                             text:"dataX[\"(crisproject.status:Đang tiến hành AND crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.status:1 AND crisproject.type:2)\"]",
+                             text:"dataX[\"(crisproject.status:Đang tiến hành AND crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.status:1 AND crisproject.type:3)\"]",
+                             text:"dataX[\"(crisproject.status:Đang tiến hành AND crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.status:1 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.status:Đang tiến hành AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -212,27 +212,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.status:2 AND crisproject.type:1)\"] + dataX[\"(crisproject.status:2 AND crisproject.type:2)\"] + dataX[\"(crisproject.status:2 AND crisproject.type:3)\"] + dataX[\"(crisproject.status:2 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.status:Đã kết thúc AND crisproject.type:Đề tài)\"] + dataX[\"(crisproject.status:Đã kết thúc AND crisproject.type:Đề án)\"] + dataX[\"(crisproject.status:Đã kết thúc AND crisproject.type:Dự án)\"] + dataX[\"(crisproject.status:Đã kết thúc AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.status:2 AND crisproject.type:1)\"]",
+                             text:"dataX[\"(crisproject.status:Đã kết thúc AND crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.status:2 AND crisproject.type:2)\"]",
+                             text:"dataX[\"(crisproject.status:Đã kết thúc AND crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.status:2 AND crisproject.type:3)\"]",
+                             text:"dataX[\"(crisproject.status:Đã kết thúc AND crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.status:2 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.status:Đã kết thúc AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -261,27 +261,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:1 AND crisproject.type:1)\"] + dataX[\"(crisproject.level:1 AND crisproject.type:2)\"] + dataX[\"(crisproject.level:1 AND crisproject.type:3)\"] + dataX[\"(crisproject.level:1 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.level:Quốc gia AND crisproject.type:Đề tài)\"] + dataX[\"(crisproject.level:Quốc gia AND crisproject.type:Đề án)\"] + dataX[\"(crisproject.level:Quốc gia AND crisproject.type:Dự án)\"] + dataX[\"(crisproject.level:Quốc gia AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:1 AND crisproject.type:1)\"]",
+                             text:"dataX[\"(crisproject.level:Quốc gia AND crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:1 AND crisproject.type:2)\"]",
+                             text:"dataX[\"(crisproject.level:Quốc gia AND crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:1 AND crisproject.type:3)\"]",
+                             text:"dataX[\"(crisproject.level:Quốc gia AND crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:1 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.level:Quốc gia AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -298,27 +298,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:2 AND crisproject.type:1)\"] + dataX[\"(crisproject.level:2 AND crisproject.type:2)\"] + dataX[\"(crisproject.level:2 AND crisproject.type:3)\"] + dataX[\"(crisproject.level:2 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.level:Bộ ngành AND crisproject.type:Đề tài)\"] + dataX[\"(crisproject.level:Bộ ngành AND crisproject.type:Đề án)\"] + dataX[\"(crisproject.level:Bộ ngành AND crisproject.type:Dự án)\"] + dataX[\"(crisproject.level:Bộ ngành AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:2 AND crisproject.type:1)\"]",
+                             text:"dataX[\"(crisproject.level:Bộ ngành AND crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:2 AND crisproject.type:2)\"]",
+                             text:"dataX[\"(crisproject.level:Bộ ngành AND crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:2 AND crisproject.type:3)\"]",
+                             text:"dataX[\"(crisproject.level:Bộ ngành AND crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:2 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.level:Bộ ngành AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -335,27 +335,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:3 AND crisproject.type:1)\"] + dataX[\"(crisproject.level:3 AND crisproject.type:2)\"] + dataX[\"(crisproject.level:3 AND crisproject.type:3)\"] + dataX[\"(crisproject.level:3 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.level:Tỉnh thành AND crisproject.type:Đề tài)\"] + dataX[\"(crisproject.level:Tỉnh thành AND crisproject.type:Đề án)\"] + dataX[\"(crisproject.level:Tỉnh thành AND crisproject.type:Dự án)\"] + dataX[\"(crisproject.level:Tỉnh thành AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:3 AND crisproject.type:1)\"]",
+                             text:"dataX[\"(crisproject.level:Tỉnh thành AND crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:3 AND crisproject.type:2)\"]",
+                             text:"dataX[\"(crisproject.level:Tỉnh thành AND crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:3 AND crisproject.type:3)\"]",
+                             text:"dataX[\"(crisproject.level:Tỉnh thành AND crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:3 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.level:Tỉnh thành AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -372,27 +372,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:4 AND crisproject.type:1)\"] + dataX[\"(crisproject.level:4 AND crisproject.type:2)\"] + dataX[\"(crisproject.level:4 AND crisproject.type:3)\"] + dataX[\"(crisproject.level:4 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.level:Cơ sở AND crisproject.type:Đề tài)\"] + dataX[\"(crisproject.level:Cơ sở AND crisproject.type:Đề án)\"] + dataX[\"(crisproject.level:Cơ sở AND crisproject.type:Dự án)\"] + dataX[\"(crisproject.level:Cơ sở AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:4 AND crisproject.type:1)\"]",
+                             text:"dataX[\"(crisproject.level:Cơ sở AND crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:4 AND crisproject.type:2)\"]",
+                             text:"dataX[\"(crisproject.level:Cơ sở AND crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:4 AND crisproject.type:3)\"]",
+                             text:"dataX[\"(crisproject.level:Cơ sở AND crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:4 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.level:Cơ sở AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -409,27 +409,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:5 AND crisproject.type:1)\"] + dataX[\"(crisproject.level:5 AND crisproject.type:2)\"] + dataX[\"(crisproject.level:5 AND crisproject.type:3)\"] + dataX[\"(crisproject.level:5 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.level:Ngoài ngân sách AND crisproject.type:Đề tài)\"] + dataX[\"(crisproject.level:Ngoài ngân sách AND crisproject.type:Đề án)\"] + dataX[\"(crisproject.level:Ngoài ngân sách AND crisproject.type:Dự án)\"] + dataX[\"(crisproject.level:Ngoài ngân sách AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:5 AND crisproject.type:1)\"]",
+                             text:"dataX[\"(crisproject.level:Ngoài ngân sách AND crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:5 AND crisproject.type:2)\"]",
+                             text:"dataX[\"(crisproject.level:Ngoài ngân sách AND crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:5 AND crisproject.type:3)\"]",
+                             text:"dataX[\"(crisproject.level:Ngoài ngân sách AND crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.level:5 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(crisproject.level:Ngoài ngân sách AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -458,27 +458,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:1 AND crisproject.type:1)\"] + dataX[\"(crisproject.subject:1 AND crisproject.type:2)\"] + dataX[\"(crisproject.subject:1 AND crisproject.type:3)\"] + dataX[\"(crisproject.subject:1 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND crisproject.type:Đề tài)\"] + dataX[\"(PJSubject_keyword:/1.*/ AND crisproject.type:Đề án)\"] + dataX[\"(PJSubject_keyword:/1.*/ AND crisproject.type:Dự án)\"] + dataX[\"(PJSubject_keyword:/1.*/ AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:1 AND crisproject.type:1)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:1 AND crisproject.type:2)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:1 AND crisproject.type:3)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:1 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -495,27 +495,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:2 AND crisproject.type:1)\"] + dataX[\"(crisproject.subject:2 AND crisproject.type:2)\"] + dataX[\"(crisproject.subject:2 AND crisproject.type:3)\"] + dataX[\"(crisproject.subject:2 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND crisproject.type:Đề tài)\"] + dataX[\"(PJSubject_keyword:/2.*/ AND crisproject.type:Đề án)\"] + dataX[\"(PJSubject_keyword:/2.*/ AND crisproject.type:Dự án)\"] + dataX[\"(PJSubject_keyword:/2.*/ AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:2 AND crisproject.type:1)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:2 AND crisproject.type:2)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:2 AND crisproject.type:3)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:2 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -532,27 +532,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:3 AND crisproject.type:1)\"] + dataX[\"(crisproject.subject:3 AND crisproject.type:2)\"] + dataX[\"(crisproject.subject:3 AND crisproject.type:3)\"] + dataX[\"(crisproject.subject:3 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND crisproject.type:Đề tài)\"] + dataX[\"(PJSubject_keyword:/3.*/ AND crisproject.type:Đề án)\"] + dataX[\"(PJSubject_keyword:/3.*/ AND crisproject.type:Dự án)\"] + dataX[\"(PJSubject_keyword:/3.*/ AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:3 AND crisproject.type:1)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:3 AND crisproject.type:2)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:3 AND crisproject.type:3)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:3 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -569,27 +569,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:4 AND crisproject.type:1)\"] + dataX[\"(crisproject.subject:4 AND crisproject.type:2)\"] + dataX[\"(crisproject.subject:4 AND crisproject.type:3)\"] + dataX[\"(crisproject.subject:4 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND crisproject.type:Đề tài)\"] + dataX[\"(PJSubject_keyword:/4.*/ AND crisproject.type:Đề án)\"] + dataX[\"(PJSubject_keyword:/4.*/ AND crisproject.type:Dự án)\"] + dataX[\"(PJSubject_keyword:/4.*/ AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:4 AND crisproject.type:1)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:4 AND crisproject.type:2)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:4 AND crisproject.type:3)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:4 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -606,27 +606,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:5 AND crisproject.type:1)\"] + dataX[\"(crisproject.subject:5 AND crisproject.type:2)\"] + dataX[\"(crisproject.subject:5 AND crisproject.type:3)\"] + dataX[\"(crisproject.subject:5 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND crisproject.type:Đề tài)\"] + dataX[\"(PJSubject_keyword:/5.*/ AND crisproject.type:Đề án)\"] + dataX[\"(PJSubject_keyword:/5.*/ AND crisproject.type:Dự án)\"] + dataX[\"(PJSubject_keyword:/5.*/ AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:5 AND crisproject.type:1)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:5 AND crisproject.type:2)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:5 AND crisproject.type:3)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:5 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -643,27 +643,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:6 AND crisproject.type:1)\"] + dataX[\"(crisproject.subject:6 AND crisproject.type:2)\"] + dataX[\"(crisproject.subject:6 AND crisproject.type:3)\"] + dataX[\"(crisproject.subject:6 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND crisproject.type:Đề tài)\"] + dataX[\"(PJSubject_keyword:/6.*/ AND crisproject.type:Đề án)\"] + dataX[\"(PJSubject_keyword:/6.*/ AND crisproject.type:Dự án)\"] + dataX[\"(PJSubject_keyword:/6.*/ AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:6 AND crisproject.type:1)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND crisproject.type:Đề tài)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:6 AND crisproject.type:2)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND crisproject.type:Đề án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:6 AND crisproject.type:3)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND crisproject.type:Dự án)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:6 AND crisproject.type:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND crisproject.type:Hợp tác quốc tế)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -683,7 +683,7 @@ export default {
    },
 
    publications: {
-       query: `q=resourcetype_authority:collections&rows=0&facet=true&facet.query=(search.resourcetype:3)&facet.query=(search.resourcetype:4)&facet.query=(search.resourcetype:5)&facet.query=(search.resourcetype:6)&facet.query=(dc.type:1 AND search.resourcetype:3)&facet.query=(dc.type:1 AND search.resourcetype:4)&facet.query=(dc.type:1 AND search.resourcetype:5)&facet.query=(dc.type:1 AND search.resourcetype:6)&facet.query=(dc.type:2 AND search.resourcetype:3)&facet.query=(dc.type:2 AND search.resourcetype:4)&facet.query=(dc.type:2 AND search.resourcetype:5)&facet.query=(dc.type:2 AND search.resourcetype:6)&facet.query=(dc.type:3 AND search.resourcetype:3)&facet.query=(dc.type:3 AND search.resourcetype:4)&facet.query=(dc.type:3 AND search.resourcetype:5)&facet.query=(dc.type:3 AND search.resourcetype:6)&facet.query=(dc.type:4 AND search.resourcetype:3)&facet.query=(dc.type:4 AND search.resourcetype:4)&facet.query=(dc.type:4 AND search.resourcetype:5)&facet.query=(dc.type:4 AND search.resourcetype:6)&facet.query=(dc.type:5 AND search.resourcetype:3)&facet.query=(dc.type:5 AND search.resourcetype:4)&facet.query=(dc.type:5 AND search.resourcetype:5)&facet.query=(dc.type:5 AND search.resourcetype:6)&facet.query=(dc.type:6 AND search.resourcetype:3)&facet.query=(dc.type:6 AND search.resourcetype:4)&facet.query=(dc.type:6 AND search.resourcetype:5)&facet.query=(dc.type:6 AND search.resourcetype:6)&facet.query=(dc.type:7 AND search.resourcetype:3)&facet.query=(dc.type:7 AND search.resourcetype:4)&facet.query=(dc.type:7 AND search.resourcetype:5)&facet.query=(dc.type:7 AND search.resourcetype:6)&facet.query=(dc.type:8 AND search.resourcetype:3)&facet.query=(dc.type:8 AND search.resourcetype:4)&facet.query=(dc.type:8 AND search.resourcetype:5)&facet.query=(dc.type:8 AND search.resourcetype:6)&facet.query=(dc.type:9 AND search.resourcetype:3)&facet.query=(dc.type:9 AND search.resourcetype:4)&facet.query=(dc.type:9 AND search.resourcetype:5)&facet.query=(dc.type:9 AND search.resourcetype:6)&facet.query=(dc.type:10 AND search.resourcetype:3)&facet.query=(dc.type:10 AND search.resourcetype:4)&facet.query=(dc.type:10 AND search.resourcetype:5)&facet.query=(dc.type:10 AND search.resourcetype:6)&facet.query=(crisproject.subject:1 AND search.resourcetype:3)&facet.query=(crisproject.subject:1 AND search.resourcetype:4)&facet.query=(crisproject.subject:1 AND search.resourcetype:5)&facet.query=(crisproject.subject:1 AND search.resourcetype:6)&facet.query=(crisproject.subject:2 AND search.resourcetype:3)&facet.query=(crisproject.subject:2 AND search.resourcetype:4)&facet.query=(crisproject.subject:2 AND search.resourcetype:5)&facet.query=(crisproject.subject:2 AND search.resourcetype:6)&facet.query=(crisproject.subject:3 AND search.resourcetype:3)&facet.query=(crisproject.subject:3 AND search.resourcetype:4)&facet.query=(crisproject.subject:3 AND search.resourcetype:5)&facet.query=(crisproject.subject:3 AND search.resourcetype:6)&facet.query=(crisproject.subject:4 AND search.resourcetype:3)&facet.query=(crisproject.subject:4 AND search.resourcetype:4)&facet.query=(crisproject.subject:4 AND search.resourcetype:5)&facet.query=(crisproject.subject:4 AND search.resourcetype:6)&facet.query=(crisproject.subject:5 AND search.resourcetype:3)&facet.query=(crisproject.subject:5 AND search.resourcetype:4)&facet.query=(crisproject.subject:5 AND search.resourcetype:5)&facet.query=(crisproject.subject:5 AND search.resourcetype:6)&facet.query=(crisproject.subject:6 AND search.resourcetype:3)&facet.query=(crisproject.subject:6 AND search.resourcetype:4)&facet.query=(crisproject.subject:6 AND search.resourcetype:5)&facet.query=(crisproject.subject:6 AND search.resourcetype:6)`,
+       query: `q=resourcetype_authority:collections&rows=0&facet=true&facet.query=(search.resourcetype:3)&facet.query=(search.resourcetype:4)&facet.query=(search.resourcetype:5)&facet.query=(search.resourcetype:6)&facet.query=(dc.type:1 AND search.resourcetype:3)&facet.query=(dc.type:1 AND search.resourcetype:4)&facet.query=(dc.type:1 AND search.resourcetype:5)&facet.query=(dc.type:1 AND search.resourcetype:6)&facet.query=(dc.type:2 AND search.resourcetype:3)&facet.query=(dc.type:2 AND search.resourcetype:4)&facet.query=(dc.type:2 AND search.resourcetype:5)&facet.query=(dc.type:2 AND search.resourcetype:6)&facet.query=(dc.type:3 AND search.resourcetype:3)&facet.query=(dc.type:3 AND search.resourcetype:4)&facet.query=(dc.type:3 AND search.resourcetype:5)&facet.query=(dc.type:3 AND search.resourcetype:6)&facet.query=(dc.type:4 AND search.resourcetype:3)&facet.query=(dc.type:4 AND search.resourcetype:4)&facet.query=(dc.type:4 AND search.resourcetype:5)&facet.query=(dc.type:4 AND search.resourcetype:6)&facet.query=(dc.type:5 AND search.resourcetype:3)&facet.query=(dc.type:5 AND search.resourcetype:4)&facet.query=(dc.type:5 AND search.resourcetype:5)&facet.query=(dc.type:5 AND search.resourcetype:6)&facet.query=(dc.type:6 AND search.resourcetype:3)&facet.query=(dc.type:6 AND search.resourcetype:4)&facet.query=(dc.type:6 AND search.resourcetype:5)&facet.query=(dc.type:6 AND search.resourcetype:6)&facet.query=(dc.type:7 AND search.resourcetype:3)&facet.query=(dc.type:7 AND search.resourcetype:4)&facet.query=(dc.type:7 AND search.resourcetype:5)&facet.query=(dc.type:7 AND search.resourcetype:6)&facet.query=(dc.type:8 AND search.resourcetype:3)&facet.query=(dc.type:8 AND search.resourcetype:4)&facet.query=(dc.type:8 AND search.resourcetype:5)&facet.query=(dc.type:8 AND search.resourcetype:6)&facet.query=(dc.type:9 AND search.resourcetype:3)&facet.query=(dc.type:9 AND search.resourcetype:4)&facet.query=(dc.type:9 AND search.resourcetype:5)&facet.query=(dc.type:9 AND search.resourcetype:6)&facet.query=(dc.type:10 AND search.resourcetype:3)&facet.query=(dc.type:10 AND search.resourcetype:4)&facet.query=(dc.type:10 AND search.resourcetype:5)&facet.query=(dc.type:10 AND search.resourcetype:6)&facet.query=(PJSubject_keyword:/1.*/ AND search.resourcetype:3)&facet.query=(PJSubject_keyword:/1.*/ AND search.resourcetype:4)&facet.query=(PJSubject_keyword:/1.*/ AND search.resourcetype:5)&facet.query=(PJSubject_keyword:/1.*/ AND search.resourcetype:6)&facet.query=(PJSubject_keyword:/2.*/ AND search.resourcetype:3)&facet.query=(PJSubject_keyword:/2.*/ AND search.resourcetype:4)&facet.query=(PJSubject_keyword:/2.*/ AND search.resourcetype:5)&facet.query=(PJSubject_keyword:/2.*/ AND search.resourcetype:6)&facet.query=(PJSubject_keyword:/3.*/ AND search.resourcetype:3)&facet.query=(PJSubject_keyword:/3.*/ AND search.resourcetype:4)&facet.query=(PJSubject_keyword:/3.*/ AND search.resourcetype:5)&facet.query=(PJSubject_keyword:/3.*/ AND search.resourcetype:6)&facet.query=(PJSubject_keyword:/4.*/ AND search.resourcetype:3)&facet.query=(PJSubject_keyword:/4.*/ AND search.resourcetype:4)&facet.query=(PJSubject_keyword:/4.*/ AND search.resourcetype:5)&facet.query=(PJSubject_keyword:/4.*/ AND search.resourcetype:6)&facet.query=(PJSubject_keyword:/5.*/ AND search.resourcetype:3)&facet.query=(PJSubject_keyword:/5.*/ AND search.resourcetype:4)&facet.query=(PJSubject_keyword:/5.*/ AND search.resourcetype:5)&facet.query=(PJSubject_keyword:/5.*/ AND search.resourcetype:6)&facet.query=(PJSubject_keyword:/6.*/ AND search.resourcetype:3)&facet.query=(PJSubject_keyword:/6.*/ AND search.resourcetype:4)&facet.query=(PJSubject_keyword:/6.*/ AND search.resourcetype:5)&facet.query=(PJSubject_keyword:/6.*/ AND search.resourcetype:6)`,
        pdf: {  
            pageOrientation:"landscape",
            content:[  
@@ -1240,27 +1240,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:1 AND search.resourcetype:3)\"] + dataX[\"(crisproject.subject:1 AND search.resourcetype:4)\"] + dataX[\"(crisproject.subject:1 AND search.resourcetype:5)\"] + dataX[\"(crisproject.subject:1 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:3)\"] + dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:4)\"] + dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:5)\"] + dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:6)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:1 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:3)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:1 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:4)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:1 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:5)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:1 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:6)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1277,27 +1277,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:2 AND search.resourcetype:3)\"] + dataX[\"(crisproject.subject:2 AND search.resourcetype:4)\"] + dataX[\"(crisproject.subject:2 AND search.resourcetype:5)\"] + dataX[\"(crisproject.subject:2 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:3)\"] + dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:4)\"] + dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:5)\"] + dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:6)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:2 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:3)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:2 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:4)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:2 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:5)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:2 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:6)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1314,27 +1314,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:3 AND search.resourcetype:3)\"] + dataX[\"(crisproject.subject:3 AND search.resourcetype:4)\"] + dataX[\"(crisproject.subject:3 AND search.resourcetype:5)\"] + dataX[\"(crisproject.subject:3 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:3)\"] + dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:4)\"] + dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:5)\"] + dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:6)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:3 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:3)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:3 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:4)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:3 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:5)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:3 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:6)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1351,27 +1351,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:4 AND search.resourcetype:3)\"] + dataX[\"(crisproject.subject:4 AND search.resourcetype:4)\"] + dataX[\"(crisproject.subject:4 AND search.resourcetype:5)\"] + dataX[\"(crisproject.subject:4 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:3)\"] + dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:4)\"] + dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:5)\"] + dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:6)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:4 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:3)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:4 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:4)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:4 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:5)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:4 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:6)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1388,27 +1388,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:5 AND search.resourcetype:3)\"] + dataX[\"(crisproject.subject:5 AND search.resourcetype:4)\"] + dataX[\"(crisproject.subject:5 AND search.resourcetype:5)\"] + dataX[\"(crisproject.subject:5 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:3)\"] + dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:4)\"] + dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:5)\"] + dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:6)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:5 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:3)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:5 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:4)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:5 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:5)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:5 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:6)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1425,27 +1425,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:6 AND search.resourcetype:3)\"] + dataX[\"(crisproject.subject:6 AND search.resourcetype:4)\"] + dataX[\"(crisproject.subject:6 AND search.resourcetype:5)\"] + dataX[\"(crisproject.subject:6 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:3)\"] + dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:4)\"] + dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:5)\"] + dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:6)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:6 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:3)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:6 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:4)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:6 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:5)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(crisproject.subject:6 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:6)\"]",
                              type:"function",
                              alignment:"center"
                           }
