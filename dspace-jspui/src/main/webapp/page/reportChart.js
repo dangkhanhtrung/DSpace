@@ -1198,7 +1198,7 @@ export default {
     },
 
     crisawards: {
-        query: `q=resourcetype_group:crisawards&rows=0&facet=true&facet.query=(crisawards.awardstype:Giải thưởng Hồ Chí Minh)&facet.query=(crisawards.awardstype:Giải thưởng Nhà nước)&facet.query=(crisawards.awardstype:Giải thưởng của Bộ, ngành, địa phương)&facet.query=(crisawards.awardstype:Giải thưởng của tổ chức trong nước)&facet.query=(crisawards.awardstype:Giải thưởng của tổ chức quốc tế)&facet.query=(AwardsSubject:/1.*/)&facet.query=(AwardsSubject:/2.*/)&facet.query=(AwardsSubject:/3.*/)&facet.query=(AwardsSubject:/4.*/)&facet.query=(AwardsSubject:/5.*/)&facet.query=(AwardsSubject:/6.*/)&facet.field=crisawards.awardsyear`,
+        query: `q=resourcetype_group:crisawards&rows=0&facet=true&facet.query=(crisawards.awardstype:Giải thưởng Hồ Chí Minh)&facet.query=(crisawards.awardstype:Giải thưởng Nhà nước)&facet.query=(crisawards.awardstype:Giải thưởng của Bộ, ngành, địa phương)&facet.query=(crisawards.awardstype:Giải thưởng của tổ chức trong nước)&facet.query=(crisawards.awardstype:Giải thưởng của tổ chức quốc tế)&facet.query=(AwardsSubject:/1.*/)&facet.query=(AwardsSubject:/2.*/)&facet.query=(AwardsSubject:/3.*/)&facet.query=(AwardsSubject:/4.*/)&facet.query=(AwardsSubject:/5.*/)&facet.query=(AwardsSubject:/6.*/)&facet.field=crisawards.awardsyear&facet.field=AwardsAuthority_authority`,
         charts: [
          {
             class: "col-sm-6",
@@ -1337,7 +1337,53 @@ export default {
             }
          },
          {
-             style: "margin-top: -100px;",
+          style: "margin-top: -100px;",
+          class: "col-sm-6",
+          config: {
+              chart: {
+                 plotBackgroundColor: null,
+                 plotBorderWidth: 0,
+                 plotShadow: false
+              },
+              title: {
+                 text: 'Cơ quan<br>chủ quản',
+                 align: 'center',
+                 verticalAlign: 'middle',
+                 y: 30
+              },
+              tooltip: {
+                 pointFormat: '<b>{point.percentage:.1f}%</b>'
+              },
+              plotOptions: {
+                 pie: {
+                    dataLabels: {
+                          enabled: true,
+                          format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
+                          distance: 15,
+                          filter: {
+                              property: 'percentage',
+                              operator: '>',
+                              value: 5
+                          }
+                    },
+                    startAngle: -90,
+                    endAngle: 90,
+                    center: ['50%', '75%'],
+                    size: '110%',
+                    allowPointSelect: true,
+                    cursor: 'pointer'
+                 }
+              },
+              series: [{
+                 type: 'pie',
+                 name: 'Cơ quan chủ quản',
+                 innerSize: '50%',
+                 data: 'AwardsAuthority_authority'
+              }]
+          }
+       },
+         {
+             style: "margin-top: -50px;",
             asc_sort: "name",
             class: "col-12",
             config: {
@@ -1387,7 +1433,7 @@ export default {
     },
 
     crisevents: {
-        query: `q=resourcetype_group:crisevents&rows=0&facet=true&facet.query=(crisevents.eventstype:Hội nghị)&facet.query=(crisevents.eventstype:Hội thảo)&facet.query=(crisevents.eventstype:Tọa đàm)&facet.query=(crisevents.eventstype:Hội chợ)&facet.query=(crisevents.eventstype:Triển lãm)&facet.query=(crisevents.eventstype:Lễ hội)&facet.query=(eventssubject:/1.*/)&facet.query=(eventssubject:/2.*/)&facet.query=(eventssubject:/3.*/)&facet.query=(eventssubject:/4.*/)&facet.query=(eventssubject:/5.*/)&facet.query=(eventssubject:/6.*/)&facet.field=eventsstartdate.year_sort&facet.field=eventsplace_keyword`,
+        query: `q=resourcetype_group:crisevents&rows=0&facet=true&facet.query=(crisevents.eventstype:Hội nghị)&facet.query=(crisevents.eventstype:Hội thảo)&facet.query=(crisevents.eventstype:Tọa đàm)&facet.query=(crisevents.eventstype:Hội chợ)&facet.query=(crisevents.eventstype:Triển lãm)&facet.query=(crisevents.eventstype:Lễ hội)&facet.query=(eventssubject:/1.*/)&facet.query=(eventssubject:/2.*/)&facet.query=(eventssubject:/3.*/)&facet.query=(eventssubject:/4.*/)&facet.query=(eventssubject:/5.*/)&facet.query=(eventssubject:/6.*/)&facet.field=eventsstartdate.year_sort&facet.field=eventsprovince_authority`,
         charts: [
          {
             class: "col-sm-6",
@@ -1530,7 +1576,7 @@ export default {
             }
          },
          {
-             style: "margin-top: -100px;",
+             style: "margin-top: -50px;",
             asc_sort: "name",
             class: "col-12",
             config: {
@@ -1577,7 +1623,6 @@ export default {
             }
          },
          {
-             style: "margin-top: -100px;",
             class: "col-12",
             config: {
                chart: {
@@ -1617,7 +1662,7 @@ export default {
                    {
                        name: "Tỉnh thành",
                        colorByPoint: true,
-                       data: "eventsplace_keyword"
+                       data: "eventsprovince_authority"
                    }
                ]
             }
