@@ -3762,6 +3762,14 @@ export default {
 
    crisjournals: {
        query: `q=resourcetype_group:crisjournals&rows=0&facet=true&facet.query=(crisjournals.journalstype:Trong nước)&facet.query=(crisjournals.journalstype:Quốc tế)&facet.query=(crisjournals.journalssubject:/1.*/ AND crisjournals.journalstype:Trong nước)&facet.query=(crisjournals.journalssubject:/1.*/ AND crisjournals.journalstype:Quốc tế)&facet.query=(crisjournals.journalssubject:/2.*/ AND crisjournals.journalstype:Trong nước)&facet.query=(crisjournals.journalssubject:/2.*/ AND crisjournals.journalstype:Quốc tế)&facet.query=(crisjournals.journalssubject:/3.*/ AND crisjournals.journalstype:Trong nước)&facet.query=(crisjournals.journalssubject:/3.*/ AND crisjournals.journalstype:Quốc tế)&facet.query=(crisjournals.journalssubject:/4.*/ AND crisjournals.journalstype:Trong nước)&facet.query=(crisjournals.journalssubject:/4.*/ AND crisjournals.journalstype:Quốc tế)&facet.query=(crisjournals.journalssubject:/5.*/ AND crisjournals.journalstype:Trong nước)&facet.query=(crisjournals.journalssubject:/5.*/ AND crisjournals.journalstype:Quốc tế)&facet.query=(crisjournals.journalssubject:/6.*/ AND crisjournals.journalstype:Trong nước)&facet.query=(crisjournals.journalssubject:/6.*/ AND crisjournals.journalstype:Quốc tế)`,
+       querys: [
+         'q=(resourcetype_group:crisjournals)&rows=0&facet=true&facet.pivot=journalsauthority_authority',
+         'q=(resourcetype_group:crisjournals AND crisjournals.journalstype:Trong nước)&rows=0&facet=true&facet.pivot=journalsauthority_authority',
+         'q=(resourcetype_group:crisjournals AND crisjournals.journalstype:Quốc tế)&rows=0&facet=true&facet.pivot=journalsauthority_authority'
+       ],
+       dataPoint: {
+         "5": "journalsauthority_authority"
+       },
        pdf: {  
         pageOrientation:"landscape",
         content:[  
@@ -3880,24 +3888,27 @@ export default {
                     ],
                     [  
                        {  
-                          text:"2. Chia theo tình trạng",
+                          text:"2. Chia theo đơn vị chủ quản",
                           alignment:"left",
                           bold:true
                        },
                        "",
                        "",
                        ""
+                    ],
+                    [
+                       "", "", "", "",
                     ],
                     [  
-                       {  
-                          text:"3. Chia theo lĩnh vực KHCN",
-                          alignment:"left",
-                          bold:true
-                       },
-                       "",
-                       "",
-                       ""
-                    ],
+                     {  
+                        text:"3. Chia theo lĩnh vực KHCN",
+                        alignment:"left",
+                        bold:true
+                     },
+                     "",
+                     "",
+                     ""
+                     ],
                     [  
                        {  
                           text:"- Khoa học tự nhiên",

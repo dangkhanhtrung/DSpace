@@ -853,3 +853,10 @@ body .detail_view .panel-group.col-md-12{
 body #navbar-primary-ccx {
 	    margin-top: -6px;
 }
+
+body .v-tabs__container {
+	    height: 32px;
+}
+body .v-tabs__div {
+	    font-size: 12px;
+}
