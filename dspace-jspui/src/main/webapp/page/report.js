@@ -4074,7 +4074,7 @@ export default {
    },
 
    orgunits: {
-       query: `q=resourcetype_group:orgunits&rows=0&facet=true&facet.query=(crisou.type:Công lập)&facet.query=(crisou.type:Ngoài công lập)&facet.query=(crisou.type:Vốn nước ngoài)&facet.query=(OUSubject:/1.*/ AND crisou.type:Công lập)&facet.query=(OUSubject:/1.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject:/1.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject:/2.*/ AND crisou.type:Công lập)&facet.query=(OUSubject:/2.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject:/2.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject:/3.*/ AND crisou.type:Công lập)&facet.query=(OUSubject:/3.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject:/3.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject:/4.*/ AND crisou.type:Công lập)&facet.query=(OUSubject:/4.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject:/4.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject:/5.*/ AND crisou.type:Công lập)&facet.query=(OUSubject:/5.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject:/5.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject:/6.*/ AND crisou.type:Công lập)&facet.query=(OUSubject:/6.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject:/6.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/1.*/ AND crisou.type:Công lập)&facet.query=(crisou.activity:/1.*/ AND crisou.type:Ngoài công lập)&facet.query=(crisou.activity:/1.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/2.*/ AND crisou.type:Công lập)&facet.query=(crisou.activity:/2.*/ AND crisou.type:Ngoài công lập)&facet.query=(crisou.activity:/2.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/3.*/ AND crisou.type:Công lập)&facet.query=(crisou.activity:/3.*/ AND crisou.type:Ngoài công lập)&facet.query=(crisou.activity:/3.*/ AND crisou.type:Vốn nước ngoài)`,
+       query: `q=resourcetype_group:orgunits&rows=0&facet=true&facet.query=(crisou.type:Công lập NOT Ngoài)&facet.query=(crisou.type:Ngoài công lập)&facet.query=(crisou.type:Vốn nước ngoài)&facet.query=(OUSubject_keyword:/1.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(OUSubject_keyword:/1.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject_keyword:/1.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject_keyword:/2.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(OUSubject_keyword:/2.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject_keyword:/2.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject_keyword:/3.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(OUSubject_keyword:/3.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject_keyword:/3.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject_keyword:/4.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(OUSubject_keyword:/4.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject_keyword:/4.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject_keyword:/5.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(OUSubject_keyword:/5.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject_keyword:/5.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(OUSubject_keyword:/6.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(OUSubject_keyword:/6.*/ AND crisou.type:Ngoài công lập)&facet.query=(OUSubject_keyword:/6.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/1.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(crisou.activity:/1.*/ AND crisou.type:Ngoài công lập)&facet.query=(crisou.activity:/1.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/2.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(crisou.activity:/2.*/ AND crisou.type:Ngoài công lập)&facet.query=(crisou.activity:/2.*/ AND crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/3.*/ AND crisou.type:Công lập NOT Ngoài)&facet.query=(crisou.activity:/3.*/ AND crisou.type:Ngoài công lập)&facet.query=(crisou.activity:/3.*/ AND crisou.type:Vốn nước ngoài)`,
        pdf: {  
         pageOrientation:"landscape",
         content:[  
@@ -4188,12 +4188,12 @@ export default {
                           bold:true
                        },
                        {  
-                          text:"dataX[\"(crisou.type:Công lập)\"] + dataX[\"(crisou.type:Ngoài công lập)\"] + dataX[\"(crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(crisou.type:Công lập NOT Ngoài)\"] + dataX[\"(crisou.type:Ngoài công lập)\"] + dataX[\"(crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisou.type:Công lập)\"]",
+                          text:"dataX[\"(crisou.type:Công lập NOT Ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -4231,12 +4231,12 @@ export default {
                           ]
                        },
                        {  
-                          text:"dataX[\"(crisou.activity:/1.*/ AND crisou.type:Công lập)\"] + dataX[\"(crisou.activity:/1.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(crisou.activity:/1.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(crisou.activity:/1.*/ AND crisou.type:Công lập NOT Ngoài)\"] + dataX[\"(crisou.activity:/1.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(crisou.activity:/1.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisou.activity:/1.*/ AND crisou.type:Công lập)\"]",
+                          text:"dataX[\"(crisou.activity:/1.*/ AND crisou.type:Công lập NOT Ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -4263,12 +4263,12 @@ export default {
                           ]
                        },
                        {  
-                          text:"dataX[\"(crisou.activity:/2.*/ AND crisou.type:Công lập)\"] + dataX[\"(crisou.activity:/2.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(crisou.activity:/2.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(crisou.activity:/2.*/ AND crisou.type:Công lập NOT Ngoài)\"] + dataX[\"(crisou.activity:/2.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(crisou.activity:/2.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisou.activity:/2.*/ AND crisou.type:Công lập)\"]",
+                          text:"dataX[\"(crisou.activity:/2.*/ AND crisou.type:Công lập NOT Ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -4295,12 +4295,12 @@ export default {
                           ]
                        },
                        {  
-                          text:"dataX[\"(crisou.activity:/3.*/ AND crisou.type:Công lập)\"] + dataX[\"(crisou.activity:/3.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(crisou.activity:/3.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(crisou.activity:/3.*/ AND crisou.type:Công lập NOT Ngoài)\"] + dataX[\"(crisou.activity:/3.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(crisou.activity:/3.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(crisou.activity:/3.*/ AND crisou.type:Công lập)\"]",
+                          text:"dataX[\"(crisou.activity:/3.*/ AND crisou.type:Công lập NOT Ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
@@ -4338,22 +4338,22 @@ export default {
                           ]
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/1.*/ AND crisou.type:Công lập)\"] + dataX[\"(OUSubject:/1.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(OUSubject:/1.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/1.*/ AND crisou.type:Công lập NOT Ngoài)\"] + dataX[\"(OUSubject_keyword:/1.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(OUSubject_keyword:/1.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/1.*/ AND crisou.type:Công lập)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/1.*/ AND crisou.type:Công lập NOT Ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/1.*/ AND crisou.type:Ngoài công lập)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/1.*/ AND crisou.type:Ngoài công lập)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/1.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/1.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -4370,22 +4370,22 @@ export default {
                           ]
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/2.*/ AND crisou.type:Công lập)\"] + dataX[\"(OUSubject:/2.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(OUSubject:/2.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/2.*/ AND crisou.type:Công lập NOT Ngoài)\"] + dataX[\"(OUSubject_keyword:/2.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(OUSubject_keyword:/2.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/2.*/ AND crisou.type:Công lập)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/2.*/ AND crisou.type:Công lập NOT Ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/2.*/ AND crisou.type:Ngoài công lập)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/2.*/ AND crisou.type:Ngoài công lập)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/2.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/2.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -4402,22 +4402,22 @@ export default {
                           ]
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/3.*/ AND crisou.type:Công lập)\"] + dataX[\"(OUSubject:/3.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(OUSubject:/3.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/3.*/ AND crisou.type:Công lập NOT Ngoài)\"] + dataX[\"(OUSubject_keyword:/3.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(OUSubject_keyword:/3.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/3.*/ AND crisou.type:Công lập)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/3.*/ AND crisou.type:Công lập NOT Ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/3.*/ AND crisou.type:Ngoài công lập)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/3.*/ AND crisou.type:Ngoài công lập)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/3.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/3.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -4434,22 +4434,22 @@ export default {
                           ]
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/4.*/ AND crisou.type:Công lập)\"] + dataX[\"(OUSubject:/4.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(OUSubject:/4.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/4.*/ AND crisou.type:Công lập NOT Ngoài)\"] + dataX[\"(OUSubject_keyword:/4.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(OUSubject_keyword:/4.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/4.*/ AND crisou.type:Công lập)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/4.*/ AND crisou.type:Công lập NOT Ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/4.*/ AND crisou.type:Ngoài công lập)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/4.*/ AND crisou.type:Ngoài công lập)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/4.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/4.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -4466,22 +4466,22 @@ export default {
                           ]
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/5.*/ AND crisou.type:Công lập)\"] + dataX[\"(OUSubject:/5.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(OUSubject:/5.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/5.*/ AND crisou.type:Công lập NOT Ngoài)\"] + dataX[\"(OUSubject_keyword:/5.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(OUSubject_keyword:/5.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/5.*/ AND crisou.type:Công lập)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/5.*/ AND crisou.type:Công lập NOT Ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/5.*/ AND crisou.type:Ngoài công lập)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/5.*/ AND crisou.type:Ngoài công lập)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/5.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/5.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        }
@@ -4498,22 +4498,22 @@ export default {
                           ]
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/6.*/ AND crisou.type:Công lập)\"] + dataX[\"(OUSubject:/6.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(OUSubject:/6.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/6.*/ AND crisou.type:Công lập NOT Ngoài)\"] + dataX[\"(OUSubject_keyword:/6.*/ AND crisou.type:Ngoài công lập)\"] + dataX[\"(OUSubject_keyword:/6.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/6.*/ AND crisou.type:Công lập)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/6.*/ AND crisou.type:Công lập NOT Ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/6.*/ AND crisou.type:Ngoài công lập)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/6.*/ AND crisou.type:Ngoài công lập)\"]",
                           type:"function",
                           alignment:"center"
                        },
                        {  
-                          text:"dataX[\"(OUSubject:/6.*/ AND crisou.type:Vốn nước ngoài)\"]",
+                          text:"dataX[\"(OUSubject_keyword:/6.*/ AND crisou.type:Vốn nước ngoài)\"]",
                           type:"function",
                           alignment:"center"
                        }

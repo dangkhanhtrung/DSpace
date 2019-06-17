@@ -1220,7 +1220,7 @@
 				<ref bean="searchFilterRPEducations" />
 				<ref bean="searchFilterRPPosition" />	
 				<ref bean="searchFilterRPFullName" />	
-				<ref bean="searchFilterRPSex" />	
+				<ref bean="searchFilterRPGender" />	
 				<ref bean="searchFilterRPBirthDay" />	
 				<ref bean="searchFilterRPSubject" />
 				<ref bean="searchFilterRPProfession" />
@@ -1403,8 +1403,8 @@
 				<ref bean="searchFilterOUType" />
 				<ref bean="searchFilterOUActivity" />										
 				<ref bean="searchFilterOUSubject" />
-				<ref bean="searchFilterOUCity" />
 				<ref bean="searchFilterOULicense" />				
+				<ref bean="searchFilterOUProvince" />
 			</list>
 		</property>
 		<!--The sort filters for the discovery search -->
@@ -2571,12 +2571,12 @@
 		<property name="type" value="thongkestring"/>
 	</bean>
 	
-	<bean id="searchFilterRPSex"
+	<bean id="searchFilterRPGender"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="crisrp.sex" />
+		<property name="indexFieldName" value="crisrp.gender" />
 		<property name="metadataFields">
 			<list>
-				<value>crisrp.sex</value>
+				<value>crisrp.gender</value>
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
@@ -2792,16 +2792,16 @@
 		<property name="type" value="thongkestring"/>
 	</bean>
 
-	<bean id="searchFilterOUCity"
+	<bean id="searchFilterOUProvince"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="OUCity" />
+		<property name="indexFieldName" value="OUProvince" />
 		<property name="metadataFields">
 			<list>
-				<value>crisou.city</value>
+				<value>crisou.province</value>
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
-		<property name="sortOrder" value="COUNT" />
+		<property name="sortOrder" value="VALUE" />
 		<property name="type" value="thongkestring"/>
 	</bean>
 
@@ -3284,7 +3284,7 @@
 				<ref bean="searchFilterRPEducations" />
 				<ref bean="searchFilterRPPosition" />	
 				<ref bean="searchFilterRPFullName" />	
-				<ref bean="searchFilterRPSex" />	
+				<ref bean="searchFilterRPGender" />	
 				<ref bean="searchFilterRPBirthDay" />	
 				<ref bean="searchFilterRPSubject" />
 				<ref bean="searchFilterRPProfession" />
@@ -3326,7 +3326,7 @@
 				<ref bean="searchFilterOUActivity" />
 				<ref bean="searchFilterOUSubject" />
 				<ref bean="searchFilterOULicense" />
-				<ref bean="searchFilterOUCity" />
+				<ref bean="searchFilterOUProvince" />
 		</list>
 		</constructor-arg>
 	</bean>

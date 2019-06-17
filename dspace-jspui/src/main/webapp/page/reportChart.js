@@ -2028,7 +2028,7 @@ export default {
     },
 
     orgunits: {
-        query: `q=resourcetype_group:orgunits&rows=0&facet=true&facet.query=(crisou.type:Công lập)&facet.query=(crisou.type:Ngoài công lập)&facet.query=(crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/1.*/)&facet.query=(crisou.activity:/2.*/)&facet.query=(crisou.activity:/3.*/)&facet.query=(OUSubject:/1.*/)&facet.query=(OUSubject:/2.*/)&facet.query=(OUSubject:/3.*/)&facet.query=(OUSubject:/4.*/)&facet.query=(OUSubject:/5.*/)&facet.query=(OUSubject:/6.*/)&facet.field=OUCity_keyword`,
+        query: `q=resourcetype_group:orgunits&rows=0&facet=true&facet.query=(crisou.type:Công lập NOT Ngoài)&facet.query=(crisou.type:Ngoài công lập)&facet.query=(crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/1.*/)&facet.query=(crisou.activity:/2.*/)&facet.query=(crisou.activity:/3.*/)&facet.query=(OUSubject_keyword:/1.*/)&facet.query=(OUSubject_keyword:/2.*/)&facet.query=(OUSubject_keyword:/3.*/)&facet.query=(OUSubject_keyword:/4.*/)&facet.query=(OUSubject_keyword:/5.*/)&facet.query=(OUSubject_keyword:/6.*/)&facet.field=crisou.province`,
         charts: [
          {
             class: "col-sm-6",
@@ -2074,7 +2074,7 @@ export default {
                    data: [
                       {
                          name: "Công lập",
-                         y: 'dataX["(crisou.type:Công lập)"]'
+                         y: 'dataX["(crisou.type:Công lập NOT Ngoài)"]'
                       },
                       {
                          name: "Ngoài<br>công lập",
@@ -2191,27 +2191,27 @@ export default {
                    data: [
                       {
                          name: "Khoa học<br>tự nhiên",
-                         y: 'dataX["(OUSubject:/1.*/)"]'
+                         y: 'dataX["(OUSubject_keyword:/1.*/)"]'
                       },
                       {
                          name: "Khoa học<br>kỹ thuật<br>và<br>công nghệ",
-                         y: 'dataX["(OUSubject:/2.*/)"]'
+                         y: 'dataX["(OUSubject_keyword:/2.*/)"]'
                       },
                       {
                          name: "Khoa học y,<br>dược",
-                         y: 'dataX["(OUSubject:/3.*/)"]'
+                         y: 'dataX["(OUSubject_keyword:/3.*/)"]'
                       },
                       {
                          name: "Khoa học<br>nông nghiệp",
-                         y: 'dataX["(OUSubject:/4.*/)"]'
+                         y: 'dataX["(OUSubject_keyword:/4.*/)"]'
                       },
                       {
                          name: "Khoa học<br>xã hội",
-                         y: 'dataX["(OUSubject:/5.*/)"]'
+                         y: 'dataX["(OUSubject_keyword:/5.*/)"]'
                       },
                       {
                          name: "Khoa học<br>nhân văn",
-                         y: 'dataX["(OUSubject:/6.*/)"]'
+                         y: 'dataX["(OUSubject_keyword:/6.*/)"]'
                       }
                    ]
                 }]
@@ -2258,7 +2258,7 @@ export default {
                    {
                        name: "Tỉnh thành",
                        colorByPoint: true,
-                       data: "OUCity_keyword"
+                       data: "crisou.province"
                    }
                ]
             }
