@@ -1,6 +1,6 @@
 export default {
     fundings: {
-        query: `q=resourcetype_group:fundings&rows=0&facet=true&facet.query=(crisproject.type:Đề tài)&facet.query=(crisproject.type:Đề án)&facet.query=(crisproject.type:Dự án)&facet.query=(crisproject.type:Hợp tác quốc tế)&facet.query=(crisproject.level:Cấp quốc gia)&facet.query=(crisproject.level:Cấp bộ)&facet.query=(crisproject.level:Cấp tỉnh)&facet.query=(crisproject.level:Cấp cơ sở)&facet.query=(crisproject.level:Ngoài ngân sách)&facet.query=(crisproject.subject:/1.*/)&facet.query=(crisproject.subject:/2.*/)&facet.query=(crisproject.subject:/3.*/)&facet.query=(crisproject.subject:/4.*/)&facet.query=(crisproject.subject:/5.*/)&facet.query=(crisproject.subject:/6.*/)&facet.field=crisproject.authority`,
+        query: `q=resourcetype_group:fundings&rows=0&facet=true&facet.query=(crisproject.type:Đề tài)&facet.query=(crisproject.type:Đề án)&facet.query=(crisproject.type:Dự án)&facet.query=(crisproject.type:Hợp tác quốc tế)&facet.query=(crisproject.level:Quốc gia)&facet.query=(crisproject.level:Bộ ngành)&facet.query=(crisproject.level:Tỉnh Thành)&facet.query=(crisproject.level:Cơ sở)&facet.query=(crisproject.level:Ngoài ngân sách)&facet.query=(crisproject.subject:/1.*/)&facet.query=(crisproject.subject:/2.*/)&facet.query=(crisproject.subject:/3.*/)&facet.query=(crisproject.subject:/4.*/)&facet.query=(crisproject.subject:/5.*/)&facet.query=(crisproject.subject:/6.*/)&facet.field=PJAuthority_keyword`,
         charts: [
          {
             class: "col-sm-6",
@@ -108,19 +108,19 @@ export default {
                     data: [
                         {
                           name: "Cấp<br>quốc gia",
-                          y: 'dataX["(crisproject.level:Cấp quốc gia)"]'
+                          y: 'dataX["(crisproject.level:Quốc gia)"]'
                        },
                        {
                           name: "Phát triển<br>công nghệ",
-                          y: 'dataX["(crisproject.level:Cấp bộ)"]'
+                          y: 'dataX["(crisproject.level:Bộ ngành)"]'
                        },
                        {
                           name: "Dịch vụ<br>khoa học<br>và<br>công nghệ",
-                          y: 'dataX["(crisproject.level:Cấp tỉnh)"]'
+                          y: 'dataX["(crisproject.level:Tỉnh Thành)"]'
                        },
                        {
                           name: "Cấp<br>cơ sở",
-                          y: 'dataX["(crisproject.level:Cấp cơ sở)"]'
+                          y: 'dataX["(crisproject.level:Cơ sở)"]'
                        },
                        {
                           name: "Ngoài<br>ngân sách",
@@ -242,7 +242,7 @@ export default {
                    {
                        name: "Tỉnh thành",
                        colorByPoint: true,
-                       data: "crisproject.authority"
+                       data: "PJAuthority_keyword"
                    }
                ]
             }
@@ -2028,7 +2028,7 @@ export default {
     },
 
     orgunits: {
-        query: `q=resourcetype_group:orgunits&rows=0&facet=true&facet.query=(crisou.type:Công lập NOT Ngoài)&facet.query=(crisou.type:Ngoài công lập)&facet.query=(crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/1.*/)&facet.query=(crisou.activity:/2.*/)&facet.query=(crisou.activity:/3.*/)&facet.query=(OUSubject_keyword:/1.*/)&facet.query=(OUSubject_keyword:/2.*/)&facet.query=(OUSubject_keyword:/3.*/)&facet.query=(OUSubject_keyword:/4.*/)&facet.query=(OUSubject_keyword:/5.*/)&facet.query=(OUSubject_keyword:/6.*/)&facet.field=crisou.province`,
+        query: `q=resourcetype_group:orgunits&rows=0&facet=true&facet.query=(crisou.type:Công lập NOT Ngoài)&facet.query=(crisou.type:Ngoài công lập)&facet.query=(crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/1.*/)&facet.query=(crisou.activity:/2.*/)&facet.query=(crisou.activity:/3.*/)&facet.query=(OUSubject_keyword:/1.*/)&facet.query=(OUSubject_keyword:/2.*/)&facet.query=(OUSubject_keyword:/3.*/)&facet.query=(OUSubject_keyword:/4.*/)&facet.query=(OUSubject_keyword:/5.*/)&facet.query=(OUSubject_keyword:/6.*/)&facet.field=OUProvince_keyword`,
         charts: [
          {
             class: "col-sm-6",
@@ -2258,7 +2258,7 @@ export default {
                    {
                        name: "Tỉnh thành",
                        colorByPoint: true,
-                       data: "crisou.province"
+                       data: "OUProvince_keyword"
                    }
                ]
             }
