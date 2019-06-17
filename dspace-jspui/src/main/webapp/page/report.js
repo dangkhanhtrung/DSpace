@@ -1661,6 +1661,18 @@ export default {
 
    crisstandards: {
        query: `q=resourcetype_group:crisstandards&rows=0&facet=true&facet.query=(standardstype:TCVN)&facet.query=(standardstype:TCCS)&facet.query=(standardstype:QCVN)&facet.query=(standardstype:QCĐP)&facet.query=(standardstype:ĐLVN)&facet.query=(standardstype:Quốc tế)&facet.query=(standardsstatus:Còn hiệu lực AND standardstype:TCVN)&facet.query=(standardsstatus:Còn hiệu lực AND standardstype:TCCS)&facet.query=(standardsstatus:Còn hiệu lực AND standardstype:QCVN)&facet.query=(standardsstatus:Còn hiệu lực AND standardstype:QCĐP)&facet.query=(standardsstatus:Còn hiệu lực AND standardstype:ĐLVN)&facet.query=(standardsstatus:Còn hiệu lực AND standardstype:Quốc tế)&facet.query=(standardsstatus:Hết hiệu lực AND standardstype:TCVN)&facet.query=(standardsstatus:Hết hiệu lực AND standardstype:TCCS)&facet.query=(standardsstatus:Hết hiệu lực AND standardstype:QCVN)&facet.query=(standardsstatus:Hết hiệu lực AND standardstype:QCĐP)&facet.query=(standardsstatus:Hết hiệu lực AND standardstype:ĐLVN)&facet.query=(standardsstatus:Hết hiệu lực AND standardstype:Quốc tế)`,
+       querys: [
+         'q=(resourcetype_group:crisstandards)&rows=0&facet=true&facet.pivot=standardssubject_authority',
+         'q=(resourcetype_group:crisstandards AND standardstype:TCVN)&rows=0&facet=true&facet.pivot=standardssubject_authority',
+         'q=(resourcetype_group:crisstandards AND standardstype:TCCS)&rows=0&facet=true&facet.pivot=standardssubject_authority',
+         'q=(resourcetype_group:crisstandards AND standardstype:QCVN)&rows=0&facet=true&facet.pivot=standardssubject_authority',
+         'q=(resourcetype_group:crisstandards AND standardstype:QCĐP)&rows=0&facet=true&facet.pivot=standardssubject_authority',
+         'q=(resourcetype_group:crisstandards AND standardstype:ĐLVN)&rows=0&facet=true&facet.pivot=standardssubject_authority',
+         'q=(resourcetype_group:crisstandards AND standardstype:Quốc tế)&rows=0&facet=true&facet.pivot=standardssubject_authority'
+       ],
+       dataPoint: {
+         "8": "standardssubject_authority"
+       },
        pdf: {  
         pageOrientation:"landscape",
         content:[  
@@ -1952,7 +1964,31 @@ export default {
                           type:"function",
                           alignment:"center"
                        }
-                    ]
+                    ],
+                    [  
+                        {  
+                           text:"3. Chia theo Khung phân loại",
+                           alignment:"left",
+                           bold:true
+                        },
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                     ],
+                     [  
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                     ],
                  ]
               },
               margin:[  
@@ -1968,6 +2004,15 @@ export default {
 
    cristechs: {
        query: `q=resourcetype_group:cristechs&rows=0&facet=true&facet.query=(techstype:Công nghệ, thiết bị)&facet.query=(techstype:Giải pháp phần mềm)&facet.query=(techstype:Dịch vụ)&facet.query=(cristechs.techscollection:Nguồn cung AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techscollection:Nguồn cung AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techscollection:Nguồn cung AND techstype:Dịch vụ)&facet.query=(cristechs.techscollection:Nguồn cầu AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techscollection:Nguồn cầu AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techscollection:Nguồn cầu AND techstype:Dịch vụ)&facet.query=(cristechs.techssubject:1 AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techssubject:1 AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techssubject:1 AND techstype:Dịch vụ)&facet.query=(cristechs.techssubject:2 AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techssubject:2 AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techssubject:2 AND techstype:Dịch vụ)&facet.query=(cristechs.techssubject:3 AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techssubject:3 AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techssubject:3 AND techstype:Dịch vụ)&facet.query=(cristechs.techssubject:4 AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techssubject:4 AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techssubject:4 AND techstype:Dịch vụ)&facet.query=(cristechs.techssubject:5 AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techssubject:5 AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techssubject:5 AND techstype:Dịch vụ)&facet.query=(cristechs.techssubject:6 AND techstype:Công nghệ, thiết bị)&facet.query=(cristechs.techssubject:6 AND techstype:Giải pháp phần mềm)&facet.query=(cristechs.techssubject:6 AND techstype:Dịch vụ)`,
+       querys: [
+         'q=(resourcetype_group:cristechs)&rows=0&facet=true&facet.pivot=techscountry_authority',
+         'q=(resourcetype_group:cristechs AND techstype:Công nghệ, thiết bị)&rows=0&facet=true&facet.pivot=techscountry_authority',
+         'q=(resourcetype_group:cristechs AND techstype:Giải pháp phần mềm)&rows=0&facet=true&facet.pivot=techscountry_authority',
+         'q=(resourcetype_group:cristechs AND techstype:Dịch vụ)&rows=0&facet=true&facet.pivot=techscountry_authority'
+       ],
+       dataPoint: {
+         "15": "techscountry_authority"
+       },
        pdf: {  
         pageOrientation:"landscape",
         content:[  
@@ -2379,6 +2424,24 @@ export default {
                           alignment:"center"
                        }
                     ],
+                    [  
+                        {  
+                           text:"4. Chia theo quốc gia phát triển",
+                           alignment:"left",
+                           bold:true
+                        },
+                        "",
+                        "",
+                        "",
+                        ""
+                     ],
+                     [  
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                     ],
                  ]
               },
               margin:[  
@@ -2394,6 +2457,17 @@ export default {
 
    crisawards: {
        query: `q=resourcetype_group:crisawards&rows=0&facet=true&facet.query=(crisawards.awardstype:Giải thưởng Hồ Chí Minh)&facet.query=(crisawards.awardstype:Giải thưởng Nhà nước)&facet.query=(crisawards.awardstype:Giải thưởng của Bộ, ngành, địa phương)&facet.query=(crisawards.awardstype:Giải thưởng của tổ chức trong nước)&facet.query=(crisawards.awardstype:Giải thưởng của tổ chức quốc tế)&facet.query=(AwardsSubject:/1.*/ AND crisawards.awardstype:Giải thưởng Hồ Chí Minh)&facet.query=(AwardsSubject:/1.*/ AND crisawards.awardstype:Giải thưởng Nhà nước)&facet.query=(AwardsSubject:/1.*/ AND crisawards.awardstype:Giải thưởng của Bộ, ngành, địa phương)&facet.query=(AwardsSubject:/1.*/ AND crisawards.awardstype:Giải thưởng của tổ chức trong nước)&facet.query=(AwardsSubject:/1.*/ AND crisawards.awardstype:Giải thưởng của tổ chức quốc tế)&facet.query=(AwardsSubject:/2.*/ AND crisawards.awardstype:Giải thưởng Hồ Chí Minh)&facet.query=(AwardsSubject:/2.*/ AND crisawards.awardstype:Giải thưởng Nhà nước)&facet.query=(AwardsSubject:/2.*/ AND crisawards.awardstype:Giải thưởng của Bộ, ngành, địa phương)&facet.query=(AwardsSubject:/2.*/ AND crisawards.awardstype:Giải thưởng của tổ chức trong nước)&facet.query=(AwardsSubject:/2.*/ AND crisawards.awardstype:Giải thưởng của tổ chức quốc tế)&facet.query=(AwardsSubject:/3.*/ AND crisawards.awardstype:Giải thưởng Hồ Chí Minh)&facet.query=(AwardsSubject:/3.*/ AND crisawards.awardstype:Giải thưởng Nhà nước)&facet.query=(AwardsSubject:/3.*/ AND crisawards.awardstype:Giải thưởng của Bộ, ngành, địa phương)&facet.query=(AwardsSubject:/3.*/ AND crisawards.awardstype:Giải thưởng của tổ chức trong nước)&facet.query=(AwardsSubject:/3.*/ AND crisawards.awardstype:Giải thưởng của tổ chức quốc tế)&facet.query=(AwardsSubject:/4.*/ AND crisawards.awardstype:Giải thưởng Hồ Chí Minh)&facet.query=(AwardsSubject:/4.*/ AND crisawards.awardstype:Giải thưởng Nhà nước)&facet.query=(AwardsSubject:/4.*/ AND crisawards.awardstype:Giải thưởng của Bộ, ngành, địa phương)&facet.query=(AwardsSubject:/4.*/ AND crisawards.awardstype:Giải thưởng của tổ chức trong nước)&facet.query=(AwardsSubject:/4.*/ AND crisawards.awardstype:Giải thưởng của tổ chức quốc tế)&facet.query=(AwardsSubject:/5.*/ AND crisawards.awardstype:Giải thưởng Hồ Chí Minh)&facet.query=(AwardsSubject:/5.*/ AND crisawards.awardstype:Giải thưởng Nhà nước)&facet.query=(AwardsSubject:/5.*/ AND crisawards.awardstype:Giải thưởng của Bộ, ngành, địa phương)&facet.query=(AwardsSubject:/5.*/ AND crisawards.awardstype:Giải thưởng của tổ chức trong nước)&facet.query=(AwardsSubject:/5.*/ AND crisawards.awardstype:Giải thưởng của tổ chức quốc tế)&facet.query=(AwardsSubject:/6.*/ AND crisawards.awardstype:Giải thưởng Hồ Chí Minh)&facet.query=(AwardsSubject:/6.*/ AND crisawards.awardstype:Giải thưởng Nhà nước)&facet.query=(AwardsSubject:/6.*/ AND crisawards.awardstype:Giải thưởng của Bộ, ngành, địa phương)&facet.query=(AwardsSubject:/6.*/ AND crisawards.awardstype:Giải thưởng của tổ chức trong nước)&facet.query=(AwardsSubject:/6.*/ AND crisawards.awardstype:Giải thưởng của tổ chức quốc tế)`,
+       querys: [
+         'q=(resourcetype_group:crisawards)&rows=0&facet=true&facet.pivot=AwardsAuthority_authority',
+         'q=(resourcetype_group:crisawards AND crisawards.awardstype:Giải thưởng Hồ Chí Minh)&rows=0&facet=true&facet.pivot=AwardsAuthority_authority',
+         'q=(resourcetype_group:crisawards AND crisawards.awardstype:Giải thưởng Nhà nước)&rows=0&facet=true&facet.pivot=AwardsAuthority_authority',
+         'q=(resourcetype_group:crisawards AND crisawards.awardstype:Giải thưởng của Bộ, ngành, địa phương)&rows=0&facet=true&facet.pivot=AwardsAuthority_authority',
+         'q=(resourcetype_group:crisawards AND crisawards.awardstype:Giải thưởng của tổ chức trong nước)&rows=0&facet=true&facet.pivot=AwardsAuthority_authority',
+         'q=(resourcetype_group:crisawards AND crisawards.awardstype:Giải thưởng của tổ chức quốc tế)&rows=0&facet=true&facet.pivot=AwardsAuthority_authority'
+       ],
+       dataPoint: {
+         "12": "AwardsAuthority_authority"
+       },
        pdf: {  
         pageOrientation:"landscape",
         content:[  
@@ -2825,6 +2899,28 @@ export default {
                           type:"function",
                           alignment:"center"
                        }
+                    ],
+                    [  
+                       {  
+                          text:"3. Chia theo đơn vị chủ quản",
+                          alignment:"left",
+                          bold:true
+                       },
+                       "",
+                       "",
+                       "",
+                       "",
+                       "",
+                       ""
+                    ],
+                    [  
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     "",
+                     ""
                     ]
                  ]
               },
@@ -2840,498 +2936,381 @@ export default {
    },
 
    crisevents: {
-       query: `q=resourcetype_group:crisevents&rows=0&facet=true&facet.query=(crisevents.eventstype:Hội nghị)&facet.query=(crisevents.eventstype:Hội thảo)&facet.query=(crisevents.eventstype:Tọa đàm)&facet.query=(crisevents.eventstype:Hội chợ)&facet.query=(crisevents.eventstype:Triển lãm)&facet.query=(crisevents.eventstype:Lễ hội)&facet.query=(eventssubject:/1.*/ AND crisevents.eventstype:Hội nghị)&facet.query=(eventssubject:/1.*/ AND crisevents.eventstype:Hội thảo)&facet.query=(eventssubject:/1.*/ AND crisevents.eventstype:Tọa đàm)&facet.query=(eventssubject:/1.*/ AND crisevents.eventstype:Hội chợ)&facet.query=(eventssubject:/1.*/ AND crisevents.eventstype:Triển lãm)&facet.query=(eventssubject:/1.*/ AND crisevents.eventstype:Lễ hội)&facet.query=(eventssubject:/2.*/ AND crisevents.eventstype:Hội nghị)&facet.query=(eventssubject:/2.*/ AND crisevents.eventstype:Hội thảo)&facet.query=(eventssubject:/2.*/ AND crisevents.eventstype:Tọa đàm)&facet.query=(eventssubject:/2.*/ AND crisevents.eventstype:Hội chợ)&facet.query=(eventssubject:/2.*/ AND crisevents.eventstype:Triển lãm)&facet.query=(eventssubject:/2.*/ AND crisevents.eventstype:Lễ hội)&facet.query=(eventssubject:/3.*/ AND crisevents.eventstype:Hội nghị)&facet.query=(eventssubject:/3.*/ AND crisevents.eventstype:Hội thảo)&facet.query=(eventssubject:/3.*/ AND crisevents.eventstype:Tọa đàm)&facet.query=(eventssubject:/3.*/ AND crisevents.eventstype:Hội chợ)&facet.query=(eventssubject:/3.*/ AND crisevents.eventstype:Triển lãm)&facet.query=(eventssubject:/3.*/ AND crisevents.eventstype:Lễ hội)&facet.query=(eventssubject:/4.*/ AND crisevents.eventstype:Hội nghị)&facet.query=(eventssubject:/4.*/ AND crisevents.eventstype:Hội thảo)&facet.query=(eventssubject:/4.*/ AND crisevents.eventstype:Tọa đàm)&facet.query=(eventssubject:/4.*/ AND crisevents.eventstype:Hội chợ)&facet.query=(eventssubject:/4.*/ AND crisevents.eventstype:Triển lãm)&facet.query=(eventssubject:/4.*/ AND crisevents.eventstype:Lễ hội)&facet.query=(eventssubject:/5.*/ AND crisevents.eventstype:Hội nghị)&facet.query=(eventssubject:/5.*/ AND crisevents.eventstype:Hội thảo)&facet.query=(eventssubject:/5.*/ AND crisevents.eventstype:Tọa đàm)&facet.query=(eventssubject:/5.*/ AND crisevents.eventstype:Hội chợ)&facet.query=(eventssubject:/5.*/ AND crisevents.eventstype:Triển lãm)&facet.query=(eventssubject:/5.*/ AND crisevents.eventstype:Lễ hội)&facet.query=(eventssubject:/6.*/ AND crisevents.eventstype:Hội nghị)&facet.query=(eventssubject:/6.*/ AND crisevents.eventstype:Hội thảo)&facet.query=(eventssubject:/6.*/ AND crisevents.eventstype:Tọa đàm)&facet.query=(eventssubject:/6.*/ AND crisevents.eventstype:Hội chợ)&facet.query=(eventssubject:/6.*/ AND crisevents.eventstype:Triển lãm)&facet.query=(eventssubject:/6.*/ AND crisevents.eventstype:Lễ hội)`,
+       query: `q=resourcetype_group:crisevents&rows=0&facet=true&facet.query=(crisevents.eventstype:Kỷ yếu)&facet.query=(crisevents.eventstype:Hội thảo)&facet.query=(crisevents.eventstype:Toạ đàm)&facet.query=(eventssubject:/1.*/ AND crisevents.eventstype:Kỷ yếu)&facet.query=(eventssubject:/1.*/ AND crisevents.eventstype:Hội thảo)&facet.query=(eventssubject:/1.*/ AND crisevents.eventstype:Toạ đàm)&facet.query=(eventssubject:/2.*/ AND crisevents.eventstype:Kỷ yếu)&facet.query=(eventssubject:/2.*/ AND crisevents.eventstype:Hội thảo)&facet.query=(eventssubject:/2.*/ AND crisevents.eventstype:Toạ đàm)&facet.query=(eventssubject:/3.*/ AND crisevents.eventstype:Kỷ yếu)&facet.query=(eventssubject:/3.*/ AND crisevents.eventstype:Hội thảo)&facet.query=(eventssubject:/3.*/ AND crisevents.eventstype:Toạ đàm)&facet.query=(eventssubject:/4.*/ AND crisevents.eventstype:Kỷ yếu)&facet.query=(eventssubject:/4.*/ AND crisevents.eventstype:Hội thảo)&facet.query=(eventssubject:/4.*/ AND crisevents.eventstype:Toạ đàm)&facet.query=(eventssubject:/5.*/ AND crisevents.eventstype:Kỷ yếu)&facet.query=(eventssubject:/5.*/ AND crisevents.eventstype:Hội thảo)&facet.query=(eventssubject:/5.*/ AND crisevents.eventstype:Toạ đàm)&facet.query=(eventssubject:/6.*/ AND crisevents.eventstype:Kỷ yếu)&facet.query=(eventssubject:/6.*/ AND crisevents.eventstype:Hội thảo)&facet.query=(eventssubject:/6.*/ AND crisevents.eventstype:Toạ đàm)`,
+       querys: [
+         'q=(resourcetype_group:crisevents)&rows=0&facet=true&facet.pivot=eventsprovince_authority',
+         'q=(resourcetype_group:crisevents AND eventstype_authority:/Kỷ yếu/)&rows=0&facet=true&facet.pivot=eventsprovince_authority',
+         'q=(resourcetype_group:crisevents AND eventstype_authority:/Hội thảo/)&rows=0&facet=true&facet.pivot=eventsprovince_authority',
+         'q=(resourcetype_group:crisevents AND eventstype_authority:/Toạ đàm/)&rows=0&facet=true&facet.pivot=eventsprovince_authority'
+       ],
+       dataPoint: {
+         "12": "eventsprovince_authority"
+       },
        pdf: {  
-        pageOrientation:"landscape",
-        content:[  
-           {  
-              text:[  
-                 {  
-                    text:"Bảng 9: SỰ KIỆN KHOA HỌC VÀ CÔNG NGHỆ\n",
-                    fontSize:14,
-                    alignment:"center",
-                    bold:true
-                 },
-                 {  
-                    text:"Đơn vị tính: Sự kiện"               + "\n",
-                    fontSize:11,
-                    alignment:"right"
-                 }
-              ],
-              margin:[  
-                 0,
-                 20
-              ],
-              style:"headerTitle"
-           },
-           {  
-              style:"tableExample",
-              table:{  
-                 widths:[  
-                    "*",
-                    100,
-                    50,
-                    50,
-                    50,
-                    50,
-                    50,
-                    50
-                 ],
-                 headerRows:2,
-                 body:[  
-                    [  
-                       {  
-                          text:"",
-                          rowSpan:2,
-                          alignment:"center",
-                          bold:true,
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"\nTổng số",
-                          rowSpan:2,
-                          alignment:"center",
-                          bold:true,
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"Loại sự kiện",
-                          colSpan:6,
-                          alignment:"center",
-                          bold:true,
-                          style:"tdStyle"
-                       },
-                       "",
-                       "",
-                       "",
-                       "",
-                       ""
-                    ],
-                    [  
-                       "",
-                       "",
-                       {  
-                          text:"Hội nghị",
-                          alignment:"center",
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"Hội thảo",
-                          alignment:"center",
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"Tọa đàm",
-                          alignment:"center",
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"Hội chợ",
-                          alignment:"center",
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"Triển lãm",
-                          alignment:"center",
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"Lễ hội",
-                          alignment:"center",
-                          style:"tdStyle"
-                       }
-                    ],
-                    [  
-                       {  
-                          text:"A",
-                          alignment:"center",
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"1",
-                          alignment:"center",
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"2",
-                          alignment:"center",
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"3",
-                          alignment:"center",
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"4",
-                          alignment:"center",
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"5",
-                          alignment:"center",
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"6",
-                          alignment:"center",
-                          style:"tdStyle"
-                       },
-                       {  
-                          text:"7",
-                          alignment:"center",
-                          style:"tdStyle"
-                       }
-                    ],
-                    [  
-                       {  
-                          text:"1. Tổng số",
-                          alignment:"left",
-                          bold:true
-                       },
-                       {  
-                          text:"dataX[\"(crisevents.eventstype:Hội nghị)\"] + dataX[\"(crisevents.eventstype:Hội thảo)\"] + dataX[\"(crisevents.eventstype:Tọa đàm)\"] + dataX[\"(crisevents.eventstype:Hội chợ)\"] + dataX[\"(crisevents.eventstype:Triển lãm)\"] + dataX[\"(crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(crisevents.eventstype:Hội nghị)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(crisevents.eventstype:Hội thảo)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(crisevents.eventstype:Tọa đàm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(crisevents.eventstype:Hội chợ)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(crisevents.eventstype:Triển lãm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       }
-                    ],
-                    [  
-                       {  
-                          text:"2. Chia theo lĩnh vực KHCN",
-                          alignment:"left",
-                          bold:true
-                       },
-                       "",
-                       "",
-                       "",
-                       "",
-                       "",
-                       "",
-                       ""
-                    ],
-                    [  
-                       {  
-                          text:"- Khoa học tự nhiên",
-                          alignment:"left",
-                          margin:[  
-                             15,
-                             0,
-                             0,
-                             0
-                          ]
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Hội nghị)\"] + dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Hội thảo)\"] + dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Tọa đàm)\"] + dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Hội chợ)\"] + dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Triển lãm)\"] + dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Hội nghị)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Hội thảo)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Tọa đàm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Hội chợ)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Triển lãm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       }
-                    ],
-                    [  
-                       {  
-                          text:"- Khoa học kỹ thuật và công nghệ",
-                          alignment:"left",
-                          margin:[  
-                             15,
-                             0,
-                             0,
-                             0
-                          ]
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Hội nghị)\"] + dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Hội thảo)\"] + dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Tọa đàm)\"] + dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Hội chợ)\"] + dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Triển lãm)\"] + dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Hội nghị)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Hội thảo)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Tọa đàm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Hội chợ)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Triển lãm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       }
-                    ],
-                    [  
-                       {  
-                          text:"- Khoa học y, dược",
-                          alignment:"left",
-                          margin:[  
-                             15,
-                             0,
-                             0,
-                             0
-                          ]
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Hội nghị)\"] + dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Hội thảo)\"] + dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Tọa đàm)\"] + dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Hội chợ)\"] + dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Triển lãm)\"] + dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Hội nghị)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Hội thảo)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Tọa đàm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Hội chợ)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Triển lãm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       }
-                    ],
-                    [  
-                       {  
-                          text:"- Khoa học nông nghiệp",
-                          alignment:"left",
-                          margin:[  
-                             15,
-                             0,
-                             0,
-                             0
-                          ]
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Hội nghị)\"] + dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Hội thảo)\"] + dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Tọa đàm)\"] + dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Hội chợ)\"] + dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Triển lãm)\"] + dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Hội nghị)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Hội thảo)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Tọa đàm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Hội chợ)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Triển lãm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       }
-                    ],
-                    [  
-                       {  
-                          text:"- Khoa học xã hội",
-                          alignment:"left",
-                          margin:[  
-                             15,
-                             0,
-                             0,
-                             0
-                          ]
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Hội nghị)\"] + dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Hội thảo)\"] + dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Tọa đàm)\"] + dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Hội chợ)\"] + dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Triển lãm)\"] + dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Hội nghị)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Hội thảo)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Tọa đàm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Hội chợ)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Triển lãm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       }
-                    ],
-                    [  
-                       {  
-                          text:"- Khoa học nhân văn",
-                          alignment:"left",
-                          margin:[  
-                             15,
-                             0,
-                             0,
-                             0
-                          ]
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Hội nghị)\"] + dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Hội thảo)\"] + dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Tọa đàm)\"] + dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Hội chợ)\"] + dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Triển lãm)\"] + dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Hội nghị)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Hội thảo)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Tọa đàm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Hội chợ)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Triển lãm)\"]",
-                          type:"function",
-                          alignment:"center"
-                       },
-                       {  
-                          text:"dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Lễ hội)\"]",
-                          type:"function",
-                          alignment:"center"
-                       }
-                    ]
-                 ]
-              },
-              margin:[  
-                 0,
-                 0,
-                 0,
-                 5
-              ]
-           }
-        ]
-     }
+         pageOrientation:"landscape",
+         content:[  
+            {  
+               text:[  
+                  {  
+                     text:"Bảng 9: SỰ KIỆN KHOA HỌC VÀ CÔNG NGHỆ\n",
+                     fontSize:14,
+                     alignment:"center",
+                     bold:true
+                  },
+                  {  
+                     text:"Đơn vị tính: Sự kiện"               + "\n",
+                     fontSize:11,
+                     alignment:"right"
+                  }
+               ],
+               margin:[  
+                  0,
+                  20
+               ],
+               style:"headerTitle"
+            },
+            {  
+               style:"tableExample",
+               table:{  
+                  widths:[  
+                     "*",
+                     100,
+                     50,
+                     50,
+                     50
+                  ],
+                  headerRows:2,
+                  body:[  
+                     [  
+                        {  
+                           text:"",
+                           rowSpan:2,
+                           alignment:"center",
+                           bold:true,
+                           style:"tdStyle"
+                        },
+                        {  
+                           text:"\nTổng số",
+                           rowSpan:2,
+                           alignment:"center",
+                           bold:true,
+                           style:"tdStyle"
+                        },
+                        {  
+                           text:"Loại sự kiện",
+                           colSpan:3,
+                           alignment:"center",
+                           bold:true,
+                           style:"tdStyle"
+                        },
+                        "",
+                        ""
+                     ],
+                     [  
+                        "",
+                        "",
+                        {  
+                           text:"Kỷ yếu",
+                           alignment:"center",
+                           style:"tdStyle"
+                        },
+                        {  
+                           text:"Hội thảo",
+                           alignment:"center",
+                           style:"tdStyle"
+                        },
+                        {  
+                           text:"Toạ đàm",
+                           alignment:"center",
+                           style:"tdStyle"
+                        }
+                     ],
+                     [  
+                        {  
+                           text:"A",
+                           alignment:"center",
+                           style:"tdStyle"
+                        },
+                        {  
+                           text:"1",
+                           alignment:"center",
+                           style:"tdStyle"
+                        },
+                        {  
+                           text:"2",
+                           alignment:"center",
+                           style:"tdStyle"
+                        },
+                        {  
+                           text:"3",
+                           alignment:"center",
+                           style:"tdStyle"
+                        },
+                        {  
+                           text:"4",
+                           alignment:"center",
+                           style:"tdStyle"
+                        }
+                     ],
+                     [  
+                        {  
+                           text:"1. Tổng số",
+                           alignment:"left",
+                           bold:true
+                        },
+                        {  
+                           text:"dataX[\"(crisevents.eventstype:Kỷ yếu)\"] + dataX[\"(crisevents.eventstype:Hội thảo)\"] + dataX[\"(crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(crisevents.eventstype:Kỷ yếu)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(crisevents.eventstype:Hội thảo)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        }
+                     ],
+                     [  
+                        {  
+                           text:"2. Chia theo lĩnh vực KHCN",
+                           alignment:"left",
+                           bold:true
+                        },
+                        "",
+                        "",
+                        "",
+                        ""
+                     ],
+                     [  
+                        {  
+                           text:"- Khoa học tự nhiên",
+                           alignment:"left",
+                           margin:[  
+                              15,
+                              0,
+                              0,
+                              0
+                           ]
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Kỷ yếu)\"] + dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Hội thảo)\"] + dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Kỷ yếu)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Hội thảo)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/1.*/ AND crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        }
+                     ],
+                     [  
+                        {  
+                           text:"- Khoa học kỹ thuật và công nghệ",
+                           alignment:"left",
+                           margin:[  
+                              15,
+                              0,
+                              0,
+                              0
+                           ]
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Kỷ yếu)\"] + dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Hội thảo)\"] + dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Kỷ yếu)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Hội thảo)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/2.*/ AND crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        }
+                     ],
+                     [  
+                        {  
+                           text:"- Khoa học y, dược",
+                           alignment:"left",
+                           margin:[  
+                              15,
+                              0,
+                              0,
+                              0
+                           ]
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Kỷ yếu)\"] + dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Hội thảo)\"] + dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Kỷ yếu)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Hội thảo)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/3.*/ AND crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        }
+                     ],
+                     [  
+                        {  
+                           text:"- Khoa học nông nghiệp",
+                           alignment:"left",
+                           margin:[  
+                              15,
+                              0,
+                              0,
+                              0
+                           ]
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Kỷ yếu)\"] + dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Hội thảo)\"] + dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Kỷ yếu)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Hội thảo)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/4.*/ AND crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        }
+                     ],
+                     [  
+                        {  
+                           text:"- Khoa học xã hội",
+                           alignment:"left",
+                           margin:[  
+                              15,
+                              0,
+                              0,
+                              0
+                           ]
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Kỷ yếu)\"] + dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Hội thảo)\"] + dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Kỷ yếu)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Hội thảo)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/5.*/ AND crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        }
+                     ],
+                     [  
+                        {  
+                           text:"- Khoa học nhân văn",
+                           alignment:"left",
+                           margin:[  
+                              15,
+                              0,
+                              0,
+                              0
+                           ]
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Kỷ yếu)\"] + dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Hội thảo)\"] + dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Kỷ yếu)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Hội thảo)\"]",
+                           type:"function",
+                           alignment:"center"
+                        },
+                        {  
+                           text:"dataX[\"(eventssubject:/6.*/ AND crisevents.eventstype:Toạ đàm)\"]",
+                           type:"function",
+                           alignment:"center"
+                        }
+                     ],
+                     [  
+                        {  
+                           text:"3. Tỉnh thành tổ chức sự kiện",
+                           alignment:"left",
+                           bold:true
+                        },
+                        "",
+                        "",
+                        "",
+                        ""
+                     ],
+                     [  
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                     ]
+                  ]
+               },
+               margin:[  
+                  0,
+                  0,
+                  0,
+                  5
+               ]
+            }
+         ]
+      }
    },
 
    crisfundings: {
