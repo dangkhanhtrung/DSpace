@@ -1503,8 +1503,8 @@ it, please enter the types and the actual numbers or codes.</hint>
        <stored-value>Kỷ yếu hội thảo</stored-value>
      </pair>
      <pair>
-       <displayed-value>Báo cáo khoa học</displayed-value>
-       <stored-value>Báo cáo khoa học</stored-value>
+       <displayed-value>Báo cáo kết quả nhiệm vụ</displayed-value>
+       <stored-value>Báo cáo kết quả nhiệm vụ</stored-value>
      </pair>
      <pair>
        <displayed-value>Sách</displayed-value>

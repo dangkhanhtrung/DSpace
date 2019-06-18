@@ -683,7 +683,7 @@ export default {
    },
 
    publications: {
-       query: `q=resourcetype_authority:collections&rows=0&facet=true&facet.query=(search.resourcetype:3)&facet.query=(search.resourcetype:4)&facet.query=(search.resourcetype:5)&facet.query=(search.resourcetype:6)&facet.query=(dc.type:1 AND search.resourcetype:3)&facet.query=(dc.type:1 AND search.resourcetype:4)&facet.query=(dc.type:1 AND search.resourcetype:5)&facet.query=(dc.type:1 AND search.resourcetype:6)&facet.query=(dc.type:2 AND search.resourcetype:3)&facet.query=(dc.type:2 AND search.resourcetype:4)&facet.query=(dc.type:2 AND search.resourcetype:5)&facet.query=(dc.type:2 AND search.resourcetype:6)&facet.query=(dc.type:3 AND search.resourcetype:3)&facet.query=(dc.type:3 AND search.resourcetype:4)&facet.query=(dc.type:3 AND search.resourcetype:5)&facet.query=(dc.type:3 AND search.resourcetype:6)&facet.query=(dc.type:4 AND search.resourcetype:3)&facet.query=(dc.type:4 AND search.resourcetype:4)&facet.query=(dc.type:4 AND search.resourcetype:5)&facet.query=(dc.type:4 AND search.resourcetype:6)&facet.query=(dc.type:5 AND search.resourcetype:3)&facet.query=(dc.type:5 AND search.resourcetype:4)&facet.query=(dc.type:5 AND search.resourcetype:5)&facet.query=(dc.type:5 AND search.resourcetype:6)&facet.query=(dc.type:6 AND search.resourcetype:3)&facet.query=(dc.type:6 AND search.resourcetype:4)&facet.query=(dc.type:6 AND search.resourcetype:5)&facet.query=(dc.type:6 AND search.resourcetype:6)&facet.query=(dc.type:7 AND search.resourcetype:3)&facet.query=(dc.type:7 AND search.resourcetype:4)&facet.query=(dc.type:7 AND search.resourcetype:5)&facet.query=(dc.type:7 AND search.resourcetype:6)&facet.query=(dc.type:8 AND search.resourcetype:3)&facet.query=(dc.type:8 AND search.resourcetype:4)&facet.query=(dc.type:8 AND search.resourcetype:5)&facet.query=(dc.type:8 AND search.resourcetype:6)&facet.query=(dc.type:9 AND search.resourcetype:3)&facet.query=(dc.type:9 AND search.resourcetype:4)&facet.query=(dc.type:9 AND search.resourcetype:5)&facet.query=(dc.type:9 AND search.resourcetype:6)&facet.query=(dc.type:10 AND search.resourcetype:3)&facet.query=(dc.type:10 AND search.resourcetype:4)&facet.query=(dc.type:10 AND search.resourcetype:5)&facet.query=(dc.type:10 AND search.resourcetype:6)&facet.query=(PJSubject_keyword:/1.*/ AND search.resourcetype:3)&facet.query=(PJSubject_keyword:/1.*/ AND search.resourcetype:4)&facet.query=(PJSubject_keyword:/1.*/ AND search.resourcetype:5)&facet.query=(PJSubject_keyword:/1.*/ AND search.resourcetype:6)&facet.query=(PJSubject_keyword:/2.*/ AND search.resourcetype:3)&facet.query=(PJSubject_keyword:/2.*/ AND search.resourcetype:4)&facet.query=(PJSubject_keyword:/2.*/ AND search.resourcetype:5)&facet.query=(PJSubject_keyword:/2.*/ AND search.resourcetype:6)&facet.query=(PJSubject_keyword:/3.*/ AND search.resourcetype:3)&facet.query=(PJSubject_keyword:/3.*/ AND search.resourcetype:4)&facet.query=(PJSubject_keyword:/3.*/ AND search.resourcetype:5)&facet.query=(PJSubject_keyword:/3.*/ AND search.resourcetype:6)&facet.query=(PJSubject_keyword:/4.*/ AND search.resourcetype:3)&facet.query=(PJSubject_keyword:/4.*/ AND search.resourcetype:4)&facet.query=(PJSubject_keyword:/4.*/ AND search.resourcetype:5)&facet.query=(PJSubject_keyword:/4.*/ AND search.resourcetype:6)&facet.query=(PJSubject_keyword:/5.*/ AND search.resourcetype:3)&facet.query=(PJSubject_keyword:/5.*/ AND search.resourcetype:4)&facet.query=(PJSubject_keyword:/5.*/ AND search.resourcetype:5)&facet.query=(PJSubject_keyword:/5.*/ AND search.resourcetype:6)&facet.query=(PJSubject_keyword:/6.*/ AND search.resourcetype:3)&facet.query=(PJSubject_keyword:/6.*/ AND search.resourcetype:4)&facet.query=(PJSubject_keyword:/6.*/ AND search.resourcetype:5)&facet.query=(PJSubject_keyword:/6.*/ AND search.resourcetype:6)`,
+       query: `q=resourcetype_authority:publications&rows=0&facet=true&facet.query=(location.coll:15)&facet.query=(location.coll:14)&facet.query=(location.coll:13)&facet.query=(location.coll:12)&facet.query=(dc.type:Báo NOT nhiệm AND location.coll:15)&facet.query=(dc.type:Báo NOT nhiệm AND location.coll:14)&facet.query=(dc.type:Báo NOT nhiệm AND location.coll:13)&facet.query=(dc.type:Báo NOT nhiệm AND location.coll:12)&facet.query=(dc.type:hội thảo AND location.coll:15)&facet.query=(dc.type:hội thảo AND location.coll:14)&facet.query=(dc.type:hội thảo AND location.coll:13)&facet.query=(dc.type:hội thảo AND location.coll:12)&facet.query=(dc.type:nhiệm vụ AND location.coll:15)&facet.query=(dc.type:nhiệm vụ AND location.coll:14)&facet.query=(dc.type:nhiệm vụ AND location.coll:13)&facet.query=(dc.type:nhiệm vụ AND location.coll:12)&facet.query=(dc.type:Sách NOT trích AND location.coll:15)&facet.query=(dc.type:Sách NOT trích AND location.coll:14)&facet.query=(dc.type:Sách NOT trích AND location.coll:13)&facet.query=(dc.type:Sách NOT trích AND location.coll:12)&facet.query=(dc.type:tiến sĩ AND location.coll:15)&facet.query=(dc.type:tiến sĩ AND location.coll:14)&facet.query=(dc.type:tiến sĩ AND location.coll:13)&facet.query=(dc.type:tiến sĩ AND location.coll:12)&facet.query=(dc.type:thạc sĩ AND location.coll:15)&facet.query=(dc.type:thạc sĩ AND location.coll:14)&facet.query=(dc.type:thạc sĩ AND location.coll:13)&facet.query=(dc.type:thạc sĩ AND location.coll:12)&facet.query=(dc.type:tạp chí AND location.coll:15)&facet.query=(dc.type:tạp chí AND location.coll:14)&facet.query=(dc.type:tạp chí AND location.coll:13)&facet.query=(dc.type:tạp chí AND location.coll:12)&facet.query=(dc.type:kỷ yếu NOT thảo AND location.coll:15)&facet.query=(dc.type:kỷ yếu NOT thảo AND location.coll:14)&facet.query=(dc.type:kỷ yếu NOT thảo AND location.coll:13)&facet.query=(dc.type:kỷ yếu NOT thảo AND location.coll:12)&facet.query=(dc.type:Bài trích sách AND location.coll:15)&facet.query=(dc.type:Bài trích sách AND location.coll:14)&facet.query=(dc.type:Bài trích sách AND location.coll:13)&facet.query=(dc.type:Bài trích sách AND location.coll:12)&facet.query=(dc.type:nghiên cứu AND location.coll:15)&facet.query=(dc.type:nghiên cứu AND location.coll:14)&facet.query=(dc.type:nghiên cứu AND location.coll:13)&facet.query=(dc.type:nghiên cứu AND location.coll:12)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/ AND location.coll:15)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/ AND location.coll:14)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/ AND location.coll:13)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/ AND location.coll:12)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/ AND location.coll:15)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/ AND location.coll:14)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/ AND location.coll:13)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/ AND location.coll:12)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/ AND location.coll:15)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/ AND location.coll:14)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/ AND location.coll:13)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/ AND location.coll:12)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/ AND location.coll:15)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/ AND location.coll:14)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/ AND location.coll:13)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/ AND location.coll:12)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/ AND location.coll:15)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/ AND location.coll:14)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/ AND location.coll:13)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/ AND location.coll:12)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/ AND location.coll:15)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/ AND location.coll:14)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/ AND location.coll:13)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/ AND location.coll:12)`,
        pdf: {  
            pageOrientation:"landscape",
            content:[  
@@ -750,12 +750,12 @@ export default {
                           "",
                           "",
                           {  
-                             text:"ISI",
+                             text:"Scopus",
                              alignment:"center",
                              style:"tdStyle"
                           },
                           {  
-                             text:"Scopus",
+                             text:"ISI",
                              alignment:"center",
                              style:"tdStyle"
                           },
@@ -809,27 +809,27 @@ export default {
                              bold:true
                           },
                           {  
-                             text:"dataX[\"(search.resourcetype:3)\"] + dataX[\"(search.resourcetype:4)\"] + dataX[\"(search.resourcetype:5)\"] + dataX[\"(search.resourcetype:6)\"]",
+                             text:"dataX[\"(location.coll:15)\"] + dataX[\"(location.coll:14)\"] + dataX[\"(location.coll:13)\"] + dataX[\"(location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(search.resourcetype:3)\"]",
+                             text:"dataX[\"(location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(search.resourcetype:4)\"]",
+                             text:"dataX[\"(location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(search.resourcetype:5)\"]",
+                             text:"dataX[\"(location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(search.resourcetype:6)\"]",
+                             text:"dataX[\"(location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -858,27 +858,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(dc.type:1 AND search.resourcetype:3)\"] + dataX[\"(dc.type:1 AND search.resourcetype:4)\"] + dataX[\"(dc.type:1 AND search.resourcetype:5)\"] + dataX[\"(dc.type:1 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:Báo NOT nhiệm AND location.coll:15)\"] + dataX[\"(dc.type:Báo NOT nhiệm AND location.coll:14)\"] + dataX[\"(dc.type:Báo NOT nhiệm AND location.coll:13)\"] + dataX[\"(dc.type:Báo NOT nhiệm AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:1 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(dc.type:Báo NOT nhiệm AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:1 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(dc.type:Báo NOT nhiệm AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:1 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(dc.type:Báo NOT nhiệm AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:1 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:Báo NOT nhiệm AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -895,27 +895,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(dc.type:2 AND search.resourcetype:3)\"] + dataX[\"(dc.type:2 AND search.resourcetype:4)\"] + dataX[\"(dc.type:2 AND search.resourcetype:5)\"] + dataX[\"(dc.type:2 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:hội thảo AND location.coll:15)\"] + dataX[\"(dc.type:hội thảo AND location.coll:14)\"] + dataX[\"(dc.type:hội thảo AND location.coll:13)\"] + dataX[\"(dc.type:hội thảo AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:2 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(dc.type:hội thảo AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:2 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(dc.type:hội thảo AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:2 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(dc.type:hội thảo AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:2 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:hội thảo AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -932,27 +932,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(dc.type:3 AND search.resourcetype:3)\"] + dataX[\"(dc.type:3 AND search.resourcetype:4)\"] + dataX[\"(dc.type:3 AND search.resourcetype:5)\"] + dataX[\"(dc.type:3 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:nhiệm vụ AND location.coll:15)\"] + dataX[\"(dc.type:nhiệm vụ AND location.coll:14)\"] + dataX[\"(dc.type:nhiệm vụ AND location.coll:13)\"] + dataX[\"(dc.type:nhiệm vụ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:3 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(dc.type:nhiệm vụ AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:3 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(dc.type:nhiệm vụ AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:3 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(dc.type:nhiệm vụ AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:3 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:nhiệm vụ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -969,27 +969,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(dc.type:4 AND search.resourcetype:3)\"] + dataX[\"(dc.type:4 AND search.resourcetype:4)\"] + dataX[\"(dc.type:4 AND search.resourcetype:5)\"] + dataX[\"(dc.type:4 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:Sách NOT trích AND location.coll:15)\"] + dataX[\"(dc.type:Sách NOT trích AND location.coll:14)\"] + dataX[\"(dc.type:Sách NOT trích AND location.coll:13)\"] + dataX[\"(dc.type:Sách NOT trích AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:4 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(dc.type:Sách NOT trích AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:4 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(dc.type:Sách NOT trích AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:4 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(dc.type:Sách NOT trích AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:4 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:Sách NOT trích AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1006,27 +1006,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(dc.type:5 AND search.resourcetype:3)\"] + dataX[\"(dc.type:5 AND search.resourcetype:4)\"] + dataX[\"(dc.type:5 AND search.resourcetype:5)\"] + dataX[\"(dc.type:5 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:tiến sĩ AND location.coll:15)\"] + dataX[\"(dc.type:tiến sĩ AND location.coll:14)\"] + dataX[\"(dc.type:tiến sĩ AND location.coll:13)\"] + dataX[\"(dc.type:tiến sĩ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:5 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(dc.type:tiến sĩ AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:5 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(dc.type:tiến sĩ AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:5 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(dc.type:tiến sĩ AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:5 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:tiến sĩ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1043,27 +1043,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(dc.type:6 AND search.resourcetype:3)\"] + dataX[\"(dc.type:6 AND search.resourcetype:4)\"] + dataX[\"(dc.type:6 AND search.resourcetype:5)\"] + dataX[\"(dc.type:6 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:thạc sĩ AND location.coll:15)\"] + dataX[\"(dc.type:thạc sĩ AND location.coll:14)\"] + dataX[\"(dc.type:thạc sĩ AND location.coll:13)\"] + dataX[\"(dc.type:thạc sĩ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:6 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(dc.type:thạc sĩ AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:6 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(dc.type:thạc sĩ AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:6 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(dc.type:thạc sĩ AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:6 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:thạc sĩ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1080,27 +1080,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(dc.type:7 AND search.resourcetype:3)\"] + dataX[\"(dc.type:7 AND search.resourcetype:4)\"] + dataX[\"(dc.type:7 AND search.resourcetype:5)\"] + dataX[\"(dc.type:7 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:tạp chí AND location.coll:15)\"] + dataX[\"(dc.type:tạp chí AND location.coll:14)\"] + dataX[\"(dc.type:tạp chí AND location.coll:13)\"] + dataX[\"(dc.type:tạp chí AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:7 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(dc.type:tạp chí AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:7 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(dc.type:tạp chí AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:7 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(dc.type:tạp chí AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:7 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:tạp chí AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1117,27 +1117,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(dc.type:8 AND search.resourcetype:3)\"] + dataX[\"(dc.type:8 AND search.resourcetype:4)\"] + dataX[\"(dc.type:8 AND search.resourcetype:5)\"] + dataX[\"(dc.type:8 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:kỷ yếu NOT thảo AND location.coll:15)\"] + dataX[\"(dc.type:kỷ yếu NOT thảo AND location.coll:14)\"] + dataX[\"(dc.type:kỷ yếu NOT thảo AND location.coll:13)\"] + dataX[\"(dc.type:kỷ yếu NOT thảo AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:8 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(dc.type:kỷ yếu NOT thảo AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:8 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(dc.type:kỷ yếu NOT thảo AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:8 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(dc.type:kỷ yếu NOT thảo AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:8 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:kỷ yếu NOT thảo AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1154,27 +1154,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(dc.type:9 AND search.resourcetype:3)\"] + dataX[\"(dc.type:9 AND search.resourcetype:4)\"] + dataX[\"(dc.type:9 AND search.resourcetype:5)\"] + dataX[\"(dc.type:9 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:Bài trích sách AND location.coll:15)\"] + dataX[\"(dc.type:Bài trích sách AND location.coll:14)\"] + dataX[\"(dc.type:Bài trích sách AND location.coll:13)\"] + dataX[\"(dc.type:Bài trích sách AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:9 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(dc.type:Bài trích sách AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:9 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(dc.type:Bài trích sách AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:9 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(dc.type:Bài trích sách AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:9 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:Bài trích sách AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1191,27 +1191,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(dc.type:10 AND search.resourcetype:3)\"] + dataX[\"(dc.type:10 AND search.resourcetype:4)\"] + dataX[\"(dc.type:10 AND search.resourcetype:5)\"] + dataX[\"(dc.type:10 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:nghiên cứu AND location.coll:15)\"] + dataX[\"(dc.type:nghiên cứu AND location.coll:14)\"] + dataX[\"(dc.type:nghiên cứu AND location.coll:13)\"] + dataX[\"(dc.type:nghiên cứu AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:10 AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(dc.type:nghiên cứu AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:10 AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(dc.type:nghiên cứu AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:10 AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(dc.type:nghiên cứu AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(dc.type:10 AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(dc.type:nghiên cứu AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1240,27 +1240,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:3)\"] + dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:4)\"] + dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:5)\"] + dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/ AND location.coll:15)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/ AND location.coll:14)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/ AND location.coll:13)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/ AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/ AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/ AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/1.*/ AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1277,27 +1277,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:3)\"] + dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:4)\"] + dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:5)\"] + dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/ AND location.coll:15)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/ AND location.coll:14)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/ AND location.coll:13)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/ AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/ AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/ AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/2.*/ AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1314,27 +1314,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:3)\"] + dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:4)\"] + dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:5)\"] + dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/ AND location.coll:15)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/ AND location.coll:14)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/ AND location.coll:13)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/ AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/ AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/ AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/3.*/ AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1351,27 +1351,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:3)\"] + dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:4)\"] + dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:5)\"] + dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/ AND location.coll:15)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/ AND location.coll:14)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/ AND location.coll:13)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/ AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/ AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/ AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/4.*/ AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1388,27 +1388,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:3)\"] + dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:4)\"] + dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:5)\"] + dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/ AND location.coll:15)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/ AND location.coll:14)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/ AND location.coll:13)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/ AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/ AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/ AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/5.*/ AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1425,27 +1425,27 @@ export default {
                              ]
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:3)\"] + dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:4)\"] + dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:5)\"] + dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/ AND location.coll:15)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/ AND location.coll:14)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/ AND location.coll:13)\"] + dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:3)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/ AND location.coll:15)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:4)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/ AND location.coll:14)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:5)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/ AND location.coll:13)\"]",
                              type:"function",
                              alignment:"center"
                           },
                           {  
-                             text:"dataX[\"(PJSubject_keyword:/6.*/ AND search.resourcetype:6)\"]",
+                             text:"dataX[\"(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/ AND location.coll:12)\"]",
                              type:"function",
                              alignment:"center"
                           }
@@ -1466,6 +1466,14 @@ export default {
 
    crispatents: {
        query: `q=resourcetype_group:crispatents&rows=0&facet=true&facet.query=(crispatents.patentstype:Sáng chế)&facet.query=(crispatents.patentstype:Giải pháp hữu ích)&facet.query=(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Sáng chế)&facet.query=(patentsstatus:Còn hiệu lực AND crispatents.patentstype:Giải pháp hữu ích)&facet.query=(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Sáng chế)&facet.query=(patentsstatus:Hết hiệu lực AND crispatents.patentstype:Giải pháp hữu ích)`,
+       querys: [
+         'q=(resourcetype_group:crispatents)&rows=0&facet=true&facet.pivot=crispatents.patentscountrycode',
+         'q=(resourcetype_group:crispatents AND crispatents.patentstype:Sáng chế)&rows=0&facet=true&facet.pivot=crispatents.patentscountrycode',
+         'q=(resourcetype_group:crispatents AND crispatents.patentstype:Giải pháp hữu ích)&rows=0&facet=true&facet.pivot=crispatents.patentscountrycode',
+       ],
+       dataPoint: {
+         "17": "crispatents.patentscountrycode"
+       },
        pdf: {  
         pageOrientation:"landscape",
         content:[  
@@ -1645,7 +1653,154 @@ export default {
                           type:"function",
                           alignment:"center"
                        }
-                    ]
+                    ],
+                    [  
+                       {  
+                          text:"3. Phân loại IPC",
+                          alignment:"left",
+                          bold:true
+                       },
+                       "",
+                       "",
+                       ""
+                    ],
+                    [  
+                       {  
+                          text:"- Phần A",
+                          alignment:"left",
+                          margin:[  
+                             15,
+                             0,
+                             0,
+                             0
+                          ]
+                       },
+                       "",
+                       "",
+                       ""
+                    ],
+                    [  
+                       {  
+                          text:"- Phần B",
+                          alignment:"left",
+                          margin:[  
+                             15,
+                             0,
+                             0,
+                             0
+                          ]
+                       },
+                       "",
+                       "",
+                       ""
+                    ],
+                    [  
+                       {  
+                          text:"- Phần C",
+                          alignment:"left",
+                          margin:[  
+                             15,
+                             0,
+                             0,
+                             0
+                          ]
+                       },
+                       "",
+                       "",
+                       ""
+                    ],
+                    [  
+                       {  
+                          text:"- Phần D",
+                          alignment:"left",
+                          margin:[  
+                             15,
+                             0,
+                             0,
+                             0
+                          ]
+                       },
+                       "",
+                       "",
+                       ""
+                    ],
+                    [  
+                       {  
+                          text:"- Phần E",
+                          alignment:"left",
+                          margin:[  
+                             15,
+                             0,
+                             0,
+                             0
+                          ]
+                       },
+                       "",
+                       "",
+                       ""
+                    ],
+                    [  
+                       {  
+                          text:"- Phần F",
+                          alignment:"left",
+                          margin:[  
+                             15,
+                             0,
+                             0,
+                             0
+                          ]
+                       },
+                       "",
+                       "",
+                       ""
+                    ],
+                    [  
+                       {  
+                          text:"- Phần G",
+                          alignment:"left",
+                          margin:[  
+                             15,
+                             0,
+                             0,
+                             0
+                          ]
+                       },
+                       "",
+                       "",
+                       ""
+                    ],
+                    [  
+                       {  
+                          text:"- Phần F",
+                          alignment:"left",
+                          margin:[  
+                             15,
+                             0,
+                             0,
+                             0
+                          ]
+                       },
+                       "",
+                       "",
+                       ""
+                    ],
+                    [  
+                       {  
+                          text:"4. Chia theo quốc gia công nhận",
+                          alignment:"left",
+                          bold:true
+                       },
+                       "",
+                       "",
+                       ""
+                    ],
+                    [  
+                       "",
+                       "",
+                       "",
+                       ""
+                    ],
+
                  ]
               },
               margin:[  

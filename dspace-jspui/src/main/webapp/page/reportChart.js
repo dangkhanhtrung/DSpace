@@ -251,7 +251,7 @@ export default {
     },
 
     publications: {
-         query: `q=resourcetype_group:publications&rows=0&facet=true&facet.query=(search.resourcetype:3)&facet.query=(search.resourcetype:4)&facet.query=(search.resourcetype:5)&facet.query=(search.resourcetype:6)&facet.query=(dc.type:Bài báo)&facet.query=(dc.type:Kỷ yếu hội thảo)&facet.query=(dc.type:Báo cáo kết quả nhiệm vụ)&facet.query=(dc.type:Sách)&facet.query=(dc.type:Luận án tiến sĩ)&facet.query=(dc.type:Luận án thạc sĩ)&facet.query=(dc.type:Bài trích tạp chí)&facet.query=(dc.type:Bài trích kỷ yếu)&facet.query=(dc.type:Bài trích sách)&facet.query=(dc.type:Bài nghiên cứu)&facet.query=(dc.subject:Khoa học tự nhiên)&facet.query=(dc.subject:Khoa học kỹ thuật và công nghệ)&facet.query=(dc.subject:Khoa học y, dược)&facet.query=(dc.subject:Khoa học nông nghiệp)&facet.query=(dc.subject:Khoa học xã hội)&facet.query=(dc.subject:Khoa học nhân văn)&facet.field=dateIssued.year_sort`,
+         query: `q=resourcetype_group:publications&rows=0&facet=true&facet.query=(location.coll:14)&facet.query=(location.coll:15)&facet.query=(location.coll:13)&facet.query=(location.coll:12)&facet.query=(dc.type:Báo NOT nhiệm)&facet.query=(dc.type:hội thảo)&facet.query=(dc.type:nhiệm vụ)&facet.query=(dc.type:Sách NOT trích)&facet.query=(dc.type:tiến sĩ)&facet.query=(dc.type:thạc sĩ)&facet.query=(dc.type:tạp chí)&facet.query=(dc.type:kỷ yếu NOT thảo)&facet.query=(dc.type:Bài trích sách)&facet.query=(dc.type:nghiên cứu)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/)&facet.field=dateIssued.year_sort`,
          charts: [
             {
                class: "col-sm-6",
@@ -297,35 +297,35 @@ export default {
                       data: [
                          {
                             name: "Bài báo",
-                            y: 'dataX["(dc.type:Bài báo)"]'
+                            y: 'dataX["(dc.type:Báo NOT nhiệm)"]'
                          },
                          {
                             name: "Kỷ yếu<br>hội thảo",
-                            y: 'dataX["(dc.type:Kỷ yếu hội thảo)"]'
+                            y: 'dataX["(dc.type:hội thảo)"]'
                          },
                          {
                             name: "Báo cáo<br>kết quả<br>nhiệm vụ",
-                            y: 'dataX["(dc.type:Báo cáo kết quả nhiệm vụ)"]'
+                            y: 'dataX["(dc.type:nhiệm vụ)"]'
                          },
                          {
                             name: "Sách",
-                            y: 'dataX["(dc.type:Sách)"]'
+                            y: 'dataX["(dc.type:Sách NOT trích)"]'
                          },
                          {
                             name: "Luận án<br>tiến sĩ",
-                            y: 'dataX["(dc.type:Luận án tiến sĩ)"]'
+                            y: 'dataX["(dc.type:tiến sĩ)"]'
                          },
                          {
                             name: "Luận án<br>thạc sĩ",
-                            y: 'dataX["(dc.type:Luận án thạc sĩ)"]'
+                            y: 'dataX["(dc.type:thạc sĩ)"]'
                          },
                          {
                             name: "Bài trích<br>tạp chí",
-                            y: 'dataX["(dc.type:Bài trích tạp chí)"]'
+                            y: 'dataX["(dc.type:tạp chí)"]'
                          },
                          {
                             name: "Bài trích<br>kỷ yếu",
-                            y: 'dataX["(dc.type:Bài trích kỷ yếu)"]'
+                            y: 'dataX["(dc.type:kỷ yếu NOT thảo)"]'
                          },
                          {
                             name: "Bài trích<br>sách",
@@ -333,7 +333,7 @@ export default {
                          },
                          {
                             name: "Bài nghiên<br>cứu",
-                            y: 'dataX["(dc.type:Bài nghiên cứu)"]'
+                            y: 'dataX["(dc.type:nghiên cứu)"]'
                          }
                       ]
                    }]
@@ -381,21 +381,21 @@ export default {
                        name: 'Bộ sưu tập',
                        innerSize: '50%',
                        data: [
-                           {
-                             name: "ISI",
-                             y: 'dataX["(search.resourcetype:3)"]'
-                          },
                           {
                              name: "Scopus",
-                             y: 'dataX["(search.resourcetype:4)"]'
+                             y: 'dataX["(location.coll:15)"]'
                           },
                           {
-                             name: "Quốc tế",
-                             y: 'dataX["(search.resourcetype:5)"]'
-                          },
+                             name: "ISI",
+                             y: 'dataX["(location.coll:14)"]'
+                          },                          
                           {
                              name: "Quốc tế",
-                             y: 'dataX["(search.resourcetype:6)"]'
+                             y: 'dataX["(location.coll:13)"]'
+                          },
+                          {
+                             name: "Trong nước",
+                             y: 'dataX["(location.coll:12)"]'
                           }
                        ]
                    }]
@@ -446,27 +446,27 @@ export default {
                       data: [
                          {
                             name: "Khoa học<br>tự nhiên",
-                            y: 'dataX["(dc.subject:/1.*/)"]'
+                            y: 'dataX["(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/)"]'
                          },
                          {
                             name: "Khoa học<br>kỹ thuật<br>và<br>công nghệ",
-                            y: 'dataX["(dc.subject:/2.*/)"]'
+                            y: 'dataX["(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/)"]'
                          },
                          {
                             name: "Khoa học y,<br>dược",
-                            y: 'dataX["(dc.subject:/3.*/)"]'
+                            y: 'dataX["(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/)"]'
                          },
                          {
                             name: "Khoa học<br>nông nghiệp",
-                            y: 'dataX["(dc.subject:/4.*/)"]'
+                            y: 'dataX["(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/)"]'
                          },
                          {
                             name: "Khoa học<br>xã hội",
-                            y: 'dataX["(dc.subject:/5.*/)"]'
+                            y: 'dataX["(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/)"]'
                          },
                          {
                             name: "Khoa học<br>nhân văn",
-                            y: 'dataX["(dc.subject:/6.*/)"]'
+                            y: 'dataX["(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/)"]'
                          }
                       ]
                    }]
@@ -2553,10 +2553,10 @@ export default {
                    plotShadow: false
                 },
                 title: {
-                   text: 'Lĩnh vực',
+                   text: 'Lĩnh vực<br>chuyên môn',
                    align: 'center',
                    verticalAlign: 'middle',
-                   y: 60
+                   y: 30
                 },
                 tooltip: {
                    pointFormat: '<b>{point.percentage:.1f}%</b>'

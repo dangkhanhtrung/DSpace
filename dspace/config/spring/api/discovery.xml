@@ -1783,6 +1783,7 @@
 				<ref bean="searchFilterPatentsType" />
 				<ref bean="searchFilterPatentsApprovaldate" />
 				<ref bean="searchFilterPatentsStatus" />				
+				<ref bean="searchFilterPatentsCountry" />				
 				<ref bean="searchFilterPatentsSubject" />
 				<ref bean="searchFilterPatentsHolders" />					
 				<ref bean="searchFilterPatentsInventors" />					
@@ -2046,6 +2047,19 @@
 		<property name="metadataFields">
 			<list>
 				<value>crispatents.patentsstatus</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="10" />
+		<property name="sortOrder" value="COUNT" />
+		<property name="type" value="thongkestring" />
+	</bean>
+
+	<bean id="searchFilterPatentsCountry"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="patentscountrycode" />
+		<property name="metadataFields">
+			<list>
+				<value>crispatents.patentscountrycode</value>
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
@@ -2328,6 +2342,7 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
+		<property name="type" value="thongkestring"/>
 	</bean>	
 
 	<bean id="searchFilterStandardsTitle"
@@ -3215,7 +3230,8 @@
 		<list>			
 			<ref bean="searchFilterPatentsType" />
 			<ref bean="searchFilterPatentsApprovaldate" />
-			<ref bean="searchFilterPatentsStatus" />			
+			<ref bean="searchFilterPatentsStatus" />
+			<ref bean="searchFilterPatentsCountry" />						
 			<ref bean="searchFilterPatentsSubject" />
 			<ref bean="searchFilterPatentsHolders" />
 			<ref bean="searchFilterPatentsInventors" />
