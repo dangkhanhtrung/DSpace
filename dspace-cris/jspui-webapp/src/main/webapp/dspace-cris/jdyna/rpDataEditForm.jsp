@@ -184,7 +184,7 @@
         </c:set>
         <dspace:layout titlekey="jsp.researcher-page.primary-data-form" style="submission" navbar="off">
 
-            <h1>${researcher.fullName} <c:if test="${admin}"><a id="delete" href="delete.htm?id=${researcher.id}"> <span class="fa fa-trash"></span> </a></c:if></h1>
+            <h1>${researcher.fullName} <c:if test="true"><a id="delete" href="delete.htm?id=${researcher.id}"> <span class="fa fa-trash"></span> </a></c:if></h1>
 
 
             <c:if test="${not empty messages}">
@@ -262,7 +262,7 @@
                             </div>
 
                             <div class="col-md-6">
-                                <c:if test="${admin}">
+                                <c:if test="true">
                                     <div class="cris-edit-record-info cris-edit-eperson argon_input" style="width: 100%;">
                                         <spring:bind path="epersonID">
                                             <c:set var="inputValue">
@@ -682,7 +682,7 @@ span.fieldError, .errorMessage {
 						"limit": j('#nested_'+id+"_limit").html(),
 						"editmode": true,
 						"totalHit": j('#nested_'+id+"_totalHit").html(),
-						"admin": ${admin}
+						"admin": true
 					},
 					success : function(data) {																										
 						j('#viewnested_'+id).html(data);
@@ -696,7 +696,7 @@ span.fieldError, .errorMessage {
 									"limit": j('#nested_'+id+"_limit").html(),
 									"editmode": true,
 									"totalHit": j('#nested_'+id+"_totalHit").html(),
-									"admin": ${admin}
+									"admin": true
 								},
 								success : function(data) {									
 									j('#viewnested_'+id).html(data);
@@ -724,7 +724,7 @@ span.fieldError, .errorMessage {
 											"parentID" : ${anagraficadto.objectId},
 											"typeNestedID" : id,
 											"editmode" : true,
-											"admin": ${admin}
+											"admin": true
 										},
 										success : function(data) {
 											j('#nested_edit_dialog').html(data);
@@ -754,7 +754,7 @@ span.fieldError, .errorMessage {
 											"parentID" : ${anagraficadto.objectId},
 											"typeNestedID" : id,
 											"editmode" : true,
-											"admin": ${admin}
+											"admin": true
 										},
 										success : function(data) {
 											j('#viewnested_'+id).html(data);
@@ -775,7 +775,7 @@ span.fieldError, .errorMessage {
 											"typeNestedID" : id,
 											"editmode" : true,
 											"preferred" : true,
-											"admin": ${admin}
+											"admin": true
 										},
 										success : function(data) {
 											j('#viewnested_'+id).html(data);
@@ -796,7 +796,7 @@ span.fieldError, .errorMessage {
 											"typeNestedID" : id,
 											"editmode" : true,
 											"preferred" : false,
-											"admin": ${admin}
+											"admin": true
 										},
 										success : function(data) {
 											j('#viewnested_'+id).html(data);
@@ -814,7 +814,7 @@ span.fieldError, .errorMessage {
 										data : {			
 											"parentID" : ${anagraficadto.objectId},
 											"typeNestedID" : id,
-											"admin": ${admin}
+											"admin": true
 										},
 										success : function(data) {
 											j('#nested_edit_dialog').html(data);

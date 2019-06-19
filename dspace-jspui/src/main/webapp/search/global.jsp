@@ -365,7 +365,7 @@
                             + "&amp;location=" + URLEncoder.encode(fvalue.getAuthorityKey(), "UTF-8")%>"
                                title="<fmt:message key="jsp.search.facet.narrow"><fmt:param><%=fvalue.getDisplayedValue()%></fmt:param></fmt:message>">
 
-                               <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 36)%></a><span class="badge"><%= fvalue.getCount()%></span> </li><%
+                               <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 936)%></a><span class="badge"><%= fvalue.getCount()%></span> </li><%
                                    }
                                %></ul>
                 </div>
@@ -412,7 +412,7 @@
                             + "&amp;filtertype=" + URLEncoder.encode(fvalue.getFilterType(), "UTF-8")%>"
                            title="<fmt:message key="jsp.search.facet.narrow"><fmt:param><%=fvalue.getDisplayedValue()%></fmt:param></fmt:message>">
 
-                           <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 36)%></a><span class="badge"><%= fvalue.getCount()%></span> </li><%
+                           <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 936)%></a><span class="badge"><%= fvalue.getCount()%></span> </li><%
                                        idx++;
                                    }
                                    if (idx > limit) {

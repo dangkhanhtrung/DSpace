@@ -238,7 +238,7 @@
                 + "&amp;filtername=" + URLEncoder.encode(f, "UTF-8")
                                                 + "&amp;filtertype=" + URLEncoder.encode(fvalue.getFilterType(), "UTF-8")%>"
                                                                                             title="<fmt:message key="jsp.search.facet.narrow"><fmt:param><%=fvalue.getDisplayedValue()%></fmt:param></fmt:message>">
-                <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 36)%></a></li>
+                <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 936)%></a></li>
                 <%
                                         }
                                     }
@@ -292,7 +292,7 @@
                 + "&amp;filtername=" + URLEncoder.encode(f, "UTF-8")
                                                 + "&amp;filtertype=" + URLEncoder.encode(fvalue.getFilterType(), "UTF-8")%>"
                                                                                             title="<fmt:message key="jsp.search.facet.narrow"><fmt:param><%=fvalue.getDisplayedValue()%></fmt:param></fmt:message>">
-                <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 36)%></a></li>
+                <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 936)%></a></li>
                 <%
                                         }
                                     }
@@ -346,7 +346,7 @@
                                                 + "&amp;filtername=" + URLEncoder.encode(f, "UTF-8")
                                                 + "&amp;filtertype=" + URLEncoder.encode(fvalue.getFilterType(), "UTF-8")%>"
                                                                                             title="<fmt:message key="jsp.search.facet.narrow"><fmt:param><%=fvalue.getDisplayedValue()%></fmt:param></fmt:message>">
-                <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 36)%></a></li>
+                <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 936)%></a></li>
                 <%
                                         }
                                     }

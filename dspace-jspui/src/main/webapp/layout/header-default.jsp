@@ -107,6 +107,7 @@
 	
 <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
   
 <script type="text/javascript"
 	src="<%= request.getContextPath()%>/static/js/argon.min.js"></script>
@@ -122,6 +123,15 @@
 	src="<%= request.getContextPath()%>/page/exporting.js"></script>
 <script type="text/javascript"
 	src="<%= request.getContextPath()%>/page/dspace.min.js"></script>
+	
+<script type="text/javascript"
+	src="<%= request.getContextPath()%>/page/export/xlsx.core.min.js"></script>
+<script type="text/javascript"
+	src="<%= request.getContextPath()%>/page/export/Blob.min.js"></script>
+<script type="text/javascript"
+	src="<%= request.getContextPath()%>/page/export/FileSaver.min.js"></script>
+<script type="text/javascript"
+	src="<%= request.getContextPath()%>/page/export/tableexport.min.js"></script>
 
 <script type='text/javascript'>
             var j = jQuery.noConflict();

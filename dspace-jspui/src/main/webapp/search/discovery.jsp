@@ -326,6 +326,13 @@
     %>
     <hr/>
     
+    <a href="javascript:;" style="font-size: 12px;position: absolute;right: 20px;" @click="doExportExcel">
+    	<span class="btn-inner--icon" style="font-weight: bold;">
+    		<i class="fa fa-file-excel-o pr-1" aria-hidden="true"></i>
+    		Tải xuống excel
+    	</span>
+    </a>
+
     <div class="discovery-result-results">
         <%
             Set<Integer> otherTypes = mapOthers.keySet();
@@ -352,15 +359,17 @@
             <dspace:collectionlist collections="<%= collections%>" />
         </div>
         <% } %>
-
         <% if (items.length > 0) { %>
         <div class="panel panel-info">
+        	<div class="panel-heading"><h6>...</h6></div>
             <%
-                if (exportBiblioEnabled && (exportBiblioAll || user != null) || 1==1) {
+                if (exportBiblioEnabled && (exportBiblioAll || user != null)) {
             %>
 
             <form target="blank" class="form-inline"  id="exportform" action="<%= request.getContextPath()%>/references">
-
+		<%
+                if  (2==1) {
+            %>
                 <div id="export-biblio-panel" style="width: 100%;    margin-left: 0px;">
                     <div class="row px-3">
                         <%
@@ -393,6 +402,7 @@
                     </div>
                     
                 </div>	
+                <%} %>
                 <dspace:itemlist items="<%= items%>" authorLimit="<%= etAl%>" radioButton="false" inputName="item_id" order="<%= order%>" sortOption="<%= sortOption%>"/>
             </form>
             <% } else {%>
@@ -597,7 +607,7 @@
                                         + "&amp;filterquery=" + URLEncoder.encode(fvalue.getAsFilterQuery(), "UTF-8")
                                         + "&amp;filtertype=" + URLEncoder.encode(fvalue.getFilterType(), "UTF-8")%>"
                                    title="<fmt:message key="jsp.search.facet.narrow"><fmt:param><%=fvalue.getDisplayedValue()%></fmt:param></fmt:message>">
-                                    <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 36)%></a><span class="badge"><%= fvalue.getCount()%></span> </li><%
+                                    <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 936)%></a><span class="badge"><%= fvalue.getCount()%></span> </li><%
                                                 idx++;
                                             }
                                             if (idx > limit) {

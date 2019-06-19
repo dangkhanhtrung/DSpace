@@ -145,7 +145,7 @@
                         <c:if test="${entry.value>0}">
                             <p class="warning pending">
                                 <c:choose>				
-                                    <c:when test="${admin}">
+                                    <c:when test="true">
                                         <a href="<%=request.getContextPath()%>/tools/importrecord?crisid=${researcher.crisID}&sourceref=${entry.key}"><fmt:message key="jsp.cris.detail.imprecord.result-match.${entry.key}"><fmt:param>${entry.value}</fmt:param></fmt:message></a>
                                     </c:when>
                                     <c:otherwise>
@@ -274,7 +274,7 @@
 						"limit": j('#nested_'+id+"_limit").html(),
 						"editmode": j('#nested_'+id+"_editmode").html(),
 						"totalHit": j('#nested_'+id+"_totalHit").html(),
-						"admin": ${admin},
+						"admin": true,
 						"externalJSP": j('#nested_'+id+"_externalJSP").html()
 					},
 					success : function(data) {																										
@@ -289,7 +289,7 @@
 									"limit": j('#nested_'+id+"_limit").html(),
 									"editmode": j('#nested_'+id+"_editmode").html(),
 									"totalHit": j('#nested_'+id+"_totalHit").html(),
-									"admin": ${admin},
+									"admin": true,
 									"externalJSP": j('#nested_'+id+"_externalJSP").html()
 								},
 								success : function(data) {									

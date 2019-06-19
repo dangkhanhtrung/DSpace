@@ -183,7 +183,7 @@
         </c:set>
         <dspace:layout titlekey="jsp.researcher-page.primary-data-form" style="submission" navbar="off">
 
-            <h1>${organizationunit.name} <c:if test="${admin}"><a id="delete" href="delete.htm?id=${organizationunit.id}"> <span class="fa fa-trash"></span> </a></c:if></h1>
+            <h1>${organizationunit.name} <c:if test="true"><a id="delete" href="delete.htm?id=${organizationunit.id}"> <span class="fa fa-trash"></span> </a></c:if></h1>
 
 
             <c:if test="${not empty messages}">
@@ -644,7 +644,7 @@
 					"limit": j('#nested_'+id+"_limit").html(),
 					"editmode": true,
 					"totalHit": j('#nested_'+id+"_totalHit").html(),
-					"admin": ${admin}
+					"admin": true
 				},
 				success : function(data) {																										
 					j('#viewnested_'+id).html(data);
@@ -658,7 +658,7 @@
 								"limit": j('#nested_'+id+"_limit").html(),
 								"editmode": true,
 								"totalHit": j('#nested_'+id+"_totalHit").html(),
-								"admin": ${admin}
+								"admin": true
 							},
 							success : function(data) {									
 								j('#viewnested_'+id).html(data);
@@ -686,7 +686,7 @@
 										"parentID" : ${anagraficadto.objectId},
 										"typeNestedID" : id,
 										"editmode" : true,
-										"admin": ${admin}
+										"admin": true
 									},
 									success : function(data) {
 										j('#nested_edit_dialog').html(data);
@@ -716,7 +716,7 @@
 										"parentID" : ${anagraficadto.objectId},
 										"typeNestedID" : id,
 										"editmode" : true,
-										"admin": ${admin}
+										"admin": true
 									},
 									success : function(data) {
 										j('#viewnested_'+id).html(data);
@@ -737,7 +737,7 @@
 										"typeNestedID" : id,
 										"editmode" : true,
 										"preferred" : true,
-										"admin": ${admin}
+										"admin": true
 									},
 									success : function(data) {
 										j('#viewnested_'+id).html(data);
@@ -758,7 +758,7 @@
 										"typeNestedID" : id,
 										"editmode" : true,
 										"preferred" : false,
-										"admin": ${admin}
+										"admin": true
 									},
 									success : function(data) {
 										j('#viewnested_'+id).html(data);
@@ -776,7 +776,7 @@
 									data : {			
 										"parentID" : ${anagraficadto.objectId},
 										"typeNestedID" : id,
-										"admin": ${admin}
+										"admin": true
 									},
 									success : function(data) {
 										j('#nested_edit_dialog').html(data);
