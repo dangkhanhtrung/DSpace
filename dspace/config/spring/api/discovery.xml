@@ -2342,7 +2342,6 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
-		<property name="type" value="thongkestring"/>
 	</bean>	
 
 	<bean id="searchFilterStandardsTitle"

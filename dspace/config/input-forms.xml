@@ -169,11 +169,11 @@ it, please enter the types and the actual numbers or codes.</hint>
          <dc-qualifier></dc-qualifier>
          <!-- An input-type of twobox MUST be marked as repeatable -->
          <repeatable>true</repeatable>
-         <label>Subject Keywords</label>
+         <label>Lĩnh vực khoa học</label>
          <input-type>onebox</input-type>
          <hint>Enter appropriate subject keywords or phrases. </hint>
          <required></required>
-         <vocabulary>nsi_07062019</vocabulary>
+         <vocabulary>nsi_19062019</vocabulary>
        </field>
 
        <field>
