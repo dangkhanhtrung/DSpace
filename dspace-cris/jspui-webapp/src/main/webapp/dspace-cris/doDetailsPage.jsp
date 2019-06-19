@@ -127,7 +127,7 @@
 						"limit": j('#nested_'+id+"_limit").html(),
 						"editmode": j('#nested_'+id+"_editmode").html(),
 						"totalHit": j('#nested_'+id+"_totalHit").html(),
-							"admin": ${admin},
+							"admin": true,
 						"externalJSP": j('#nested_'+id+"_externalJSP").html()
 					},
 					success : function(data) {																										
@@ -142,7 +142,7 @@
 									"limit": j('#nested_'+id+"_limit").html(),
 									"editmode": j('#nested_'+id+"_editmode").html(),
 									"totalHit": j('#nested_'+id+"_totalHit").html(),
-								"admin": ${admin},
+								"admin": true,
 									"externalJSP": j('#nested_'+id+"_externalJSP").html()
 								},
 								success : function(data) {									

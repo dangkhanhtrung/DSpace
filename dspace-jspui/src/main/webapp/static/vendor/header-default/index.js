@@ -28,7 +28,11 @@ jQuery(document).ready(function ($) {
             filterQuery: [],
             eventsData: [],
             homeChartRender: false,
-            homeChart: {}
+            homeChart: {},
+            treeSubject: [],
+            treeActivity: [],
+            treeAuthority: [],
+            treeSOS: []
         },
         created: function () {
             var vm = this;
@@ -38,6 +42,125 @@ jQuery(document).ready(function ($) {
                 var totalQuery = params.get("totalQuery");
                 var location = params.get("location");
                 vm.filters = [];
+                
+                if (document.getElementById('treeData__container') !== undefined && document.getElementById('treeData__container') !== null) {
+                	var tempArray = JSON.parse(document.getElementById('treeData__container').innerHTML)
+                	for (var key in tempArray) {
+                		if (tempArray[key]['children'].length > 0) {
+                			vm.treeSubject.push(tempArray[key])
+                		}
+                	}
+                }
+                if (document.getElementById('treeDataActivity__container') !== undefined && document.getElementById('treeDataActivity__container') !== null) {
+                	var tempArrayAc = JSON.parse(document.getElementById('treeDataActivity__container').innerHTML)
+                	for (var key in tempArrayAc) {
+                		if (tempArrayAc[key]['children'].length > 0) {
+                			vm.treeActivity.push(tempArrayAc[key])
+                		}
+                	}
+                }
+                if (document.getElementById('treeDataAuthority__container') !== undefined && document.getElementById('treeDataAuthority__container') !== null) {
+                	var tempArrayAu = JSON.parse(document.getElementById('treeDataAuthority__container').innerHTML)
+                	for (var key in tempArrayAu) {
+                		if (tempArrayAu[key]['children'].length > 0) {
+                			vm.treeAuthority.push(tempArrayAu[key])
+                		}
+                	}
+                }
+                if (document.getElementById('treeDataRaw__container') !== undefined && document.getElementById('treeDataRaw__container') !== null) {
+                	var tempArrayAuRaw = JSON.parse(document.getElementById('treeDataRaw__container').innerHTML)
+                	
+                	var cusOBJ = {}
+                	var cusOBJ2 = {}
+                	var cusOBJ3 = {}
+                	for (var key in tempArrayAuRaw) {
+                		console.log(key)
+                		var rawSplit = key.split("::")
+                		if (cusOBJ[rawSplit[1]] === null || cusOBJ[rawSplit[1]] === undefined) {
+                			cusOBJ[rawSplit[1]] = 0
+                		}
+                		if (rawSplit.length >= 3) {
+                			if (cusOBJ2[rawSplit[2]] === null || cusOBJ2[rawSplit[2]] === undefined) {
+                    			cusOBJ2[rawSplit[2]] = 0
+                    		}if (cusOBJ3[rawSplit[3]] === null || cusOBJ3[rawSplit[3]] === undefined) {
+                    			cusOBJ3[rawSplit[3]] = 0
+                    		}
+                		}
+                		if (rawSplit.length === 2) {
+                			cusOBJ[rawSplit[1]] = tempArrayAuRaw[key]
+                		}
+                		if (rawSplit.length === 3) {
+                			cusOBJ2[rawSplit[2]] = tempArrayAuRaw[key]
+                		}
+                		if (rawSplit.length === 4) {
+                			cusOBJ3[rawSplit[3]] = tempArrayAuRaw[key]
+                		}
+                	}
+                	for (var key in cusOBJ) {
+                		var curOBJK = {
+            				id: key,
+            				name: key,
+            				fullName: 'BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::' + key,
+            				numberpoint: 0,
+            				count: cusOBJ[key],
+            				children: []
+            			}
+                		var keyStart = key.substring(0, key.indexOf(".") + 1)
+            			for (var key2 in cusOBJ2) {
+	                		if (key2.indexOf(keyStart) === 0) {
+	                			var curOBJK2 = {
+	                				id: key2,
+	                				name: key2,
+	                				fullName: 'BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::' + key + '::' + key2,
+	                				numberpoint: key.indexOf(".") + 1,
+	                				count: (cusOBJ2[key2] !== undefined && cusOBJ2[key2] !== null) ? cusOBJ2[key2] : 0,
+	                				children: []
+	                			}
+	                			var keyStart2 = key2.substring(0, key2.indexOf(".", 2) + 1)
+	                			for (var key3 in cusOBJ3) {
+	    	                		if (key3.indexOf(keyStart2) === 0) {
+	    	                			curOBJK2['children'].push({
+	    	                				id: key3,
+	    	                				name: key3,
+	    	                				fullName: 'BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::' + key + '::' + key2 + '::' + key3,
+	    	                				numberpoint: key2.indexOf(".", 2) + 1,
+	    	                				count: (cusOBJ3[key3] !== undefined && cusOBJ3[key3] !== null) ? cusOBJ3[key3] : 0
+	    	                			})
+	    	                		}
+	    	                	}
+	                			curOBJK['children'].push(curOBJK2)
+	                		}
+	                	}
+                		vm.treeSOS.push(curOBJK)
+                	}
+            		console.log("vm.treeSOS", vm.treeSOS)
+                }
+                
+                if (String(params.get('rpp')) === '1000000') {
+                	setTimeout( function(){
+                		
+                		var FormatsTable = document.getElementsByClassName("table table-hover");
+                		
+                		if (FormatsTable !== undefined && FormatsTable !== null) {
+                    		
+                			var tableId = "my__table__to__xlsx";
+                    		FormatsTable.id = tableId;
+
+                    		var instance = new TableExport(FormatsTable, {
+                    	        formats: ['xlsx']
+                    	    });
+                    		
+                    		$( ".button-default.xlsx" ).trigger( "click" );
+                    		
+                    		if (String(params.get('rpp')) === '1000000') {
+                    			
+                    			params.set('rpp', 10);
+                    			
+                    		}
+                		}
+                		
+                	}, 1000);
+                }
                 
                 var indexSearch = 0;
                 for (var key = 1; key <= 20; key++) {
@@ -116,6 +239,20 @@ jQuery(document).ready(function ($) {
             })
         },
         methods: {
+        	doExportExcel: function () {
+        		var pathName = window.location.pathname;
+                var uri = window.location.search.substring(1);
+                var params = new URLSearchParams(uri);
+                params.set('rpp', 1000000);
+                params.delete('t');
+                var newURL = window.location.origin + pathName + '?'
+                for(var pair of params.entries()) {
+                	   console.log(pair[0]+ ', '+ pair[1]); 
+                	   newURL += pair[0] + '=' + pair[1] + '&'
+                }
+                newURL += 't=' + new Date().getTime();
+                window.location.href = newURL;
+        	},
         	doDetailEvent: function (item) {
         		
         	},
@@ -128,11 +265,9 @@ jQuery(document).ready(function ($) {
         			image = '/jspui/cris/do/fileservice/' + a7 + '/?filename=' + a4 + '.' + a5
         			
         		}
-        		console.log('image', image)
         		return image;
         	},
             processFilters: function (data, index) {
-                console.log('index' + index);
                 if (data === '+') {
                     this.filterIndex = this.filterIndex + 1;
                     this.filters.push({id: this.filterIndex});
@@ -191,9 +326,9 @@ jQuery(document).ready(function ($) {
             	axios.get(url)
                 .then(function (response) {
                 	console.log(response.data)
-                	var orgCon = document.getElementById("orgcard")
+                	var orgCon = $('#researcher .col-12.col-sm-9')
                 	if (orgCon !== null && orgCon !== undefined) {
-                		orgCon.innerHTML = response.data
+                		orgCon.html(response.data)
                 	}
                 })
                 .catch(function (error) {
