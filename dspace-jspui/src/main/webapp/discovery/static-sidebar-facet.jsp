@@ -126,6 +126,8 @@
             		elementObj.addProperty("id", "1.Khoa h\u1ECDc t\u1EF1 nhi\u00EAn");
             		elementObj.addProperty("name", "1.Khoa h\u1ECDc t\u1EF1 nhi\u00EAn");
             		elementObj.addProperty("count", 0);
+            		elementObj.addProperty("filtertype", "contains");
+            		elementObj.addProperty("filtertypequery", "1.");
             		elementObj.add("children", new JsonArray());
             		itemArray.add(elementObj);
             		
@@ -133,6 +135,8 @@
             		elementObj.addProperty("id", "2.Khoa h\u1ECDc k\u1EF9 thu\u1EADt v\u00E0 c\u00F4ng ngh\u1EC7");
             		elementObj.addProperty("name", "2.Khoa h\u1ECDc k\u1EF9 thu\u1EADt v\u00E0 c\u00F4ng ngh\u1EC7");
             		elementObj.addProperty("count", 0);
+            		elementObj.addProperty("filtertype", "contains");
+            		elementObj.addProperty("filtertypequery", "2.");
             		elementObj.add("children", new JsonArray());
             		itemArray.add(elementObj);
             		
@@ -140,6 +144,8 @@
             		elementObj.addProperty("id", "3.Khoa h\u1ECDc y, d\u01B0\u1EE3c");
             		elementObj.addProperty("name", "3.Khoa h\u1ECDc y, d\u01B0\u1EE3c");
             		elementObj.addProperty("count", 0);
+            		elementObj.addProperty("filtertype", "contains");
+            		elementObj.addProperty("filtertypequery", "3.");
             		elementObj.add("children", new JsonArray());
             		itemArray.add(elementObj);
             		
@@ -147,6 +153,8 @@
             		elementObj.addProperty("id", "4.Khoa h\u1ECDc n\u00F4ng nghi\u1EC7p");
             		elementObj.addProperty("name", "4.Khoa h\u1ECDc n\u00F4ng nghi\u1EC7p");
             		elementObj.addProperty("count", 0);
+            		elementObj.addProperty("filtertype", "contains");
+            		elementObj.addProperty("filtertypequery", "4.");
             		elementObj.add("children", new JsonArray());
             		itemArray.add(elementObj);
             		
@@ -154,6 +162,8 @@
             		elementObj.addProperty("id", "5.Khoa h\u1ECDc x\u00E3 h\u1ED9i");
             		elementObj.addProperty("name", "5.Khoa h\u1ECDc x\u00E3 h\u1ED9i");
             		elementObj.addProperty("count", 0);
+            		elementObj.addProperty("filtertype", "contains");
+            		elementObj.addProperty("filtertypequery", "5.");
             		elementObj.add("children", new JsonArray());
             		itemArray.add(elementObj);
             		
@@ -161,69 +171,100 @@
             		elementObj.addProperty("id", "6.Khoa h\u1ECDc nh\u00E2n v\u0103n");
             		elementObj.addProperty("name", "6.Khoa h\u1ECDc nh\u00E2n v\u0103n");
             		elementObj.addProperty("count", 0);
+            		elementObj.addProperty("filtertype", "contains");
+            		elementObj.addProperty("filtertypequery", "6.");
             		elementObj.add("children", new JsonArray());
             		itemArray.add(elementObj);
             		
             		if (facet != null) {
+            			long total0 = 0;
+            			long total1 = 0;
+            			long total2 = 0;
+            			long total3 = 0;
+            			long total4 = 0;
+            			long total5 = 0;
                     	for (FacetResult fvalue : facet) {
                     		if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1.Khoa h\u1ECDc t\u1EF1 nhi\u00EAn") || StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1. Khoa h\u1ECDc t\u1EF1 nhi\u00EAn")) {
-                    			itemArray.get(0).getAsJsonObject().getAsJsonObject().addProperty("count", fvalue.getCount());
+                    			total0 = total0 + fvalue.getCount();
                     		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2.Khoa h\u1ECDc k\u1EF9 thu\u1EADt v\u00E0 c\u00F4ng ngh\u1EC7") || StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2. Khoa h\u1ECDc k\u1EF9 thu\u1EADt v\u00E0 c\u00F4ng ngh\u1EC7")) {
-                    			itemArray.get(1).getAsJsonObject().getAsJsonObject().addProperty("count", fvalue.getCount());
+                    			total1 = total1 + fvalue.getCount();
                     		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("3.Khoa h\u1ECDc y, d\u01B0\u1EE3c") || StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("3. Khoa h\u1ECDc y, d\u01B0\u1EE3c")) {
-                    			itemArray.get(2).getAsJsonObject().getAsJsonObject().addProperty("count", fvalue.getCount());
+                    			total2 = total2 + fvalue.getCount();
                     		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("4.Khoa h\u1ECDc n\u00F4ng nghi\u1EC7p") || StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("4. Khoa h\u1ECDc n\u00F4ng nghi\u1EC7p")) {
-                    			itemArray.get(3).getAsJsonObject().getAsJsonObject().addProperty("count", fvalue.getCount());
+                    			total3 = total3 + fvalue.getCount();
                     		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("5.Khoa h\u1ECDc x\u00E3 h\u1ED9i") || StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("5. Khoa h\u1ECDc x\u00E3 h\u1ED9i")) {
-                    			itemArray.get(4).getAsJsonObject().getAsJsonObject().addProperty("count", fvalue.getCount());
                     		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("6.Khoa h\u1ECDc nh\u00E2n v\u0103n") || StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("6. Khoa h\u1ECDc nh\u00E2n v\u0103n")) {
-                    			itemArray.get(5).getAsJsonObject().getAsJsonObject().addProperty("count", fvalue.getCount());
+                    			total4 = total4 + fvalue.getCount();
                     		}
                     		if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).startsWith("1.") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1.Khoa h\u1ECDc t\u1EF1 nhi\u00EAn")  && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1. Khoa h\u1ECDc t\u1EF1 nhi\u00EAn")) {
                     			elementObj = new JsonObject();
                     			elementObj.addProperty("id", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                         		elementObj.addProperty("name", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
+                        		elementObj.addProperty("filtertype", "authority");
+                        		elementObj.addProperty("filtertypequery", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                         		elementObj.addProperty("count", fvalue.getCount());
                     			itemArray.get(0).getAsJsonObject().getAsJsonArray("children").add(elementObj);
+                        		total0 = total0 + fvalue.getCount();
                     		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).startsWith("2.") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2.Khoa h\u1ECDc k\u1EF9 thu\u1EADt v\u00E0 c\u00F4ng ngh\u1EC7")  && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2. Khoa h\u1ECDc k\u1EF9 thu\u1EADt v\u00E0 c\u00F4ng ngh\u1EC7")) {
                     			elementObj = new JsonObject();
                     			elementObj.addProperty("id", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                         		elementObj.addProperty("name", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
+                        		elementObj.addProperty("filtertype", "authority");
+                        		elementObj.addProperty("filtertypequery", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                         		elementObj.addProperty("count", fvalue.getCount());
                     			itemArray.get(1).getAsJsonObject().getAsJsonArray("children").add(elementObj);
+                        		total1 = total1 + fvalue.getCount();
                     		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).startsWith("3.") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("3.Khoa h\u1ECDc y, d\u01B0\u1EE3c") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("3. Khoa h\u1ECDc y, d\u01B0\u1EE3c")) {
                     			elementObj = new JsonObject();
                     			elementObj.addProperty("id", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                         		elementObj.addProperty("name", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
+                        		elementObj.addProperty("filtertype", "authority");
+                        		elementObj.addProperty("filtertypequery", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                         		elementObj.addProperty("count", fvalue.getCount());
                     			itemArray.get(2).getAsJsonObject().getAsJsonArray("children").add(elementObj);
+                        		total2 = total2 + fvalue.getCount();
                     		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).startsWith("4.") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("4.Khoa h\u1ECDc n\u00F4ng nghi\u1EC7p") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("4. Khoa h\u1ECDc n\u00F4ng nghi\u1EC7p")) {
                     			elementObj = new JsonObject();
                     			elementObj.addProperty("id", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                         		elementObj.addProperty("name", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
+                        		elementObj.addProperty("filtertype", "authority");
+                        		elementObj.addProperty("filtertypequery", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                         		elementObj.addProperty("count", fvalue.getCount());
                     			itemArray.get(3).getAsJsonObject().getAsJsonArray("children").add(elementObj);
+                        		total3 = total3 + fvalue.getCount();
                     		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).startsWith("5.") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("5.Khoa h\u1ECDc x\u00E3 h\u1ED9i") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("5. Khoa h\u1ECDc x\u00E3 h\u1ED9i")) {
                     			elementObj = new JsonObject();
                     			elementObj.addProperty("id", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                         		elementObj.addProperty("name", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
+                        		elementObj.addProperty("filtertype", "authority");
+                        		elementObj.addProperty("filtertypequery", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                         		elementObj.addProperty("count", fvalue.getCount());
                     			itemArray.get(4).getAsJsonObject().getAsJsonArray("children").add(elementObj);
+                        		total4 = total4 + fvalue.getCount();
                     		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).startsWith("6.") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("6.Khoa h\u1ECDc nh\u00E2n v\u0103n") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("6. Khoa h\u1ECDc nh\u00E2n v\u0103n")) {
                     			elementObj = new JsonObject();
                     			elementObj.addProperty("id", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                         		elementObj.addProperty("name", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
+                        		elementObj.addProperty("filtertype", "authority");
+                        		elementObj.addProperty("filtertypequery", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                         		elementObj.addProperty("count", fvalue.getCount());
                     			itemArray.get(5).getAsJsonObject().getAsJsonArray("children").add(elementObj);
+                        		total5 = total5 + fvalue.getCount();
                     		}
                     	}
+                		itemArray.get(0).getAsJsonObject().getAsJsonObject().addProperty("count", total0);
+                		itemArray.get(1).getAsJsonObject().getAsJsonObject().addProperty("count", total1);
+                		itemArray.get(2).getAsJsonObject().getAsJsonObject().addProperty("count", total2);
+                		itemArray.get(3).getAsJsonObject().getAsJsonObject().addProperty("count", total3);
+                		itemArray.get(4).getAsJsonObject().getAsJsonObject().addProperty("count", total4);
+                		itemArray.get(5).getAsJsonObject().getAsJsonObject().addProperty("count", total5);
             		}
             %>
             <div id="treeData__container" class="hidden"><%=itemArray %></div>
             <v-treeview :items="treeSubject" :open-all="true" v-if="treeSubject.length > 0">
             	<template v-slot:label="{ item, active }">
 		          <div class="v-treeview-node__label__content">
-		          	<a class="pl-3" style="    padding: 0 !important;" :href='"<%= request.getContextPath()%>" + "/simple-search?filterquery=" + item.name + "&amp;filtername=" + "<%=URLEncoder.encode(f, "UTF-8") %>" + "&amp;filtertype=authority&amp;location=" + "<%=URLEncoder.encode(searchScope, "UTF-8") %>"'
+		          	<a class="pl-3" style="    padding: 0 !important;" :href='"<%= request.getContextPath()%>" + "/simple-search?filterquery=" + item.filtertypequery + "&amp;filtername=" + "<%=URLEncoder.encode(f, "UTF-8") %>" + "&amp;filtertype=" + item.filtertype + "&amp;location=" + "<%=URLEncoder.encode(searchScope, "UTF-8") %>"'
 					>
                         {{ item.name }}</a>
 		          </div> 
@@ -238,6 +279,8 @@
         		elementObj.addProperty("id", "1.Nghi\u00EAn c\u1EE9u khoa h\u1ECDc");
         		elementObj.addProperty("name", "1.Nghi\u00EAn c\u1EE9u khoa h\u1ECDc");
         		elementObj.addProperty("count", 0);
+        		elementObj.addProperty("filtertype", "contains");
+        		elementObj.addProperty("filtertypequery", "1.");
         		elementObj.add("children", new JsonArray());
         		itemArray.add(elementObj);
         		
@@ -245,6 +288,8 @@
         		elementObj.addProperty("id", "2.Ph\u00E1t tri\u1EC3n c\u00F4ng ngh\u1EC7");
         		elementObj.addProperty("name", "2.Ph\u00E1t tri\u1EC3n c\u00F4ng ngh\u1EC7");
         		elementObj.addProperty("count", 0);
+        		elementObj.addProperty("filtertype", "contains");
+        		elementObj.addProperty("filtertypequery", "2.");
         		elementObj.add("children", new JsonArray());
         		itemArray.add(elementObj);
         		
@@ -252,38 +297,55 @@
         		elementObj.addProperty("id", "3.D\u1ECBch v\u1EE5 khoa h\u1ECDc v\u00E0 c\u00F4ng ngh\u1EC7");
         		elementObj.addProperty("name", "3.D\u1ECBch v\u1EE5 khoa h\u1ECDc v\u00E0 c\u00F4ng ngh\u1EC7");
         		elementObj.addProperty("count", 0);
+        		elementObj.addProperty("filtertype", "contains");
+        		elementObj.addProperty("filtertypequery", "3.");
         		elementObj.add("children", new JsonArray());
         		itemArray.add(elementObj);
         		
         		if (facet != null) {
+        			long total0 = 0;
+        			long total1 = 0;
+        			long total2 = 0;
                 	for (FacetResult fvalue : facet) {
                 		if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1.Nghi\u00EAn c\u1EE9u khoa h\u1ECDc") || StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1. Nghi\u00EAn c\u1EE9u khoa h\u1ECDc")) {
-                			itemArray.get(0).getAsJsonObject().getAsJsonObject().addProperty("count", fvalue.getCount());
+                			total0 = total0 + fvalue.getCount();
                 		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2.Ph\u00E1t tri\u1EC3n c\u00F4ng ngh\u1EC7") || StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2. Ph\u00E1t tri\u1EC3n c\u00F4ng ngh\u1EC7")) {
-                			itemArray.get(1).getAsJsonObject().getAsJsonObject().addProperty("count", fvalue.getCount());
+                			total1 = total1 + fvalue.getCount();
                 		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("3.D\u1ECBch v\u1EE5 khoa h\u1ECDc v\u00E0 c\u00F4ng ngh\u1EC7") || StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("3. D\u1ECBch v\u1EE5 khoa h\u1ECDc v\u00E0 c\u00F4ng ngh\u1EC7")) {
-                			itemArray.get(2).getAsJsonObject().getAsJsonObject().addProperty("count", fvalue.getCount());
+                			total2 = total2 + fvalue.getCount();
                 		}
                 		if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).startsWith("1.") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1.Nghi\u00EAn c\u1EE9u khoa h\u1ECDc")  && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1. Nghi\u00EAn c\u1EE9u khoa h\u1ECDc")) {
                 			elementObj = new JsonObject();
                 			elementObj.addProperty("id", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                     		elementObj.addProperty("name", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
+                    		elementObj.addProperty("filtertype", "authority");
+                    		elementObj.addProperty("filtertypequery", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                     		elementObj.addProperty("count", fvalue.getCount());
                 			itemArray.get(0).getAsJsonObject().getAsJsonArray("children").add(elementObj);
+                			total0 = total0 + fvalue.getCount();
                 		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).startsWith("2.") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2.Ph\u00E1t tri\u1EC3n c\u00F4ng ngh\u1EC7")  && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2. Ph\u00E1t tri\u1EC3n c\u00F4ng ngh\u1EC7")) {
                 			elementObj = new JsonObject();
                 			elementObj.addProperty("id", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                     		elementObj.addProperty("name", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
+                    		elementObj.addProperty("filtertype", "authority");
+                    		elementObj.addProperty("filtertypequery", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                     		elementObj.addProperty("count", fvalue.getCount());
                 			itemArray.get(1).getAsJsonObject().getAsJsonArray("children").add(elementObj);
+                			total1 = total1 + fvalue.getCount();
                 		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).startsWith("3.") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("3.D\u1ECBch v\u1EE5 khoa h\u1ECDc v\u00E0 c\u00F4ng ngh\u1EC7") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("3. D\u1ECBch v\u1EE5 khoa h\u1ECDc v\u00E0 c\u00F4ng ngh\u1EC7")) {
                 			elementObj = new JsonObject();
                 			elementObj.addProperty("id", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                     		elementObj.addProperty("name", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
+                    		elementObj.addProperty("filtertype", "authority");
+                    		elementObj.addProperty("filtertypequery", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                     		elementObj.addProperty("count", fvalue.getCount());
                 			itemArray.get(2).getAsJsonObject().getAsJsonArray("children").add(elementObj);
+                			total2 = total2 + fvalue.getCount();
                 		}
                 	}
+            		itemArray.get(0).getAsJsonObject().getAsJsonObject().addProperty("count", total0);
+            		itemArray.get(1).getAsJsonObject().getAsJsonObject().addProperty("count", total1);
+            		itemArray.get(2).getAsJsonObject().getAsJsonObject().addProperty("count", total2);
         		}
             	
             %>
@@ -292,7 +354,7 @@
             <v-treeview :items="treeActivity" :open-all="true" v-if="treeActivity.length > 0">
             	<template v-slot:label="{ item, active }">
 		          <div class="v-treeview-node__label__content">
-		          	<a class="pl-3" style="    padding: 0 !important;" :href='"<%= request.getContextPath()%>" + "/simple-search?filterquery=" + item.name + "&amp;filtername=" + "<%=URLEncoder.encode(f, "UTF-8") %>" + "&amp;filtertype=authority&amp;location=" + "<%=URLEncoder.encode(searchScope, "UTF-8") %>"'
+		          	<a class="pl-3" style="    padding: 0 !important;" :href='"<%= request.getContextPath()%>" + "/simple-search?filterquery=" + item.filtertypequery + "&amp;filtername=" + "<%=URLEncoder.encode(f, "UTF-8") %>" + "&amp;filtertype=" + item.filtertype + "&amp;location=" + "<%=URLEncoder.encode(searchScope, "UTF-8") %>"'
 					>
                         {{ item.name }}</a>
 		          </div> 
@@ -307,6 +369,8 @@
         		elementObj.addProperty("id", "1.C\u00E1c b\u1ED9, ng\u00E0nh, c\u01A1 quan trung \u01B0\u01A1ng");
         		elementObj.addProperty("name", "1.C\u00E1c b\u1ED9, ng\u00E0nh, c\u01A1 quan trung \u01B0\u01A1ng");
         		elementObj.addProperty("count", 0);
+        		elementObj.addProperty("filtertype", "contains");
+        		elementObj.addProperty("filtertypequery", "1.");
         		elementObj.add("children", new JsonArray());
         		itemArray.add(elementObj);
         		
@@ -314,30 +378,42 @@
         		elementObj.addProperty("id", "2.T\u1EC9nh, th\u00E0nh ph\u1ED1");
         		elementObj.addProperty("name", "2.T\u1EC9nh, th\u00E0nh ph\u1ED1");
         		elementObj.addProperty("count", 0);
+        		elementObj.addProperty("filtertype", "contains");
+        		elementObj.addProperty("filtertypequery", "2.");
         		elementObj.add("children", new JsonArray());
         		itemArray.add(elementObj);
         		        		
         		if (facet != null) {
+        			long total0 = 0;
+        			long total1 = 0;
                 	for (FacetResult fvalue : facet) {
                 		if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1.C\u00E1c b\u1ED9, ng\u00E0nh, c\u01A1 quan trung \u01B0\u01A1ng") || StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1. C\u00E1c b\u1ED9, ng\u00E0nh, c\u01A1 quan trung \u01B0\u01A1ng")) {
-                			itemArray.get(0).getAsJsonObject().getAsJsonObject().addProperty("count", fvalue.getCount());
+                			total0 = total0 + fvalue.getCount();
                 		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2.T\u1EC9nh, th\u00E0nh ph\u1ED1") || StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2. T\u1EC9nh, th\u00E0nh ph\u1ED1")) {
-                			itemArray.get(1).getAsJsonObject().getAsJsonObject().addProperty("count", fvalue.getCount());
+                			total1 = total1 + fvalue.getCount();
                 		}
-                		if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).startsWith("1") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1.C\u00E1c b\u1ED9, ng\u00E0nh, c\u01A1 quan trung \u01B0\u01A1ng")  && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1. C\u00E1c b\u1ED9, ng\u00E0nh, c\u01A1 quan trung \u01B0\u01A1ng")) {
+                		if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).startsWith("1.") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1.C\u00E1c b\u1ED9, ng\u00E0nh, c\u01A1 quan trung \u01B0\u01A1ng")  && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("1. C\u00E1c b\u1ED9, ng\u00E0nh, c\u01A1 quan trung \u01B0\u01A1ng")) {
                 			elementObj = new JsonObject();
                 			elementObj.addProperty("id", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                     		elementObj.addProperty("name", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                     		elementObj.addProperty("count", fvalue.getCount());
+                    		elementObj.addProperty("filtertype", "authority");
+                    		elementObj.addProperty("filtertypequery", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                 			itemArray.get(0).getAsJsonObject().getAsJsonArray("children").add(elementObj);
-                		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).startsWith("2") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2.T\u1EC9nh, th\u00E0nh ph\u1ED1")  && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2. T\u1EC9nh, th\u00E0nh ph\u1ED1")) {
+                			total0 = total0 + fvalue.getCount();
+                		} else if (StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).startsWith("2.") && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2.T\u1EC9nh, th\u00E0nh ph\u1ED1")  && !StringUtils.abbreviate(fvalue.getDisplayedValue(), 936).equals("2. T\u1EC9nh, th\u00E0nh ph\u1ED1")) {
                 			elementObj = new JsonObject();
                 			elementObj.addProperty("id", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                     		elementObj.addProperty("name", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                     		elementObj.addProperty("count", fvalue.getCount());
+                    		elementObj.addProperty("filtertype", "authority");
+                    		elementObj.addProperty("filtertypequery", StringUtils.abbreviate(fvalue.getDisplayedValue(), 936));
                 			itemArray.get(1).getAsJsonObject().getAsJsonArray("children").add(elementObj);
+                			total1 = total1 + fvalue.getCount();
                 		}
                 	}
+            		itemArray.get(0).getAsJsonObject().getAsJsonObject().addProperty("count", total0);
+            		itemArray.get(1).getAsJsonObject().getAsJsonObject().addProperty("count", total1);
         		}
             	
             %>
@@ -346,7 +422,7 @@
             <v-treeview :items="treeAuthority" :open-all="true" v-if="treeAuthority.length > 0">
             	<template v-slot:label="{ item, active }">
 		          <div class="v-treeview-node__label__content">
-		          	<a class="pl-3" style="    padding: 0 !important;" :href='"<%= request.getContextPath()%>" + "/simple-search?filterquery=" + item.name + "&amp;filtername=" + "<%=URLEncoder.encode(f, "UTF-8") %>" + "&amp;filtertype=authority&amp;location=" + "<%=URLEncoder.encode(searchScope, "UTF-8") %>"'
+		          	<a class="pl-3" style="    padding: 0 !important;" :href='"<%= request.getContextPath()%>" + "/simple-search?filterquery=" + item.filtertypequery + "&amp;filtername=" + "<%=URLEncoder.encode(f, "UTF-8") %>" + "&amp;filtertype=" + item.filtertype + "&amp;location=" + "<%=URLEncoder.encode(searchScope, "UTF-8") %>"'
 					>
                         {{ item.name }}</a>
 		          </div> 
@@ -368,7 +444,7 @@
             	<v-treeview :items="treeSOS" :open-all="true" v-if="treeSOS.length > 0">
             	<template v-slot:label="{ item, active }">
 		          <div class="v-treeview-node__label__content">
-		          	<a class="pl-3" style="    padding: 0 !important;" :href='"<%= request.getContextPath()%>" + "/simple-search?filterquery=" + item.fullName + "&amp;filtername=" + "<%=URLEncoder.encode(f, "UTF-8") %>" + "&amp;filtertype=equals&amp;location=" + "<%=URLEncoder.encode(searchScope, "UTF-8") %>"'
+		          	<a class="pl-3" style="    padding: 0 !important;" :href='"<%= request.getContextPath()%>" + "/simple-search?filterquery=" + item.filtertypequery + "&amp;filtername=" + "<%=URLEncoder.encode(f, "UTF-8") %>" + "&amp;filtertype=" + item.filtertype + "&amp;location=" + "<%=URLEncoder.encode(searchScope, "UTF-8") %>"'
 					>
                         {{ item.name.substring(item.numberpoint) }}
                     </a>

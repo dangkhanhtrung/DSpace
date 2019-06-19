@@ -101,36 +101,48 @@ jQuery(document).ready(function ($) {
             				id: key,
             				name: key,
             				fullName: 'BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::' + key,
+            				filtertype: 'contains',
+            				filtertypequery: key.substring(0, key.indexOf(".") + 1),
             				numberpoint: 0,
             				count: cusOBJ[key],
             				children: []
             			}
                 		var keyStart = key.substring(0, key.indexOf(".") + 1)
+                		var countkeyRoot = 0
             			for (var key2 in cusOBJ2) {
 	                		if (key2.indexOf(keyStart) === 0) {
+	                			var countkey2 = (cusOBJ2[key2] !== undefined && cusOBJ2[key2] !== null) ? cusOBJ2[key2] : 0
 	                			var curOBJK2 = {
 	                				id: key2,
 	                				name: key2,
 	                				fullName: 'BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::' + key + '::' + key2,
+	                				filtertype: 'contains',
+	                				filtertypequery: key2.substring(0, key2.indexOf(".", 2) + 1),
 	                				numberpoint: key.indexOf(".") + 1,
-	                				count: (cusOBJ2[key2] !== undefined && cusOBJ2[key2] !== null) ? cusOBJ2[key2] : 0,
+	                				count: countkey2,
 	                				children: []
 	                			}
 	                			var keyStart2 = key2.substring(0, key2.indexOf(".", 2) + 1)
 	                			for (var key3 in cusOBJ3) {
 	    	                		if (key3.indexOf(keyStart2) === 0) {
+	    	                			countkey2 = countkey2 + (cusOBJ3[key3] !== undefined && cusOBJ3[key3] !== null) ? cusOBJ3[key3] : 0
+	                					curOBJK2['count'] = countkey2
 	    	                			curOBJK2['children'].push({
 	    	                				id: key3,
 	    	                				name: key3,
 	    	                				fullName: 'BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::' + key + '::' + key2 + '::' + key3,
+	    	                				filtertype: 'contains',
+	    	                				filtertypequery: key3.substring(0, key3.indexOf(".", 2) + 1),
 	    	                				numberpoint: key2.indexOf(".", 2) + 1,
 	    	                				count: (cusOBJ3[key3] !== undefined && cusOBJ3[key3] !== null) ? cusOBJ3[key3] : 0
 	    	                			})
 	    	                		}
 	    	                	}
+	                			countkeyRoot = countkeyRoot + countkey2
 	                			curOBJK['children'].push(curOBJK2)
 	                		}
 	                	}
+                		curOBJK['count'] = countkeyRoot
                 		vm.treeSOS.push(curOBJK)
                 	}
             		console.log("vm.treeSOS", vm.treeSOS)
