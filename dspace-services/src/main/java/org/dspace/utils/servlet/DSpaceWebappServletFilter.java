@@ -70,11 +70,6 @@ public final class DSpaceWebappServletFilter implements Filter {
             if (requestService == null) {
                 throw new IllegalStateException("Could not get the DSpace RequestService to start the request transaction");
             }
-
-            request.setCharacterEncoding("UTF-8");
-            response.setContentType("text/html; charset=UTF-8");
-            response.setCharacterEncoding("UTF-8");
-            
             // establish a request related to the current session
             requestService.startRequest(request, response); // will trigger the various request listeners
             try {
