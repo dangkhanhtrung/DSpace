@@ -375,8 +375,6 @@ public class LayoutTag extends BodyTagSupport
 
             // Ensure the HTTP header will declare that UTF-8 is used
             // in the response.
-            response.setContentType("text/html; charset=UTF-8");
-
             RequestDispatcher rd = config.getServletContext()
                     .getRequestDispatcher(header);
 

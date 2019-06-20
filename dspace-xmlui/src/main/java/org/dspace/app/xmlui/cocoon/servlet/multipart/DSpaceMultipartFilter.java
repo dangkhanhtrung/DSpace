@@ -115,11 +115,6 @@ public class DSpaceMultipartFilter extends AbstractLogEnabled
                                             "Problem in creating the Request",
                                             null, null, e, this.servletSettings, getLogger(), this);
             }
-
-            request.setCharacterEncoding("UTF-8");
-            response.setContentType("text/html; charset=UTF-8");
-            response.setCharacterEncoding("UTF-8");
-            
             filterChain.doFilter(request, response);
 
         } finally {

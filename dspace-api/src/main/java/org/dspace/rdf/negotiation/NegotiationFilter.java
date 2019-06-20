@@ -43,9 +43,6 @@ public class NegotiationFilter implements Filter
             FilterChain chain)
             throws IOException, ServletException
     {
-    	request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html; charset=UTF-8");
-        response.setCharacterEncoding("UTF-8");
         try
         {
             if (!RDFConfiguration.isContentNegotiationEnabled())
