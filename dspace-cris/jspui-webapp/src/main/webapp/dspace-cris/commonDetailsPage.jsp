@@ -49,7 +49,7 @@
                     <c:set var="tabName" value="researcher-menu-item"/>
                 </c:when>
                 <c:otherwise>
-                    <c:set var="tabName" value="researcher-menu-item-hidden"/>
+                	<c:set var="tabName" value="researcher-menu-item"/>
                 </c:otherwise>
             </c:choose>
 

@@ -776,7 +776,7 @@ body .discovery-result-results .list-group-item-heading h4 {
 body .text-muted {
 	    font-size: 12px;
 }
-body #collapseOneresearcherprofile .viewnested {
+body #collapseOneresearcherprofile .viewnested .dynaField > span{
 	display: none;
 }
 
