@@ -71,7 +71,7 @@
 					<property name="mandatory" value="true" />
 					<property name="preHtml" value="&lt;b&gt;" />
 					<property name="postHtml" value="&lt;/b&gt;" />
-					<property name="field" value="techstitle" />
+					<property name="field" value="techsname" />
 					<property name="decorator" value="cristitle" />
 				</bean>	
 				<bean
@@ -108,7 +108,7 @@
 					<property name="mandatory" value="true" />
 					<property name="preHtml" value="&lt;b&gt;" />
 					<property name="postHtml" value="&lt;/b&gt;&lt;br/&gt;" />
-					<property name="field" value="patentstitle" />
+					<property name="field" value="patentsname" />
 					<property name="decorator" value="cristitle" />
 				</bean>
 				<bean
@@ -138,7 +138,7 @@
 					<property name="mandatory" value="true" />
 					<property name="preHtml" value="" />
 					<property name="postHtml" value="" />
-					<property name="field" value="patentsholders" />									
+					<property name="field" value="patentsholders" />
 				</bean>
 			</list>
 		</property>
@@ -152,7 +152,7 @@
 					<property name="mandatory" value="true" />
 					<property name="preHtml" value="&lt;b&gt;" />
 					<property name="postHtml" value="&lt;/b&gt;&lt;br/&gt;" />
-					<property name="field" value="standardstitle" />
+					<property name="field" value="standardsname" />
 					<property name="decorator" value="cristitle" />
 				</bean>
 				<bean
@@ -394,7 +394,7 @@
 					<property name="mandatory" value="true" />
 					<property name="preHtml" value="&lt;b&gt;" />
 					<property name="postHtml" value="&lt;/b&gt;&lt;br/&gt;" />
-					<property name="field" value="fundingstitle" />
+					<property name="field" value="fundingsname" />
 					<property name="decorator" value="cristitle" />
 				</bean>
 				<bean
@@ -431,7 +431,7 @@
 					<property name="mandatory" value="true" />
 					<property name="preHtml" value="&lt;b&gt;" />
 					<property name="postHtml" value="&lt;/b&gt;&lt;br/&gt;" />
-					<property name="field" value="journalstitle" />
+					<property name="field" value="journalsname" />
 					<property name="decorator" value="cristitle" />
 				</bean>
 				<bean
@@ -467,4 +467,20 @@
 			</list>
 		</property>		
 	</bean>
+	<bean id="criscertLayoutView"
+		class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
+		<property name="metadataHeadingFields">
+			<list>
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="mandatory" value="true" />
+					<property name="preHtml" value="&lt;b&gt;" />
+					<property name="postHtml" value="&lt;/b&gt;&lt;br/&gt;" />
+					<property name="field" value="certificatename" />
+					<property name="decorator" value="cristitle" />
+				</bean>				
+			</list>
+		</property>		
+	</bean>
+
 </beans>

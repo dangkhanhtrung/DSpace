@@ -140,6 +140,17 @@ it, please enter the types and the actual numbers or codes.</hint>
        </field>
 
        <field>
+     <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>url</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>URL</label>
+         <input-type>onebox</input-type>
+         <hint> Chọn URL:</hint>NTH
+         <required></required>
+       </field>
+
+       <field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>type</dc-element>
          <dc-qualifier></dc-qualifier>
@@ -165,34 +176,34 @@ it, please enter the types and the actual numbers or codes.</hint>
      <page number="2">
        <field>
 		 <dc-schema>dc</dc-schema>
-         <dc-element>subject</dc-element>
+         <dc-element>domain</dc-element>
          <dc-qualifier></dc-qualifier>
          <!-- An input-type of twobox MUST be marked as repeatable -->
-         <repeatable>true</repeatable>
+         <repeatable>false</repeatable>
          <label>Lĩnh vực khoa học</label>
          <input-type>onebox</input-type>
-         <hint>Enter appropriate subject keywords or phrases. </hint>
+         <hint>Chọn lĩnh vực phù hợp với công bố chọn từ bảng </hint>
          <required></required>
          <vocabulary>nsi_19062019</vocabulary>
        </field>
-
+       
        <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>domain</dc-element>
+     <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
          <dc-qualifier></dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Lĩnh vực</label>
-         <input-type>textarea</input-type>
-         <hint>Nhập vào lĩnh vực công bố. </hint>
+         <input-type>onebox</input-type>
+         <hint>Nhập từ khóa: </hint>
          <required></required>
-       </field>
+       </field>     
 
        <field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
          <dc-qualifier>abstract</dc-qualifier>
          <repeatable>false</repeatable>
-         <label>Abstract</label>
+         <label>Tóm tắt</label>
          <input-type>textarea</input-type>
          <hint>Enter the abstract of the item. </hint>
          <required></required>
@@ -1318,7 +1329,7 @@ it, please enter the types and the actual numbers or codes.</hint>
      </pair>
      
    	</value-pairs>
-   <value-pairs value-pairs-name="common_identifiers" dc-term="identifier">
+   <value-pairs value-pairs-name="common_identifiers" dc-term="identifier">     
      <pair>
        <displayed-value>DOI</displayed-value>
        <stored-value>doi</stored-value>

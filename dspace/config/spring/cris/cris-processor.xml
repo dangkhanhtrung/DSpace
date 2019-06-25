@@ -164,7 +164,8 @@
 							</property>
 						</bean>
 					</list>
-				</entry>
+				</entry>				
+
 				<entry key="fundings">
 					<list>
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
@@ -326,6 +327,18 @@
 					<list>
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="datasetsLayoutView" />
+							<property name="type" value="recentsubmission" />
+							<property name="sortField" value="time_creation_dt" />
+							<property name="order" value="desc" />
+ 							<property name="num" value="10" />
+ 						</bean>
+					</list>
+				</entry>
+
+				<entry key="criscertificate">
+					<list>
+						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
+							<property name="viewConfiguration" ref="criscertLayoutView" />
 							<property name="type" value="recentsubmission" />
 							<property name="sortField" value="time_creation_dt" />
 							<property name="order" value="desc" />
