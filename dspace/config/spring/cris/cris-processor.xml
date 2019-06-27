@@ -127,7 +127,7 @@
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="crisrpLayoutView" />
 							<property name="type" value="recentsubmission" />
-							<property name="sortField" value="time_creation_dt" />
+							<property name="sortField" value="dateaccessioned_dt" />
 							<property name="order" value="desc" />
 <!-- 							<property name="extraInfo">
 								<value>crismetrics_wos</value>
@@ -149,7 +149,7 @@
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="crisouLayoutView" />
 							<property name="type" value="recentsubmission" />
-							<property name="sortField" value="time_creation_dt" />
+							<property name="sortField" value="dateaccessioned_dt" />
 							<property name="order" value="desc" />
 <!-- 							<property name="extraInfo">
 								<value>crismetrics_wos</value>
@@ -171,7 +171,7 @@
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="crispjLayoutView" />
 							<property name="type" value="recentsubmission" />
-							<property name="sortField" value="time_creation_dt" />
+							<property name="sortField" value="dateaccessioned_dt" />
 							<property name="order" value="desc" />
 <!-- 							<property name="extraInfo">
 								<value>crismetrics_wos</value>
@@ -192,7 +192,7 @@
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="cristechsLayoutView" />
 							<property name="type" value="recentsubmission" />
-							<property name="sortField" value="time_creation_dt" />
+							<property name="sortField" value="dateaccessioned_dt" />
 							<property name="order" value="desc" />
 <!-- 							<property name="extraInfo">
 								<value>crismetrics_wos</value>
@@ -214,7 +214,7 @@
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="crispatentsLayoutView" />
 							<property name="type" value="recentsubmission" />
-							<property name="sortField" value="time_creation_dt" />
+							<property name="sortField" value="dateaccessioned_dt" />
 							<property name="order" value="desc" />
 <!-- 							<property name="extraInfo">
 								<value>crismetrics_wos</value>
@@ -235,7 +235,7 @@
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="crisstandardsLayoutView" />
 							<property name="type" value="recentsubmission" />
-							<property name="sortField" value="time_creation_dt" />
+							<property name="sortField" value="dateaccessioned_dt" />
 							<property name="order" value="desc" />
 <!-- 							<property name="extraInfo">
 								<value>crismetrics_wos</value>
@@ -256,7 +256,7 @@
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="criseventsLayoutView" />
 							<property name="type" value="recentsubmission" />
-							<property name="sortField" value="time_creation_dt" />
+							<property name="sortField" value="dateaccessioned_dt" />
 							<property name="order" value="desc" />
 <!-- 							<property name="extraInfo">
 								<value>crismetrics_wos</value>
@@ -277,7 +277,7 @@
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="crisawardsLayoutView" />
 							<property name="type" value="recentsubmission" />
-							<property name="sortField" value="time_creation_dt" />
+							<property name="sortField" value="dateaccessioned_dt" />
 							<property name="order" value="desc" />
 <!-- 							<property name="extraInfo">
 								<value>crismetrics_wos</value>
@@ -301,7 +301,7 @@
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="crisfundingsLayoutView" />
 							<property name="type" value="recentsubmission" />
-							<property name="sortField" value="time_creation_dt" />
+							<property name="sortField" value="dateaccessioned_dt" />
 							<property name="order" value="desc" />
 <!-- 							<property name="extraInfo">
 								<value>crismetrics_wos</value>
@@ -316,7 +316,7 @@
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="crisjournalsLayoutView" />
 							<property name="type" value="recentsubmission" />
-							<property name="sortField" value="time_creation_dt" />
+							<property name="sortField" value="dateaccessioned_dt" />
 							<property name="order" value="desc" />
  							<property name="num" value="10" />
  						</bean>
@@ -328,7 +328,7 @@
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="datasetsLayoutView" />
 							<property name="type" value="recentsubmission" />
-							<property name="sortField" value="time_creation_dt" />
+							<property name="sortField" value="dateaccessioned_dt" />
 							<property name="order" value="desc" />
  							<property name="num" value="10" />
  						</bean>
@@ -340,7 +340,7 @@
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
 							<property name="viewConfiguration" ref="criscertLayoutView" />
 							<property name="type" value="recentsubmission" />
-							<property name="sortField" value="time_creation_dt" />
+							<property name="sortField" value="dateaccessioned_dt" />
 							<property name="order" value="desc" />
  							<property name="num" value="10" />
  						</bean>

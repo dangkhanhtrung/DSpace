@@ -1223,7 +1223,6 @@
 				<ref bean="searchFilterRPGender" />	
 				<ref bean="searchFilterRPBirthDay" />	
 				<ref bean="searchFilterRPSubject" />
-				<ref bean="searchFilterRPProfession" />
 			</list>
 		</property>
 		<!--The sort filters for the discovery search -->
@@ -1697,7 +1696,8 @@
 			<list>
 				<ref bean="searchFilterTechsName" />
 				<ref bean="searchFilterTechsType" />		
-				<ref bean="searchFilterTechsPublicationDate" />	
+				<ref bean="searchFilterTechsPublicationDate" />
+				<ref bean="searchFilterTechsCollection" />
 				<ref bean="searchFilterTechsScope" />	
 				<ref bean="searchFilterTechsCountry" />
 				<ref bean="searchFilterTechsProviders" />
@@ -2654,20 +2654,7 @@
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
 		<property name="type" value="thongkestring"/>
-	</bean>
-
-	<bean id="searchFilterRPProfession"
-		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="crisrp.profession" />
-		<property name="metadataFields">
-			<list>
-				<value>crisrp.profession</value>
-			</list>
-		</property>
-		<property name="facetLimit" value="100" />
-		<property name="sortOrder" value="COUNT" />
-		<property name="type" value="thongkestring"/>
-	</bean>
+	</bean>	
 
 	<bean id="searchFilterRPEducations"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
@@ -3072,6 +3059,19 @@
 		<property name="type" value="date"/>
 	</bean>
 
+	<bean id="searchFilterTechsCollection"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="techscollection" />
+		<property name="metadataFields">
+			<list>
+				<value>cristechs.techscollection</value>
+			</list>
+		</property>		
+		<property name="facetLimit" value="5" />
+		<property name="sortOrder" value="COUNT" />
+		<property name="type" value="thongkestring"/>
+	</bean>
+
 	<bean id="searchFilterTechsScope"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
 		<property name="indexFieldName" value="techsscope" />
@@ -3369,7 +3369,8 @@
 		<constructor-arg>
 		<list>
 			<ref bean="searchFilterTechsType" />		
-			<ref bean="searchFilterTechsPublicationDate" />		
+			<ref bean="searchFilterTechsPublicationDate" />
+			<ref bean="searchFilterTechsCollection" />	
 			<ref bean="searchFilterTechsScope" />		
 			<ref bean="searchFilterTechsCountry" />
 			<ref bean="searchFilterTechsProviders" />
@@ -3429,7 +3430,6 @@
 				<ref bean="searchFilterRPGender" />	
 				<ref bean="searchFilterRPBirthDay" />	
 				<ref bean="searchFilterRPSubject" />
-				<ref bean="searchFilterRPProfession" />
 		</list>
 		</constructor-arg>
 	</bean>

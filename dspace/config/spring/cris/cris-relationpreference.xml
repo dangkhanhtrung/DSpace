@@ -67,7 +67,7 @@
 			<value>crisou.parentorgunit_authority:{0}</value>
 		</property>
 	</bean>
-	
+
 	<bean id="relationRPVSPJConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
 		<property name="relationName" value="crisrp.projects" />		
 		<property name="relationClass" value="org.dspace.app.cris.model.Project" />		
@@ -93,6 +93,15 @@
 	</bean>
 
 	<!-- NTH -->
+	<!-- awards vs RP -->
+	<!-- <bean id="relationPatentsVSPJConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="crispatents.awards" />		
+		<property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />		
+		<property name="query">
+			<value>{!join to=search.uniqueid  from=search.parentfk}ncrisawardsawardswinners.awardswinnersperson_authority:{0}</value>
+		</property>
+	</bean>	 -->
+
 	<!-- patent vs PJ -->
 	<bean id="relationPatentsVSPJConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
 		<property name="relationName" value="crispatents.patentsoriginatesFrom" />		
@@ -119,14 +128,42 @@
 			<value>crispatents.patentsissuer_authority:{0}</value>
 		</property>
 	</bean>
-	<!-- projects vs Crisfundings TODO--> 
-	<!-- <bean id="relationProjectsVSCrisFundingsConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
-		<property name="relationName" value="crisprojects.projectsfunded.As" />		
+
+	<!-- projects vs Crisfundings--> 
+	<bean id="relationProjectsVSCrisFundingsConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">
+		<property name="relationName" value="crisproject.fundedAs" />
 		<property name="relationClass" value="org.dspace.app.cris.model.Project" />		
 		<property name="query">
-			<value>crispatents.patentsissuer_authority:{0}</value>
+			<value>crisproject.fundedAs_authority:{0}</value>
 		</property>
-	</bean> -->
+	</bean>
+
+	<!-- Project list for RP as member-->	
+	<bean id="relationPJMemberVSRPConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="crisproject.member" />		
+		<property name="relationClass" value="org.dspace.app.cris.model.ResearcherPage" />		
+		<property name="query">
+			<value>crisproject.member_authority:{0}</value>
+		</property>
+	</bean>
+
+	<!-- Project list chủ nhiệm for RP entity -->
+	<bean id="relationPJManageVSRPConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="crisproject.principalInvestigator" />		
+		<property name="relationClass" value="org.dspace.app.cris.model.Project" />		
+		<property name="query">
+			<value>crisproject.principalInvestigator_authority:{0}</value>
+		</property>
+	</bean>
+
+	<!-- Patents vs RP entity -->
+	<bean id="relationPatentsVSRPConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="crispatents.patentsholders" />		
+		<property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />		
+		<property name="query">
+			<value>{!join to=search.uniqueid  from=search.parentfk}ncrispatentspatentsholders.patentsholdersperson_authority:{0}</value>
+		</property>
+	</bean>
 	<!-- End NTH -->
 						
 	<bean
@@ -188,50 +225,6 @@
 						</list>
 					</property>
 				</bean>
-				
-				<bean
-					class="org.dspace.app.cris.configuration.RelationPreferenceConfiguration">
-					<property name="relationConfiguration" ref="relationRPVSPJConfiguration"/>
-					<property name="selectActionAuthLevel">
-						<util:constant
-							static-field="org.dspace.app.cris.configuration.RelationPreferenceConfiguration.ENABLED" />
-					</property>
-					<property name="hideActionAuthLevel">
-						<util:constant
-							static-field="org.dspace.app.cris.configuration.RelationPreferenceConfiguration.ENABLED" />
-					</property>
-					<property name="unlinkActionAuthLevel">
-						<util:constant
-							static-field="org.dspace.app.cris.configuration.RelationPreferenceConfiguration.ONLY_SYSTEM_ADMIN" />
-					</property>
-					<property name="extraAction">
-						<bean class="org.dspace.app.cris.configuration.CrisExtraAction" />
-					</property>
-					<property name="columnsVisualizationConfiguration">
-						<list>
-							<bean class="org.dspace.app.cris.configuration.ColumnVisualizationConfiguration">
-								<property name="name" value="title" />
-								<property name="metadata">
-									<list>
-										<value>crisproject.title</value>
-									</list>
-								</property>	
-							</bean>
-							<bean class="org.dspace.app.cris.configuration.ColumnVisualizationConfiguration">
-								<property name="name" value="investigators" />
-								<property name="metadata">
-									<list>
-										<value>crisproject.principalinvestigator</value>
-										<value>crisproject.extprincipalinvestigator</value>
-										<value>crisproject.coinvestigators</value>
-										<value>crisproject.extcoinvestigators</value>
-									</list>
-								</property>	
-							</bean>
-						</list>
-					</property>
-				</bean>
-				
 			</list>
 		</property>
 	</bean>

@@ -694,5 +694,23 @@
         <element>domain</element>
         <qualifier></qualifier>
         <scope_note>Lĩnh vực công bố</scope_note>
-    </dc-type>   
+    </dc-type>
+    <dc-type>
+        <schema>dc</schema>
+        <element>relation</element>
+        <qualifier>firstpage</qualifier>
+        <scope_note></scope_note>
+    </dc-type>
+    <dc-type>
+        <schema>dc</schema>
+        <element>relation</element>
+        <qualifier>lastpage</qualifier>
+        <scope_note></scope_note>
+    </dc-type>  
+    <dc-type>
+        <schema>dc</schema>
+        <element>identifier</element>
+        <qualifier>eissn</qualifier>
+        <scope_note></scope_note>
+    </dc-type>
 </dspace-dc-types>

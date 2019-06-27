@@ -192,7 +192,7 @@ it, please enter the types and the actual numbers or codes.</hint>
          <dc-element>subject</dc-element>
          <dc-qualifier></dc-qualifier>
          <repeatable>true</repeatable>
-         <label>Lĩnh vực</label>
+         <label>Từ khóa</label>
          <input-type>onebox</input-type>
          <hint>Nhập từ khóa: </hint>
          <required></required>
