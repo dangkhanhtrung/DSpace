@@ -447,18 +447,26 @@
 		<property name="fieldMap">
 			<map>
 				<entry key="0" value="title" />
-				<entry key="1" value="authors" />
-				<entry key="2" value="issued" />
-				<entry key="3" value="journal" />
-				<entry key="4" value="abstract" />
-				<entry key="5" value="jissn" />
-				<entry key="6" value="subtype" />
-				<entry key="7" value="language" />
-				<entry key="8" value="editors" />
-				<entry key="9" value="allkeywords" />
+			    <entry key="1" value="authors" />
+			    <entry key="2" value="subtype" />
+			    <entry key="3" value="language" />
+			    <entry key="4" value="issued" />
+			    <entry key="5" value="firstpage" />
+			    <entry key="6" value="lastpage" />
+			    <entry key="7" value="editionnumber" />
+			    <entry key="8" value="jissn" />
+			    <entry key="9" value="doi" />
+			    <entry key="10" value="publisher" />
+			    <entry key="11" value="allkeywords" />
+			    <entry key="12" value="abstract" />
+			    <entry key="13" value="journal" />
+			    <entry key="14" value="jeissn" />
+			    <entry key="15" value="domain" />
+			    <entry key="16" value="url" />
 			</map>
 		</property>
 		<property name="skipLines" value="1" />
+		<property name="valueSeparator" value="\u007C" />
 	</bean>
 
 	<!-- A TSV file is exactly the same as a CSV one, with the difference that 

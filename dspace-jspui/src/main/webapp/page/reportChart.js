@@ -251,7 +251,7 @@ export default {
     },
 
     publications: {
-         query: `q=resourcetype_group:publications&rows=0&facet=true&facet.query=(location.coll:14)&facet.query=(location.coll:15)&facet.query=(location.coll:13)&facet.query=(location.coll:12)&facet.query=(dc.type:Báo NOT nhiệm)&facet.query=(dc.type:hội thảo)&facet.query=(dc.type:nhiệm vụ)&facet.query=(dc.type:Sách NOT trích)&facet.query=(dc.type:tiến sĩ)&facet.query=(dc.type:thạc sĩ)&facet.query=(dc.type:tạp chí)&facet.query=(dc.type:kỷ yếu NOT thảo)&facet.query=(dc.type:Bài trích sách)&facet.query=(dc.type:nghiên cứu)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/)&facet.query=(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/)&facet.field=dateIssued.year_sort`,
+         query: `q=resourcetype_group:publications&rows=0&facet=true&facet.query=(location.coll:21)&facet.query=(location.coll:22)&facet.query=(location.coll:20)&facet.query=(location.coll:19)&facet.query=(dc.type:(Báo NOT nhiệm))&facet.query=(dc.type:hội thảo)&facet.query=(dc.type:nhiệm vụ)&facet.query=(dc.type:(Sách NOT trích))&facet.query=(dc.type:tiến sĩ)&facet.query=(dc.type:thạc sĩ)&facet.query=(dc.type:tạp chí)&facet.query=(dc.type:(kỷ yếu NOT thảo))&facet.query=(dc.type:Bài trích sách)&facet.query=(dc.type:nghiên cứu)&facet.query=(domain_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/)&facet.query=(domain_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/)&facet.query=(domain_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/)&facet.query=(domain_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/)&facet.query=(domain_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/)&facet.query=(domain_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/)&facet.field=dateIssued.year_sort`,
          charts: [
             {
                class: "col-sm-6",
@@ -297,7 +297,7 @@ export default {
                       data: [
                          {
                             name: "Bài báo",
-                            y: 'dataX["(dc.type:Báo NOT nhiệm)"]'
+                            y: 'dataX["(dc.type:(Báo NOT nhiệm))"]'
                          },
                          {
                             name: "Kỷ yếu<br>hội thảo",
@@ -309,7 +309,7 @@ export default {
                          },
                          {
                             name: "Sách",
-                            y: 'dataX["(dc.type:Sách NOT trích)"]'
+                            y: 'dataX["(dc.type:(Sách NOT trích))"]'
                          },
                          {
                             name: "Luận án<br>tiến sĩ",
@@ -325,7 +325,7 @@ export default {
                          },
                          {
                             name: "Bài trích<br>kỷ yếu",
-                            y: 'dataX["(dc.type:kỷ yếu NOT thảo)"]'
+                            y: 'dataX["(dc.type:(kỷ yếu NOT thảo))"]'
                          },
                          {
                             name: "Bài trích<br>sách",
@@ -383,19 +383,19 @@ export default {
                        data: [
                           {
                              name: "Scopus",
-                             y: 'dataX["(location.coll:15)"]'
+                             y: 'dataX["(location.coll:22)"]'
                           },
                           {
                              name: "ISI",
-                             y: 'dataX["(location.coll:14)"]'
+                             y: 'dataX["(location.coll:21)"]'
                           },                          
                           {
                              name: "Quốc tế",
-                             y: 'dataX["(location.coll:13)"]'
+                             y: 'dataX["(location.coll:20)"]'
                           },
                           {
                              name: "Trong nước",
-                             y: 'dataX["(location.coll:12)"]'
+                             y: 'dataX["(location.coll:19)"]'
                           }
                        ]
                    }]
@@ -446,27 +446,27 @@ export default {
                       data: [
                          {
                             name: "Khoa học<br>tự nhiên",
-                            y: 'dataX["(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/)"]'
+                            y: 'dataX["(domain_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::1.*/)"]'
                          },
                          {
                             name: "Khoa học<br>kỹ thuật<br>và<br>công nghệ",
-                            y: 'dataX["(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/)"]'
+                            y: 'dataX["(domain_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::2.*/)"]'
                          },
                          {
                             name: "Khoa học y,<br>dược",
-                            y: 'dataX["(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/)"]'
+                            y: 'dataX["(domain_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::3.*/)"]'
                          },
                          {
                             name: "Khoa học<br>nông nghiệp",
-                            y: 'dataX["(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/)"]'
+                            y: 'dataX["(domain_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::4.*/)"]'
                          },
                          {
                             name: "Khoa học<br>xã hội",
-                            y: 'dataX["(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/)"]'
+                            y: 'dataX["(domain_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::5.*/)"]'
                          },
                          {
                             name: "Khoa học<br>nhân văn",
-                            y: 'dataX["(subject_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/)"]'
+                            y: 'dataX["(domain_keyword:/BẢNG PHÂN LOẠI LĨNH VỰC NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ::6.*/)"]'
                          }
                       ]
                    }]
@@ -2413,7 +2413,7 @@ export default {
     },
 
     researcherprofiles: {
-        query: `q=resourcetype_group:researcherprofiles&rows=0&facet=true&facet.query=(crisrp.degree:Tiến sĩ)&facet.query=(crisrp.degree:Thạc sĩ)&facet.query=(crisrp.degree:Kỹ sư)&facet.query=(crisrp.degree:Cử nhân)&facet.query=-(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:Thạc sĩ) AND -(crisrp.degree:Kỹ sư) AND -(crisrp.degree:Cử nhân)&facet.query=(crisrp.position:Giáo sư NOT Phó)&facet.query=(crisrp.position:Phó giáo sư)&facet.query=(crisrp.position:/*Nghiên cứu*/)&facet.query=-(crisrp.position:Phó Giáo sư) AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/1.*/)&facet.query=(crisrp.subject:/2.*/)&facet.query=(crisrp.subject:/3.*/)&facet.query=(crisrp.subject:/4.*/)&facet.query=(crisrp.subject:/5.*/)&facet.query=(crisrp.subject:/6.*/)&facet.query=(crisrp.gender:Nam)&facet.query=(crisrp.gender:Nữ)&facet.query=(crisrp.gender:Không xác định)`,
+        query: `q=resourcetype_group:researcherprofiles&rows=0&facet=true&facet.query=(crisrp.degree:Tiến sĩ)&facet.query=(crisrp.degree:Thạc sĩ)&facet.query=(crisrp.degree:Kỹ sư)&facet.query=(crisrp.degree:Cử nhân)&facet.query=-(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:Thạc sĩ) AND -(crisrp.degree:Kỹ sư) AND -(crisrp.degree:Cử nhân)&facet.query=(crisrp.position:(Giáo sư NOT Phó))&facet.query=(crisrp.position:Phó giáo sư)&facet.query=(crisrp.position:/*Nghiên cứu*/)&facet.query=-(crisrp.position:Phó Giáo sư) AND -(crisrp.position:(Giáo sư NOT Phó)) AND -(crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/1.*/)&facet.query=(crisrp.subject:/2.*/)&facet.query=(crisrp.subject:/3.*/)&facet.query=(crisrp.subject:/4.*/)&facet.query=(crisrp.subject:/5.*/)&facet.query=(crisrp.subject:/6.*/)&facet.query=(crisrp.gender:Nam)&facet.query=(crisrp.gender:Nữ)&facet.query=(crisrp.gender:Không xác định)`,
         charts: [
          {
             class: "col-sm-6",
@@ -2525,7 +2525,7 @@ export default {
                     data: [
                         {
                           name: "Giáo sư",
-                          y: 'dataX["(crisrp.position:Giáo sư NOT Phó)"]'
+                          y: 'dataX["(crisrp.position:(Giáo sư NOT Phó))"]'
                        },
                        {
                           name: "Phó Giáo sư",
@@ -2537,7 +2537,7 @@ export default {
                        },
                        {
                           name: "Khác",
-                          y: 'dataX["-(crisrp.position:Phó Giáo sư) AND -(crisrp.position:Giáo sư NOT Phó) AND -(crisrp.position:/*Nghiên cứu*/)"]'
+                          y: 'dataX["-(crisrp.position:Phó Giáo sư) AND -(crisrp.position:(Giáo sư NOT Phó)) AND -(crisrp.position:/*Nghiên cứu*/)"]'
                        }
                     ]
                 }]
