@@ -549,8 +549,8 @@
 		<property name="componentIdentifier" value="selectedproject" />
 		<property name="facetQuery"><value>*:*</value></property>
 		<property name="order"><value>desc</value></property>
-		<property name="rpp"><value>5</value></property>	
-	    <property name="sortby"><value>-1</value></property>				
+		<property name="rpp"><value>20</value></property>	
+	    <property name="sortby"><value>5</value></property>				
 	</bean>
 	<!-- Project list chủ nhiệm for RP entity -->
 	<bean id="projectsMaForRP"
@@ -570,8 +570,8 @@
 		<property name="componentIdentifier" value="selectedproject" />
 		<property name="facetQuery"><value>*:*</value></property>
 		<property name="order"><value>desc</value></property>
-		<property name="rpp"><value>5</value></property>
-	    <property name="sortby"><value>-1</value></property>				
+		<property name="rpp"><value>20</value></property>
+	    <property name="sortby"><value>5</value></property>				
 	</bean>
 
 	<!-- patent vs RP -->

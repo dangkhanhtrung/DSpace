@@ -141,7 +141,7 @@
 	<!-- Project list for RP as member-->	
 	<bean id="relationPJMemberVSRPConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
 		<property name="relationName" value="crisproject.member" />		
-		<property name="relationClass" value="org.dspace.app.cris.model.ResearcherPage" />		
+		<property name="relationClass" value="org.dspace.app.cris.model.Project" />		
 		<property name="query">
 			<value>crisproject.member_authority:{0}</value>
 		</property>
