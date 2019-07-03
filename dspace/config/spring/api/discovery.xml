@@ -683,6 +683,7 @@
 		<property name="searchFilters">
 			<list>
 				<ref bean="searchFilterTitle" />
+				<ref bean="searchFilterCollections" />
 				<ref bean="searchFilterType" />
 				<ref bean="searchFilterDomain" />		
 				<ref bean="searchFilterIssued" />
@@ -1216,12 +1217,12 @@
 		<!--The search filters which can be used on the discovery search page -->
 		<property name="searchFilters">
 			<list>
+				<ref bean="searchFilterRPFullName" />	
 				<ref bean="searchFilterRPEducations" />
 				<ref bean="searchFilterRPPosition" />	
-				<ref bean="searchFilterRPFullName" />	
-				<ref bean="searchFilterRPGender" />	
-				<ref bean="searchFilterRPBirthDay" />	
 				<ref bean="searchFilterRPSubject" />
+				<ref bean="searchFilterRPBirthDay" />	
+				<ref bean="searchFilterRPGender" />	
 			</list>
 		</property>
 		<!--The sort filters for the discovery search -->
@@ -2009,6 +2010,16 @@
 		</property>
 	</bean>
 
+	<bean id="searchFilterCollections"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="itemcollection" />
+		<property name="metadataFields">
+			<list>
+				<value>location.coll</value>
+			</list>
+		</property>
+	</bean>
+
 	<bean id="searchFilterType"
 		class="org.dspace.discovery.configuration.DiscoverySearchMultilanguageFilterFacet">
 		<property name="indexFieldName" value="itemtype" />
@@ -2635,7 +2646,7 @@
 		<property name="indexFieldName" value="rpsubject" />
 		<property name="metadataFields">
 			<list>
-				<value>crisrp.subject</value>
+				<value>crisrp.rpsubject</value>
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
@@ -2739,7 +2750,7 @@
 		<property name="indexFieldName" value="PJType" />
 		<property name="metadataFields">
 			<list>
-				<value>crisproject.type</value>
+				<value>crisproject.pjtype</value>
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
@@ -2765,7 +2776,7 @@
 		<property name="indexFieldName" value="PJSubject" />
 		<property name="metadataFields">
 			<list>
-				<value>crisproject.subject</value>
+				<value>crisproject.pjsubject</value>
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
@@ -2869,7 +2880,7 @@
 		<property name="indexFieldName" value="OUType" />
 		<property name="metadataFields">
 			<list>
-				<value>crisou.type</value>
+				<value>crisou.outype</value>
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
@@ -2895,7 +2906,7 @@
 		<property name="indexFieldName" value="OUSubject" />
 		<property name="metadataFields">
 			<list>
-				<value>crisou.subject</value>
+				<value>crisou.ousubject</value>
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
@@ -3306,7 +3317,7 @@
 	<bean id="facetsItemConfiguration" class="java.util.ArrayList">
 		<constructor-arg>
 		<list>
-				<ref bean="searchFilterType" />
+				<ref bean="searchFilterType" />				
 				<ref bean="searchFilterDomain" />
 				<ref bean="searchFilterItemJournals" />
 				<ref bean="searchFilterIssued" />		
@@ -3396,9 +3407,9 @@
 	<bean id="facetsRPConfiguration" class="java.util.ArrayList">
 		<constructor-arg>
 		<list>
+				<ref bean="searchFilterRPFullName" />	
 				<ref bean="searchFilterRPEducations" />
 				<ref bean="searchFilterRPPosition" />	
-				<ref bean="searchFilterRPFullName" />	
 				<ref bean="searchFilterRPGender" />	
 				<ref bean="searchFilterRPBirthDay" />	
 				<ref bean="searchFilterRPSubject" />

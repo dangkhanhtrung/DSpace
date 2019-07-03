@@ -563,6 +563,13 @@
    <copyField source="crisou.name" dest="crisauthoritylookup"/>
    <copyField source="crisdo.name" dest="crisauthoritylookup"/>
 
+   <!-- NTH -->
+   <field name="location.coll_filter" type="keywordFilter" indexed="true" stored="true" multiValued="true" omitNorms="true" />
+   <copyField source="location.coll" dest="location.coll_filter" />
+   <field name="location.coll_keyword" type="keywordFilter" indexed="true" stored="true" multiValued="true" omitNorms="true" />
+   <copyField source="location.coll" dest="location.coll_keyword" />    
+   <!--  -->
+
     <!-- index for build a facet on the resource type -->
    <field name="resourcetype_filter" type="keywordFilter" indexed="true" stored="true" required="true" omitNorms="true" />
    <field name="resourcetype_keyword" type="keywordFilter" indexed="true" stored="true" required="true" omitNorms="true" />

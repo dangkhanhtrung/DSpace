@@ -146,7 +146,7 @@ it, please enter the types and the actual numbers or codes.</hint>
          <repeatable>true</repeatable>
          <label>URL</label>
          <input-type>onebox</input-type>
-         <hint> Chọn URL:</hint>NTH
+         <hint> Chọn URL:</hint>
          <required></required>
        </field>
 
@@ -154,7 +154,7 @@ it, please enter the types and the actual numbers or codes.</hint>
 		 <dc-schema>dc</dc-schema>
          <dc-element>type</dc-element>
          <dc-qualifier></dc-qualifier>
-         <repeatable>true</repeatable>
+         <repeatable>false</repeatable>
          <label>Type</label>
          <input-type value-pairs-name="common_types">dropdown</input-type>
          <hint> Select the type(s) of content of the item. To select more than one value in the list, you may have to hold down the "CTRL" or "Shift" key.</hint>

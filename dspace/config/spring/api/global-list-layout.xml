@@ -229,26 +229,26 @@
 				<bean
 					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
 					<property name="mandatory" value="true" />
-					<property name="preHtml" value="" />
-					<property name="postHtml" value=", " />
-					<property name="field" value="fullName" />
-					<property name="decorator" value="crisref" />
-				</bean>
-				<bean
-					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-					<property name="mandatory" value="true" />
-					<property name="preHtml" value="" />
-					<property name="postHtml" value=", " />
+					<property name="preHtml" value="&lt;b&gt;" />
+					<property name="postHtml" value=" - &lt;/b&gt;" />
 					<property name="field" value="degree" />
 					<property name="decorator" value="radiocheckdropdown" />
 				</bean>
 				<bean
 					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
 					<property name="mandatory" value="true" />
-					<property name="preHtml" value="" />
-					<property name="postHtml" value="&lt;br/&gt;" />
+					<property name="preHtml" value="&lt;b&gt;" />
+					<property name="postHtml" value=", &lt;/b&gt;" />
 					<property name="field" value="position" />
 				</bean>
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="mandatory" value="true" />
+					<property name="preHtml" value="&lt;b&gt;" />
+					<property name="postHtml" value="&lt;/b&gt;&lt;br&gt;" />
+					<property name="field" value="fullName" />
+					<property name="decorator" value="crisref" />
+				</bean>				
 				<bean
 					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
 					<property name="mandatory" value="true" />
@@ -262,7 +262,7 @@
 					<property name="mandatory" value="true" />
 					<property name="preHtml" value="" />
 					<property name="postHtml" value="" />
-					<property name="field" value="subject" />
+					<property name="field" value="rpsubject" />
 				</bean>
 			</list>
 		</property>

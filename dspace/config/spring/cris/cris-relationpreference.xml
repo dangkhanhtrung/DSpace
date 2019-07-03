@@ -92,16 +92,7 @@
 		</property>
 	</bean>
 
-	<!-- NTH -->
-	<!-- awards vs RP -->
-	<!-- <bean id="relationPatentsVSPJConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
-		<property name="relationName" value="crispatents.awards" />		
-		<property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />		
-		<property name="query">
-			<value>{!join to=search.uniqueid  from=search.parentfk}ncrisawardsawardswinners.awardswinnersperson_authority:{0}</value>
-		</property>
-	</bean>	 -->
-
+	<!-- NTH -->	
 	<!-- patent vs PJ -->
 	<bean id="relationPatentsVSPJConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
 		<property name="relationName" value="crispatents.patentsoriginatesFrom" />		
@@ -161,7 +152,33 @@
 		<property name="relationName" value="crispatents.patentsholders" />		
 		<property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />		
 		<property name="query">
-			<value>{!join to=search.uniqueid  from=search.parentfk}ncrispatentspatentsholders.patentsholdersperson_authority:{0}</value>
+			<value>crispatents.patentsholderPerson_authority:{0}</value>
+		</property>
+	</bean>
+
+	<!-- certificate vs RP -->
+	<bean id="relationCertificateVSRPConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="criscertificate.certificatecertifiedPerson" />		
+		<property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />		
+		<property name="query">
+			<value>criscertificate.certificatecertifiedPerson_authority:{0}</value>
+		</property>
+	</bean>
+
+	<!-- awards vs RP -->
+	<bean id="relationAwardsVSRPConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="crisawards.awardswinnerPerson" />		
+		<property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />		
+		<property name="query">
+			<value>crisawards.awardswinnerPerson_authority:{0}</value>
+		</property>
+	</bean>
+	<!-- techs vs RP -->
+	<bean id="relationTechsVSRPConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="cristechs.techsprovidersPerson" />		
+		<property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />		
+		<property name="query">
+			<value>cristechs.techsprovidersPerson_authority:{0}</value>
 		</property>
 	</bean>
 	<!-- End NTH -->
