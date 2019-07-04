@@ -2012,7 +2012,7 @@
 
 	<bean id="searchFilterCollections"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="itemcollection" />
+		<property name="indexFieldName" value="location.coll" />
 		<property name="metadataFields">
 			<list>
 				<value>location.coll</value>
@@ -3319,6 +3319,7 @@
 		<list>
 				<ref bean="searchFilterType" />				
 				<ref bean="searchFilterDomain" />
+				<ref bean="searchFilterCollections" />
 				<ref bean="searchFilterItemJournals" />
 				<ref bean="searchFilterIssued" />		
 		</list>

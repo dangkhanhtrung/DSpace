@@ -1,6 +1,6 @@
 export default {
     fundings: {
-        query: `q=resourcetype_group:fundings&rows=0&facet=true&facet.query=(crisproject.type:Đề tài)&facet.query=(crisproject.type:Đề án)&facet.query=(crisproject.type:Dự án)&facet.query=(crisproject.type:Hợp tác quốc tế)&facet.query=(crisproject.level:Quốc gia)&facet.query=(crisproject.level:Bộ ngành)&facet.query=(crisproject.level:Tỉnh Thành)&facet.query=(crisproject.level:Cơ sở)&facet.query=(crisproject.level:Ngoài ngân sách)&facet.query=(PJSubject_keyword:/1.*/)&facet.query=(PJSubject_keyword:/2.*/)&facet.query=(PJSubject_keyword:/3.*/)&facet.query=(PJSubject_keyword:/4.*/)&facet.query=(PJSubject_keyword:/5.*/)&facet.query=(PJSubject_keyword:/6.*/)&facet.field=PJAuthority_keyword`,
+        query: `q=resourcetype_group:fundings&rows=0&facet=true&facet.query=(crisproject.pjtype:Đề tài)&facet.query=(crisproject.pjtype:Đề án)&facet.query=(crisproject.pjtype:Dự án)&facet.query=(crisproject.pjtype:Hợp tác quốc tế)&facet.query=(crisproject.level:Quốc gia)&facet.query=(crisproject.level:Bộ ngành)&facet.query=(crisproject.level:Tỉnh Thành)&facet.query=(crisproject.level:Cơ sở)&facet.query=(crisproject.level:Ngoài ngân sách)&facet.query=(PJSubject_keyword:/1.*/)&facet.query=(PJSubject_keyword:/2.*/)&facet.query=(PJSubject_keyword:/3.*/)&facet.query=(PJSubject_keyword:/4.*/)&facet.query=(PJSubject_keyword:/5.*/)&facet.query=(PJSubject_keyword:/6.*/)&facet.field=PJAuthority_keyword`,
         charts: [
          {
             class: "col-sm-6",
@@ -46,19 +46,19 @@ export default {
                    data: [
                       {
                          name: "Đề tài",
-                         y: 'dataX["(crisproject.type:Đề tài)"]'
+                         y: 'dataX["(crisproject.pjtype:Đề tài)"]'
                       },
                       {
                          name: "Đề án",
-                         y: 'dataX["(crisproject.type:Đề án)"]'
+                         y: 'dataX["(crisproject.pjtype:Đề án)"]'
                       },
                       {
                          name: "Dự án",
-                         y: 'dataX["(crisproject.type:Dự án)"]'
+                         y: 'dataX["(crisproject.pjtype:Dự án)"]'
                       },
                       {
                          name: "Hợp tác<br>quốc tế",
-                         y: 'dataX["(crisproject.type:Hợp tác quốc tế)"]'
+                         y: 'dataX["(crisproject.pjtype:Hợp tác quốc tế)"]'
                       }
                    ]
                 }]
@@ -2174,7 +2174,7 @@ export default {
     },
 
     orgunits: {
-        query: `q=resourcetype_group:orgunits&rows=0&facet=true&facet.query=(crisou.type:Công lập NOT Ngoài)&facet.query=(crisou.type:Ngoài công lập)&facet.query=(crisou.type:Vốn nước ngoài)&facet.query=(crisou.activity:/1.*/)&facet.query=(crisou.activity:/2.*/)&facet.query=(crisou.activity:/3.*/)&facet.query=(OUSubject_keyword:/1.*/)&facet.query=(OUSubject_keyword:/2.*/)&facet.query=(OUSubject_keyword:/3.*/)&facet.query=(OUSubject_keyword:/4.*/)&facet.query=(OUSubject_keyword:/5.*/)&facet.query=(OUSubject_keyword:/6.*/)&facet.field=OUProvince_keyword`,
+        query: `q=resourcetype_group:orgunits&rows=0&facet=true&facet.query=(crisou.outype:(Công lập NOT Ngoài))&facet.query=(crisou.outype:Ngoài công lập)&facet.query=(crisou.outype:Vốn nước ngoài)&facet.query=(crisou.activity:/1.*/)&facet.query=(crisou.activity:/2.*/)&facet.query=(crisou.activity:/3.*/)&facet.query=(OUSubject_keyword:/1.*/)&facet.query=(OUSubject_keyword:/2.*/)&facet.query=(OUSubject_keyword:/3.*/)&facet.query=(OUSubject_keyword:/4.*/)&facet.query=(OUSubject_keyword:/5.*/)&facet.query=(OUSubject_keyword:/6.*/)&facet.field=OUProvince_keyword`,
         charts: [
          {
             class: "col-sm-6",
@@ -2220,15 +2220,15 @@ export default {
                    data: [
                       {
                          name: "Công lập",
-                         y: 'dataX["(crisou.type:Công lập NOT Ngoài)"]'
+                         y: 'dataX["(crisou.outype:(Công lập NOT Ngoài))"]'
                       },
                       {
                          name: "Ngoài<br>công lập",
-                         y: 'dataX["(crisou.type:Ngoài công lập)"]'
+                         y: 'dataX["(crisou.outype:Ngoài công lập)"]'
                       },
                       {
                          name: "Vốn<br>nước ngoài",
-                         y: 'dataX["(crisou.type:Vốn nước ngoài)"]'
+                         y: 'dataX["(crisou.outype:Vốn nước ngoài)"]'
                       }
                    ]
                 }]
@@ -2413,7 +2413,7 @@ export default {
     },
 
     researcherprofiles: {
-        query: `q=resourcetype_group:researcherprofiles&rows=0&facet=true&facet.query=(crisrp.degree:Tiến sĩ)&facet.query=(crisrp.degree:Thạc sĩ)&facet.query=(crisrp.degree:Kỹ sư)&facet.query=(crisrp.degree:Cử nhân)&facet.query=-(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:Thạc sĩ) AND -(crisrp.degree:Kỹ sư) AND -(crisrp.degree:Cử nhân)&facet.query=(crisrp.position:(Giáo sư NOT Phó))&facet.query=(crisrp.position:Phó giáo sư)&facet.query=(crisrp.position:/*Nghiên cứu*/)&facet.query=-(crisrp.position:Phó Giáo sư) AND -(crisrp.position:(Giáo sư NOT Phó)) AND -(crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.subject:/1.*/)&facet.query=(crisrp.subject:/2.*/)&facet.query=(crisrp.subject:/3.*/)&facet.query=(crisrp.subject:/4.*/)&facet.query=(crisrp.subject:/5.*/)&facet.query=(crisrp.subject:/6.*/)&facet.query=(crisrp.gender:Nam)&facet.query=(crisrp.gender:Nữ)&facet.query=(crisrp.gender:Không xác định)`,
+        query: `q=resourcetype_group:researcherprofiles&rows=0&facet=true&facet.query=(crisrp.degree:Tiến sĩ)&facet.query=(crisrp.degree:Thạc sĩ)&facet.query=(crisrp.degree:Kỹ sư)&facet.query=(crisrp.degree:Cử nhân)&facet.query=-(crisrp.degree:Tiến sĩ) AND -(crisrp.degree:Thạc sĩ) AND -(crisrp.degree:Kỹ sư) AND -(crisrp.degree:Cử nhân)&facet.query=(crisrp.position:(Giáo sư NOT Phó))&facet.query=(crisrp.position:Phó giáo sư)&facet.query=(crisrp.position:/*Nghiên cứu*/)&facet.query=-(crisrp.position:Phó Giáo sư) AND -(crisrp.position:(Giáo sư NOT Phó)) AND -(crisrp.position:/*Nghiên cứu*/)&facet.query=(crisrp.rpsubject:/1.*/)&facet.query=(crisrp.rpsubject:/2.*/)&facet.query=(crisrp.rpsubject:/3.*/)&facet.query=(crisrp.rpsubject:/4.*/)&facet.query=(crisrp.rpsubject:/5.*/)&facet.query=(crisrp.rpsubject:/6.*/)&facet.query=(crisrp.gender:Nam)&facet.query=(crisrp.gender:Nữ)&facet.query=(crisrp.gender:Không xác định)`,
         charts: [
          {
             class: "col-sm-6",
@@ -2588,27 +2588,27 @@ export default {
                    data: [
                       {
                          name: "Khoa học<br>tự nhiên",
-                         y: 'dataX["(crisrp.subject:/1.*/)"]'
+                         y: 'dataX["(crisrp.rpsubject:/1.*/)"]'
                       },
                       {
                          name: "Khoa học<br>kỹ thuật<br>và<br>công nghệ",
-                         y: 'dataX["(crisrp.subject:/2.*/)"]'
+                         y: 'dataX["(crisrp.rpsubject:/2.*/)"]'
                       },
                       {
                          name: "Khoa học y,<br>dược",
-                         y: 'dataX["(crisrp.subject:/3.*/)"]'
+                         y: 'dataX["(crisrp.rpsubject:/3.*/)"]'
                       },
                       {
                          name: "Khoa học<br>nông nghiệp",
-                         y: 'dataX["(crisrp.subject:/4.*/)"]'
+                         y: 'dataX["(crisrp.rpsubject:/4.*/)"]'
                       },
                       {
                          name: "Khoa học<br>xã hội",
-                         y: 'dataX["(crisrp.subject:/5.*/)"]'
+                         y: 'dataX["(crisrp.rpsubject:/5.*/)"]'
                       },
                       {
                          name: "Khoa học<br>nhân văn",
-                         y: 'dataX["(crisrp.subject:/6.*/)"]'
+                         y: 'dataX["(crisrp.rpsubject:/6.*/)"]'
                       }
                    ]
                 }]
