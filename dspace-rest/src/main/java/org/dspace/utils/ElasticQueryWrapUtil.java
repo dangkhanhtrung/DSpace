@@ -41,7 +41,7 @@ public class ElasticQueryWrapUtil {
 			
 			conn.setDoOutput( true );
 			conn.setInstanceFollowRedirects( false );
-			conn.setRequestMethod( "POST" );
+			conn.setRequestMethod( "GET" );
 			conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded"); 
 			conn.setRequestProperty( "charset", "utf-8");
 			conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
