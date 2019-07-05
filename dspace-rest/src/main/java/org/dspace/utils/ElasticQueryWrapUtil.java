@@ -39,28 +39,27 @@ public class ElasticQueryWrapUtil {
 
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			
-			conn.setDoOutput( true );
-			conn.setInstanceFollowRedirects( false );
-			conn.setRequestMethod( "GET" );
-			conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded"); 
-			conn.setRequestProperty( "charset", "utf-8");
-			conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
-			conn.setUseCaches( false );
-			try( DataOutputStream wr = new DataOutputStream( conn.getOutputStream())) {
-			   wr.write( postData );
-			}
-	        
-			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-
-			String output;
-
-			StringBuilder sb = new StringBuilder();
-
-			while ((output = br.readLine()) != null) {
-				sb.append(output);
-			}
+			// optional default is GET
+			conn.setRequestMethod("GET");
 			
-			result = new JSONObject(sb.toString());
+			int responseCode = conn.getResponseCode();
+			System.out.println("\nSending 'GET' request to URL : " + url);
+			System.out.println("Response Code : " + responseCode);
+
+			BufferedReader in = new BufferedReader(
+			        new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+			
+
+			System.out.println("response.toString() Code : " + response.toString());
+			
+			result = new JSONObject(response.toString());
 			
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
