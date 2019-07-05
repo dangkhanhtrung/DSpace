@@ -26,6 +26,13 @@ public class ElasticQueryWrapUtil {
 			byte[] postData       = q.getBytes( StandardCharsets.UTF_8 );
 			int    postDataLength = postData.length;
 			
+			if (q.startsWith("(")) {
+				q = q.substring(1);
+			}
+			if (q.endsWith(")")) {
+				q = q.substring(0, q.length() - 1);
+			}
+			
 			System.out.println("ElasticQueryWrapUtil.query()" + q);
 			
 			URL url = new URL(ELASTIC_SERVER_API_URL + "?q=" + q);
