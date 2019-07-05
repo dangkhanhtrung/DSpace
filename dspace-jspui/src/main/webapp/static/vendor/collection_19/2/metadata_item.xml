@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dublin_core schema="item">
+  <dcvalue element="languageiso639-1" qualifier="none">other</dcvalue>
+  <dcvalue element="fulltext" qualifier="none">With&#x20;Fulltext</dcvalue>
+  <dcvalue element="grantfulltext" qualifier="none">open</dcvalue>
+</dublin_core>

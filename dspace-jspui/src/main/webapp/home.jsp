@@ -184,6 +184,7 @@
 					<%
 						List<FacetResult> facetGlobalSort = new ArrayList<FacetResult>(Arrays.asList(new FacetResult[8]));
 						for (FacetResult fvalue : facetGlobal) {
+							System.out.println(fvalue.getAuthorityKey());
 							if (fvalue.getAuthorityKey().equalsIgnoreCase("researcherprofiles")) {
 								facetGlobalSort.set(0, fvalue);
 							} else if (fvalue.getAuthorityKey().equalsIgnoreCase("orgunits")) {
