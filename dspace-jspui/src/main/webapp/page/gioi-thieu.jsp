@@ -83,7 +83,33 @@
 %>
 <dspace:layout locbar="nolink" titlekey="jsp.home.title" feedData="<%= feedData%>">
  
-    <div class="row">
-      Đang xây dựng...
-	</div>
+	    <v-layout wrap row>
+	    	<v-flex xs12 sm2>
+	    	<div role="list" class="v-list theme--light">
+			  <div role="listitem" v-for="item in items"
+			        v-bind:key="item.code">
+			    <a class="v-list__tile v-list__tile--link theme--light" @click="doShowQuery(item.code)">
+			      {{ item.title }}
+			    </a>
+			  </div>
+			</div>
+	    	</v-flex>
+	    	<v-flex xs12 sm10>
+	    	 <v-subheader class="px-2"
+            >
+              Câu truy vấn
+            </v-subheader>
+	    		<v-textarea
+		          solo
+		          v-model="myQuery"
+		        ></v-textarea>
+	    	</v-flex>
+	    </v-layout>
+	
+		<style>
+		
+		body .theme--light.application {
+		    background: transparent !important;
+		}
+		</style>
 </dspace:layout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<dublin_core schema="dc">
+  <dcvalue element="contributor" qualifier="author" language="vi_VN">Phan&#x20;Huy&#x20;Lê</dcvalue>
+  <dcvalue element="date" qualifier="accessioned">2019-06-27T23:39:40Z</dcvalue>
+  <dcvalue element="date" qualifier="available">2019-06-27T23:39:40Z</dcvalue>
+  <dcvalue element="date" qualifier="issued">1961</dcvalue>
+  <dcvalue element="identifier" qualifier="uri">http:&#x2F;&#x2F;hdl.handle.net&#x2F;123456789&#x2F;12258</dcvalue>
+  <dcvalue element="description" qualifier="abstract" language="vi_VN">Tìm&#x20;hiểu&#x20;thêm&#x20;về&#x20;phong&#x20;trào&#x20;nông&#x20;dân&#x20;Tây&#x20;Sơn.&#x20;Nhà&#x20;xuất&#x20;bản&#x20;Giáo&#x20;dục,&#x20;1961.</dcvalue>
+  <dcvalue element="description" qualifier="provenance" language="en">Submitted&#x20;by&#x20;KHCN,&#x20;CSDL&#x20;(csdlkhcn@admin.vn)&#x20;on&#x20;2019-06-27T23:39:40Z&#x0A;No.&#x20;of&#x20;bitstreams:&#x20;1&#x0A;BT.docx:&#x20;16568&#x20;bytes,&#x20;checksum:&#x20;e65f29930671505322e8f62c4b6bfd4d&#x20;(MD5)</dcvalue>
+  <dcvalue element="description" qualifier="provenance" language="en">Made&#x20;available&#x20;in&#x20;DSpace&#x20;on&#x20;2019-06-27T23:39:40Z&#x20;(GMT).&#x20;No.&#x20;of&#x20;bitstreams:&#x20;1&#x0A;BT.docx:&#x20;16568&#x20;bytes,&#x20;checksum:&#x20;e65f29930671505322e8f62c4b6bfd4d&#x20;(MD5)&#x0A;&#x20;&#x20;Previous&#x20;issue&#x20;date:&#x20;1961</dcvalue>
+  <dcvalue element="language" qualifier="iso" language="vi_VN">vi</dcvalue>
+  <dcvalue element="publisher" qualifier="none" language="vi_VN">Tìm&#x20;hiểu&#x20;thêm&#x20;về&#x20;phong&#x20;trào&#x20;nông&#x20;dân&#x20;Tây&#x20;Sơn.</dcvalue>
+  <dcvalue element="relation" qualifier="ispartof" language="vi_VN">Tạp&#x20;chí&#x20;Khoa&#x20;học&#x20;Xã&#x20;hội&#x20;Việt&#x20;Nam</dcvalue>
+  <dcvalue element="title" qualifier="none" language="vi_VN">Tìm&#x20;hiểu&#x20;thêm&#x20;về&#x20;phong&#x20;trào&#x20;nông&#x20;dân&#x20;Tây&#x20;Sơn</dcvalue>
+  <dcvalue element="type" qualifier="none" language="vi_VN">Bài&#x20;báo</dcvalue>
+  <dcvalue element="domain" qualifier="none" language="vi_VN">BẢNG&#x20;PHÂN&#x20;LOẠI&#x20;LĨNH&#x20;VỰC&#x20;NGHIÊN&#x20;CỨU&#x20;KHOA&#x20;HỌC&#x20;VÀ&#x20;CÔNG&#x20;NGHỆ::6.Khoa&#x20;học&#x20;nhân&#x20;văn</dcvalue>
+</dublin_core>

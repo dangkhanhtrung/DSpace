@@ -22,6 +22,22 @@ jQuery(document).ready(function ($) {
     new Vue({
         el: '#app',
         data: {
+	    	myQuery: '',
+	        items: [
+	          { title: 'Nhân lực', code: 'researcherprofiles' },
+	          { title: 'Tổ chức', code: 'orgunits' },
+	          { title: 'Nhiệm vụ', code: 'fundings' },
+	          { title: 'Công bố', code: 'publications' },
+	          { title: 'Chứng nhận', code: 'criscertificate' },
+	          { title: 'Sáng chế', code: 'crispatents' },
+	          { title: 'Tiêu chuẩn', code: 'crisstandards' },
+	          { title: 'Công nghệ', code: 'cristechs' },
+	          { title: 'Giải thưởng', code: 'crisawards' },
+	          { title: 'Sự kiện', code: 'crisevents' },
+	          { title: 'Tài trợ', code: 'crisfundings' },
+	          { title: 'Tạp chí', code: 'crisjournals' },
+	          { title: 'Dữ liệu', code: 'datasets' }
+	        ],
             crisDoTps: [],
             filters: [],
             filterIndex: 0,
@@ -46,7 +62,7 @@ jQuery(document).ready(function ($) {
                 if (document.getElementById('treeData__container') !== undefined && document.getElementById('treeData__container') !== null) {
                 	var tempArray = JSON.parse(document.getElementById('treeData__container').innerHTML)
                 	for (var key in tempArray) {
-                		if (tempArray[key]['children'].length > 0) {
+                		if (tempArray[key]['children'].length > 0 || tempArray[key]['count'] > 0) {
                 			vm.treeSubject.push(tempArray[key])
                 		}
                 	}
@@ -54,7 +70,7 @@ jQuery(document).ready(function ($) {
                 if (document.getElementById('treeDataActivity__container') !== undefined && document.getElementById('treeDataActivity__container') !== null) {
                 	var tempArrayAc = JSON.parse(document.getElementById('treeDataActivity__container').innerHTML)
                 	for (var key in tempArrayAc) {
-                		if (tempArrayAc[key]['children'].length > 0) {
+                		if (tempArrayAc[key]['children'].length > 0 || tempArrayAc[key]['count'] > 0) {
                 			vm.treeActivity.push(tempArrayAc[key])
                 		}
                 	}
@@ -62,7 +78,7 @@ jQuery(document).ready(function ($) {
                 if (document.getElementById('treeDataAuthority__container') !== undefined && document.getElementById('treeDataAuthority__container') !== null) {
                 	var tempArrayAu = JSON.parse(document.getElementById('treeDataAuthority__container').innerHTML)
                 	for (var key in tempArrayAu) {
-                		if (tempArrayAu[key]['children'].length > 0) {
+                		if (tempArrayAu[key]['children'].length > 0 || tempArrayAu[key]['count'] > 0) {
                 			vm.treeAuthority.push(tempArrayAu[key])
                 		}
                 	}
@@ -251,6 +267,9 @@ jQuery(document).ready(function ($) {
             })
         },
         methods: {
+        	doShowQuery: function (code) {
+        		this.myQuery = "http://119.17.200.66:7880/rest/search?q=(resourcetype_group:" + code + ")"
+        	},
         	doExportExcel: function () {
         		var pathName = window.location.pathname;
                 var uri = window.location.search.substring(1);
