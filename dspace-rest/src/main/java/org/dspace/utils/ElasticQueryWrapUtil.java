@@ -35,7 +35,7 @@ public class ElasticQueryWrapUtil {
 			
 			System.out.println("ElasticQueryWrapUtil.query()" + q);
 			
-			URL url = new URL(ELASTIC_SERVER_API_URL + "?q=" + q);
+			URL url = new URL(ELASTIC_SERVER_API_URL + "?" + q);
 
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			
