@@ -34,7 +34,8 @@
 				<entry key="patentslistRP" value-ref="patentsforRP" />
 				<entry key="certificatelistRP" value-ref="certificateforRP" />
 				<entry key="awardslistRP" value-ref="awardsforRP" />
-				<entry key="techslistRP" value-ref="techsforRP" />
+				<entry key="techsProvidedListRP" value-ref="techsProvidedforRP" />
+				<entry key="techsAuthorListRP" value-ref="techsAuthorforRP" />
 				<!--  -->
 			</map>
 		</property>
@@ -136,6 +137,11 @@
 				<entry key="organizations" value-ref="organizationslist" />
 				<!-- Nth -->
 				<entry key="patentsforOU" value-ref="patentslistforOU" />
+				<entry key="certificatelistOU" value-ref="certificatelistforOU" />
+				<entry key="projectsContract" value-ref="projectsContractlistforOU" />
+				<entry key="projectContribute" value-ref="projectContributelistforOU" />
+				<entry key="techslistsOU" value-ref="techslistsforOU" />
+				<entry key="awardslistOU" value-ref="awardslistforOU" />
 				<!-- end Nth -->
 			</map>
 		</property>
@@ -447,13 +453,10 @@
 
 	<!-- NTH -->
 	<!-- patent vs OU -->
-
 	<bean id="patentslistforOU"
 		class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
 		<property name="relationConfiguration" ref="relationPatentsVSOUConfiguration" />
-		<property name="commonFilter"><util:constant static-field="org.dspace.app.webui.cris.util.RelationPreferenceUtil.HIDDEN_FILTER" /></property>
 		<property name="target" value="org.dspace.app.cris.model.OrganizationUnit" />
-		<property name="facets" ref="facetsCrisPatentConfiguration"/>
 		<property name="types">
 			<map>
 				<entry key="patents" value-ref="PatentsForOUComponent" />				
@@ -474,9 +477,7 @@
 	<bean id="patentslistforPJ"
 		class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
 		<property name="relationConfiguration" ref="relationPatentsVSPJConfiguration" />
-		<property name="commonFilter"><util:constant static-field="org.dspace.app.webui.cris.util.RelationPreferenceUtil.HIDDEN_FILTER" /></property>
 		<property name="target" value="org.dspace.app.cris.model.Project" />
-		<property name="facets" ref="facetsCrisPatentConfiguration"/>
 		<property name="types">
 			<map>
 				<entry key="patents" value-ref="PatentsForPJComponent" />				
@@ -496,9 +497,7 @@
 	<bean id="techslistforPJ"
 		class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
 		<property name="relationConfiguration" ref="relationTechsVSPJConfiguration" />
-		<property name="commonFilter"><util:constant static-field="org.dspace.app.webui.cris.util.RelationPreferenceUtil.HIDDEN_FILTER" /></property>
-		<property name="target" value="org.dspace.app.cris.model.Project" />
-		<property name="facets" ref="facetsCrisTechsConfiguration"/>
+		<property name="target" value="org.dspace.app.cris.model.Project" />		
 		<property name="types">
 			<map>
 				<entry key="techs" value-ref="SelectedTechsForPJComponent" />				
@@ -519,9 +518,7 @@
 	<bean id="projectslistforCrisFundings"
 		class="org.dspace.app.webui.cris.components.CRISPJConfigurerComponent">
 		<property name="relationConfiguration" ref="relationProjectsVSCrisFundingsConfiguration" />
-		<property name="commonFilter"><util:constant static-field="org.dspace.app.webui.cris.util.RelationPreferenceUtil.HIDDEN_FILTER" /></property>
-		<property name="target" value="org.dspace.app.cris.model.ResearchObject" />
-		<property name="facets" ref="facetsPJConfiguration"/>
+		<property name="target" value="org.dspace.app.cris.model.ResearchObject" />		
 		<property name="types">
 			<map>
 				<entry key="projects" value-ref="ProjectsForCRISFundingsComponent" />				
@@ -541,10 +538,8 @@
 	<!-- Project list tham gia for RP entity -->
 	<bean id="projectsPaForRP"
 		class="org.dspace.app.webui.cris.components.CRISPJConfigurerComponent">
-		<property name="relationConfiguration" ref="relationPJMemberVSRPConfiguration" />
-		<property name="commonFilter"><util:constant static-field="org.dspace.app.webui.cris.util.RelationPreferenceUtil.HIDDEN_FILTER" /></property>	
-		<property name="target" value="org.dspace.app.cris.model.ResearcherPage" />
-		<property name="facets" ref="facetsPJConfiguration" />
+		<property name="relationConfiguration" ref="relationPJMemberVSRPConfiguration" />	
+		<property name="target" value="org.dspace.app.cris.model.ResearcherPage" />		
 		<property name="types">
 			<map>
 				<entry key="selectedproject" value-ref="selectedProjectComponent1" />			
@@ -563,10 +558,8 @@
 	<!-- Project list chủ nhiệm for RP entity -->
 	<bean id="projectsMaForRP"
 		class="org.dspace.app.webui.cris.components.CRISPJConfigurerComponent">
-		<property name="relationConfiguration" ref="relationPJManageVSRPConfiguration" />
-		<property name="commonFilter"><util:constant static-field="org.dspace.app.webui.cris.util.RelationPreferenceUtil.HIDDEN_FILTER" /></property>		
-		<property name="target" value="org.dspace.app.cris.model.ResearcherPage" />
-		<property name="facets" ref="facetsPJConfiguration" />
+		<property name="relationConfiguration" ref="relationPJManageVSRPConfiguration" />		
+		<property name="target" value="org.dspace.app.cris.model.ResearcherPage" />		
 		<property name="types">
 			<map>
 				<entry key="selectedproject" value-ref="ProjectManageComponent" />			
@@ -587,9 +580,7 @@
 	<bean id="patentsforRP"
 		class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
 		<property name="relationConfiguration" ref="relationPatentsVSRPConfiguration" />
-		<property name="commonFilter"><util:constant static-field="org.dspace.app.webui.cris.util.RelationPreferenceUtil.HIDDEN_FILTER" /></property>
 		<property name="target" value="org.dspace.app.cris.model.ResearcherPage" />
-		<property name="facets" ref="facetsCrisPatentConfiguration"/>
 		<property name="types">
 			<map>
 				<entry key="patents" value-ref="patentsRPComponent" />				
@@ -609,9 +600,7 @@
 	<bean id="certificateforRP"
 		class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
 		<property name="relationConfiguration" ref="relationCertificateVSRPConfiguration" />
-		<property name="commonFilter"><util:constant static-field="org.dspace.app.webui.cris.util.RelationPreferenceUtil.HIDDEN_FILTER" /></property>
 		<property name="target" value="org.dspace.app.cris.model.ResearcherPage" />
-		<property name="facets" ref="facetsCrisCertificateConfiguration"/>
 		<property name="types">
 			<map>
 				<entry key="certs" value-ref="certificateRPComponent" />				
@@ -633,7 +622,6 @@
 		class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
 		<property name="relationConfiguration" ref="relationAwardsVSRPConfiguration" />
 		<property name="target" value="org.dspace.app.cris.model.ResearcherPage" />
-		<property name="facets" ref="facetsCrisAwardConfiguration"/>
 		<property name="types">
 			<map>
 				<entry key="awards" value-ref="awardsRPComponent" />				
@@ -650,25 +638,146 @@
 		<property name="sortby"><value>5</value></property>
 	</bean>
 
-	<!-- awards for RP -->
-	<bean id="techsforRP"
+	<!-- techs Provided for RP -->
+	<bean id="techsProvidedforRP"
 		class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
-		<property name="relationConfiguration" ref="relationTechsVSRPConfiguration" />
+		<property name="relationConfiguration" ref="relationTechsProvidedVSRPConfiguration" />
 		<property name="target" value="org.dspace.app.cris.model.ResearcherPage" />		
 		<property name="types">
 			<map>
-				<entry key="techs" value-ref="techsRPComponent" />				
+				<entry key="techsprovided" value-ref="techsProRPComponent" />				
 			</map>
 		</property>
 	</bean>
 
-	<bean id="techsRPComponent"
+	<bean id="techsProRPComponent"
 		class="org.dspace.app.webui.cris.components.BeanFacetComponent">
-		<property name="componentIdentifier" value="techs" />
+		<property name="componentIdentifier" value="techsprovided" />
 		<property name="facetQuery"><value>*:*</value></property>
 		<property name="order"><value>desc</value></property>
 		<property name="rpp"><value>20</value></property>
 		<property name="sortby"><value>5</value></property>
+	</bean>
+
+	<!-- Techs author for RP -->
+	<bean id="techsAuthorforRP"
+		class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
+		<property name="relationConfiguration" ref="relationTechsAuthorVSRPConfiguration" />
+		<property name="target" value="org.dspace.app.cris.model.ResearcherPage" />		
+		<property name="types">
+			<map>
+				<entry key="techsauthor" value-ref="techsAuthorRPComponent" />				
+			</map>
+		</property>
+	</bean>
+
+	<bean id="techsAuthorRPComponent"
+		class="org.dspace.app.webui.cris.components.BeanFacetComponent">
+		<property name="componentIdentifier" value="techsauthor" />
+		<property name="facetQuery"><value>*:*</value></property>
+		<property name="order"><value>desc</value></property>
+		<property name="rpp"><value>20</value></property>
+		<property name="sortby"><value>5</value></property>
+	</bean>
+	<!-- Cert vs OU -->
+	<bean id="certificatelistforOU"
+	    class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
+	    <property name="relationConfiguration" ref="relationCertificateVSOUConfiguration"/>
+	    <property name="target" value="org.dspace.app.cris.model.OrganizationUnit" />
+	    <property name="types">
+	        <map>
+	            <entry key="DOKey" value-ref="relationCertificateVSOUConfigurationComponent" />
+	        </map>
+	    </property>
+	</bean>
+
+	<bean id="relationCertificateVSOUConfigurationComponent"
+	    class="org.dspace.app.webui.cris.components.BeanFacetComponent">
+	    <property name="componentIdentifier" value="DOKey" />
+	    <property name="facetQuery"><value>*:*</value></property>
+	    <property name="order"><value>desc</value></property>
+	    <property name="rpp"><value>20</value></property>
+	    <property name="sortby"><value>5</value></property>
+	</bean>
+	<!-- PJ contrator for OU -->
+	<bean id="projectsContractlistforOU"
+	    class="org.dspace.app.webui.cris.components.CRISPJConfigurerComponent">
+	    <property name="relationConfiguration" ref="relationprojectsContractVSOUConfiguration"/>
+	    <property name="target" value="org.dspace.app.cris.model.OrganizationUnit" />
+	    <property name="types">
+	        <map>
+	            <entry key="PJKey" value-ref="relationprojectsContractVSOUConfigurationComponent" />
+	        </map>
+	    </property>
+	</bean>
+
+	<bean id="relationprojectsContractVSOUConfigurationComponent"
+	    class="org.dspace.app.webui.cris.components.BeanFacetComponent">
+	    <property name="componentIdentifier" value="PJKey" />
+	    <property name="facetQuery"><value>*:*</value></property>
+	    <property name="order"><value>desc</value></property>
+	    <property name="rpp"><value>20</value></property>
+	    <property name="sortby"><value>5</value></property>
+	</bean>
+	<!-- PJ contributor for OU -->
+	<bean id="projectContributelistforOU"
+	    class="org.dspace.app.webui.cris.components.CRISPJConfigurerComponent">
+	    <property name="relationConfiguration" ref="relationprojectContributeVSOUConfiguration"/>
+	    <property name="target" value="org.dspace.app.cris.model.OrganizationUnit" />
+	    <property name="types">
+	        <map>
+	            <entry key="PJKey" value-ref="relationprojectContributeVSOUConfigurationComponent" />
+	        </map>
+	    </property>
+	</bean>
+
+	<bean id="relationprojectContributeVSOUConfigurationComponent"
+	    class="org.dspace.app.webui.cris.components.BeanFacetComponent">
+	    <property name="componentIdentifier" value="PJKey" />
+	    <property name="facetQuery"><value>*:*</value></property>
+	    <property name="order"><value>desc</value></property>
+	    <property name="rpp"><value>20</value></property>
+	    <property name="sortby"><value>5</value></property>
+	</bean>
+	<!-- techprovider for OU -->
+	<bean id="techslistsforOU"
+	    class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
+	    <property name="relationConfiguration" ref="relationtechsproviderVSOUConfiguration"/>
+	    <property name="target" value="org.dspace.app.cris.model.OrganizationUnit" />
+	    <property name="types">
+	        <map>
+	            <entry key="DOKey" value-ref="relationtechsproviderVSOUConfigurationComponent" />
+	        </map>
+	    </property>
+	</bean>
+
+	<bean id="relationtechsproviderVSOUConfigurationComponent"
+	    class="org.dspace.app.webui.cris.components.BeanFacetComponent">
+	    <property name="componentIdentifier" value="DOKey" />
+	    <property name="facetQuery"><value>*:*</value></property>
+	    <property name="order"><value>desc</value></property>
+	    <property name="rpp"><value>20</value></property>
+	    <property name="sortby"><value>5</value></property>
+	</bean>
+	<!-- awards for OU -->
+	<bean id="awardslistforOU"
+	    class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
+	    <property name="relationConfiguration" ref="relationawardslistVSOUConfiguration"/>
+	    <property name="target" value="org.dspace.app.cris.model.OrganizationUnit" />
+	    <property name="types">
+	        <map>
+	            <entry key="DOKey" value-ref="relationawardslistVSOUConfigurationComponent" />
+	        </map>
+	    </property>
+	</bean>
+
+	<bean id="relationawardslistVSOUConfigurationComponent"
+	    class="org.dspace.app.webui.cris.components.BeanFacetComponent">
+	    <property name="componentIdentifier" value="DOKey" />
+	    <property name="facetQuery"><value>*:*</value></property>
+	    <property name="order"><value>desc</value></property>
+	    <property name="rpp"><value>20</value></property>
+	    <property name="sortby"><value>5</value></property>
 	</bean>
 	<!-- End -->
 </beans>
