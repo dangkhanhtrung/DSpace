@@ -58,11 +58,12 @@
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
                 position: absolute;
-                right: 25px;
+                right: 8px;
                 top: 5px;
             }
             div#researcher .panel.panel-default {
                 margin-bottom: 15px;
+                    position: relative;
             }
             div#researcher .panel-heading .panel-title {
                 border-bottom: 1px solid;
@@ -901,4 +902,12 @@ body .v-treeview-node__root {
 body input.form-control {
 	padding-top: 12px;
     line-height: 32px;
+}
+
+.detail_view table td {
+    border: 1px solid lightgrey;
+    padding: 5px 10px;
+}
+.detail_view table td div {
+    padding: 0 !important;
 }

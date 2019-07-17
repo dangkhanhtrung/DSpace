@@ -115,8 +115,8 @@
             <div class="panel-heading">
             <h6><i class="fa fa-filter" aria-hidden="true"></i><fmt:message key="<%= fkey%>" /></h6>
             <%
-            	if (f.equalsIgnoreCase("OUSubject") || f.equalsIgnoreCase("rpsubject")
-            			 || f.equalsIgnoreCase("PJSubject")
+            	if (f.equalsIgnoreCase("OUSubject") || f.equalsIgnoreCase("rpsubject") || f.equalsIgnoreCase("domain")
+            			 || f.equalsIgnoreCase("PJSubject") || f.equalsIgnoreCase("certificatesubject")
             			 || f.equalsIgnoreCase("AwardsSubject")
             			 || f.equalsIgnoreCase("eventssubject")
             			 || f.equalsIgnoreCase("fundingssubject")
@@ -461,6 +461,27 @@
                 }
                 if (facet != null) {
                     for (FacetResult fvalue : facet) {
+                		String newFvalue = fvalue.getDisplayedValue();
+                    	if (f.equals("location.coll")) {
+                    		if (fvalue.getDisplayedValue().equals("19")) {
+                    			newFvalue = "Trong n\u01B0\u1EDBc";
+                    		} else if (fvalue.getDisplayedValue().equals("20")) {
+                    			newFvalue = "Qu\u1ED1c t\u1EBF";
+                    		} else if (fvalue.getDisplayedValue().equals("21")) {
+                    			newFvalue = "ISI";
+                    		} else if (fvalue.getDisplayedValue().equals("22")) {
+                    			newFvalue = "Scopus";
+                    		} else if (fvalue.getDisplayedValue().equals("24")) {
+                    			newFvalue = "D\u1EEF li\u1EC7u chuy\u00EAn ng\u00E0nh";
+                    		} else if (fvalue.getDisplayedValue().equals("23")) {
+                    			newFvalue = "D\u1EEF li\u1EC7u danh m\u1EE5c";
+                    		} else if (fvalue.getDisplayedValue().equals("25")) {
+                    			newFvalue = "D\u1EEF li\u1EC7u m\u1EDF";
+                    		} else if (fvalue.getDisplayedValue().equals("28")) {
+                    			newFvalue = "D\u1EEF li\u1EC7u API";
+                    		}
+                    	}
+                    	
                         if (idx != limit) {
                 %><li class="list-group-item">
                     <i class="fa fa-circle" aria-hidden="true"></i>
@@ -470,7 +491,12 @@
                             + "&amp;filtertype=" + URLEncoder.encode(fvalue.getFilterType(), "UTF-8")
                                     + "&amp;location=" + URLEncoder.encode(searchScope, "UTF-8")%>"
                        title="<fmt:message key="jsp.search.facet.narrow"><fmt:param><%=fvalue.getDisplayedValue()%></fmt:param></fmt:message>">
-                        <%= StringUtils.abbreviate(fvalue.getDisplayedValue(), 936)%></a><span class="badge"><%= fvalue.getCount()%></span> </li><%
+                       <% if (f.equals("location.coll")) { %>
+						<%=  newFvalue %>
+                        <% } else { %>
+                        	<%=  StringUtils.abbreviate(fvalue.getDisplayedValue(), 936)%>
+                        <%} %>
+                        </a><span class="badge"><%= fvalue.getCount()%></span> </li><%
                                 }
                                 idx++;
                             }
