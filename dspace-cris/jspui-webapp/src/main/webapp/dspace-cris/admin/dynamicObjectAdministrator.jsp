@@ -50,7 +50,7 @@
 		</li>
 		<li>
 			<a id="addentity" href="#"><fmt:message
-			key="jsp.dspace-admin.crisconfiguration.add"><fmt:param>${fn:toUpperCase(path)}</fmt:param></fmt:message></a>	
+			key="jsp.dspace-admin.crisconfiguration.add-${path}"></fmt:message></a>	
 		
 		<div style="display: none; float: right;"><c:set
 			var="contextPath"><%=request.getContextPath()%></c:set> <form:form 
@@ -62,7 +62,7 @@
 		</li>
 		<li>
 			<a href="<%=request.getContextPath()%>/cris/administrator/${path}/list.htm"><fmt:message
-			key="jsp.dspace-admin.crisconfiguration.see"><fmt:param>${fn:toUpperCase(path)}</fmt:param></fmt:message></a>
+			key="jsp.dspace-admin.crisconfiguration.see-${path}"></fmt:message></a>
 		</li>
 	</ul>
 </dspace:layout>

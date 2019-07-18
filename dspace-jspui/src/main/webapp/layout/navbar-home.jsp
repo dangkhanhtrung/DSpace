@@ -95,7 +95,7 @@
 					class="nav-link"> Trang chủ </a></li>
 				<li class="nav-item "><a
 					href="<%=request.getContextPath()%>/page/gioi-thieu.jsp"
-					class="nav-link"> API </a></li>
+					class="nav-link"> Giới thiệu </a></li>
 				
 				<%
 					if (user != null) {

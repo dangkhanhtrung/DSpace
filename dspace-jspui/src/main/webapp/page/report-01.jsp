@@ -88,496 +88,57 @@
 <dspace:layout locbar="nolink" titlekey="jsp.home.title" feedData="<%= feedData%>">
  
     <div id="appsss">
-    
-    	<pdf-make :datasource="datasource" :datarow="datarow"></pdf-make>
+    	
+    	<div class="html-word">
+	<label style="font-weight: bold; margin: 0 0 10px; display: block;">1. Giới thiệu</label>
+	<p style="margin: 0 0 10px;">Hệ thống trao đổi và tích hợp các cơ sở dữ liệu của Bộ Khoa học và Công nghệ phục vụ  các cá nhân, đơn vị tác nghiệp, tổ chức doanh nghiệp trong và ngoài  Bộ KHCN khai thác thông tin KHCN được tập trung, tổng quan nhất qua cổng thông tin “Cơ sở dữ liệu tích hợp Thông tin Khoa học và Công nghệ”.</p>
+	<p style="margin: 0 0 10px;">Nhiệm vụ “Xây dựng hệ thống trao đổi và tích hợp các cơ sở dữ liệu của Bộ Khoa học và Công nghệ theo quyết định số 1208/QĐ-BKHCN ngày 9 tháng 05 năm 2018 của Bộ trưởng Bộ Khoa học và Công nghệ.</p>
+	<p style="margin: 0 0 10px;">Các CSDL KHCN được tích hợp, liên kết với nhau bao gồm:</p>
+	<ol style="padding: 0 0 0 40px; margin: 0;">
+		<li style="margin-bottom: 10px;">CSDL Cá nhân</li>
+		<li style="margin-bottom: 10px;">CSDL Công bố</li>
+		<li style="margin-bottom: 10px;">CSDL Nhiệm vụ</li>
+		<li style="margin-bottom: 10px;">CSDL  Tổ chức</li>
+		<li style="margin-bottom: 10px;">CSDL Sáng chế</li>
+		<li style="margin-bottom: 10px;">CSDL Tiêu chuẩn</li>
+		<li style="margin-bottom: 10px;">CSDL Công nghệ</li>
+		<li style="margin-bottom: 10px;">CSDL Giải thưởng</li>
+		<li style="margin-bottom: 10px;">CSDL Sự kiên </li>
+		<li style="margin-bottom: 10px;">CSDL Quỹ tài trợ</li> 
+		<li style="margin-bottom: 10px;">CSDL Tạp chí</li>
+		<li style="margin-bottom: 10px;">CSSDL Giấy chứng nhận</li>
+		<li style="margin-bottom: 10px;">CSDL Dữ liệu mở</li>
+	</ol>
+	<label style="font-weight: bold; margin: 0 0 10px; display: block;">Mô hình kiến trúc hệ thống</label>
+	<img width="624" src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563439992465-1563439992465.png" style="display: block; margin: 0 auto 10px;">
+	<label style="font-weight: bold; margin: 0 0 10px; display: block;">Mô hình CSDL</label>
+	<img width="624" src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563439992505-1563439992505.png" style="display: block; margin: 0 auto 10px;">
+	<label style="font-weight: bold; margin: 0 0 10px; display: block;">2. Tính năng</label>
+	<p style="margin: 0 0 10px;">Giao diện tương đối thân thiện, dễ tìm kiếm, khai thác thông tin KHCN:</p>
+	<ul style="padding: 0 0 0 40px; margin: 0;">
+		<li style="margin-bottom: 10px;">Tìm kiếm dữ liệu theo các bộ tiêu chí;</li>
+		<li style="margin-bottom: 10px;">Tra cứu được thông tin liên kết giữa các dữ liệu KHCN</li>
+		<li style="margin-bottom: 10px;">Tải về các bộ dữ liệu mở, dữ liệu mô tả (metadata)</li>
+		<li style="margin-bottom: 10px;">Báo cáo, thống kê các dữ liệu</li>
+		<li style="margin-bottom: 10px;">Cung cấp thông tin CSDL dạng API</li>
+	</ul>
+	<label style="font-weight: bold; margin: 0 0 10px; display: block;">3. Điểm nổi bật</label>
+	<ul style="padding: 0 0 0 40px; margin: 0;">
+		<li style="margin-bottom: 10px;">Hệ thống CSDL KHCN áp dụng chuẩn giao thức toàn cầu OAI-PMH,  trao đổi thông tin về khoa học và công nghệ. OAI-PMH  được xây dựng dựa trên nền tảng công nghệ API Restful.</li>
+		<li style="margin-bottom: 10px;">Có tính liên kết giữa các đối tượng CSDL quản   lý (chẳng hạn xem thông tin Chuyên gia sẽ biết được các bài báo chuyên gia đã công bố) dễ dàng khai thác thông tin tổng quan nhất về khoa học công nghệ và chỉ dẫn đến hệ thống CSDL liên quan để xem thông tin chi tiết.</li>
+		<li style="margin-bottom: 10px;">Hệ thống đảm bảo sẵn sàng tích hợp các dữ liệu khác, luôn được cập nhật phong phú nguồn thông tin KHCN trong nước và quốc tế, mở rộng nâng cấp thành CSDLQG KHCN.</li>
+		<li style="margin-bottom: 10px;">Hệ thống tích hợp CSDL của Bộ KHCN là nền tảng để xây dựng hệ thống thông tin KHCN ĐBSCL, xây dựng hệ thống CSDL quốc gia KHCN.</li>
+	</ul>
+	<label style="font-weight: bold; margin: 0 0 10px; display: block;">4. Lợi ích</label>
+	<ul style="padding: 0 0 0 40px; margin: 0;">
+		<li style="margin-bottom: 10px;">Tăng cường chất lượng thông tin KHCN</li>
+		<li style="margin-bottom: 10px;">Cải thiện năng suất và hiệu quả hoạt động KHCN</li>
+		<li style="margin-bottom: 10px;">Cải thiện khả năng tương tác dữ liệu KHCN</li>
+		<li style="margin-bottom: 10px;">Cải thiện khả năng quản trị, tuân thủ quy định và quản lý rủi ro</li>
+		<li style="margin-bottom: 10px;">Hỗ trợ báo cáo và cải thiện việc ra quyết định về KHCN</li>
+	</ul>
+</div>
+    	
     
 	</div>
-	<script>
-
-  new Vue({
-    el: '#appsss',
-    data: {
-    	datasource: {
-    		pageOrientation: "landscape",
-    		content: [
-    	          {
-    	              text: [
-    	                  {text: "CÔNG BỐ KHOA HỌC VÀ CÔNG NGHỆ\n", alignment: "center", bold: true},
-    	                  {text: "Năm: [$year$]" + "\n", fontSize: 11, alignment: "center"},
-    	                  {text: "Đơn vị tính: [$currency$]" + "\n", fontSize: 11, alignment: "right"}
-    	              ], 
-    	              margin: [0, 20],
-    	              style: "headerTitle"
-    	          },
-    	          {
-    	              style: "tableExample",
-    	              table: {
-    	                  widths: ["*", 100, 50, 50, 50, 50],
-    	                  headerRows: 2,
-    	                  body: [
-    	                      [
-    	                          {
-    	                              text: "",
-    	                              rowSpan: 2,
-    	                              alignment: "center",
-    	                              bold: true,
-    	                              style: "tdStyle"
-    	                          },
-    	                          {
-    	                              text: "\nTổng số",
-    	                              rowSpan: 2,
-    	                              alignment: "center",
-    	                              bold: true,
-    	                              style: "tdStyle"
-    	                          },
-    	                          {
-    	                              text: "Bộ sưu tập",
-    	                              colSpan: 4,
-    	                              alignment: "center",
-    	                              bold: true,
-    	                              style: "tdStyle"
-    	                          },
-    	                          "",
-    	                          "",
-    	                          ""
-    	                      ],
-    	                      [
-    	                          "",
-    	                          "",
-    	                          {
-    	                              text: "ISI",  
-    	                              alignment: "center",
-    	                              style: "tdStyle"
-    	                          },
-    	                          {
-    	                              text: "Scopus",
-    	                              alignment: "center",
-    	                              style: "tdStyle"
-    	                          },
-    	                          {
-    	                              text: "Quốc tế",
-    	                              alignment: "center",
-    	                              style: "tdStyle"
-    	                          },
-    	                          {
-    	                              text: "Trong nước",
-    	                              alignment: "center",
-    	                              style: "tdStyle"
-    	                          }
-    	                      ],
-    	                      [
-    	                          {
-    	                              text: "A",  
-    	                              alignment: "center",
-    	                              style: "tdStyle"
-    	                          },
-    	                          {
-    	                              text: "1",  
-    	                              alignment: "center",
-    	                              style: "tdStyle"
-    	                          },
-    	                          {
-    	                              text: "2",  
-    	                              alignment: "center",
-    	                              style: "tdStyle"
-    	                          },
-    	                          {
-    	                              text: "3",
-    	                              alignment: "center",
-    	                              style: "tdStyle"
-    	                          },
-    	                          {
-    	                              text: "4",
-    	                              alignment: "center",
-    	                              style: "tdStyle"
-    	                          },
-    	                          {
-    	                              text: "5",
-    	                              alignment: "center",
-    	                              style: "tdStyle"
-    	                          }
-    	                      ]
-    	                  ]
-    	              },
-    	              margin: [0, 0, 0, 5]
-    	          }
-    	      ]
-    	},
-    	datarow: [
-    		[
-    			{
-                    text: "1. Tổng số Công bố",
-                    alignment: "left",
-                    bold: true
-                },
-                {
-                    text: "350680",
-                    alignment: "center",
-                    bold: true
-                },
-                {
-                    text: "5000",
-                    alignment: "center",
-                    bold: true
-                },
-                {
-                    text: "78000",
-                    alignment: "center",
-                    bold: true
-                },
-                {
-                    text: "10980",
-                    alignment: "center",
-                    bold: true
-                },
-                {
-                    text: "256700",
-                    alignment: "center",
-                    bold: true
-                }
-    		],
-    		[
-    			{
-                    text: "2. Chia theo Loại công bố",
-                    alignment: "left",
-                    bold: true
-                },
-                "","","","",""
-    		],
-    		[
-    			{
-                    text: " - Bài báo",
-                    alignment: "left",
-                    style: "collv1"
-                },
-                {
-                    text: "122738",
-                    alignment: "center"
-                },
-                {
-                    text: "1750",
-                    alignment: "center"
-                },
-                {
-                    text: "27300",
-                    alignment: "center"
-                },
-                {
-                    text: "3843",
-                    alignment: "center"
-                },
-                {
-                    text: "89845",
-                    alignment: "center"
-                }
-    		],
-    		[
-    			{
-                    text: " - Kỷ yếu hội thảo",
-                    alignment: "left",
-                    style: "collv1"
-                },
-                {
-                    text: "35068",
-                    alignment: "center"
-                },
-                {
-                    text: "500",
-                    alignment: "center"
-                },
-                {
-                    text: "7800",
-                    alignment: "center"
-                },
-                {
-                    text: "1098",
-                    alignment: "center"
-                },
-                {
-                    text: "25670",
-                    alignment: "center"
-                }
-    		],
-    		[
-    			{
-                    text: " - Báo cáo",
-                    alignment: "left",
-                    style: "collv1"
-                },
-                {
-                    text: "70136",
-                    alignment: "center"
-                },
-                {
-                    text: "1000",
-                    alignment: "center"
-                },
-                {
-                    text: "15600",
-                    alignment: "center"
-                },
-                {
-                    text: "2196",
-                    alignment: "center"
-                },
-                {
-                    text: "51340",
-                    alignment: "center"
-                }
-    		],
-    		[
-    			{
-                    text: " - Sách",
-                    alignment: "left",
-                    style: "collv1"
-                },
-                {
-                    text: "17534",
-                    alignment: "center"
-                },
-                {
-                    text: "250",
-                    alignment: "center"
-                },
-                {
-                    text: "3900",
-                    alignment: "center"
-                },
-                {
-                    text: "549",
-                    alignment: "center"
-                },
-                {
-                    text: "12835",
-                    alignment: "center"
-                }
-    		],
-    		[
-    			{
-                    text: " - Luận án tiến sĩ",
-                    alignment: "left",
-                    style: "collv1"
-                },
-                {
-                    text: "52602",
-                    alignment: "center"
-                },
-                {
-                    text: "750",
-                    alignment: "center"
-                },
-                {
-                    text: "11700",
-                    alignment: "center"
-                },
-                {
-                    text: "1647",
-                    alignment: "center"
-                },
-                {
-                    text: "38505",
-                    alignment: "center"
-                }
-    		],
-    		[
-    			{
-                    text: " - Luận án thạc sĩ (Master’s Thesis)",
-                    alignment: "left",
-                    style: "collv1"
-                },
-                {
-                    text: "52602",
-                    alignment: "center"
-                },
-                {
-                    text: "750",
-                    alignment: "center"
-                },
-                {
-                    text: "11700",
-                    alignment: "center"
-                },
-                {
-                    text: "1647",
-                    alignment: "center"
-                },
-                {
-                    text: "38505",
-                    alignment: "center"
-                }
-    		],
-    		[
-    			{
-                    text: "3. Chia theo lĩnh vực KHCN",
-                    alignment: "left",
-                    bold: true
-                },
-                "","","","",""
-    		],
-    		[
-    			{
-                    text: " - Khoa học tự nhiên",
-                    alignment: "left",
-                    style: "collv1"
-                },
-                {
-                    text: "35068",
-                    alignment: "center"
-                },
-                {
-                    text: "500",
-                    alignment: "center"
-                },
-                {
-                    text: "7800",
-                    alignment: "center"
-                },
-                {
-                    text: "1098",
-                    alignment: "center"
-                },
-                {
-                    text: "25670",
-                    alignment: "center"
-                }
-    		],
-    		[
-    			{
-                    text: " - Khoa học kỹ thuật và công nghệ",
-                    alignment: "left",
-                    style: "collv1"
-                },
-                {
-                    text: "52602",
-                    alignment: "center"
-                },
-                {
-                    text: "750",
-                    alignment: "center"
-                },
-                {
-                    text: "11700",
-                    alignment: "center"
-                },
-                {
-                    text: "1647",
-                    alignment: "center"
-                },
-                {
-                    text: "38505",
-                    alignment: "center"
-                }
-    		],
-    		[
-    			{
-                    text: " - Khoa học y, dược",
-                    alignment: "left",
-                    style: "collv1"
-                },
-                {
-                    text: "70136",
-                    alignment: "center"
-                },
-                {
-                    text: "1000",
-                    alignment: "center"
-                },
-                {
-                    text: "15600",
-                    alignment: "center"
-                },
-                {
-                    text: "2196",
-                    alignment: "center"
-                },
-                {
-                    text: "51340",
-                    alignment: "center"
-                }
-    		],
-    		[
-    			{
-                    text: " - Khoa học nông nghiệp",
-                    alignment: "left",
-                    style: "collv1"
-                },
-                {
-                    text: "52602",
-                    alignment: "center"
-                },
-                {
-                    text: "750",
-                    alignment: "center"
-                },
-                {
-                    text: "11700",
-                    alignment: "center"
-                },
-                {
-                    text: "1647",
-                    alignment: "center"
-                },
-                {
-                    text: "38505",
-                    alignment: "center"
-                }
-    		],
-    		[
-    			{
-                    text: " - Khoa học xã hội",
-                    alignment: "left",
-                    style: "collv1"
-                },
-                {
-                    text: "35068",
-                    alignment: "center"
-                },
-                {
-                    text: "500",
-                    alignment: "center"
-                },
-                {
-                    text: "7800",
-                    alignment: "center"
-                },
-                {
-                    text: "1098",
-                    alignment: "center"
-                },
-                {
-                    text: "25670",
-                    alignment: "center"
-                }
-    		],
-    		[
-    			{
-                    text: " - Khoa học nhân văn",
-                    alignment: "left",
-                    style: "collv1"
-                },
-                {
-                    text: "105204",
-                    alignment: "center"
-                },
-                {
-                    text: "1500",
-                    alignment: "center"
-                },
-                {
-                    text: "23400",
-                    alignment: "center"
-                },
-                {
-                    text: "3294",
-                    alignment: "center"
-                },
-                {
-                    text: "77010",
-                    alignment: "center"
-                }
-    		],
-    	]
-    }
-  })
-</script>
 </dspace:layout>
