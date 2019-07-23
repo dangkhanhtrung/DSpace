@@ -725,4 +725,10 @@
         <qualifier></qualifier>
         <scope_note>Number</scope_note>
     </dc-type>
+    <dc-type>
+        <schema>dc</schema>
+        <element>collection</element>
+        <qualifier></qualifier>
+        <scope_note>Bộ sưu tập</scope_note>
+    </dc-type>
 </dspace-dc-types>

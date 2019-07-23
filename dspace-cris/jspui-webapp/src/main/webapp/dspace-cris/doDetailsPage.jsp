@@ -78,7 +78,7 @@
 						    margin-top: 4px;
 						"><i class="fa fa-chevron-left mr-2"></i> Quay lại</a>
                             <h1><fmt:message key="jsp.layout.ou.detail.name" /> 
-                            ${entity.typo.label}
+                            ${entity.name}
                             </h1>
                     </div>
                 </div>

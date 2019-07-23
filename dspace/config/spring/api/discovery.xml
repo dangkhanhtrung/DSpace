@@ -115,7 +115,7 @@
 					<list>
 						<value>fundings</value>
 					</list>
-				</entry>
+				</entry>				
 			</map>
 		</property>
 		<property name="map">
@@ -207,7 +207,7 @@
 		<property name="collapsingConfiguration">
 			<bean class="org.dspace.discovery.configuration.DiscoveryCollapsingConfiguration">
 				<property name="groupIndexFieldName" value="resourcetype" />
-				<property name="groupLimit" value="10" />
+				<property name="groupLimit" value="20" />
 			</bean>
 		</property>		
 		<property name="hitHighlightingConfiguration">
@@ -573,7 +573,8 @@
 		<property name="defaultFilterQueries">
 			<list>
 				<!--Only find items, communities and collections -->
-				<value>search.resourcetype:2 OR search.resourcetype:[9 TO 11] OR resourcetype_filter:journal</value>
+				<!-- <value>search.resourcetype:2 OR search.resourcetype:[9 TO 11] OR resourcetype_filter:journal</value> -->
+				<value>dc.type:Bài Báo</value>
 			</list>
 		</property>
 		<!-- When true a "did you mean" example will be displayed, value can be true or false -->
@@ -1107,11 +1108,12 @@
 		<property name="searchFilters">
 			<list>
 				<ref bean="searchFilterTitle" />
+				<ref bean="searchFilterCollections" />
 				<ref bean="searchFilterDatasetsType" />
 				<ref bean="searchFilterAuthor" />
 				<ref bean="searchFilterDomain" />
 				<ref bean="searchFilterIssued" />		
-				<ref bean="searchFilterDatasetsPublisher" />		
+				<ref bean="searchFilterDatasetsPublisher" />
 			</list>
 		</property>
 		<!--The sort filters for the discovery search -->
@@ -2014,12 +2016,12 @@
 	</bean>
 
 	<bean id="searchFilterCollections"
-		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="location.coll" />
+		class="org.dspace.discovery.configuration.DiscoverySearchMultilanguageFilterFacet">
+		<property name="indexFieldName" value="itemCollection" />
 		<property name="metadataFields">
 			<list>
-				<value>location.coll</value>
-			</list>
+				<value>dc.collection</value>
+			</list>			
 		</property>
 	</bean>
 
@@ -2133,7 +2135,7 @@
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
-		<property name="sortOrder" value="VALUE" />
+		<property name="sortOrder" value="COUNT" />
 		<property name="type" value="thongkestring"/>
 	</bean>
 
@@ -2316,7 +2318,7 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="type" value="thongkestring" />
-		<property name="sortOrder" value="COUNT" />
+		<property name="sortOrder" value="VALUE" />
 	</bean>
 
 	<bean id="searchFilterFundingStartDate"
@@ -2441,7 +2443,7 @@
 		<property name="indexFieldName" value="certificatelicencedby" />
 		<property name="metadataFields">
 			<list>
-				<value>criscertificate.certificatelicencedby</value>
+				<value>criscertificate.certificatelicencer</value>
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
@@ -2491,7 +2493,7 @@
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
-		<property name="sortOrder" value="COUNT" />
+		<property name="sortOrder" value="COUNT" />		
 	</bean>
 
 	<bean id="searchFilterItemJournals"
@@ -2667,7 +2669,7 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="type" value="thongkestring" />
-		<property name="sortOrder" value="COUNT" />
+		<property name="sortOrder" value="VALUE" />
 	</bean>
 
 	<bean id="searchFilterRPInterests"
@@ -2797,7 +2799,7 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="type" value="thongkestring" />
-		<property name="sortOrder" value="COUNT" />
+		<property name="sortOrder" value="VALUE" />
 	</bean>
 
 	<bean id="searchFilterProjectStatus"
@@ -3240,19 +3242,7 @@
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
 		<property name="type" value="thongkestring"/>
-	</bean>
-
-	<bean id="searchFilterDatasetsType"
-		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="datasetstype" />
-		<property name="metadataFields">
-			<list>
-				<value>location.coll</value>
-			</list>
-		</property>
-		<property name="facetLimit" value="10" />
-		<property name="sortOrder" value="COUNT" />
-	</bean>
+	</bean>	
 
 	<bean id="searchFilterDatasetsPublisher"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
@@ -3264,7 +3254,17 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
-		<property name="type" value="thongkestring"/>
+	</bean>
+
+	<bean id="searchFilterDatasetsType"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="datasetstype" />
+		<property name="metadataFields">
+			<list>
+				<value>dc.relation.dataset</value>
+			</list>
+		</property>
+		<property name="facetLimit" value="4" />		
 	</bean>
 	
 	<bean id="searchFilterPermissionFulltext"
@@ -3514,6 +3514,7 @@
 	<bean id="facetsDatasetConfiguration" class="java.util.ArrayList">
 		<constructor-arg>
 		<list>
+				<ref bean="searchFilterCollections" />
 				<ref bean="searchFilterDatasetsType" />
 				<ref bean="searchFilterAuthor" />
 				<ref bean="searchFilterDomain" />

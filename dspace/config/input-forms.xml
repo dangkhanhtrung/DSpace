@@ -12,6 +12,14 @@
   <!-- the mapping for handle "default".                                    -->
   <form-map>
     <name-map collection-handle="default" form-name="traditional"/>
+    <name-map collection-handle="123456789/12222" form-name="Scopus"/>
+    <name-map collection-handle="123456789/11221" form-name="ISI"/>
+    <name-map collection-handle="123456789/12220" form-name="QuocTe"/>
+    <name-map collection-handle="123456789/12219" form-name="TrongNuoc"/>
+    <name-map collection-handle="123456789/12266" form-name="DuLieuAPI"/>
+    <name-map collection-handle="123456789/12250" form-name="DuLieuChuyenNganh"/>
+    <name-map collection-handle="123456789/11225" form-name="DuLieuDanhMuc"/>
+    <name-map collection-handle="123456789/12251" form-name="DuLieuMo"/>
     <!-- 
   we provide examples of form tailored for articles, books, 
     conference_materials, dataset and a catch all others form-name 
@@ -252,6 +260,1254 @@
       </page>
       <!--      <page number="3"><field><dc-schema>ec</dc-schema><dc-element>sale</dc-element><dc-qualifier></dc-qualifier><repeatable>true</repeatable><label>Sale availability</label><input-type value-pairs-name="sale_info">dropdown</input-type><hint>Enter the appropriate group to sale the item or empty to open access. </hint><required></required></field><field><dc-schema>ec</dc-schema><dc-element>product</dc-element><dc-qualifier>price</dc-qualifier><repeatable>false</repeatable><label>Product price</label><input-type >onebox</input-type><hint>Enter the price of the product. </hint><required></required><validation>^[1-9]\d*(\.\d+)?$</validation></field></page>-->
     </form>
+    <form name="TrongNuoc">
+      <page number="1">
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>collection</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Bộ sưu tập</label>
+          <input-type value-pairs-name="TrongNuoc_types">dropdown</input-type>
+          <hint/>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>author</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Tác giả</label>
+          <input-type>onebox</input-type>
+          <hint>Họ tên tác giả công bố [v.d. A, Nguyễn Văn].</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Tiêu đề</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập vào tiêu đề chính của công bố.</hint>
+          <required>Tiêu đề công bố là bắt buộc.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier>alternative</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Tên khác</label>
+          <input-type>onebox</input-type>
+          <hint>Nếu công bố có tên khác hãy nhập vào đây.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>date</dc-element>
+          <dc-qualifier>issued</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ngày xuất bản</label>
+          <input-type>date</input-type>
+          <hint>Vui lòng cung cấp ngày xuất bản của công bố hoặc phân phối công khai trước đây. Bạn có thể không nhập ngày tháng nếu chúng không được sử dụng</hint>
+          <required>Ít nhất bạn phải nhập năm xuất bản.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>publisher</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Nhà xuất bản</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhà xuất bản đã từng công bố tài liệu này trước đây.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>citation</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Trích dẫn</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập trích dẫn theo tiêu chuẩn cho phiên bản đã ban hàng trước đó của tài liệu này</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>ispartofseries</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Sê-ri/Báo cáo số.</label>
+          <input-type>series</input-type>
+          <hint>Nhập số Sê-ri mà công đồng của bạn gán cho tài liệu này.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier/>
+          <!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+          <repeatable>true</repeatable>
+          <label>Mã định danh</label>
+          <input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+          <hint>Nếu tài liệu có bất kỳ mã định danh, số nhận dạng nào vui lòng nhập các loại mã và số thực tế.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>url</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>URL</label>
+          <input-type>onebox</input-type>
+          <hint>Đường dẫn URL:</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>type</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Kiểu tài liệu</label>
+          <input-type value-pairs-name="common_types">dropdown</input-type>
+          <hint>Chọn kiểu tài liệu.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>firstpage</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Trang bắt đầu</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập trang bắt đầu</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>lastpage</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Trang kết thúc</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập trang kết thúc</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>language</dc-element>
+          <dc-qualifier>iso</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ngôn ngữ</label>
+          <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+          <hint>Chọn ngôn ngữ chính được sử dụng trong tài liệu. Nều ngôn ngữ không xuất hiện trong danh sách, vui lòng chọn 'Khác'. Nếu nội dung không thực sự có ngôn ngữ nào (ví dụ, tài liệu là dữ liệu hoặc hình ảnh) vui lòng chọn 'N/A'.</hint>
+          <required/>
+        </field>
+      </page>
+      <page number="2">
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>domain</dc-element>
+          <dc-qualifier/>
+          <!-- An input-type of twobox MUST be marked as repeatable -->
+          <repeatable>false</repeatable>
+          <label>Lĩnh vực khoa học</label>
+          <input-type>onebox</input-type>
+          <hint>Chọn lĩnh vực phù hợp với công bố chọn từ bảng </hint>
+          <required/>
+          <vocabulary>nsi_09072019</vocabulary>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>subject</dc-element>
+          <dc-qualifier/>
+          <repeatable>true</repeatable>
+          <label>Từ khóa</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập từ khóa: </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier>abstract</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Tóm tắt</label>
+          <input-type>textarea</input-type>
+          <hint>Tóm tắt nội dung. </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier>sponsorship</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Nhà tài trợ</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhà tài trợ. </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <repeatable>true</repeatable>
+          <label>Nhiệm vụ</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhiệm vụ tạo ra tài liệu, kết quả nghiên cứu này, nếu có. </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>ispartof</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Bài báo</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập vào tên tạp chí mà bài báo được công bố, nếu có.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>conference</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Hội nghị</label>
+          <input-type>onebox</input-type>
+          <hint>Tên hội nghị mà tài liệu này được công bố, nếu có.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier/>
+          <repeatable>true</repeatable>
+          <label>Mô tả</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập mô tả hoặc nhận xét về tài liệu. </hint>
+          <required/>
+        </field>
+      </page>      
+    </form>
+    <form name="QuocTe">
+      <page number="1">
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>collection</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Bộ sưu tập</label>
+          <input-type value-pairs-name="QuocTe_types">dropdown</input-type>
+          <hint/>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>author</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Tác giả</label>
+          <input-type>onebox</input-type>
+          <hint>Họ tên tác giả công bố [v.d. A, Nguyễn Văn].</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Tiêu đề</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập vào tiêu đề chính của công bố.</hint>
+          <required>Tiêu đề công bố là bắt buộc.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier>alternative</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Tên khác</label>
+          <input-type>onebox</input-type>
+          <hint>Nếu công bố có tên khác hãy nhập vào đây.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>date</dc-element>
+          <dc-qualifier>issued</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ngày xuất bản</label>
+          <input-type>date</input-type>
+          <hint>Vui lòng cung cấp ngày xuất bản của công bố hoặc phân phối công khai trước đây. Bạn có thể không nhập ngày tháng nếu chúng không được sử dụng</hint>
+          <required>Ít nhất bạn phải nhập năm xuất bản.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>publisher</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Nhà xuất bản</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhà xuất bản đã từng công bố tài liệu này trước đây.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>citation</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Trích dẫn</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập trích dẫn theo tiêu chuẩn cho phiên bản đã ban hàng trước đó của tài liệu này</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>ispartofseries</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Sê-ri/Báo cáo số.</label>
+          <input-type>series</input-type>
+          <hint>Nhập số Sê-ri mà công đồng của bạn gán cho tài liệu này.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier/>
+          <!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+          <repeatable>true</repeatable>
+          <label>Mã định danh</label>
+          <input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+          <hint>Nếu tài liệu có bất kỳ mã định danh, số nhận dạng nào vui lòng nhập các loại mã và số thực tế.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>url</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>URL</label>
+          <input-type>onebox</input-type>
+          <hint>Đường dẫn URL:</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>type</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Kiểu tài liệu</label>
+          <input-type value-pairs-name="common_types">dropdown</input-type>
+          <hint>Chọn kiểu tài liệu.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>firstpage</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Trang bắt đầu</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập trang bắt đầu</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>lastpage</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Trang kết thúc</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập trang kết thúc</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>language</dc-element>
+          <dc-qualifier>iso</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ngôn ngữ</label>
+          <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+          <hint>Chọn ngôn ngữ chính được sử dụng trong tài liệu. Nều ngôn ngữ không xuất hiện trong danh sách, vui lòng chọn 'Khác'. Nếu nội dung không thực sự có ngôn ngữ nào (ví dụ, tài liệu là dữ liệu hoặc hình ảnh) vui lòng chọn 'N/A'.</hint>
+          <required/>
+        </field>
+      </page>
+      <page number="2">
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>domain</dc-element>
+          <dc-qualifier/>
+          <!-- An input-type of twobox MUST be marked as repeatable -->
+          <repeatable>false</repeatable>
+          <label>Lĩnh vực khoa học</label>
+          <input-type>onebox</input-type>
+          <hint>Chọn lĩnh vực phù hợp với công bố chọn từ bảng </hint>
+          <required/>
+          <vocabulary>nsi_09072019</vocabulary>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>subject</dc-element>
+          <dc-qualifier/>
+          <repeatable>true</repeatable>
+          <label>Từ khóa</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập từ khóa: </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier>abstract</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Tóm tắt</label>
+          <input-type>textarea</input-type>
+          <hint>Tóm tắt nội dung. </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier>sponsorship</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Nhà tài trợ</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhà tài trợ. </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <repeatable>true</repeatable>
+          <label>Nhiệm vụ</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhiệm vụ tạo ra tài liệu, kết quả nghiên cứu này, nếu có. </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>ispartof</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Bài báo</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập vào tên tạp chí mà bài báo được công bố, nếu có.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>conference</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Hội nghị</label>
+          <input-type>onebox</input-type>
+          <hint>Tên hội nghị mà tài liệu này được công bố, nếu có.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier/>
+          <repeatable>true</repeatable>
+          <label>Mô tả</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập mô tả hoặc nhận xét về tài liệu. </hint>
+          <required/>
+        </field>
+      </page>      
+    </form>
+    <form name="ISI">
+      <page number="1">
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>collection</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Bộ sưu tập</label>
+          <input-type value-pairs-name="ISI_types">dropdown</input-type>
+          <hint/>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>author</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Tác giả</label>
+          <input-type>onebox</input-type>
+          <hint>Họ tên tác giả công bố [v.d. A, Nguyễn Văn].</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Tiêu đề</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập vào tiêu đề chính của công bố.</hint>
+          <required>Tiêu đề công bố là bắt buộc.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier>alternative</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Tên khác</label>
+          <input-type>onebox</input-type>
+          <hint>Nếu công bố có tên khác hãy nhập vào đây.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>date</dc-element>
+          <dc-qualifier>issued</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ngày xuất bản</label>
+          <input-type>date</input-type>
+          <hint>Vui lòng cung cấp ngày xuất bản của công bố hoặc phân phối công khai trước đây. Bạn có thể không nhập ngày tháng nếu chúng không được sử dụng</hint>
+          <required>Ít nhất bạn phải nhập năm xuất bản.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>publisher</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Nhà xuất bản</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhà xuất bản đã từng công bố tài liệu này trước đây.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>citation</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Trích dẫn</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập trích dẫn theo tiêu chuẩn cho phiên bản đã ban hàng trước đó của tài liệu này</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>ispartofseries</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Sê-ri/Báo cáo số.</label>
+          <input-type>series</input-type>
+          <hint>Nhập số Sê-ri mà công đồng của bạn gán cho tài liệu này.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier/>
+          <!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+          <repeatable>true</repeatable>
+          <label>Mã định danh</label>
+          <input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+          <hint>Nếu tài liệu có bất kỳ mã định danh, số nhận dạng nào vui lòng nhập các loại mã và số thực tế.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>url</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>URL</label>
+          <input-type>onebox</input-type>
+          <hint>Đường dẫn URL:</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>type</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Kiểu tài liệu</label>
+          <input-type value-pairs-name="common_types">dropdown</input-type>
+          <hint>Chọn kiểu tài liệu.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>firstpage</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Trang bắt đầu</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập trang bắt đầu</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>lastpage</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Trang kết thúc</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập trang kết thúc</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>language</dc-element>
+          <dc-qualifier>iso</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ngôn ngữ</label>
+          <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+          <hint>Chọn ngôn ngữ chính được sử dụng trong tài liệu. Nều ngôn ngữ không xuất hiện trong danh sách, vui lòng chọn 'Khác'. Nếu nội dung không thực sự có ngôn ngữ nào (ví dụ, tài liệu là dữ liệu hoặc hình ảnh) vui lòng chọn 'N/A'.</hint>
+          <required/>
+        </field>
+      </page>
+      <page number="2">
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>domain</dc-element>
+          <dc-qualifier/>
+          <!-- An input-type of twobox MUST be marked as repeatable -->
+          <repeatable>false</repeatable>
+          <label>Lĩnh vực khoa học</label>
+          <input-type>onebox</input-type>
+          <hint>Chọn lĩnh vực phù hợp với công bố chọn từ bảng </hint>
+          <required/>
+          <vocabulary>nsi_09072019</vocabulary>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>subject</dc-element>
+          <dc-qualifier/>
+          <repeatable>true</repeatable>
+          <label>Từ khóa</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập từ khóa: </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier>abstract</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Tóm tắt</label>
+          <input-type>textarea</input-type>
+          <hint>Tóm tắt nội dung. </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier>sponsorship</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Nhà tài trợ</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhà tài trợ. </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <repeatable>true</repeatable>
+          <label>Nhiệm vụ</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhiệm vụ tạo ra tài liệu, kết quả nghiên cứu này, nếu có. </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>ispartof</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Bài báo</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập vào tên tạp chí mà bài báo được công bố, nếu có.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>conference</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Hội nghị</label>
+          <input-type>onebox</input-type>
+          <hint>Tên hội nghị mà tài liệu này được công bố, nếu có.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier/>
+          <repeatable>true</repeatable>
+          <label>Mô tả</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập mô tả hoặc nhận xét về tài liệu. </hint>
+          <required/>
+        </field>
+      </page>      
+    </form>
+    <form name="Scopus">
+      <page number="1">
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>collection</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Bộ sưu tập</label>
+          <input-type value-pairs-name="Scopus_types">dropdown</input-type>
+          <hint/>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>contributor</dc-element>
+          <dc-qualifier>author</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Tác giả</label>
+          <input-type>onebox</input-type>
+          <hint>Họ tên tác giả công bố [v.d. A, Nguyễn Văn].</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Tiêu đề</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập vào tiêu đề chính của công bố.</hint>
+          <required>Tiêu đề công bố là bắt buộc.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier>alternative</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Tên khác</label>
+          <input-type>onebox</input-type>
+          <hint>Nếu công bố có tên khác hãy nhập vào đây.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>date</dc-element>
+          <dc-qualifier>issued</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ngày xuất bản</label>
+          <input-type>date</input-type>
+          <hint>Vui lòng cung cấp ngày xuất bản của công bố hoặc phân phối công khai trước đây. Bạn có thể không nhập ngày tháng nếu chúng không được sử dụng</hint>
+          <required>Ít nhất bạn phải nhập năm xuất bản.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>publisher</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Nhà xuất bản</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhà xuất bản đã từng công bố tài liệu này trước đây.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>citation</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Trích dẫn</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập trích dẫn theo tiêu chuẩn cho phiên bản đã ban hàng trước đó của tài liệu này</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>ispartofseries</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Sê-ri/Báo cáo số.</label>
+          <input-type>series</input-type>
+          <hint>Nhập số Sê-ri mà công đồng của bạn gán cho tài liệu này.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier/>
+          <!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+          <repeatable>true</repeatable>
+          <label>Mã định danh</label>
+          <input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+          <hint>Nếu tài liệu có bất kỳ mã định danh, số nhận dạng nào vui lòng nhập các loại mã và số thực tế.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>url</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>URL</label>
+          <input-type>onebox</input-type>
+          <hint>Đường dẫn URL:</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>type</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Kiểu tài liệu</label>
+          <input-type value-pairs-name="common_types">dropdown</input-type>
+          <hint>Chọn kiểu tài liệu.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>firstpage</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Trang bắt đầu</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập trang bắt đầu</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>lastpage</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Trang kết thúc</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập trang kết thúc</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>language</dc-element>
+          <dc-qualifier>iso</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ngôn ngữ</label>
+          <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+          <hint>Chọn ngôn ngữ chính được sử dụng trong tài liệu. Nều ngôn ngữ không xuất hiện trong danh sách, vui lòng chọn 'Khác'. Nếu nội dung không thực sự có ngôn ngữ nào (ví dụ, tài liệu là dữ liệu hoặc hình ảnh) vui lòng chọn 'N/A'.</hint>
+          <required/>
+        </field>
+      </page>
+      <page number="2">
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>domain</dc-element>
+          <dc-qualifier/>
+          <!-- An input-type of twobox MUST be marked as repeatable -->
+          <repeatable>false</repeatable>
+          <label>Lĩnh vực khoa học</label>
+          <input-type>onebox</input-type>
+          <hint>Chọn lĩnh vực phù hợp với công bố chọn từ bảng </hint>
+          <required/>
+          <vocabulary>nsi_09072019</vocabulary>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>subject</dc-element>
+          <dc-qualifier/>
+          <repeatable>true</repeatable>
+          <label>Từ khóa</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập từ khóa: </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier>abstract</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Tóm tắt</label>
+          <input-type>textarea</input-type>
+          <hint>Tóm tắt nội dung. </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier>sponsorship</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Nhà tài trợ</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhà tài trợ. </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <repeatable>true</repeatable>
+          <label>Nhiệm vụ</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhiệm vụ tạo ra tài liệu, kết quả nghiên cứu này, nếu có. </hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>ispartof</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Bài báo</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập vào tên tạp chí mà bài báo được công bố, nếu có.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>relation</dc-element>
+          <dc-qualifier>conference</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>Hội nghị</label>
+          <input-type>onebox</input-type>
+          <hint>Tên hội nghị mà tài liệu này được công bố, nếu có.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier/>
+          <repeatable>true</repeatable>
+          <label>Mô tả</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập mô tả hoặc nhận xét về tài liệu. </hint>
+          <required/>
+        </field>
+      </page>      
+    </form>
+    <form name="DuLieuAPI">
+      <page number="1">
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Tiêu đề</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập vào tiêu đề chính của công bố.</hint>
+          <required>Tiêu đề công bố là bắt buộc.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>type</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Kiểu </label>
+          <input-type value-pairs-name="datasets0_types">dropdown</input-type>
+          <hint/>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>collection</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Bộ sưu tập</label>
+          <input-type value-pairs-name="datasetsAPI_types">dropdown</input-type>
+          <hint/>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>date</dc-element>
+          <dc-qualifier>issued</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ngày xuất bản</label>
+          <input-type>date</input-type>
+          <hint>Vui lòng cung cấp ngày xuất bản của công bố hoặc phân phối công khai trước đây. Bạn có thể không nhập ngày tháng nếu chúng không được sử dụng</hint>
+          <required>Ít nhất bạn phải nhập năm xuất bản.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>publisher</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Nhà xuất bản</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhà xuất bản đã từng công bố tài liệu này trước đây.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>url</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>URL</label>
+          <input-type>onebox</input-type>
+          <hint>Đường dẫn URL:</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier>abstract</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Tóm tắt</label>
+          <input-type>textarea</input-type>
+          <hint>Tóm tắt nội dung. </hint>
+          <required/>
+        </field>        
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier/>
+          <repeatable>true</repeatable>
+          <label>Mô tả</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập mô tả hoặc nhận xét về tài liệu. </hint>
+          <required/>
+        </field>
+      </page>      
+    </form>
+    <form name="DuLieuChuyenNganh">
+      <page number="1">
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Tiêu đề</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập vào tiêu đề chính của công bố.</hint>
+          <required>Tiêu đề công bố là bắt buộc.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>type</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Kiểu </label>
+          <input-type value-pairs-name="datasets0_types">dropdown</input-type>
+          <hint/>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>collection</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Bộ sưu tập</label>
+          <input-type value-pairs-name="datasetsChuyenNganh_types">dropdown</input-type>
+          <hint/>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>date</dc-element>
+          <dc-qualifier>issued</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ngày xuất bản</label>
+          <input-type>date</input-type>
+          <hint>Vui lòng cung cấp ngày xuất bản của công bố hoặc phân phối công khai trước đây. Bạn có thể không nhập ngày tháng nếu chúng không được sử dụng</hint>
+          <required>Ít nhất bạn phải nhập năm xuất bản.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>publisher</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Nhà xuất bản</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhà xuất bản đã từng công bố tài liệu này trước đây.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>url</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>URL</label>
+          <input-type>onebox</input-type>
+          <hint>Đường dẫn URL:</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier>abstract</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Tóm tắt</label>
+          <input-type>textarea</input-type>
+          <hint>Tóm tắt nội dung. </hint>
+          <required/>
+        </field>        
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier/>
+          <repeatable>true</repeatable>
+          <label>Mô tả</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập mô tả hoặc nhận xét về tài liệu. </hint>
+          <required/>
+        </field>
+      </page>      
+    </form>
+    <form name="DuLieuDanhMuc">
+      <page number="1">
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Tiêu đề</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập vào tiêu đề chính của công bố.</hint>
+          <required>Tiêu đề công bố là bắt buộc.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>type</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Kiểu </label>
+          <input-type value-pairs-name="datasets0_types">dropdown</input-type>
+          <hint/>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>collection</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Bộ sưu tập</label>
+          <input-type value-pairs-name="datasetsDanhMuc_types">dropdown</input-type>
+          <hint/>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>date</dc-element>
+          <dc-qualifier>issued</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ngày xuất bản</label>
+          <input-type>date</input-type>
+          <hint>Vui lòng cung cấp ngày xuất bản của công bố hoặc phân phối công khai trước đây. Bạn có thể không nhập ngày tháng nếu chúng không được sử dụng</hint>
+          <required>Ít nhất bạn phải nhập năm xuất bản.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>publisher</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Nhà xuất bản</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhà xuất bản đã từng công bố tài liệu này trước đây.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>url</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>URL</label>
+          <input-type>onebox</input-type>
+          <hint>Đường dẫn URL:</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier>abstract</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Tóm tắt</label>
+          <input-type>textarea</input-type>
+          <hint>Tóm tắt nội dung. </hint>
+          <required/>
+        </field>        
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier/>
+          <repeatable>true</repeatable>
+          <label>Mô tả</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập mô tả hoặc nhận xét về tài liệu. </hint>
+          <required/>
+        </field>
+      </page>      
+    </form>
+    <form name="DuLieuMo">
+      <page number="1">
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>title</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Tiêu đề</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập vào tiêu đề chính của công bố.</hint>
+          <required>Tiêu đề công bố là bắt buộc.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>type</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Kiểu </label>
+          <input-type value-pairs-name="datasets0_types">dropdown</input-type>
+          <hint/>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>collection</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Bộ sưu tập</label>
+          <input-type value-pairs-name="datasetsMo_types">dropdown</input-type>
+          <hint/>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>date</dc-element>
+          <dc-qualifier>issued</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Ngày xuất bản</label>
+          <input-type>date</input-type>
+          <hint>Vui lòng cung cấp ngày xuất bản của công bố hoặc phân phối công khai trước đây. Bạn có thể không nhập ngày tháng nếu chúng không được sử dụng</hint>
+          <required>Ít nhất bạn phải nhập năm xuất bản.</required>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>publisher</dc-element>
+          <dc-qualifier/>
+          <repeatable>false</repeatable>
+          <label>Nhà xuất bản</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập tên nhà xuất bản đã từng công bố tài liệu này trước đây.</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>identifier</dc-element>
+          <dc-qualifier>url</dc-qualifier>
+          <repeatable>true</repeatable>
+          <label>URL</label>
+          <input-type>onebox</input-type>
+          <hint>Đường dẫn URL:</hint>
+          <required/>
+        </field>
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier>abstract</dc-qualifier>
+          <repeatable>false</repeatable>
+          <label>Tóm tắt</label>
+          <input-type>textarea</input-type>
+          <hint>Tóm tắt nội dung. </hint>
+          <required/>
+        </field>        
+        <field>
+          <dc-schema>dc</dc-schema>
+          <dc-element>description</dc-element>
+          <dc-qualifier/>
+          <repeatable>true</repeatable>
+          <label>Mô tả</label>
+          <input-type>onebox</input-type>
+          <hint>Nhập mô tả hoặc nhận xét về tài liệu. </hint>
+          <required/>
+        </field>
+      </page>      
+    </form>    
   </form-definitions>
   <!-- form-value-pairs populate dropdown and qualdrop-value lists.          -->
   <!-- The form-value-pairs element holds child elements named 'value-pairs' -->
@@ -494,10 +1750,60 @@
       <pair>
         <displayed-value>Bài nghiên cứu</displayed-value>
         <stored-value>Bài nghiên cứu</stored-value>
+      </pair>      
+    </value-pairs>    
+    <value-pairs dc-term="type" value-pairs-name="TrongNuoc_types">
+      <pair>
+        <displayed-value>Trong nước</displayed-value>
+        <stored-value>Trong nước</stored-value>
       </pair>
+    </value-pairs>
+    <value-pairs dc-term="type" value-pairs-name="QuocTe_types">
+      <pair>
+        <displayed-value>Quốc tế</displayed-value>
+        <stored-value>Quốc tế</stored-value>
+      </pair>
+    </value-pairs>
+    <value-pairs dc-term="type" value-pairs-name="ISI_types">
+      <pair>
+        <displayed-value>ISI</displayed-value>
+        <stored-value>ISI</stored-value>
+      </pair>
+    </value-pairs>
+    <value-pairs dc-term="type" value-pairs-name="Scopus_types">
+      <pair>
+        <displayed-value>Scopus</displayed-value>
+        <stored-value>Scopus</stored-value>
+      </pair>
+    </value-pairs>
+    <value-pairs dc-term="type" value-pairs-name="datasets0_types">
       <pair>
         <displayed-value>Dataset</displayed-value>
         <stored-value>Dataset</stored-value>
+      </pair>
+    </value-pairs>
+    <value-pairs dc-term="type" value-pairs-name="datasetsAPI_types">
+      <pair>
+        <displayed-value>Dữ liệu API</displayed-value>
+        <stored-value>Dữ liệu API</stored-value>
+      </pair>
+    </value-pairs>
+    <value-pairs dc-term="type" value-pairs-name="datasetsChuyenNganh_types">
+      <pair>
+        <displayed-value>Dữ liệu chuyên ngành</displayed-value>
+        <stored-value>Dữ liệu chuyên ngành</stored-value>
+      </pair>
+    </value-pairs>
+    <value-pairs dc-term="type" value-pairs-name="datasetsDanhMuc_types">
+      <pair>
+        <displayed-value>Dữ liệu danh mục</displayed-value>
+        <stored-value>Dữ liệu danh mục</stored-value>
+      </pair>
+    </value-pairs>
+    <value-pairs dc-term="type" value-pairs-name="datasetsMo_types">
+      <pair>
+        <displayed-value>Dữ liệu mở</displayed-value>
+        <stored-value>Dữ liệu mở</stored-value>
       </pair>
     </value-pairs>
     <value-pairs dc-term="type" value-pairs-name="article_types">
