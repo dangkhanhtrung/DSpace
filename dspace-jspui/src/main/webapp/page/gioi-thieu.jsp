@@ -83,33 +83,58 @@
 %>
 <dspace:layout locbar="nolink" titlekey="jsp.home.title" feedData="<%= feedData%>">
  
-	    <v-layout wrap row>
-	    	<v-flex xs12 sm2>
-	    	<div role="list" class="v-list theme--light">
-			  <div role="listitem" v-for="item in items"
-			        v-bind:key="item.code">
-			    <a class="v-list__tile v-list__tile--link theme--light" @click="doShowQuery(item.code)">
-			      {{ item.title }}
-			    </a>
-			  </div>
-			</div>
-	    	</v-flex>
-	    	<v-flex xs12 sm10>
-	    	 <v-subheader class="px-2"
-            >
-              Câu truy vấn
-            </v-subheader>
-	    		<v-textarea
-		          solo
-		          v-model="myQuery"
-		        ></v-textarea>
-	    	</v-flex>
-	    </v-layout>
-	
-		<style>
-		
-		body .theme--light.application {
-		    background: transparent !important;
-		}
-		</style>
+    <div id="appsss">
+    	
+    	<div class="html-word">
+	<label style="font-weight: bold; margin: 0 0 10px; display: block;">1. Giới thiệu</label>
+	<p style="margin: 0 0 10px;">Hệ thống trao đổi và tích hợp các cơ sở dữ liệu của Bộ Khoa học và Công nghệ phục vụ  các cá nhân, đơn vị tác nghiệp, tổ chức doanh nghiệp trong và ngoài  Bộ KHCN khai thác thông tin KHCN được tập trung, tổng quan nhất qua cổng thông tin “Cơ sở dữ liệu tích hợp Thông tin Khoa học và Công nghệ”.</p>
+	<p style="margin: 0 0 10px;">Nhiệm vụ “Xây dựng hệ thống trao đổi và tích hợp các cơ sở dữ liệu của Bộ Khoa học và Công nghệ theo quyết định số 1208/QĐ-BKHCN ngày 9 tháng 05 năm 2018 của Bộ trưởng Bộ Khoa học và Công nghệ.</p>
+	<p style="margin: 0 0 10px;">Các CSDL KHCN được tích hợp, liên kết với nhau bao gồm:</p>
+	<ol style="padding: 0 0 0 40px; margin: 0;">
+		<li style="margin-bottom: 10px;">CSDL Cá nhân</li>
+		<li style="margin-bottom: 10px;">CSDL Công bố</li>
+		<li style="margin-bottom: 10px;">CSDL Nhiệm vụ</li>
+		<li style="margin-bottom: 10px;">CSDL  Tổ chức</li>
+		<li style="margin-bottom: 10px;">CSDL Sáng chế</li>
+		<li style="margin-bottom: 10px;">CSDL Tiêu chuẩn</li>
+		<li style="margin-bottom: 10px;">CSDL Công nghệ</li>
+		<li style="margin-bottom: 10px;">CSDL Giải thưởng</li>
+		<li style="margin-bottom: 10px;">CSDL Sự kiên </li>
+		<li style="margin-bottom: 10px;">CSDL Quỹ tài trợ</li> 
+		<li style="margin-bottom: 10px;">CSDL Tạp chí</li>
+		<li style="margin-bottom: 10px;">CSSDL Giấy chứng nhận</li>
+		<li style="margin-bottom: 10px;">CSDL Dữ liệu mở</li>
+	</ol>
+	<label style="font-weight: bold; margin: 0 0 10px; display: block;">Mô hình kiến trúc hệ thống</label>
+	<img width="624" src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563439992465-1563439992465.png" style="display: block; margin: 0 auto 10px;">
+	<label style="font-weight: bold; margin: 0 0 10px; display: block;">Mô hình CSDL</label>
+	<img width="624" src="https://s3-eu-west-1.amazonaws.com/froala-eu/temp_files%2F1563439992505-1563439992505.png" style="display: block; margin: 0 auto 10px;">
+	<label style="font-weight: bold; margin: 0 0 10px; display: block;">2. Tính năng</label>
+	<p style="margin: 0 0 10px;">Giao diện tương đối thân thiện, dễ tìm kiếm, khai thác thông tin KHCN:</p>
+	<ul style="padding: 0 0 0 40px; margin: 0;">
+		<li style="margin-bottom: 10px;">Tìm kiếm dữ liệu theo các bộ tiêu chí;</li>
+		<li style="margin-bottom: 10px;">Tra cứu được thông tin liên kết giữa các dữ liệu KHCN</li>
+		<li style="margin-bottom: 10px;">Tải về các bộ dữ liệu mở, dữ liệu mô tả (metadata)</li>
+		<li style="margin-bottom: 10px;">Báo cáo, thống kê các dữ liệu</li>
+		<li style="margin-bottom: 10px;">Cung cấp thông tin CSDL dạng API</li>
+	</ul>
+	<label style="font-weight: bold; margin: 0 0 10px; display: block;">3. Điểm nổi bật</label>
+	<ul style="padding: 0 0 0 40px; margin: 0;">
+		<li style="margin-bottom: 10px;">Hệ thống CSDL KHCN áp dụng chuẩn giao thức toàn cầu OAI-PMH,  trao đổi thông tin về khoa học và công nghệ. OAI-PMH  được xây dựng dựa trên nền tảng công nghệ API Restful.</li>
+		<li style="margin-bottom: 10px;">Có tính liên kết giữa các đối tượng CSDL quản   lý (chẳng hạn xem thông tin Chuyên gia sẽ biết được các bài báo chuyên gia đã công bố) dễ dàng khai thác thông tin tổng quan nhất về khoa học công nghệ và chỉ dẫn đến hệ thống CSDL liên quan để xem thông tin chi tiết.</li>
+		<li style="margin-bottom: 10px;">Hệ thống đảm bảo sẵn sàng tích hợp các dữ liệu khác, luôn được cập nhật phong phú nguồn thông tin KHCN trong nước và quốc tế, mở rộng nâng cấp thành CSDLQG KHCN.</li>
+		<li style="margin-bottom: 10px;">Hệ thống tích hợp CSDL của Bộ KHCN là nền tảng để xây dựng hệ thống thông tin KHCN ĐBSCL, xây dựng hệ thống CSDL quốc gia KHCN.</li>
+	</ul>
+	<label style="font-weight: bold; margin: 0 0 10px; display: block;">4. Lợi ích</label>
+	<ul style="padding: 0 0 0 40px; margin: 0;">
+		<li style="margin-bottom: 10px;">Tăng cường chất lượng thông tin KHCN</li>
+		<li style="margin-bottom: 10px;">Cải thiện năng suất và hiệu quả hoạt động KHCN</li>
+		<li style="margin-bottom: 10px;">Cải thiện khả năng tương tác dữ liệu KHCN</li>
+		<li style="margin-bottom: 10px;">Cải thiện khả năng quản trị, tuân thủ quy định và quản lý rủi ro</li>
+		<li style="margin-bottom: 10px;">Hỗ trợ báo cáo và cải thiện việc ra quyết định về KHCN</li>
+	</ul>
+</div>
+    	
+    
+	</div>
 </dspace:layout>
