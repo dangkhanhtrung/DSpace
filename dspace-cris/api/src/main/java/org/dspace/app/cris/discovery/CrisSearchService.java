@@ -327,12 +327,15 @@ public class CrisSearchService extends SolrServiceImpl
 
     public void updateCrisIndexPublic(Context context, String crisId, String id)
     {
-    	//cleanCrisIndexById(crisId);
+    	cleanCrisIndexById(crisId);
         //updateIndex(context);
         Researcher researcher = new Researcher();
         ApplicationService applicationService = researcher.getApplicationService();
         ResearchObject xxx = applicationService.get(ResearchObject.class, 51377);
-        log.info("xxxxxxxxx" + xxx);
+        ACrisObject ddddkkk = (ACrisObject) xxx;
+        log.info("ddddkkkddddkkkddddkkkddddkkkddddkkk" + ddddkkk);
+        indexCrisObject(ddddkkk, true);
+        log.info("DONEDONEDONEDONEDONEDONE");
         
     }
     
