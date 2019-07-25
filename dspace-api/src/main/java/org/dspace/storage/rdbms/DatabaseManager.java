@@ -785,6 +785,8 @@ public class DatabaseManager
     {
         int newID;
 		context.setAutoCommit(false);
+		newID = doInsertPostgres(context, row);
+		/*
         if (isPostgres)
         {
             newID = doInsertPostgres(context, row);
@@ -793,6 +795,7 @@ public class DatabaseManager
         {
             newID = doInsertGeneric(context, row);
         }
+        */
 
         row.setColumn(getPrimaryKeyColumn(context, row), newID);
     }

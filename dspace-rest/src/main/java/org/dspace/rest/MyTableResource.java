@@ -159,8 +159,6 @@ public class MyTableResource extends Resource
         			Date currentTimestamp = new Date();
         			
         			mappingRow = DatabaseManager.row("cris_do");
-
-        	        log.info("mappingRowmappingRow" + mappingRow);
         	        
         	        mappingRow.setColumn("crisid", "journals" + objectBody.getString("id"));
         	        mappingRow.setColumn("sourceid", objectBody.getString("SOURCEID"));
@@ -170,8 +168,8 @@ public class MyTableResource extends Resource
         	        mappingRow.setColumn("timestampcreated", currentTimestamp);
         	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
         	        mappingRow.setColumn("typo_id", 1);
-        	        
-        	        System.out.println(body);
+
+        	        log.info("mappingRowmappingRow" + mappingRow);
         	        
         	        DatabaseManager.insert(context, mappingRow);
         	        
