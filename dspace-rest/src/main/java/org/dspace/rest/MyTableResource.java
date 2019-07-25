@@ -10,7 +10,9 @@ package org.dspace.rest;
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.DefaultValue;
@@ -35,6 +37,8 @@ import org.dspace.app.cris.discovery.CrisSearchService;
 import org.dspace.app.cris.model.ACrisObject;
 import org.dspace.rest.common.Collection;
 import org.dspace.rest.exceptions.ContextException;
+import org.dspace.storage.rdbms.DatabaseManager;
+import org.dspace.storage.rdbms.TableRow;
 import org.dspace.utils.DataUtils;
 import org.dspace.utils.ElasticQueryWrapUtil;
 import org.json.JSONArray;
@@ -145,6 +149,38 @@ public class MyTableResource extends Resource
             if (entity_object.equalsIgnoreCase("journals")) {
 
                 log.info("entity_objectentity_object222" + entity_object);
+                
+                TableRow mappingRow;
+    	        log.info("bodybodybodybodybodybodybodybodybody" + body);
+        		try {
+
+        	        log.info("bodybodybodybodybodybodybodybodybody" + body);
+        	        log.info("bodybodybodybodybodybodybodybodybody ID: " + "journals" + objectBody.getString("id"));
+        			Date currentTimestamp = new Date();
+        			
+        			mappingRow = DatabaseManager.row("cris_do");
+
+        	        log.info("mappingRowmappingRow" + mappingRow);
+        	        
+        	        mappingRow.setColumn("crisid", "journals" + objectBody.getString("id"));
+        	        mappingRow.setColumn("sourceid", objectBody.getString("SOURCEID"));
+        	        mappingRow.setColumn("status", true);
+        	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
+        	        log.info("UUID.randomUUID().toString()" + UUID.randomUUID().toString());
+        	        mappingRow.setColumn("timestampcreated", currentTimestamp);
+        	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
+        	        mappingRow.setColumn("typo_id", 1);
+        	        
+        	        System.out.println(body);
+        	        
+        	        DatabaseManager.insert(context, mappingRow);
+        	        
+        	        System.out.println("insert DONE DONE DONE DONE DONE");
+        		} catch (SQLException e) {
+        			// TODO Auto-generated catch block
+        			e.printStackTrace();
+        		}
+        		
             	util.processJournal(context, crisSearchService, objectBody );
             	
             } else if (entity_object.equalsIgnoreCase("events")) {
