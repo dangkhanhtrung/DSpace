@@ -123,6 +123,8 @@
 	src="<%= request.getContextPath()%>/page/exporting.js"></script>
 <script type="text/javascript"
 	src="<%= request.getContextPath()%>/page/dspace.min.js"></script>
+<script type="text/javascript"
+	src="<%= request.getContextPath()%>/page/my-element.min.js"></script>
 	
 <script type="text/javascript"
 	src="<%= request.getContextPath()%>/page/export/xlsx.core.min.js"></script>

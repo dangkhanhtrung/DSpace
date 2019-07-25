@@ -178,7 +178,7 @@
             	
                 <div class="col-12">
                      <vuejx-chart></vuejx-chart>
-                     <vuejx-oai></vuejx-oai>
+                     <my-element></my-element>
                 </div>
                 <%
                     RecentSubmissions download = (RecentSubmissions) request.getAttribute("top_download");

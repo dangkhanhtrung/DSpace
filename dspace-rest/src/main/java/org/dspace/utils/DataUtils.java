@@ -93,7 +93,7 @@ public class DataUtils {
         return results;
     }
 
-	public void processJournal(CrisSearchService crisSearchService, JSONArray body) {
+	public void processJournal(CrisSearchService crisSearchService, JSONObject body) {
 		// TODO Auto-generated method stub
 /*
         TableRow mappingRow = DatabaseManager.row("item2bundle");

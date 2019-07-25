@@ -139,14 +139,14 @@ public class MyTableResource extends Resource
 
             CrisSearchService crisSearchService = new CrisSearchService();
             
-            JSONArray arrayBody = new JSONArray(body);
+            JSONObject objectBody = new JSONObject(body);
 
-            log.info("arrayBodyarrayBody" + arrayBody);
+            log.info("arrayBodyarrayBody" + objectBody);
             log.info("bodybodybodybody" + body);
             
             if (entity_object.equalsIgnoreCase("journals")) {
             	
-            	util.processJournal(crisSearchService, arrayBody);
+            	util.processJournal(crisSearchService, objectBody);
             	
             } else if (entity_object.equalsIgnoreCase("events")) {
             	
