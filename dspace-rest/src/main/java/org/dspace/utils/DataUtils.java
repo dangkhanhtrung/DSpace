@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.logging.Level;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
+import org.dspace.app.cris.discovery.CrisSearchService;
 import org.dspace.core.Context;
 import org.dspace.storage.rdbms.DatabaseManager;
 import org.dspace.storage.rdbms.TableRow;
@@ -46,6 +47,7 @@ public class DataUtils {
 
         try
         {
+        	
             tri = DatabaseManager.query(
               context, query.toString(), params.toArray()
             );
@@ -90,4 +92,9 @@ public class DataUtils {
 
         return results;
     }
+
+	public void processJournal(CrisSearchService crisSearchService, JSONArray body) {
+		// TODO Auto-generated method stub
+		
+	}
 }

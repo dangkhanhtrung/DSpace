@@ -52,8 +52,6 @@ public class MyTableResource extends Resource
 	
     private static Logger log = Logger.getLogger(MyTableResource.class);
 
-    private CrisSearchService crisSearchService;
-
     @GET
     @Path("/{table_name}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -124,21 +122,35 @@ public class MyTableResource extends Resource
         return results.toString();
     }
 
-    @GET
-    @Path("/reindex")
+    @POST
+    @Path("/reindex/{entity_object}")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getAllCrisDoTp(@Context HttpHeaders headers, @Context HttpServletRequest request)
+    public String reindex(@PathParam("entity_object") String entity_object, @RequestBody String body, @Context HttpHeaders headers, @Context HttpServletRequest request)
             throws Exception
     {
         
         JSONArray results = new JSONArray();
         org.dspace.core.Context context = null;
-
+        DataUtils util = new DataUtils();
+        
         try
         {
             context = createContext(getUser(headers));
 
-            crisSearchService = new CrisSearchService();
+            CrisSearchService crisSearchService = new CrisSearchService();
+            
+            JSONArray arrayBody = new JSONArray(body);
+
+            log.info("arrayBodyarrayBody" + arrayBody);
+            log.info("bodybodybodybody" + body);
+            
+            if (entity_object.equalsIgnoreCase("journals")) {
+            	
+            	util.processJournal(crisSearchService, arrayBody);
+            	
+            } else if (entity_object.equalsIgnoreCase("events")) {
+            	
+            }
             
             crisSearchService.updateCrisIndexPublic(context, "123123", "123");
             
