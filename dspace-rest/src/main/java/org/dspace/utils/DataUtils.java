@@ -96,6 +96,7 @@ public class DataUtils {
 
 	public void processJournal(Context context, CrisSearchService crisSearchService, JSONObject body) {
 		// TODO Auto-generated method stub
+        log.info("processJournalprocessJournalprocessJournal" + body);
         TableRow mappingRow;
 		try {
 
