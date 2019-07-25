@@ -28,6 +28,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.time.DateFormatUtils;
@@ -70,6 +72,7 @@ import org.dspace.app.cris.model.jdyna.RPPropertiesDefinition;
 import org.dspace.app.cris.model.jdyna.RPProperty;
 import org.dspace.app.cris.model.jdyna.RPTypeNestedObject;
 import org.dspace.app.cris.service.ApplicationService;
+import org.dspace.app.cris.util.Researcher;
 import org.dspace.app.cris.util.ResearcherPageUtils;
 import org.dspace.content.DSpaceObject;
 import org.dspace.content.Item;
@@ -322,10 +325,29 @@ public class CrisSearchService extends SolrServiceImpl
         createCrisIndex(context);
     }
 
-    public void updateCrisIndexPublic(Context context, boolean force)
+    public void updateCrisIndexPublic(Context context, String crisId, String id)
     {
-        cleanCrisIndex(context);
-        createCrisIndex(context);
+    	//cleanCrisIndexById(crisId);
+        //updateIndex(context);
+        Researcher researcher = new Researcher();
+        ApplicationService applicationService = researcher.getApplicationService();
+        ResearchObject xxx = applicationService.get(ResearchObject.class, 51377);
+        log.info("xxxxxxxxx" + xxx);
+        
+    }
+    
+    private void cleanCrisIndexById(String crisId)
+    {
+        try
+        {
+            getSolr().deleteByQuery(
+                    "cris-id:" + crisId);
+        }
+        catch (Exception e)
+        {
+            log.error("Error cleaning cris discovery index: " + e.getMessage(),
+                    e);
+        }
     }
     
     private void cleanCrisIndex(Context context)
