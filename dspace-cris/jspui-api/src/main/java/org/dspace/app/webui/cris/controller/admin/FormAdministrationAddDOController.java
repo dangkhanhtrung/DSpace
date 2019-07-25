@@ -13,10 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.dspace.app.cris.model.ResearchObject;
+import org.dspace.app.cris.model.jdyna.DynamicAdditionalFieldStorage;
 import org.dspace.app.cris.model.jdyna.DynamicObjectType;
 import org.dspace.app.webui.cris.controller.BaseFormController;
 import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
+
 
 /**
  * This SpringMVC controller is responsible to handle the creation of a new
@@ -41,6 +43,9 @@ public class FormAdministrationAddDOController extends BaseFormController
         object.getDynamicField().setDynamicObject(object);
         object.setTypo(applicationService.findTypoByShortName(
                 DynamicObjectType.class, path));
+        log.info("objectobjectobject  pathpathpathpath: " + path);
+        logger.info("objectobjectobject" + object);
+        object.addMetadata("eventsacronym", "eventsacronym", null, null, "xxxx");
         applicationService.saveOrUpdate(ResearchObject.class, object);
         return new ModelAndView(getSuccessView() + object.getId() + "&path="
                 + path);

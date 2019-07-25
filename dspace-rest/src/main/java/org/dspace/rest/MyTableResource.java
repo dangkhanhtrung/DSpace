@@ -29,6 +29,8 @@ import org.apache.log4j.Logger;
 import org.aspectj.lang.annotation.Pointcut;
 
 import static org.dspace.rest.Resource.createContext;
+
+import org.dspace.app.cris.discovery.CrisSearchService;
 import org.dspace.rest.common.Collection;
 import org.dspace.rest.exceptions.ContextException;
 import org.dspace.utils.DataUtils;
@@ -45,8 +47,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Path("/search")
 public class MyTableResource extends Resource
 {
+	
     private static Logger log = Logger.getLogger(MyTableResource.class);
 
+    private CrisSearchService crisSearchService;
+
+    public CrisSearchService getCrisSearchService()
+    {
+        return crisSearchService;
+    }
+    
+    public void setCrisSearchService(CrisSearchService crisSearchService)
+    {
+        this.crisSearchService = crisSearchService;
+    }
+    
     @GET
     @Path("/{table_name}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -113,6 +128,37 @@ public class MyTableResource extends Resource
         JSONObject results = new JSONObject();
 
         results = ElasticQueryWrapUtil.postQuery(body);
+
+        return results.toString();
+    }
+
+    @GET
+    @Path("/reindex")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getAllCrisDoTp(@Context HttpHeaders headers, @Context HttpServletRequest request)
+            throws Exception
+    {
+        
+        JSONArray results = new JSONArray();
+        org.dspace.core.Context context = null;
+
+        try
+        {
+            context = createContext(getUser(headers));
+
+            log.info("crisSearchServicecrisSearchServicecrisSearchService" + crisSearchService);
+           
+            context.complete();
+        }
+        catch (Exception e)
+        {
+            processException("Exception: " + e, context);
+        }
+        finally
+        {
+            System.out.println("finally");
+            processFinally(context);
+        }
 
         return results.toString();
     }

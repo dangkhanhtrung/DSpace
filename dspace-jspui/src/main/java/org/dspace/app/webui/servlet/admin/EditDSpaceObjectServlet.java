@@ -136,9 +136,13 @@ public class EditDSpaceObjectServlet extends DSpaceServlet
         context.turnOffItemWrapper();
 		DSpaceObject item = DSpaceObject.find(context, UIUtil.getIntParameter(request, "resource_type"),
 				UIUtil.getIntParameter(request, "resource_id"));
+		
+		log.info("DSpaceObjectDSpaceObjectDSpaceObject" + item);
+		
         context.restoreItemWrapperState();
 
         String handle = HandleManager.findHandle(context, item);
+		log.info("DSpaceObjectDSpaceObjectDSpaceObject handle" + handle);
 
         // now check to see if person can edit item
         checkEditAuthorization(context, item);
@@ -271,6 +275,8 @@ public class EditDSpaceObjectServlet extends DSpaceServlet
 
         for (String p : sortedParamNames)
         {
+
+    		log.info("processUpdateItemprocessUpdateItemprocessUpdateItem p" + p);
             if (p.startsWith("value"))
             {
                 /*
@@ -373,6 +379,7 @@ public class EditDSpaceObjectServlet extends DSpaceServlet
                     .getQualifier(), lang, value);
         }
 
+		log.info("processUpdateItemprocessUpdateItemprocessUpdateItem xxxx");
         item.update();
 
     	// commit now to make available in the edit form changes made by optional consumers

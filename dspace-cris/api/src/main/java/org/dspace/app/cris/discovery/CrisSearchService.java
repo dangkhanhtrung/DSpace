@@ -229,7 +229,7 @@ public class CrisSearchService extends SolrServiceImpl
         SolrInputDocument doc = buildDocument(dso.getType(), dso.getID(), null,
                 null);
 
-        log.debug("Building Cris: " + dso.getUuid());
+        log.info("Building Cris: " + dso.getUuid());
 
         String schema = "cris" + dso.getPublicPath();
         String uuid = dso.getUuid();
