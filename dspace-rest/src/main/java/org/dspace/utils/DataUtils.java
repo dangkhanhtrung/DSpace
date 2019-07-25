@@ -98,14 +98,20 @@ public class DataUtils {
 		// TODO Auto-generated method stub
         TableRow mappingRow;
 		try {
+
+	        log.info("bodybodybodybodybodybodybodybodybody" + body);
+	        log.info("bodybodybodybodybodybodybodybodybody ID: " + "journals" + body.getString("id"));
 			Date currentTimestamp = new Date();
 			
 			mappingRow = DatabaseManager.row("cris_do");
-			
+
+	        log.info("mappingRowmappingRow" + mappingRow);
+	        
 	        mappingRow.setColumn("crisid", "journals" + body.getString("id"));
 	        mappingRow.setColumn("sourceid", body.getString("SOURCEID"));
 	        mappingRow.setColumn("status", true);
 	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
+	        log.info("UUID.randomUUID().toString()" + UUID.randomUUID().toString());
 	        mappingRow.setColumn("timestampcreated", currentTimestamp);
 	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
 	        mappingRow.setColumn("typo_id", 1);
