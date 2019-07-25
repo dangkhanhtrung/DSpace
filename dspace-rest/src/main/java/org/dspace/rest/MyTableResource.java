@@ -63,7 +63,7 @@ public class MyTableResource extends Resource
         
         JSONArray results = new JSONArray();
         org.dspace.core.Context context = null;
-
+/*
         try
         {
             context = createContext(getUser(headers));
@@ -94,7 +94,7 @@ public class MyTableResource extends Resource
         }
 
         log.trace("All collections were successfully read.");
-        
+        */
         return results.toString();
     }
     
