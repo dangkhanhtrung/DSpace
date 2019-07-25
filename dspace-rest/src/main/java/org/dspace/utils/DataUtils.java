@@ -110,7 +110,11 @@ public class DataUtils {
 	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
 	        mappingRow.setColumn("typo_id", 1);
 	        
+	        System.out.println(body);
+	        
 	        DatabaseManager.insert(context, mappingRow);
+	        
+	        System.out.println("insert DONE DONE DONE DONE DONE");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
