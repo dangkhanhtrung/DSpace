@@ -141,18 +141,15 @@ public class MyTableResource extends Resource
             
             JSONObject objectBody = new JSONObject(body);
 
-            log.info("arrayBodyarrayBody" + objectBody);
-            log.info("bodybodybodybody" + body);
-            
             if (entity_object.equalsIgnoreCase("journals")) {
             	
-            	util.processJournal(crisSearchService, objectBody);
+            	util.processJournal(context, crisSearchService, objectBody );
             	
             } else if (entity_object.equalsIgnoreCase("events")) {
             	
             }
             
-            crisSearchService.updateCrisIndexPublic(context, "123123", "123");
+            crisSearchService.updateCrisIndexPublic(context, entity_object + objectBody.getString("id"));
             
             log.info("crisSearchServicecrisSearchServicecrisSearchService" + crisSearchService);
             

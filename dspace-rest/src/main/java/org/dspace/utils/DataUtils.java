@@ -7,13 +7,14 @@
  */
 package org.dspace.utils;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.io.StringReader;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
+import java.util.UUID;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.dspace.app.cris.discovery.CrisSearchService;
@@ -93,13 +94,26 @@ public class DataUtils {
         return results;
     }
 
-	public void processJournal(CrisSearchService crisSearchService, JSONObject body) {
+	public void processJournal(Context context, CrisSearchService crisSearchService, JSONObject body) {
 		// TODO Auto-generated method stub
-/*
-        TableRow mappingRow = DatabaseManager.row("item2bundle");
-        mappingRow.setColumn("item_id", getID());
-        mappingRow.setColumn("bundle_id", b.getID());
-        DatabaseManager.insert(ourContext, mappingRow);
-        */
+        TableRow mappingRow;
+		try {
+			Date currentTimestamp = new Date();
+			
+			mappingRow = DatabaseManager.row("cris_do");
+			
+	        mappingRow.setColumn("crisid", "journals" + body.getString("id"));
+	        mappingRow.setColumn("sourceid", body.getString("SOURCEID"));
+	        mappingRow.setColumn("status", true);
+	        mappingRow.setColumn("uuid", UUID.fromString("journals" + body.getString("id")).toString());
+	        mappingRow.setColumn("timestampcreated", currentTimestamp);
+	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
+	        mappingRow.setColumn("typo_id", 1);
+	        
+	        DatabaseManager.insert(context, mappingRow);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
