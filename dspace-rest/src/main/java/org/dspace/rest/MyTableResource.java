@@ -140,6 +140,7 @@ public class MyTableResource extends Resource
 
             crisSearchService = new CrisSearchService();
             
+            crisSearchService.updateCrisIndexPublic(context, true);
             
             log.info("crisSearchServicecrisSearchServicecrisSearchService" + crisSearchService);
             
