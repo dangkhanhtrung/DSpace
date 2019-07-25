@@ -431,8 +431,10 @@
 		in each entry. For example the first column might record the item title, 
 		the second the authors etc. The key of the field map is this number. Note 
 		that the first column is number 0. The CSV data loader has the following extra parameters 
-		that configure its behaviour: - skipLines: a number that instructs the reader 
-		to ignore the first lines in the input file. Default value: 0 - separator: 
+		that configure its behaviour: 
+		- skipLines: a number that instructs the reader 
+		to ignore the first lines in the input file. Default value: 0 
+		- separator: 
 		a character that signifies how the values are separated. Default value ',' 
 		-quoteChar: individual values could include the separator character. For 
 		example if the separator is ',' and there is an abstract, there is a high 
@@ -448,17 +450,28 @@
 			<map>
 				<entry key="0" value="title" />
 				<entry key="1" value="authors" />
-				<entry key="2" value="issued" />
-				<entry key="3" value="journal" />
-				<entry key="4" value="abstract" />
-				<entry key="5" value="jissn" />
-				<entry key="6" value="subtype" />
-				<entry key="7" value="language" />
-				<entry key="8" value="editors" />
-				<entry key="9" value="allkeywords" />
+				<entry key="2" value="subtype" />
+				<entry key="3" value="language" />
+				<entry key="4" value="issued" />
+				<entry key="5" value="firstpage" />
+				<entry key="6" value="lastpage" />
+				<entry key="7" value="editionnumber" />
+				<entry key="8" value="jissn" />
+				<entry key="9" value="doi" />
+				<entry key="10" value="publisher" />
+				<entry key="11" value="allkeywords" />
+				<entry key="12" value="abstract" />
+				<entry key="13" value="journal" />
+				<entry key="14" value="jeissn" />
+				<entry key="15" value="domain" />
+				<entry key="16" value="url" />
+				<entry key="17" value="note" />
+				<entry key="18" value="collection" />
 			</map>
 		</property>
 		<property name="skipLines" value="1" />
+		<property name="valueSeparator" value="\u007C" />
+		<property name="separator" value="\u2660" />
 	</bean>
 
 	<!-- A TSV file is exactly the same as a CSV one, with the difference that 
@@ -800,7 +813,9 @@
 				<entry value="orcid" key="dc.contributor.orcid" />
 				<entry value="rights" key="dc.rights" />
 				<entry value="note" key="dc.description" />
-				<entry value="externalID" key="dc.identifier.external" />				
+				<entry value="externalID" key="dc.identifier.external" />
+				<entry value="collection" key="dc.collection" />			
+				<entry value="domain" key="dc.domain" />			
 				
 				<!-- Not used - new metadata fields need to be declared for them in DSpace registry -->
 				<!-- 

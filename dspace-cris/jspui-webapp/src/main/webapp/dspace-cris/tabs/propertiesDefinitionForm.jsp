@@ -131,7 +131,7 @@
 	--></script>
 </c:set>
 <dspace:layout locbar="link" navbar="admin" style="submission"
-	titlekey="jsp.dspace-admin.researchers-list">
+	titlekey="jsp.dspace-admin.edit-propertiesdefinition">
 
 <h1><fmt:message
 	key="jsp.dspace-admin.edit-propertiesdefinition" />

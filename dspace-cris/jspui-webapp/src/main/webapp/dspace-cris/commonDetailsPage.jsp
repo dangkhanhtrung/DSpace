@@ -56,11 +56,12 @@
             <li data-tabname="${area.shortName}" class="${tabName}" id="bar-tab-${area.id}">
                 <c:choose>
                     <c:when test="${area.id == tabId}">
-                        <a href="#tab-${area.id}">
+                        <a href="javascript:;" @click="loadPage('${tablink}')">
                             <c:if test="${!empty area.ext}">
-                                <img style="width: 16px;vertical-align: middle;" border="0" 
-                                     src="<%=request.getContextPath()%>/cris/researchertabimage/${area.id}" alt="icon" />
-                            </c:if>	
+                                <img style="width: 16px;vertical-align: middle;" border="0"
+                                     src="<%=request.getContextPath()%>/cris/researchertabimage/${area.id}"
+                                     alt="icon" />
+                            </c:if> 
                             <spring:message code="${entity.class.simpleName}.tab.${area.shortName}.label" text="${area.title}"></spring:message>
                                 <% if(showBadgeCount) { %>
                                 <c:set var="firstComponentFound" value="false"/>
@@ -68,22 +69,22 @@
                                     <c:if test="${!empty box.externalJSP && !firstComponentFound}"> 
                                         <%  
                                         if(mapInfo!=null && !mapInfo.isEmpty()) {
-																		
+                                                                        
                                                 for(String key : mapInfo.keySet()) {
                                         %>
                                         <c:set var="key"><%= key %></c:set>
                                         <c:if test="${box.externalJSP eq key && !firstComponentFound}">
-                                            <%									    
+                                            <%                                      
                                                     ComponentInfoDTO iii = (ComponentInfoDTO)(mapInfo.get(key));
                                             %>
-                                            <%								        
+                                            <%                                      
                                                             if(iii.getTotal()>0) {
                                             %>
                                         <span class="badge badge-primary badge-pill"><%= iii.getTotal() %></span>
                                         <c:set var="firstComponentFound" value="true"/>
-                                        <% 		
-										} %>
-                                    </c:if>		
+                                        <%      
+                                        } %>
+                                    </c:if>     
                                     <%
                                                 }
                                         }

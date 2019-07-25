@@ -39,7 +39,7 @@
 	</script>
 </c:set>
 <dspace:layout locbar="link" style="submission" navbar="admin"
-	titlekey="jsp.dspace-admin.researchers-list">
+	titlekey="jsp.dspace-admin.edit-box">
 <h1><fmt:message key="jsp.dspace-admin.edit-box" />
 <a target="_blank"
 	href='<%=request.getContextPath()%><%=LocaleSupport.getLocalizedMessage(pageContext,

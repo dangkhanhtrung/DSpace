@@ -67,11 +67,11 @@
 			href="<%=request.getContextPath()%>/cris/administrator/import.htm"><fmt:message
 			key="jsp.layout.navbar-hku.import.researcher" /></a>
 		</li>
-	
-	<li>
+	<!-- Ẩn dịch vụ web -->
+	<!-- <li>
 		<a href="<%=request.getContextPath()%>/cris/administrator/webservices/authorizations.htm"><fmt:message
 			key="jsp.layout.navbar-admin.webservices" /></a>
-	</li>
+	</li> -->
 			
 	</ul>
 </dspace:layout>
