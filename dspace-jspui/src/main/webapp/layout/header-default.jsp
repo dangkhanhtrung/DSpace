@@ -105,8 +105,8 @@
 <script type="text/javascript"
 	src="<%= request.getContextPath()%>/static/js/vue.min.js"></script>
 	
-<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.16/vuetify.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.16/vuetify.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
   
 <script type="text/javascript"

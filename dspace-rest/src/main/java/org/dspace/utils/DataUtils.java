@@ -95,6 +95,11 @@ public class DataUtils {
 
 	public void processJournal(CrisSearchService crisSearchService, JSONArray body) {
 		// TODO Auto-generated method stub
-		
+/*
+        TableRow mappingRow = DatabaseManager.row("item2bundle");
+        mappingRow.setColumn("item_id", getID());
+        mappingRow.setColumn("bundle_id", b.getID());
+        DatabaseManager.insert(ourContext, mappingRow);
+        */
 	}
 }
