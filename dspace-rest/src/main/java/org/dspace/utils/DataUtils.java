@@ -105,7 +105,7 @@ public class DataUtils {
 	        mappingRow.setColumn("crisid", "journals" + body.getString("id"));
 	        mappingRow.setColumn("sourceid", body.getString("SOURCEID"));
 	        mappingRow.setColumn("status", true);
-	        mappingRow.setColumn("uuid", UUID.fromString("journals" + body.getString("id")).toString());
+	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
 	        mappingRow.setColumn("timestampcreated", currentTimestamp);
 	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
 	        mappingRow.setColumn("typo_id", 1);
