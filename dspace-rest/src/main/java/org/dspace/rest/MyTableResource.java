@@ -26,11 +26,13 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 
 import org.apache.log4j.Logger;
+import org.apache.solr.common.SolrInputDocument;
 import org.aspectj.lang.annotation.Pointcut;
 
 import static org.dspace.rest.Resource.createContext;
 
 import org.dspace.app.cris.discovery.CrisSearchService;
+import org.dspace.app.cris.model.ACrisObject;
 import org.dspace.rest.common.Collection;
 import org.dspace.rest.exceptions.ContextException;
 import org.dspace.utils.DataUtils;
@@ -52,16 +54,6 @@ public class MyTableResource extends Resource
 
     private CrisSearchService crisSearchService;
 
-    public CrisSearchService getCrisSearchService()
-    {
-        return crisSearchService;
-    }
-    
-    public void setCrisSearchService(CrisSearchService crisSearchService)
-    {
-        this.crisSearchService = crisSearchService;
-    }
-    
     @GET
     @Path("/{table_name}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -146,8 +138,11 @@ public class MyTableResource extends Resource
         {
             context = createContext(getUser(headers));
 
+            crisSearchService = new CrisSearchService();
+            
+            
             log.info("crisSearchServicecrisSearchServicecrisSearchService" + crisSearchService);
-           
+            
             context.complete();
         }
         catch (Exception e)
