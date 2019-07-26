@@ -98,31 +98,36 @@ public class DataUtils {
 	public void processJournal(Context context, CrisSearchService crisSearchService, JSONObject body) {
 		// TODO Auto-generated method stub
         log.info("processJournalprocessJournalprocessJournal" + body);
+
         TableRow mappingRow;
+        log.info("bodybodybodybodybodybodybodybodybody" + body);
 		try {
 
 	        log.info("bodybodybodybodybodybodybodybodybody" + body);
-	        log.info("bodybodybodybodybodybodybodybodybody ID: " + "journals" + body.getString("id"));
 			Date currentTimestamp = new Date();
 			
 			mappingRow = DatabaseManager.row("cris_do");
-
-	        log.info("mappingRowmappingRow" + mappingRow);
 	        
-	        mappingRow.setColumn("crisid", "journals" + body.getString("id"));
-	        mappingRow.setColumn("sourceid", body.getString("SOURCEID"));
+	        mappingRow.setColumn("crisid", body.getString("journal_ID"));
+	        mappingRow.setColumn("sourceid", body.getString("journal_ID"));
 	        mappingRow.setColumn("status", true);
 	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
 	        log.info("UUID.randomUUID().toString()" + UUID.randomUUID().toString());
 	        mappingRow.setColumn("timestampcreated", currentTimestamp);
 	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
 	        mappingRow.setColumn("typo_id", 1);
-	        
-	        System.out.println(body);
+
+	        log.info("mappingRowmappingRow" + mappingRow);
 	        
 	        DatabaseManager.insert(context, mappingRow);
+
+	        log.info("insert DONE DONE DONE DONE DONE");
 	        
-	        System.out.println("insert DONE DONE DONE DONE DONE");
+            
+            crisSearchService.updateCrisIndexPublic(context, body.getString("journal_ID"));
+            
+            log.info("crisSearchServicecrisSearchServicecrisSearchService" + crisSearchService);
+            
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
