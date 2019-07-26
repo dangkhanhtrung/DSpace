@@ -795,6 +795,7 @@ public class DatabaseManager
         }
 
         row.setColumn(getPrimaryKeyColumn(context, row), newID);
+		context.setAutoCommit(true);
     }
 
     /**

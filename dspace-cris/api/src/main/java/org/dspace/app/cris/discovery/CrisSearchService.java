@@ -28,6 +28,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.time.DateFormatUtils;
@@ -70,6 +72,7 @@ import org.dspace.app.cris.model.jdyna.RPPropertiesDefinition;
 import org.dspace.app.cris.model.jdyna.RPProperty;
 import org.dspace.app.cris.model.jdyna.RPTypeNestedObject;
 import org.dspace.app.cris.service.ApplicationService;
+import org.dspace.app.cris.util.Researcher;
 import org.dspace.app.cris.util.ResearcherPageUtils;
 import org.dspace.content.DSpaceObject;
 import org.dspace.content.Item;
@@ -229,7 +232,7 @@ public class CrisSearchService extends SolrServiceImpl
         SolrInputDocument doc = buildDocument(dso.getType(), dso.getID(), null,
                 null);
 
-        log.debug("Building Cris: " + dso.getUuid());
+        log.info("Building Cris: " + dso.getUuid());
 
         String schema = "cris" + dso.getPublicPath();
         String uuid = dso.getUuid();
@@ -322,6 +325,63 @@ public class CrisSearchService extends SolrServiceImpl
         createCrisIndex(context);
     }
 
+    public void updateCrisIndexPublic(Context context, String crisId)
+    {
+    	cleanCrisIndexById(crisId);
+        Researcher researcher = new Researcher();
+        ApplicationService applicationService = researcher.getApplicationService();
+        ResearchObject xxx = applicationService.getEntityByCrisId(crisId);
+        ACrisObject ddddkkk = (ACrisObject) xxx;
+        log.info("ddddkkkddddkkkddddkkkddddkkkddddkkk" + ddddkkk);
+        indexCrisObject(ddddkkk, true);
+        log.info("DONEDONEDONEDONEDONEDONE");
+        
+    }
+    
+
+    public void updatePublicIndexPublic(Context context, String crisId)
+    {
+    	cleanPublicationIndexById(crisId);
+        try {
+            DSpaceObject ddddkkk = Item.find(context, Integer.parseInt(crisId));
+            log.info("ddddkkkddddkkkddddkkkddddkkkddddkkk DSpaceObjectDSpaceObject" + ddddkkk);
+			indexContent(context, ddddkkk, true);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        log.info("DONEDONEDONEDONEDONEDONE");
+        
+    }
+    
+    private void cleanPublicationIndexById(String crisId)
+    {
+        try
+        {
+            getSolr().deleteByQuery(
+                    "search.resourceid:" + crisId);
+        }
+        catch (Exception e)
+        {
+            log.error("Error cleaning cleanPublicationIndexById discovery index: " + e.getMessage(),
+                    e);
+        }
+    }
+    
+    private void cleanCrisIndexById(String crisId)
+    {
+        try
+        {
+            getSolr().deleteByQuery(
+                    "cris-id:" + crisId);
+        }
+        catch (Exception e)
+        {
+            log.error("Error cleaning cris discovery index: " + e.getMessage(),
+                    e);
+        }
+    }
+    
     private void cleanCrisIndex(Context context)
     {
         try

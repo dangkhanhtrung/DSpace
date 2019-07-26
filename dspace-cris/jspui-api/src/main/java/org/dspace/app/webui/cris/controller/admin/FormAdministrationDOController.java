@@ -116,18 +116,23 @@ public class FormAdministrationDOController extends
             throws Exception
     {
         String path = Utils.getAdminSpecificPath(request, null);
-       
+
+        logger.info("onSubmitonSubmitonSubmitonSubmit  pathpathpathpath: " + path);
         DODisplayTagData dto = (DODisplayTagData) command;
+        logger.info("onSubmitonSubmitonSubmitonSubmit  dtodtodtodtodtodto: " + path);
         boolean check_change = false;
         for (DynamicObjectDTO researcher : dto.getList())
         {
+            logger.info("onSubmitonSubmitonSubmitonSubmit  researcher: " + researcher);
 //            ResearchObject realResearcher = applicationService
 //                .get(ResearchObject.class, researcher.getId());
             ResearchObject realResearcher = researcher.getDynamicObject();
+            logger.info("onSubmitonSubmitonSubmitonSubmit  realResearcher: " + realResearcher);
             
             if (realResearcher.getStatus() != null
                     && realResearcher.getStatus() != researcher.getStatus())
             {
+                logger.info("onSubmitonSubmitonSubmitonSubmit  realResearcher: " + realResearcher.getStatus());
                 realResearcher.setStatus(researcher.getStatus());
                 applicationService.saveOrUpdate(ResearchObject.class,
                         realResearcher);

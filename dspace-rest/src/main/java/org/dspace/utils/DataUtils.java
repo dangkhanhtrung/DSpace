@@ -7,21 +7,24 @@
  */
 package org.dspace.utils;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.io.StringReader;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
+import java.util.UUID;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
+import org.dspace.app.cris.discovery.CrisSearchService;
 import org.dspace.core.Context;
 import org.dspace.storage.rdbms.DatabaseManager;
 import org.dspace.storage.rdbms.TableRow;
 import org.dspace.storage.rdbms.TableRowIterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.util.Collection;
 
 /**
  *
@@ -46,6 +49,7 @@ public class DataUtils {
 
         try
         {
+        	
             tri = DatabaseManager.query(
               context, query.toString(), params.toArray()
             );
@@ -90,4 +94,38 @@ public class DataUtils {
 
         return results;
     }
+
+	public void processJournal(Context context, CrisSearchService crisSearchService, JSONObject body) {
+		// TODO Auto-generated method stub
+        log.info("processJournalprocessJournalprocessJournal" + body);
+
+        TableRow mappingRow;
+        log.info("bodybodybodybodybodybodybodybodybody" + body);
+		try {
+
+	        log.info("bodybodybodybodybodybodybodybodybody" + body);
+			Date currentTimestamp = new Date();
+			
+			mappingRow = DatabaseManager.row("cris_do");
+	        
+	        mappingRow.setColumn("crisid", body.getString("journal_ID"));
+	        mappingRow.setColumn("sourceid", body.getString("journal_ID"));
+	        mappingRow.setColumn("status", true);
+	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
+	        log.info("UUID.randomUUID().toString()" + UUID.randomUUID().toString());
+	        mappingRow.setColumn("timestampcreated", currentTimestamp);
+	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
+	        mappingRow.setColumn("typo_id", 1);
+
+	        log.info("mappingRowmappingRow" + mappingRow);
+	        
+	        DatabaseManager.insert(context, mappingRow);
+
+	        log.info("insert DONE DONE DONE DONE DONE");
+	        
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
