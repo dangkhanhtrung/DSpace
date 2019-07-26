@@ -785,6 +785,7 @@ public class DatabaseManager
     {
         int newID;
 		context.setAutoCommit(false);
+		log.info("insertinsertinsertinsertinsert");
 		newID = doInsertPostgres(context, row);
 		/*
         if (isPostgres)
@@ -1781,6 +1782,8 @@ public class DatabaseManager
     {
         String table = row.getTable();
 
+        log.info("tabletabletabletable" + table);
+        
         Collection<ColumnInfo> info = getColumnInfo(context, table);
         Collection<ColumnInfo> params = new ArrayList<ColumnInfo>();
 
