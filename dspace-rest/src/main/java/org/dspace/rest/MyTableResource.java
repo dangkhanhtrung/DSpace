@@ -151,7 +151,7 @@ public class MyTableResource extends Resource
             JSONObject objectBody = new JSONObject(body);
 
             log.info("entity_objectentity_object" + entity_object);
-            if (entity_object.equalsIgnoreCase("journals")) {
+            if (entity_object.equalsIgnoreCase("journal")) {
 
                 log.info("entity_objectentity_object222" + entity_object);
                 
@@ -165,8 +165,8 @@ public class MyTableResource extends Resource
         			
         			mappingRow = DatabaseManager.row("cris_do");
         	        
-        	        mappingRow.setColumn("crisid", "journals" + objectBody.getString("id"));
-        	        mappingRow.setColumn("sourceid", objectBody.getString("SOURCEID"));
+        	        mappingRow.setColumn("crisid", objectBody.getString("journal_ID"));
+        	        mappingRow.setColumn("sourceid", objectBody.getString("journal_ID"));
         	        mappingRow.setColumn("status", true);
         	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
         	        log.info("UUID.randomUUID().toString()" + UUID.randomUUID().toString());
