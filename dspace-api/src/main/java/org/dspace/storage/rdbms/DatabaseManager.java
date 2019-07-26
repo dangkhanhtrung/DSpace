@@ -1934,6 +1934,8 @@ public class DatabaseManager
             }
 
             sql = insertBuilder.append(valuesBuilder.toString()).append(") RETURNING ").append(getPrimaryKeyColumn(context, table)).toString();
+
+            log.info("sqlsqlsqlsqlsql" + sql);
             insertSQL.put(table, sql);
         }
         else
@@ -1959,11 +1961,15 @@ public class DatabaseManager
             log.debug("Running query \"" + sql + "\"");
         }
 
+        log.info("sqlsqlsqlsqlsql" + sql);
         ResultSet rs = null;
         try
         {
             statement = context.getDBConnection().prepareStatement(sql);
         	loadParameters(statement, params, row);
+            log.info("statementstatementstatementstatement" + statement);
+            log.info("paramsparamsparamsparamsparams" + params);
+            log.info("rowrowrowrowrow" + row);
             rs = statement.executeQuery();
             rs.next();
             return rs.getInt(1);
