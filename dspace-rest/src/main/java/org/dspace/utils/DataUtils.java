@@ -24,6 +24,7 @@ import org.dspace.storage.rdbms.TableRow;
 import org.dspace.storage.rdbms.TableRowIterator;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.util.Collection;
 
 /**
  *

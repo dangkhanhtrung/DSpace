@@ -1888,6 +1888,115 @@ public class DatabaseManager
         }
     }
 
+    public static int doInsertPostgresPublic(Context context, TableRow row) throws SQLException
+    {
+        String table = row.getTable();
+
+        log.info("tabletabletabletable" + table);
+        
+        Collection<ColumnInfo> info = getColumnInfo(context, table);
+        Collection<ColumnInfo> params = new ArrayList<ColumnInfo>();
+
+        String primaryKey = getPrimaryKeyColumn(context, table);
+        String sql = insertSQL.get(table);
+
+        boolean firstColumn = true;
+        boolean foundPrimaryKey = false;
+        if (sql == null)
+        {
+            // Generate SQL and filter parameter columns
+            StringBuilder insertBuilder = new StringBuilder("INSERT INTO ").append(table).append(" ( ");
+            StringBuilder valuesBuilder = new StringBuilder(") VALUES ( ");
+            for (ColumnInfo col : info)
+            {
+                if (firstColumn)
+                {
+                    firstColumn = false;
+                }
+                else
+                {
+                    insertBuilder.append(",");
+                    valuesBuilder.append(",");
+                }
+
+                insertBuilder.append(col.getName());
+
+                if (!foundPrimaryKey && col.isPrimaryKey())
+                {
+                    valuesBuilder.append("getnextid('").append(table).append("')");
+                    foundPrimaryKey = true;
+                }
+                else
+                {
+                    valuesBuilder.append('?');
+                    params.add(col);
+                }
+            }
+
+            sql = insertBuilder.append(valuesBuilder.toString()).append(") RETURNING ").append(getPrimaryKeyColumn(context, table)).toString();
+            insertSQL.put(table, sql);
+        }
+        else
+        {
+            // Already have SQL, just filter parameter columns
+            for (ColumnInfo col : info)
+            {
+                if (!foundPrimaryKey && col.isPrimaryKey())
+                {
+                    foundPrimaryKey = true;
+                }
+                else
+                {
+                    params.add(col);
+                }
+            }
+        }
+
+        PreparedStatement statement = null;
+
+        if (log.isDebugEnabled())
+        {
+            log.debug("Running query \"" + sql + "\"");
+        }
+
+        ResultSet rs = null;
+        try
+        {
+            statement = context.getDBConnection().prepareStatement(sql);
+        	loadParameters(statement, params, row);
+            rs = statement.executeQuery();
+            rs.next();
+            return rs.getInt(1);
+        }
+        finally
+        {
+            if (rs != null)
+            {
+                try
+                {
+                    rs.close();
+                }
+                catch (SQLException sqle)
+                {
+                    log.info("SQL doInsertPostgresrs close Error - ",sqle);
+                    throw sqle;
+                }
+            }
+
+            if (statement != null)
+            {
+                try
+                {
+                    statement.close();
+                }
+                catch (SQLException sqle)
+                {
+                    log.info("SQL doInsertPostgres statement close Error - ",sqle);
+                    throw sqle;
+                }
+            }
+        }
+    }
     /**
      * Generic version of row insertion with separate id get / insert
      * @param context

@@ -8,6 +8,8 @@
 package org.dspace.rest;
 
 import java.io.Serializable;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -37,6 +39,7 @@ import org.dspace.app.cris.discovery.CrisSearchService;
 import org.dspace.app.cris.model.ACrisObject;
 import org.dspace.rest.common.Collection;
 import org.dspace.rest.exceptions.ContextException;
+import org.dspace.storage.rdbms.ColumnInfo;
 import org.dspace.storage.rdbms.DatabaseManager;
 import org.dspace.storage.rdbms.TableRow;
 import org.dspace.utils.DataUtils;
@@ -44,6 +47,8 @@ import org.dspace.utils.ElasticQueryWrapUtil;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.Collections;
 
 /**
  * This class provides all CRUD operation over collections.
@@ -171,7 +176,7 @@ public class MyTableResource extends Resource
 
         	        log.info("mappingRowmappingRow" + mappingRow);
         	        
-        	        DatabaseManager.insert(context, mappingRow);
+        	        DatabaseManager.doInsertPostgresPublic(context, mappingRow);
         	        
         	        System.out.println("insert DONE DONE DONE DONE DONE");
         		} catch (SQLException e) {
@@ -203,5 +208,8 @@ public class MyTableResource extends Resource
 
         return results.toString();
     }
+    
+    
+    
     
 }
