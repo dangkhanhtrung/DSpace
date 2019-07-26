@@ -123,11 +123,6 @@ public class DataUtils {
 
 	        log.info("insert DONE DONE DONE DONE DONE");
 	        
-            
-            crisSearchService.updateCrisIndexPublic(context, body.getString("journal_ID"));
-            
-            log.info("crisSearchServicecrisSearchServicecrisSearchService" + crisSearchService);
-            
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

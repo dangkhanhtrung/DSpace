@@ -153,13 +153,42 @@ public class MyTableResource extends Resource
             log.info("entity_objectentity_object" + entity_object);
             if (entity_object.equalsIgnoreCase("journal")) {
 
-                log.info("entity_objectentity_object222" + entity_object);
+            	TableRow mappingRow;
+        		try {
+
+        			Date currentTimestamp = new Date();
+        			
+        			mappingRow = DatabaseManager.row("cris_do");
+        	        
+        	        mappingRow.setColumn("crisid", objectBody.getString("journal_ID"));
+        	        mappingRow.setColumn("sourceid", objectBody.getString("journal_ID"));
+        	        mappingRow.setColumn("status", true);
+        	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
+        	        mappingRow.setColumn("timestampcreated", currentTimestamp);
+        	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
+        	        mappingRow.setColumn("typo_id", 1);
+
+        	        log.info("mappingRowmappingRow" + mappingRow);
+        	        
+        	        DatabaseManager.insert(context, mappingRow);
+
+        	        log.info("insert DONE DONE DONE DONE DONE");
+        	        
+        		} catch (SQLException e) {
+        			// TODO Auto-generated catch block
+        			e.printStackTrace();
+        		}
         		
-            	util.processJournal(context, crisSearchService, objectBody );
+            	// util.processJournal(context, crisSearchService, objectBody );
             	
             } else if (entity_object.equalsIgnoreCase("events")) {
             	
             }
+
+
+            crisSearchService.updateCrisIndexPublic(context, objectBody.getString("journal_ID"));
+            
+            log.info("crisSearchServicecrisSearchServicecrisSearchService" + crisSearchService);
             
             context.complete();
         }
