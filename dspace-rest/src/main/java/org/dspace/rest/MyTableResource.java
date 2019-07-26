@@ -176,21 +176,21 @@ public class MyTableResource extends Resource
 
         	        log.info("mappingRowmappingRow" + mappingRow);
         	        
-        	        DatabaseManager.doInsertPostgresPublic(context, mappingRow);
+        	        int xxoxoxo = DatabaseManager.doInsertPostgresPublic(context, mappingRow);
         	        
-        	        System.out.println("insert DONE DONE DONE DONE DONE");
+        	        System.out.println("insert DONE DONE DONE DONE DONE" + xxoxoxo);
         		} catch (SQLException e) {
         			// TODO Auto-generated catch block
         			e.printStackTrace();
         		}
         		
-            	util.processJournal(context, crisSearchService, objectBody );
+            	// util.processJournal(context, crisSearchService, objectBody );
             	
             } else if (entity_object.equalsIgnoreCase("events")) {
             	
             }
             
-            crisSearchService.updateCrisIndexPublic(context, entity_object + objectBody.getString("id"));
+            // crisSearchService.updateCrisIndexPublic(context, entity_object + objectBody.getString("id"));
             
             log.info("crisSearchServicecrisSearchServicecrisSearchService" + crisSearchService);
             
