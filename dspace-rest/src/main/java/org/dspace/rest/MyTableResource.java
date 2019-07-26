@@ -190,7 +190,7 @@ public class MyTableResource extends Resource
             	
             }
             
-            // crisSearchService.updateCrisIndexPublic(context, entity_object + objectBody.getString("id"));
+            crisSearchService.updateCrisIndexPublic(context, objectBody.getString("journal_ID"));
             
             log.info("crisSearchServicecrisSearchServicecrisSearchService" + crisSearchService);
             
