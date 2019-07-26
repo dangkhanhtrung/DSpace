@@ -338,6 +338,36 @@ public class CrisSearchService extends SolrServiceImpl
         
     }
     
+
+    public void updatePublicIndexPublic(Context context, String crisId)
+    {
+    	cleanPublicationIndexById(crisId);
+        try {
+            DSpaceObject ddddkkk = Item.find(context, Integer.parseInt(crisId));
+            log.info("ddddkkkddddkkkddddkkkddddkkkddddkkk DSpaceObjectDSpaceObject" + ddddkkk);
+			indexContent(context, ddddkkk, true);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        log.info("DONEDONEDONEDONEDONEDONE");
+        
+    }
+    
+    private void cleanPublicationIndexById(String crisId)
+    {
+        try
+        {
+            getSolr().deleteByQuery(
+                    "search.resourceid:" + crisId);
+        }
+        catch (Exception e)
+        {
+            log.error("Error cleaning cleanPublicationIndexById discovery index: " + e.getMessage(),
+                    e);
+        }
+    }
+    
     private void cleanCrisIndexById(String crisId)
     {
         try
