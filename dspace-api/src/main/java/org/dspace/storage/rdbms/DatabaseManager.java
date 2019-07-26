@@ -784,7 +784,7 @@ public class DatabaseManager
     public static void insert(Context context, TableRow row) throws SQLException
     {
         int newID;
-		context.setAutoCommit(false);
+		context.setAutoCommit(true);
 		log.info("insertinsertinsertinsertinsert");
 		newID = doInsertPostgres(context, row);
 		/*
@@ -2012,6 +2012,7 @@ public class DatabaseManager
      */
     private static int doInsertGeneric(Context context, TableRow row) throws SQLException
     {
+    	log.info("doInsertGenericdoInsertGenericdoInsertGenericdoInsertGeneric");
         int newID = -1;
         String table = row.getTable();
         PreparedStatement statement = null;
