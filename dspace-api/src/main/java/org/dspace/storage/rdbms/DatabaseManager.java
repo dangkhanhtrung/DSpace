@@ -1868,7 +1868,7 @@ public class DatabaseManager
                 }
                 catch (SQLException sqle)
                 {
-                    log.error("SQL doInsertPostgresrs close Error - ",sqle);
+                    log.info("SQL doInsertPostgresrs close Error - ",sqle);
                     throw sqle;
                 }
             }
@@ -1881,7 +1881,7 @@ public class DatabaseManager
                 }
                 catch (SQLException sqle)
                 {
-                    log.error("SQL doInsertPostgres statement close Error - ",sqle);
+                    log.info("SQL doInsertPostgres statement close Error - ",sqle);
                     throw sqle;
                 }
             }
