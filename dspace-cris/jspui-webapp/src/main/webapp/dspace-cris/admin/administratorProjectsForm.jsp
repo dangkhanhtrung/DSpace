@@ -44,7 +44,8 @@
 				<br>
 			</c:forEach>
 		</spring:bind>
-										
+					
+        <my-element></my-element>							
 		<display:table name="${dto}" cellspacing="0" cellpadding="0" 
 			requestURI="" id="objectList" htmlId="objectList"  class="table" export="false">
 			

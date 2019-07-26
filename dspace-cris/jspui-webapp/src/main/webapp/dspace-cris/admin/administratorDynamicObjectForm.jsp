@@ -54,7 +54,7 @@
 			</c:forEach>
 		</spring:bind>
 		
-        <my-element msg="${objectList.dynamicObject.typo.shortName}" ></my-element>		
+        <my-element></my-element>		
 		<display:table name="${dto}" cellspacing="0" cellpadding="0" 
 			requestURI="" id="objectList" htmlId="objectList" export="false" class="table">
 			<display:column headerClass="id" titleKey="jsp.layout.table.cris.admin-list.id" property="id" url="/cris/${objectList.dynamicObject.typo.shortName}/details.htm" paramId="id" paramProperty="id" sortable="true" />							
