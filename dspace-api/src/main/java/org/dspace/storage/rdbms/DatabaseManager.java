@@ -1892,7 +1892,7 @@ public class DatabaseManager
     {
         String table = row.getTable();
 
-        log.info("tabletabletabletable" + table);
+        log.info("tabletabletabletablexxxxxxxxxxxxx" + table);
         
         Collection<ColumnInfo> info = getColumnInfo(context, table);
         Collection<ColumnInfo> params = new ArrayList<ColumnInfo>();
