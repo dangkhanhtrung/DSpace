@@ -152,9 +152,9 @@ public class MyTableResource extends Resource
 
             Date currentTimestamp = new Date();
             log.info("entity_objectentity_object" + entity_object);
+        	TableRow mappingRow;
             if (entity_object.equalsIgnoreCase("journal")) {
 
-            	TableRow mappingRow;
         		try {
 
         			mappingRow = DatabaseManager.row("cris_do");
@@ -196,6 +196,200 @@ public class MyTableResource extends Resource
             	
             } else if (entity_object.equalsIgnoreCase("events")) {
             	
+            } else if (entity_object.equalsIgnoreCase("publication")) {
+            	
+            	mappingRow = DatabaseManager.row("item");
+    	        
+    	        mappingRow.setColumn("summiter_id", 1);
+    	        mappingRow.setColumn("in_archive", false);
+    	        mappingRow.setColumn("widthdrawn", false);
+    	        mappingRow.setColumn("owning_collection", 33);
+    	        mappingRow.setColumn("last_modified", currentTimestamp);
+    	        mappingRow.setColumn("discoverable", true);
+
+    	        log.info("adddddadddddadddddadddddadddddaddddd mappingRow" + mappingRow);
+    	        
+    	        DatabaseManager.insert(context, mappingRow);
+
+    	        int idItem = mappingRow.getIntColumn("item_id");
+    	        log.info("insert DONE DONE DONE DONE DONE" + idItem);
+    	        
+    	        mappingRow = DatabaseManager.row("item");
+    	        
+    	        mappingRow.setColumn("handle", "123456789/" + objectBody.getString("publication_ID"));
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("handle_id", idItem);
+
+    	        log.info("adddddadddddadddddadddddadddddaddddd mappingRow" + mappingRow);
+    	        
+    	        mappingRow = DatabaseManager.row("metadatavalue");
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 14);
+    	        mappingRow.setColumn("text_value", new Date(objectBody.getLong("createdAt")));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+    	        
+    	        mappingRow = DatabaseManager.row("metadatavalue");
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 13);
+    	        mappingRow.setColumn("text_value", new Date(objectBody.getLong("modifiedAt")));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+    	        
+    	        mappingRow = DatabaseManager.row("metadatavalue");
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 27);
+    	        mappingRow.setColumn("text_value", "http://hdl.handle.net/123456789/" + objectBody.getString("publication_ID"));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 30);
+    	        mappingRow.setColumn("text_value", "admin");
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 29);
+    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Abstract").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+    	        
+    	        // keyword 59
+    	        // URL 80
+    	        // 20
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 84);
+    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Subject").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 40);
+    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Language").getJSONObject("_source").getString("shortName"));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 159);
+    	        mappingRow.setColumn("text_value", objectBody.getString("publication_StartPage"));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 160);
+    	        mappingRow.setColumn("text_value", objectBody.getString("publication_EndPage"));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 68);
+    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Type").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 68);
+    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Type").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 41);
+    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Publisher").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 17);
+    	        mappingRow.setColumn("text_value", objectBody.getInt("publication_PublicationDate"));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 66);
+    	        mappingRow.setColumn("text_value", objectBody.getString("title"));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+
+    	        
+    	        mappingRow.setColumn("resource_type_id", 2);
+    	        mappingRow.setColumn("resource_id", idItem);
+    	        mappingRow.setColumn("metadata_field_id", 5);
+    	        mappingRow.setColumn("text_value", objectBody.getString("author"));
+    	        mappingRow.setColumn("text_lang", "vi_VN");
+    	        mappingRow.setColumn("place", 1);
+    	        mappingRow.setColumn("confidence", -1);
+
+    	        DatabaseManager.insert(context, mappingRow);
+    	        
+    	        
+    	        
+    	        
             }
 
 
