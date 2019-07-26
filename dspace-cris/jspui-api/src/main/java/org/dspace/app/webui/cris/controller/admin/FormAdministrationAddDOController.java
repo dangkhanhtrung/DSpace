@@ -44,8 +44,6 @@ public class FormAdministrationAddDOController extends BaseFormController
         object.setTypo(applicationService.findTypoByShortName(
                 DynamicObjectType.class, path));
         log.info("objectobjectobject  pathpathpathpath: " + path);
-        logger.info("objectobjectobject" + object);
-        object.addMetadata("eventsacronym", "eventsacronym", null, null, "xxxx");
         applicationService.saveOrUpdate(ResearchObject.class, object);
         return new ModelAndView(getSuccessView() + object.getId() + "&path="
                 + path);
