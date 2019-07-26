@@ -176,9 +176,9 @@ public class MyTableResource extends Resource
 
         	        log.info("mappingRowmappingRow" + mappingRow);
         	        
-        	        int xxoxoxo = DatabaseManager.doInsertPostgresPublic(context, mappingRow);
+        	        DatabaseManager.insert(context, mappingRow);
 
-        	        log.info("insert DONE DONE DONE DONE DONE" + xxoxoxo);
+        	        log.info("insert DONE DONE DONE DONE DONE");
         		} catch (SQLException e) {
         			// TODO Auto-generated catch block
         			e.printStackTrace();

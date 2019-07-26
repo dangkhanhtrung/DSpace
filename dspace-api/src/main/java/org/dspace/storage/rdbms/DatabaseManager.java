@@ -784,10 +784,7 @@ public class DatabaseManager
     public static void insert(Context context, TableRow row) throws SQLException
     {
         int newID;
-		context.setAutoCommit(true);
-		log.info("insertinsertinsertinsertinsert");
-		newID = doInsertPostgres(context, row);
-		/*
+		context.setAutoCommit(false);
         if (isPostgres)
         {
             newID = doInsertPostgres(context, row);
@@ -796,9 +793,9 @@ public class DatabaseManager
         {
             newID = doInsertGeneric(context, row);
         }
-        */
 
         row.setColumn(getPrimaryKeyColumn(context, row), newID);
+		context.setAutoCommit(true);
     }
 
     /**
@@ -1782,8 +1779,6 @@ public class DatabaseManager
     {
         String table = row.getTable();
 
-        log.info("tabletabletabletable" + table);
-        
         Collection<ColumnInfo> info = getColumnInfo(context, table);
         Collection<ColumnInfo> params = new ArrayList<ColumnInfo>();
 
@@ -1868,7 +1863,7 @@ public class DatabaseManager
                 }
                 catch (SQLException sqle)
                 {
-                    log.info("SQL doInsertPostgresrs close Error - ",sqle);
+                    log.error("SQL doInsertPostgresrs close Error - ",sqle);
                     throw sqle;
                 }
             }
@@ -1881,128 +1876,13 @@ public class DatabaseManager
                 }
                 catch (SQLException sqle)
                 {
-                    log.info("SQL doInsertPostgres statement close Error - ",sqle);
+                    log.error("SQL doInsertPostgres statement close Error - ",sqle);
                     throw sqle;
                 }
             }
         }
     }
 
-    public static int doInsertPostgresPublic(Context context, TableRow row) throws SQLException
-    {
-        String table = row.getTable();
-
-        log.info("tabletabletabletablexxxxxxxxxxxxx" + table);
-        
-        Collection<ColumnInfo> info = getColumnInfo(context, table);
-        Collection<ColumnInfo> params = new ArrayList<ColumnInfo>();
-
-        String primaryKey = getPrimaryKeyColumn(context, table);
-        String sql = insertSQL.get(table);
-
-        boolean firstColumn = true;
-        boolean foundPrimaryKey = false;
-        if (sql == null)
-        {
-            // Generate SQL and filter parameter columns
-            StringBuilder insertBuilder = new StringBuilder("INSERT INTO ").append(table).append(" ( ");
-            StringBuilder valuesBuilder = new StringBuilder(") VALUES ( ");
-            for (ColumnInfo col : info)
-            {
-                if (firstColumn)
-                {
-                    firstColumn = false;
-                }
-                else
-                {
-                    insertBuilder.append(",");
-                    valuesBuilder.append(",");
-                }
-
-                insertBuilder.append(col.getName());
-
-                if (!foundPrimaryKey && col.isPrimaryKey())
-                {
-                    valuesBuilder.append("getnextid('").append(table).append("')");
-                    foundPrimaryKey = true;
-                }
-                else
-                {
-                    valuesBuilder.append('?');
-                    params.add(col);
-                }
-            }
-
-            sql = insertBuilder.append(valuesBuilder.toString()).append(") RETURNING ").append(getPrimaryKeyColumn(context, table)).toString();
-
-            log.info("sqlsqlsqlsqlsql" + sql);
-            insertSQL.put(table, sql);
-        }
-        else
-        {
-            // Already have SQL, just filter parameter columns
-            for (ColumnInfo col : info)
-            {
-                if (!foundPrimaryKey && col.isPrimaryKey())
-                {
-                    foundPrimaryKey = true;
-                }
-                else
-                {
-                    params.add(col);
-                }
-            }
-        }
-
-        PreparedStatement statement = null;
-
-        if (log.isDebugEnabled())
-        {
-            log.debug("Running query \"" + sql + "\"");
-        }
-
-        log.info("sqlsqlsqlsqlsql" + sql);
-        ResultSet rs = null;
-        try
-        {
-            statement = context.getDBConnection().prepareStatement(sql);
-        	loadParameters(statement, params, row);
-            log.info("statementstatementstatementstatement" + statement);
-            log.info("paramsparamsparamsparamsparams" + params);
-            log.info("rowrowrowrowrow" + row);
-            rs = statement.executeQuery();
-            rs.next();
-            return rs.getInt(1);
-        }
-        finally
-        {
-            if (rs != null)
-            {
-                try
-                {
-                    rs.close();
-                }
-                catch (SQLException sqle)
-                {
-                    log.info("SQL doInsertPostgresrs close Error - ",sqle);
-                    throw sqle;
-                }
-            }
-
-            if (statement != null)
-            {
-                try
-                {
-                    statement.close();
-                }
-                catch (SQLException sqle)
-                {
-                    log.info("SQL doInsertPostgres statement close Error - ",sqle);
-                    throw sqle;
-                }
-            }
-        }
-    }
     /**
      * Generic version of row insertion with separate id get / insert
      * @param context
@@ -2012,7 +1892,6 @@ public class DatabaseManager
      */
     private static int doInsertGeneric(Context context, TableRow row) throws SQLException
     {
-    	log.info("doInsertGenericdoInsertGenericdoInsertGenericdoInsertGeneric");
         int newID = -1;
         String table = row.getTable();
         PreparedStatement statement = null;
