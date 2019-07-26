@@ -179,7 +179,7 @@ public class MyTableResource extends Resource
         	        
         	        mappingRow.setColumn("crisid", objectBody.getString("journal_ID"));
         	        mappingRow.setColumn("sourceid", objectBody.getString("journal_ID"));
-        	        mappingRow.setCo˙lumn("status", true);
+        	        mappingRow.setColumn("status", true);
         	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
         	        mappingRow.setColumn("timestampcreated", currentTimestamp);
         	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
