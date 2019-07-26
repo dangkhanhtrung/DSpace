@@ -150,14 +150,13 @@ public class MyTableResource extends Resource
             
             JSONObject objectBody = new JSONObject(body);
 
+            Date currentTimestamp = new Date();
             log.info("entity_objectentity_object" + entity_object);
             if (entity_object.equalsIgnoreCase("journal")) {
 
             	TableRow mappingRow;
         		try {
 
-        			Date currentTimestamp = new Date();
-        			
         			mappingRow = DatabaseManager.row("cris_do");
         	        
         	        mappingRow.setColumn("crisid", objectBody.getString("journal_ID"));
@@ -168,7 +167,7 @@ public class MyTableResource extends Resource
         	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
         	        mappingRow.setColumn("typo_id", 1);
 
-        	        log.info("mappingRowmappingRow" + mappingRow);
+        	        log.info("adddddadddddadddddadddddadddddaddddd mappingRow" + mappingRow);
         	        
         	        DatabaseManager.insert(context, mappingRow);
 
@@ -176,7 +175,21 @@ public class MyTableResource extends Resource
         	        
         		} catch (SQLException e) {
         			// TODO Auto-generated catch block
-        			e.printStackTrace();
+        			mappingRow = DatabaseManager.row("cris_do");
+        	        
+        	        mappingRow.setColumn("crisid", objectBody.getString("journal_ID"));
+        	        mappingRow.setColumn("sourceid", objectBody.getString("journal_ID"));
+        	        mappingRow.setColumn("status", true);
+        	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
+        	        mappingRow.setColumn("timestampcreated", currentTimestamp);
+        	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
+        	        mappingRow.setColumn("typo_id", 1);
+
+        	        log.info("updateupdateupdateupdateupdateupdate mappingRow" + mappingRow);
+        	        
+        	        DatabaseManager.update(context, mappingRow);
+
+        	        log.info("insert DONE DONE DONE DONE DONE");
         		}
         		
             	// util.processJournal(context, crisSearchService, objectBody );
