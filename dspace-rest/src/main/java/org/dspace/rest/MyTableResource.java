@@ -195,94 +195,37 @@ public class MyTableResource extends Resource
             	// util.processJournal(context, crisSearchService, objectBody );
             	
             } else if (entity_object.equalsIgnoreCase("patents")) {
-                //FIXME: chưa đi sâu vào nhánh xml
-                int count=-1;
-                int value_id=-1;
+                //FIXME: chưa đi sâu vào nhánh xml                
                 // Truyền id vào cris_id/source_id từ xml vào trả lại id của record
                 int cris_do_id = cris_do_add(context, "patents", objectBody.getString("patent_ID"));
+                int value_id;
 
-                // 1 metadata
-                value_id = jdyna_values_add(context, "text", objectBody.getString("patent_Title"));
-                cris_do_prop_add(context, "patents", "patentsname", value_id, cris_do_id, 0);
-
-                // 1 multiple value metadata
-                count = 0; // nhiều giá trị cần biến đếm để sắp xếp
-                for (String subject : objectBody.getArrayObject("patent_Subject")) {
-                    value_id = jdyna_values_add(context, "text", subject);
-                    cris_do_prop_add(context, "patents", "patentssubject", value_id, cris_do_id, count);
-                    count++;
-                }
-
-                // 1 metadata
-                value_id = jdyna_values_add(context, "text", objectBody.getString("patent_Keyword"));
-                cris_do_prop_add(context, "patents", "patentskeyword", value_id, cris_do_id, 0);
-
-                // 1 multiple value metadata
-                count = 0;
-                for (String subject : objectBody.getArrayObject("patent_Holders")) {
-                    value_id = jdyna_values_add(context, "text", subject); // FIXME: tạm thời type text => rp, ou vào patentsholderperson /patentsholderorgunit
-                    cris_do_prop_add(context, "patents", "patentsholdervalue", value_id, cris_do_id, count);
-                    count++;
-                }
-
-                // 1 multiple value metadata
-                count = 0;
-                for (String subject : objectBody.getArrayObject("patent_References")) {
-                    value_id = jdyna_values_add(context, "patents", subject);
-                    cris_do_prop_add(context, "patents", "patentspredecessor", value_id, cris_do_id, count);
-                    count++;
-                }
-
-                // 1 multiple value metadata
-                count = 0;
-                for (String subject : objectBody.getArrayObject("patent_OriginatesFrom")) {
-                    value_id = jdyna_values_add(context, "project", subject);
-                    cris_do_prop_add(context, "patents", "patentsoriginatesFrom", value_id, cris_do_id, count);
-                    count++;
-                }
-
-                // 1 multiple value metadata
-                count = 0;
-                for (String subject : objectBody.getArrayObject("patent_Inventors")) {
-                    value_id = jdyna_values_add(context, "project", subject);
-                    cris_do_prop_add(context, "patents", "patentsinventorsvalue", value_id, cris_do_id, count);
-                    count++;
-                }
-
-                // 1 metadata
-                value_id = jdyna_values_add(context, "text", objectBody.getString("patent_Type"));
-                cris_do_prop_add(context, "patents", "patentstype", value_id, cris_do_id, 0);
-
-                // 1 metadata
-                value_id = jdyna_values_add(context, "text", objectBody.getString("patent_Status"));
-                cris_do_prop_add(context, "patents", "patentsstatus", value_id, cris_do_id, 0);
-
-                // 1 metadata
-                value_id = jdyna_values_add(context, "text", objectBody.getString("patent_Issuer")) //FIXME: text => ou
-                cris_do_prop_add(context, "patents", "patentsstatus", value_id, cris_do_id, 0);
-
-                // 1 metadata
-                value_id = jdyna_values_add(context, "text", objectBody.getString("patent_CountryCode")) //FIXME: text => ou
-                cris_do_prop_add(context, "patents", "patentscountrycode", value_id, cris_do_id, 0);
-
-                // 1 metadata
-                value_id = jdyna_values_add(context, "text", objectBody.getString("patent_Abstract")) //FIXME: text => ou
-                cris_do_prop_add(context, "patents", "patentsabstract", value_id, cris_do_id, 0);
-
-                value_id = jdyna_values_add(context, "text", objectBody.getString("patent_RegistrationDate"));
-                cris_do_prop_add(context, "patents", "patentsregistrationdate", value_id, cris_do_id, 0);
-
+                //field không có  <_source>
                 value_id = jdyna_values_add(context, "text", objectBody.getString("patent_RegistrationNumber"));
                 cris_do_prop_add(context, "patents", "patentsregistrationNumber", value_id, cris_do_id, 0);
-
                 value_id = jdyna_values_add(context, "text", objectBody.getString("patent_PatentNumber"));
                 cris_do_prop_add(context, "patents", "patentsnumber", value_id, cris_do_id, 0);
-
-                value_id = jdyna_values_add(context, "text", objectBody.getString("patent_ApprovalDate"));
+                value_id = jdyna_values_add(context, "date", objectBody.getString("patent_ApprovalDate"));
                 cris_do_prop_add(context, "patents", "patentsapprovaldate", value_id, cris_do_id, 0);
+                value_id = jdyna_values_add(context, "text", objectBody.getString("patent_RegistrationDate"));
+                cris_do_prop_add(context, "patents", "patentsregistrationdate", value_id, cris_do_id, 0);
+                
 
-                
-                
+                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Title","patentsname");
+                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Subject","patentssubject");
+                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Keyword","patentskeyword");
+                // TODO: patentsholder có thể type = ou / rp tạm thời cho vào patentsholdervalue
+                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Holders","patentsholdervalue");
+                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_References","patentsreferences");
+                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_OriginatesFrom","patentsoriginatesFrom");
+                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Inventors","patentsinventors");
+                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Type","patentstype");
+                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Status","patentsstatus");
+                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Issuer","patentsissuer");
+                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_CountryCode","patentscountrycode");
+
+
+
             } else if (entity_object.equalsIgnoreCase("publication")) {
             	
             	mappingRow = DatabaseManager.row("item");
@@ -525,7 +468,7 @@ public class MyTableResource extends Resource
     }
 
 
-    // cris_do_prop_all(context, "crispatents", "patentsname", value_id lấy từ jdyna_value_add, cris_do_id, 0);
+    // cris_do_prop_all(context, "crispatents", "patentsname", value_id lấy từ jdyna_values_add, cris_do_id, 0);
     private void cris_do_prop_add(org.dspace.core.Context context, String crisType, String fieldShortName, int value_id, int cris_do_id, int positiondef){
         try{
             TableRow mappingRow;
@@ -544,7 +487,6 @@ public class MyTableResource extends Resource
             DatabaseManager.insert(context, mappingRow);//try catch?
         }
         catch (SQLException e){
-            return;
         }
     }
 
@@ -611,7 +553,6 @@ public class MyTableResource extends Resource
             else if (fieldShortName.equals("patentsholderOrgUnit")) return 321;//Chủ bằng tổ chức
             else if (fieldShortName.equals("patentsholderPerson")) return 320;//Chủ bằng cá nhân
             else if (fieldShortName.equals("patentsinventors")) return 282;//Tác giả
-            else if (fieldShortName.equals("patentsinventorsvalue")) return 307;//Tác giả
             else if (fieldShortName.equals("patentsissuer")) return 61;//Tổ chức đại diện
             else if (fieldShortName.equals("patentskeyword")) return 60;//Từ khoá
             else if (fieldShortName.equals("patentsname")) return 297;//Tên sáng chế
@@ -624,7 +565,8 @@ public class MyTableResource extends Resource
             else if (fieldShortName.equals("patentssubject")) return 239;//Phân loại sáng chế quốc tế
             else if (fieldShortName.equals("patentstype")) return 64;//Loại sáng chế
             else if (fieldShortName.equals("patentsversioninfo")) return 55;//Thông tin phiên bản
-            else if (fieldShortName.equals("patentsholdervalue")) return 339;//Thông tin phiên bản
+            else if (fieldShortName.equals("patentsholdervalue")) return 339;//Giá trị chủ bằng
+            else if (fieldShortName.equals("patentsreferences")) return 340;//Giá trị chủ bằng
         }
         else if (crisType.equals("standards")) {
 
@@ -684,7 +626,45 @@ public class MyTableResource extends Resource
         if (crisType.equals("rp")) return 10; //Nhân lực
         if (crisType.equals("ou")) return 12; //Tổ chức
         return -1;
-    }    
-    
+    }
+
+    private String add_value_by_xmlname(org.dspace.core.Context context, JSONObject objectBody, int cris_do_id, String crisType, String valueType,
+                                        String xmlFieldName, String fieldShortName){
+        try{
+            if (!objectBody.isNull(xmlFieldName))//xmlFieldName = "patent_Subject"
+            {
+                Object item = objectBody.get(xmlFieldName);
+                if (item instanceof JSONArray)
+                {
+                    JSONArray objArray = (JSONArray) item;
+                    int positiondef = 0;
+                    for ( Object obj : objArray) {
+                        JSONObject object = (JSONObject) obj;
+                        int value_id = jdyna_values_add(context, valueType, object.getJSONObject("_source")
+                                                        .getString("title")); //lấy dữ liệu thêm vào bảng jdyna_values
+                        cris_do_prop_add(context, crisType, fieldShortName, value_id, cris_do_id, positiondef);
+                        positiondef++;
+                    }
+                    return "array";
+                }
+                else
+                {
+                    JSONObject object = (JSONObject) item;
+                    int value_id = jdyna_values_add(context, valueType, object.getJSONObject("_source")
+                                                    .getString("title"));
+                    cris_do_prop_add(context, "patents", "patentsoriginatesFrom",
+                                    value_id, cris_do_id, 0);
+                    return "object";
+                }
+            }
+            else
+            {
+                return "Null objectBody";
+            }
+        }
+        catch (Exception e){
+            return "Error";
+        }
+    }
     
 }
