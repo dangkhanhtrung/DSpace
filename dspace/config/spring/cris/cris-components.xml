@@ -397,7 +397,7 @@
 			<map>
 				<entry key="journalspublications" value-ref="publicationlistforjournals" />				
 				<!-- NTH -->
-				<entry key="projectsCrisFundings" value-ref="projectslistforCrisFundings" />
+				<!-- <entry key="projectsCrisFundings" value-ref="projectslistforCrisFundings" /> -->
 				<!-- end -->
 			</map>
 		</property>
@@ -514,7 +514,7 @@
 	</bean>
 
 	<!-- PJ vs CrisFundings -->
-
+<!-- 
 	<bean id="projectslistforCrisFundings"
 		class="org.dspace.app.webui.cris.components.CRISPJConfigurerComponent">
 		<property name="relationConfiguration" ref="relationProjectsVSCrisFundingsConfiguration" />
@@ -534,7 +534,7 @@
 		<property name="rpp"><value>20</value></property>
 		<property name="sortby"><value>5</value></property>		
 	</bean>
-
+-->
 	<!-- Project list tham gia for RP entity -->
 	<bean id="projectsPaForRP"
 		class="org.dspace.app.webui.cris.components.CRISPJConfigurerComponent">

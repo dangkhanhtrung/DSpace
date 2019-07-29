@@ -295,7 +295,7 @@
 						</bean>
 					</list>
 				</entry>
-
+<!-- 
 				<entry key="crisfundings">
 					<list>
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
@@ -303,14 +303,11 @@
 							<property name="type" value="recentsubmission" />
 							<property name="sortField" value="lastModified" />
 							<property name="order" value="desc" />
-<!-- 							<property name="extraInfo">
-								<value>crismetrics_wos</value>
-							</property> -->
  							<property name="num" value="10" />
 						</bean>						
 					</list>
 				</entry>
-
+ -->
 				<entry key="crisjournals">
 					<list>
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
