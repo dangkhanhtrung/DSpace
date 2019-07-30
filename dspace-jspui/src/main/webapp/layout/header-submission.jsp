@@ -98,6 +98,13 @@
 	<script type="text/javascript" src="<%= request.getContextPath() %>/js/jdyna/jdyna.js"></script>
 	<script type="text/javascript" src="<%= request.getContextPath() %>/utils.js"></script>
     <script type="text/javascript" src="<%= request.getContextPath() %>/static/js/choice-support.js"></script>    
+<script type="text/javascript"
+	src="<%= request.getContextPath()%>/static/js/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.16/vuetify.min.js"></script>
+<script type="text/javascript"
+	src="<%= request.getContextPath()%>/static/js/axios.min.js"></script>
+<script type="text/javascript"
+	src="<%= request.getContextPath()%>/page/my-element.min.js"></script>
 	<script type='text/javascript'>
 		var j = jQuery.noConflict();
 		var $ = jQuery.noConflict();
