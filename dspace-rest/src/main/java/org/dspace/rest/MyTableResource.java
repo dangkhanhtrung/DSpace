@@ -228,14 +228,14 @@ public class MyTableResource extends Resource
     	        int idItem = mappingRow.getIntColumn("item_id");
     	        log.info("insert DONE DONE DONE DONE DONE" + idItem);
     	        
-    	        mappingRow = DatabaseManager.row("item");
+    	        mappingRow = DatabaseManager.row("handle");
     	        
     	        mappingRow.setColumn("handle", "123456789/" + objectBody.getString("publication_ID"));
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("handle_id", idItem);
 
-    	        log.info("adddddadddddadddddadddddadddddaddddd mappingRow" + mappingRow);
+    	        DatabaseManager.insert(context, mappingRow);
     	        
     	        mappingRow = DatabaseManager.row("metadatavalue");
     	        
