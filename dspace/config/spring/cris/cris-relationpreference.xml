@@ -121,6 +121,7 @@
 	</bean>
 
 	<!-- projects vs Crisfundings--> 
+<!-- 
 	<bean id="relationProjectsVSCrisFundingsConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">
 		<property name="relationName" value="crisproject.fundedAs" />
 		<property name="relationClass" value="org.dspace.app.cris.model.Project" />		
@@ -128,7 +129,7 @@
 			<value>crisproject.fundedAs_authority:{0}</value>
 		</property>
 	</bean>
-
+-->
 	<!-- Project list for RP as member-->	
 	<bean id="relationPJMemberVSRPConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
 		<property name="relationName" value="crisproject.member" />		
