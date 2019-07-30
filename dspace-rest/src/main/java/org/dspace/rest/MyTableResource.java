@@ -242,7 +242,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 14);
-    	        mappingRow.setColumn("text_value", new Date(objectBody.getLong("createdAt")));
+    	        mappingRow.setColumn("text_value", new Date(objectBody.getLong("createdAt")) + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -254,7 +254,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 13);
-    	        mappingRow.setColumn("text_value", new Date(objectBody.getLong("modifiedAt")));
+    	        mappingRow.setColumn("text_value", new Date(objectBody.getLong("modifiedAt")) + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -286,7 +286,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 29);
-    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Abstract").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Abstract").getJSONObject("_source").getString("title") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -300,7 +300,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 84);
-    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Subject").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Subject").getJSONObject("_source").getString("title") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -310,7 +310,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 40);
-    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Language").getJSONObject("_source").getString("shortName"));
+    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Language").getJSONObject("_source").getString("shortName") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -320,7 +320,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 159);
-    	        mappingRow.setColumn("text_value", objectBody.getString("publication_StartPage"));
+    	        mappingRow.setColumn("text_value", objectBody.getString("publication_StartPage") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -330,7 +330,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 160);
-    	        mappingRow.setColumn("text_value", objectBody.getString("publication_EndPage"));
+    	        mappingRow.setColumn("text_value", objectBody.getString("publication_EndPage") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -340,7 +340,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 68);
-    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Type").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Type").getJSONObject("_source").getString("title") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -350,7 +350,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 68);
-    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Type").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Type").getJSONObject("_source").getString("title") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -361,7 +361,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 41);
-    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Publisher").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Publisher").getJSONObject("_source").getString("title") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -372,7 +372,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 17);
-    	        mappingRow.setColumn("text_value", objectBody.getInt("publication_PublicationDate"));
+    	        mappingRow.setColumn("text_value", objectBody.getInt("publication_PublicationDate") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -383,7 +383,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 66);
-    	        mappingRow.setColumn("text_value", objectBody.getString("title"));
+    	        mappingRow.setColumn("text_value", objectBody.getString("title") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -394,7 +394,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 5);
-    	        mappingRow.setColumn("text_value", objectBody.getString("author"));
+    	        mappingRow.setColumn("text_value", objectBody.getString("author") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
