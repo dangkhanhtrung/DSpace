@@ -54,7 +54,7 @@
                parenttitlekey="jsp.administer"
                parentlink="/dspace-admin" 
                nocache="true">
-
+	<my-element></my-element>
     <h1><fmt:message key="jsp.dspace-admin.batchimport.title"/></h1>
 
 	<% if (uploadId != null) { %>

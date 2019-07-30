@@ -214,9 +214,9 @@ public class MyTableResource extends Resource
             	
             	mappingRow = DatabaseManager.row("item");
     	        
-    	        mappingRow.setColumn("summiter_id", 1);
+    	        mappingRow.setColumn("submitter_id", 1);
     	        mappingRow.setColumn("in_archive", false);
-    	        mappingRow.setColumn("widthdrawn", false);
+    	        mappingRow.setColumn("withdrawn", false);
     	        mappingRow.setColumn("owning_collection", 33);
     	        mappingRow.setColumn("last_modified", currentTimestamp);
     	        mappingRow.setColumn("discoverable", true);
@@ -400,9 +400,6 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("confidence", -1);
 
     	        DatabaseManager.insert(context, mappingRow);
-    	        
-    	        
-    	        
     	        
             }
 
