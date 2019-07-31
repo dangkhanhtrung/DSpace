@@ -344,8 +344,10 @@ public class CrisSearchService extends SolrServiceImpl
     	cleanPublicationIndexById(handle);
         try {
             DSpaceObject ddddkkk = Item.find(context, Integer.parseInt(id));
+            List<Integer> ids = new ArrayList<Integer>();
+            ids.add(Integer.parseInt(id));
             log.info("ddddkkkddddkkkddddkkkddddkkkddddkkk DSpaceObjectDSpaceObject" + ddddkkk);
-			indexContent(context, ddddkkk, true);
+            updateIndex(context, ids, true, 2);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
