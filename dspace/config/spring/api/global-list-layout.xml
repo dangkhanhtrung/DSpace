@@ -412,6 +412,7 @@
 			</list>
 		</property>
 	</bean>
+<!--
 	<bean id="crisfundingsLayoutView"
 		class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
 		<property name="metadataHeadingFields">
@@ -448,6 +449,7 @@
 			</list>
 		</property>
 	</bean>
+-->
 	<bean id="crisjournalsLayoutView"
 		class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
 		<property name="metadataHeadingFields">

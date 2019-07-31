@@ -179,37 +179,35 @@ public class MyTableResource extends Resource
             	// util.processJournal(context, crisSearchService, objectBody );
             	
             } else if (entity_object.equalsIgnoreCase("patents")) {
+                String crisType = "patents";
                 //FIXME: chưa đi sâu vào nhánh xml                
                 // Truyền id vào cris_id/source_id từ xml vào trả lại id của record
-                int cris_do_id = cris_entity_add(context, "patents", objectBody.getString("patent_ID"));
+                int cris_do_id = cris_entity_add(context, crisType, objectBody.getString("patent_ID"));
                 int value_id;
 
                 //field không có  <_source>
                 value_id = jdyna_values_add(context, "text", objectBody.getString("patent_RegistrationNumber"));
-                cris_prop_add(context, "patents", "patentsregistrationNumber", value_id, cris_do_id, 0);
+                cris_prop_add(context, crisType, "patentsregistrationNumber", value_id, cris_do_id, 0);
                 value_id = jdyna_values_add(context, "text", objectBody.getString("patent_PatentNumber"));
-                cris_prop_add(context, "patents", "patentsnumber", value_id, cris_do_id, 0);
+                cris_prop_add(context, crisType, "patentsnumber", value_id, cris_do_id, 0);
                 value_id = jdyna_values_add(context, "date", objectBody.getString("patent_ApprovalDate"));
-                cris_prop_add(context, "patents", "patentsapprovaldate", value_id, cris_do_id, 0);
+                cris_prop_add(context, crisType, "patentsapprovaldate", value_id, cris_do_id, 0);
                 value_id = jdyna_values_add(context, "date", objectBody.getString("patent_RegistrationDate"));
-                cris_prop_add(context, "patents", "patentsregistrationdate", value_id, cris_do_id, 0);
+                cris_prop_add(context, crisType, "patentsregistrationdate", value_id, cris_do_id, 0);
 
                 //add_value_by_xmlname(context,objectBody, cris_do_id, crisType, valueType, xmlfieldname, fieldShortName);
-                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Title","patentsname");
-                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Subject","patentssubject");
-                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Keyword","patentskeyword");
+                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Title", "patentsname");
+                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Subject", "patentssubject");
+                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Keyword", "patentskeyword");
                 // TODO: patentsholder có thể type = ou / rp tạm thời cho vào patentsholdervalue
-                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Holders","patentsholdervalue");
-                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_References","patentsreferences");
-                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_OriginatesFrom","patentsoriginatesFrom");
-                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Inventors","patentsinventors");
-                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Type","patentstype");
-                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Status","patentsstatus");
-                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_Issuer","patentsissuer");
-                add_value_by_xmlname(context,objectBody, cris_do_id, "patents", "text","patent_CountryCode","patentscountrycode");
-
-
-
+                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Holders", "patentsholdervalue");
+                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_References", "patentsreferences");
+                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_OriginatesFrom", "patentsoriginatesFrom");
+                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Inventors", "patentsinventors");
+                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Type", "patentstype");
+                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Status", "patentsstatus");
+                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Issuer", "patentsissuer");
+                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_CountryCode", "patentscountrycode");
             } else if (entity_object.equalsIgnoreCase("publication")) {
             	
             	mappingRow = DatabaseManager.row("item");
@@ -555,185 +553,278 @@ public class MyTableResource extends Resource
     private int get_field_typo_id(String crisType, String fieldShortName){
         // FIXME: mã fix cứng cần sửa khi sang sv mới
         if (crisType.equals("patents")) {        
-            if (fieldShortName.equals("patentsabstract")) return 58;//Mô tả tóm tắt
-            if (fieldShortName.equals("patentsapprovaldate")) return 57;//Ngày công bố
-            if (fieldShortName.equals("patentscountrycode")) return 65;//Quốc gia công nhận
-            if (fieldShortName.equals("patentsexpiredDate")) return 302;//Ngày hết hiệu lực
-            if (fieldShortName.equals("patentsholderOrgUnit")) return 321;//Chủ bằng tổ chức
-            if (fieldShortName.equals("patentsholderPerson")) return 320;//Chủ bằng cá nhân
-            if (fieldShortName.equals("patentsinventors")) return 282;//Tác giả
-            if (fieldShortName.equals("patentsissuer")) return 61;//Tổ chức đại diện
-            if (fieldShortName.equals("patentskeyword")) return 60;//Từ khoá
-            if (fieldShortName.equals("patentsname")) return 297;//Tên sáng chế
-            if (fieldShortName.equals("patentsnumber")) return 54;//Số sáng chế
-            if (fieldShortName.equals("patentsoriginatesFrom")) return 63;//Kết quả nhiệm vụ
-            if (fieldShortName.equals("patentspredecessor")) return 283;//Kế thừa từ sáng chế
-            if (fieldShortName.equals("patentsregistrationdate")) return 56;//Ngày nộp đơn
-            if (fieldShortName.equals("patentsregistrationNumber")) return 301;//Số đơn
-            if (fieldShortName.equals("patentsstatus")) return 234;//Tình trạng hiệu lực
-            if (fieldShortName.equals("patentssubject")) return 239;//Phân loại sáng chế quốc tế
-            if (fieldShortName.equals("patentstype")) return 64;//Loại sáng chế
-            if (fieldShortName.equals("patentsversioninfo")) return 55;//Thông tin phiên bản
-            if (fieldShortName.equals("patentsholdervalue")) return 339;//Giá trị chủ bằng
-            if (fieldShortName.equals("patentsreferences")) return 340;//Giá trị chủ bằng
+            if (fieldShortName.equals("patentsversioninfo")) return 65;//Thông tin phiên bản
+            if (fieldShortName.equals("patentsissuer")) return 66;//Tổ chức đại diện
+            if (fieldShortName.equals("patentsapprovaldate")) return 67;//Ngày công bố
+            if (fieldShortName.equals("patentscountrycode")) return 68;//Quốc gia công nhận
+            if (fieldShortName.equals("patentsregistrationdate")) return 69;//Ngày nộp đơn
+            if (fieldShortName.equals("patentskeyword")) return 70;//Từ khoá
+            if (fieldShortName.equals("patentsoriginatesFrom")) return 71;//Kết quả nhiệm vụ
+            if (fieldShortName.equals("patentsabstract")) return 72;//Mô tả tóm tắt
+            if (fieldShortName.equals("patentsnumber")) return 73;//Số sáng chế
+            if (fieldShortName.equals("patentstype")) return 74;//Loại sáng chế
+            if (fieldShortName.equals("patentsstatus")) return 75;//Tình trạng hiệu lực
+            if (fieldShortName.equals("patentsregistrationNumber")) return 76;//Số đơn
+            if (fieldShortName.equals("patentspredecessor")) return 77;//Kế thừa từ sáng chế
+            if (fieldShortName.equals("patentsholderOrgUnit")) return 78;//Chủ bằng tổ chức
+            if (fieldShortName.equals("patentsexpiredDate")) return 79;//Ngày hết hiệu lực
+            if (fieldShortName.equals("patentsholderPerson")) return 80;//Chủ bằng cá nhân
+            if (fieldShortName.equals("patentsname")) return 81;//Tên sáng chế
+            if (fieldShortName.equals("patentsinventors")) return 82;//Tác giả
+            if (fieldShortName.equals("patentsholdervalue")) return 83;//Chủ bằng
+            if (fieldShortName.equals("patentsreferences")) return 84;//Tài liệu tham chiếu
+            if (fieldShortName.equals("patentssubject")) return 85;//Phân loại sáng chế quốc tế
+            if (fieldShortName.equals("patentsinventorsvalue")) return 86;//Tác giả
         }
         else if (crisType.equals("standards")) {
-            if (fieldShortName.equals("standardsdecisionnumber")) return 1;//Quyết định ban hành
-            if (fieldShortName.equals("standardseditorsOrg")) return 327;//Tổ chức biên soạn
-            if (fieldShortName.equals("standardseditorsPerson")) return 326;//Cá nhân biên soạn
-            if (fieldShortName.equals("standardsequivalentTo")) return 8;//Tiêu chuẩn tương đương
-            if (fieldShortName.equals("standardsidentifier")) return 4;//Số hiệu
-            if (fieldShortName.equals("standardskeyword")) return 7;//Từ khoá
-            if (fieldShortName.equals("standardsname")) return 299;//Tên tiêu chuẩn
-            if (fieldShortName.equals("standardsnormativeReferences")) return 10;//Tiêu chuẩn viện dẫn
+            if (fieldShortName.equals("standardstype")) return 1;//Loại tiêu chuẩn
+            if (fieldShortName.equals("standardsidentifier")) return 2;//Số hiệu
+            if (fieldShortName.equals("standardspublicationDate")) return 3;//Năm ban hành
+            if (fieldShortName.equals("standardsscope")) return 4;//Phạm vi áp dụng
+            if (fieldShortName.equals("standardskeyword")) return 5;//Từ khoá
             if (fieldShortName.equals("standardspage")) return 6;//Số trang
-            if (fieldShortName.equals("standardspublicationDate")) return 13;//Năm ban hành
-            if (fieldShortName.equals("standardsreplacedBy")) return 9;//Tiêu chuẩn thay thế
-            if (fieldShortName.equals("standardsscope")) return 3;//Phạm vi áp dụng
-            if (fieldShortName.equals("standardsstatus")) return 11;//Tình trạng hiệu lực
-            if (fieldShortName.equals("standardssubject")) return 334;//Khung phân loại tiêu chuẩn
-            if (fieldShortName.equals("standardstype")) return 12;//Loại tiêu chuẩn 
+            if (fieldShortName.equals("standardsstatus")) return 7;//Tình trạng hiệu lực
+            if (fieldShortName.equals("standardsequivalentTo")) return 8;//Tiêu chuẩn tương đương
+            if (fieldShortName.equals("standardsnormativeReferences")) return 9;//Tiêu chuẩn viện dẫn
+            if (fieldShortName.equals("standardsreplacedBy")) return 10;//Tiêu chuẩn thay thế
+            if (fieldShortName.equals("standardsdecisionnumber")) return 11;//Quyết định ban hành
+            if (fieldShortName.equals("standardseditorsPerson")) return 12;//Cá nhân biên soạn
+            if (fieldShortName.equals("standardseditorsOrg")) return 13;//Tổ chức biên soạn
+            if (fieldShortName.equals("standardsname")) return 14;//Tên tiêu chuẩn
+            if (fieldShortName.equals("standardssubject")) return 15;//Khung phân loại tiêu chuẩn
         }
         else if (crisType.equals("techs")) {
-            if (fieldShortName.equals("techsacronym")) return 200;//Tên viết tắt
-            if (fieldShortName.equals("techsARK")) return 207;//ARK
-            if (fieldShortName.equals("techscollection")) return 237;//Nguồn công nghệ
-            if (fieldShortName.equals("techscountry")) return 213;//Quốc gia phát triển
-            if (fieldShortName.equals("techscreators")) return 284;//Tác giả
-            if (fieldShortName.equals("techsdescription")) return 201;//Mô tả
-            if (fieldShortName.equals("techsdoi")) return 208;//DOI
-            if (fieldShortName.equals("techskeyword")) return 203;//Từ khoá
-            if (fieldShortName.equals("techslicense")) return 206;//Bản quyền
-            if (fieldShortName.equals("techsname")) return 298;//Tên công nghệ
-            if (fieldShortName.equals("techsoriginatesFrom")) return 210;//Kết quả nhiệm vụ
-            if (fieldShortName.equals("techspresentedAt")) return 211;//Trình diễn tại
-            if (fieldShortName.equals("techsprovidersOrg")) return 325;//Nhà cung cấp tổ chức
-            if (fieldShortName.equals("techsprovidersPerson")) return 324;//Nhà cung cấp cá nhân
-            if (fieldShortName.equals("techspublicationDate")) return 335;//Năm phát triển
-            if (fieldShortName.equals("techsscope")) return 214;//Phạm vi ứng dụng
-            if (fieldShortName.equals("techsstatus")) return 205;//Tình trạng phát triển
-            if (fieldShortName.equals("techssubject")) return 242;//Lĩnh vực KHCN
-            if (fieldShortName.equals("techstype")) return 212;//Loại công nghệ
-            if (fieldShortName.equals("techsURL")) return 209;//Tham chiếu trang web
-            if (fieldShortName.equals("techsversioninfo")) return 323;//Phiên bản
+            if (fieldShortName.equals("techsacronym")) return 215;//Tên viết tắt
+            if (fieldShortName.equals("techsdescription")) return 216;//Mô tả
+            if (fieldShortName.equals("techskeyword")) return 217;//Từ khoá
+            if (fieldShortName.equals("techsARK")) return 218;//ARK
+            if (fieldShortName.equals("techsdoi")) return 219;//DOI
+            if (fieldShortName.equals("techsURL")) return 220;//Tham chiếu trang web
+            if (fieldShortName.equals("techscollection")) return 221;//Nguồn công nghệ
+            if (fieldShortName.equals("techscountry")) return 222;//Quốc gia phát triển
+            if (fieldShortName.equals("techsscope")) return 223;//Phạm vi ứng dụng
+            if (fieldShortName.equals("techsstatus")) return 224;//Tình trạng phát triển
+            if (fieldShortName.equals("techscreators")) return 225;//Tác giả
+            if (fieldShortName.equals("techsoriginatesFrom")) return 226;//Kết quả nhiệm vụ
+            if (fieldShortName.equals("techspresentedAt")) return 227;//Trình diễn tại
+            if (fieldShortName.equals("techstype")) return 228;//Loại công nghệ
+            if (fieldShortName.equals("techslicense")) return 229;//Bản quyền
+            if (fieldShortName.equals("techsprovidersPerson")) return 230;//Nhà cung cấp cá nhân
+            if (fieldShortName.equals("techsprovidersOrg")) return 231;//Nhà cung cấp tổ chức
+            if (fieldShortName.equals("techsversioninfo")) return 232;//Phiên bản
+            if (fieldShortName.equals("techspublicationDate")) return 233;//Năm phát triển
+            if (fieldShortName.equals("techsname")) return 234;//Tên công nghệ
+            if (fieldShortName.equals("techssubject")) return 235;//Lĩnh vực KHCN
         }
         else if (crisType.equals("ou")) {
-            if (fieldShortName.equals("boards")) return 19;//Scientifics Board
-            if (fieldShortName.equals("crossrefid")) return 21;//Crossref Identifier
-            if (fieldShortName.equals("logo")) return 26;//Hình ảnh
-            if (fieldShortName.equals("acronym")) return 29;//Tên viết tắt
-            if (fieldShortName.equals("identifier")) return 36;//Mã định danh tổ chức
-            if (fieldShortName.equals("scopusAffiliationID")) return 37;//Mã định danh Scopus
-            if (fieldShortName.equals("date")) return 22;//Ngày thành lập
-            if (fieldShortName.equals("name")) return 27;//Tên tổ chức
-            if (fieldShortName.equals("partof")) return 28;//Cơ quan cấp trên
-            if (fieldShortName.equals("director")) return 24;//Người đứng đầu
-            if (fieldShortName.equals("address")) return 31;//Địa chỉ tổ chức
-            if (fieldShortName.equals("email")) return 34;//Thư điện tử
-            if (fieldShortName.equals("phone")) return 32;//Điện thoại tổ chức
-            if (fieldShortName.equals("fax")) return 33;//Số FAX
-            if (fieldShortName.equals("website")) return 35;//Địa chỉ website
-            if (fieldShortName.equals("activity")) return 220;//Phân loại dạng hoạt động
-            if (fieldShortName.equals("province")) return 263;//Tỉnh thành
-            if (fieldShortName.equals("orgDecided")) return 308;//Cơ quan QĐ thành lập
-            if (fieldShortName.equals("outype")) return 231;//Loại tổ chức
-            if (fieldShortName.equals("ousubject")) return 248;//Lĩnh vực KHCN
-            if (fieldShortName.equals("oucountry")) return 25;//Quốc gia
+            if (fieldShortName.equals("boards")) return 16;//Scientifics Board
+            if (fieldShortName.equals("crossrefid")) return 17;//Crossref Identifier
+            if (fieldShortName.equals("date")) return 18;//Ngày thành lập
+            if (fieldShortName.equals("director")) return 19;//Người đứng đầu
+            if (fieldShortName.equals("oucountry")) return 20;//Quốc gia
+            if (fieldShortName.equals("logo")) return 21;//Hình ảnh
+            if (fieldShortName.equals("name")) return 22;//Tên tổ chức
+            if (fieldShortName.equals("partof")) return 23;//Cơ quan cấp trên
+            if (fieldShortName.equals("acronym")) return 24;//Tên viết tắt
+            if (fieldShortName.equals("address")) return 25;//Địa chỉ tổ chức
+            if (fieldShortName.equals("phone")) return 26;//Điện thoại tổ chức
+            if (fieldShortName.equals("fax")) return 27;//Số FAX
+            if (fieldShortName.equals("email")) return 28;//Thư điện tử
+            if (fieldShortName.equals("website")) return 29;//Địa chỉ website
+            if (fieldShortName.equals("identifier")) return 30;//Mã định danh tổ chức
+            if (fieldShortName.equals("scopusAffiliationID")) return 31;//Mã định danh Scopus
+            if (fieldShortName.equals("activity")) return 32;//Phân loại dạng hoạt động
+            if (fieldShortName.equals("outype")) return 33;//Loại tổ chức
+            if (fieldShortName.equals("province")) return 34;//Tỉnh thành
+            if (fieldShortName.equals("orgDecided")) return 35;//Cơ quan QĐ thành lập
+            if (fieldShortName.equals("ousubject")) return 36;//Lĩnh vực KHCN
         }
         else if (crisType.equals("rp")) {
-            if (fieldShortName.equals("authorid")) return 112;//Researcher ID
-            if (fieldShortName.equals("biography")) return 113;//Biography
-            if (fieldShortName.equals("interests")) return 117;//Interests
-            if (fieldShortName.equals("orcid-profile-pref-affiliation")) return 120;//affiliations-employment
-            if (fieldShortName.equals("orcid-profile-pref-authorid")) return 121;//external-identifier-Researcher ID
-            if (fieldShortName.equals("orcid-profile-pref-education")) return 122;//affiliations-education
-            if (fieldShortName.equals("orcid-profile-pref-iso-country")) return 123;//iso-3166-country
-            if (fieldShortName.equals("orcid-profile-pref-keywords")) return 124;//keywords
-            if (fieldShortName.equals("orcid-profile-pref-personalsite")) return 125;//researcher-urls
-            if (fieldShortName.equals("orcid-profile-pref-scopusid")) return 126;//external-identifier-Scopus Author ID
-            if (fieldShortName.equals("orcid-profile-pref-variants")) return 127;//other-names
-            if (fieldShortName.equals("orcid-projects-prefs")) return 128;//
-            if (fieldShortName.equals("orcid-publications-prefs")) return 129;//
-            if (fieldShortName.equals("orcid-push-crispj-activate-put")) return 130;//PUT mode enable for projects
-            if (fieldShortName.equals("orcid-push-crisrp-activate-put")) return 131;//PUT mode enable for profile
-            if (fieldShortName.equals("orcid-push-item-activate-put")) return 132;//PUT mode enable for publications
-            if (fieldShortName.equals("orcid-push-manual")) return 133;//Synchronization mode
-            if (fieldShortName.equals("otheremails")) return 134;//Other emails
-            if (fieldShortName.equals("personalsite")) return 136;//Personal Site
-            if (fieldShortName.equals("policy")) return 137;//Policy
-            if (fieldShortName.equals("preferredName")) return 138;//Credit Name
-            if (fieldShortName.equals("scopusid")) return 139;//Scopus Author ID
-            if (fieldShortName.equals("system-orcid-profile-pref-biography")) return 140;//biography
-            if (fieldShortName.equals("system-orcid-profile-pref-email")) return 141;//primary-email
-            if (fieldShortName.equals("system-orcid-profile-pref-fullName")) return 142;//name
-            if (fieldShortName.equals("system-orcid-profile-pref-otheremails")) return 143;//other-emails
-            if (fieldShortName.equals("system-orcid-profile-pref-preferredName")) return 144;//credit-name
-            if (fieldShortName.equals("system-orcid-token-activities-update")) return 145;//ORCID authorization scope (internally used)
-            if (fieldShortName.equals("system-orcid-token-authenticate")) return 146;//ORCID authorization scope (internally used)
-            if (fieldShortName.equals("system-orcid-token-person-update")) return 147;//ORCID authorization scope (internally used)
-            if (fieldShortName.equals("system-orcid-token-read-limited")) return 148;//ORCID authorization scope (internally used)
-            if (fieldShortName.equals("translatedName")) return 149;//Vernacular Name
-            if (fieldShortName.equals("workgroups")) return 151;//Working groups
-            if (fieldShortName.equals("variants")) return 150;//Variants
-            if (fieldShortName.equals("birthDay")) return 152;//Ngày sinh
-            if (fieldShortName.equals("identifiervalue")) return 266;//Mã định danh
-            if (fieldShortName.equals("identifiertype")) return 265;//Loại mã định danh
-            if (fieldShortName.equals("rpsubject")) return 246;//Lĩnh vực chuyên môn
-            if (fieldShortName.equals("fullName")) return 116;//Tên chuyên gia
-            if (fieldShortName.equals("orcid")) return 119;//ORCID
-            if (fieldShortName.equals("firstName")) return 318;//Tên
-            if (fieldShortName.equals("position")) return 154;//Chức danh, học hàm
-            if (fieldShortName.equals("degree")) return 153;//Học vị
-            if (fieldShortName.equals("familyName")) return 317;//Họ
-            if (fieldShortName.equals("email")) return 115;//Thư điện tử
-            if (fieldShortName.equals("otherNames")) return 291;//Bí danh
-            if (fieldShortName.equals("phone")) return 288;//Số điện thoại
-            if (fieldShortName.equals("rpcountry")) return 118;//Quốc tịch
-            if (fieldShortName.equals("gender")) return 262;//Giới tính
-            if (fieldShortName.equals("fax")) return 319;//Fax
-            if (fieldShortName.equals("personalpicture")) return 135;//Ảnh đại diện
-            if (fieldShortName.equals("dept")) return 333;//Nơi công tác hiện tại
+            if (fieldShortName.equals("authorid")) return 133;//Researcher ID
+            if (fieldShortName.equals("biography")) return 134;//Biography
+            if (fieldShortName.equals("email")) return 135;//Thư điện tử
+            if (fieldShortName.equals("fullName")) return 136;//Tên chuyên gia
+            if (fieldShortName.equals("interests")) return 137;//Interests
+            if (fieldShortName.equals("rpcountry")) return 138;//Quốc tịch
+            if (fieldShortName.equals("orcid")) return 139;//ORCID
+            if (fieldShortName.equals("orcid-profile-pref-affiliation")) return 140;//affiliations-employment
+            if (fieldShortName.equals("orcid-profile-pref-authorid")) return 141;//external-identifier-Researcher ID
+            if (fieldShortName.equals("orcid-profile-pref-education")) return 142;//affiliations-education
+            if (fieldShortName.equals("orcid-profile-pref-iso-country")) return 143;//iso-3166-country
+            if (fieldShortName.equals("orcid-profile-pref-keywords")) return 144;//keywords
+            if (fieldShortName.equals("orcid-profile-pref-personalsite")) return 145;//researcher-urls
+            if (fieldShortName.equals("orcid-profile-pref-scopusid")) return 146;//external-identifier-Scopus Author ID
+            if (fieldShortName.equals("orcid-profile-pref-variants")) return 147;//other-names
+            if (fieldShortName.equals("orcid-projects-prefs")) return 148;
+            if (fieldShortName.equals("orcid-publications-prefs")) return 149;
+            if (fieldShortName.equals("orcid-push-crispj-activate-put")) return 150;//PUT mode enable for projects
+            if (fieldShortName.equals("orcid-push-crisrp-activate-put")) return 151;//PUT mode enable for profile
+            if (fieldShortName.equals("orcid-push-item-activate-put")) return 152;//PUT mode enable for publications
+            if (fieldShortName.equals("orcid-push-manual")) return 153;//Synchronization mode
+            if (fieldShortName.equals("otheremails")) return 154;//Other emails
+            if (fieldShortName.equals("personalpicture")) return 155;//Ảnh đại diện
+            if (fieldShortName.equals("personalsite")) return 156;//Personal Site
+            if (fieldShortName.equals("policy")) return 157;//Policy
+            if (fieldShortName.equals("preferredName")) return 158;//Credit Name
+            if (fieldShortName.equals("scopusid")) return 159;//Scopus Author ID
+            if (fieldShortName.equals("system-orcid-profile-pref-biography")) return 160;//biography
+            if (fieldShortName.equals("system-orcid-profile-pref-email")) return 161;//primary-email
+            if (fieldShortName.equals("system-orcid-profile-pref-fullName")) return 162;//name
+            if (fieldShortName.equals("system-orcid-profile-pref-otheremails")) return 163;//other-emails
+            if (fieldShortName.equals("system-orcid-profile-pref-preferredName")) return 164;//credit-name
+            if (fieldShortName.equals("system-orcid-token-activities-update")) return 165;//ORCID authorization scope (internally used)
+            if (fieldShortName.equals("system-orcid-token-authenticate")) return 166;//ORCID authorization scope (internally used)
+            if (fieldShortName.equals("system-orcid-token-person-update")) return 167;//ORCID authorization scope (internally used)
+            if (fieldShortName.equals("system-orcid-token-read-limited")) return 168;//ORCID authorization scope (internally used)
+            if (fieldShortName.equals("translatedName")) return 169;//Vernacular Name
+            if (fieldShortName.equals("variants")) return 170;//Variants
+            if (fieldShortName.equals("workgroups")) return 171;//Working groups
+            if (fieldShortName.equals("birthDay")) return 172;//Ngày sinh
+            if (fieldShortName.equals("degree")) return 173;//Học vị
+            if (fieldShortName.equals("position")) return 174;//Chức danh, học hàm
+            if (fieldShortName.equals("gender")) return 175;//Giới tính
+            if (fieldShortName.equals("identifiertype")) return 176;//Loại mã định danh
+            if (fieldShortName.equals("identifiervalue")) return 177;//Mã định danh
+            if (fieldShortName.equals("phone")) return 178;//Số điện thoại
+            if (fieldShortName.equals("otherNames")) return 179;//Bí danh
+            if (fieldShortName.equals("familyName")) return 180;//Họ
+            if (fieldShortName.equals("firstName")) return 181;//Tên
+            if (fieldShortName.equals("fax")) return 182;//Fax
+            if (fieldShortName.equals("dept")) return 183;//Nơi công tác hiện tại
+            if (fieldShortName.equals("rpsubject")) return 184;//Lĩnh vực chuyên môn
         }
         else if (crisType.equals("pj")) {
-            if (fieldShortName.equals("awardURL")) return 72;//Award URL
-            if (fieldShortName.equals("code")) return 73;//Code
-            if (fieldShortName.equals("coinvestigators")) return 74;//Co-Investigator(s)
-            if (fieldShortName.equals("expdate")) return 75;//Expected Completion
-            if (fieldShortName.equals("grantamount")) return 78;//Amount
-            if (fieldShortName.equals("grantduration")) return 79;//Duration
-            if (fieldShortName.equals("granttype")) return 80;//Grant type
-            if (fieldShortName.equals("logo")) return 82;//Hình ảnh
-            if (fieldShortName.equals("openaireid")) return 83;//OpenAIRE
-            if (fieldShortName.equals("organization")) return 84;//Participant Organization(s)
-            if (fieldShortName.equals("projectURL")) return 86;//Project URL
-            if (fieldShortName.equals("acronym")) return 89;//Tên viết tắt
-            if (fieldShortName.equals("contact")) return 101;//Thư ký
-            if (fieldShortName.equals("member")) return 102;//Thành viên
-            if (fieldShortName.equals("openaccess")) return 267;//Truy cập
-            if (fieldShortName.equals("memberValue")) return 312;//Thành Viên text
-            if (fieldShortName.equals("partner")) return 97;//Đối tác thực hiện
-            if (fieldShortName.equals("inKindContributor")) return 99;//Tổ chức phối hợp
-            if (fieldShortName.equals("principalInvestigator")) return 100;//Chủ nhiệm
-            if (fieldShortName.equals("fundedByPerson")) return 286;//Cá nhân tài trợ
-            if (fieldShortName.equals("fundedByOrg")) return 287;//Tổ chức tài trợ
-            if (fieldShortName.equals("principalInvestigatorValue")) return 311;//Chủ nhiệm text
-            if (fieldShortName.equals("identifier")) return 94;//Mã số
-            if (fieldShortName.equals("level")) return 92;//Cấp quản lý
-            if (fieldShortName.equals("authority")) return 252;//Đơn vị chủ quản
-            if (fieldShortName.equals("startdate")) return 87;//Thời gian bắt đầu
-            if (fieldShortName.equals("enddate")) return 90;//Thời gian kết thúc
-            if (fieldShortName.equals("abstract")) return 71;//Mô tả tóm tắt
-            if (fieldShortName.equals("keywords")) return 81;//Từ khoá
-            if (fieldShortName.equals("partOf")) return 103;//Thuộc nhiệm vụ
-            if (fieldShortName.equals("title")) return 88;//Tên nhiệm vụ
-            if (fieldShortName.equals("status")) return 95;//Tình trạng thực hiện
-            if (fieldShortName.equals("pjtype")) return 93;//Loại nhiệm vụ
-            if (fieldShortName.equals("pjsubject")) return 247;//Lĩnh vực nghiên cứu
-            if (fieldShortName.equals("coordinator")) return 96;//Tổ chức cấp trên của tổ chức chủ trì
-            if (fieldShortName.equals("contractor")) return 98;//Tổ chức chủ trì
-            if (fieldShortName.equals("contactValue")) return 313;//Thư ký text
-            if (fieldShortName.equals("contractorValue")) return 310;//Tổ chức chủ trì text
-            if (fieldShortName.equals("coordinatorValue")) return 309;//Tổ chức cấp trên của tổ chức chủ trì text
+            if (fieldShortName.equals("abstract")) return 87;//Mô tả tóm tắt
+            if (fieldShortName.equals("awardURL")) return 88;//Award URL
+            if (fieldShortName.equals("code")) return 89;//Code
+            if (fieldShortName.equals("coinvestigators")) return 90;//Co-Investigator(s)
+            if (fieldShortName.equals("expdate")) return 91;//Expected Completion
+            if (fieldShortName.equals("grantamount")) return 92;//Amount
+            if (fieldShortName.equals("grantduration")) return 93;//Duration
+            if (fieldShortName.equals("granttype")) return 94;//Grant type
+            if (fieldShortName.equals("keywords")) return 95;//Từ khoá
+            if (fieldShortName.equals("logo")) return 96;//Hình ảnh
+            if (fieldShortName.equals("openaireid")) return 97;//OpenAIRE
+            if (fieldShortName.equals("organization")) return 98;//Participant Organization(s)
+            if (fieldShortName.equals("projectURL")) return 99;//Project URL
+            if (fieldShortName.equals("startdate")) return 100;//Thời gian bắt đầu
+            if (fieldShortName.equals("title")) return 101;//Tên nhiệm vụ
+            if (fieldShortName.equals("acronym")) return 102;//Tên viết tắt
+            if (fieldShortName.equals("enddate")) return 103;//Thời gian kết thúc
+            if (fieldShortName.equals("level")) return 104;//Cấp quản lý
+            if (fieldShortName.equals("pjtype")) return 105;//Loại nhiệm vụ
+            if (fieldShortName.equals("identifier")) return 106;//Mã số
+            if (fieldShortName.equals("status")) return 107;//Tình trạng thực hiện
+            if (fieldShortName.equals("coordinator")) return 108;//Tổ chức cấp trên của tổ chức chủ trì
+            if (fieldShortName.equals("partner")) return 109;//Đối tác thực hiện
+            if (fieldShortName.equals("contractor")) return 110;//Tổ chức chủ trì
+            if (fieldShortName.equals("inKindContributor")) return 111;//Tổ chức phối hợp
+            if (fieldShortName.equals("principalInvestigator")) return 112;//Chủ nhiệm
+            if (fieldShortName.equals("contact")) return 113;//Thư ký
+            if (fieldShortName.equals("member")) return 114;//Thành viên
+            if (fieldShortName.equals("partOf")) return 115;//Thuộc nhiệm vụ
+            if (fieldShortName.equals("authority")) return 116;//Đơn vị chủ quản
+            if (fieldShortName.equals("openaccess")) return 117;//Truy cập
+            if (fieldShortName.equals("fundedByPerson")) return 118;//Cá nhân tài trợ
+            if (fieldShortName.equals("fundedByOrg")) return 119;//Tổ chức tài trợ
+            if (fieldShortName.equals("pjsubject")) return 120;//Lĩnh vực nghiên cứu            
+        }
+        else if (crisType.equals("publications")) {
+            if (fieldShortName.equals("utils.nodoi")) return 1;
+            if (fieldShortName.equals("utils.processdoi")) return 2;
+            if (fieldShortName.equals("contributor")) return 3; 
+            if (fieldShortName.equals("contributor.advisor")) return 4;
+            if (fieldShortName.equals("contributor.author")) return 5;
+            if (fieldShortName.equals("contributor.editor")) return 6;
+            if (fieldShortName.equals("contributor.illustrator")) return 7;
+            if (fieldShortName.equals("contributor.other")) return 8;
+            if (fieldShortName.equals("coverage.spatial")) return 9;
+            if (fieldShortName.equals("coverage.temporal")) return 10;
+            if (fieldShortName.equals("creator")) return 11;    
+            if (fieldShortName.equals("date")) return 12;   
+            if (fieldShortName.equals("date.accessioned")) return 13;
+            if (fieldShortName.equals("date.available")) return 14;
+            if (fieldShortName.equals("date.copyright")) return 15;
+            if (fieldShortName.equals("date.created")) return 16;
+            if (fieldShortName.equals("date.issued")) return 17;
+            if (fieldShortName.equals("date.submitted")) return 18;
+            if (fieldShortName.equals("identifier")) return 19; 
+            if (fieldShortName.equals("identifier.citation")) return 20;
+            if (fieldShortName.equals("identifier.govdoc")) return 21;
+            if (fieldShortName.equals("identifier.isbn")) return 22;
+            if (fieldShortName.equals("identifier.issn")) return 23;
+            if (fieldShortName.equals("identifier.sici")) return 24;
+            if (fieldShortName.equals("identifier.ismn")) return 25;
+            if (fieldShortName.equals("identifier.other")) return 26;
+            if (fieldShortName.equals("identifier.uri")) return 27;
+            if (fieldShortName.equals("description")) return 28;    
+            if (fieldShortName.equals("description.abstract")) return 29;
+            if (fieldShortName.equals("description.provenance")) return 30;
+            if (fieldShortName.equals("description.sponsorship")) return 31;
+            if (fieldShortName.equals("description.statementofresponsibility")) return 32;
+            if (fieldShortName.equals("description.tableofcontents")) return 33;
+            if (fieldShortName.equals("description.uri")) return 34;
+            if (fieldShortName.equals("format")) return 35; 
+            if (fieldShortName.equals("format.extent")) return 36;
+            if (fieldShortName.equals("format.medium")) return 37;
+            if (fieldShortName.equals("format.mimetype")) return 38;
+            if (fieldShortName.equals("language")) return 39;   
+            if (fieldShortName.equals("language.iso")) return 40;
+            if (fieldShortName.equals("publisher")) return 41;  
+            if (fieldShortName.equals("relation")) return 42;   
+            if (fieldShortName.equals("relation.isformatof")) return 43;
+            if (fieldShortName.equals("relation.ispartof")) return 44;
+            if (fieldShortName.equals("relation.ispartofseries")) return 45;
+            if (fieldShortName.equals("relation.haspart")) return 46;
+            if (fieldShortName.equals("relation.isversionof")) return 47;
+            if (fieldShortName.equals("relation.hasversion")) return 48;
+            if (fieldShortName.equals("relation.isbasedon")) return 49;
+            if (fieldShortName.equals("relation.isreferencedby")) return 50;
+            if (fieldShortName.equals("relation.requires")) return 51;
+            if (fieldShortName.equals("relation.replaces")) return 52;
+            if (fieldShortName.equals("relation.isreplacedby")) return 53;
+            if (fieldShortName.equals("relation.uri")) return 54;
+            if (fieldShortName.equals("rights")) return 55; 
+            if (fieldShortName.equals("rights.uri")) return 56;
+            if (fieldShortName.equals("source")) return 57; 
+            if (fieldShortName.equals("source.uri")) return 58;
+            if (fieldShortName.equals("subject")) return 59;    
+            if (fieldShortName.equals("subject.classification")) return 60;
+            if (fieldShortName.equals("subject.ddc")) return 61;
+            if (fieldShortName.equals("subject.lcc")) return 62;
+            if (fieldShortName.equals("subject.lcsh")) return 63;
+            if (fieldShortName.equals("subject.mesh")) return 64;
+            if (fieldShortName.equals("subject.other")) return 65;
+            if (fieldShortName.equals("title")) return 66;  
+            if (fieldShortName.equals("title.alternative")) return 67;
+            if (fieldShortName.equals("type")) return 68;   
+            if (fieldShortName.equals("provenance")) return 69; 
+            if (fieldShortName.equals("rights.license")) return 70;
+            if (fieldShortName.equals("relation.conference")) return 71;
+            if (fieldShortName.equals("relation.dataset")) return 72;
+            if (fieldShortName.equals("relation.publication")) return 73;
+            if (fieldShortName.equals("identifier.doi")) return 74;
+            if (fieldShortName.equals("identifier.pmid")) return 75;
+            if (fieldShortName.equals("identifier.arxiv")) return 76;
+            if (fieldShortName.equals("identifier.scopus")) return 77;
+            if (fieldShortName.equals("identifier.isi")) return 78;
+            if (fieldShortName.equals("identifier.ark")) return 79;
+            if (fieldShortName.equals("identifier.url")) return 80;
+            if (fieldShortName.equals("contributor.orcid")) return 81;
+            if (fieldShortName.equals("identifier.bibcode")) return 82;
+            if (fieldShortName.equals("identifier.external")) return 83;
+            if (fieldShortName.equals("domain")) return 84; 
+            if (fieldShortName.equals("relation.firstpage")) return 85;
+            if (fieldShortName.equals("relation.lastpage")) return 86;
+            if (fieldShortName.equals("identifier.eissn")) return 87;
+            if (fieldShortName.equals("volume")) return 88; 
+            if (fieldShortName.equals("number")) return 89; 
+            if (fieldShortName.equals("collection")) return 90; 
+            if (fieldShortName.equals("date.updated")) return 152;
+            if (fieldShortName.equals("description.version")) return 153;
+            if (fieldShortName.equals("identifier.slug")) return 154;
+            if (fieldShortName.equals("language.rfc3066")) return 155;
+            if (fieldShortName.equals("rights.holder")) return 156;
             
         }
         return -1;
@@ -748,7 +839,7 @@ public class MyTableResource extends Resource
         if (crisType.equals("techs")) return 4; //Công nghệ
         if (crisType.equals("patents")) return 5; //Sáng chế
         if (crisType.equals("awards")) return 6; //Giải thưởng
-        if (crisType.equals("certificate")) return 9; //Chứng nhận
+        if (crisType.equals("certificate")) return 7; //Chứng nhận
         if (crisType.equals("project")) return 11; //Nhiệm vụ
         if (crisType.equals("rp")) return 10; //Nhân lực
         if (crisType.equals("ou")) return 12; //Tổ chức
