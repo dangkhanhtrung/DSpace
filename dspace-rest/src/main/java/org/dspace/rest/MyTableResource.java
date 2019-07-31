@@ -401,7 +401,7 @@ public class MyTableResource extends Resource
 
     	        DatabaseManager.insert(context, mappingRow);
     	        
-                crisSearchService.updatePublicIndexPublic(context, objectBody.getString("publication_ID"));
+                crisSearchService.updatePublicIndexPublic(context, "123456789/" + objectBody.getString("publication_ID"), String.valueOf(idItem));
     	        
             }
 
