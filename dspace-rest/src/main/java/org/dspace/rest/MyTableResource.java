@@ -213,9 +213,9 @@ public class MyTableResource extends Resource
             	mappingRow = DatabaseManager.row("item");
     	        
     	        mappingRow.setColumn("submitter_id", 1);
-    	        mappingRow.setColumn("in_archive", false);
+    	        mappingRow.setColumn("in_archive", true);
     	        mappingRow.setColumn("withdrawn", false);
-    	        mappingRow.setColumn("owning_collection", 33);
+    	        mappingRow.setColumn("owning_collection", 1);
     	        mappingRow.setColumn("last_modified", currentTimestamp);
     	        mappingRow.setColumn("discoverable", true);
 
@@ -225,7 +225,7 @@ public class MyTableResource extends Resource
 
     	        int idItem = mappingRow.getIntColumn("item_id");
     	        log.info("insert DONE DONE DONE DONE DONE" + idItem);
-    	        
+    	        /*
     	        mappingRow = DatabaseManager.row("handle");
     	        
     	        mappingRow.setColumn("handle", "123456789/" + objectBody.getString("publication_ID"));
@@ -388,7 +388,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("confidence", -1);
 
     	        DatabaseManager.insert(context, mappingRow);
-    	        
+    	        */
                 crisSearchService.updatePublicIndexPublic(context, "123456789/" + objectBody.getString("publication_ID"), String.valueOf(idItem));
     	        
             }
