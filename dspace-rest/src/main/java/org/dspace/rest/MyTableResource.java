@@ -208,38 +208,6 @@ public class MyTableResource extends Resource
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Status", "patentsstatus");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Issuer", "patentsissuer");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_CountryCode", "patentscountrycode");
-
-            } else if (entity_object.equalsIgnoreCase("standards")) {
-                String crisType = "standards";
-                //FIXME: chưa đi sâu vào nhánh xml                
-                // Truyền id vào cris_id/source_id từ xml vào trả lại id của record
-                int cris_do_id = cris_entity_add(context, "standards", objectBody.getString("patent_ID"));
-                int value_id;
-
-                //field không có  <_source>
-                value_id = jdyna_values_add(context, "text", objectBody.getString("patent_RegistrationNumber"));
-                cris_prop_add(context, crisType, "patentsregistrationNumber", value_id, cris_do_id, 0);
-                value_id = jdyna_values_add(context, "text", objectBody.getString("patent_PatentNumber"));
-                cris_prop_add(context, crisType, "patentsnumber", value_id, cris_do_id, 0);
-                value_id = jdyna_values_add(context, "date", objectBody.getString("patent_ApprovalDate"));
-                cris_prop_add(context, crisType, "patentsapprovaldate", value_id, cris_do_id, 0);
-                value_id = jdyna_values_add(context, "date", objectBody.getString("patent_RegistrationDate"));
-                cris_prop_add(context, crisType, "patentsregistrationdate", value_id, cris_do_id, 0);
-
-                //add_value_by_xmlname(context,objectBody, cris_do_id, crisType, valueType, xmlfieldname, fieldShortName);
-                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Title", "patentsname");
-                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Subject", "patentssubject");
-                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Keyword", "patentskeyword");
-                // TODO: patentsholder có thể type = ou / rp tạm thời cho vào patentsholdervalue
-                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Holders", "patentsholdervalue");
-                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_References", "patentsreferences");
-                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_OriginatesFrom", "patentsoriginatesFrom");
-                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Inventors", "patentsinventors");
-                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Type", "patentstype");
-                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Status", "patentsstatus");
-                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Issuer", "patentsissuer");
-                add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_CountryCode", "patentscountrycode");            
-
             } else if (entity_object.equalsIgnoreCase("publication")) {
             	
             	mappingRow = DatabaseManager.row("item");
