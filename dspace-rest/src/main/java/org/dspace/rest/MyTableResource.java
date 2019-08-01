@@ -496,7 +496,7 @@ public class MyTableResource extends Resource
             //mappingRow.setColumn("id", value);//id do db đánh tự tăng
             mappingRow.setColumn("sortvalue", value);// thường giống text value, date thì 1 loạt số chưa biết pattern
             if (valueType.equals("date")) {
-                mappingRow.setColumn("datevalue", value);
+                mappingRow.setColumn("datevalue", new Date(value));
             }
             else if (valueType.equals("text")) {
                 mappingRow.setColumn("textvalue", value);
