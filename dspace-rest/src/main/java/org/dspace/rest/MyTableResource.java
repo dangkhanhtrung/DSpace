@@ -179,7 +179,7 @@ public class MyTableResource extends Resource
             	// util.processJournal(context, crisSearchService, objectBody );
             	*/
             } else if (entity_object.equalsIgnoreCase("patent")) {
-                String crisType = "patents";
+                String crisType = "patent";
                 //FIXME: chưa đi sâu vào nhánh xml                
                 // Truyền id vào cris_id/source_id từ xml vào trả lại id của record
                 int cris_do_id = cris_entity_add(context, crisType, objectBody.getString("patent_ID"));
