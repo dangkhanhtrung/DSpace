@@ -866,6 +866,8 @@ public class MyTableResource extends Resource
             if (!objectBody.isNull(xmlFieldName))//xmlFieldName = "patent_Subject"
             {
                 Object item = objectBody.get(xmlFieldName);
+                log.info("(item)" + item);
+                log.info("(item instanceof JSONArray)" + (item instanceof JSONArray));
                 if (item instanceof JSONArray)
                 {
                     JSONArray objArray = (JSONArray) item;
