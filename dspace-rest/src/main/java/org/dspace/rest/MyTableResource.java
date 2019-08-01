@@ -432,9 +432,11 @@ public class MyTableResource extends Resource
             }
             else{
             	mappingRow = DatabaseManager.row("cris_do");
-                log.info("mappingRow" + mappingRow);
+                log.info("crisType" + crisType);
+                log.info("crisTypexxxx" + crisType.equalsIgnoreCase("patent"));
             	if (crisType.equalsIgnoreCase("patent")) {
             		mappingRow.setColumn("typo_id", 5);
+                    log.info("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" + crisType);
             	}
                 log.info("mappingRow2" + mappingRow);
             }
