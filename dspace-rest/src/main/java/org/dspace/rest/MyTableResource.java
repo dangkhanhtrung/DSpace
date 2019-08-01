@@ -198,9 +198,9 @@ public class MyTableResource extends Resource
                 cris_prop_add(context, crisType, "patentsregistrationdate", value_id, cris_do_id, 0);
 
                 
-                /*
                 //add_value_by_xmlname(context,objectBody, cris_do_id, crisType, valueType, xmlfieldname, fieldShortName);
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Title", "patentsname");
+                /*
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Subject", "patentssubject");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Keyword", "patentskeyword");
                 // TODO: patentsholder có thể type = ou / rp tạm thời cho vào patentsholdervalue
