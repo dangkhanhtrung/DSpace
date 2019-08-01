@@ -187,6 +187,7 @@ public class MyTableResource extends Resource
                 log.info("cris_do_idcris_do_idcris_do_idcris_do_id" + cris_do_id);
                 int value_id;
                 
+                /*
                 //field không có  <_source>
                 value_id = jdyna_values_add(context, "text", objectBody.getString("patent_RegistrationNumber"));
                 cris_prop_add(context, crisType, "patentsregistrationNumber", value_id, cris_do_id, 0);
@@ -210,6 +211,7 @@ public class MyTableResource extends Resource
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Status", "patentsstatus");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Issuer", "patentsissuer");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_CountryCode", "patentscountrycode");
+                */
                 //crisSearchService.updateCrisIndexPublic(context, true);
                 crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
                 
