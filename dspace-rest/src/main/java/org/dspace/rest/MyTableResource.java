@@ -498,10 +498,14 @@ public class MyTableResource extends Resource
             mappingRowProp.setColumn("value_id", value_id); // id bảng jdyna_values
             mappingRowProp.setColumn("parent_id", cris_do_id); // id bảng cris_do
             //need mapping
-            mappingRowProp.setColumn("typo_id", get_field_typo_id(crisType, fieldShortName));
-            log.info("cris_prop_addcris_prop_addcris_prop_addcris_prop_add" + mappingRowProp);
-            DatabaseManager.insert(context, mappingRowProp);//try catch?
-            log.info("cris_prop_addcris_prop_addcris_prop_addcris_prop_add DONNEDONNEDONNEDONNEDONNE" + mappingRowProp);
+            int typoId = get_field_typo_id(crisType, fieldShortName);
+            mappingRowProp.setColumn("typo_id", typoId);
+            if (typoId > 0) {
+            	log.info("cris_prop_addcris_prop_addcris_prop_addcris_prop_add" + mappingRowProp);
+                DatabaseManager.insert(context, mappingRowProp);//try catch?
+                log.info("cris_prop_addcris_prop_addcris_prop_addcris_prop_add DONNEDONNEDONNEDONNEDONNE" + mappingRowProp);
+            }
+            
         }
         catch (SQLException e){
         	log.info(e);
