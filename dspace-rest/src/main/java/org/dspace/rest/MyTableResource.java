@@ -82,7 +82,7 @@ public class MyTableResource extends Resource
         }
         finally
         {
-            System.out.println("finally");
+            log.info("finally");
             processFinally(context);
         }
 
@@ -183,7 +183,7 @@ public class MyTableResource extends Resource
                 //FIXME: chưa đi sâu vào nhánh xml                
                 // Truyền id vào cris_id/source_id từ xml vào trả lại id của record
                 int cris_do_id = cris_entity_add(context, crisType, objectBody.getString("patent_ID"));
-                System.out.println("cris_do_idcris_do_idcris_do_idcris_do_id" + cris_do_id);
+                log.info("cris_do_idcris_do_idcris_do_idcris_do_id" + cris_do_id);
                 int value_id;
 
                 //field không có  <_source>
@@ -409,7 +409,7 @@ public class MyTableResource extends Resource
         }
         finally
         {
-            System.out.println("finally");
+            log.info("finally");
             processFinally(context);
         }
 
@@ -419,7 +419,7 @@ public class MyTableResource extends Resource
     //cris_entity_add(context, "patents", "patent_ID");
     private int cris_entity_add(org.dspace.core.Context context, String crisType, String xml_ID){
         try{
-            System.out.println("cris_entity_addcris_entity_addcris_entity_add");
+            log.info("cris_entity_addcris_entity_addcris_entity_add");
             TableRow mappingRow;
             if (crisType.equals("ou")){
                 mappingRow = DatabaseManager.row("cris_orgunits");
@@ -432,11 +432,11 @@ public class MyTableResource extends Resource
             }
             else{
             	mappingRow = DatabaseManager.row("cris_do");
-                System.out.println("mappingRow" + mappingRow);
+                log.info("mappingRow" + mappingRow);
             	if (crisType.equalsIgnoreCase("patent")) {
             		mappingRow.setColumn("typo_id", 5);
             	}
-                System.out.println("mappingRow2" + mappingRow);
+                log.info("mappingRow2" + mappingRow);
             }
 
             Date currentTimestamp = new Date();
@@ -459,7 +459,7 @@ public class MyTableResource extends Resource
 	        mappingRow.setColumn("timestamplastmodified", currentTimestamp);
 	        
             DatabaseManager.insert(context, mappingRow);//try catch?
-            System.out.println("mappingRowmappingRowmappingRow" + mappingRow);
+            log.info("mappingRowmappingRowmappingRow" + mappingRow);
             return mappingRow.getIntColumn("id");
         }
         catch (SQLException e){
