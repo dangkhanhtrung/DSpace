@@ -897,6 +897,7 @@ public class MyTableResource extends Resource
             }
         }
         catch (Exception e){
+        	log.info(e);
             return "Error";
         }
     }
