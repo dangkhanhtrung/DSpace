@@ -197,6 +197,7 @@ public class MyTableResource extends Resource
                 value_id = jdyna_values_add(context, "date", objectBody.getString("patent_RegistrationDate"));
                 cris_prop_add(context, crisType, "patentsregistrationdate", value_id, cris_do_id, 0);
 
+                /*
                 //add_value_by_xmlname(context,objectBody, cris_do_id, crisType, valueType, xmlfieldname, fieldShortName);
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Title", "patentsname");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Subject", "patentssubject");
@@ -210,6 +211,7 @@ public class MyTableResource extends Resource
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Status", "patentsstatus");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Issuer", "patentsissuer");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_CountryCode", "patentscountrycode");
+                */
                 crisSearchService.updateCrisIndexPublic(context, true);
                 //crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
                 
@@ -474,33 +476,33 @@ public class MyTableResource extends Resource
     // cris_prop_add(context, "patents", "patentsname", value_id lấy từ jdyna_values_add, cris_do_id, 0);
     private void cris_prop_add(org.dspace.core.Context context, String crisType, String fieldShortName, int value_id, int cris_do_id, int positiondef){
         try{
-            TableRow mappingRow;
+            TableRow mappingRowProp;
             if (crisType.equals("ou")){
-                mappingRow = DatabaseManager.row("cris_ou_prop");
+            	mappingRowProp = DatabaseManager.row("cris_ou_prop");
             }
             else if (crisType.equals("rp")) {
-                mappingRow = DatabaseManager.row("cris_rp_prop");
+            	mappingRowProp = DatabaseManager.row("cris_rp_prop");
             }
             else if (crisType.equals("pj")) {
-                mappingRow = DatabaseManager.row("cris_pj_prop");
+            	mappingRowProp = DatabaseManager.row("cris_pj_prop");
             }
             else{
-            	mappingRow = DatabaseManager.row("cris_do_prop");
+            	mappingRowProp = DatabaseManager.row("cris_do_prop");
             }
             //mappingRow.setColumn("id", value_id); //id bảng jdyna_values
             //mappingRow.setColumn("enddate", null); null
             //mappingRow.setColumn("startdate", null); null
             //mappingRow.setColumn("lockdef", null); null
-            mappingRow.setColumn("positiondef", positiondef);// FIXME: thuộc tính nhiều giá trị xếp thứ tự 0 -> 1 -> 2
-            mappingRow.setColumn("visibility", 1); // hiển thị trường hay không (tick lúc nhập dữ liệu) mặc định 1
+            mappingRowProp.setColumn("positiondef", positiondef);// FIXME: thuộc tính nhiều giá trị xếp thứ tự 0 -> 1 -> 2
+            mappingRowProp.setColumn("visibility", 1); // hiển thị trường hay không (tick lúc nhập dữ liệu) mặc định 1
             //mappingRow.setColumn("scopedef_id", null); null
-            mappingRow.setColumn("value_id", value_id); // id bảng jdyna_values
-            mappingRow.setColumn("parent_id", cris_do_id); // id bảng cris_do
+            mappingRowProp.setColumn("value_id", value_id); // id bảng jdyna_values
+            mappingRowProp.setColumn("parent_id", cris_do_id); // id bảng cris_do
             //need mapping
-            mappingRow.setColumn("typo_id", get_field_typo_id(crisType, fieldShortName));
-            log.info("cris_prop_addcris_prop_addcris_prop_addcris_prop_add" + mappingRow);
-            DatabaseManager.insert(context, mappingRow);//try catch?
-            log.info("cris_prop_addcris_prop_addcris_prop_addcris_prop_add DONNEDONNEDONNEDONNEDONNE" + mappingRow);
+            mappingRowProp.setColumn("typo_id", get_field_typo_id(crisType, fieldShortName));
+            log.info("cris_prop_addcris_prop_addcris_prop_addcris_prop_add" + mappingRowProp);
+            DatabaseManager.insert(context, mappingRowProp);//try catch?
+            log.info("cris_prop_addcris_prop_addcris_prop_addcris_prop_add DONNEDONNEDONNEDONNEDONNE" + mappingRowProp);
         }
         catch (SQLException e){
         	log.info(e);
