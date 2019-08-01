@@ -419,6 +419,7 @@ public class MyTableResource extends Resource
     //cris_entity_add(context, "patents", "patent_ID");
     private int cris_entity_add(org.dspace.core.Context context, String crisType, String xml_ID){
         try{
+            System.out.println("cris_entity_addcris_entity_addcris_entity_add");
             TableRow mappingRow;
             if (crisType.equals("ou")){
                 mappingRow = DatabaseManager.row("cris_orgunits");
@@ -431,9 +432,11 @@ public class MyTableResource extends Resource
             }
             else{
             	mappingRow = DatabaseManager.row("cris_do");
+                System.out.println("mappingRow" + mappingRow);
             	if (crisType.equalsIgnoreCase("patent")) {
             		mappingRow.setColumn("typo_id", 5);
             	}
+                System.out.println("mappingRow2" + mappingRow);
             }
 
             Date currentTimestamp = new Date();
