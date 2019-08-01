@@ -431,8 +431,14 @@ public class MyTableResource extends Resource
             }
             else{
             	mappingRow = DatabaseManager.row("cris_do");
+            	if (crisType.equalsIgnoreCase("patent")) {
+            		mappingRow.setColumn("typo_id", 5);
+            	}
             }
 
+            Date currentTimestamp = new Date();
+            
+            /*
             //mappingRow.setColumn("id", objectBody.getString("nth_id")); Không set
             mappingRow.setColumn("crisid", xml_ID); //get_id từ xml?
             mappingRow.setColumn("sourceid", xml_ID);
@@ -441,7 +447,16 @@ public class MyTableResource extends Resource
             mappingRow.setColumn("timestampcreated", new Date());
             mappingRow.setColumn("timestamplastmodified", new Date());            
             //mappingRow.setColumn("sourceref", objectBody.getString("nth_sourceref")); null
+            */
+            mappingRow.setColumn("crisid", xml_ID);
+	        mappingRow.setColumn("sourceid", xml_ID);
+	        mappingRow.setColumn("status", true);
+	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
+	        mappingRow.setColumn("timestampcreated", currentTimestamp);
+	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
+	        
             DatabaseManager.insert(context, mappingRow);//try catch?
+            System.out.println("mappingRowmappingRowmappingRow" + mappingRow);
             return mappingRow.getIntColumn("id");
         }
         catch (SQLException e){
