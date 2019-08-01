@@ -874,10 +874,12 @@ public class MyTableResource extends Resource
                     int positiondef = 1;
                     for ( Object obj : objArray) {
                         JSONObject object = (JSONObject) obj;
-                        int value_id = jdyna_values_add(context, valueType, object.getJSONObject("_source")
-                                                        .getString("title")); //lấy dữ liệu thêm vào bảng jdyna_values
-                        cris_prop_add(context, crisType, fieldShortName, value_id, cris_do_id, positiondef);
-                        positiondef++;
+                        if (object.has("_source")) {
+                        	int value_id = jdyna_values_add(context, valueType, object.getJSONObject("_source")
+                                    .getString("title")); //lấy dữ liệu thêm vào bảng jdyna_values
+						    cris_prop_add(context, crisType, fieldShortName, value_id, cris_do_id, positiondef);
+						    positiondef++;
+                        }
                     }
                     return "array";
                 }
