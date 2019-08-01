@@ -324,6 +324,12 @@ public class CrisSearchService extends SolrServiceImpl
         cleanCrisIndex(context);
         createCrisIndex(context);
     }
+    
+    public void updateCrisIndexPublic(Context context, boolean force)
+    {
+        cleanCrisIndex(context);
+        createCrisIndex(context);
+    }
 
     public void updateCrisIndexPublic(Context context, String crisId)
     {
