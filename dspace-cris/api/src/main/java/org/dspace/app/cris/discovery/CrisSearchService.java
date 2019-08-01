@@ -324,9 +324,16 @@ public class CrisSearchService extends SolrServiceImpl
         cleanCrisIndex(context);
         createCrisIndex(context);
     }
+    
+    public void updateCrisIndexPublic(Context context, boolean force)
+    {
+        cleanCrisIndex(context);
+        createCrisIndex(context);
+    }
 
     public void updateCrisIndexPublic(Context context, String crisId)
     {
+        log.info("updateCrisIndexPublicupdateCrisIndexPublicupdateCrisIndexPublic" + crisId);
     	cleanCrisIndexById(crisId);
         Researcher researcher = new Researcher();
         ApplicationService applicationService = researcher.getApplicationService();
@@ -339,13 +346,15 @@ public class CrisSearchService extends SolrServiceImpl
     }
     
 
-    public void updatePublicIndexPublic(Context context, String crisId)
+    public void updatePublicIndexPublic(Context context, String handle, String id)
     {
-    	cleanPublicationIndexById(crisId);
+    	cleanPublicationIndexById(handle);
         try {
-            DSpaceObject ddddkkk = Item.find(context, Integer.parseInt(crisId));
+            DSpaceObject ddddkkk = Item.find(context, Integer.parseInt(id));
+            List<Integer> ids = new ArrayList<Integer>();
+            ids.add(Integer.parseInt(id));
             log.info("ddddkkkddddkkkddddkkkddddkkkddddkkk DSpaceObjectDSpaceObject" + ddddkkk);
-			indexContent(context, ddddkkk, true);
+            updateIndex(context, ids, true, 2);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -354,12 +363,12 @@ public class CrisSearchService extends SolrServiceImpl
         
     }
     
-    private void cleanPublicationIndexById(String crisId)
+    private void cleanPublicationIndexById(String handle)
     {
         try
         {
             getSolr().deleteByQuery(
-                    "search.resourceid:" + crisId);
+                    "handle:" + handle);
         }
         catch (Exception e)
         {

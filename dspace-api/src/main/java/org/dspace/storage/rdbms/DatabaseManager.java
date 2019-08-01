@@ -795,7 +795,6 @@ public class DatabaseManager
         }
 
         row.setColumn(getPrimaryKeyColumn(context, row), newID);
-		context.setAutoCommit(true);
     }
 
     /**
@@ -1839,6 +1838,7 @@ public class DatabaseManager
 
         PreparedStatement statement = null;
 
+        log.info("Running query \"" + sql + "\"");
         if (log.isDebugEnabled())
         {
             log.debug("Running query \"" + sql + "\"");

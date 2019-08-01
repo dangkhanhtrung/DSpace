@@ -82,7 +82,7 @@ public class MyTableResource extends Resource
         }
         finally
         {
-            System.out.println("finally");
+            log.info("finally");
             processFinally(context);
         }
 
@@ -136,9 +136,9 @@ public class MyTableResource extends Resource
 
             Date currentTimestamp = new Date();
             log.info("entity_objectentity_object" + entity_object);
-            TableRow mappingRow;
+            TableRow mappingRowXXX;
             if (entity_object.equalsIgnoreCase("journal")) {
-
+            	/*
         		try {
 
         			mappingRow = DatabaseManager.row("cris_do");
@@ -177,14 +177,16 @@ public class MyTableResource extends Resource
         		}
         		
             	// util.processJournal(context, crisSearchService, objectBody );
-            	
-            } else if (entity_object.equalsIgnoreCase("patents")) {
-                String crisType = "patents";
+            	*/
+            } else if (entity_object.equalsIgnoreCase("patent")) {
+          
+                String crisType = "patent";
                 //FIXME: chưa đi sâu vào nhánh xml                
                 // Truyền id vào cris_id/source_id từ xml vào trả lại id của record
                 int cris_do_id = cris_entity_add(context, crisType, objectBody.getString("patent_ID"));
+                log.info("cris_do_idcris_do_idcris_do_idcris_do_id" + cris_do_id);
                 int value_id;
-
+                
                 //field không có  <_source>
                 value_id = jdyna_values_add(context, "text", objectBody.getString("patent_RegistrationNumber"));
                 cris_prop_add(context, crisType, "patentsregistrationNumber", value_id, cris_do_id, 0);
@@ -195,8 +197,10 @@ public class MyTableResource extends Resource
                 value_id = jdyna_values_add(context, "date", objectBody.getString("patent_RegistrationDate"));
                 cris_prop_add(context, crisType, "patentsregistrationdate", value_id, cris_do_id, 0);
 
+                
                 //add_value_by_xmlname(context,objectBody, cris_do_id, crisType, valueType, xmlfieldname, fieldShortName);
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Title", "patentsname");
+                /*
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Subject", "patentssubject");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Keyword", "patentskeyword");
                 // TODO: patentsholder có thể type = ou / rp tạm thời cho vào patentsholdervalue
@@ -208,39 +212,43 @@ public class MyTableResource extends Resource
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Status", "patentsstatus");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Issuer", "patentsissuer");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_CountryCode", "patentscountrycode");
+                */
+                crisSearchService.updateCrisIndexPublic(context, true);
+                //crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
+                
             } else if (entity_object.equalsIgnoreCase("publication")) {
             	
-            	mappingRow = DatabaseManager.row("item");
+            	mappingRowXXX = DatabaseManager.row("item");
     	        
-    	        mappingRow.setColumn("submitter_id", 1);
-    	        mappingRow.setColumn("in_archive", false);
-    	        mappingRow.setColumn("withdrawn", false);
-    	        mappingRow.setColumn("owning_collection", 33);
-    	        mappingRow.setColumn("last_modified", currentTimestamp);
-    	        mappingRow.setColumn("discoverable", true);
+            	mappingRowXXX.setColumn("submitter_id", 1);
+            	mappingRowXXX.setColumn("in_archive", true);
+            	mappingRowXXX.setColumn("withdrawn", false);
+            	mappingRowXXX.setColumn("owning_collection", 1);
+            	mappingRowXXX.setColumn("last_modified", currentTimestamp);
+            	mappingRowXXX.setColumn("discoverable", true);
 
-    	        log.info("adddddadddddadddddadddddadddddaddddd mappingRow" + mappingRow);
+    	        log.info("adddddadddddadddddadddddadddddaddddd mappingRow" + mappingRowXXX);
     	        
-    	        DatabaseManager.insert(context, mappingRow);
+    	        DatabaseManager.insert(context, mappingRowXXX);
 
-    	        int idItem = mappingRow.getIntColumn("item_id");
+    	        int idItem = mappingRowXXX.getIntColumn("item_id");
     	        log.info("insert DONE DONE DONE DONE DONE" + idItem);
-    	        
-    	        mappingRow = DatabaseManager.row("item");
+    	        /*
+    	        mappingRow = DatabaseManager.row("handle");
     	        
     	        mappingRow.setColumn("handle", "123456789/" + objectBody.getString("publication_ID"));
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("handle_id", idItem);
 
-    	        log.info("adddddadddddadddddadddddadddddaddddd mappingRow" + mappingRow);
+    	        DatabaseManager.insert(context, mappingRow);
     	        
     	        mappingRow = DatabaseManager.row("metadatavalue");
     	        
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 14);
-    	        mappingRow.setColumn("text_value", new Date(objectBody.getLong("createdAt")));
+    	        mappingRow.setColumn("text_value", new Date(objectBody.getLong("createdAt")) + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -252,7 +260,7 @@ public class MyTableResource extends Resource
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
     	        mappingRow.setColumn("metadata_field_id", 13);
-    	        mappingRow.setColumn("text_value", new Date(objectBody.getLong("modifiedAt")));
+    	        mappingRow.setColumn("text_value", new Date(objectBody.getLong("modifiedAt")) + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -263,7 +271,7 @@ public class MyTableResource extends Resource
     	        
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
-    	        mappingRow.setColumn("metadata_field_id", 27);
+    	        mappingRow.setColumn("metadata_field_id", get_field_typo_id("publications", "identifier.uri"));
     	        mappingRow.setColumn("text_value", "http://hdl.handle.net/123456789/" + objectBody.getString("publication_ID"));
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
@@ -273,7 +281,7 @@ public class MyTableResource extends Resource
     	        
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
-    	        mappingRow.setColumn("metadata_field_id", 30);
+    	        mappingRow.setColumn("metadata_field_id", get_field_typo_id("publications", "contributor.author"));
     	        mappingRow.setColumn("text_value", "admin");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
@@ -283,8 +291,8 @@ public class MyTableResource extends Resource
     	        
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
-    	        mappingRow.setColumn("metadata_field_id", 29);
-    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Abstract").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("metadata_field_id", get_field_typo_id("publications", "description.abstract"));
+    	        //mappingRow.setColumn("text_value", "publication_Abstract" objectBody.getJSONObject("publication_Abstract").getJSONObject("_source").getString("title"));
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -297,8 +305,8 @@ public class MyTableResource extends Resource
     	        
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
-    	        mappingRow.setColumn("metadata_field_id", 84);
-    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Subject").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("metadata_field_id", get_field_typo_id("publications", "subject"));
+    	        //mappingRow.setColumn("text_value", "publication_Subject"objectBody.getJSONObject("publication_Subject").getJSONObject("_source").getString("title") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -307,8 +315,8 @@ public class MyTableResource extends Resource
     	        
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
-    	        mappingRow.setColumn("metadata_field_id", 40);
-    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Language").getJSONObject("_source").getString("shortName"));
+    	        mappingRow.setColumn("metadata_field_id", get_field_typo_id("publications", "language.iso"));
+    	        //mappingRow.setColumn("text_value", "publication_Language"objectBody.getJSONObject("publication_Language").getJSONObject("_source").getString("shortName") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -317,8 +325,8 @@ public class MyTableResource extends Resource
     	        
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
-    	        mappingRow.setColumn("metadata_field_id", 159);
-    	        mappingRow.setColumn("text_value", objectBody.getString("publication_StartPage"));
+    	        mappingRow.setColumn("metadata_field_id", get_field_typo_id("publications", "relation.firstpage"));
+    	        mappingRow.setColumn("text_value", objectBody.getString("publication_StartPage") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -327,8 +335,8 @@ public class MyTableResource extends Resource
     	        
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
-    	        mappingRow.setColumn("metadata_field_id", 160);
-    	        mappingRow.setColumn("text_value", objectBody.getString("publication_EndPage"));
+    	        mappingRow.setColumn("metadata_field_id", get_field_typo_id("publications", "relation.lastpage"));
+    	        mappingRow.setColumn("text_value", objectBody.getString("publication_EndPage") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -337,18 +345,8 @@ public class MyTableResource extends Resource
     	        
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
-    	        mappingRow.setColumn("metadata_field_id", 68);
-    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Type").getJSONObject("_source").getString("title"));
-    	        mappingRow.setColumn("text_lang", "vi_VN");
-    	        mappingRow.setColumn("place", 1);
-    	        mappingRow.setColumn("confidence", -1);
-
-    	        DatabaseManager.insert(context, mappingRow);
-    	        
-    	        mappingRow.setColumn("resource_type_id", 2);
-    	        mappingRow.setColumn("resource_id", idItem);
-    	        mappingRow.setColumn("metadata_field_id", 68);
-    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Type").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("metadata_field_id", get_field_typo_id("publications", "type"));
+    	        //mappingRow.setColumn("text_value", "publication_Type"objectBody.getJSONObject("publication_Type").getJSONObject("_source").getString("title") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -358,8 +356,8 @@ public class MyTableResource extends Resource
     	        
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
-    	        mappingRow.setColumn("metadata_field_id", 41);
-    	        mappingRow.setColumn("text_value", objectBody.getJSONObject("publication_Publisher").getJSONObject("_source").getString("title"));
+    	        mappingRow.setColumn("metadata_field_id", get_field_typo_id("publications", "publisher"));
+    	        mappingRow.setColumn("text_value", "publication_Publisher"objectBody.getJSONObject("publication_Publisher").getJSONObject("_source").getString("title") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -369,8 +367,8 @@ public class MyTableResource extends Resource
     	        
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
-    	        mappingRow.setColumn("metadata_field_id", 17);
-    	        mappingRow.setColumn("text_value", objectBody.getInt("publication_PublicationDate"));
+    	        mappingRow.setColumn("metadata_field_id", get_field_typo_id("publications", "date.issued"));
+    	        mappingRow.setColumn("text_value", objectBody.getInt("publication_PublicationDate") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -380,8 +378,8 @@ public class MyTableResource extends Resource
     	        
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
-    	        mappingRow.setColumn("metadata_field_id", 66);
-    	        mappingRow.setColumn("text_value", objectBody.getString("title"));
+    	        mappingRow.setColumn("metadata_field_id", get_field_typo_id("publications", "title"));
+    	        mappingRow.setColumn("text_value", objectBody.getString("title") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
@@ -391,18 +389,19 @@ public class MyTableResource extends Resource
     	        
     	        mappingRow.setColumn("resource_type_id", 2);
     	        mappingRow.setColumn("resource_id", idItem);
-    	        mappingRow.setColumn("metadata_field_id", 5);
-    	        mappingRow.setColumn("text_value", objectBody.getString("author"));
+    	        mappingRow.setColumn("metadata_field_id", get_field_typo_id("publications", "contributor.author"));
+    	        mappingRow.setColumn("text_value", objectBody.getString("author") + " ");
     	        mappingRow.setColumn("text_lang", "vi_VN");
     	        mappingRow.setColumn("place", 1);
     	        mappingRow.setColumn("confidence", -1);
 
     	        DatabaseManager.insert(context, mappingRow);
+    	        */
+                crisSearchService.updatePublicIndexPublic(context, "123456789/" + objectBody.getString("publication_ID"), String.valueOf(idItem));
     	        
             }
 
 
-            crisSearchService.updateCrisIndexPublic(context, objectBody.getString("journal_ID"));
             
             log.info("crisSearchServicecrisSearchServicecrisSearchService" + crisSearchService);
             
@@ -414,7 +413,7 @@ public class MyTableResource extends Resource
         }
         finally
         {
-            System.out.println("finally");
+            log.info("finally");
             processFinally(context);
         }
 
@@ -424,6 +423,7 @@ public class MyTableResource extends Resource
     //cris_entity_add(context, "patents", "patent_ID");
     private int cris_entity_add(org.dspace.core.Context context, String crisType, String xml_ID){
         try{
+            log.info("cris_entity_addcris_entity_addcris_entity_add");
             TableRow mappingRow;
             if (crisType.equals("ou")){
                 mappingRow = DatabaseManager.row("cris_orgunits");
@@ -434,24 +434,38 @@ public class MyTableResource extends Resource
             else if (crisType.equals("pj")) {
                 mappingRow = DatabaseManager.row("cris_project");
             }
-            else if (crisType.equals("patents") | crisType.equals("standards") | crisType.equals("techs")){
-                mappingRow = DatabaseManager.row("cris_do_prop");
-                mappingRow.setColumn("typo_id", get_entity_id(crisType));
-            }
             else{
-                mappingRow = null;
+            	mappingRow = DatabaseManager.row("cris_do");
+                log.info("crisType" + crisType);
+                log.info("crisTypexxxx" + crisType.equalsIgnoreCase("patent"));
+            	if (crisType.equalsIgnoreCase("patent")) {
+            		mappingRow.setColumn("typo_id", 5);
+                    log.info("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" + crisType);
+            	}
+                log.info("mappingRow2" + mappingRow);
             }
-            mappingRow = DatabaseManager.row("cris_do");
 
+            Date currentTimestamp = new Date();
+            
+            /*
             //mappingRow.setColumn("id", objectBody.getString("nth_id")); Không set
             mappingRow.setColumn("crisid", xml_ID); //get_id từ xml?
             mappingRow.setColumn("sourceid", xml_ID);
-            mappingRow.setColumn("status", "true"); //true/false = public/hidden
+            mappingRow.setColumn("status", true); //true/false = public/hidden
             mappingRow.setColumn("uuid", UUID.randomUUID().toString());
-            //mappingRow.setColumn("timestampcreated", objectBody.getString("nth_timestampcreated"));
-            //mappingRow.setColumn("timestamplastmodified", objectBody.getString("nth_timestamplastmodified"));            
+            mappingRow.setColumn("timestampcreated", new Date());
+            mappingRow.setColumn("timestamplastmodified", new Date());            
             //mappingRow.setColumn("sourceref", objectBody.getString("nth_sourceref")); null
+            */
+            mappingRow.setColumn("crisid", xml_ID);
+	        mappingRow.setColumn("sourceid", xml_ID);
+	        mappingRow.setColumn("status", true);
+	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
+	        mappingRow.setColumn("timestampcreated", currentTimestamp);
+	        mappingRow.setColumn("timestamplastmodified", currentTimestamp);
+	        
             DatabaseManager.insert(context, mappingRow);//try catch?
+            log.info("mappingRowmappingRowmappingRow" + mappingRow);
             return mappingRow.getIntColumn("id");
         }
         catch (SQLException e){
@@ -463,36 +477,37 @@ public class MyTableResource extends Resource
     // cris_prop_add(context, "patents", "patentsname", value_id lấy từ jdyna_values_add, cris_do_id, 0);
     private void cris_prop_add(org.dspace.core.Context context, String crisType, String fieldShortName, int value_id, int cris_do_id, int positiondef){
         try{
-            TableRow mappingRow;
+            TableRow mappingRowProp;
             if (crisType.equals("ou")){
-                mappingRow = DatabaseManager.row("cris_ou_prop");
+            	mappingRowProp = DatabaseManager.row("cris_ou_prop");
             }
             else if (crisType.equals("rp")) {
-                mappingRow = DatabaseManager.row("cris_rp_prop");
+            	mappingRowProp = DatabaseManager.row("cris_rp_prop");
             }
             else if (crisType.equals("pj")) {
-                mappingRow = DatabaseManager.row("cris_pj_prop");
-            }
-            else if (crisType.equals("patents") | crisType.equals("standards") | crisType.equals("techs")){
-                mappingRow = DatabaseManager.row("cris_do_prop");
+            	mappingRowProp = DatabaseManager.row("cris_pj_prop");
             }
             else{
-                mappingRow = null;
+            	mappingRowProp = DatabaseManager.row("cris_do_prop");
             }
-            mappingRow.setColumn("id", value_id); //id bảng jdyna_values
+            //mappingRow.setColumn("id", value_id); //id bảng jdyna_values
             //mappingRow.setColumn("enddate", null); null
             //mappingRow.setColumn("startdate", null); null
             //mappingRow.setColumn("lockdef", null); null
-            mappingRow.setColumn("positiondef", positiondef);// FIXME: thuộc tính nhiều giá trị xếp thứ tự 0 -> 1 -> 2
-            mappingRow.setColumn("visibility", "1"); // hiển thị trường hay không (tick lúc nhập dữ liệu) mặc định 1
+            mappingRowProp.setColumn("positiondef", positiondef);// FIXME: thuộc tính nhiều giá trị xếp thứ tự 0 -> 1 -> 2
+            mappingRowProp.setColumn("visibility", 1); // hiển thị trường hay không (tick lúc nhập dữ liệu) mặc định 1
             //mappingRow.setColumn("scopedef_id", null); null
-            mappingRow.setColumn("value_id", value_id); // id bảng jdyna_values
-            mappingRow.setColumn("parent_id", cris_do_id); // id bảng cris_do
+            mappingRowProp.setColumn("value_id", value_id); // id bảng jdyna_values
+            mappingRowProp.setColumn("parent_id", cris_do_id); // id bảng cris_do
             //need mapping
-            mappingRow.setColumn("typo_id", get_field_typo_id(crisType, fieldShortName));
-            DatabaseManager.insert(context, mappingRow);//try catch?
+            mappingRowProp.setColumn("typo_id", get_field_typo_id(crisType, fieldShortName));
+            log.info("cris_prop_addcris_prop_addcris_prop_addcris_prop_add" + mappingRowProp);
+            DatabaseManager.insert(context, mappingRowProp);//try catch?
+            log.info("cris_prop_addcris_prop_addcris_prop_addcris_prop_add DONNEDONNEDONNEDONNEDONNE" + mappingRowProp);
         }
         catch (SQLException e){
+        	log.info(e);
+        	e.printStackTrace();
         }
     }
 
@@ -506,7 +521,7 @@ public class MyTableResource extends Resource
             //mappingRow.setColumn("id", value);//id do db đánh tự tăng
             mappingRow.setColumn("sortvalue", value);// thường giống text value, date thì 1 loạt số chưa biết pattern
             if (valueType.equals("date")) {
-                mappingRow.setColumn("datevalue", value);
+                mappingRow.setColumn("datevalue", new Date());
             }
             else if (valueType.equals("text")) {
                 mappingRow.setColumn("textvalue", value);
@@ -525,9 +540,10 @@ public class MyTableResource extends Resource
             }
             else if ((valueType.equals("patent")) | (valueType.equals("tech"))) { //Các kiểu của cris ...
                 mappingRow.setColumn("textvalue", value);
-                mappingRow.setColumn("dovalue", value);//cris-id
+                //mappingRow.setColumn("dovalue", value);//cris-id
             }
 
+            log.info("jdyna_values_addjdyna_values_addjdyna_values_add" + mappingRow);
             // Mặc định null ???
             // mappingRow.setColumn("linkdescription", value);
             // mappingRow.setColumn("linkvalue", value);
@@ -542,6 +558,7 @@ public class MyTableResource extends Resource
             // mappingRow.setColumn("custompointer", value);
 
             DatabaseManager.insert(context, mappingRow);//try catch?
+            log.info("jdyna_values_addjdyna_values_addjdyna_values_add DONEEE DONEEE DONEEE DONEEE" + mappingRow);
             return mappingRow.getIntColumn("id");
         }
         catch (SQLException e){
@@ -551,7 +568,7 @@ public class MyTableResource extends Resource
 
     private int get_field_typo_id(String crisType, String fieldShortName){
         // FIXME: mã fix cứng cần sửa khi sang sv mới
-        if (crisType.equals("patents")) {        
+        if (crisType.equals("patent")) {        
             if (fieldShortName.equals("patentsversioninfo")) return 65;//Thông tin phiên bản
             if (fieldShortName.equals("patentsissuer")) return 66;//Tổ chức đại diện
             if (fieldShortName.equals("patentsapprovaldate")) return 67;//Ngày công bố
@@ -880,6 +897,7 @@ public class MyTableResource extends Resource
             }
         }
         catch (Exception e){
+        	log.info(e);
             return "Error";
         }
     }
