@@ -327,6 +327,7 @@ public class CrisSearchService extends SolrServiceImpl
 
     public void updateCrisIndexPublic(Context context, String crisId)
     {
+        log.info("updateCrisIndexPublicupdateCrisIndexPublicupdateCrisIndexPublic" + crisId);
     	cleanCrisIndexById(crisId);
         Researcher researcher = new Researcher();
         ApplicationService applicationService = researcher.getApplicationService();
