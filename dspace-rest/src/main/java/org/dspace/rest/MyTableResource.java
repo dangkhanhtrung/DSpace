@@ -197,6 +197,7 @@ public class MyTableResource extends Resource
                 value_id = jdyna_values_add(context, "date", objectBody.getString("patent_RegistrationDate"));
                 cris_prop_add(context, crisType, "patentsregistrationdate", value_id, cris_do_id, 0);
 
+                
                 /*
                 //add_value_by_xmlname(context,objectBody, cris_do_id, crisType, valueType, xmlfieldname, fieldShortName);
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Title", "patentsname");
