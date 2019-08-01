@@ -178,7 +178,7 @@ public class MyTableResource extends Resource
         		
             	// util.processJournal(context, crisSearchService, objectBody );
             	*/
-            } else if (entity_object.equalsIgnoreCase("patents")) {
+            } else if (entity_object.equalsIgnoreCase("patent")) {
                 String crisType = "patents";
                 //FIXME: chưa đi sâu vào nhánh xml                
                 // Truyền id vào cris_id/source_id từ xml vào trả lại id của record
@@ -209,6 +209,9 @@ public class MyTableResource extends Resource
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Status", "patentsstatus");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Issuer", "patentsissuer");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_CountryCode", "patentscountrycode");
+                
+                crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
+                
             } else if (entity_object.equalsIgnoreCase("publication")) {
             	
             	mappingRow = DatabaseManager.row("item");
