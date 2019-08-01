@@ -136,7 +136,7 @@ public class MyTableResource extends Resource
 
             Date currentTimestamp = new Date();
             log.info("entity_objectentity_object" + entity_object);
-            TableRow mappingRow;
+            TableRow mappingRowXXX;
             if (entity_object.equalsIgnoreCase("journal")) {
             	/*
         		try {
@@ -181,33 +181,33 @@ public class MyTableResource extends Resource
             } else if (entity_object.equalsIgnoreCase("patent")) {
             	try {
 
-        			mappingRow = DatabaseManager.row("cris_do");
+            		mappingRowXXX = DatabaseManager.row("cris_do");
         	        
-        	        mappingRow.setColumn("crisid", objectBody.getString("patent_ID"));
-        	        mappingRow.setColumn("sourceid", objectBody.getString("patent_ID"));
-        	        mappingRow.setColumn("status", true);
-        	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
-        	        mappingRow.setColumn("timestampcreated", currentTimestamp);
-        	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
-        	        mappingRow.setColumn("typo_id", 5);
+            		mappingRowXXX.setColumn("crisid", objectBody.getString("patent_ID"));
+            		mappingRowXXX.setColumn("sourceid", objectBody.getString("patent_ID"));
+            		mappingRowXXX.setColumn("status", true);
+            		mappingRowXXX.setColumn("uuid", UUID.randomUUID().toString());
+            		mappingRowXXX.setColumn("timestampcreated", currentTimestamp);
+            		mappingRowXXX.setColumn("timestampLastModified", currentTimestamp);
+            		mappingRowXXX.setColumn("typo_id", 5);
 
-        	        log.info("adddddadddddadddddadddddadddddaddddd mappingRow" + mappingRow);
+        	        log.info("adddddadddddadddddadddddadddddaddddd mappingRow" + mappingRowXXX);
         	        
-        	        DatabaseManager.insert(context, mappingRow);
+        	        DatabaseManager.insert(context, mappingRowXXX);
 
         	        log.info("insert DONE DONE DONE DONE DONE");
         	        
         		} catch (SQLException e) {
         			// TODO Auto-generated catch block
-        			mappingRow = DatabaseManager.row("cris_do");
+        			mappingRowXXX = DatabaseManager.row("cris_do");
         	        
-        	        mappingRow.setColumn("crisid", objectBody.getString("patent_ID"));
-        	        mappingRow.setColumn("sourceid", objectBody.getString("patent_ID"));
-        	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
+        			mappingRowXXX.setColumn("crisid", objectBody.getString("patent_ID"));
+        			mappingRowXXX.setColumn("sourceid", objectBody.getString("patent_ID"));
+        			mappingRowXXX.setColumn("timestampLastModified", currentTimestamp);
 
-        	        log.info("updateupdateupdateupdateupdateupdate mappingRow" + mappingRow);
+        	        log.info("updateupdateupdateupdateupdateupdate mappingRow" + mappingRowXXX);
         	        
-        	        DatabaseManager.update(context, mappingRow);
+        	        DatabaseManager.update(context, mappingRowXXX);
 
         	        log.info("insert DONE DONE DONE DONE DONE");
         		}
@@ -249,20 +249,20 @@ public class MyTableResource extends Resource
                 
             } else if (entity_object.equalsIgnoreCase("publication")) {
             	
-            	mappingRow = DatabaseManager.row("item");
+            	mappingRowXXX = DatabaseManager.row("item");
     	        
-    	        mappingRow.setColumn("submitter_id", 1);
-    	        mappingRow.setColumn("in_archive", true);
-    	        mappingRow.setColumn("withdrawn", false);
-    	        mappingRow.setColumn("owning_collection", 1);
-    	        mappingRow.setColumn("last_modified", currentTimestamp);
-    	        mappingRow.setColumn("discoverable", true);
+            	mappingRowXXX.setColumn("submitter_id", 1);
+            	mappingRowXXX.setColumn("in_archive", true);
+            	mappingRowXXX.setColumn("withdrawn", false);
+            	mappingRowXXX.setColumn("owning_collection", 1);
+            	mappingRowXXX.setColumn("last_modified", currentTimestamp);
+            	mappingRowXXX.setColumn("discoverable", true);
 
-    	        log.info("adddddadddddadddddadddddadddddaddddd mappingRow" + mappingRow);
+    	        log.info("adddddadddddadddddadddddadddddaddddd mappingRow" + mappingRowXXX);
     	        
-    	        DatabaseManager.insert(context, mappingRow);
+    	        DatabaseManager.insert(context, mappingRowXXX);
 
-    	        int idItem = mappingRow.getIntColumn("item_id");
+    	        int idItem = mappingRowXXX.getIntColumn("item_id");
     	        log.info("insert DONE DONE DONE DONE DONE" + idItem);
     	        /*
     	        mappingRow = DatabaseManager.row("handle");
