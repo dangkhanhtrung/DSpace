@@ -514,7 +514,7 @@ public class MyTableResource extends Resource
             //mappingRow.setColumn("id", value);//id do db đánh tự tăng
             mappingRow.setColumn("sortvalue", value);// thường giống text value, date thì 1 loạt số chưa biết pattern
             if (valueType.equals("date")) {
-                mappingRow.setColumn("datevalue", new Date(value));
+                mappingRow.setColumn("datevalue", new Date());
             }
             else if (valueType.equals("text")) {
                 mappingRow.setColumn("textvalue", value);
@@ -533,9 +533,10 @@ public class MyTableResource extends Resource
             }
             else if ((valueType.equals("patent")) | (valueType.equals("tech"))) { //Các kiểu của cris ...
                 mappingRow.setColumn("textvalue", value);
-                mappingRow.setColumn("dovalue", value);//cris-id
+                //mappingRow.setColumn("dovalue", value);//cris-id
             }
 
+            log.info("jdyna_values_addjdyna_values_addjdyna_values_add" + mappingRow);
             // Mặc định null ???
             // mappingRow.setColumn("linkdescription", value);
             // mappingRow.setColumn("linkvalue", value);
