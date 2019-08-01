@@ -453,7 +453,7 @@ public class MyTableResource extends Resource
 	        mappingRow.setColumn("status", true);
 	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
 	        mappingRow.setColumn("timestampcreated", currentTimestamp);
-	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
+	        mappingRow.setColumn("timestamplastmodified", currentTimestamp);
 	        
             DatabaseManager.insert(context, mappingRow);//try catch?
             System.out.println("mappingRowmappingRowmappingRow" + mappingRow);
