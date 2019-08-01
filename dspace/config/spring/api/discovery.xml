@@ -1113,6 +1113,7 @@
 				<ref bean="searchFilterDomain" />
 				<ref bean="searchFilterIssued" />		
 				<ref bean="searchFilterDatasetsPublisher" />
+				<ref bean="searchFilterSourceID" />
 			</list>
 		</property>
 		<!--The sort filters for the discovery search -->
@@ -1226,6 +1227,7 @@
 				<ref bean="searchFilterRPDept" />
 				<ref bean="searchFilterRPBirthDay" />	
 				<ref bean="searchFilterRPGender" />	
+				<ref bean="searchFilterSourceID" />
 			</list>
 		</property>
 		<!--The sort filters for the discovery search -->
@@ -1319,6 +1321,7 @@
 				<ref bean="searchFilterProjectPrincipalInvestigator" />				
 				<ref bean="searchFilterProjectStatus" />
 				<ref bean="searchFilterProjectKeywords" />
+				<ref bean="searchFilterSourceID" />
 			</list>
 		</property>
 		<!--The sort filters for the discovery search -->
@@ -1406,6 +1409,7 @@
 				<ref bean="searchFilterOUActivity" />										
 				<ref bean="searchFilterOUSubject" />							
 				<ref bean="searchFilterOUProvince" />
+				<ref bean="searchFilterSourceID" />
 			</list>
 		</property>
 		<!--The sort filters for the discovery search -->
@@ -1512,6 +1516,7 @@
 				<ref bean="searchFilterJournalsAuthority" />							
 				<ref bean="searchFilterJournalsPublisher" />
 				<ref bean="searchFilterJournalsKeyword" />
+				<ref bean="searchFilterSourceID" />
 			</list>
 		</property>
 		<!--The sort filters for the discovery search -->
@@ -1600,7 +1605,8 @@
 				<ref bean="searchFilterEventsProvince" />
 				<ref bean="searchFilterEventsSubject" />
 				<ref bean="searchFilterEventsOrganizer" />
-				<ref bean="searchFilterEventsKeyword" />				
+				<ref bean="searchFilterEventsKeyword" />
+				<ref bean="searchFilterSourceID" />		
 			</list>
 		</property>
 		<!--The sort filters for the discovery search -->
@@ -1704,7 +1710,8 @@
 				<ref bean="searchFilterTechsCountry" />
 				<ref bean="searchFilterTechsProviders" />
 				<ref bean="searchFilterTechsCreator" />
-				<ref bean="searchFilterTechsKeyword" />							
+				<ref bean="searchFilterTechsKeyword" />
+				<ref bean="searchFilterSourceID" />					
 			</list>
 		</property>
 		<property name="sidebarFacets" ref="facetsCrisTechsConfiguration" />
@@ -1746,7 +1753,8 @@
 				<ref bean="searchFilterStandardsPublicationDate" />
 				<ref bean="searchFilterStandardsStatus" />
 				<ref bean="searchFilterStandardsSubject" />			
-				<ref bean="searchFilterStandardsKeyword" />			
+				<ref bean="searchFilterStandardsKeyword" />
+				<ref bean="searchFilterSourceID" />
 			</list>
 		</property>
 		<property name="sidebarFacets" ref="facetsCrisStandardsConfiguration" />
@@ -1790,7 +1798,8 @@
 				<ref bean="searchFilterPatentsHoldersPerson" />					
 				<ref bean="searchFilterPatentsHoldersOrgUnits" />					
 				<ref bean="searchFilterPatentsInventors" />					
-				<ref bean="searchFilterPatentsKeyword" />					
+				<ref bean="searchFilterPatentsKeyword" />
+				<ref bean="searchFilterSourceID" />			
 			</list>
 		</property>
 		<property name="sidebarFacets" ref="facetsCrisPatentConfiguration" />
@@ -1829,7 +1838,8 @@
 				<ref bean="searchFilterAwardSubject" />
 				<ref bean="searchFilterAwardAuthority" />
 				<ref bean="searchFilterAwardWinners" />			
-				<ref bean="searchFilterAwardKeyword" />				
+				<ref bean="searchFilterAwardKeyword" />
+				<ref bean="searchFilterSourceID" />
 			</list>
 		</property>
 		<property name="sidebarFacets" ref="facetsCrisAwardConfiguration" />
@@ -1916,6 +1926,7 @@
 				<ref bean="searchFilterCertificateStatus" />
 				<ref bean="searchFilterCertificateIssueDate" />
 				<ref bean="searchFilterCertificateLicencedBy" />
+				<ref bean="searchFilterSourceID" />
 			</list>
 		</property>
 		<property name="sidebarFacets" ref="facetsCrisCertificateConfiguration" />
@@ -2135,7 +2146,6 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
-		<property name="type" value="thongkestring"/>
 	</bean>
 
 	<bean id="searchFilterPatentsHoldersPerson"
@@ -2200,7 +2210,6 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="VALUE" />
-		<property name="type" value="thongkestring" />
 	</bean>
 
 	<bean id="searchFilterAwardAuthority"
@@ -2316,7 +2325,6 @@
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
-		<property name="type" value="thongkestring" />
 		<property name="sortOrder" value="VALUE" />
 	</bean>
 
@@ -2579,8 +2587,7 @@
 				<value>crisstandards.standardssubject</value>
 			</list>
 		</property>
-		<property name="facetLimit" value="10" />
-		<property name="type" value="thongkestring" />
+		<property name="facetLimit" value="10" />		
 		<property name="sortOrder" value="COUNT" />
 	</bean>
 
@@ -2667,7 +2674,6 @@
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
-		<property name="type" value="thongkestring" />
 		<property name="sortOrder" value="VALUE" />
 	</bean>
 
@@ -2797,7 +2803,6 @@
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
-		<property name="type" value="thongkestring" />
 		<property name="sortOrder" value="VALUE" />
 	</bean>
 
@@ -2928,7 +2933,6 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="VALUE" />
-		<property name="type" value="thongkestring" />
 	</bean>	
 
 	<bean id="searchFilterOUProvince"
@@ -3006,7 +3010,6 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="VALUE" />
-		<property name="type" value="thongkestring" />
 	</bean>
 
 	<bean id="searchFilterEventsOrganizer"
@@ -3201,7 +3204,6 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="VALUE" />
-		<property name="type" value="thongkestring" />
 	</bean>
 
 	<bean id="searchFilterJournalsAuthority"
@@ -3276,6 +3278,17 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
+	</bean>
+
+	<bean id="searchFilterSourceID"
+		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		<property name="indexFieldName" value="sourceID" />
+		<property name="metadataFields">
+			<list>
+				<value>cris-sourceid</value>			
+			</list>
+		</property>
+		<property name="type" value="text" />
 	</bean>
 	
 	<!--Sort properties -->
@@ -3411,7 +3424,7 @@
 			<ref bean="searchFilterStandardsPublicationDate" />
 			<ref bean="searchFilterStandardsStatus" />
 			<ref bean="searchFilterStandardsSubject" />
-			<ref bean="searchFilterStandardsKeyword" />			
+			<ref bean="searchFilterStandardsKeyword" />
 		</list>
 		</constructor-arg>
 	</bean>

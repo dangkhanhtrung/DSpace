@@ -12,14 +12,14 @@
   <!-- the mapping for handle "default".                                    -->
   <form-map>
     <name-map collection-handle="default" form-name="traditional"/>
-    <name-map collection-handle="123456789/12222" form-name="Scopus"/>
-    <name-map collection-handle="123456789/11221" form-name="ISI"/>
-    <name-map collection-handle="123456789/12220" form-name="QuocTe"/>
-    <name-map collection-handle="123456789/12219" form-name="TrongNuoc"/>
-    <name-map collection-handle="123456789/12266" form-name="DuLieuAPI"/>
-    <name-map collection-handle="123456789/12250" form-name="DuLieuChuyenNganh"/>
-    <name-map collection-handle="123456789/11225" form-name="DuLieuDanhMuc"/>
-    <name-map collection-handle="123456789/12251" form-name="DuLieuMo"/>
+    <name-map collection-handle="123456789/5" form-name="Scopus"/>
+    <name-map collection-handle="123456789/4" form-name="ISI"/>
+    <name-map collection-handle="123456789/3" form-name="QuocTe"/>
+    <name-map collection-handle="123456789/2" form-name="TrongNuoc"/>
+    <name-map collection-handle="123456789/7" form-name="DuLieuAPI"/>
+    <name-map collection-handle="123456789/8" form-name="DuLieuChuyenNganh"/>
+    <name-map collection-handle="123456789/9" form-name="DuLieuDanhMuc"/>
+    <name-map collection-handle="123456789/10" form-name="DuLieuMo"/>
     <!-- 
   we provide examples of form tailored for articles, books, 
     conference_materials, dataset and a catch all others form-name 
