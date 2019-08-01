@@ -200,7 +200,6 @@ public class MyTableResource extends Resource
                 
                 //add_value_by_xmlname(context,objectBody, cris_do_id, crisType, valueType, xmlfieldname, fieldShortName);
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Title", "patentsname");
-                /*
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Subject", "patentssubject");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Keyword", "patentskeyword");
                 // TODO: patentsholder có thể type = ou / rp tạm thời cho vào patentsholdervalue
@@ -212,7 +211,6 @@ public class MyTableResource extends Resource
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Status", "patentsstatus");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Issuer", "patentsissuer");
                 add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_CountryCode", "patentscountrycode");
-                */
                 crisSearchService.updateCrisIndexPublic(context, true);
                 //crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
                 
