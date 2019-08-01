@@ -871,7 +871,7 @@ public class MyTableResource extends Resource
                 if (item instanceof JSONArray)
                 {
                     JSONArray objArray = (JSONArray) item;
-                    int positiondef = 0;
+                    int positiondef = 1;
                     for ( Object obj : objArray) {
                         JSONObject object = (JSONObject) obj;
                         int value_id = jdyna_values_add(context, valueType, object.getJSONObject("_source")
