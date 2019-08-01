@@ -909,3 +909,6 @@ body input.form-control {
 .detail_view table td div {
     padding: 0 !important;
 }
+#attributeJournals:focus, #attributeJournals *:focus {
+    outline: none;
+}
