@@ -886,7 +886,7 @@ public class MyTableResource extends Resource
                     JSONObject object = (JSONObject) item;
                     int value_id = jdyna_values_add(context, valueType, object.getJSONObject("_source")
                                                     .getString("title"));
-                    cris_prop_add(context, "patents", "patentsoriginatesFrom",
+                    cris_prop_add(context, crisType, fieldShortName,
                                     value_id, cris_do_id, 0);
                     return "object";
                 }
