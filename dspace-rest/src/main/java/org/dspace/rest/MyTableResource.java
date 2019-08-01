@@ -138,7 +138,7 @@ public class MyTableResource extends Resource
             log.info("entity_objectentity_object" + entity_object);
             TableRow mappingRow;
             if (entity_object.equalsIgnoreCase("journal")) {
-
+            	/*
         		try {
 
         			mappingRow = DatabaseManager.row("cris_do");
@@ -177,12 +177,13 @@ public class MyTableResource extends Resource
         		}
         		
             	// util.processJournal(context, crisSearchService, objectBody );
-            	
+            	*/
             } else if (entity_object.equalsIgnoreCase("patents")) {
                 String crisType = "patents";
                 //FIXME: chưa đi sâu vào nhánh xml                
                 // Truyền id vào cris_id/source_id từ xml vào trả lại id của record
                 int cris_do_id = cris_entity_add(context, crisType, objectBody.getString("patent_ID"));
+                System.out.println("cris_do_idcris_do_idcris_do_idcris_do_id" + cris_do_id);
                 int value_id;
 
                 //field không có  <_source>
@@ -425,22 +426,17 @@ public class MyTableResource extends Resource
             else if (crisType.equals("pj")) {
                 mappingRow = DatabaseManager.row("cris_project");
             }
-            else if (crisType.equals("patents") | crisType.equals("standards") | crisType.equals("techs")){
-                mappingRow = DatabaseManager.row("cris_do_prop");
-                mappingRow.setColumn("typo_id", get_entity_id(crisType));
-            }
             else{
-                mappingRow = null;
+            	mappingRow = DatabaseManager.row("cris_do");
             }
-            mappingRow = DatabaseManager.row("cris_do");
 
             //mappingRow.setColumn("id", objectBody.getString("nth_id")); Không set
             mappingRow.setColumn("crisid", xml_ID); //get_id từ xml?
             mappingRow.setColumn("sourceid", xml_ID);
-            mappingRow.setColumn("status", "true"); //true/false = public/hidden
+            mappingRow.setColumn("status", true); //true/false = public/hidden
             mappingRow.setColumn("uuid", UUID.randomUUID().toString());
-            //mappingRow.setColumn("timestampcreated", objectBody.getString("nth_timestampcreated"));
-            //mappingRow.setColumn("timestamplastmodified", objectBody.getString("nth_timestamplastmodified"));            
+            mappingRow.setColumn("timestampcreated", new Date().getTime());
+            mappingRow.setColumn("timestamplastmodified", new Date().getTime());            
             //mappingRow.setColumn("sourceref", objectBody.getString("nth_sourceref")); null
             DatabaseManager.insert(context, mappingRow);//try catch?
             return mappingRow.getIntColumn("id");
