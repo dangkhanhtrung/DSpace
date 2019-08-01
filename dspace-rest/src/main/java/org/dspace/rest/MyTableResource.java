@@ -179,6 +179,39 @@ public class MyTableResource extends Resource
             	// util.processJournal(context, crisSearchService, objectBody );
             	*/
             } else if (entity_object.equalsIgnoreCase("patent")) {
+            	try {
+
+        			mappingRow = DatabaseManager.row("cris_do");
+        	        
+        	        mappingRow.setColumn("crisid", objectBody.getString("patent_ID"));
+        	        mappingRow.setColumn("sourceid", objectBody.getString("patent_ID"));
+        	        mappingRow.setColumn("status", true);
+        	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
+        	        mappingRow.setColumn("timestampcreated", currentTimestamp);
+        	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
+        	        mappingRow.setColumn("typo_id", 5);
+
+        	        log.info("adddddadddddadddddadddddadddddaddddd mappingRow" + mappingRow);
+        	        
+        	        DatabaseManager.insert(context, mappingRow);
+
+        	        log.info("insert DONE DONE DONE DONE DONE");
+        	        
+        		} catch (SQLException e) {
+        			// TODO Auto-generated catch block
+        			mappingRow = DatabaseManager.row("cris_do");
+        	        
+        	        mappingRow.setColumn("crisid", objectBody.getString("patent_ID"));
+        	        mappingRow.setColumn("sourceid", objectBody.getString("patent_ID"));
+        	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
+
+        	        log.info("updateupdateupdateupdateupdateupdate mappingRow" + mappingRow);
+        	        
+        	        DatabaseManager.update(context, mappingRow);
+
+        	        log.info("insert DONE DONE DONE DONE DONE");
+        		}
+            	crisSearchService.updateCrisIndexPublic(context, true);
                 String crisType = "patent";
                 //FIXME: chưa đi sâu vào nhánh xml                
                 // Truyền id vào cris_id/source_id từ xml vào trả lại id của record
