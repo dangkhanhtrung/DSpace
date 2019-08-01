@@ -485,11 +485,8 @@ public class MyTableResource extends Resource
             else if (crisType.equals("pj")) {
                 mappingRow = DatabaseManager.row("cris_pj_prop");
             }
-            else if (crisType.equals("patents") | crisType.equals("standards") | crisType.equals("techs")){
-                mappingRow = DatabaseManager.row("cris_do_prop");
-            }
             else{
-                mappingRow = null;
+            	mappingRow = DatabaseManager.row("cris_do_prop");
             }
             mappingRow.setColumn("id", value_id); //id bảng jdyna_values
             //mappingRow.setColumn("enddate", null); null
@@ -555,6 +552,7 @@ public class MyTableResource extends Resource
             // mappingRow.setColumn("custompointer", value);
 
             DatabaseManager.insert(context, mappingRow);//try catch?
+            log.info("jdyna_values_addjdyna_values_addjdyna_values_add DONEEE DONEEE DONEEE DONEEE" + mappingRow);
             return mappingRow.getIntColumn("id");
         }
         catch (SQLException e){
