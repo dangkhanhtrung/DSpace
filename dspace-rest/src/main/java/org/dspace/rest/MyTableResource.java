@@ -474,7 +474,7 @@ public class MyTableResource extends Resource
             //mappingRow.setColumn("startdate", null); null
             //mappingRow.setColumn("lockdef", null); null
             mappingRow.setColumn("positiondef", positiondef);// FIXME: thuộc tính nhiều giá trị xếp thứ tự 0 -> 1 -> 2
-            mappingRow.setColumn("visibility", "1"); // hiển thị trường hay không (tick lúc nhập dữ liệu) mặc định 1
+            mappingRow.setColumn("visibility", 1); // hiển thị trường hay không (tick lúc nhập dữ liệu) mặc định 1
             //mappingRow.setColumn("scopedef_id", null); null
             mappingRow.setColumn("value_id", value_id); // id bảng jdyna_values
             mappingRow.setColumn("parent_id", cris_do_id); // id bảng cris_do
