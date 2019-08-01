@@ -438,8 +438,8 @@ public class MyTableResource extends Resource
             mappingRow.setColumn("sourceid", xml_ID);
             mappingRow.setColumn("status", true); //true/false = public/hidden
             mappingRow.setColumn("uuid", UUID.randomUUID().toString());
-            mappingRow.setColumn("timestampcreated", new Date().getTime());
-            mappingRow.setColumn("timestamplastmodified", new Date().getTime());            
+            mappingRow.setColumn("timestampcreated", new Date());
+            mappingRow.setColumn("timestamplastmodified", new Date());            
             //mappingRow.setColumn("sourceref", objectBody.getString("nth_sourceref")); null
             DatabaseManager.insert(context, mappingRow);//try catch?
             return mappingRow.getIntColumn("id");
