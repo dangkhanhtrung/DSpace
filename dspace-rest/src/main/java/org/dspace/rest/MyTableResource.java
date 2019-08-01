@@ -191,11 +191,11 @@ public class MyTableResource extends Resource
                 value_id = jdyna_values_add(context, "text", objectBody.getString("patent_RegistrationNumber"));
                 cris_prop_add(context, crisType, "patentsregistrationNumber", value_id, cris_do_id, 0);
                 value_id = jdyna_values_add(context, "text", objectBody.getString("patent_PatentNumber"));
-                cris_prop_add(context, crisType, "patentsnumber", value_id, cris_do_id, 0);
+                //cris_prop_add(context, crisType, "patentsnumber", value_id, cris_do_id, 0);
                 value_id = jdyna_values_add(context, "date", objectBody.getString("patent_ApprovalDate"));
-                cris_prop_add(context, crisType, "patentsapprovaldate", value_id, cris_do_id, 0);
+                //cris_prop_add(context, crisType, "patentsapprovaldate", value_id, cris_do_id, 0);
                 value_id = jdyna_values_add(context, "date", objectBody.getString("patent_RegistrationDate"));
-                cris_prop_add(context, crisType, "patentsregistrationdate", value_id, cris_do_id, 0);
+                //cris_prop_add(context, crisType, "patentsregistrationdate", value_id, cris_do_id, 0);
 
                 /*
                 //add_value_by_xmlname(context,objectBody, cris_do_id, crisType, valueType, xmlfieldname, fieldShortName);
