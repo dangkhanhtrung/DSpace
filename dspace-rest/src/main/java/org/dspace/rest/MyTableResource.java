@@ -9,6 +9,8 @@ package org.dspace.rest;
 
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -146,7 +148,17 @@ public class MyTableResource extends Resource
                 if (mappingRowXXX != null) {
                 	idCrisDo = mappingRowXXX.getIntColumn("id");
                 	mappingRowXXX = DatabaseManager.findByUnique(context, "cris_do_prop", "parent_id", idCrisDo);
-                	log.info("mappingRowXXXmappingRowXXXmappingRowXXX" + mappingRowXXX);
+                	
+                	String myQuery = "select * from cris_do_prop where parent_id = " + idCrisDo;
+
+                    List<TableRow> storage = DatabaseManager.queryTable(context, "cris_do_prop", myQuery)
+                            .toList();
+
+                    for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();)
+                    {
+                        TableRow row = iterator.next();
+                    	log.info("mappingRowXXXmappingRowXXXmappingRowXXX" + row);
+                    }
                 }
             	
             	String crisType = "patent";
