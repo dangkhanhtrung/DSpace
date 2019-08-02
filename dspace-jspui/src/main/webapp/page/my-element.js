@@ -1770,12 +1770,12 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4ba8cb43-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/HelloWorld.vue?vue&type=template&id=accd6a5c&shadow
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4ba8cb43-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/HelloWorld.vue?vue&type=template&id=6db94c28&shadow
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span')}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/HelloWorld.vue?vue&type=template&id=accd6a5c&shadow
+// CONCATENATED MODULE: ./src/components/HelloWorld.vue?vue&type=template&id=6db94c28&shadow
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es7.symbol.async-iterator.js
 var es7_symbol_async_iterator = __webpack_require__("ac4d");
@@ -1828,6 +1828,9 @@ var parser = xmlToJson({
       if (pathName.indexOf('/patents/') > 0) {
         url = 'http://119.17.200.66:3001/vuejx/api/oai?verb=ListRecords&metadataPrefix=patent';
         typps = 'patent';
+      } else if (pathName.indexOf('/journals/') > 0) {
+        url = 'http://119.17.200.66:3001/vuejx/api/oai?verb=ListRecords&metadataPrefix=journal';
+        typps = 'journal';
       } else if (pathName.indexOf('/standards/') > 0) {
         url = 'http://119.17.200.66:3001/vuejx/api/oai?verb=ListRecords&metadataPrefix=standard';
         typps = 'standard';
@@ -1855,8 +1858,6 @@ var parser = xmlToJson({
           if (err) {//error handling
           }
 
-          console.log(json['OAI-PMH']['ListRecords']);
-
           if (json !== undefined) {
             var _iteratorNormalCompletion = true;
             var _didIteratorError = false;
@@ -1869,7 +1870,17 @@ var parser = xmlToJson({
                   headers: {
                     'Content-Type': 'text/plain'
                   }
-                }).then(function (response) {});
+                }).then(function (response) {
+                  console.log(response.data['id']);
+
+                  if (response.data['id'] !== null && response.data['id'] !== undefined && response.data['id'] !== '') {
+                    window.axios.post('/rest/search/reindexX/' + response.data['id'], {}, {
+                      headers: {
+                        'Content-Type': 'text/plain'
+                      }
+                    });
+                  }
+                });
               }
             } catch (err) {
               _didIteratorError = true;
