@@ -1403,8 +1403,8 @@ public class MyTableResource extends Resource {
 
 	private int get_field_typo_id_new(org.dspace.core.Context context, String fieldShortName) {
 		SELECT id, shortname  FROM public.cris_do_pdef
-		String myQuery = "SELECT id, shortname  FROM public.cris_do_pdef";
-		List<TableRow> storage = DatabaseManager.queryTable(context, "cris_do_prop", myQuery).toList();
+		String myQuery = "SELECT *  FROM cris_do_pdef";
+		List<TableRow> storage = DatabaseManager.queryTable(context, "cris_do_pdef", myQuery).toList();
 		int typo_id = -1;
 		for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();) {
 			TableRow row = iterator.next();				
