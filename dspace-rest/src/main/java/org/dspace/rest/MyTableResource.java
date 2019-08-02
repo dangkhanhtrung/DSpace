@@ -419,10 +419,12 @@ public class MyTableResource extends Resource
     }
     
     //cris_entity_add(context, "patents", "patent_ID");
-    private int cris_entity_add(org.dspace.core.Context context, String crisType, String xml_ID){
+    private int cris_entity_add(org.dspace.core.Context context, String crisType, String xml_ID) {
+    	 log.info("cris_entity_addcris_entity_addcris_entity_add");
+         TableRow mappingRow;
+
         try{
-            log.info("cris_entity_addcris_entity_addcris_entity_add");
-            TableRow mappingRow;
+
             if (crisType.equals("ou")){
                 mappingRow = DatabaseManager.row("cris_orgunits");
             }
@@ -442,7 +444,6 @@ public class MyTableResource extends Resource
             	}
                 log.info("mappingRow2" + mappingRow);
             }
-
             Date currentTimestamp = new Date();
             
             /*
@@ -467,6 +468,33 @@ public class MyTableResource extends Resource
             return mappingRow.getIntColumn("id");
         }
         catch (SQLException e){
+        	try {
+
+                if (crisType.equals("ou")){
+                    mappingRow = DatabaseManager.row("cris_orgunits");
+                }
+                else if (crisType.equals("rp")) {
+                    mappingRow = DatabaseManager.row("cris_rpage");
+                }
+                else if (crisType.equals("pj")) {
+                    mappingRow = DatabaseManager.row("cris_project");
+                }
+                else{
+                	mappingRow = DatabaseManager.row("cris_do");
+                    log.info("crisType" + crisType);
+                    log.info("crisTypexxxx" + crisType.equalsIgnoreCase("patent"));
+                	if (crisType.equalsIgnoreCase("patent")) {
+                		mappingRow.setColumn("typo_id", 5);
+                        log.info("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" + crisType);
+                	}
+                    log.info("mappingRow2" + mappingRow);
+                }
+                
+				DatabaseManager.update(context, mappingRow);
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}//try catch?
             return -1;
         }
     }
@@ -507,7 +535,25 @@ public class MyTableResource extends Resource
             }
             
         }
-        catch (SQLException e){
+        catch (Exception e){
+        	try {
+        		TableRow mappingRowProp;
+                if (crisType.equals("ou")){
+                	mappingRowProp = DatabaseManager.row("cris_ou_prop");
+                }
+                else if (crisType.equals("rp")) {
+                	mappingRowProp = DatabaseManager.row("cris_rp_prop");
+                }
+                else if (crisType.equals("pj")) {
+                	mappingRowProp = DatabaseManager.row("cris_pj_prop");
+                }
+                else{
+                	mappingRowProp = DatabaseManager.row("cris_do_prop");
+                }
+    			DatabaseManager.update(context, mappingRowProp);
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
         	log.info(e);
         	e.printStackTrace();
         }
