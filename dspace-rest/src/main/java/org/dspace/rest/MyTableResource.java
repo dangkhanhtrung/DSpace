@@ -139,7 +139,17 @@ public class MyTableResource extends Resource
             TableRow mappingRowXXX;
             if (entity_object.equalsIgnoreCase("patent")) {
           
-                String crisType = "patent";
+            	// clear values
+            	mappingRowXXX = DatabaseManager.findByUnique(context, "cris_do", "crisid", objectBody.getString("patent_ID"));
+                int idCrisDo = 0;
+                
+                if (mappingRowXXX != null) {
+                	idCrisDo = mappingRowXXX.getIntColumn("id");
+                	mappingRowXXX = DatabaseManager.findByUnique(context, "cris_do_prop", "parent_id", idCrisDo);
+                	log.info("mappingRowXXXmappingRowXXXmappingRowXXX" + mappingRowXXX);
+                }
+            	
+            	String crisType = "patent";
                 //FIXME: chưa đi sâu vào nhánh xml                
                 // Truyền id vào cris_id/source_id từ xml vào trả lại id của record
                 int cris_do_id = cris_entity_add(context, crisType, objectBody.getString("patent_ID"));
@@ -570,7 +580,7 @@ public class MyTableResource extends Resource
                 mappingRow.setColumn("textvalue", value);
                 mappingRow.setColumn("projectvalue", value);
             }
-            else if ((valueType.equals("patent")) | (valueType.equals("tech"))) { //Các kiểu của cris ...
+            else { //Các kiểu của cris ...
                 mappingRow.setColumn("textvalue", value);
                 //mappingRow.setColumn("dovalue", value);//cris-id
             }
@@ -594,60 +604,8 @@ public class MyTableResource extends Resource
             return mappingRow.getIntColumn("id");
         }
         catch (SQLException e){
-        	try {
-        		log.info("UPDATEUPDATEUPDATEUPDATEUPDATEUPDATE jdyna_values_addjdyna_values_addjdyna_values_add");
-        		TableRow mappingRow;
-                mappingRow = DatabaseManager.row("jdyna_values");
-
-                mappingRow.setColumn("dtype", valueType);//text or date or ...
-                //mappingRow.setColumn("id", value);//id do db đánh tự tăng
-                mappingRow.setColumn("sortvalue", value);// thường giống text value, date thì 1 loạt số chưa biết pattern
-                if (valueType.equals("date")) {
-                    mappingRow.setColumn("datevalue", new Date());
-                }
-                else if (valueType.equals("text")) {
-                    mappingRow.setColumn("textvalue", value);
-                }
-                else if (valueType.equals("rp")) {
-                    mappingRow.setColumn("textvalue", value);
-                    mappingRow.setColumn("rpvalue", value);//cris-id của đối tượng
-                }
-                else if (valueType.equals("ou")) {
-                    mappingRow.setColumn("textvalue", value);
-                    mappingRow.setColumn("ouvalue", value);//cris-id của đối tượng
-                }
-                else if (valueType.equals("project")) {
-                    mappingRow.setColumn("textvalue", value);
-                    mappingRow.setColumn("projectvalue", value);
-                }
-                else if ((valueType.equals("patent")) | (valueType.equals("tech"))) { //Các kiểu của cris ...
-                    mappingRow.setColumn("textvalue", value);
-                    //mappingRow.setColumn("dovalue", value);//cris-id
-                }
-
-                log.info("jdyna_values_addjdyna_values_addjdyna_values_add" + mappingRow);
-                // Mặc định null ???
-                // mappingRow.setColumn("linkdescription", value);
-                // mappingRow.setColumn("linkvalue", value);
-                // mappingRow.setColumn("fileextension", value);
-                // mappingRow.setColumn("filefolder", value);
-                // mappingRow.setColumn("filemime", value);
-                // mappingRow.setColumn("filename", value);
-                // mappingRow.setColumn("doublevalue", value);
-
-                // mappingRow.setColumn("booleanvalue", value);
-                // mappingRow.setColumn("classificationvalue", value);
-                // mappingRow.setColumn("custompointer", value);
-
-                DatabaseManager.update(context, mappingRow);//try catch?
-                log.info("UPDATUPDATUPDATUPDATUPDATUPDATUPDAT DONEEE DONEEE DONEEE DONEEE" + mappingRow);
-                return mappingRow.getIntColumn("id");
-			} catch (Exception e2) {
-				// TODO: handle exception
-				log.info(e2);
-				return -1;
-			}
-            
+			log.info(e);
+			return -1;
         }
     }
 
