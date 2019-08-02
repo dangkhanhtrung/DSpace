@@ -912,3 +912,7 @@ body input.form-control {
 #attributeJournals:focus, #attributeJournals *:focus {
     outline: none;
 }
+body #researcher div#info {
+    max-width: 100%;
+    flex: 0 0 100%;
+}
