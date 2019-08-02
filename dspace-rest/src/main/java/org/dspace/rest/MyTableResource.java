@@ -157,7 +157,9 @@ public class MyTableResource extends Resource
                     for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();)
                     {
                         TableRow row = iterator.next();
-                    	log.info("mappingRowXXXmappingRowXXXmappingRowXXX" + row);
+                        int idValesDel = row.getIntColumn("value_id");
+                    	log.info("mappingRowXXXmappingRowXXXmappingRowXXX" + idValesDel);
+                    	DatabaseManager.delete(context, "jdyna_values", idValesDel);
                     }
                 }
             	
