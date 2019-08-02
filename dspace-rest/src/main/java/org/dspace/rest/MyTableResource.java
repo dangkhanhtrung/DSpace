@@ -161,6 +161,7 @@ public class MyTableResource extends Resource
                     	log.info("mappingRowXXXmappingRowXXXmappingRowXXX" + idValesDel);
                     	DatabaseManager.delete(context, "jdyna_values", idValesDel);
                     	DatabaseManager.delete(context, "cris_do_prop", row.getIntColumn("id"));
+                    	crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
                     }
                 }
             	
