@@ -489,7 +489,13 @@ public class MyTableResource extends Resource
                 	}
                     log.info("mappingRow2" + mappingRow);
                 }
-                
+                Date currentTimestamp = new Date();
+                mappingRow.setColumn("crisid", xml_ID);
+    	        mappingRow.setColumn("sourceid", xml_ID);
+    	        mappingRow.setColumn("status", true);
+    	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
+    	        mappingRow.setColumn("timestampcreated", currentTimestamp);
+    	        mappingRow.setColumn("timestamplastmodified", currentTimestamp);
 				DatabaseManager.update(context, mappingRow);
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
@@ -550,6 +556,12 @@ public class MyTableResource extends Resource
                 else{
                 	mappingRowProp = DatabaseManager.row("cris_do_prop");
                 }
+                mappingRowProp.setColumn("positiondef", positiondef);// FIXME: thuộc tính nhiều giá trị xếp thứ tự 0 -> 1 -> 2
+                mappingRowProp.setColumn("visibility", 1); // hiển thị trường hay không (tick lúc nhập dữ liệu) mặc định 1
+                mappingRowProp.setColumn("value_id", value_id); // id bảng jdyna_values
+                mappingRowProp.setColumn("parent_id", cris_do_id); // id bảng cris_do
+                int typoId = get_field_typo_id(crisType, fieldShortName);
+                mappingRowProp.setColumn("typo_id", typoId);
     			DatabaseManager.update(context, mappingRowProp);
 			} catch (Exception e2) {
 				// TODO: handle exception
