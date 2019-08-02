@@ -1408,7 +1408,7 @@ public class MyTableResource extends Resource {
 		int typo_id = -1;
 		for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();) {
 			TableRow row = iterator.next();				
-			if (row.getStringColumn("shortname")==crisType){			
+			if (row.getStringColumn("shortname").equalsIgnoreCase(crisType)){			
 				typo_id = row.getIntColumn("id");
 				break;
 			}
