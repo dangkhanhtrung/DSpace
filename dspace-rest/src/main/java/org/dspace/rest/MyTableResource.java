@@ -675,6 +675,7 @@ public class MyTableResource extends Resource
                 return mappingRow.getIntColumn("id");
 			} catch (Exception e2) {
 				// TODO: handle exception
+				log.info(e2);
 				return -1;
 			}
             
