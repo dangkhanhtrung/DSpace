@@ -54,6 +54,7 @@
     boolean displayAll = (displayAllBoolean != null && displayAllBoolean.booleanValue());
     Boolean suggest = (Boolean)request.getAttribute("suggest.enable");
     boolean suggestLink = (suggest == null ? false : suggest.booleanValue());
+    suggestLink = false; //TODO
     Item item = (Item) request.getAttribute("item");
     Collection[] collections = (Collection[]) request.getAttribute("collections");
     Boolean admin_b = (Boolean)request.getAttribute("admin_button");
