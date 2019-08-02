@@ -95,6 +95,8 @@ import org.dspace.discovery.configuration.DiscoveryViewAndHighlightConfiguration
 import org.dspace.discovery.configuration.DiscoveryViewConfiguration;
 import org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration;
 import org.dspace.discovery.configuration.HierarchicalSidebarFacetConfiguration;
+import org.dspace.storage.rdbms.DatabaseManager;
+import org.dspace.storage.rdbms.TableRow;
 import org.dspace.utils.DSpace;
 
 public class CrisSearchService extends SolrServiceImpl
@@ -343,14 +345,24 @@ public class CrisSearchService extends SolrServiceImpl
     	cleanCrisIndexById(crisId);
         Researcher researcher = new Researcher();
         ApplicationService applicationService = researcher.getApplicationService();
-        ResearchObject xxx = applicationService.getEntityByCrisId(crisId);
-        log.info("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" + xxx);
-        if (xxx != null) {
-        	ACrisObject ddddkkk = (ACrisObject) xxx;
-            log.info("ddddkkkddddkkkddddkkkddddkkkddddkkk" + ddddkkk);
-            indexCrisObject(ddddkkk, true);
-            log.info("DONEDONEDONEDONEDONEDONE");
-        }
+        
+        TableRow mappingRowXXX;
+		try {
+			mappingRowXXX = DatabaseManager.findByUnique(context, "cris_do", "crisid",
+					crisId);
+			
+			ACrisObject xxx = applicationService.getEntityByUUID(mappingRowXXX.getStringColumn("uuid"));
+	        log.info("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" + xxx);
+	        if (xxx != null) {
+	            log.info("ddddkkkddddkkkddddkkkddddkkkddddkkk" + xxx);
+	            indexCrisObject(xxx, true);
+	            log.info("DONEDONEDONEDONEDONEDONE");
+	        }
+	        
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         
     }
     
