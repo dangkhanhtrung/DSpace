@@ -195,6 +195,7 @@ public class MyTableResource extends Resource
                         add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Status", "patentsstatus");
                         add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Issuer", "patentsissuer");
                         add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_CountryCode", "patentscountrycode");
+                        crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
                     }
                     
                 } else {
@@ -228,9 +229,9 @@ public class MyTableResource extends Resource
                     add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Status", "patentsstatus");
                     add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Issuer", "patentsissuer");
                     add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_CountryCode", "patentscountrycode");
+                    crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
                 }
                 //crisSearchService.updateCrisIndexPublic(context, true);
-                crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
                 
             } else if (entity_object.equalsIgnoreCase("project")) {
             	
