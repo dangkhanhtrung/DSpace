@@ -567,7 +567,7 @@ public class MyTableResource extends Resource
     			DatabaseManager.update(context, mappingRowProp);
         		log.info("UPDATEUPDATEUPDATEUPDATEUPDATEUPDATE" + mappingRowProp);
 			} catch (Exception e2) {
-				log.info(e);
+				log.info("cris_ou_propcris_ou_propcris_ou_propcris_ou_propcris_ou_prop" +e);
 	        	e.printStackTrace();
 			}
         	
@@ -1006,7 +1006,7 @@ public class MyTableResource extends Resource
                     JSONObject object = (JSONObject) item;
                     int value_id = jdyna_values_add(context, valueType, object.getJSONObject("_source")
                                                     .getString("title"));
-                    cris_prop_add(context, "patents", "patentsoriginatesFrom",
+                    cris_prop_add(context, crisType, fieldShortName,
                                     value_id, cris_do_id, 0);
                     return "object";
                 }
