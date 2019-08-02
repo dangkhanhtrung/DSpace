@@ -564,7 +564,7 @@ public class MyTableResource extends Resource
                 mappingRowProp.setColumn("parent_id", cris_do_id); // id bảng cris_do
                 int typoId = get_field_typo_id(crisType, fieldShortName);
                 mappingRowProp.setColumn("typo_id", typoId);
-    			DatabaseManager.update(context, mappingRowProp);
+    			//DatabaseManager.update(context, mappingRowProp);
         		log.info("UPDATEUPDATEUPDATEUPDATEUPDATEUPDATE" + mappingRowProp);
 			} catch (Exception e2) {
 				log.info("cris_ou_propcris_ou_propcris_ou_propcris_ou_propcris_ou_prop" +e);
