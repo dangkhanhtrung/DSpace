@@ -784,7 +784,7 @@ public class DatabaseManager
     public static void insert(Context context, TableRow row) throws SQLException
     {
         int newID;
-		context.setAutoCommit(true);
+		context.setAutoCommit(false);
         if (isPostgres)
         {
             newID = doInsertPostgres(context, row);
