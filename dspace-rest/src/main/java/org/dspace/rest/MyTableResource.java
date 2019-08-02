@@ -160,6 +160,7 @@ public class MyTableResource extends Resource
                         int idValesDel = row.getIntColumn("value_id");
                     	log.info("mappingRowXXXmappingRowXXXmappingRowXXX" + idValesDel);
                     	DatabaseManager.delete(context, "jdyna_values", idValesDel);
+                    	DatabaseManager.delete(context, "cris_do_prop", row.getIntColumn("id"));
                     }
                 }
             	
