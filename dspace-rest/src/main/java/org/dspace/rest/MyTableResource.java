@@ -153,7 +153,10 @@ public class MyTableResource extends Resource
 
                     List<TableRow> storage = DatabaseManager.queryTable(context, "cris_do_prop", myQuery)
                             .toList();
-
+                    
+                    DatabaseManager.delete(context, "cris_do", idCrisDo);
+                	crisSearchService.removeCrisIndexPublic(context, objectBody.getString("patent_ID"));
+                	
                     if (storage.size() > 0) {
                     	for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();)
                         {
