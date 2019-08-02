@@ -344,6 +344,7 @@ public class CrisSearchService extends SolrServiceImpl
         Researcher researcher = new Researcher();
         ApplicationService applicationService = researcher.getApplicationService();
         ResearchObject xxx = applicationService.getEntityByCrisId(crisId);
+        log.info("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" + xxx);
         if (xxx != null) {
         	ACrisObject ddddkkk = (ACrisObject) xxx;
             log.info("ddddkkkddddkkkddddkkkddddkkkddddkkk" + ddddkkk);
