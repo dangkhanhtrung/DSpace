@@ -153,9 +153,6 @@ public class MyTableResource extends Resource
 
                     List<TableRow> storage = DatabaseManager.queryTable(context, "cris_do_prop", myQuery)
                             .toList();
-                    
-                    DatabaseManager.delete(context, "cris_do", idCrisDo);
-                	crisSearchService.removeCrisIndexPublic(context, objectBody.getString("patent_ID"));
                 	
                     if (storage.size() > 0) {
                     	for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();)
@@ -167,6 +164,8 @@ public class MyTableResource extends Resource
                         	DatabaseManager.delete(context, "cris_do_prop", row.getIntColumn("id"));
                         	crisSearchService.removeCrisIndexPublic(context, objectBody.getString("patent_ID"));
                         }
+                    	DatabaseManager.delete(context, "cris_do", idCrisDo);
+                     	crisSearchService.removeCrisIndexPublic(context, objectBody.getString("patent_ID"));
                     } else {
                     	String crisType = "patent";
                         //FIXME: chưa đi sâu vào nhánh xml                
