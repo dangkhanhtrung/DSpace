@@ -353,9 +353,11 @@ public class CrisSearchService extends SolrServiceImpl
 			
 	        if (mappingRowXXX != null) {
 				ACrisObject xxx = applicationService.getEntityByUUID(mappingRowXXX.getStringColumn("uuid"));
-	            log.info("ddddkkkddddkkkddddkkkddddkkkddddkkk" + xxx);
-	            indexCrisObject(xxx, true);
-	            log.info("DONEDONEDONEDONEDONEDONE");
+				 if (xxx != null) {
+			            log.info("ddddkkkddddkkkddddkkkddddkkkddddkkk" + xxx);
+			            indexCrisObject(xxx, true);
+			            log.info("DONEDONEDONEDONEDONEDONE");
+		        }
 	        }
 	        
 		} catch (SQLException e) {
