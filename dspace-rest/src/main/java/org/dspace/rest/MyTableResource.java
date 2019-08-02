@@ -137,48 +137,7 @@ public class MyTableResource extends Resource
             Date currentTimestamp = new Date();
             log.info("entity_objectentity_object" + entity_object);
             TableRow mappingRowXXX;
-            if (entity_object.equalsIgnoreCase("journal")) {
-            	/*
-        		try {
-
-        			mappingRow = DatabaseManager.row("cris_do");
-        	        
-        	        mappingRow.setColumn("crisid", objectBody.getString("journal_ID"));
-        	        mappingRow.setColumn("sourceid", objectBody.getString("journal_ID"));
-        	        mappingRow.setColumn("status", true);
-        	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
-        	        mappingRow.setColumn("timestampcreated", currentTimestamp);
-        	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
-        	        mappingRow.setColumn("typo_id", 1);
-
-        	        log.info("adddddadddddadddddadddddadddddaddddd mappingRow" + mappingRow);
-        	        
-        	        DatabaseManager.insert(context, mappingRow);
-
-        	        log.info("insert DONE DONE DONE DONE DONE");
-        	        
-        		} catch (SQLException e) {
-        			// TODO Auto-generated catch block
-        			mappingRow = DatabaseManager.row("cris_do");
-        	        
-        	        mappingRow.setColumn("crisid", objectBody.getString("journal_ID"));
-        	        mappingRow.setColumn("sourceid", objectBody.getString("journal_ID"));
-        	        mappingRow.setColumn("status", true);
-        	        mappingRow.setColumn("uuid", UUID.randomUUID().toString());
-        	        mappingRow.setColumn("timestampcreated", currentTimestamp);
-        	        mappingRow.setColumn("timestampLastModified", currentTimestamp);
-        	        mappingRow.setColumn("typo_id", 1);
-
-        	        log.info("updateupdateupdateupdateupdateupdate mappingRow" + mappingRow);
-        	        
-        	        DatabaseManager.update(context, mappingRow);
-
-        	        log.info("insert DONE DONE DONE DONE DONE");
-        		}
-        		
-            	// util.processJournal(context, crisSearchService, objectBody );
-            	*/
-            } else if (entity_object.equalsIgnoreCase("patent")) {
+            if (entity_object.equalsIgnoreCase("patent")) {
           
                 String crisType = "patent";
                 //FIXME: chưa đi sâu vào nhánh xml                
@@ -214,6 +173,16 @@ public class MyTableResource extends Resource
                 //crisSearchService.updateCrisIndexPublic(context, true);
                 crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
                 
+            } else if (entity_object.equalsIgnoreCase("project")) {
+            	
+            } else if (entity_object.equalsIgnoreCase("standard")) {
+            	
+            } else if (entity_object.equalsIgnoreCase("product")) {
+            	
+            } else if (entity_object.equalsIgnoreCase("person")) {
+            	
+            } else if (entity_object.equalsIgnoreCase("organization")) {
+            	
             } else if (entity_object.equalsIgnoreCase("publication")) {
             	
             	mappingRowXXX = DatabaseManager.row("item");
