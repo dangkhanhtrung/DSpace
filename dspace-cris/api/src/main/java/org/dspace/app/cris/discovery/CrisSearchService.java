@@ -351,9 +351,8 @@ public class CrisSearchService extends SolrServiceImpl
 			mappingRowXXX = DatabaseManager.findByUnique(context, "cris_do", "crisid",
 					crisId);
 			
-			ACrisObject xxx = applicationService.getEntityByUUID(mappingRowXXX.getStringColumn("uuid"));
-	        log.info("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" + xxx);
-	        if (xxx != null) {
+	        if (mappingRowXXX != null) {
+				ACrisObject xxx = applicationService.getEntityByUUID(mappingRowXXX.getStringColumn("uuid"));
 	            log.info("ddddkkkddddkkkddddkkkddddkkkddddkkk" + xxx);
 	            indexCrisObject(xxx, true);
 	            log.info("DONEDONEDONEDONEDONEDONE");
