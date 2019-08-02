@@ -166,17 +166,110 @@ public class MyTableResource extends Resource {
 				} else {
 					processPatent(context, crisSearchService, objectBody);
 				}
-				// crisSearchService.updateCrisIndexPublic(context, true);
-
-			} else if (entity_object.equalsIgnoreCase("project")) {
+				// crisSearchService.updateCrisIndexPublic(context, true);			
 
 			} else if (entity_object.equalsIgnoreCase("standard")) {
 
+				results.put("id", objectBody.getString("standard_ID"));
+				// clear values
+				mappingRowXXX = DatabaseManager.findByUnique(context, "cris_do", "crisid",
+						objectBody.getString("standard_ID"));
+				int idCrisDo = 0;
+
+				if (mappingRowXXX != null) {
+					idCrisDo = mappingRowXXX.getIntColumn("id");
+					mappingRowXXX = DatabaseManager.findByUnique(context, "cris_do_prop", "parent_id", idCrisDo);
+
+					String myQuery = "select * from cris_do_prop where parent_id = " + idCrisDo;
+
+					List<TableRow> storage = DatabaseManager.queryTable(context, "cris_do_prop", myQuery).toList();
+
+					if (storage.size() > 0) {
+						for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();) {
+							TableRow row = iterator.next();
+							int idValesDel = row.getIntColumn("value_id");							
+							DatabaseManager.delete(context, "jdyna_values", idValesDel);
+							DatabaseManager.delete(context, "cris_do_prop", row.getIntColumn("id"));
+							crisSearchService.removeCrisIndexPublic(context, objectBody.getString("standard_ID"));
+						}
+						DatabaseManager.delete(context, "cris_do", idCrisDo);
+						crisSearchService.removeCrisIndexPublic(context, objectBody.getString("standard_ID"));
+					} else {
+						processStandard(context, crisSearchService, objectBody);
+					}
+				} else {
+					processStandard(context, crisSearchService, objectBody);
+				}
+
 			} else if (entity_object.equalsIgnoreCase("product")) {
 
-			} else if (entity_object.equalsIgnoreCase("person")) {
+				results.put("id", objectBody.getString("product_ID"));
+				// clear values
+				mappingRowXXX = DatabaseManager.findByUnique(context, "cris_do", "crisid",
+						objectBody.getString("product_ID"));
+				int idCrisDo = 0;
+
+				if (mappingRowXXX != null) {
+					idCrisDo = mappingRowXXX.getIntColumn("id");
+					mappingRowXXX = DatabaseManager.findByUnique(context, "cris_do_prop", "parent_id", idCrisDo);
+
+					String myQuery = "select * from cris_do_prop where parent_id = " + idCrisDo;
+
+					List<TableRow> storage = DatabaseManager.queryTable(context, "cris_do_prop", myQuery).toList();
+
+					if (storage.size() > 0) {
+						for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();) {
+							TableRow row = iterator.next();
+							int idValesDel = row.getIntColumn("value_id");							
+							DatabaseManager.delete(context, "jdyna_values", idValesDel);
+							DatabaseManager.delete(context, "cris_do_prop", row.getIntColumn("id"));
+							crisSearchService.removeCrisIndexPublic(context, objectBody.getString("product_ID"));
+						}
+						DatabaseManager.delete(context, "cris_do", idCrisDo);
+						crisSearchService.removeCrisIndexPublic(context, objectBody.getString("product_ID"));
+					} else {
+						processProduct(context, crisSearchService, objectBody);
+					}
+				} else {
+					processProduct(context, crisSearchService, objectBody);
+				}
+
+			} else if (entity_object.equalsIgnoreCase("person")) {				
+
+				results.put("id", objectBody.getString("person_ID"));
+				// clear values
+				mappingRowXXX = DatabaseManager.findByUnique(context, "cris_rpage", "crisid",
+						objectBody.getString("person_ID"));
+				int idCrisDo = 0;
+
+				if (mappingRowXXX != null) {
+					idCrisDo = mappingRowXXX.getIntColumn("id");
+					mappingRowXXX = DatabaseManager.findByUnique(context, "cris_rp_prop", "parent_id", idCrisDo);
+
+					String myQuery = "select * from cris_rp_prop where parent_id = " + idCrisDo;
+
+					List<TableRow> storage = DatabaseManager.queryTable(context, "cris_rp_prop", myQuery).toList();
+
+					if (storage.size() > 0) {
+						for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();) {
+							TableRow row = iterator.next();
+							int idValesDel = row.getIntColumn("value_id");							
+							DatabaseManager.delete(context, "jdyna_values", idValesDel);
+							DatabaseManager.delete(context, "cris_rp_prop", row.getIntColumn("id"));
+							crisSearchService.removeCrisIndexPublic(context, objectBody.getString("person_ID"));
+						}
+						DatabaseManager.delete(context, "cris_do", idCrisDo);
+						crisSearchService.removeCrisIndexPublic(context, objectBody.getString("person_ID"));
+					} else {
+						processPerson(context, crisSearchService, objectBody);
+					}
+				} else {
+					processPerson(context, crisSearchService, objectBody);
+				}
 
 			} else if (entity_object.equalsIgnoreCase("organization")) {
+
+			} else if (entity_object.equalsIgnoreCase("project")) {
 
 			} else if (entity_object.equalsIgnoreCase("publication")) {
 
@@ -423,6 +516,154 @@ public class MyTableResource extends Resource {
 		crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
 	}
 
+	private void processProduct(org.dspace.core.Context context, CrisSearchService crisSearchService,
+			JSONObject objectBody) {
+		String crisType = "techs";
+		// FIXME: chưa đi sâu vào nhánh xml
+		// Truyền id vào cris_id/source_id từ xml vào trả lại id của record
+		int cris_do_id = cris_entity_add(context, crisType, objectBody.getString("product_ID"));
+		int value_id;
+
+		// field không có <_source>
+		value_id = jdyna_values_add(context, "text", objectBody.getString("product_PublicationDate"));
+		cris_prop_add(context, crisType, "techspublicationDate", value_id, cris_do_id, 0);
+		value_id = jdyna_values_add(context, "text", objectBody.getString("product_ARK"));
+		cris_prop_add(context, crisType, "techsARK", value_id, cris_do_id, 0);
+		value_id = jdyna_values_add(context, "text", objectBody.getString("product_DOI"));
+		cris_prop_add(context, crisType, "techsdoi", value_id, cris_do_id, 0);
+		value_id = jdyna_values_add(context, "text", objectBody.getString("product_Acronym"));
+		cris_prop_add(context, crisType, "techsacronym", value_id, cris_do_id, 0);
+
+		// add_value_by_xmlname(context,objectBody, cris_do_id, crisType, valueType,
+		// xmlfieldname, fieldShortName);
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "product_Title",
+				"techsname");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "product_Keyword",
+				"techskeyword");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "product_Description",
+				"techsdescription");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "product_Scope",
+				"techsscope");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "product_Subject",
+				"techssubject");						
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "product_Creators",
+				"techscreators");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "product_Providers",
+				"techsprovidersValue");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "product_OriginatesFrom",
+				"techsoriginatesfromValue");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "product_PresentedAt",
+				"techspresentedatValue");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "product_Type",
+				"techstype");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "product_Status",
+				"techsstatus");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "product_Collection",
+				"techscollection");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "product_Country",
+				"techscountry");
+		crisSearchService.updateCrisIndexPublic(context, objectBody.getString("product_ID"));
+	}
+
+	private void processStandard(org.dspace.core.Context context, CrisSearchService crisSearchService,
+			JSONObject objectBody) {
+		String crisType = "standards";
+		// FIXME: chưa đi sâu vào nhánh xml
+		// Truyền id vào cris_id/source_id từ xml vào trả lại id của record
+		int cris_do_id = cris_entity_add(context, crisType, objectBody.getString("standard_ID"));
+		int value_id;
+
+		// field không có <_source>
+		value_id = jdyna_values_add(context, "text", objectBody.getString("standard_Identifier"));
+		cris_prop_add(context, crisType, "standardsidentifier", value_id, cris_do_id, 0);
+		value_id = jdyna_values_add(context, "text", objectBody.getString("standard_DecisionNumber"));
+		cris_prop_add(context, crisType, "standardsdecisionnumber", value_id, cris_do_id, 0);
+		value_id = jdyna_values_add(context, "text", objectBody.getString("standard_PublicationDate"));
+		cris_prop_add(context, crisType, "standardspublicationDate", value_id, cris_do_id, 0);
+		value_id = jdyna_values_add(context, "text", objectBody.getString("standard_Page"));
+		cris_prop_add(context, crisType, "standardspage", value_id, cris_do_id, 0);
+
+		// add_value_by_xmlname(context,objectBody, cris_do_id, crisType, valueType,
+		// xmlfieldname, fieldShortName);
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "standard_Title",
+							"standardsname");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "standard_Subject",
+							"standardssubject");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "standard_Scope",
+							"standardsscope");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "standard_Keyword",
+							"standardskeyword");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "standard_EquivalentTo",
+							"standardsequivalentTo");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "standard_ReplacedBy",
+							"standardsreplacedBy");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "standard_NomativeReferences",
+							"standardsnormativeReferences");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "standard_Editors",
+							"standardseditorsValue");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "standard_Type",
+							"standardstype");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "standard_Status",
+							"standardsstatus");
+		crisSearchService.updateCrisIndexPublic(context, objectBody.getString("standard_ID"));
+	}
+
+	private void processPerson(org.dspace.core.Context context, CrisSearchService crisSearchService,
+			JSONObject objectBody) {
+		String crisType = "rp";
+		// FIXME: chưa đi sâu vào nhánh xml
+		// Truyền id vào cris_id/source_id từ xml vào trả lại id của record
+		int cris_do_id = cris_entity_add(context, crisType, objectBody.getString("person_ID"));
+		int value_id;
+
+		// field không có <_source>
+		value_id = jdyna_values_add(context, "text", objectBody.getString("person_ORCID"));
+		cris_prop_add(context, crisType, "orcid", value_id, cris_do_id, 0);
+		value_id = jdyna_values_add(context, "text", objectBody.getString("person_ScopusAuthorID"));
+		cris_prop_add(context, crisType, "scopusid", value_id, cris_do_id, 0);
+		value_id = jdyna_values_add(context, "text", objectBody.getString("person_ResearcherID"));
+		cris_prop_add(context, crisType, "authorid", value_id, cris_do_id, 0);
+		value_id = jdyna_values_add(context, "text", objectBody.getString("person_ISNI"));
+		cris_prop_add(context, crisType, "ISNI", value_id, cris_do_id, 0);
+		value_id = jdyna_values_add(context, "text", objectBody.getString("person_DAI"));
+		cris_prop_add(context, crisType, "DAI", value_id, cris_do_id, 0);		
+		value_id = jdyna_values_add(context, "text", objectBody.getString("person_Birthday"));
+		cris_prop_add(context, crisType, "birthDay", value_id, cris_do_id, 0);
+		value_id = jdyna_values_add(context, "text", objectBody.getString("person_FamilyNames"));
+		cris_prop_add(context, crisType, "familyName", value_id, cris_do_id, 0);
+		value_id = jdyna_values_add(context, "text", objectBody.getString("person_FirstNames"));
+		cris_prop_add(context, crisType, "firstName", value_id, cris_do_id, 0);
+		value_id = jdyna_values_add(context, "text", objectBody.getString("person_OtherNames"));
+		cris_prop_add(context, crisType, "otherNames", value_id, cris_do_id, 0);
+
+		// add_value_by_xmlname(context,objectBody, cris_do_id, crisType, valueType,
+		// xmlfieldname, fieldShortName);
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "person_Nationality",
+							"rpcountry");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "person_Identifier",
+							"identifiervalue");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "person_Subject",
+							"rpsubject");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "person_Email",
+							"email");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "person_Phone",
+							"phone");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "person_Fax",
+							"fax");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "person_URL",
+							"orcid-profile-pref-personalsite");
+		//TODO: nested obj
+		// add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "person_Affiliation",
+		// 					"person_Affiliation");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "person_Gender",
+							"gender");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "person_Degree",
+							"degree");
+		add_value_by_xmlname(context, objectBody, cris_do_id, crisType, "text", "person_Position",
+							"position");
+		crisSearchService.updateCrisIndexPublic(context, objectBody.getString("person_ID"));
+	}
+
 	// cris_entity_add(context, "patents", "patent_ID");
 	private int cris_entity_add(org.dspace.core.Context context, String crisType, String xml_ID) {
 		log.info("cris_entity_addcris_entity_addcris_entity_add");
@@ -530,7 +771,7 @@ public class MyTableResource extends Resource {
 			mappingRowProp.setColumn("value_id", value_id); // id bảng jdyna_values
 			mappingRowProp.setColumn("parent_id", cris_do_id); // id bảng cris_do
 			// need mapping
-			int typoId = get_field_typo_id(crisType, fieldShortName);
+			int typoId = get_field_typo_id_new(context, fieldShortName);
 			mappingRowProp.setColumn("typo_id", typoId);
 			if (typoId > 0) {
 				log.info("cris_prop_addcris_prop_addcris_prop_addcris_prop_add" + mappingRowProp);
@@ -558,7 +799,7 @@ public class MyTableResource extends Resource {
 															// 1
 				mappingRowProp.setColumn("value_id", value_id); // id bảng jdyna_values
 				mappingRowProp.setColumn("parent_id", cris_do_id); // id bảng cris_do
-				int typoId = get_field_typo_id(crisType, fieldShortName);
+				int typoId = get_field_typo_id_new(context, fieldShortName);
 				mappingRowProp.setColumn("typo_id", typoId);
 				// DatabaseManager.update(context, mappingRowProp);
 				log.info("UPDATEUPDATEUPDATEUPDATEUPDATEUPDATE" + mappingRowProp);
@@ -724,7 +965,7 @@ public class MyTableResource extends Resource {
 			if (fieldShortName.equals("techsoriginatesFrom"))
 				return 226;// Kết quả nhiệm vụ
 			if (fieldShortName.equals("techspresentedAt"))
-				return 227;// Trình diễn tại
+				return 227;// Trình diễn tại (events)
 			if (fieldShortName.equals("techstype"))
 				return 228;// Loại công nghệ
 			if (fieldShortName.equals("techslicense"))
@@ -741,6 +982,12 @@ public class MyTableResource extends Resource {
 				return 234;// Tên công nghệ
 			if (fieldShortName.equals("techssubject"))
 				return 235;// Lĩnh vực KHCN
+			if (fieldShortName.equals("techsprovidersValue"))
+				return 238;// Nhà cung cấp
+			if (fieldShortName.equals("techspresentedatValue"))
+				return 239;// Trình diễn tại
+			if (fieldShortName.equals("techsoriginatesfromValue"))
+				return 240;// Trình diễn tại
 		} else if (crisType.equals("ou")) {
 			if (fieldShortName.equals("boards"))
 				return 16;// Scientifics Board
@@ -1152,6 +1399,21 @@ public class MyTableResource extends Resource {
 
 		}
 		return -1;
+	}
+
+	private int get_field_typo_id_new(org.dspace.core.Context context, String fieldShortName) {
+		SELECT id, shortname  FROM public.cris_do_pdef
+		String myQuery = "SELECT id, shortname  FROM public.cris_do_pdef";
+		List<TableRow> storage = DatabaseManager.queryTable(context, "cris_do_prop", myQuery).toList();
+		int typo_id = -1;
+		for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();) {
+			TableRow row = iterator.next();				
+			if (row.getStringColumn("shortname")==crisType){			
+				typo_id = row.getIntColumn("id");
+				break;
+			}
+		}
+		return typo_id;		
 	}
 
 	// get_entity_id("patents");
