@@ -199,7 +199,8 @@ public class MyTableResource extends Resource
                         add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_CountryCode", "patentscountrycode");
                         crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
                     }
-                    
+                    crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
+                    crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
                 } else {
                 	String crisType = "patent";
                     //FIXME: chưa đi sâu vào nhánh xml                
@@ -231,6 +232,7 @@ public class MyTableResource extends Resource
                     add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Status", "patentsstatus");
                     add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_Issuer", "patentsissuer");
                     add_value_by_xmlname(context,objectBody, cris_do_id, crisType, "text", "patent_CountryCode", "patentscountrycode");
+                    crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
                     crisSearchService.updateCrisIndexPublic(context, objectBody.getString("patent_ID"));
                 }
                 //crisSearchService.updateCrisIndexPublic(context, true);
