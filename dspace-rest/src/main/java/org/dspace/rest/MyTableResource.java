@@ -1563,29 +1563,38 @@ public class MyTableResource extends Resource {
 
 	private int get_field_typo_id_new(org.dspace.core.Context context, String crisType, String fieldShortName) {
 		// SELECT id, shortname  FROM public.cris_do_pdef
-		String myQuery = "SELECT *  FROM cris_do_pdef";
-		List<TableRow> storage = DatabaseManager.queryTable(context, "cris_do_pdef", myQuery).toList();
-		if (crisType.equalsIgnoreCase("rp")){
-			String myQuery = "SELECT *  FROM cris_rp_pdef";
-			List<TableRow> storage = DatabaseManager.queryTable(context, "cris_rp_pdef", myQuery).toList();
-		}
-		else if (crisType.equalsIgnoreCase("ou")) {
-			String myQuery = "SELECT *  FROM cris_ou_pdef";
-			List<TableRow> storage = DatabaseManager.queryTable(context, "cris_ou_pdef", myQuery).toList();
-		}
-		else if (crisType.equalsIgnoreCase("pj")) {
-			String myQuery = "SELECT *  FROM cris_pj_pdef";
-			List<TableRow> storage = DatabaseManager.queryTable(context, "cris_pj_pdef", myQuery).toList();
-		}			
-		int typo_id = -1;
-		for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();) {
-			TableRow row = iterator.next();				
-			if (row.getStringColumn("shortname").equalsIgnoreCase(crisType)){			
-				typo_id = row.getIntColumn("id");
-				break;
+		try{
+			String myQuery;
+			List<TableRow> storage;
+			if (crisType.equalsIgnoreCase("rp")){
+				myQuery = "SELECT *  FROM cris_rp_pdef";
+				storage = DatabaseManager.queryTable(context, "cris_rp_pdef", myQuery).toList();
 			}
+			else if (crisType.equalsIgnoreCase("ou")) {
+				myQuery = "SELECT *  FROM cris_ou_pdef";
+				storage = DatabaseManager.queryTable(context, "cris_ou_pdef", myQuery).toList();
+			}
+			else if (crisType.equalsIgnoreCase("pj")) {
+				myQuery = "SELECT *  FROM cris_pj_pdef";
+				storage = DatabaseManager.queryTable(context, "cris_pj_pdef", myQuery).toList();
+			}
+			else {
+				myQuery = "SELECT *  FROM cris_do_pdef";
+				storage = DatabaseManager.queryTable(context, "cris_do_pdef", myQuery).toList();
+			}
+			int typo_id = -1;
+			for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();) {
+				TableRow row = iterator.next();
+				if (row.getStringColumn("shortname").equalsIgnoreCase(crisType)){
+					typo_id = row.getIntColumn("id");
+					break;
+				}
+			}
+			return typo_id;
 		}
-		return typo_id;		
+		catch (SQLException e){
+		}
+		return -1;
 	}
 	
 
