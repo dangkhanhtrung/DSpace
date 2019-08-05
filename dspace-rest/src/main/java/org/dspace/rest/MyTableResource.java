@@ -258,7 +258,7 @@ public class MyTableResource extends Resource {
 							DatabaseManager.delete(context, "cris_rp_prop", row.getIntColumn("id"));
 							crisSearchService.removeCrisIndexPublic(context, objectBody.getString("person_ID"));
 						}
-						DatabaseManager.delete(context, "cris_do", idCrisDo);
+						DatabaseManager.delete(context, "cris_rpage", idCrisDo);
 						crisSearchService.removeCrisIndexPublic(context, objectBody.getString("person_ID"));
 					} else {
 						processPerson(context, crisSearchService, objectBody);
