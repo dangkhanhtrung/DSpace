@@ -731,4 +731,10 @@
         <qualifier></qualifier>
         <scope_note>Bộ sưu tập</scope_note>
     </dc-type>
+    <dc-type>
+        <schema>dc</schema>
+        <element>relation</element>
+        <qualifier>edition</qualifier>
+        <scope_note></scope_note>
+    </dc-type>    
 </dspace-dc-types>

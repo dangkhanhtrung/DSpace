@@ -16,6 +16,7 @@
 <%@ page import="java.util.Set" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="org.dspace.browse.BrowseItem" %>
+<%@page import="org.dspace.eperson.EPerson"%>
 <%@page import="org.dspace.app.webui.cris.dto.ComponentInfoDTO"%>
 <%@page import="it.cilea.osd.jdyna.web.Box"%>
 <%@page import="org.dspace.discovery.configuration.*"%>
@@ -32,7 +33,6 @@
 <%@page import="org.dspace.discovery.DiscoverResult"%>
 <%@page import="org.dspace.core.Utils"%>
 
-<%@page import="org.dspace.eperson.EPerson"%>
 <%@ taglib uri="http://www.dspace.org/dspace-tags.tld" prefix="dspace" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -45,7 +45,6 @@
 	
 	Box holder = (Box)request.getAttribute("holder");
 	ComponentInfoDTO info = ((Map<String, ComponentInfoDTO>)(request.getAttribute("componentinfomap"))).get(holder.getShortName());
-	
 	String relationName = info.getRelationName();
 	
 	List<String[]> subLinks = (List<String[]>) request.getAttribute("activeTypes"+relationName);
@@ -67,18 +66,17 @@
 	        idx++;
 	    }
 	}
-
-	boolean globalShowFacets = false;	
+	
+	boolean globalShowFacets = false;
 	if (info!=null && info.getItems()!=null && info.getItems().length > 0) {
 %>
-	
 <c:set var="info" value="<%= info %>" scope="request" />
 
 <% 
     boolean brefine = false;
     List<DiscoverySearchFilterFacet> facetsConf = (List<DiscoverySearchFilterFacet>) request.getAttribute("facetsConfig"+relationName);
     Map<String, Boolean> showFacets = new HashMap<String, Boolean>();
-    
+    	
     for (DiscoverySearchFilterFacet facetConf : facetsConf)
     {
     	if(qResults!=null) {
@@ -100,22 +98,22 @@
     		    {
     			    globalShowFacets = true;
     		        showFacet = true;
-    		        break;
-    		    }
+                    break;
+    		    }				
     	    }
     	    showFacets.put(f, showFacet);
     	    brefine = brefine || showFacet;
     	}
     }
 	%>
+		
 	
-
 <div class="panel-group col-md-12" id="${holder.shortName}">
 	<div class="panel panel-default">
     	<div class="panel-heading">
     		<h4 class="panel-title">
         		<a data-toggle="collapse" data-parent="#${holder.shortName}" href="#collapseOne${holder.shortName}">
-          			${holder.title}
+          			${holder.title} 
         		</a>
         		<% if(subLinks!=null && subLinks.size()>0 && globalShowFacets) {%>
         			<jsp:include page="common/commonComponentGeneralFiltersAndFacets.jsp"></jsp:include>
@@ -124,14 +122,14 @@
 				<% } %>
 			</h4>
     	</div>
-	<div id="collapseOne${holder.shortName}" class="panel-collapse collapse in show">
-		<div class="panel-body">
+	<div id="collapseOne${holder.shortName}" class="panel-collapse in collapse show">
+		<div class="panel-body">	
+	
 	<% if(subLinks!=null && subLinks.size()>0) { %>
 		<jsp:include page="common/commonComponentFacets.jsp"></jsp:include>
 	<% } %>	
-			
+	
 	<p>
-
 
 
 <!-- prepare pagination controls -->
@@ -145,9 +143,9 @@
 
 
 if (info.getPagefirst() != info.getPagecurrent()) {
-	  sb.append("<li><a class=\"\" href=\"");
-	  sb.append(prevURL);
-	  sb.append("\"><i class=\"fa fa-long-arrow-left\"> </i></a></li>");
+  sb.append("<li><a class=\"\" href=\"");
+  sb.append(prevURL);
+  sb.append("\"><i class=\"fa fa-long-arrow-left\"> </i></a></li>");
 }
 
 for( int q = info.getPagefirst(); q <= info.getPagelast(); q++ )
@@ -192,7 +190,7 @@ if (info.getPagetotal() > 1)
 <%
 	}
 %>
-			
+
 <form id="sortform<%= info.getType() %>" action="#<%= info.getType() %>" method="get">
 	   <input id="sort_by<%= info.getType() %>" type="hidden" name="sort_by<%= info.getType() %>" value=""/>
        <input id="order<%= info.getType() %>" type="hidden" name="order<%= info.getType() %>" value="<%= info.getOrder() %>" />
@@ -211,12 +209,13 @@ if (info.getPagetotal() > 1)
 	   <input type="hidden" name="open" value="<%= info.getType() %>" />
 </form>
 <div class="row">
-<div class="table-responsive">
-<dspace:browselist items="<%= (BrowseItem[])info.getItems() %>" config="crisrp.${info[holder.shortName].type}" sortBy="<%= new Integer(info.getSo().getNumber()).toString() %>" order="<%= info.getOrder() %>"/>
+<div class="table-responsive">			
+<dspace:browselist items="<%= (BrowseItem[])info.getItems() %>" config="crispatents.${info[holder.shortName].type}" sortBy="<%= new Integer(info.getSo().getNumber()).toString() %>" order="<%= info.getOrder() %>"/>
 </div>
 </div>
+
 <script type="text/javascript"><!--
-	var j = jQuery;
+    var j = jQuery;
     function sortBy(sort_by, order) {
         j('#sort_by<%= info.getType() %>').val(sort_by);
         j('#order<%= info.getType() %>').val(order);
