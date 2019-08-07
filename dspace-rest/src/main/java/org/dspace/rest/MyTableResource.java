@@ -63,10 +63,11 @@ public class MyTableResource extends Resource {
 		
 		String myQuery = "select * from mapping_xml where entity = \'" + entity + "\'";
 
-		if (view_detail != "") {
+		if (view_detail != "null") {
 			myQuery = myQuery + " AND view_detail = " + view_detail;
 		}
-		log.info("storagestoragestorage");
+		log.info("view_detail" + view_detail);
+		log.info("myQuerymyQuerymyQuerymyQuery" + myQuery);
 		List<TableRow> storage = DatabaseManager.queryTable(context, "mapping_xml", myQuery).toList();
 		log.info("storagestoragestorage" + storage);
 		log.info("storage.size()storage.size()storage.size()" + storage.size());
@@ -81,11 +82,11 @@ public class MyTableResource extends Resource {
 				obj.put("value_path_ext", row.getStringColumn("value_path_ext"));
 				obj.put("id_path", row.getStringColumn("id_path"));
 				obj.put("id_path_ext", row.getStringColumn("id_path_ext"));
-				obj.put("import_ext", row.getStringColumn("import_ext"));
-				obj.put("export", row.getStringColumn("export"));
-				obj.put("display", row.getStringColumn("display"));
+				obj.put("import_ext", row.getBooleanColumn("import_ext"));
+				obj.put("export", row.getBooleanColumn("export"));
+				obj.put("display", row.getBooleanColumn("display"));
 				obj.put("exclusive_ext", row.getStringColumn("exclusive_ext"));
-				obj.put("view_detail", row.getStringColumn("view_detail"));
+				obj.put("view_detail", row.getBooleanColumn("view_detail"));
 				results.put(obj);
 			}
 		}
