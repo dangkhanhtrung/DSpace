@@ -65,7 +65,7 @@ public class MyTableResource extends Resource {
 			myQuery = myQuery + " AND view_detail = " + view_detail;
 		}
 		
-		List<TableRow> storage = DatabaseManager.queryTable(context, "cris_do_prop", myQuery).toList();
+		List<TableRow> storage = DatabaseManager.queryTable(context, "mapping_XML", myQuery).toList();
 		 
 		if (storage.size() > 0) {
 			for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();) {
