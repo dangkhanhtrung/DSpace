@@ -59,6 +59,8 @@ public class MyTableResource extends Resource {
 		JSONArray results = new JSONArray();
 		org.dspace.core.Context context = null;
 		
+		context = createContext(getUser(headers));
+		
 		String myQuery = "select * from mapping_xml where entity = " + entity;
 
 		if (view_detail != "") {
