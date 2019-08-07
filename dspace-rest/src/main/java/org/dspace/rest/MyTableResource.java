@@ -64,7 +64,7 @@ public class MyTableResource extends Resource {
 		if (view_detail != "") {
 			myQuery = myQuery + " AND view_detail = " + view_detail;
 		}
-		
+		log.info("storagestoragestorage");
 		List<TableRow> storage = DatabaseManager.queryTable(context, "mapping_xml", myQuery).toList();
 		log.info("storagestoragestorage" + storage);
 		log.info("storage.size()storage.size()storage.size()" + storage.size());
