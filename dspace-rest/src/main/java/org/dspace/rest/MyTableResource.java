@@ -59,14 +59,15 @@ public class MyTableResource extends Resource {
 		JSONArray results = new JSONArray();
 		org.dspace.core.Context context = null;
 		
-		String myQuery = "select * from mapping_XML where entity = " + entity;
+		String myQuery = "select * from mapping_xml where entity = " + entity;
 
 		if (view_detail != "") {
 			myQuery = myQuery + " AND view_detail = " + view_detail;
 		}
 		
-		List<TableRow> storage = DatabaseManager.queryTable(context, "mapping_XML", myQuery).toList();
-		 
+		List<TableRow> storage = DatabaseManager.queryTable(context, "mapping_xml", myQuery).toList();
+		log.info("storagestoragestorage" + storage);
+		log.info("storage.size()storage.size()storage.size()" + storage.size());
 		if (storage.size() > 0) {
 			for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();) {
 				TableRow row = iterator.next();
