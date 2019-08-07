@@ -61,7 +61,7 @@ public class MyTableResource extends Resource {
 		
 		context = createContext(getUser(headers));
 		
-		String myQuery = "select * from mapping_xml where entity = " + entity;
+		String myQuery = "select * from mapping_xml where entity = \'" + entity + "\'";
 
 		if (view_detail != "") {
 			myQuery = myQuery + " AND view_detail = " + view_detail;
