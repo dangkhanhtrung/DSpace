@@ -36,6 +36,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.google.gson.JsonObject;
+
 /**
  * This class provides all CRUD operation over collections.
  * 
@@ -48,32 +50,43 @@ public class MyTableResource extends Resource {
 	private static Logger log = Logger.getLogger(MyTableResource.class);
 
 	@GET
-	@Path("/{table_name}")
+	@Path("/{entity}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public String getAllCrisDoTp(@PathParam("table_name") String table, @QueryParam("cols") String cols,
-			@QueryParam("limit") @DefaultValue("100") Integer limit,
-			@QueryParam("offset") @DefaultValue("0") Integer offset, @Context HttpHeaders headers,
+	public String getAllCrisDoTp(@PathParam("entity") String entity, @QueryParam("view_detail") String view_detail,
+			@Context HttpHeaders headers,
 			@Context HttpServletRequest request) throws Exception {
 
 		JSONArray results = new JSONArray();
 		org.dspace.core.Context context = null;
-		/*
-		 * try { context = createContext(getUser(headers));
-		 * 
-		 * if (!((limit != null) && (limit >= 0) && (offset != null) && (offset >= 0)))
-		 * { log.warn("Paging was badly set."); limit = 100; offset = 0; }
-		 * 
-		 * results = DataUtils.findAll(context, limit, offset, table, cols);
-		 * 
-		 * context.complete(); } catch (SQLException e) {
-		 * processException("Something went wrong while reading collections from database. Message: "
-		 * + e, context); } catch (ContextException e) {
-		 * processException("Something went wrong while reading collections, ContextError. Message: "
-		 * + e.getMessage(), context); } finally { log.info("finally");
-		 * processFinally(context); }
-		 * 
-		 * log.trace("All collections were successfully read.");
-		 */
+		
+		String myQuery = "select * from mapping_XML where entity = " + entity;
+
+		if (view_detail != "") {
+			myQuery = myQuery + " AND view_detail = " + view_detail;
+		}
+		
+		List<TableRow> storage = DatabaseManager.queryTable(context, "cris_do_prop", myQuery).toList();
+		 
+		if (storage.size() > 0) {
+			for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();) {
+				TableRow row = iterator.next();
+				JSONObject obj = new JSONObject();
+				obj.put("field_name", row.getStringColumn("field_name"));
+				obj.put("entity", row.getStringColumn("entity"));
+				obj.put("entity_ref", row.getStringColumn("entity_ref"));
+				obj.put("value_path", row.getStringColumn("value_path"));
+				obj.put("value_path_ext", row.getStringColumn("value_path_ext"));
+				obj.put("id_path", row.getStringColumn("id_path"));
+				obj.put("id_path_ext", row.getStringColumn("id_path_ext"));
+				obj.put("import_ext", row.getStringColumn("import_ext"));
+				obj.put("export", row.getStringColumn("export"));
+				obj.put("display", row.getStringColumn("display"));
+				obj.put("exclusive_ext", row.getStringColumn("exclusive_ext"));
+				obj.put("view_detail", row.getStringColumn("view_detail"));
+				results.put(obj);
+			}
+		}
+		
 		return results.toString();
 	}
 
