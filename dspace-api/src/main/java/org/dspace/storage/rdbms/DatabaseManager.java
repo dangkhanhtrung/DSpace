@@ -361,6 +361,7 @@ public class DatabaseManager
             log.debug("Running query \"" + query.toString() + "\"  with parameters: " + sb.substring(0,sb.length()-1));
         }
 
+        log.info("queryquery", query.toString());
         PreparedStatement statement = context.getDBConnection().prepareStatement(query.toString());
         try
         {
