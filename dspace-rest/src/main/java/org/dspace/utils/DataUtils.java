@@ -49,12 +49,12 @@ public class DataUtils {
         ;
         
         System.out.println("SQL: " + query.toString());
-        System.out.println("params: " + params.toArray());
+        System.out.println("params: " + params.size());
 
         try
         {
         	
-            tri = DatabaseManager.query(context, table, query);
+            tri = DatabaseManager.queryTable(context, table, query, params);
             while (tri.hasNext())
             {
                 TableRow row = tri.next();
