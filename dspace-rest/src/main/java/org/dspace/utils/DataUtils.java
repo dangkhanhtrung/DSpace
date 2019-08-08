@@ -53,6 +53,8 @@ public class DataUtils {
             tri = DatabaseManager.query(context, query, offset, limit);
             while (tri.hasNext())
             {
+
+                System.out.println("SQLxxxxx: " + query.toString());
                 TableRow row = tri.next();
                 
                 JSONObject current = new JSONObject();
