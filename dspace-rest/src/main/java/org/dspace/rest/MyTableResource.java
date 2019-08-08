@@ -87,6 +87,7 @@ public class MyTableResource extends Resource {
 				obj.put("display", row.getBooleanColumn("display"));
 				obj.put("exclusive_ext", row.getStringColumn("exclusive_ext"));
 				obj.put("view_detail", row.getBooleanColumn("view_detail"));
+				obj.put("default_value", row.getStringColumn("default_value"));
 				results.put(obj);
 			}
 		}
