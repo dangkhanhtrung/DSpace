@@ -54,7 +54,7 @@ public class DataUtils {
         try
         {
         	
-            tri = DatabaseManager.queryTable(context, table, query, params);
+            tri = DatabaseManager.queryTable(context, table, query);
             while (tri.hasNext())
             {
                 TableRow row = tri.next();
