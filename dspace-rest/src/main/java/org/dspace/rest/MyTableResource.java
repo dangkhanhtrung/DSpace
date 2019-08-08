@@ -66,6 +66,7 @@ public class MyTableResource extends Resource {
 		if (view_detail != "null") {
 			myQuery = myQuery + " AND view_detail = " + view_detail;
 		}
+		myQuery = myQuery + " LIMIT 200 ";
 		log.info("view_detail" + view_detail);
 		log.info("myQuerymyQuerymyQuerymyQuery" + myQuery);
 		List<TableRow> storage = DatabaseManager.queryTable(context, "mapping_xml", myQuery).toList();
