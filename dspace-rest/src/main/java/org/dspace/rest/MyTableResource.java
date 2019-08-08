@@ -80,6 +80,8 @@ public class MyTableResource extends Resource {
 				obj.put("entity_ref", row.getStringColumn("entity_ref"));
 				obj.put("value_path", row.getStringColumn("value_path"));
 				obj.put("value_path_ext", row.getStringColumn("value_path_ext"));
+				obj.put("array_path", row.getStringColumn("array_path"));
+				obj.put("array_path_ext", row.getStringColumn("array_path_ext"));
 				obj.put("id_path", row.getStringColumn("id_path"));
 				obj.put("id_path_ext", row.getStringColumn("id_path_ext"));
 				obj.put("import_ext", row.getBooleanColumn("import_ext"));
