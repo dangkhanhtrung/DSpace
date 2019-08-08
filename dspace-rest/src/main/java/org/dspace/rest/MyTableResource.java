@@ -63,7 +63,7 @@ public class MyTableResource extends Resource {
 		
 		context = createContext(getUser(headers));
 		
-		results = DataUtils.findAll(context, 200, 0, "mapping_xml", "*", entity, Boolean.valueOf(view_detail));
+		results = DataUtils.findAll(context, 2, 0, "mapping_xml", "*", entity, Boolean.valueOf(view_detail));
 		
 		log.info("size: " + results.length());
 		
