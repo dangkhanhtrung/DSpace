@@ -50,6 +50,7 @@ public class DataUtils {
         
         DatabaseManager.applyOffsetAndLimit(query, params, offset, limit);
         System.out.println("SQL: " + query.toString());
+        System.out.println("params: " + params.toArray());
 
         try
         {
