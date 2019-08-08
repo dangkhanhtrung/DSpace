@@ -63,39 +63,7 @@ public class MyTableResource extends Resource {
 		
 		context = createContext(getUser(headers));
 		
-		String myQuery = "select * from mapping_xml where entity = \'" + entity + "\'";
-
-		if (view_detail != "null") {
-			myQuery = myQuery + " AND view_detail = " + view_detail;
-		}
-		log.info("view_detail" + view_detail);
-		log.info("myQuerymyQuerymyQuerymyQuery" + myQuery);
-		List<Serializable> params = new ArrayList<Serializable>();
-		List<TableRow> storage = DatabaseManager.query(context, myQuery, 0, 200, params.toArray()).toList();
-		log.info("storagestoragestorage" + storage);
-		log.info("storage.size()storage.size()storage.size()" + storage.size());
-		if (storage.size() > 0) {
-			for (Iterator<TableRow> iterator = storage.iterator(); iterator.hasNext();) {
-				TableRow row = iterator.next();
-				JSONObject obj = new JSONObject();
-				obj.put("field_name", row.getStringColumn("field_name"));
-				obj.put("entity", row.getStringColumn("entity"));
-				obj.put("entity_ref", row.getStringColumn("entity_ref"));
-				obj.put("value_path", row.getStringColumn("value_path"));
-				obj.put("value_path_ext", row.getStringColumn("value_path_ext"));
-				obj.put("array_path", row.getStringColumn("array_path"));
-				obj.put("array_path_ext", row.getStringColumn("array_path_ext"));
-				obj.put("id_path", row.getStringColumn("id_path"));
-				obj.put("id_path_ext", row.getStringColumn("id_path_ext"));
-				obj.put("import_ext", row.getBooleanColumn("import_ext"));
-				obj.put("export", row.getBooleanColumn("export"));
-				obj.put("display", row.getBooleanColumn("display"));
-				obj.put("exclusive_ext", row.getStringColumn("exclusive_ext"));
-				obj.put("view_detail", row.getBooleanColumn("view_detail"));
-				obj.put("default_value", row.getStringColumn("default_value"));
-				results.put(obj);
-			}
-		}
+		results = DataUtils.findAll(context, 200, 0, "mapping_xml", "*", entity, Boolean.valueOf(view_detail));
 		
 		return results.toString();
 	}

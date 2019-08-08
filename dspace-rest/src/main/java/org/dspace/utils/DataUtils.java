@@ -34,14 +34,18 @@ public class DataUtils {
     
     private static Logger log = Logger.getLogger(DataUtils.class);
     
-    public static JSONArray findAll(Context context, Integer limit, Integer offset, String table, String cols) throws Exception
+    public static JSONArray findAll(Context context, Integer limit, Integer offset, String table, String cols, String entity, boolean view) throws Exception
     {
         JSONArray results = new JSONArray();
         TableRowIterator tri = null;
         List<Serializable> params = new ArrayList<Serializable>();
         StringBuffer query = new StringBuffer(
             "SELECT " + cols + " " +
-            "FROM " + table + " "
+            "FROM " + table + " " +
+            "WHERE 1=1 " +
+            "AND entity='" + entity + "' " +
+            "AND view_detail=" + view 
+            
         );
         
         DatabaseManager.applyOffsetAndLimit(query, params, offset, limit);
