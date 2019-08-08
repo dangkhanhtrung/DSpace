@@ -45,7 +45,7 @@ public class DataUtils {
             "WHERE 1=1 " +
             "AND entity='" + entity + "' " +
             "AND view_detail=" + view +
-            " LIMIT 2 "
+            " LIMIT 12 "
         ;
         
         System.out.println("SQL: " + query.toString());
