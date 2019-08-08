@@ -1633,6 +1633,7 @@ public class DatabaseManager
         int idx = 1;
         for (Object parameter : parameters)
 	    {
+        	log.info("parameterparameterparameterparameter" + parameter);
         	if (parameter instanceof Boolean)
         	{
         		statement.setBoolean(idx, (Boolean) parameter);

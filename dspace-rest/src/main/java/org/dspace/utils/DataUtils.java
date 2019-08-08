@@ -18,6 +18,7 @@ import java.util.UUID;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.dspace.app.cris.discovery.CrisSearchService;
+import org.dspace.core.Constants;
 import org.dspace.core.Context;
 import org.dspace.storage.rdbms.DatabaseManager;
 import org.dspace.storage.rdbms.TableRow;
@@ -41,7 +42,9 @@ public class DataUtils {
         List<Serializable> params = new ArrayList<Serializable>();
         String query = 
             "SELECT " + cols + " " +
-            "FROM " + table + " "
+            "FROM " + table + " " +
+            " LIMIT ? " +
+            " OFFSET ? "
         ;
         
         System.out.println("SQL: " + query.toString());
@@ -49,8 +52,9 @@ public class DataUtils {
 
         try
         {
+        	 Object[] paramArr = new Object[] {limit, offset};
         	
-            tri = DatabaseManager.query(context, query, offset, limit);
+        	 tri = DatabaseManager.query(context, query, paramArr);
             while (tri.hasNext())
             {
 
