@@ -35,21 +35,28 @@ public class DataUtils {
     
     private static Logger log = Logger.getLogger(DataUtils.class);
     
-    public static JSONArray findAll(Context context, Integer limit, Integer offset, String table, String cols, String entity, boolean view) throws Exception
+    public static JSONArray findAll(Context context, Integer limit, Integer offset, String table, String cols, String entity, String view) throws Exception
     {
         JSONArray results = new JSONArray();
         TableRowIterator tri = null;
         List<Serializable> params = new ArrayList<Serializable>();
         String query = 
             "SELECT " + cols + " " +
-            "FROM " + table + " " +
-            " LIMIT ? " +
-            " OFFSET ? "
+            "FROM " + table + " " + 
+            " WHERE 1 = 1 "
         ;
         
-        System.out.println("SQL: " + query.toString());
-        System.out.println("params: " + params.size());
+        if (entity != "") {
+        	query = query +  " AND entity ='" + entity +"'";
+        }
 
+        if (view != "") {
+        	query = query +  " AND view_detail =" + Boolean.valueOf(view);
+        }
+        
+        query = query +  " LIMIT ? " +
+                " OFFSET ? ";
+        
         try
         {
         	 Object[] paramArr = new Object[] {limit, offset};

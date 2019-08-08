@@ -63,13 +63,32 @@ public class MyTableResource extends Resource {
 		
 		context = createContext(getUser(headers));
 		
-		results = DataUtils.findAll(context, 20, 0, "mapping_xml", "*", entity, Boolean.valueOf(view_detail));
+		results = DataUtils.findAll(context, 20, 0, "mapping_xml", "*", entity, view_detail);
 		
 		log.info("size: " + results.length());
 		
 		return results.toString();
 	}
 
+	@GET
+	@Path("/async/api")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getAllApi(
+			@Context HttpHeaders headers,
+			@Context HttpServletRequest request) throws Exception {
+
+		JSONArray results = new JSONArray();
+		org.dspace.core.Context context = null;
+		
+		context = createContext(getUser(headers));
+		
+		results = DataUtils.findAll(context, 200, 0, "mapping_xml_async", "*", "", "");
+		
+		log.info("size: " + results.length());
+		
+		return results.toString();
+	}
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public String getAllCrisDoTp(@QueryParam("query") String q, @Context HttpHeaders headers,
