@@ -41,11 +41,7 @@ public class DataUtils {
         List<Serializable> params = new ArrayList<Serializable>();
         String query = 
             "SELECT " + cols + " " +
-            "FROM " + table + " " +
-            "WHERE 1=1 " +
-            "AND entity='" + entity + "' " +
-            "AND view_detail=" + view +
-            " LIMIT 100 "
+            "FROM " + table + " "
         ;
         
         System.out.println("SQL: " + query.toString());
@@ -54,7 +50,7 @@ public class DataUtils {
         try
         {
         	
-            tri = DatabaseManager.queryTable(context, table, query);
+            tri = DatabaseManager.query(context, query, offset, limit);
             while (tri.hasNext())
             {
                 TableRow row = tri.next();
