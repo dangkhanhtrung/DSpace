@@ -34,8 +34,8 @@
 				<entry key="patentslistRP" value-ref="patentsforRP" />
 				<entry key="certificatelistRP" value-ref="certificateforRP" />
 				<entry key="awardslistRP" value-ref="awardsforRP" />
-				<entry key="techsProvidedListRP" value-ref="techsProvidedforRP" />
-				<entry key="techsAuthorListRP" value-ref="techsAuthorforRP" />
+				<entry key="ProductProvidedListRP" value-ref="ProductProvidedforRP" />
+				<entry key="ProductAuthorListRP" value-ref="ProductAuthorforRP" />
 				<!--  -->
 			</map>
 		</property>
@@ -140,7 +140,7 @@
 				<entry key="certificatelistOU" value-ref="certificatelistforOU" />
 				<entry key="projectsContract" value-ref="projectsContractlistforOU" />
 				<entry key="projectContribute" value-ref="projectContributelistforOU" />
-				<entry key="techslistsOU" value-ref="techslistsforOU" />
+				<entry key="ProductlistsOU" value-ref="ProductlistsforOU" />
 				<entry key="awardslistOU" value-ref="awardslistforOU" />
 				<!-- end Nth -->
 			</map>
@@ -349,7 +349,7 @@
 			<map>
 				<entry key="dspaceitems" value-ref="publicationlistforproject" />
 				<!-- NTH -->
-				 <entry key="techslistsPJ" value-ref="techslistforPJ" />
+				 <entry key="ProductlistsPJ" value-ref="ProductlistforPJ" />
 				<entry key="patentslistsPJ" value-ref="patentslistforPJ" />
 				<!-- End NTH -->
 			</map>
@@ -493,20 +493,20 @@
 		<property name="sortby"><value>5</value></property>		
 	</bean>
 
-	<!-- techs vs PJ -->
-	<bean id="techslistforPJ"
+	<!-- Product vs PJ -->
+	<bean id="ProductlistforPJ"
 		class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
-		<property name="relationConfiguration" ref="relationTechsVSPJConfiguration" />
+		<property name="relationConfiguration" ref="relationProductVSPJConfiguration" />
 		<property name="target" value="org.dspace.app.cris.model.Project" />		
 		<property name="types">
 			<map>
-				<entry key="techs" value-ref="SelectedTechsForPJComponent" />				
+				<entry key="Product" value-ref="SelectedProductForPJComponent" />				
 			</map>
 		</property>
 	</bean>
-	<bean id="SelectedTechsForPJComponent"
+	<bean id="SelectedProductForPJComponent"
 		class="org.dspace.app.webui.cris.components.BeanFacetComponent">
-		<property name="componentIdentifier" value="techs" />
+		<property name="componentIdentifier" value="Product" />
 		<property name="facetQuery"><value>*:*</value></property>
 		<property name="order"><value>desc</value></property>
 		<property name="rpp"><value>20</value></property>
@@ -638,42 +638,42 @@
 		<property name="sortby"><value>5</value></property>
 	</bean>
 
-	<!-- techs Provided for RP -->
-	<bean id="techsProvidedforRP"
+	<!-- Product Provided for RP -->
+	<bean id="ProductProvidedforRP"
 		class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
-		<property name="relationConfiguration" ref="relationTechsProvidedVSRPConfiguration" />
+		<property name="relationConfiguration" ref="relationProductProvidedVSRPConfiguration" />
 		<property name="target" value="org.dspace.app.cris.model.ResearcherPage" />		
 		<property name="types">
 			<map>
-				<entry key="techsprovided" value-ref="techsProRPComponent" />				
+				<entry key="Productprovided" value-ref="ProductProRPComponent" />				
 			</map>
 		</property>
 	</bean>
 
-	<bean id="techsProRPComponent"
+	<bean id="ProductProRPComponent"
 		class="org.dspace.app.webui.cris.components.BeanFacetComponent">
-		<property name="componentIdentifier" value="techsprovided" />
+		<property name="componentIdentifier" value="Productprovided" />
 		<property name="facetQuery"><value>*:*</value></property>
 		<property name="order"><value>desc</value></property>
 		<property name="rpp"><value>20</value></property>
 		<property name="sortby"><value>5</value></property>
 	</bean>
 
-	<!-- Techs author for RP -->
-	<bean id="techsAuthorforRP"
+	<!-- Product author for RP -->
+	<bean id="ProductAuthorforRP"
 		class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
-		<property name="relationConfiguration" ref="relationTechsAuthorVSRPConfiguration" />
+		<property name="relationConfiguration" ref="relationProductAuthorVSRPConfiguration" />
 		<property name="target" value="org.dspace.app.cris.model.ResearcherPage" />		
 		<property name="types">
 			<map>
-				<entry key="techsauthor" value-ref="techsAuthorRPComponent" />				
+				<entry key="Productauthor" value-ref="ProductAuthorRPComponent" />				
 			</map>
 		</property>
 	</bean>
 
-	<bean id="techsAuthorRPComponent"
+	<bean id="ProductAuthorRPComponent"
 		class="org.dspace.app.webui.cris.components.BeanFacetComponent">
-		<property name="componentIdentifier" value="techsauthor" />
+		<property name="componentIdentifier" value="Productauthor" />
 		<property name="facetQuery"><value>*:*</value></property>
 		<property name="order"><value>desc</value></property>
 		<property name="rpp"><value>20</value></property>
@@ -740,18 +740,18 @@
 	    <property name="sortby"><value>5</value></property>
 	</bean>
 	<!-- techprovider for OU -->
-	<bean id="techslistsforOU"
+	<bean id="ProductlistsforOU"
 	    class="org.dspace.app.webui.cris.components.CRISDOConfigurerComponent">
-	    <property name="relationConfiguration" ref="relationtechsproviderVSOUConfiguration"/>
+	    <property name="relationConfiguration" ref="relationProductproviderVSOUConfiguration"/>
 	    <property name="target" value="org.dspace.app.cris.model.OrganizationUnit" />
 	    <property name="types">
 	        <map>
-	            <entry key="DOKey" value-ref="relationtechsproviderVSOUConfigurationComponent" />
+	            <entry key="DOKey" value-ref="relationProductproviderVSOUConfigurationComponent" />
 	        </map>
 	    </property>
 	</bean>
 
-	<bean id="relationtechsproviderVSOUConfigurationComponent"
+	<bean id="relationProductproviderVSOUConfigurationComponent"
 	    class="org.dspace.app.webui.cris.components.BeanFacetComponent">
 	    <property name="componentIdentifier" value="DOKey" />
 	    <property name="facetQuery"><value>*:*</value></property>

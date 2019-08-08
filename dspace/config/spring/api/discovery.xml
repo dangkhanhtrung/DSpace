@@ -138,7 +138,7 @@
 	            <entry key="datasets" value-ref="datasetConfiguration" />
 				<entry key="crisjournals" value-ref="crisJournalsConfiguration" />
 				<entry key="crisevents" value-ref="crisEventsConfiguration" />
-				<entry key="cristechs" value-ref="crisTechsConfiguration" />
+				<entry key="crisProduct" value-ref="crisProductConfiguration" />
 				<entry key="crisstandards" value-ref="crisStandardsConfiguration" />
 				<entry key="crispatents" value-ref="crisPatentsConfiguration" />
 				<entry key="crisawards" value-ref="crisAwardsConfiguration" />
@@ -1695,36 +1695,36 @@
 		</property>
 	</bean>
 
-	<bean id="crisTechsConfiguration"
+	<bean id="crisProductConfiguration"
 		class="org.dspace.discovery.configuration.DiscoveryConfiguration"
 		scope="prototype">
 		<property name="globalConfigurationEnabled" value="true" />
-		<property name="id" value="crisTechsConfiguration" />
+		<property name="id" value="crisProductConfiguration" />
 		<property name="searchFilters">
 			<list>
-				<ref bean="searchFilterTechsName" />
-				<ref bean="searchFilterTechsType" />		
-				<ref bean="searchFilterTechsPublicationDate" />
-				<ref bean="searchFilterTechsCollection" />
-				<ref bean="searchFilterTechsScope" />	
-				<ref bean="searchFilterTechsCountry" />
-				<ref bean="searchFilterTechsProviders" />
-				<ref bean="searchFilterTechsCreator" />
-				<ref bean="searchFilterTechsKeyword" />
+				<ref bean="searchFilterProductName" />
+				<ref bean="searchFilterProductType" />		
+				<ref bean="searchFilterProductPublicationDate" />
+				<ref bean="searchFilterProductCollection" />
+				<ref bean="searchFilterProductScope" />	
+				<ref bean="searchFilterProductCountry" />
+				<ref bean="searchFilterProductProviders" />
+				<ref bean="searchFilterProductCreator" />
+				<ref bean="searchFilterProductKeyword" />
 				<ref bean="searchFilterSourceID" />					
 			</list>
 		</property>
-		<property name="sidebarFacets" ref="facetsCrisTechsConfiguration" />
+		<property name="sidebarFacets" ref="facetsCrisProductConfiguration" />
 
 		<property name="searchSortConfiguration">
 			<bean class="org.dspace.discovery.configuration.DiscoverySortConfiguration">
-				<property name="defaultSort" ref="sortTechsTimeCreationDt"/>
+				<property name="defaultSort" ref="sortProductTimeCreationDt"/>
 				<!--DefaultSortOrder can either be desc or asc (desc is default) -->
 				<property name="defaultSortOrder" value="asc" />
 				<property name="sortFields">
 					<list>
-						<ref bean="sortTechsTimeCreationDt" />
-						<ref bean="sortTechsName" />
+						<ref bean="sortProductTimeCreationDt" />
+						<ref bean="sortProductName" />
 					</list>
 				</property>
 			</bean>
@@ -1734,7 +1734,7 @@
 			queries done by discovery for this configuration -->
 		<property name="defaultFilterQueries">
 			<list>
-				<value>resourcetype_authority:cristechs</value>
+				<value>resourcetype_authority:crisProduct</value>
 			</list>
 		</property>
 	</bean>
@@ -3038,12 +3038,12 @@
 		<property name="type" value="thongkestring"/>
 	</bean>	
 
-	<bean id="searchFilterTechsName"
+	<bean id="searchFilterProductName"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="techsname" />
+		<property name="indexFieldName" value="Productname" />
 		<property name="metadataFields">
 			<list>
-				<value>cristechs.techsname</value>
+				<value>crisProduct.Productname</value>
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
@@ -3051,12 +3051,12 @@
 		<property name="type" value="thongkestring"/>
 	</bean>
 
-	<bean id="searchFilterTechsType"
+	<bean id="searchFilterProductType"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="techstype" />
+		<property name="indexFieldName" value="Producttype" />
 		<property name="metadataFields">
 			<list>
-				<value>cristechs.techstype</value>
+				<value>crisProduct.Producttype</value>
 			</list>
 		</property>
 		<property name="type" value="thongkestring" />
@@ -3064,12 +3064,12 @@
 		<property name="sortOrder" value="COUNT" />
 	</bean>
 
-	<bean id="searchFilterTechsPublicationDate"
+	<bean id="searchFilterProductPublicationDate"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="techspublicationDate" />
+		<property name="indexFieldName" value="ProductpublicationDate" />
 		<property name="metadataFields">
 			<list>
-				<value>cristechs.techspublicationDate</value>
+				<value>crisProduct.ProductpublicationDate</value>
 			</list>
 		</property>		
 		<property name="facetLimit" value="5" />
@@ -3077,12 +3077,12 @@
 		<property name="type" value="date"/>
 	</bean>
 
-	<bean id="searchFilterTechsCollection"
+	<bean id="searchFilterProductCollection"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="techscollection" />
+		<property name="indexFieldName" value="Productcollection" />
 		<property name="metadataFields">
 			<list>
-				<value>cristechs.techscollection</value>
+				<value>crisProduct.Productcollection</value>
 			</list>
 		</property>		
 		<property name="facetLimit" value="5" />
@@ -3090,12 +3090,12 @@
 		<property name="type" value="thongkestring"/>
 	</bean>
 
-	<bean id="searchFilterTechsScope"
+	<bean id="searchFilterProductScope"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="techsscope" />
+		<property name="indexFieldName" value="Productscope" />
 		<property name="metadataFields">
 			<list>
-				<value>cristechs.techsscope</value>
+				<value>crisProduct.Productscope</value>
 			</list>
 		</property>		
 		<property name="facetLimit" value="10" />
@@ -3103,12 +3103,12 @@
 		<property name="type" value="thongkestring"/>
 	</bean>
 
-	<bean id="searchFilterTechsCountry"
+	<bean id="searchFilterProductCountry"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="techscountry" />
+		<property name="indexFieldName" value="Productcountry" />
 		<property name="metadataFields">
 			<list>
-				<value>cristechs.techscountry</value>
+				<value>crisProduct.Productcountry</value>
 			</list>
 		</property>
 		<property name="type" value="thongkestring" />
@@ -3116,12 +3116,12 @@
 		<property name="sortOrder" value="COUNT" />
 	</bean>
 
-	<bean id="searchFilterTechsProviders"
+	<bean id="searchFilterProductProviders"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="techsproviders" />
+		<property name="indexFieldName" value="Productproviders" />
 		<property name="metadataFields">
 			<list>
-				<value>cristechs.techsproviders</value>
+				<value>crisProduct.Productproviders</value>
 			</list>
 		</property>		
 		<property name="facetLimit" value="10" />
@@ -3129,12 +3129,12 @@
 		<property name="type" value="thongkestring"/>
 	</bean>
 
-	<bean id="searchFilterTechsCreator"
+	<bean id="searchFilterProductCreator"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="techscreators" />
+		<property name="indexFieldName" value="Productcreators" />
 		<property name="metadataFields">
 			<list>
-				<value>cristechs.techscreators</value>
+				<value>crisProduct.Productcreators</value>
 			</list>
 		</property>		
 		<property name="facetLimit" value="10" />
@@ -3142,12 +3142,12 @@
 		<property name="type" value="thongkestring"/>
 	</bean>
 
-	<bean id="searchFilterTechsKeyword"
+	<bean id="searchFilterProductKeyword"
 		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
-		<property name="indexFieldName" value="techskeyword" />
+		<property name="indexFieldName" value="Productkeyword" />
 		<property name="metadataFields">
 			<list>
-				<value>cristechs.techskeyword</value>
+				<value>crisProduct.Productkeyword</value>
 			</list>
 		</property>		
 		<property name="facetLimit" value="10" />
@@ -3328,13 +3328,13 @@
 		<property name="metadataField" value="crisevents.eventsname" />
 	</bean>
 
-	<bean id="sortTechsName"
+	<bean id="sortProductName"
 		class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
-		<property name="metadataField" value="cristechs.techsname" />
+		<property name="metadataField" value="crisProduct.Productname" />
 	</bean>
-	<bean id="sortTechsTimeCreationDt"
+	<bean id="sortProductTimeCreationDt"
 		class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
-		<property name="metadataField" value="cristechs.time_creation_dt" />
+		<property name="metadataField" value="crisProduct.time_creation_dt" />
 	</bean>
 	<bean id="sortStandardsName"
 		class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
@@ -3403,17 +3403,17 @@
 		</list>
 		</constructor-arg>
 	</bean>
-	<bean id="facetsCrisTechsConfiguration" class="java.util.ArrayList">
+	<bean id="facetsCrisProductConfiguration" class="java.util.ArrayList">
 		<constructor-arg>
 		<list>
-			<ref bean="searchFilterTechsType" />		
-			<ref bean="searchFilterTechsPublicationDate" />
-			<ref bean="searchFilterTechsCollection" />	
-			<ref bean="searchFilterTechsScope" />		
-			<ref bean="searchFilterTechsCountry" />
-			<ref bean="searchFilterTechsProviders" />
-			<ref bean="searchFilterTechsCreator" />
-			<ref bean="searchFilterTechsKeyword" />
+			<ref bean="searchFilterProductType" />		
+			<ref bean="searchFilterProductPublicationDate" />
+			<ref bean="searchFilterProductCollection" />	
+			<ref bean="searchFilterProductScope" />		
+			<ref bean="searchFilterProductCountry" />
+			<ref bean="searchFilterProductProviders" />
+			<ref bean="searchFilterProductCreator" />
+			<ref bean="searchFilterProductKeyword" />
 		</list>
 		</constructor-arg>
 	</bean>

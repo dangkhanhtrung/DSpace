@@ -102,12 +102,12 @@
 		</property>
 	</bean>	
 
-	<!-- techs vs PJ -->
-	<bean id="relationTechsVSPJConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
-		<property name="relationName" value="cristechs.techsoriginatesFrom" />		
+	<!-- Product vs PJ -->
+	<bean id="relationProductVSPJConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="crisProduct.ProductoriginatesFrom" />		
 		<property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />		
 		<property name="query">
-			<value>cristechs.techsoriginatesFrom_authority:{0}</value>
+			<value>crisProduct.ProductoriginatesFrom_authority:{0}</value>
 		</property>
 	</bean>
 
@@ -174,20 +174,20 @@
 			<value>crisawards.awardswinnerPerson_authority:{0}</value>
 		</property>
 	</bean>
-	<!-- techs provider vs RP -->
-	<bean id="relationTechsProvidedVSRPConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
-		<property name="relationName" value="cristechs.techsprovidersPerson" />		
+	<!-- Product provider vs RP -->
+	<bean id="relationProductProvidedVSRPConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="crisProduct.ProductprovidersPerson" />		
 		<property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />		
 		<property name="query">
-			<value>cristechs.techsprovidersPerson_authority:{0}</value>
+			<value>crisProduct.ProductprovidersPerson_authority:{0}</value>
 		</property>
 	</bean>
-	<!-- techs author vs RP -->
-	<bean id="relationTechsAuthorVSRPConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
-		<property name="relationName" value="cristechs.techscreators" />		
+	<!-- Product author vs RP -->
+	<bean id="relationProductAuthorVSRPConfiguration" class="org.dspace.app.cris.configuration.RelationConfiguration">    										
+		<property name="relationName" value="crisProduct.Productcreators" />		
 		<property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />		
 		<property name="query">
-			<value>cristechs.techscreators_authority:{0}</value>
+			<value>crisProduct.Productcreators_authority:{0}</value>
 		</property>
 	</bean>
 	<!-- certificate vs OU -->
@@ -218,12 +218,12 @@
 	    </property>
 	</bean>
 	<!-- techprovider for OU -->
-	<bean id="relationtechsproviderVSOUConfiguration"
+	<bean id="relationProductproviderVSOUConfiguration"
 	   class="org.dspace.app.cris.configuration.RelationConfiguration">
-	    <property name="relationName" value="cristechs.techsprovidersOrg" />
+	    <property name="relationName" value="crisProduct.ProductprovidersOrg" />
 	    <property name="relationClass" value="org.dspace.app.cris.model.ResearchObject" />
 	    <property name="query">
-	        <value>cristechs.techsprovidersOrg_authority:{0}</value>
+	        <value>crisProduct.ProductprovidersOrg_authority:{0}</value>
 	    </property>
 	</bean>
 	<!-- awards for OU -->
