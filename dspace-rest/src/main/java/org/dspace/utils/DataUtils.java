@@ -39,14 +39,14 @@ public class DataUtils {
         JSONArray results = new JSONArray();
         TableRowIterator tri = null;
         List<Serializable> params = new ArrayList<Serializable>();
-        StringBuffer query = new StringBuffer(
+        String query = 
             "SELECT " + cols + " " +
             "FROM " + table + " " +
             "WHERE 1=1 " +
             "AND entity='" + entity + "' " +
             "AND view_detail=" + view +
             " LIMIT 200 "
-        );
+        ;
         
         System.out.println("SQL: " + query.toString());
         System.out.println("params: " + params.toArray());
@@ -55,7 +55,6 @@ public class DataUtils {
         {
         	
             tri = DatabaseManager.query(context, table, query);
-
             while (tri.hasNext())
             {
                 TableRow row = tri.next();
