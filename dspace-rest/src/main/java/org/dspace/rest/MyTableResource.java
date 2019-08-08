@@ -65,6 +65,8 @@ public class MyTableResource extends Resource {
 		
 		results = DataUtils.findAll(context, 200, 0, "mapping_xml", "*", entity, Boolean.valueOf(view_detail));
 		
+		log.info("size: " + results.length());
+		
 		return results.toString();
 	}
 

@@ -44,20 +44,17 @@ public class DataUtils {
             "FROM " + table + " " +
             "WHERE 1=1 " +
             "AND entity='" + entity + "' " +
-            "AND view_detail=" + view 
-            
+            "AND view_detail=" + view +
+            " LIMIT 200 "
         );
         
-        DatabaseManager.applyOffsetAndLimit(query, params, offset, limit);
         System.out.println("SQL: " + query.toString());
         System.out.println("params: " + params.toArray());
 
         try
         {
         	
-            tri = DatabaseManager.query(
-              context, query.toString(), params.toArray()
-            );
+            tri = DatabaseManager.query(context, table, query);
 
             while (tri.hasNext())
             {
