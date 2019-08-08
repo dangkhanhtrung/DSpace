@@ -7,7 +7,9 @@
  */
 package org.dspace.rest;
 
+import java.io.Serializable;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -68,7 +70,8 @@ public class MyTableResource extends Resource {
 		}
 		log.info("view_detail" + view_detail);
 		log.info("myQuerymyQuerymyQuerymyQuery" + myQuery);
-		List<TableRow> storage = DatabaseManager.query(context, myQuery, 0, 200).toList();
+		List<Serializable> params = new ArrayList<Serializable>();
+		List<TableRow> storage = DatabaseManager.query(context, myQuery, 0, 200, params.toArray()).toList();
 		log.info("storagestoragestorage" + storage);
 		log.info("storage.size()storage.size()storage.size()" + storage.size());
 		if (storage.size() > 0) {
