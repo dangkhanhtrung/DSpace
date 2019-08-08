@@ -58,7 +58,7 @@ public class Stat extends Resource
                 offset = 0;
             }
 
-            results = DataUtils.findAll(context, limit, offset, id, cols);
+            //results = DataUtils.findAll(context, limit, offset, id, cols);
            
             context.complete();
         }
