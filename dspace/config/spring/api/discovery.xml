@@ -2811,7 +2811,7 @@
 		<property name="indexFieldName" value="PJStatus" />
 		<property name="metadataFields">
 			<list>
-				<value>crisproject.status</value>
+				<value>crisproject.pjstatus</value>
 			</list>
 		</property>
 		<property name="facetLimit" value="2" />
