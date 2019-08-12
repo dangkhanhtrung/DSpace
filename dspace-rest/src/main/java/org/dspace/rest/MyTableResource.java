@@ -54,7 +54,8 @@ public class MyTableResource extends Resource {
 	@GET
 	@Path("/{entity}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public String getAllCrisDoTp(@PathParam("entity") String entity, @QueryParam("view_detail") String view_detail,
+	public String getAllCrisDoTp(@PathParam("entity") String entity, @QueryParam("view_detail") String view_detail, 
+			@QueryParam("import_ext") String import_ext,
 			@Context HttpHeaders headers,
 			@Context HttpServletRequest request) throws Exception {
 
@@ -63,7 +64,7 @@ public class MyTableResource extends Resource {
 		
 		context = createContext(getUser(headers));
 		
-		results = DataUtils.findAll(context, 20, 0, "mapping_xml", "*", entity, view_detail);
+		results = DataUtils.findAll(context, 20, 0, "mapping_xml", "*", entity, view_detail, import_ext);
 		
 		log.info("size: " + results.length());
 		
@@ -82,7 +83,7 @@ public class MyTableResource extends Resource {
 		
 		context = createContext(getUser(headers));
 		
-		results = DataUtils.findAll(context, 200, 0, "mapping_xml_async", "*", "", "");
+		results = DataUtils.findAll(context, 200, 0, "mapping_xml_async", "*", "", "", "");
 		
 		log.info("size: " + results.length());
 		

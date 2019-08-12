@@ -35,7 +35,7 @@ public class DataUtils {
     
     private static Logger log = Logger.getLogger(DataUtils.class);
     
-    public static JSONArray findAll(Context context, Integer limit, Integer offset, String table, String cols, String entity, String view) throws Exception
+    public static JSONArray findAll(Context context, Integer limit, Integer offset, String table, String cols, String entity, String view, String import_ext) throws Exception
     {
         JSONArray results = new JSONArray();
         TableRowIterator tri = null;
@@ -52,6 +52,10 @@ public class DataUtils {
 
         if (view != "") {
         	query = query +  " AND view_detail =" + Boolean.valueOf(view);
+        }
+        
+        if (import_ext != "") {
+        	query = query +  " AND import_ext =" + Boolean.valueOf(import_ext);
         }
         
         query = query +  " LIMIT ? " +
