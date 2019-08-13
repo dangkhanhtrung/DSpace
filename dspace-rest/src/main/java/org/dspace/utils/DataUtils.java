@@ -18,6 +18,7 @@ import java.util.UUID;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.dspace.app.cris.discovery.CrisSearchService;
+import org.dspace.core.Constants;
 import org.dspace.core.Context;
 import org.dspace.storage.rdbms.DatabaseManager;
 import org.dspace.storage.rdbms.TableRow;
@@ -34,28 +35,41 @@ public class DataUtils {
     
     private static Logger log = Logger.getLogger(DataUtils.class);
     
-    public static JSONArray findAll(Context context, Integer limit, Integer offset, String table, String cols) throws Exception
+    public static JSONArray findAll(Context context, Integer limit, Integer offset, String table, String cols, String entity, String view, String import_ext) throws Exception
     {
         JSONArray results = new JSONArray();
         TableRowIterator tri = null;
         List<Serializable> params = new ArrayList<Serializable>();
-        StringBuffer query = new StringBuffer(
+        String query = 
             "SELECT " + cols + " " +
-            "FROM " + table + " "
-        );
+            "FROM " + table + " " + 
+            " WHERE 1 = 1 "
+        ;
         
-        DatabaseManager.applyOffsetAndLimit(query, params, offset, limit);
-        System.out.println("SQL: " + query.toString());
+        if (entity != "") {
+        	query = query +  " AND entity ='" + entity +"'";
+        }
 
+        if (view != "") {
+        	query = query +  " AND view_detail =" + Boolean.valueOf(view);
+        }
+        
+        if (import_ext != "") {
+        	query = query +  " AND import_ext =" + Boolean.valueOf(import_ext);
+        }
+        
+        query = query +  " LIMIT ? " +
+                " OFFSET ? ";
+        
         try
         {
+        	 Object[] paramArr = new Object[] {limit, offset};
         	
-            tri = DatabaseManager.query(
-              context, query.toString(), params.toArray()
-            );
-
+        	 tri = DatabaseManager.query(context, query, paramArr);
             while (tri.hasNext())
             {
+
+                System.out.println("SQLxxxxx: " + query.toString());
                 TableRow row = tri.next();
                 
                 JSONObject current = new JSONObject();
