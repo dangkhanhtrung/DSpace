@@ -21,6 +21,10 @@
 <%@ page import="java.util.Map"%>
 <%@ page import="java.util.HashMap"%>
 <%@ page import="it.cilea.osd.jdyna.web.Box"%>
+<%@ page import="org.dspace.storage.rdbms.DatabaseManager"%>
+<%@ page import="org.dspace.storage.rdbms.TableRow"%>
+<%@ page import="java.util.Iterator"%>
+<%@ page import="java.util.ArrayList"%>
 
 <%@ taglib uri="jdynatags" prefix="dyna"%>
 <%@ taglib uri="researchertags" prefix="researcher"%>
@@ -93,67 +97,148 @@
                                 <c:set var="hideLabel">${fn:length(propertiesDefinitionsInHolder[holder.shortName]) le 1}</c:set>
 
                                 <vuejx-sub-list value="${holder.shortName}" id="" ></vuejx-sub-list>
+                                <%                                     
+                                    org.dspace.core.Context context = null;
+                                    context = UIUtil.obtainContext(request);
+                                    String field;
+                                    String query;                                    
+                                %>                                
                                 <table>
+                                    <c:set var="hiddenfield" value="" />
 	                                <c:forEach
 	                                    items="${propertiesDefinitionsInHolder[holder.shortName]}"
 	                                    var="tipologiaDaVisualizzareNoI18n" varStatus="status">
 	                                    <c:set var="tipologiaDaVisualizzare" value="${researcher:getPropertyDefinitionI18N(tipologiaDaVisualizzareNoI18n,currLocale)}" />
 	                                    <%!public URL fileFieldURL;%>
 	                                    <c:set var="dataCHK" value="${anagraficaObject.anagrafica4view[tipologiaDaVisualizzare.shortName]}" />
-			                                        
-											<tr>
-												<td width="150" style="vertical-align: text-top;">
-													<strong>${tipologiaDaVisualizzare.label}</strong>
-												</td>
-												<td>
-													<c:set var="urljspcustomfield"
-				                                           value="/dspace-cris/jdyna/custom/field/${tipologiaDaVisualizzare.shortName}.jsp" scope="request" />
-				
-				                                    <%
-				                                            String fileFieldPath = (String)pageContext.getRequest().getAttribute("urljspcustomfield");
-											
-				                                                            fileFieldURL = pageContext.getServletContext().getResource(
-				                                                                            fileFieldPath);
-				                                    %>
-				                                    <%
-				                                            if (fileFieldURL == null) {
-				                                    %>
-				                                    <c:if
-				                                        test="${dyna:instanceOf(tipologiaDaVisualizzare,'it.cilea.osd.jdyna.model.ADecoratorTypeDefinition')}">
-				
-				                                        <c:set var="totalHit" value="0"/>
-				                                        <c:set var="limit" value="5"/>
-				                                        <c:set var="offset" value="0"/>											
-				                                        <c:set var="pageCurrent" value="0"/>	
-				                                        <c:set var="editmode" value="false"/>
-				
-				                                        <div
-				                                            id="viewnested_${tipologiaDaVisualizzare.real.id}" class="viewnested">
-				                                            <img src="<%=request.getContextPath()%>/image/cris/bar-loader.gif" class="loader" />
-				                                            <fmt:message key="jsp.jdyna.nestedloading" />
-				                                            <span class="spandatabind nestedinfo">${tipologiaDaVisualizzare.real.id}</span>
-				                                            <span id="nested_${tipologiaDaVisualizzare.real.id}_totalHit" class="spandatabind">0</span>
-				                                            <span id="nested_${tipologiaDaVisualizzare.real.id}_limit" class="spandatabind">5</span>
-				                                            <span id="nested_${tipologiaDaVisualizzare.real.id}_pageCurrent" class="spandatabind">0</span>
-				                                            <span id="nested_${tipologiaDaVisualizzare.real.id}_editmode" class="spandatabind">false</span>
-				                                            <span id="nested_${tipologiaDaVisualizzare.real.id}_externalJSP" class="spandatabind">${tipologiaDaVisualizzare.externalJSP}</span>
-				                                        </div>
-				                                    </c:if>
-				                                    <c:if
-				                                        test="${dyna:instanceOf(tipologiaDaVisualizzare,'it.cilea.osd.jdyna.model.ADecoratorPropertiesDefinition')}">
-				                                        <dyna:display tipologia="${tipologiaDaVisualizzare.real}"
-				                                                      hideLabel="true"
-				                                                      values="${anagraficaObject.anagrafica4view[tipologiaDaVisualizzare.shortName]}" />
-				                                    </c:if>
-												</td>
-											</tr>
-	                                    
-	                                    
-		                                    <% } else { %>
-		                                    <c:set var="tipologiaDaVisualizzare" value="${tipologiaDaVisualizzare}" scope="request" />
-		                                    <c:import url="${urljspcustomfield}" />
-		                                    <% } %>
-		                                    
+                                        <c:set var="field_name" value="${tipologiaDaVisualizzare.shortName}" />
+                                        <%
+                                        try{
+                                            field = (String)pageContext.getAttribute("field_name");
+                                            query = "SELECT * FROM mapping_xml WHERE field_name='"+field+"'";
+                                            List<TableRow> tablerow = DatabaseManager.queryTable(context, "mapping_xml", query).toList();
+                                            Boolean view_detail = tablerow.get(0).getBooleanColumn("view_detail");
+                                            String valuefield = tablerow.get(0).getStringColumn("exclusive_ext");
+                                            request.setAttribute("view_detail", view_detail);
+                                            request.setAttribute("fieldname", field);
+                                            request.setAttribute("valuefield", valuefield);
+                                        }
+                                        catch (Exception e){}
+                                        %>
+                                        <c:if test="${tipologiaDaVisualizzare.shortName != hiddenfield}">
+                                            <c:set var="hiddenfield" value="" />                         
+                                            <c:choose>
+                                            <c:when test="${view_detail}">                                                
+                                                <c:if test="${not empty anagraficaObject.anagrafica4view[fieldname]}"> 
+                                                    <c:set var="hiddenfield" value="${valuefield}" />   
+        											<tr>
+        												<td width="150" style="vertical-align: text-top;">
+        													<strong>${tipologiaDaVisualizzare.label}</strong>       
+        												</td>
+        												<td>
+        													<c:set var="urljspcustomfield"
+        				                                           value="/dspace-cris/jdyna/custom/field/${tipologiaDaVisualizzare.shortName}.jsp" scope="request" />
+        				
+        				                                    <%
+        				                                            String fileFieldPath = (String)pageContext.getRequest().getAttribute("urljspcustomfield");
+        											
+        				                                                            fileFieldURL = pageContext.getServletContext().getResource(
+        				                                                                            fileFieldPath);
+        				                                    %>
+        				                                    <%
+        				                                            if (fileFieldURL == null) {
+        				                                    %>
+        				                                    <c:if
+        				                                        test="${dyna:instanceOf(tipologiaDaVisualizzare,'it.cilea.osd.jdyna.model.ADecoratorTypeDefinition')}">
+        				
+        				                                        <c:set var="totalHit" value="0"/>
+        				                                        <c:set var="limit" value="5"/>
+        				                                        <c:set var="offset" value="0"/>											
+        				                                        <c:set var="pageCurrent" value="0"/>	
+        				                                        <c:set var="editmode" value="false"/>
+        				
+        				                                        <div
+        				                                            id="viewnested_${tipologiaDaVisualizzare.real.id}" class="viewnested">
+        				                                            <img src="<%=request.getContextPath()%>/image/cris/bar-loader.gif" class="loader" />
+        				                                            <fmt:message key="jsp.jdyna.nestedloading" />
+        				                                            <span class="spandatabind nestedinfo">${tipologiaDaVisualizzare.real.id}</span>
+        				                                            <span id="nested_${tipologiaDaVisualizzare.real.id}_totalHit" class="spandatabind">0</span>
+        				                                            <span id="nested_${tipologiaDaVisualizzare.real.id}_limit" class="spandatabind">5</span>
+        				                                            <span id="nested_${tipologiaDaVisualizzare.real.id}_pageCurrent" class="spandatabind">0</span>
+        				                                            <span id="nested_${tipologiaDaVisualizzare.real.id}_editmode" class="spandatabind">false</span>
+        				                                            <span id="nested_${tipologiaDaVisualizzare.real.id}_externalJSP" class="spandatabind">${tipologiaDaVisualizzare.externalJSP}</span>
+        				                                        </div>
+        				                                    </c:if>
+        				                                    <c:if
+        				                                        test="${dyna:instanceOf(tipologiaDaVisualizzare,'it.cilea.osd.jdyna.model.ADecoratorPropertiesDefinition')}">
+        				                                        <dyna:display tipologia="${tipologiaDaVisualizzare.real}"
+        				                                                      hideLabel="true"
+        				                                                      values="${anagraficaObject.anagrafica4view[tipologiaDaVisualizzare.shortName]}" />
+        				                                    </c:if>
+        												</td>
+        											</tr>
+        		                                    <% } else { %>
+        		                                    <c:set var="tipologiaDaVisualizzare" value="${tipologiaDaVisualizzare}" scope="request" />
+        		                                    <c:import url="${urljspcustomfield}" />
+        		                                    <% } %>
+                                                </c:if>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <tr>
+                                                    <td width="150" style="vertical-align: text-top;">
+                                                        <strong>${tipologiaDaVisualizzare.label}</strong>
+                                                    </td>
+                                                    <td>
+                                                        <c:set var="urljspcustomfield"
+                                                               value="/dspace-cris/jdyna/custom/field/${tipologiaDaVisualizzare.shortName}.jsp" scope="request" />
+                    
+                                                        <%
+                                                                String fileFieldPath = (String)pageContext.getRequest().getAttribute("urljspcustomfield");
+                                                
+                                                                                fileFieldURL = pageContext.getServletContext().getResource(
+                                                                                                fileFieldPath);
+                                                        %>
+                                                        <%
+                                                                if (fileFieldURL == null) {
+                                                        %>
+                                                        <c:if
+                                                            test="${dyna:instanceOf(tipologiaDaVisualizzare,'it.cilea.osd.jdyna.model.ADecoratorTypeDefinition')}">
+                    
+                                                            <c:set var="totalHit" value="0"/>
+                                                            <c:set var="limit" value="5"/>
+                                                            <c:set var="offset" value="0"/>                                         
+                                                            <c:set var="pageCurrent" value="0"/>    
+                                                            <c:set var="editmode" value="false"/>
+                    
+                                                            <div
+                                                                id="viewnested_${tipologiaDaVisualizzare.real.id}" class="viewnested">
+                                                                <img src="<%=request.getContextPath()%>/image/cris/bar-loader.gif" class="loader" />
+                                                                <fmt:message key="jsp.jdyna.nestedloading" />
+                                                                <span class="spandatabind nestedinfo">${tipologiaDaVisualizzare.real.id}</span>
+                                                                <span id="nested_${tipologiaDaVisualizzare.real.id}_totalHit" class="spandatabind">0</span>
+                                                                <span id="nested_${tipologiaDaVisualizzare.real.id}_limit" class="spandatabind">5</span>
+                                                                <span id="nested_${tipologiaDaVisualizzare.real.id}_pageCurrent" class="spandatabind">0</span>
+                                                                <span id="nested_${tipologiaDaVisualizzare.real.id}_editmode" class="spandatabind">false</span>
+                                                                <span id="nested_${tipologiaDaVisualizzare.real.id}_externalJSP" class="spandatabind">${tipologiaDaVisualizzare.externalJSP}</span>
+                                                            </div>
+                                                        </c:if>
+                                                        <c:if
+                                                            test="${dyna:instanceOf(tipologiaDaVisualizzare,'it.cilea.osd.jdyna.model.ADecoratorPropertiesDefinition')}">
+                                                            <dyna:display tipologia="${tipologiaDaVisualizzare.real}"
+                                                                          hideLabel="true"
+                                                                          values="${anagraficaObject.anagrafica4view[tipologiaDaVisualizzare.shortName]}" />
+                                                        </c:if>
+                                                    </td>
+                                                </tr>
+                                            
+                                            
+                                                <% } else { %>
+                                                <c:set var="tipologiaDaVisualizzare" value="${tipologiaDaVisualizzare}" scope="request" />
+                                                <c:import url="${urljspcustomfield}" />
+                                                <% } %>
+                                            </c:otherwise>
+                                            </c:choose>
+                                        </c:if>
 	                                </c:forEach>	
                                 </table>	
                             </div>
