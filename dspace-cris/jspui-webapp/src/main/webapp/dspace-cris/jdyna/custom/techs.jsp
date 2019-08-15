@@ -210,7 +210,7 @@ if (info.getPagetotal() > 1)
 </form>
 <div class="row">
 <div class="table-responsive">			
-<dspace:browselist items="<%= (BrowseItem[])info.getItems() %>" config="cristechs.${info[holder.shortName].type}" sortBy="<%= new Integer(info.getSo().getNumber()).toString() %>" order="<%= info.getOrder() %>"/>
+<dspace:browselist items="<%= (BrowseItem[])info.getItems() %>" config="crisproduct.${info[holder.shortName].type}" sortBy="<%= new Integer(info.getSo().getNumber()).toString() %>" order="<%= info.getOrder() %>"/>
 </div>
 </div>
 
