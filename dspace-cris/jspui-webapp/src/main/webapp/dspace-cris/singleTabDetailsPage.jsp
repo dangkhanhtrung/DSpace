@@ -23,7 +23,6 @@
 <%@ page import="it.cilea.osd.jdyna.web.Box"%>
 <%@ page import="org.dspace.storage.rdbms.DatabaseManager"%>
 <%@ page import="org.dspace.storage.rdbms.TableRow"%>
-<%@ page import="java.util.Iterator"%>
 <%@ page import="java.util.ArrayList"%>
 
 <%@ taglib uri="jdynatags" prefix="dyna"%>

@@ -70,7 +70,7 @@
 				<entry key="criscertificate" value-ref="criscertLayoutView"/>
 				<entry key="crispatents" value-ref="crispatentsLayoutView"/>				
 				<entry key="crisstandards" value-ref="crisstandardsLayoutView"/>
-				<entry key="crisProduct" value-ref="crisProductLayoutView"/>				
+				<entry key="crisproduct" value-ref="crisProductLayoutView"/>				
 				<entry key="crisawards" value-ref="crisawardsLayoutView"/>
 				<entry key="crisevents" value-ref="criseventsLayoutView"/>
 				<entry key="crisjournals" value-ref="crisjournalsLayoutView"/>

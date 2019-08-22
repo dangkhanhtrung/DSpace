@@ -2105,7 +2105,6 @@
 				<value>crispatents.patentsapprovaldate</value>
 			</list>
 		</property>
-		<property name="type" value="date"/>
 		<property name="facetLimit" value="5" />
 		<property name="sortOrder" value="COUNT" />
 	</bean>
@@ -2336,7 +2335,6 @@
 				<value>crisfundings.fundingsstartDate</value>
 			</list>
 		</property>
-		<property name="type" value="date" />
 		<property name="facetLimit" value="5" />
 		<property name="sortOrder" value="COUNT" />
 	</bean>
@@ -2442,7 +2440,6 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
-		<property name="type" value="date"/>
 	</bean>
 
 	<bean id="searchFilterCertificateLicencedBy"
@@ -2562,7 +2559,6 @@
 				<value>crisstandards.standardspublicationDate</value>
 			</list>
 		</property>
-		<property name="type" value="date" />
 		<property name="sortOrder" value="VALUE" />
 	</bean>
 
@@ -2750,7 +2746,6 @@
 				<value>crisrp.birthDay</value>
 			</list>
 		</property>
-		<property name="type" value="date" />
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
 	</bean>
@@ -2827,7 +2822,6 @@
 				<value>crisproject.startdate</value>
 			</list>
 		</property>
-		<property name="type" value="date" />
 		<property name="facetLimit" value="5" />
 		<property name="sortOrder" value="COUNT" />		
 	</bean>
@@ -2982,7 +2976,6 @@
 				<value>crisevents.eventsstartdate</value>
 			</list>
 		</property>
-		<property name="type" value="date" />
 		<property name="facetLimit" value="5" />
 		<property name="sortOrder" value="COUNT" />
 	</bean>
@@ -3074,7 +3067,6 @@
 		</property>		
 		<property name="facetLimit" value="5" />
 		<property name="sortOrder" value="COUNT" />
-		<property name="type" value="date"/>
 	</bean>
 
 	<bean id="searchFilterProductCollection"

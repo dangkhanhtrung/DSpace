@@ -317,7 +317,7 @@
 					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
 					<property name="mandatory" value="true" />
 					<property name="preHtml" value="&lt;b&gt;" />
-					<property name="postHtml" value="&lt;/b&gt;&lt;br/&gt;" />
+					<property name="postHtml" value="&lt;/b&gt;" />
 					<property name="field" value="title" />
 					<property name="decorator" value="cristitle" />
 				</bean>
@@ -325,7 +325,7 @@
 					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
 					<property name="mandatory" value="true" />
 					<property name="preHtml" value="" />
-					<property name="postHtml" value="&lt;br/&gt;" />
+					<property name="postHtml" value="" />
 					<property name="field" value="pjtype" />
 				</bean>
 				<bean
@@ -339,7 +339,7 @@
 					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
 					<property name="mandatory" value="true" />
 					<property name="preHtml" value="" />
-					<property name="postHtml" value=" - " />
+					<property name="postHtml" value="" />
 					<property name="field" value="startdate" />
 				</bean>
 				<bean
