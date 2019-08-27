@@ -52,6 +52,24 @@ public class MyTableResource extends Resource {
 	private static Logger log = Logger.getLogger(MyTableResource.class);
 
 	@GET
+	@Path("/publication/config")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getPublicXML(@Context HttpHeaders headers,
+			@Context HttpServletRequest request) throws Exception {
+
+		JSONArray results = new JSONArray();
+		org.dspace.core.Context context = null;
+		
+		context = createContext(getUser(headers));
+		
+		results = DataUtils.findAll(context, 1, 0, "mapping_xml_publication");
+		
+		log.info("size: " + results.length());
+		
+		return results.toString();
+	}
+	
+	@GET
 	@Path("/{entity}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String getAllCrisDoTp(@PathParam("entity") String entity, @QueryParam("view_detail") String view_detail, 

@@ -35,6 +35,68 @@ public class DataUtils {
     
     private static Logger log = Logger.getLogger(DataUtils.class);
     
+    public static JSONArray findAll(Context context, Integer limit, Integer offset, String table) throws Exception
+    {
+        JSONArray results = new JSONArray();
+        TableRowIterator tri = null;
+        List<Serializable> params = new ArrayList<Serializable>();
+        String query = 
+            "SELECT * " +
+            "FROM " + table + " " + 
+            " WHERE 1 = 1 "
+        ;
+        
+        query = query +  " LIMIT ? " +
+                " OFFSET ? ";
+        
+        try
+        {
+        	 Object[] paramArr = new Object[] {limit, offset};
+        	
+        	 tri = DatabaseManager.query(context, query, paramArr);
+            while (tri.hasNext())
+            {
+
+                System.out.println("SQLxxxxx: " + query.toString());
+                TableRow row = tri.next();
+                
+                JSONObject current = new JSONObject();
+                
+                String dataRaw = row.toString();
+                
+                List<String> lines;
+
+                lines = IOUtils.readLines(new StringReader(dataRaw));
+                int index = 0;
+                for (String line : lines) {
+                    if (index > 0) {
+                        String[] lineData = line.trim().split(" = ");
+                        current.put(lineData[0], lineData[1]);
+                    }
+                    index = index + 1;
+                }
+                
+                results.put(current);
+                
+            }
+        }
+        catch (Exception e)
+        {
+            log.error("Find all findAll offset/limit - ", e);
+            throw e;
+        }
+        finally
+        {
+            // close the TableRowIterator to free up resources
+            if (tri != null)
+            {
+                tri.close();
+            }
+        }
+
+        return results;
+    }
+    
     public static JSONArray findAll(Context context, Integer limit, Integer offset, String table, String cols, String entity, String view, String import_ext) throws Exception
     {
         JSONArray results = new JSONArray();
