@@ -2107,6 +2107,7 @@
 		</property>
 		<property name="facetLimit" value="5" />
 		<property name="sortOrder" value="COUNT" />
+		<property name="type" value="date"/>
 	</bean>
 
 	<bean id="searchFilterPatentsStatus"
@@ -2337,6 +2338,7 @@
 		</property>
 		<property name="facetLimit" value="5" />
 		<property name="sortOrder" value="COUNT" />
+		<property name="type" value="date"/>		
 	</bean>
 
 	<bean id="searchFilterFundingStatus"
@@ -2440,6 +2442,7 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
+		<property name="type" value="date"/>		
 	</bean>
 
 	<bean id="searchFilterCertificateLicencedBy"
@@ -2560,6 +2563,7 @@
 			</list>
 		</property>
 		<property name="sortOrder" value="VALUE" />
+		<property name="type" value="date"/>		
 	</bean>
 
 	<bean id="searchFilterStandardsStatus"
@@ -2670,7 +2674,7 @@
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
-		<property name="sortOrder" value="VALUE" />
+		<property name="sortOrder" value="COUNT" />
 	</bean>
 
 	<bean id="searchFilterRPInterests"
@@ -2764,7 +2768,7 @@
 	</bean>
 
 	<bean id="searchFilterProjectType"
-		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		class="org.dspace.discovery.configuration.DiscoverySearchMultilanguageFilterFacet">
 		<property name="indexFieldName" value="PJType" />
 		<property name="metadataFields">
 			<list>
@@ -2773,11 +2777,10 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
-		<property name="type" value="thongkestring" />
 	</bean>
 
 	<bean id="searchFilterProjectLevel"
-		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		class="org.dspace.discovery.configuration.DiscoverySearchMultilanguageFilterFacet">
 		<property name="indexFieldName" value="PJLevel" />
 		<property name="metadataFields">
 			<list>
@@ -2786,7 +2789,6 @@
 		</property>
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
-		<property name="type" value="thongkestring" />
 	</bean>
 
 	<bean id="searchFilterProjectSubject"
@@ -2797,12 +2799,12 @@
 				<value>crisproject.pjsubject</value>
 			</list>
 		</property>
-		<property name="facetLimit" value="10" />
+		<property name="facetLimit" value="15" />
 		<property name="sortOrder" value="VALUE" />
 	</bean>
 
 	<bean id="searchFilterProjectStatus"
-		class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+		class="org.dspace.discovery.configuration.DiscoverySearchMultilanguageFilterFacet">
 		<property name="indexFieldName" value="PJStatus" />
 		<property name="metadataFields">
 			<list>
@@ -2811,7 +2813,6 @@
 		</property>
 		<property name="facetLimit" value="2" />
 		<property name="sortOrder" value="VALUE" />
-		<property name="type" value="thongkestring" />	
 	</bean>	
 
 	<bean id="searchFilterProjectStartDate"
@@ -2824,6 +2825,7 @@
 		</property>
 		<property name="facetLimit" value="5" />
 		<property name="sortOrder" value="COUNT" />		
+		<property name="type" value="date"/>		
 	</bean>
 
 	<bean id="searchFilterProjectContractor"
@@ -2836,7 +2838,7 @@
 		</property>
 		<property name="facetLimit" value="5" />
 		<property name="sortOrder" value="COUNT" />	
-		<property name="type" value="thongkestring"/>	
+		<property name="type" value="thongkestring"/>
 	</bean>
 
 	<bean id="searchFilterProjectAuthority"
@@ -2938,7 +2940,7 @@
 			</list>
 		</property>
 		<property name="facetLimit" value="10" />
-		<property name="sortOrder" value="VALUE" />
+		<property name="sortOrder" value="COUNT" />
 		<property name="type" value="thongkestring"/>
 	</bean>
 
@@ -2978,6 +2980,7 @@
 		</property>
 		<property name="facetLimit" value="5" />
 		<property name="sortOrder" value="COUNT" />
+		<property name="type" value="date"/>		
 	</bean>
 	
 	<bean id="searchFilterEventsProvince"
@@ -3052,9 +3055,9 @@
 				<value>crisProduct.Producttype</value>
 			</list>
 		</property>
-		<property name="type" value="thongkestring" />
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
+		<property name="type" value="thongkestring"/>		
 	</bean>
 
 	<bean id="searchFilterProductPublicationDate"
@@ -3067,6 +3070,7 @@
 		</property>		
 		<property name="facetLimit" value="5" />
 		<property name="sortOrder" value="COUNT" />
+		<property name="type" value="date"/>		
 	</bean>
 
 	<bean id="searchFilterProductCollection"
@@ -3092,7 +3096,6 @@
 		</property>		
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
-		<property name="type" value="thongkestring"/>
 	</bean>
 
 	<bean id="searchFilterProductCountry"
@@ -3103,7 +3106,6 @@
 				<value>crisProduct.Productcountry</value>
 			</list>
 		</property>
-		<property name="type" value="thongkestring" />
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
 	</bean>
@@ -3118,7 +3120,6 @@
 		</property>		
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
-		<property name="type" value="thongkestring"/>
 	</bean>
 
 	<bean id="searchFilterProductCreator"
@@ -3131,7 +3132,6 @@
 		</property>		
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
-		<property name="type" value="thongkestring"/>
 	</bean>
 
 	<bean id="searchFilterProductKeyword"
@@ -3144,7 +3144,6 @@
 		</property>		
 		<property name="facetLimit" value="10" />
 		<property name="sortOrder" value="COUNT" />
-		<property name="type" value="thongkestring"/>
 	</bean>
 
 	<bean id="searchFilterJournalsName"

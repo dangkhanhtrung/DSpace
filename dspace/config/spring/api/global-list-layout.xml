@@ -303,6 +303,13 @@
 					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
 					<property name="mandatory" value="true" />
 					<property name="preHtml" value="" />
+					<property name="postHtml" value="&lt;br/&gt;" />
+					<property name="field" value="typeOrg" />
+				</bean>
+				<bean
+					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="mandatory" value="true" />
+					<property name="preHtml" value="" />
 					<property name="postHtml" value="" />
 					<property name="field" value="activity" />
 				</bean>
