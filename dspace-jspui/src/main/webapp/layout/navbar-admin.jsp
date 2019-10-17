@@ -28,7 +28,10 @@
 
 <%@ taglib uri="http://www.dspace.org/dspace-tags.tld" prefix="dspace" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.16/vuetify.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.16/vuetify.min.css" rel="stylesheet">
+<link rel="stylesheet" href="<%= request.getContextPath()%>/static/css/argon.min.css" type="text/css" />
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
 <%
 	// Is anyone logged in?
 	EPerson user = (EPerson) request.getAttribute("dspace.current.user");
@@ -61,7 +64,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
   <div class="container py-2 px-0" style="height: 61px;border-bottom: 1px solid lightgray;"><a href="/jspui" class="navbar-brand" style="
     display: flex;text-transform: uppercase;
-"><img src="/jspui/static/custom/images/logo.png" alt="logo"><span class="d-none d-sm-block ml-3">Cơ sở dữ liệu tích hợp <br> Thông tin khoa học và Công nghệ</span></a> <button type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary"
+"><img src="/jspui/static/custom/images/logo.png" alt="logo"><span class="d-sm-block ml-3 mt-1">Cơ sở dữ liệu tích hợp <br> Thông tin khoa học và Công nghệ</span></a> <button type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary"
       aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
     <div id="navbar-primary" class="collapse navbar-collapse" style="
     text-align: right;
@@ -79,66 +82,66 @@
 
             	<li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbar-primary_dropdown_1_admin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Content  <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        Nội dung  <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1_admin">
 
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/edit-communities">Communities & Collections</a>
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/edit-item">Items</a>
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/duplicate">Deduplication</a>
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/workflow">Workflow</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/edit-communities">Đơn vị và bộ sưu tập</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/edit-item">Công bố</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/duplicate">Loại bỏ trùng lặp</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/workflow">Quy trình làm việc</a>
                         <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/supervise">Supervisors</a>
                         <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/curate">Curation Tasks</a>
                         <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/withdrawn">Withdrawn Items</a>
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/privateitems">Private Items</a>
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/metadataimport">Import metadata</a>
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/batchimport">Batch import</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/privateitems">Ẩn công bố</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/metadataimport">Nhập cấu trúc siêu dữ liệu</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/batchimport">Nhập dữ liệu công bố</a>
                         <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/authority">Authority Management</a>
 
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<%= request.getContextPath()%>/cris/administrator/index.htm">CRIS Module </a>
+                    <a class="nav-link" href="<%= request.getContextPath()%>/cris/administrator/index.htm">Quản trị đối tượng </a>
                 </li>
 				
 				<li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbar-primary_dropdown_1_access" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Access Control  <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        Quản lý truy cập  <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1_access">
 
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/edit-epeople">E-people</a>
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/group-edit">Groups</a>
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/authorize">Authorization</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/edit-epeople">Người dùng</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/group-edit">Nhóm người dùng</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/tools/authorize">Phân quyền</a>
 
                     </div>
                 </li>
                 
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbar-primary_dropdown_1_statistics " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Statistics  <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        Thống kê  <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1_statistics">
 
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/cris/stats/site.html?handle=123456789/0">Site Statistics</a>
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/loginstats">Login Statistics</a>
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/workflowstats">Workflow Statistics</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/cris/stats/site.html?handle=123456789/0">Thống kê trang Web</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/loginstats">Thống kê truy cập</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/workflowstats">Thống kê quy trình làm việc</a>
 
                     </div>
                 </li>
                 
                  <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbar-primary_dropdown_1_general " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        General Settings <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        Cài đặt <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-primary_dropdown_1_general">
 
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/metadata-schema-registry">Metadata Registry</a>
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/format-registry">Bitstream Format Registry</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/metadata-schema-registry">Khai báo siêu dữ liệu</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/format-registry">Khai báo định dạng dữ liệu</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/news-edit">Edit News</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/news-edit">Sửa tin tức</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/license-edit">Edit Default License</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/dspace-admin/license-edit">Sửa giấy phép mặc định</a>
 
                     </div>
                 </li>

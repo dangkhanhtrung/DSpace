@@ -65,7 +65,7 @@
 			<tbody>
 			<tr class="odd">
 	<td width="89">
-		<a href="/jspui/cris/administrator/rp/index.htm">8</a>
+		<a href="/jspui/cris/administrator/rp/index.htm">9</a>
 	</td>
 	<td width="107">
 		<a href="/jspui/cris/administrator/rp/index.htm">researcher profiles</a>
@@ -75,7 +75,7 @@
 </tr>
 <tr class="even">
 	<td>
-		<a href="/jspui/cris/administrator/project/index.htm">9</a>
+		<a href="/jspui/cris/administrator/project/index.htm">10</a>
 	</td>
 	<td>
 		<a href="/jspui/cris/administrator/project/index.htm">project</a>
@@ -85,7 +85,7 @@
 </tr>
 <tr class="odd">
 	<td>
-		<a href="/jspui/cris/administrator/ou/index.htm">10</a>
+		<a href="/jspui/cris/administrator/ou/index.htm">11</a>
 	</td>
 	<td>
 		<a href="/jspui/cris/administrator/ou/index.htm">orgunits</a>
@@ -95,7 +95,7 @@
 </tr>
 <tr class="even">
 	<td>
-		<a href="/jspui/handle/123456789/1">11</a>
+		<a href="/jspui/handle/123456789/1">12</a>
 	</td>
 	<td>
 		<a href="/jspui/handle/123456789/1">publications</a>
@@ -105,7 +105,7 @@
 </tr>
 <tr class="odd">
 	<td>
-		<a href="/jspui/handle/123456789/6">12</a>
+		<a href="/jspui/handle/123456789/6">13</a>
 	</td>
 	<td>
 		<a href="/jspui/handle/123456789/6">Dữ liệu</a>

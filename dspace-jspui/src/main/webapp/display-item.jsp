@@ -279,10 +279,33 @@ j(document).ready(function() {
 %>
 
 <div class="row">
-<div id="wrapperDisplayItem" class="col-lg-9">
+<div id="wrapperDisplayItem" class="col-lg-9">    
     <dspace:item-preview item="<%= item %>" />
     <dspace:item item="<%= item %>" collections="<%= collections %>" style="<%= displayStyle %>" />
+    <script type="text/javascript">
+        function fixSoTrang() {
+            var fieldlabels = document.getElementsByClassName('metadataFieldLabel');
+            if (fieldlabels !== undefined && fieldlabels !== null) {
+                for(var i=0; fieldlabels[i]; ++i){
+                    if (fieldlabels[i].innerText.indexOf('Trang bắt đầu')>-1 || fieldlabels[i].innerText.indexOf('Trang kết thúc')>-1)
+                        if (fieldlabels[i].nextElementSibling.innerText === "0"){
+                            fieldlabels[i].parentElement.remove();
+                            i--;
+                        }
+
+                                
+                    if(fieldlabels[i].innerText.indexOf('Trang bắt đầu')>-1){
+                        if((fieldlabels[i+1].innerText.indexOf('Trang kết thúc')>-1)){
+                        }
+                        else fieldlabels[i].innerText = "Số trang:";                          
+                    }
+                }   
+            }
+        }
+        fixSoTrang();
+    </script>
     <%-- SFX Link --%>
+    
 <%
     if (ConfigurationManager.getProperty("sfx.server.url") != null)
     {
@@ -756,6 +779,6 @@ if (dedupEnabled && admin_button) { %>
 <%
     } 
 %>
-	</div>
+	</div>  
     
 </dspace:layout>

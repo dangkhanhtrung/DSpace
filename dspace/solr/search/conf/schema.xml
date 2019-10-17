@@ -564,8 +564,14 @@
    <copyField source="crisdo.name" dest="crisauthoritylookup"/>
 
    <!-- NTH add SOURCEID to search filter-->
-   <field name="sourceID_keyword" type="keywordFilter" indexed="true" stored="true" multiValued="true" omitNorms="true" />
-   <copyField source="cris-sourceid" dest="sourceID_keyword" />   
+  <field name="sourceID_keyword" type="keywordFilter" indexed="true" stored="true" multiValued="true" omitNorms="true" />
+  <copyField source="cris-sourceid" dest="sourceID_keyword" />
+
+  <field name="sourceRef_keyword" type="keywordFilter" indexed="true" stored="true" multiValued="true" omitNorms="true" />
+  <copyField source="cris-sourceref" dest="sourceRef_keyword" />
+
+  <field name="sourceRef_filter" type="keywordFilter" indexed="true" stored="true" multiValued="true" omitNorms="true" />
+  <copyField source="cris-sourceref" dest="sourceRef_filter" />
    <!-- End add -->
 
     <!-- index for build a facet on the resource type -->
