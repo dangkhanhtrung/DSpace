@@ -72,6 +72,11 @@
 		<a href="<%=request.getContextPath()%>/cris/administrator/webservices/authorizations.htm"><fmt:message
 			key="jsp.layout.navbar-admin.webservices" /></a>
 	</li> -->
-			
+    <vuejx-admin></vuejx-admin>
 	</ul>
 </dspace:layout>
+
+<script type="text/javascript" src="<%= request.getContextPath()%>/page/dspace.min.js"></script>
+<script type="text/javascript" src="<%= request.getContextPath()%>/static/vendor/header-default/index.js"></script>
+
+

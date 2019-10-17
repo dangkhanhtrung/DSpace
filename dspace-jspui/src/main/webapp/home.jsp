@@ -197,7 +197,7 @@
 								facetGlobalSort.set(4, fvalue);
 							} else if (fvalue.getAuthorityKey().equalsIgnoreCase("crisstandards")) {
 								facetGlobalSort.set(5, fvalue);
-							} else if (fvalue.getAuthorityKey().equalsIgnoreCase("cristechs")) {
+							} else if (fvalue.getAuthorityKey().equalsIgnoreCase("crisProduct")) {
 								facetGlobalSort.set(6, fvalue);
 							} else if (fvalue.getAuthorityKey().equalsIgnoreCase("crisawards")) {
 								facetGlobalSort.set(7, fvalue);

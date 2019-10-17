@@ -187,10 +187,10 @@
 						</bean>
 					</list>
 				</entry>
-				<entry key="cristechs">
+				<entry key="crisProduct">
 					<list>
 						<bean class="org.dspace.app.webui.cris.components.TopObjectsProcessor">
-							<property name="viewConfiguration" ref="cristechsLayoutView" />
+							<property name="viewConfiguration" ref="crisProductLayoutView" />
 							<property name="type" value="recentsubmission" />
 							<property name="sortField" value="lastModified" />
 							<property name="order" value="desc" />
@@ -202,8 +202,8 @@
 						<bean class="org.dspace.app.webui.cris.components.BrowseProcessor">
 							<property name="browseNames">
 								<list>
-									<value>cristechs.techstitle</value>
-									<value>cristechs.techscountry</value>
+									<value>crisProduct.Productname</value>
+									<value>crisProduct.Productcountry</value>
 								</list>
 							</property>
 						</bean>

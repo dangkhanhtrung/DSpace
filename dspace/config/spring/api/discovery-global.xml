@@ -8,278 +8,114 @@
     http://www.dspace.org/license/
 
 -->
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-           http://www.springframework.org/schema/context
-           http://www.springframework.org/schema/context/spring-context-3.0.xsd
-           http://www.springframework.org/schema/util
-           http://www.springframework.org/schema/util/spring-util-3.0.xsd"
-	default-autowire-candidates="*Service,*DAO,javax.sql.DataSource">
-
-	<context:annotation-config /> <!-- allows us to use spring annotations in beans -->
-
+<beans default-autowire-candidates="*Service,*DAO,javax.sql.DataSource" xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd            http://www.springframework.org/schema/context            http://www.springframework.org/schema/context/spring-context-3.0.xsd            http://www.springframework.org/schema/util            http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+	<context:annotation-config/>
+	<!-- allows us to use spring annotations in beans -->
 	<!--Configurazione visualizzazione risultati -->
-	<bean name="global"
-		class="org.dspace.discovery.configuration.DiscoveryViewAndHighlightConfiguration">
-		<property name="viewConfiguration">						
+	<bean class="org.dspace.discovery.configuration.DiscoveryViewAndHighlightConfiguration" name="global">
+		<property name="viewConfiguration">
 			<map>
 				<entry key="community">
-				<bean
-				class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">								
-				
-				<property name="metadataHeadingFields">								
-					<list>
-						<bean
-							class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-							<property name="mandatory" value="true"/>
-							<property name="preHtml" value="&lt;h4 class='text-primary'&gt;" />
-							<property name="postHtml" value="&lt;/h4&gt;" />
-							<property name="field" value="name" />
-							<property name="decorator" value="title" />
-						</bean>
-					</list>
-				</property>
-				<property name="metadataDescriptionFields">
-					<list>
-						<bean
-							class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-							<property name="field" value="dc.description.abstract" />
-							<property name="preHtml" value="&lt;span&gt;" />
-							<property name="postHtml" value="&lt;/span&gt;" />
-						</bean>
-					</list>
-				</property>
-				</bean>
+					<bean class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
+						<property name="metadataHeadingFields">
+							<list>
+								<bean class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+									<property name="mandatory" value="true"/>
+									<property name="preHtml" value="&lt;h4 class='text-primary'&gt;"/>
+									<property name="postHtml" value="&lt;/h4&gt;"/>
+									<property name="field" value="name"/>
+									<property name="decorator" value="title"/>
+								</bean>
+							</list>
+						</property>
+						<property name="metadataDescriptionFields">
+							<list>
+								<bean class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+									<property name="field" value="dc.description.abstract"/>
+									<property name="preHtml" value="&lt;span&gt;"/>
+									<property name="postHtml" value="&lt;/span&gt;"/>
+								</bean>
+							</list>
+						</property>
+					</bean>
 				</entry>
 				<entry key="collection">
-				<bean
-				class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">								
-				
-				<property name="metadataHeadingFields">								
-					<list>
-						<bean
-							class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-							<property name="mandatory" value="true"/>
-							<property name="preHtml" value="&lt;h4 class='text-primary'&gt;" />
-							<property name="postHtml" value="&lt;/h4&gt;" />
-							<property name="field" value="name" />
-							<property name="decorator" value="title" />
-						</bean>
-					</list>
-				</property>
-				<property name="metadataDescriptionFields">
-					<list>
-						<bean
-							class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-							<property name="field" value="dc.description.abstract" />
-							<property name="preHtml" value="&lt;span&gt;" />
-							<property name="postHtml" value="&lt;/span&gt;" />
-						</bean>
-					</list>
-				</property>
-				</bean>
-				</entry>														
-				<entry key="publications" value-ref="configurationItemViewLayout" />
-				<entry key="conferencematerials" value-ref="configurationItemViewLayout" />
-				<entry key="researcherprofiles">
-				<bean
-				class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
-				
-				<property name="metadataHeadingFields">								
-					<list>
-						<bean
-							class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-							<property name="mandatory" value="true"/>
-							<property name="preHtml" value="&lt;h4 class='text-primary'&gt;" />
-							<property name="postHtml" value="&lt;/h4&gt;" />
-							<property name="field" value="fullName" />
-							<property name="decorator" value="cristitle" />
-						</bean>
-						<bean
-							class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">							
-							<property name="field" value="affiliation.department" />
-							<property name="preHtml" value="&lt;span&gt;" />
-							<property name="postHtml" value="&lt;/span&gt;" />
-							<property name="decorator" value="crisrpnested" />
-						</bean>						
-					</list>
-				</property>
-				</bean>
+					<bean class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
+						<property name="metadataHeadingFields">
+							<list>
+								<bean class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+									<property name="mandatory" value="true"/>
+									<property name="preHtml" value="&lt;h4 class='text-primary'&gt;"/>
+									<property name="postHtml" value="&lt;/h4&gt;"/>
+									<property name="field" value="name"/>
+									<property name="decorator" value="title"/>
+								</bean>
+							</list>
+						</property>
+						<property name="metadataDescriptionFields">
+							<list>
+								<bean class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+									<property name="field" value="dc.description.abstract"/>
+									<property name="preHtml" value="&lt;span&gt;"/>
+									<property name="postHtml" value="&lt;/span&gt;"/>
+								</bean>
+							</list>
+						</property>
+					</bean>
 				</entry>
-				<entry key="fundings">
-				<bean
-				class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
-				<property name="metadataHeadingFields">								
-					<list>
-						<bean
-							class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-							<property name="mandatory" value="true"/>
-							<property name="field" value="title" />
-							<property name="decorator" value="cristitle" />
-						</bean>						
-					</list>
-				</property>
-				</bean>
-				</entry>
-				<entry key="orgunits">
-				<bean
-				class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
-				<property name="metadataHeadingFields">								
-					<list>
-						<bean
-							class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-							<property name="mandatory" value="true"/>
-							<property name="field" value="name" />
-							<property name="decorator" value="cristitle" />
-						</bean>						
-					</list>
-				</property>
-				</bean>
-				</entry>
-				<entry key="theses" value-ref="configurationItemViewLayout" />
-				<entry key="crispatents">
-				<bean
-					class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
-					<property name="metadataHeadingFields">								
-						<list>
-							<bean
-								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-								<property name="mandatory" value="true"/>
-								<property name="field" value="patentstitle" />
-								<property name="decorator" value="cristitle" />
-							</bean>						
-						</list>
-					</property>
-				</bean>					
-				</entry>
-				<entry key="crisfundings">
-				<bean
-					class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
-					<property name="metadataHeadingFields">								
-						<list>
-							<bean
-								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-								<property name="mandatory" value="true"/>
-								<property name="field" value="fundingstitle" />
-								<property name="decorator" value="cristitle" />
-							</bean>						
-						</list>
-					</property>
-				</bean>					
-				</entry>
-				<entry key="crisstandards">
-				<bean
-					class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
-					<property name="metadataHeadingFields">								
-						<list>
-							<bean
-								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-								<property name="mandatory" value="true"/>
-								<property name="field" value="standardstitle" />
-								<property name="decorator" value="cristitle" />
-							</bean>						
-						</list>
-					</property>
-				</bean>					
-				</entry>
-				<entry key="cristechs">
-				<bean
-					class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
-					<property name="metadataHeadingFields">								
-						<list>
-							<bean
-								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-								<property name="mandatory" value="true"/>
-								<property name="preHtml" value="&lt;h4 class='text-primary'&gt;" />
-								<property name="field" value="techstitle" />
-								<property name="decorator" value="cristitle" />
-							</bean>	
-							<bean
-								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-								<property name="mandatory" value="true"/>
-								<property name="preHtml" value="&amp;nbsp; [" />
-								<property name="postHtml" value="]&lt;/h4&gt;" />
-								<property name="field" value="techscountry" />
-								<property name="decorator" value="radiocheckdropdown" />
-							</bean>			
-						</list>
-					</property>
-				</bean>					
-				</entry>
-				<entry key="crisawards">
-				<bean
-					class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">
-					<property name="metadataHeadingFields">								
-						<list>
-							<bean
-								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-								<property name="mandatory" value="true"/>
-								<property name="preHtml" value="&lt;h4 class='text-primary'&gt;" />
-								<property name="field" value="awardsname" />
-								<property name="decorator" value="cristitle" />
-							</bean>	
-							<bean
-								class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-								<property name="mandatory" value="true"/>
-								<property name="preHtml" value="&amp;nbsp; [" />
-								<property name="postHtml" value="]&lt;/h4&gt;" />
-								<property name="field" value="awardsprojectTitle" />
-							</bean>			
-						</list>
-					</property>
-				</bean>					
-				</entry>
-				<entry key="datasets" value-ref="configurationItemViewLayout" />
+				<entry key="researcherprofiles" value-ref="crisrpLayoutView"/>
+				<entry key="orgunits" value-ref="crisouLayoutView"/>
+				<entry key="fundings" value-ref="crispjLayoutView"/>	
+				<entry key="publications" value-ref="dspaceitemsLayoutView"/>
+				<entry key="criscertificate" value-ref="criscertLayoutView"/>
+				<entry key="crispatents" value-ref="crispatentsLayoutView"/>				
+				<entry key="crisstandards" value-ref="crisstandardsLayoutView"/>
+				<entry key="crisproduct" value-ref="crisProductLayoutView"/>				
+				<entry key="crisawards" value-ref="crisawardsLayoutView"/>
+				<entry key="crisevents" value-ref="criseventsLayoutView"/>
+				<entry key="crisjournals" value-ref="crisjournalsLayoutView"/>
+				<entry key="datasets" value-ref="dspaceitemsLayoutView"/>
+				<entry key="theses" value-ref="dspaceitemsLayoutView"/>
+				<entry key="conferencematerials" value-ref="dspaceitemsLayoutView"/>
 			</map>
 		</property>
 	</bean>
-
-	<bean id="configurationItemViewLayout" class="org.dspace.discovery.configuration.DiscoveryViewConfiguration">								
-		<property name="metadataHeadingFields">								
+	<bean class="org.dspace.discovery.configuration.DiscoveryViewConfiguration" id="configurationItemViewLayout">
+		<property name="metadataHeadingFields">
 			<list>
-				<bean
-					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+				<bean class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
 					<property name="mandatory" value="true"/>
-					<property name="preHtml" value="&lt;h4 class='text-primary'&gt;" />
-					<property name="field" value="dc.title" />
-					<property name="decorator" value="title" />
+					<property name="preHtml" value="&lt;h4 class='text-primary'&gt;"/>
+					<property name="field" value="dc.title"/>
+					<property name="decorator" value="title"/>
 				</bean>
-				<bean
-					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+				<bean class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
 					<property name="mandatory" value="true"/>
-					<property name="preHtml" value="&amp;nbsp; [" />
-					<property name="postHtml" value="]&lt;/h4&gt;" />
-					<property name="field" value="dc.date.issued" />
-					<property name="decorator" value="date" />
+					<property name="preHtml" value="&amp;nbsp; ["/>
+					<property name="postHtml" value="]&lt;/h4&gt;"/>
+					<property name="field" value="dc.date.issued"/>
+					<property name="decorator" value="date"/>
 				</bean>
-				<bean
-					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+				<bean class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
 					<property name="mandatory" value="true"/>
-					<property name="preHtml" value="&lt;span class='text-muted'&gt;" />
-					<property name="postHtml" value="&lt;/span&gt;" />
-					<property name="field" value="dc.contributor.author" />
-					<property name="decorator" value="itemcrisref" />
+					<property name="preHtml" value="&lt;span class='text-muted'&gt;"/>
+					<property name="postHtml" value="&lt;/span&gt;"/>
+					<property name="field" value="dc.contributor.author"/>
+					<property name="decorator" value="itemcrisrefmulti"/>
 				</bean>
 			</list>
 		</property>
 		<property name="metadataDescriptionFields">
 			<list>
-				<bean
-					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-					<property name="field" value="dc.subject" />
-					<property name="postHtml" value="&lt;br /&gt;" />
+				<bean class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="field" value="dc.subject"/>
+					<property name="postHtml" value="&lt;br /&gt;"/>
 				</bean>
-				<bean
-					class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
-					<property name="field" value="dc.description.abstract" />
-					<property name="postHtml" value="&lt;br /&gt;" />
+				<bean class="org.dspace.discovery.configuration.DiscoveryViewFieldConfiguration">
+					<property name="field" value="dc.description.abstract"/>
+					<property name="postHtml" value="&lt;br /&gt;"/>
 				</bean>
 			</list>
 		</property>
 	</bean>
-
 </beans>

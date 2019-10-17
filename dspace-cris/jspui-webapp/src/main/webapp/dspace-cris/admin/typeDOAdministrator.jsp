@@ -65,7 +65,7 @@
 			<tbody>
 			<tr class="odd">
 	<td width="89">
-		<a href="/jspui/cris/administrator/rp/index.htm">10</a>
+		<a href="/jspui/cris/administrator/rp/index.htm">9</a>
 	</td>
 	<td width="107">
 		<a href="/jspui/cris/administrator/rp/index.htm">researcher profiles</a>
@@ -75,7 +75,7 @@
 </tr>
 <tr class="even">
 	<td>
-		<a href="/jspui/cris/administrator/project/index.htm">11</a>
+		<a href="/jspui/cris/administrator/project/index.htm">10</a>
 	</td>
 	<td>
 		<a href="/jspui/cris/administrator/project/index.htm">project</a>
@@ -85,7 +85,7 @@
 </tr>
 <tr class="odd">
 	<td>
-		<a href="/jspui/cris/administrator/ou/index.htm">12</a>
+		<a href="/jspui/cris/administrator/ou/index.htm">11</a>
 	</td>
 	<td>
 		<a href="/jspui/cris/administrator/ou/index.htm">orgunits</a>
@@ -95,20 +95,20 @@
 </tr>
 <tr class="even">
 	<td>
-		<a href="/jspui/handle/123456789/63">13</a>
+		<a href="/jspui/handle/123456789/1">12</a>
 	</td>
 	<td>
-		<a href="/jspui/handle/123456789/63">publications</a>
+		<a href="/jspui/handle/123456789/1">publications</a>
 	</td>
 	<td>Quản lý cơ sở dữ liệu công bố khoa học  và công nghệ. Bao gồm các loại công bố: Bài báo; Kỷ yếu hội thảo; Báo cáo khoa học; Sách; Luận án tiến sĩ; Luận án thạc sĩ; Bài trích tạp chí; Bài trích kỷ yếu; Bài trích sách; Bài nghiên cứu</td>
 
 </tr>
 <tr class="odd">
 	<td>
-		<a href="/jspui/handle/123456789/80">14</a>
+		<a href="/jspui/handle/123456789/6">13</a>
 	</td>
 	<td>
-		<a href="/jspui/handle/123456789/80">Dữ liệu</a>
+		<a href="/jspui/handle/123456789/6">Dữ liệu</a>
 	</td>
 	<td>Quản lý cơ sở dữ liệu về các dữ liệu (dataset. Bao gồm có các loại dữ liệu: Dữ liệu danh mục; Metadata; Dữ liệu mở</td>
 
